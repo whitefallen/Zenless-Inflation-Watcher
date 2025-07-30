@@ -1,0 +1,115 @@
+🎮 ZENLESS ZONE ZERO - BATTLE RECORDS REPORT
+============================================================
+📅 Generated: Jul 29, 2025, 07:09 PM
+
+
+🎯 DEADLY ASSAULT REPORT
+==================================================
+
+📅 Season: Jul 25, 2025, 04:00 AM - Aug 8, 2025, 03:59 AM
+👤 Player: Whitefallen
+
+📊 OVERALL PERFORMANCE
+------------------------------
+🏆 Total Score: 92.804
+⭐ Total Stars: 9/9
+📈 Rank Percentile: 867
+🌍 Zone ID: 69016
+
+👹 BOSS CLEARS
+------------------------------
+1. Miasma Priest
+   🎯 Score: 30.941
+   ⭐ Stars: 3/3
+   🕐 Completed: Jul 25, 2025, 03:23 PM
+   🔮 Buffs:
+      • Artful: � Agent DMG increases by 20% and Physical DMG increases by an additional 20%. � After inflicting an Attribute Anomaly on an enemy, the enemy's DEF decreases by 10% for 10s. After inflicting Disorder on an enemy, the enemy's DEF further decreases by 25% for 10s. Each effect's duration refreshes individually.
+   👥 Team:
+      • [35mS[0m Lv.60 Electric (ID: 1221)
+      • [35mS[0m Lv.60 Unknown (ID: 1331)
+      • [35mS[0m Lv.60 Physical (ID: 1411)
+   🐾 Buddy: [35mS[0m Lv.60 (ID: 54016)
+
+2. Miasmic Fiend - Unfathomable
+   🎯 Score: 41.335
+   ⭐ Stars: 3/3
+   🕐 Completed: Jul 28, 2025, 06:57 PM
+   🔮 Buffs:
+      • Artful: � Agent DMG increases by 20% and Physical DMG increases by an additional 20%. � After inflicting an Attribute Anomaly on an enemy, the enemy's DEF decreases by 10% for 10s. After inflicting Disorder on an enemy, the enemy's DEF further decreases by 25% for 10s. Each effect's duration refreshes individually.
+   👥 Team:
+      • [35mS[0m Lv.60 Ice (ID: 1091)
+      • [36mA[0m Lv.60 Unknown (ID: 1031)
+      • [35mS[0m Lv.60 Unknown (ID: 1311)
+   🐾 Buddy: [35mS[0m Lv.60 (ID: 54015)
+
+3. Notorious - Pompey
+   🎯 Score: 20.528
+   ⭐ Stars: 3/3
+   🕐 Completed: Jul 25, 2025, 03:45 PM
+   🔮 Buffs:
+      • Artful: � Agent DMG increases by 20% and Physical DMG increases by an additional 20%. � After inflicting an Attribute Anomaly on an enemy, the enemy's DEF decreases by 10% for 10s. After inflicting Disorder on an enemy, the enemy's DEF further decreases by 25% for 10s. Each effect's duration refreshes individually.
+   👥 Team:
+      • [36mA[0m Lv.60 Physical (ID: 1281)
+      • [35mS[0m Lv.60 Fire (ID: 1171)
+      • [36mA[0m Lv.60 Fire (ID: 1151)
+   🐾 Buddy: [35mS[0m Lv.60 (ID: 54006)
+
+
+🛡️ SHIYU DEFENSE REPORT
+==================================================
+
+📅 Season: Jul 4, 2025, 05:00 AM - Jul 18, 2025, 04:59 AM
+🆔 Schedule ID: 62025
+
+📊 OVERALL PERFORMANCE
+------------------------------
+🏆 Max Layer: 7
+⚡ Fast Layer Time: 3:33
+⏱️ Battle Time (4-7): 15:48
+📈 Ratings:
+   • S: 4 times
+
+🏢 FLOOR DETAILS
+------------------------------
+1. Layer 7 - Critical Node: Seventh Frontier
+   🏆 Rating: S
+   🕐 Challenge Time: Jul 4, 2025, 04:20 PM
+   ⏱️ Floor Time: Jul 4, 2025, 03:20 PM
+   🔮 Buffs:
+      • Blazing and Radiant Strike: � Agents' Daze dealt increases by 10%, Ultimate DMG increases by 30%. � When enemies are Stunned, the whole squad's Sheer DMG increases by 15% and CRIT DMG increases by 20% for 25s, repeated triggers reset the duration.
+   🥇 First Half (2:18):
+      Elements: Fire, Physical
+      Team:
+         • [35mS[0m Lv.60 Physical (ID: 1261)
+         • [35mS[0m Lv.60 Fire (ID: 1171)
+         • [36mA[0m Lv.60 Fire (ID: 1151)
+      🐾 Buddy: [35mS[0m Lv.60
+   🥈 Second Half (1:15):
+      Elements: Ice, Unknown
+      Team:
+         • [35mS[0m Lv.60 Ice (ID: 1091)
+         • [35mS[0m Lv.60 Unknown (ID: 1331)
+         • [35mS[0m Lv.60 Unknown (ID: 1311)
+      🐾 Buddy: [35mS[0m Lv.60
+
+2. Layer 6 - Critical Node: Sixth Frontier
+   🏆 Rating: S
+   🕐 Challenge Time: Jul 4, 2025, 04:27 PM
+   ⏱️ Floor Time: Jul 4, 2025, 03:27 PM
+   🔮 Buffs:
+      • Blazing and Radiant Strike: � Agents' Daze dealt increases by 10%, Ultimate DMG increases by 30%. � When enemies are Stunned, the whole squad's Sheer DMG increases by 15% and CRIT DMG increases by 20% for 25s, repeated triggers reset the duration.
+   🥇 First Half (1:33):
+      Elements: Fire, Physical
+      Team:
+         • [35mS[0m Lv.60 Physical (ID: 1261)
+         • [35mS[0m Lv.60 Unknown (ID: 1311)
+         • [36mA[0m Lv.60 Unknown (ID: 1031)
+      🐾 Buddy: [35mS[0m Lv.60
+   🥈 Second Half (2:48):
+      Elements: Fire, Unknown
+      Team:
+         • [36mA[0m Lv.60 Physical (ID: 1061)
+         • [35mS[0m Lv.60 Fire (ID: 1171)
+         • [36mA[0m Lv.60 Fire (ID: 1151)
+      🐾 Buddy: [35mS[0m Lv.60
+

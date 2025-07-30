@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenless Zone Zero - Battle Records Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .summary-item h3 {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .summary-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .boss-clear, .floor-detail {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .boss-clear h4, .floor-detail h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .boss-stats, .floor-stats {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #495057;
+        }
+        
+        .buffs {
+            margin: 15px 0;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .buff {
+            margin-bottom: 10px;
+        }
+        
+        .team, .buddy {
+            margin: 15px 0;
+        }
+        
+        .team h5, .buddy h5 {
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        
+        .avatars {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .avatar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        .rarity {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .rarity.S { color: #FFD700; }
+        .rarity.A { color: #C0C0C0; }
+        .rarity.B { color: #CD7F32; }
+        .rarity.C { color: #8B4513; }
+        
+        .level {
+            color: #666;
+        }
+        
+        .element {
+            font-weight: 500;
+        }
+        
+        .id {
+            color: #999;
+            font-size: 0.8em;
+        }
+        
+        .nodes {
+            display: grid;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .node {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .node h5 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .boss-stats, .floor-stats {
+                flex-direction: column;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Zenless Zone Zero</h1>
+            <p>Battle Records Report</p>
+            <p>Generated: Jul 30, 2025, 05:48 PM</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+  <h2>🎯 Deadly Assault Report</h2>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <h3>Season</h3>
+      <div class="summary-value">Invalid Date - Invalid Date</div>
+    </div>
+    <div class="summary-item">
+      <h3>Player</h3>
+      <div class="summary-value">Whitefallen</div>
+    </div>
+    <div class="summary-item">
+      <h3>Total Score</h3>
+      <div class="summary-value">92.804</div>
+    </div>
+    <div class="summary-item">
+      <h3>Total Stars</h3>
+      <div class="summary-value">9</div>
+    </div>
+    <div class="summary-item">
+      <h3>Rank Percent</h3>
+      <div class="summary-value">858</div>
+    </div>
+  </div>
+
+  <h3>Boss Clears</h3>
+  <div class="boss-clear">
+    <h4>0. Miasma Priest</h4>
+    <div class="boss-stats">
+      <span class="stat">Score: 30.941</span>
+      <span class="stat">Stars: 3/3</span>
+      <span class="stat">Time: 2025-07-25 15:23:41</span>
+    </div>
+
+    <div class="buffs">
+      <h5>Buffs:</h5>
+      <div class="buff">
+        <strong>Artful:</strong> · Agent DMG increases by 20% and Physical DMG increases by an additional 20%. · After inflicting an Attribute Anomaly on an enemy, the enemy&#x27;s DEF decreases by 10% for 10s. After inflicting Disorder on an enemy, the enemy&#x27;s DEF further decreases by 25% for 10s. Each effect&#x27;s duration refreshes individually.
+      </div>
+    </div>
+
+    <div class="team">
+      <h5>Team:</h5>
+      <div class="avatars">
+        <div class="avatar" style="border-left: 4px solid #FFD700">
+          <span class="rarity S">S</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Electric</span>
+          <span class="id">(ID: 1221)</span>
+        </div>
+        <div class="avatar" style="border-left: 4px solid #9370DB">
+          <span class="rarity S">S</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Ether</span>
+          <span class="id">(ID: 1331)</span>
+        </div>
+        <div class="avatar" style="border-left: 4px solid #8B4513">
+          <span class="rarity S">S</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Physical</span>
+          <span class="id">(ID: 1411)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="buddy">
+      <h5>Buddy:</h5>
+      <div class="avatar" style="border-left: 4px solid #8B4513">
+        <span class="rarity S">S</span>
+        <span class="level">Lv.60</span>
+        <span class="id">(ID: 54016)</span>
+      </div>
+    </div>
+  </div>
+  <div class="boss-clear">
+    <h4>1. Miasmic Fiend - Unfathomable</h4>
+    <div class="boss-stats">
+      <span class="stat">Score: 41.335</span>
+      <span class="stat">Stars: 3/3</span>
+      <span class="stat">Time: 2025-07-28 18:57:42</span>
+    </div>
+
+    <div class="buffs">
+      <h5>Buffs:</h5>
+      <div class="buff">
+        <strong>Artful:</strong> · Agent DMG increases by 20% and Physical DMG increases by an additional 20%. · After inflicting an Attribute Anomaly on an enemy, the enemy&#x27;s DEF decreases by 10% for 10s. After inflicting Disorder on an enemy, the enemy&#x27;s DEF further decreases by 25% for 10s. Each effect&#x27;s duration refreshes individually.
+      </div>
+    </div>
+
+    <div class="team">
+      <h5>Team:</h5>
+      <div class="avatars">
+        <div class="avatar" style="border-left: 4px solid #00BFFF">
+          <span class="rarity S">S</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Ice</span>
+          <span class="id">(ID: 1091)</span>
+        </div>
+        <div class="avatar" style="border-left: 4px solid #9370DB">
+          <span class="rarity A">A</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Ether</span>
+          <span class="id">(ID: 1031)</span>
+        </div>
+        <div class="avatar" style="border-left: 4px solid #9370DB">
+          <span class="rarity S">S</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Ether</span>
+          <span class="id">(ID: 1311)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="buddy">
+      <h5>Buddy:</h5>
+      <div class="avatar" style="border-left: 4px solid #8B4513">
+        <span class="rarity S">S</span>
+        <span class="level">Lv.60</span>
+        <span class="id">(ID: 54015)</span>
+      </div>
+    </div>
+  </div>
+  <div class="boss-clear">
+    <h4>2. Notorious - Pompey</h4>
+    <div class="boss-stats">
+      <span class="stat">Score: 20.528</span>
+      <span class="stat">Stars: 3/3</span>
+      <span class="stat">Time: 2025-07-25 15:45:19</span>
+    </div>
+
+    <div class="buffs">
+      <h5>Buffs:</h5>
+      <div class="buff">
+        <strong>Artful:</strong> · Agent DMG increases by 20% and Physical DMG increases by an additional 20%. · After inflicting an Attribute Anomaly on an enemy, the enemy&#x27;s DEF decreases by 10% for 10s. After inflicting Disorder on an enemy, the enemy&#x27;s DEF further decreases by 25% for 10s. Each effect&#x27;s duration refreshes individually.
+      </div>
+    </div>
+
+    <div class="team">
+      <h5>Team:</h5>
+      <div class="avatars">
+        <div class="avatar" style="border-left: 4px solid #8B4513">
+          <span class="rarity A">A</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Physical</span>
+          <span class="id">(ID: 1281)</span>
+        </div>
+        <div class="avatar" style="border-left: 4px solid #FF4500">
+          <span class="rarity S">S</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Fire</span>
+          <span class="id">(ID: 1171)</span>
+        </div>
+        <div class="avatar" style="border-left: 4px solid #FF4500">
+          <span class="rarity A">A</span>
+          <span class="level">Lv.60</span>
+          <span class="element">Fire</span>
+          <span class="id">(ID: 1151)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="buddy">
+      <h5>Buddy:</h5>
+      <div class="avatar" style="border-left: 4px solid #8B4513">
+        <span class="rarity S">S</span>
+        <span class="level">Lv.60</span>
+        <span class="id">(ID: 54006)</span>
+      </div>
+    </div>
+  </div>
+</div> 
+            <div class="section">
+  <h2>🛡️ Shiyu Defense Report</h2>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <h3>Season</h3>
+      <div class="summary-value">Jul 18, 2025, 05:00 AM - Aug 1, 2025, 04:59 AM</div>
+    </div>
+    <div class="summary-item">
+      <h3>Max Layer</h3>
+      <div class="summary-value">7</div>
+    </div>
+    <div class="summary-item">
+      <h3>Fast Layer Time</h3>
+      <div class="summary-value">2:18</div>
+    </div>
+    <div class="summary-item">
+      <h3>Battle Time (4-7)</h3>
+      <div class="summary-value">11:46</div>
+    </div>
+  </div>
+
+  <h3>Floor Details</h3>
+  <div class="floor-detail">
+    <h4>Layer 7 (Rating: S)</h4>
+
+    <div class="buffs">
+      <h5>Buffs:</h5>
+      <div class="buff">
+        <strong>Peculiar Bloom:</strong> · Agent CRIT DMG increases by 20%, Anomaly Proficiency increases by 40 points. · After an Agent with Support specialty uses their EX Special Attack or Aftershock, the whole squad&#x27;s ATK increases by 20% and their Attribute Anomaly DMG increases by 30% for 15s. Repeated triggers reset the duration.
+      </div>
+    </div>
+
+    <div class="nodes">
+      <div class="node">
+        <h5>🥇 First Half (1:17)</h5>
+        <div class="avatars">
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Physical</span>
+            <span class="id">(ID: 1261)</span>
+          </div>
+          <div class="avatar" style="border-left: 4px solid #9370DB">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Ether</span>
+            <span class="id">(ID: 1331)</span>
+          </div>
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Physical</span>
+            <span class="id">(ID: 1411)</span>
+          </div>
+        </div>
+        <div class="buddy">
+          <strong>Buddy:</strong>
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="id">(ID: 54016)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="node">
+        <h5>🥈 Second Half (1:27)</h5>
+        <div class="avatars">
+          <div class="avatar" style="border-left: 4px solid #00BFFF">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Ice</span>
+            <span class="id">(ID: 1091)</span>
+          </div>
+          <div class="avatar" style="border-left: 4px solid #9370DB">
+            <span class="rarity A">A</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Ether</span>
+            <span class="id">(ID: 1031)</span>
+          </div>
+          <div class="avatar" style="border-left: 4px solid #9370DB">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Ether</span>
+            <span class="id">(ID: 1311)</span>
+          </div>
+        </div>
+        <div class="buddy">
+          <strong>Buddy:</strong>
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="id">(ID: 54015)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="floor-detail">
+    <h4>Layer 6 (Rating: S)</h4>
+
+    <div class="buffs">
+      <h5>Buffs:</h5>
+      <div class="buff">
+        <strong>Peculiar Bloom:</strong> · Agent CRIT DMG increases by 20%, Anomaly Proficiency increases by 40 points. · After an Agent with Support specialty uses their EX Special Attack or Aftershock, the whole squad&#x27;s ATK increases by 20% and their Attribute Anomaly DMG increases by 30% for 15s. Repeated triggers reset the duration.
+      </div>
+    </div>
+
+    <div class="nodes">
+      <div class="node">
+        <h5>🥇 First Half (1:15)</h5>
+        <div class="avatars">
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Physical</span>
+            <span class="id">(ID: 1261)</span>
+          </div>
+          <div class="avatar" style="border-left: 4px solid #9370DB">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Ether</span>
+            <span class="id">(ID: 1331)</span>
+          </div>
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Physical</span>
+            <span class="id">(ID: 1411)</span>
+          </div>
+        </div>
+        <div class="buddy">
+          <strong>Buddy:</strong>
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="id">(ID: 54016)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="node">
+        <h5>🥈 Second Half (2:07)</h5>
+        <div class="avatars">
+          <div class="avatar" style="border-left: 4px solid #00BFFF">
+            <span class="rarity A">A</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Ice</span>
+            <span class="id">(ID: 1131)</span>
+          </div>
+          <div class="avatar" style="border-left: 4px solid #00BFFF">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Ice</span>
+            <span class="id">(ID: 1141)</span>
+          </div>
+          <div class="avatar" style="border-left: 4px solid #9370DB">
+            <span class="rarity A">A</span>
+            <span class="level">Lv.60</span>
+            <span class="element">Ether</span>
+            <span class="id">(ID: 1031)</span>
+          </div>
+        </div>
+        <div class="buddy">
+          <strong>Buddy:</strong>
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity S">S</span>
+            <span class="level">Lv.60</span>
+            <span class="id">(ID: 54001)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+        </div>
+    </div>
+</body>
+</html> 

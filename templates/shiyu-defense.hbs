@@ -1,0 +1,99 @@
+<div class="section">
+  <h2>🛡️ Shiyu Defense Report</h2>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <h3>Season</h3>
+      <div class="summary-value">{{season}}</div>
+    </div>
+    <div class="summary-item">
+      <h3>Max Layer</h3>
+      <div class="summary-value">{{maxLayer}}</div>
+    </div>
+    <div class="summary-item">
+      <h3>Fast Layer Time</h3>
+      <div class="summary-value">{{fastLayerTime}}</div>
+    </div>
+    <div class="summary-item">
+      <h3>Battle Time (4-7)</h3>
+      <div class="summary-value">{{battleTime47}}</div>
+    </div>
+  </div>
+
+  {{#if floorDetails}}
+  <h3>Floor Details</h3>
+  {{#each floorDetails}}
+  <div class="floor-detail">
+    <h4>Layer {{layerIndex}} (Rating: {{rating}})</h4>
+
+    {{#if buffs}}
+    <div class="buffs">
+      <h5>Buffs:</h5>
+      {{#each buffs}}
+      <div class="buff">
+        <strong>{{title}}:</strong> {{text}}
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    <div class="nodes">
+      {{#if node1}}
+      <div class="node">
+        <h5>🥇 First Half ({{node1.battleTime}})</h5>
+        {{#if node1.avatars}}
+        <div class="avatars">
+          {{#each node1.avatars}}
+          <div class="avatar" style="border-left: 4px solid {{elementColor}}">
+            <span class="rarity {{rarity}}">{{rarity}}</span>
+            <span class="level">Lv.{{level}}</span>
+            <span class="element">{{elementName}}</span>
+            <span class="id">(ID: {{id}})</span>
+          </div>
+          {{/each}}
+        </div>
+        {{/if}}
+        {{#if node1.buddy}}
+        <div class="buddy">
+          <strong>Buddy:</strong>
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity {{node1.buddy.rarity}}">{{node1.buddy.rarity}}</span>
+            <span class="level">Lv.{{node1.buddy.level}}</span>
+            <span class="id">(ID: {{node1.buddy.id}})</span>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+      {{/if}}
+
+      {{#if node2}}
+      <div class="node">
+        <h5>🥈 Second Half ({{node2.battleTime}})</h5>
+        {{#if node2.avatars}}
+        <div class="avatars">
+          {{#each node2.avatars}}
+          <div class="avatar" style="border-left: 4px solid {{elementColor}}">
+            <span class="rarity {{rarity}}">{{rarity}}</span>
+            <span class="level">Lv.{{level}}</span>
+            <span class="element">{{elementName}}</span>
+            <span class="id">(ID: {{id}})</span>
+          </div>
+          {{/each}}
+        </div>
+        {{/if}}
+        {{#if node2.buddy}}
+        <div class="buddy">
+          <strong>Buddy:</strong>
+          <div class="avatar" style="border-left: 4px solid #8B4513">
+            <span class="rarity {{node2.buddy.rarity}}">{{node2.buddy.rarity}}</span>
+            <span class="level">Lv.{{node2.buddy.level}}</span>
+            <span class="id">(ID: {{node2.buddy.id}})</span>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/each}}
+  {{/if}}
+</div> 
