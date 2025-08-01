@@ -5,9 +5,29 @@ const fs = require("fs");
 const Handlebars = require("handlebars");
 const path = require("path");
 
-const cookieString = process.env.COOKIE_STRING; // e.g., 'ltuid_v2=...; ltoken_v2=...; ...'
+// Load all cookies from environment variables
+const cookies = {
+  mi18nLang: process.env.MI18NLANG,
+  _HYVUUID: process.env._HYVUUID,
+  _MHYUUID: process.env._MHYUUID,
+  cookie_token_v2: process.env.COOKIE_TOKEN_V2,
+  account_mid_v2: process.env.ACCOUNT_MID_V2,
+  account_id_v2: process.env.ACCOUNT_ID_V2,
+  ltoken_v2: process.env.LTOKEN_V2,
+  ltmid_v2: process.env.LTMID_V2,
+  ltuid_v2: process.env.LTUID_V2,
+  DEVICEFP: process.env.DEVICEFP,
+  // Fallback to v1 if v2 not present
+  ltuid: process.env.LTUID,
+  ltoken: process.env.LTOKEN,
+  cookie_token: process.env.COOKIE_TOKEN,
+  account_id: process.env.ACCOUNT_ID,
+  account_mid: process.env.ACCOUNT_MID,
+  ltmid: process.env.LTMID,
+};
+
 const uid = process.env.UID;
-const api = new ZZZApi({ cookieString, uid });
+const api = new ZZZApi({ cookies, uid });
 
 // Element type mapping for ZZZ
 const ELEMENT_TYPES = {
@@ -469,6 +489,109 @@ async function showShiyuDefenseSummary() {
   }
 }
 
+// Helper function to get current month and week
+function getCurrentMonthWeek() {
+  const now = new Date();
+  const month = now.getMonth() + 1; // getMonth() returns 0-11
+  const year = now.getFullYear();
+
+  // Calculate week of the month (1-5)
+  const firstDay = new Date(year, month - 1, 1);
+  const dayOfWeek = firstDay.getDay();
+  const date = now.getDate();
+  const week = Math.ceil((date + dayOfWeek) / 7);
+
+  return { month, week };
+}
+
+// Export Deadly Assault summary as JSON
+async function exportDeadlyAssaultJSON() {
+  try {
+    const data = await api.getMemoryDetail({ uid });
+    const structuredData = prepareDeadlyAssaultData(data);
+
+    // Add metadata
+    const exportData = {
+      ...structuredData,
+      metadata: {
+        exportDate: new Date().toISOString(),
+        uid: uid,
+        type: "deadly_assault",
+      },
+    };
+
+    const { month, week } = getCurrentMonthWeek();
+    const folderPath = "deadlyAssault";
+    const fileName = `${month}_week${week}.json`;
+
+    // Create folder if it doesn't exist
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath, { recursive: true });
+    }
+
+    const filePath = path.join(folderPath, fileName);
+    fs.writeFileSync(filePath, JSON.stringify(exportData, null, 2));
+    console.log(`📁 Deadly Assault JSON exported: ${filePath}`);
+
+    return filePath;
+  } catch (err) {
+    console.error("Error exporting Deadly Assault JSON:", err.message);
+    throw err;
+  }
+}
+
+// Export Shiyu Defense summary as JSON
+async function exportShiyuDefenseJSON() {
+  try {
+    const data = await api.getChallenge({ uid });
+    const structuredData = prepareShiyuDefenseData(data);
+
+    // Add metadata
+    const exportData = {
+      ...structuredData,
+      metadata: {
+        exportDate: new Date().toISOString(),
+        uid: uid,
+        type: "shiyu_defense",
+      },
+    };
+
+    const { month, week } = getCurrentMonthWeek();
+    const folderPath = "shiyu";
+    const fileName = `${month}_week${week}.json`;
+
+    // Create folder if it doesn't exist
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath, { recursive: true });
+    }
+
+    const filePath = path.join(folderPath, fileName);
+    fs.writeFileSync(filePath, JSON.stringify(exportData, null, 2));
+    console.log(`📁 Shiyu Defense JSON exported: ${filePath}`);
+
+    return filePath;
+  } catch (err) {
+    console.error("Error exporting Shiyu Defense JSON:", err.message);
+    throw err;
+  }
+}
+
+// Export both summaries as JSON
+async function exportAllJSON() {
+  try {
+    console.log("🔄 Exporting both summaries as JSON...");
+    const [deadlyPath, shiyuPath] = await Promise.all([
+      exportDeadlyAssaultJSON(),
+      exportShiyuDefenseJSON(),
+    ]);
+    console.log("✅ All exports completed successfully!");
+    return { deadlyPath, shiyuPath };
+  } catch (err) {
+    console.error("Error exporting JSON files:", err.message);
+    throw err;
+  }
+}
+
 async function mainMenu() {
   while (true) {
     const { action } = await inquirer.prompt([
@@ -489,6 +612,9 @@ async function mainMenu() {
           },
           { name: "Generate HTML report", value: "html" },
           { name: "Generate text report", value: "text" },
+          { name: "Export Deadly Assault as JSON", value: "export_deadly" },
+          { name: "Export Shiyu Defense as JSON", value: "export_shiyu" },
+          { name: "Export both as JSON", value: "export_all" },
           { name: "Exit", value: "exit" },
         ],
       },
@@ -499,11 +625,67 @@ async function mainMenu() {
     else if (action === "shiyu_summary") await showShiyuDefenseSummary();
     else if (action === "html") await generateHTMLReport();
     else if (action === "text") await generateTextReport();
+    else if (action === "export_deadly") await exportDeadlyAssaultJSON();
+    else if (action === "export_shiyu") await exportShiyuDefenseJSON();
+    else if (action === "export_all") await exportAllJSON();
     else if (action === "exit") break;
     console.log("\n---\n");
   }
 }
 
+// Command-line argument support for automated execution
+async function handleCommandLineArgs() {
+  const args = process.argv.slice(2);
+
+  if (args.length === 0) {
+    // No arguments, run interactive menu
+    await mainMenu();
+    return;
+  }
+
+  const command = args[0];
+
+  try {
+    switch (command) {
+      case "export-deadly":
+        await exportDeadlyAssaultJSON();
+        break;
+      case "export-shiyu":
+        await exportShiyuDefenseJSON();
+        break;
+      case "export-all":
+        await exportAllJSON();
+        break;
+      case "deadly-summary":
+        await showDeadlyAssaultSummary();
+        break;
+      case "shiyu-summary":
+        await showShiyuDefenseSummary();
+        break;
+      case "html":
+        await generateHTMLReport();
+        break;
+      case "text":
+        await generateTextReport();
+        break;
+      default:
+        console.log("Available commands:");
+        console.log("  export-deadly    - Export Deadly Assault as JSON");
+        console.log("  export-shiyu     - Export Shiyu Defense as JSON");
+        console.log("  export-all       - Export both as JSON");
+        console.log("  deadly-summary   - Show Deadly Assault summary");
+        console.log("  shiyu-summary    - Show Shiyu Defense summary");
+        console.log("  html             - Generate HTML report");
+        console.log("  text             - Generate text report");
+        console.log("  (no args)        - Run interactive menu");
+        break;
+    }
+  } catch (error) {
+    console.error("Error executing command:", error.message);
+    process.exit(1);
+  }
+}
+
 if (require.main === module) {
-  mainMenu();
+  handleCommandLineArgs();
 }

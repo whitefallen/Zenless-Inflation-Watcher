@@ -1,0 +1,157 @@
+{
+  "season": "Jul 18, 2025, 05:00 AM - Aug 1, 2025, 04:59 AM",
+  "maxLayer": 7,
+  "fastLayerTime": "2:18",
+  "battleTime47": "11:46",
+  "floorDetails": [
+    {
+      "layerIndex": 7,
+      "rating": "S",
+      "buffs": [
+        {
+          "title": "Peculiar Bloom",
+          "text": "· Agent CRIT DMG increases by 20%, Anomaly Proficiency increases by 40 points. · After an Agent with Support specialty uses their EX Special Attack or Aftershock, the whole squad's ATK increases by 20% and their Attribute Anomaly DMG increases by 30% for 15s. Repeated triggers reset the duration."
+        }
+      ],
+      "node1": {
+        "battleTime": "1:17",
+        "avatars": [
+          {
+            "id": 1261,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Physical",
+            "elementColor": "#8B4513"
+          },
+          {
+            "id": 1331,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Ether",
+            "elementColor": "#9370DB"
+          },
+          {
+            "id": 1411,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Physical",
+            "elementColor": "#8B4513"
+          }
+        ],
+        "buddy": {
+          "id": 54016,
+          "rarity": "S",
+          "level": 60
+        }
+      },
+      "node2": {
+        "battleTime": "1:27",
+        "avatars": [
+          {
+            "id": 1091,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Ice",
+            "elementColor": "#00BFFF"
+          },
+          {
+            "id": 1031,
+            "rarity": "A",
+            "level": 60,
+            "elementName": "Ether",
+            "elementColor": "#9370DB"
+          },
+          {
+            "id": 1311,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Ether",
+            "elementColor": "#9370DB"
+          }
+        ],
+        "buddy": {
+          "id": 54015,
+          "rarity": "S",
+          "level": 60
+        }
+      }
+    },
+    {
+      "layerIndex": 6,
+      "rating": "S",
+      "buffs": [
+        {
+          "title": "Peculiar Bloom",
+          "text": "· Agent CRIT DMG increases by 20%, Anomaly Proficiency increases by 40 points. · After an Agent with Support specialty uses their EX Special Attack or Aftershock, the whole squad's ATK increases by 20% and their Attribute Anomaly DMG increases by 30% for 15s. Repeated triggers reset the duration."
+        }
+      ],
+      "node1": {
+        "battleTime": "1:15",
+        "avatars": [
+          {
+            "id": 1261,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Physical",
+            "elementColor": "#8B4513"
+          },
+          {
+            "id": 1331,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Ether",
+            "elementColor": "#9370DB"
+          },
+          {
+            "id": 1411,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Physical",
+            "elementColor": "#8B4513"
+          }
+        ],
+        "buddy": {
+          "id": 54016,
+          "rarity": "S",
+          "level": 60
+        }
+      },
+      "node2": {
+        "battleTime": "2:07",
+        "avatars": [
+          {
+            "id": 1131,
+            "rarity": "A",
+            "level": 60,
+            "elementName": "Ice",
+            "elementColor": "#00BFFF"
+          },
+          {
+            "id": 1141,
+            "rarity": "S",
+            "level": 60,
+            "elementName": "Ice",
+            "elementColor": "#00BFFF"
+          },
+          {
+            "id": 1031,
+            "rarity": "A",
+            "level": 60,
+            "elementName": "Ether",
+            "elementColor": "#9370DB"
+          }
+        ],
+        "buddy": {
+          "id": 54001,
+          "rarity": "S",
+          "level": 60
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "exportDate": "2025-07-31T19:41:28.846Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense"
+  }
+}
