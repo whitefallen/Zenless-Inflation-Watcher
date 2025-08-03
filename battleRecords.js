@@ -1,33 +1,41 @@
 const inquirer = require("inquirer").default;
 require("dotenv").config();
 const ZZZApi = require("./zzzApi");
+const AuthHelper = require("./authHelper");
 const fs = require("fs");
 const Handlebars = require("handlebars");
 const path = require("path");
 
-// Load all cookies from environment variables
-const cookies = {
-  mi18nLang: process.env.MI18NLANG,
-  _HYVUUID: process.env._HYVUUID,
-  _MHYUUID: process.env._MHYUUID,
-  cookie_token_v2: process.env.COOKIE_TOKEN_V2,
-  account_mid_v2: process.env.ACCOUNT_MID_V2,
-  account_id_v2: process.env.ACCOUNT_ID_V2,
-  ltoken_v2: process.env.LTOKEN_V2,
-  ltmid_v2: process.env.LTMID_V2,
-  ltuid_v2: process.env.LTUID_V2,
-  DEVICEFP: process.env.DEVICEFP,
-  // Fallback to v1 if v2 not present
-  ltuid: process.env.LTUID,
-  ltoken: process.env.LTOKEN,
-  cookie_token: process.env.COOKIE_TOKEN,
-  account_id: process.env.ACCOUNT_ID,
-  account_mid: process.env.ACCOUNT_MID,
-  ltmid: process.env.LTMID,
-};
+// Initialize authentication helper
+const authHelper = new AuthHelper();
+let api = null;
+let uid = process.env.UID;
 
-const uid = process.env.UID;
-const api = new ZZZApi({ cookies, uid });
+// Initialize API with authentication
+async function initializeApi() {
+  if (!uid) {
+    console.log(
+      "⚠️  No UID found in environment. Please set UID in .env file."
+    );
+    return false;
+  }
+
+  try {
+    // Check if authentication is needed
+    const needsAuth = await authHelper.refreshAuthIfNeeded(uid);
+    if (needsAuth) {
+      api = authHelper.createApiInstance(uid);
+      return true;
+    } else {
+      // Even if auth refresh wasn't needed, create API instance
+      api = authHelper.createApiInstance(uid);
+      return true;
+    }
+  } catch (error) {
+    console.error("❌ Failed to initialize API:", error.message);
+    return false;
+  }
+}
 
 // Element type mapping for ZZZ
 const ELEMENT_TYPES = {
@@ -687,5 +695,15 @@ async function handleCommandLineArgs() {
 }
 
 if (require.main === module) {
-  handleCommandLineArgs();
+  // Initialize API before running any commands
+  initializeApi().then((success) => {
+    if (success) {
+      handleCommandLineArgs();
+    } else {
+      console.error(
+        "❌ Failed to initialize API. Please check your authentication."
+      );
+      process.exit(1);
+    }
+  });
 }

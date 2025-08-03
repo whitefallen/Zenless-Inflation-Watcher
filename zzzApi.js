@@ -34,6 +34,13 @@ class ZZZApi {
       "ltmid_v2",
       "ltuid_v2",
       "DEVICEFP",
+      // Additional cookies from HAR file
+      "HYV_LOGIN_PLATFORM_OPTIONAL_AGREEMENT",
+      "HYV_LOGIN_PLATFORM_LOAD_TIMEOUT",
+      "HYV_LOGIN_PLATFORM_TRACKING_MAP",
+      "HYV_LOGIN_PLATFORM_LIFECYCLE_ID",
+      "DEVICEFP_SEED_ID",
+      "DEVICEFP_SEED_TIME",
       // fallback to v1 if v2 not present
       "ltuid",
       "ltoken",
@@ -63,6 +70,7 @@ class ZZZApi {
       "Sec-Fetch-Mode": "navigate",
       "Sec-Fetch-Site": "none",
       "Sec-Fetch-User": "?1",
+      Priority: "u=0, i",
       Pragma: "no-cache",
       "Cache-Control": "no-cache",
     };

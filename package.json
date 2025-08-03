@@ -4,7 +4,10 @@
   "description": "",
   "main": "generate_analysis_pdf.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "auth": "node auth.js",
+    "fetch": "node automatedFetch.js",
+    "fetch:manual": "node automatedFetch.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +16,7 @@
     "handlebars": "^4.7.8",
     "inquirer": "^12.9.0",
     "node-fetch": "^3.3.2",
-    "pdfkit": "^0.17.1"
+    "pdfkit": "^0.17.1",
+    "puppeteer": "^21.11.0"
   }
 }

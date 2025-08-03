@@ -1,0 +1,91 @@
+name: Automated ZZZ Data Fetch
+
+on:
+  schedule:
+    # Run every Thursday at 8 PM UTC
+    - cron: '0 20 * * 4'
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches: [ main ]
+    paths:
+      - 'automatedFetch.js'
+      - 'authHelper.js'
+      - 'discordNotifier.js'
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Create .env file
+      run: |
+        echo "UID=${{ secrets.UID }}" >> .env
+        echo "HOYOLAB_EMAIL=${{ secrets.HOYOLAB_EMAIL }}" >> .env
+        echo "HOYOLAB_PASSWORD=${{ secrets.HOYOLAB_PASSWORD }}" >> .env
+        echo "DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK_URL }}" >> .env
+        
+        # Add existing cookies if available
+        if [ -n "${{ secrets.COOKIE_TOKEN_V2 }}" ]; then
+          echo "COOKIE_TOKEN_V2=${{ secrets.COOKIE_TOKEN_V2 }}" >> .env
+        fi
+        if [ -n "${{ secrets.LTOKEN_V2 }}" ]; then
+          echo "LTOKEN_V2=${{ secrets.LTOKEN_V2 }}" >> .env
+        fi
+        if [ -n "${{ secrets.LTUID_V2 }}" ]; then
+          echo "LTUID_V2=${{ secrets.LTUID_V2 }}" >> .env
+        fi
+        if [ -n "${{ secrets.ACCOUNT_ID_V2 }}" ]; then
+          echo "ACCOUNT_ID_V2=${{ secrets.ACCOUNT_ID_V2 }}" >> .env
+        fi
+        if [ -n "${{ secrets.ACCOUNT_MID_V2 }}" ]; then
+          echo "ACCOUNT_MID_V2=${{ secrets.ACCOUNT_MID_V2 }}" >> .env
+        fi
+        if [ -n "${{ secrets.LTMID_V2 }}" ]; then
+          echo "LTMID_V2=${{ secrets.LTMID_V2 }}" >> .env
+        fi
+        if [ -n "${{ secrets._HYVUUID }}" ]; then
+          echo "_HYVUUID=${{ secrets._HYVUUID }}" >> .env
+        fi
+        if [ -n "${{ secrets._MHYUUID }}" ]; then
+          echo "_MHYUUID=${{ secrets._MHYUUID }}" >> .env
+        fi
+        if [ -n "${{ secrets.DEVICEFP }}" ]; then
+          echo "DEVICEFP=${{ secrets.DEVICEFP }}" >> .env
+        fi
+        if [ -n "${{ secrets.MI18NLANG }}" ]; then
+          echo "MI18NLANG=${{ secrets.MI18NLANG }}" >> .env
+        fi
+        
+    - name: Run automated fetch
+      run: node automatedFetch.js
+      env:
+        NODE_ENV: production
+        
+    - name: Upload data artifacts
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: zzz-battle-data
+        path: data/
+        retention-days: 30
+        
+    - name: Commit data files
+      if: success()
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/
+        git commit -m "Update battle data - $(date)" || echo "No changes to commit"
+        git push || echo "Push failed (expected if no changes)" 
