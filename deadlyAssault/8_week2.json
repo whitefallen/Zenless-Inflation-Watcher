@@ -1,235 +1,134 @@
 {
-  "retcode": 0,
-  "message": "OK",
-  "data": {
-    "start_time": {
-      "year": 2025,
-      "month": 7,
-      "day": 25,
-      "hour": 4,
-      "minute": 0,
-      "second": 0
-    },
-    "end_time": {
-      "year": 2025,
-      "month": 8,
-      "day": 8,
-      "hour": 3,
-      "minute": 59,
-      "second": 59
-    },
-    "rank_percent": 287,
-    "list": [
-      {
-        "score": 38524,
-        "star": 3,
-        "total_star": 3,
-        "challenge_time": {
-          "year": 2025,
-          "month": 8,
-          "day": 2,
-          "hour": 14,
-          "minute": 6,
-          "second": 48
-        },
-        "boss": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/1c3e482d6d43f13d1137399e02308ae6.png",
-            "name": "Miasma Priest",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/9135bffad70c9bf5f0c3bed14b68451b.png",
-            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
-          }
-        ],
-        "buffer": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/64d2571110605759b349d55f3b8ca648.png",
-            "desc": "· Agent Max HP <color=#2BAD00>increases by 30%</color>, Ultimate DMG <color=#2BAD00>increases by 40%</color>.\\n· After using an Ultimate, Energy and Adrenaline Generation Rate <color=#2BAD00>increase by 15%</color>, <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increase by 40%</color> for 20s.",
-            "name": "Meditation"
-          }
-        ],
-        "avatar_list": [
-          {
-            "id": 1371,
-            "level": 60,
-            "element_type": 205,
-            "avatar_profession": 6,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
-            "sub_element_type": 2
-          },
-          {
-            "id": 1031,
-            "level": 60,
-            "element_type": 205,
-            "avatar_profession": 4,
-            "rarity": "A",
-            "rank": 6,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031.png",
-            "sub_element_type": 0
-          },
-          {
-            "id": 1311,
-            "level": 60,
-            "element_type": 205,
-            "avatar_profession": 4,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
-            "sub_element_type": 0
-          }
-        ],
-        "buddy": {
-          "id": 54009,
+  "season": "Invalid Date - Invalid Date",
+  "player": "Whitefallen",
+  "totalScore": "112.686",
+  "totalStars": 9,
+  "rankPercent": 286,
+  "bossClears": [
+    {
+      "bossName": "Miasma Priest",
+      "score": "38.524",
+      "stars": "3/3",
+      "time": "2025-08-02 14:06:48",
+      "buffs": [
+        {
+          "name": "Meditation",
+          "description": "· Agent Max HP increases by 30%, Ultimate DMG increases by 40%. · After using an Ultimate, Energy and Adrenaline Generation Rate increase by 15%, Ether DMG and Ice DMG increase by 40% for 20s."
+        }
+      ],
+      "team": [
+        {
+          "id": 1371,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/0e2e8fd9c0c28229a2282b3dc07ecd79.png"
-        }
-      },
-      {
-        "score": 37481,
-        "star": 3,
-        "total_star": 3,
-        "challenge_time": {
-          "year": 2025,
-          "month": 8,
-          "day": 2,
-          "hour": 13,
-          "minute": 25,
-          "second": 30
+          "elementName": "Ether",
+          "elementColor": "#9370DB"
         },
-        "boss": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/21d6a882ebd6570028f868517a80071a.png",
-            "name": "Miasmic Fiend - Unfathomable",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/0ab527b2d8f3694fe283d0e92834ba19.png",
-            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
-          }
-        ],
-        "buffer": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/5502269a754e65f32cc16c2ad4836fe2.png",
-            "desc": "· Agent DMG <color=#2BAD00>increases by 20%</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by an additional 20%</color>.\\n· After inflicting an Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00>decreases by 10%</color> for 10s. After inflicting Disorder on an enemy, the enemy's DEF <color=#2BAD00>further decreases by 25%</color> for 10s. Each effect's duration refreshes individually.",
-            "name": "Artful"
-          }
-        ],
-        "avatar_list": [
-          {
-            "id": 1281,
-            "level": 60,
-            "element_type": 200,
-            "avatar_profession": 3,
-            "rarity": "A",
-            "rank": 6,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
-            "sub_element_type": 0
-          },
-          {
-            "id": 1331,
-            "level": 60,
-            "element_type": 205,
-            "avatar_profession": 3,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331.png",
-            "sub_element_type": 0
-          },
-          {
-            "id": 1411,
-            "level": 60,
-            "element_type": 200,
-            "avatar_profession": 4,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
-            "sub_element_type": 0
-          }
-        ],
-        "buddy": {
-          "id": 54016,
+        {
+          "id": 1031,
+          "rarity": "A",
+          "level": 60,
+          "elementName": "Ether",
+          "elementColor": "#9370DB"
+        },
+        {
+          "id": 1311,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/a9e9171cb80c0d134e5866377ec878ee.png"
+          "elementName": "Ether",
+          "elementColor": "#9370DB"
         }
-      },
-      {
-        "score": 36681,
-        "star": 3,
-        "total_star": 3,
-        "challenge_time": {
-          "year": 2025,
-          "month": 8,
-          "day": 3,
-          "hour": 19,
-          "minute": 20,
-          "second": 58
-        },
-        "boss": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/e198c50fd3ba8c09c2e185d402924840.png",
-            "name": "Notorious - Pompey",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/0ab527b2d8f3694fe283d0e92834ba19.png",
-            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
-          }
-        ],
-        "buffer": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/5502269a754e65f32cc16c2ad4836fe2.png",
-            "desc": "· Agent DMG <color=#2BAD00>increases by 20%</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by an additional 20%</color>.\\n· After inflicting an Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00>decreases by 10%</color> for 10s. After inflicting Disorder on an enemy, the enemy's DEF <color=#2BAD00>further decreases by 25%</color> for 10s. Each effect's duration refreshes individually.",
-            "name": "Artful"
-          }
-        ],
-        "avatar_list": [
-          {
-            "id": 1091,
-            "level": 60,
-            "element_type": 202,
-            "avatar_profession": 3,
-            "rarity": "S",
-            "rank": 2,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
-            "sub_element_type": 1
-          },
-          {
-            "id": 1171,
-            "level": 60,
-            "element_type": 201,
-            "avatar_profession": 3,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
-            "sub_element_type": 0
-          },
-          {
-            "id": 1151,
-            "level": 60,
-            "element_type": 201,
-            "avatar_profession": 4,
-            "rarity": "A",
-            "rank": 6,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
-            "sub_element_type": 0
-          }
-        ],
-        "buddy": {
-          "id": 54006,
-          "rarity": "S",
-          "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/e99c63a021ac37cef7dc1f16a274e282.png"
-        }
+      ],
+      "buddy": {
+        "id": 54009,
+        "rarity": "S",
+        "level": 60
       }
-    ],
-    "has_data": true,
-    "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/a65ae9f5eba9abc648470dab35f580dc.png",
-    "total_score": 112686,
-    "total_star": 9,
-    "zone_id": 69016
-  },
+    },
+    {
+      "bossName": "Miasmic Fiend - Unfathomable",
+      "score": "37.481",
+      "stars": "3/3",
+      "time": "2025-08-02 13:25:30",
+      "buffs": [
+        {
+          "name": "Artful",
+          "description": "· Agent DMG increases by 20% and Physical DMG increases by an additional 20%. · After inflicting an Attribute Anomaly on an enemy, the enemy's DEF decreases by 10% for 10s. After inflicting Disorder on an enemy, the enemy's DEF further decreases by 25% for 10s. Each effect's duration refreshes individually."
+        }
+      ],
+      "team": [
+        {
+          "id": 1281,
+          "rarity": "A",
+          "level": 60,
+          "elementName": "Physical",
+          "elementColor": "#8B4513"
+        },
+        {
+          "id": 1331,
+          "rarity": "S",
+          "level": 60,
+          "elementName": "Ether",
+          "elementColor": "#9370DB"
+        },
+        {
+          "id": 1411,
+          "rarity": "S",
+          "level": 60,
+          "elementName": "Physical",
+          "elementColor": "#8B4513"
+        }
+      ],
+      "buddy": {
+        "id": 54016,
+        "rarity": "S",
+        "level": 60
+      }
+    },
+    {
+      "bossName": "Notorious - Pompey",
+      "score": "36.681",
+      "stars": "3/3",
+      "time": "2025-08-03 19:20:58",
+      "buffs": [
+        {
+          "name": "Artful",
+          "description": "· Agent DMG increases by 20% and Physical DMG increases by an additional 20%. · After inflicting an Attribute Anomaly on an enemy, the enemy's DEF decreases by 10% for 10s. After inflicting Disorder on an enemy, the enemy's DEF further decreases by 25% for 10s. Each effect's duration refreshes individually."
+        }
+      ],
+      "team": [
+        {
+          "id": 1091,
+          "rarity": "S",
+          "level": 60,
+          "elementName": "Ice",
+          "elementColor": "#00BFFF"
+        },
+        {
+          "id": 1171,
+          "rarity": "S",
+          "level": 60,
+          "elementName": "Fire",
+          "elementColor": "#FF4500"
+        },
+        {
+          "id": 1151,
+          "rarity": "A",
+          "level": 60,
+          "elementName": "Fire",
+          "elementColor": "#FF4500"
+        }
+      ],
+      "buddy": {
+        "id": 54006,
+        "rarity": "S",
+        "level": 60
+      }
+    }
+  ],
   "metadata": {
-    "exportDate": "2025-08-03T21:12:48.837Z",
+    "exportDate": "2025-08-04T20:55:16.065Z",
     "uid": "1500598195",
-    "type": "deadly_assault",
-    "automated": true
+    "type": "deadly_assault"
   }
 }

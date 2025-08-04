@@ -1,5 +1,7 @@
-const inquirer = require("inquirer").default;
 require("dotenv").config();
+const DiscordNotifier = require("./discordNotifier");
+const discord = new DiscordNotifier(process.env.DISCORD_WEBHOOK_URL);
+const inquirer = require("inquirer").default;
 const ZZZApi = require("./zzzApi");
 const AuthHelper = require("./authHelper");
 const fs = require("fs");
@@ -541,9 +543,15 @@ async function exportDeadlyAssaultJSON() {
     fs.writeFileSync(filePath, JSON.stringify(exportData, null, 2));
     console.log(`📁 Deadly Assault JSON exported: ${filePath}`);
 
+    // Discord notification
+    await discord.sendMessage(`📁 Deadly Assault JSON exported: ${filePath}`);
+
     return filePath;
   } catch (err) {
     console.error("Error exporting Deadly Assault JSON:", err.message);
+    await discord.sendMessage(
+      `❌ Error exporting Deadly Assault JSON: ${err.message}`
+    );
     throw err;
   }
 }
@@ -577,9 +585,15 @@ async function exportShiyuDefenseJSON() {
     fs.writeFileSync(filePath, JSON.stringify(exportData, null, 2));
     console.log(`📁 Shiyu Defense JSON exported: ${filePath}`);
 
+    // Discord notification
+    await discord.sendMessage(`📁 Shiyu Defense JSON exported: ${filePath}`);
+
     return filePath;
   } catch (err) {
     console.error("Error exporting Shiyu Defense JSON:", err.message);
+    await discord.sendMessage(
+      `❌ Error exporting Shiyu Defense JSON: ${err.message}`
+    );
     throw err;
   }
 }
@@ -593,9 +607,15 @@ async function exportAllJSON() {
       exportShiyuDefenseJSON(),
     ]);
     console.log("✅ All exports completed successfully!");
+    await discord.sendMessage(
+      "✅ Both Deadly Assault and Shiyu Defense JSON exports completed successfully!"
+    );
     return { deadlyPath, shiyuPath };
   } catch (err) {
     console.error("Error exporting JSON files:", err.message);
+    await discord.sendMessage(
+      `❌ Error exporting both JSON files: ${err.message}`
+    );
     throw err;
   }
 }

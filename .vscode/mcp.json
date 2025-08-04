@@ -1,1 +1,0 @@
-{"servers":{"MCP_DOCKER":{"command":"docker","args":["run","-l","mcp.client=vscode","--rm","-i","alpine/socat","STDIO","TCP:host.docker.internal:8811"],"type":"stdio"}}}

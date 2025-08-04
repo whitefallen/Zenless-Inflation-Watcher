@@ -1,3 +1,5 @@
+const DiscordNotifier = require("./discordNotifier");
+this.discord = new DiscordNotifier(process.env.DISCORD_WEBHOOK_URL);
 require("dotenv").config();
 const puppeteer = require("puppeteer");
 const fs = require("fs");
@@ -543,6 +545,11 @@ class HoyolabAuth {
         throw new Error("Login failed");
       }
 
+      // Send Discord notification for successful login
+      await this.discord.sendMessage(
+        `✅ Automated login successful for UID: ${process.env.UID || "unknown"}`
+      );
+
       const cookies = await this.extractCookies();
 
       if (Object.keys(cookies).length === 0) {
@@ -556,18 +563,8 @@ class HoyolabAuth {
         `\n🎉 Successfully extracted ${Object.keys(cookies).length} cookies!`
       );
 
-      const { saveToFile } = await inquirer.prompt([
-        {
-          type: "confirm",
-          name: "saveToFile",
-          message: "Save cookies to .env file?",
-          default: true,
-        },
-      ]);
-
-      if (saveToFile) {
-        await this.saveToEnv(cookies);
-      }
+      // Automatically save cookies to .env file without prompting
+      await this.saveToEnv(cookies);
 
       console.log("\n📋 Extracted cookies:");
       for (const [key, value] of Object.entries(cookies)) {
