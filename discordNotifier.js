@@ -84,7 +84,7 @@ class DiscordNotifier {
       fields.push({
         name: "Shiyu Defense",
         value: data.shiyu
-          ? `✅ ${data.shiyu.data?.list?.length || 0} records`
+          ? `✅ ${data.shiyu.data?.all_floor_detail?.length || 0} records`
           : "❌ No data",
         inline: true,
       });

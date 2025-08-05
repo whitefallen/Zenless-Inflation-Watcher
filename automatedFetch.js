@@ -158,7 +158,9 @@ class AutomatedFetcher {
         console.log("📊 Fetching Shiyu Defense data...");
         data.shiyu = await api.getChallenge({ uid });
         console.log(
-          `✅ Shiyu Defense: ${data.shiyu?.data?.list?.length || 0} records`
+          `✅ Shiyu Defense: ${
+            data.shiyu?.data?.all_floor_detail?.length || 0
+          } records`
         );
       } catch (error) {
         console.error("❌ Shiyu Defense fetch failed:", error.message);
