@@ -2,9 +2,8 @@ name: Automated ZZZ Data Fetch
 
 on:
   schedule:
-    # Run every Thursday at 8 PM UTC
     - cron: "0 20 * * 4"
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
@@ -29,13 +28,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Puppeteer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ca-certificates fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 \
+            libatk1.0-0 libcups2 libdbus-1-3 libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 \
+            libx11-xcb1 libxcomposite1 libxdamage1 libxrandr2 xdg-utils
+
       - name: Create .env file
         run: |
           echo "UID=${{ secrets.UID }}" >> .env
           echo "HOYOLAB_EMAIL=${{ secrets.HOYOLAB_EMAIL }}" >> .env
           echo "HOYOLAB_PASSWORD=${{ secrets.HOYOLAB_PASSWORD }}" >> .env
           echo "DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK_URL }}" >> .env
-
           # Add existing cookies if available
           if [ -n "${{ secrets.COOKIE_TOKEN_V2 }}" ]; then
             echo "COOKIE_TOKEN_V2=${{ secrets.COOKIE_TOKEN_V2 }}" >> .env
