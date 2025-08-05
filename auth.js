@@ -1,5 +1,4 @@
 const DiscordNotifier = require("./discordNotifier");
-this.discord = new DiscordNotifier(process.env.DISCORD_WEBHOOK_URL);
 require("dotenv").config();
 const puppeteer = require("puppeteer");
 const fs = require("fs");
@@ -11,12 +10,13 @@ class HoyolabAuth {
     this.browser = null;
     this.page = null;
     this.cookies = {};
+    this.discord = new DiscordNotifier(process.env.DISCORD_WEBHOOK_URL);
   }
 
   async init() {
     console.log("🚀 Starting browser...");
     this.browser = await puppeteer.launch({
-      headless: false, // Set to true for production
+      headless: "new", // Always run headless for local and CI
       defaultViewport: null,
       args: [
         "--no-sandbox",
