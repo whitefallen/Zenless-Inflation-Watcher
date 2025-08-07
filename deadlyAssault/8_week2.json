@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 285,
+    "rank_percent": 291,
     "list": [
       {
         "score": 38524,
@@ -34,15 +34,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/1c3e482d6d43f13d1137399e02308ae6.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/9a1515e66387b36f6a488149901551b5.png",
             "name": "Miasma Priest",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/9135bffad70c9bf5f0c3bed14b68451b.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/3d0ab41f50a3861c8e6de71002b4ca48.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/64d2571110605759b349d55f3b8ca648.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/0c1dd35172f2594ab5315315dde48253.png",
             "desc": "· Agent Max HP <color=#2BAD00>increases by 30%</color>, Ultimate DMG <color=#2BAD00>increases by 40%</color>.\\n· After using an Ultimate, Energy and Adrenaline Generation Rate <color=#2BAD00>increase by 15%</color>, <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increase by 40%</color> for 20s.",
             "name": "Meditation"
           }
@@ -83,7 +83,7 @@
           "id": 54009,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/0e2e8fd9c0c28229a2282b3dc07ecd79.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/86aa1128108ebdd92ab32f2f0e184928.png"
         }
       },
       {
@@ -100,15 +100,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/21d6a882ebd6570028f868517a80071a.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/b10b2e1cb21352cd817f84caff3a7268.png",
             "name": "Miasmic Fiend - Unfathomable",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/0ab527b2d8f3694fe283d0e92834ba19.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/c3d3f729bbf445afdee40ff07482b6d1.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/5502269a754e65f32cc16c2ad4836fe2.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/202510eaa232c2377276631d229ce86e.png",
             "desc": "· Agent DMG <color=#2BAD00>increases by 20%</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by an additional 20%</color>.\\n· After inflicting an Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00>decreases by 10%</color> for 10s. After inflicting Disorder on an enemy, the enemy's DEF <color=#2BAD00>further decreases by 25%</color> for 10s. Each effect's duration refreshes individually.",
             "name": "Artful"
           }
@@ -149,7 +149,7 @@
           "id": 54016,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/a9e9171cb80c0d134e5866377ec878ee.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/4695e3a02f51cad97561deb847dde418.png"
         }
       },
       {
@@ -166,15 +166,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/e198c50fd3ba8c09c2e185d402924840.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/3feedbed42b5dfcebfeccad5eb94aad6.png",
             "name": "Notorious - Pompey",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/0ab527b2d8f3694fe283d0e92834ba19.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/c3d3f729bbf445afdee40ff07482b6d1.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/5502269a754e65f32cc16c2ad4836fe2.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/202510eaa232c2377276631d229ce86e.png",
             "desc": "· Agent DMG <color=#2BAD00>increases by 20%</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by an additional 20%</color>.\\n· After inflicting an Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00>decreases by 10%</color> for 10s. After inflicting Disorder on an enemy, the enemy's DEF <color=#2BAD00>further decreases by 25%</color> for 10s. Each effect's duration refreshes individually.",
             "name": "Artful"
           }
@@ -215,19 +215,19 @@
           "id": 54006,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/e99c63a021ac37cef7dc1f16a274e282.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/b493f838403f64d6e75c88aed0260de7.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ud1fhc/a65ae9f5eba9abc648470dab35f580dc.png",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/1ef09a518c9f183d5001004b98aa3eea.png",
     "total_score": 112686,
     "total_star": 9,
     "zone_id": 69016
   },
   "metadata": {
-    "exportDate": "2025-08-05T09:35:16.427Z",
+    "exportDate": "2025-08-07T20:37:09.430Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
