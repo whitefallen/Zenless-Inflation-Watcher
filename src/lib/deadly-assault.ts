@@ -1,10 +1,10 @@
 import { readFile, readdir } from 'fs/promises';
 import path from 'path';
-import { ShiyuDefenseData } from '@/types/shiyu-defense';
+import { DeadlyAssaultData } from '@/types/deadly-assault';
 
-const DATA_DIR = path.join(process.cwd(), '..', 'shiyu');
+const DATA_DIR = path.join(process.cwd(), 'deadlyAssault');
 
-export async function getLatestShiyuDefenseData(): Promise<ShiyuDefenseData | null> {
+export async function getLatestDeadlyAssaultData(): Promise<DeadlyAssaultData | null> {
   try {
     // Get list of files in the directory
     const files = await readdir(DATA_DIR);
@@ -21,25 +21,25 @@ export async function getLatestShiyuDefenseData(): Promise<ShiyuDefenseData | nu
     const filePath = path.join(DATA_DIR, latestFile);
     const fileContent = await readFile(filePath, 'utf-8');
     
-    return JSON.parse(fileContent) as ShiyuDefenseData;
+    return JSON.parse(fileContent) as DeadlyAssaultData;
   } catch (error) {
-    console.error('Error reading shiyu defense data:', error);
+    console.error('Error reading deadly assault data:', error);
     return null;
   }
 }
 
-export async function getAllShiyuDefenseData(): Promise<ShiyuDefenseData[]> {
+export async function getAllDeadlyAssaultData(): Promise<DeadlyAssaultData[]> {
   try {
     const files = await readdir(DATA_DIR);
     const dataPromises = files.map(async (file) => {
       const filePath = path.join(DATA_DIR, file);
       const fileContent = await readFile(filePath, 'utf-8');
-      return JSON.parse(fileContent) as ShiyuDefenseData;
+      return JSON.parse(fileContent) as DeadlyAssaultData;
     });
 
     return await Promise.all(dataPromises);
   } catch (error) {
-    console.error('Error reading all shiyu defense data:', error);
+    console.error('Error reading all deadly assault data:', error);
     return [];
   }
 }

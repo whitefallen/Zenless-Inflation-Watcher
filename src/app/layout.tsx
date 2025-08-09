@@ -35,7 +35,7 @@ export default function RootLayout({
         <div className="relative flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">
-            <div className="container mx-auto py-12 px-4 text-center">
+            <div className="container mx-auto py-12 px-4">
               {children}
             </div>
           </main>
