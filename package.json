@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "generate_analysis_pdf.js",
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "auth": "node auth.js",
-    "fetch": "node automatedFetch.js",
-    "fetch:manual": "node automatedFetch.js"
+    "auth": "node auth.js"
   },
   "author": "",
   "license": "ISC",
