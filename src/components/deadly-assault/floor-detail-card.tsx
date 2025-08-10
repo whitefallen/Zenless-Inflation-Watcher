@@ -3,8 +3,12 @@
 import { Avatar } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+
 import { cleanBuffText } from "@/lib/format-utils"
 import { DeadlyAssaultRun } from "@/types/deadly-assault"
+import { TeamComposition } from "@/components/deadly-assault/team-composition"
+import { BossesList } from "@/components/deadly-assault/bosses-list"
+import { BuffsList } from "@/components/deadly-assault/buffs-list"
 import Image from "next/image"
 
 interface FloorDetailsProps {
@@ -44,87 +48,9 @@ export function FloorDetailCard({ floor }: FloorDetailsProps) {
           </div>
         </div>
 
-        {/* Team Composition */}
-        <div>
-          <h4 className="font-medium mb-2">Team Composition</h4>
-          <div className="flex flex-wrap gap-4">
-            {floor.avatar_list.map((avatar) => (
-              <div key={avatar.id} className="flex items-center space-x-2">
-                <Avatar>
-                  <Image 
-                    src={avatar.role_square_url} 
-                    alt={`Character ${avatar.id}`}
-                    width={40}
-                    height={40}
-                    unoptimized
-                  />
-                </Avatar>
-                <div>
-                  <p className="text-sm font-medium">ID: {avatar.id}</p>
-                  <p className="text-xs text-muted-foreground">Lv.{avatar.level} • {avatar.rarity}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          {floor.buddy && (
-            <div className="mt-2">
-              <p className="text-sm text-muted-foreground">Buddy</p>
-              <div className="flex items-center space-x-2 mt-1">
-                <Avatar>
-                  <Image 
-                    src={floor.buddy.bangboo_rectangle_url} 
-                    alt={`Buddy ${floor.buddy.id}`}
-                    width={40}
-                    height={40}
-                    unoptimized
-                  />
-                </Avatar>
-                <div>
-                  <p className="text-sm font-medium">ID: {floor.buddy.id}</p>
-                  <p className="text-xs text-muted-foreground">Lv.{floor.buddy.level} • {floor.buddy.rarity}</p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Enemies */}
-        <div>
-          <h4 className="font-medium mb-2">Bosses</h4>
-          <div className="flex flex-wrap gap-4">
-            {floor.boss.map((boss, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                <Avatar>
-                  <Image 
-                    src={boss.icon} 
-                    alt={boss.name}
-                    width={40}
-                    height={40}
-                    unoptimized
-                  />
-                </Avatar>
-                <div>
-                  <p className="text-sm font-medium">{boss.name}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Buffs */}
-        {floor.buffer.length > 0 && (
-          <div>
-            <h4 className="font-medium mb-2">Buffs</h4>
-            <div className="space-y-2">
-              {floor.buffer.map((buff, index) => (
-                <div key={index} className="text-sm">
-                  <p className="font-medium">{buff.name}</p>
-                  <p className="text-muted-foreground whitespace-pre-line">{cleanBuffText(buff.desc)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        <TeamComposition floor={floor} />
+        <BossesList floor={floor} />
+        <BuffsList floor={floor} />
       </div>
     </div>
   )

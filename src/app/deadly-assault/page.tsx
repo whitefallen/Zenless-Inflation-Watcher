@@ -6,6 +6,9 @@ import { getLatestDeadlyAssaultData, getAllDeadlyAssaultData } from "@/lib/deadl
 import { Accordion } from "@/components/ui/accordion"
 import { percentile } from "@/lib/utils"
 import type { TimeStamp, DeadlyAssaultData, DeadlyAssaultRun } from "@/types/deadly-assault"
+import { RunDetails } from "@/components/deadly-assault/run-details"
+import { TeamsAggregationTable } from "@/components/deadly-assault/teams-aggregation-table"
+import { BossesAggregationTable } from "@/components/deadly-assault/bosses-aggregation-table"
 
 
 function formatDateRangeFromTimeObjects(start?: TimeStamp, end?: TimeStamp) {
@@ -36,47 +39,7 @@ function aggregateStats(allData: DeadlyAssaultData[]) {
   };
 }
 
-function runDetails(run: DeadlyAssaultRun) {
-  return (
-    <div className="space-y-2">
-      <div className="flex items-center gap-2"><b>Total Score:</b> <span role="img" aria-label="score">🏆</span> {run.score}</div>
-      <div className="flex items-center gap-2"><b>Stars:</b> <span role="img" aria-label="stars">⭐</span> {run.star} / {run.total_star}</div>
-      <div className="flex items-center gap-2">
-        <b>Bosses:</b> <span role="img" aria-label="boss">👹</span>
-        {run.boss.map((b, i) => (
-          <span key={i} className="inline-flex items-center gap-1 mr-2">
-            {b.icon && <img src={b.icon} alt={b.name} className="w-5 h-5 inline-block rounded" />}
-            {b.name}
-          </span>
-        ))}
-      </div>
-      <div className="flex items-center gap-2">
-        <b>Teams:</b> <span role="img" aria-label="team">👥</span>
-        {run.avatar_list.map((a, i) => (
-          <span key={i} className="inline-flex items-center gap-1 mr-1">
-            {a.role_square_url && <img src={a.role_square_url} alt={`Avatar #${a.id}`} className="w-5 h-5 rounded-full border inline-block" />}
-          </span>
-        ))}
-      </div>
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <b>Buffs:</b> <span role="img" aria-label="buff">🧃</span>
-        </div>
-        {run.buffer.map((b, i) => (
-          <div key={i} className="flex items-center gap-2 pr-2">
-            {b.icon && <img src={b.icon} alt={b.name} className="w-5 h-5 rounded inline-block" />}
-            <span className="font-semibold">{b.name}</span>
-          </div>
-        ))}
-        {run.buffer.map((b, i) => (
-          <div key={i + '-desc'} className="pr-8 text-xs text-muted-foreground">
-            <span dangerouslySetInnerHTML={{ __html: b.desc }} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+
 
 export default async function DeadlyAssaultPage() {
   const [latestData, allData] = await Promise.all([
@@ -132,7 +95,7 @@ export default async function DeadlyAssaultPage() {
           <div className="space-y-2">
             {d?.data?.list?.map((run, i) => (
               <div key={i} className="border rounded p-2 bg-muted/30">
-                {runDetails(run)}
+                <RunDetails run={run} />
               </div>
             ))}
           </div>
@@ -230,105 +193,7 @@ export default async function DeadlyAssaultPage() {
   )
 }
 
-function TeamsAggregationTable({ allData }: { allData: DeadlyAssaultData[] }) {
-  // Map: teamKey (sorted avatar ids) => { avatars, count, scores[] }
-  const teamMap = new Map<string, { avatars: any[]; count: number; scores: number[] }>();
-  for (const d of allData) {
-    for (const run of d?.data?.list || []) {
-      const team = run.avatar_list || [];
-      const teamKey = team.map(a => a.id).sort((a, b) => a - b).join('-');
-      if (!teamMap.has(teamKey)) {
-        teamMap.set(teamKey, { avatars: team, count: 0, scores: [] });
-      }
-      const entry = teamMap.get(teamKey)!;
-      entry.count += 1;
-      entry.scores.push(run.score);
-    }
-  }
-  const teams = Array.from(teamMap.values()).sort((a, b) => b.count - a.count);
-  return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full border rounded">
-        <thead>
-          <tr className="bg-muted/50">
-            <th className="px-4 py-2 text-left">Team</th>
-            <th className="px-4 py-2 text-left">Times Used</th>
-            <th className="px-4 py-2 text-left">Highest Score</th>
-            <th className="px-4 py-2 text-left">Average Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          {teams.map((team, idx) => (
-            <tr key={idx} className="border-b">
-              <td className="px-4 py-2">
-                <div className="flex gap-1">
-                  {team.avatars.map((a, i) => (
-                    <img key={i} src={a.role_square_url} alt={`Avatar #${a.id}`} className="w-7 h-7 rounded-full border inline-block" />
-                  ))}
-                </div>
-              </td>
-              <td className="px-4 py-2">{team.count}</td>
-              <td className="px-4 py-2 font-semibold">{Math.max(...team.scores)}</td>
-              <td className="px-4 py-2">{(team.scores.reduce((a, b) => a + b, 0) / team.scores.length).toFixed(2)}</td>
-            </tr>
-          ))}
-          {teams.length === 0 && (
-            <tr><td colSpan={4} className="text-center py-4 text-muted-foreground">No team data available</td></tr>
-          )}
-        </tbody>
-      </table>
-    </div>
-  );
-}
 
-// --- Bosses Aggregation Table ---
-function BossesAggregationTable({ allData }: { allData: DeadlyAssaultData[] }) {
-  // Map: bossName => { icon, name, count, scores[] }
-  const bossMap = new Map<string, { icon: string; name: string; count: number; scores: number[] }>();
-  for (const d of allData) {
-    for (const run of d?.data?.list || []) {
-      for (const boss of run.boss || []) {
-        if (!bossMap.has(boss.name)) {
-          bossMap.set(boss.name, { icon: boss.icon, name: boss.name, count: 0, scores: [] });
-        }
-        const entry = bossMap.get(boss.name)!;
-        entry.count += 1;
-        entry.scores.push(run.score);
-      }
-    }
-  }
-  const bosses = Array.from(bossMap.values()).sort((a, b) => b.count - a.count);
-  return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full border rounded">
-        <thead>
-          <tr className="bg-muted/50">
-            <th className="px-4 py-2 text-left">Boss</th>
-            <th className="px-4 py-2 text-left">Times Fought</th>
-            <th className="px-4 py-2 text-left">Highest Score</th>
-            <th className="px-4 py-2 text-left">Average Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bosses.map((boss, idx) => (
-            <tr key={idx} className="border-b">
-              <td className="px-4 py-2">
-                <div className="flex items-center gap-2">
-                  {boss.icon && <img src={boss.icon} alt={boss.name} className="w-7 h-7 rounded inline-block" />}
-                  <span>{boss.name}</span>
-                </div>
-              </td>
-              <td className="px-4 py-2">{boss.count}</td>
-              <td className="px-4 py-2 font-semibold">{Math.max(...boss.scores)}</td>
-              <td className="px-4 py-2">{(boss.scores.reduce((a, b) => a + b, 0) / boss.scores.length).toFixed(2)}</td>
-            </tr>
-          ))}
-          {bosses.length === 0 && (
-            <tr><td colSpan={4} className="text-center py-4 text-muted-foreground">No boss data available</td></tr>
-          )}
-        </tbody>
-      </table>
-    </div>
-  );
-}
+
+
  
