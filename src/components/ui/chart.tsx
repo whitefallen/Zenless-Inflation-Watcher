@@ -4,8 +4,8 @@ import React from "react";
 
 interface ChartProps {
   type: "line" | "bar" | "pie" | "heatmap" | "scatter";
-  data: any;
-  options?: any;
+  data: unknown;
+  options?: unknown;
   height?: number;
 }
 

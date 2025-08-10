@@ -2,14 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getAllShiyuDefenseData } from "@/lib/shiyu-defense"
 // import Image from "next/image"
-import type { ShiyuDefenseData, ShiyuDefenseFile } from "@/types/shiyu-defense"
+import type { ShiyuDefenseData } from "@/types/shiyu-defense"
 import { Accordion } from "@/components/ui/accordion"
 
 
 export default async function ShiyuDefensePage() {
   const allData = await getAllShiyuDefenseData();
   // Aggregation helpers
-  function aggregateStats(allData: ShiyuDefenseFile[]) {
+  function aggregateStats(allData: ShiyuDefenseData[]) {
     const maxLayers = allData.map((d) => d?.data?.max_layer || 0);
     const fastTimes = allData.map((d) => d?.data?.fast_layer_time || 0).filter(Boolean);
     const ratings = allData.flatMap((d) => d?.data?.rating_list?.map((r) => r.rating) || []);
@@ -94,7 +94,7 @@ export default async function ShiyuDefensePage() {
   });
 
   // Teams aggregation
-  function TeamsAggregationTable({ allData }: { allData: ShiyuDefenseFile[] }) {
+  function TeamsAggregationTable({ allData }: { allData: ShiyuDefenseData[] }) {
     const teamMap = new Map();
     for (const d of allData) {
       for (const floor of d?.data?.all_floor_detail || []) {
@@ -125,14 +125,14 @@ export default async function ShiyuDefensePage() {
               <tr key={idx} className="border-b">
                 <td className="px-4 py-2">
                   <div className="flex gap-1">
-                    {team.avatars.map((a, i) => (
-                      <img key={i} src={a.role_square_url} alt={`Avatar #${a.id}`} width={28} height={28} className="w-7 h-7 rounded-full border inline-block" loading="lazy" />
-                    ))}
+            {team.avatars.map((a: { role_square_url: string; id: number }, i: number) => (
+              <img key={i} src={a.role_square_url} alt={`Avatar #${a.id}`} width={28} height={28} className="w-7 h-7 rounded-full border inline-block" loading="lazy" />
+            ))}
                   </div>
                 </td>
                 <td className="px-4 py-2">{team.count}</td>
                 <td className="px-4 py-2 font-semibold">{Math.max(...team.layers)}</td>
-                <td className="px-4 py-2">{(team.layers.reduce((a, b) => a + b, 0) / team.layers.length).toFixed(2)}</td>
+                <td className="px-4 py-2">{(team.layers.reduce((a: number, b: number) => a + b, 0) / team.layers.length).toFixed(2)}</td>
               </tr>
             ))}
             {teams.length === 0 && (
@@ -145,7 +145,7 @@ export default async function ShiyuDefensePage() {
   }
 
   // Floors aggregation
-  function FloorsAggregationTable({ allData }: { allData: ShiyuDefenseFile[] }) {
+  function FloorsAggregationTable({ allData }: { allData: ShiyuDefenseData[] }) {
     const floorMap = new Map();
     for (const d of allData) {
       for (const floor of d?.data?.all_floor_detail || []) {
@@ -179,7 +179,7 @@ export default async function ShiyuDefensePage() {
                 <td className="px-4 py-2">{floor.count}</td>
                 <td className="px-4 py-2 font-semibold">{floor.ratings.sort().reverse()[0]}</td>
                 <td className="px-4 py-2">{Math.min(...floor.times)}s</td>
-                <td className="px-4 py-2">{(floor.times.reduce((a, b) => a + b, 0) / floor.times.length).toFixed(2)}s</td>
+                <td className="px-4 py-2">{(floor.times.reduce((a: number, b: number) => a + b, 0) / floor.times.length).toFixed(2)}s</td>
               </tr>
             ))}
             {floors.length === 0 && (
