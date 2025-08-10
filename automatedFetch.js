@@ -34,6 +34,93 @@ class AutomatedFetcher {
     };
   }
 
+  // --- helpers to normalize dates and filenames ---
+  static toYMD(date) {
+    const d = new Date(date);
+    const y = d.getUTCFullYear();
+    const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(d.getUTCDate()).padStart(2, "0");
+    return `${y}-${m}-${day}`;
+  }
+
+  static timestampObjectToDateString(ts) {
+    if (!ts || typeof ts !== "object") return null;
+    const d = new Date(Date.UTC(ts.year, (ts.month || 1) - 1, ts.day || 1));
+    return AutomatedFetcher.toYMD(d);
+  }
+
+  static parsePossiblyEpochString(v) {
+    if (!v) return null;
+    // If it's a purely numeric string, treat as seconds since epoch
+    if (typeof v === "string" && /^\d+$/.test(v)) {
+      const ms = Number(v) * 1000;
+      return AutomatedFetcher.toYMD(ms);
+    }
+    // Otherwise try Date constructor
+    try {
+      return AutomatedFetcher.toYMD(new Date(v));
+    } catch {
+      return null;
+    }
+  }
+
+  static getSeasonWindow(mode, payload) {
+    if (!payload || !payload.data) return { start: null, end: null };
+    if (mode === "deadly") {
+      const start = AutomatedFetcher.timestampObjectToDateString(
+        payload.data.start_time
+      );
+      const end = AutomatedFetcher.timestampObjectToDateString(
+        payload.data.end_time
+      );
+      return { start, end };
+    }
+    // shiyu
+    // Prefer hadal_* if present (object timestamps), else begin_time/end_time strings
+    const start =
+      AutomatedFetcher.timestampObjectToDateString(
+        payload.data.hadal_begin_time
+      ) || AutomatedFetcher.parsePossiblyEpochString(payload.data.begin_time);
+    const end =
+      AutomatedFetcher.timestampObjectToDateString(
+        payload.data.hadal_end_time
+      ) || AutomatedFetcher.parsePossiblyEpochString(payload.data.end_time);
+    return { start, end };
+  }
+
+  static buildFileName(mode, start, end) {
+    const modeName = mode === "deadly" ? "deadly-assault" : "shiyu-defense";
+    const startSafe = start || "unknown-start";
+    const endSafe = end || "unknown-end";
+    return `${modeName}-${startSafe}-${endSafe}.json`;
+  }
+
+  static stableStringify(value) {
+    const seen = new WeakSet();
+    const sorter = (obj) => {
+      if (obj === null || typeof obj !== "object") return obj;
+      if (seen.has(obj)) return obj;
+      seen.add(obj);
+      if (Array.isArray(obj)) return obj.map(sorter);
+      return Object.keys(obj)
+        .sort()
+        .reduce((acc, key) => {
+          acc[key] = sorter(obj[key]);
+          return acc;
+        }, {});
+    };
+    return JSON.stringify(sorter(value));
+  }
+
+  static normalizeForComparison(obj) {
+    if (!obj || typeof obj !== "object") return obj;
+    const clone = JSON.parse(JSON.stringify(obj));
+    if (clone.metadata && typeof clone.metadata === "object") {
+      delete clone.metadata.exportDate;
+    }
+    return clone;
+  }
+
   // Always fetch both modes - scores only update when there's a new high score
   shouldFetchMode(mode) {
     const schedule = this.resetSchedules[mode];
@@ -188,9 +275,8 @@ class AutomatedFetcher {
     return { month, week };
   }
 
-  // Save data to files using battleRecords.js pattern
+  // Save data to files using Mode-StartDate-EndDate naming
   async saveData(data, uid) {
-    const { month, week } = this.getCurrentMonthWeek();
     const timestamp = new Date().toISOString();
 
     // Save Deadly Assault data
@@ -199,8 +285,11 @@ class AutomatedFetcher {
       if (!fs.existsSync(deadlyFolder)) {
         fs.mkdirSync(deadlyFolder, { recursive: true });
       }
-
-      const deadlyFile = path.join(deadlyFolder, `${month}_week${week}.json`);
+      const { start, end } = AutomatedFetcher.getSeasonWindow("deadly", data.deadly);
+      const deadlyFile = path.join(
+        deadlyFolder,
+        AutomatedFetcher.buildFileName("deadly", start, end)
+      );
       const deadlyData = {
         ...data.deadly,
         metadata: {
@@ -210,8 +299,26 @@ class AutomatedFetcher {
           automated: true,
         },
       };
-      fs.writeFileSync(deadlyFile, JSON.stringify(deadlyData, null, 2));
-      console.log(`💾 Saved Deadly Assault data to: ${deadlyFile}`);
+      let shouldWrite = true;
+      if (fs.existsSync(deadlyFile)) {
+        try {
+          const existing = JSON.parse(fs.readFileSync(deadlyFile, "utf-8"));
+          const a = AutomatedFetcher.stableStringify(
+            AutomatedFetcher.normalizeForComparison(existing)
+          );
+          const b = AutomatedFetcher.stableStringify(
+            AutomatedFetcher.normalizeForComparison(deadlyData)
+          );
+          if (a === b) {
+            shouldWrite = false;
+            console.log(`⏭️  No changes for Deadly Assault period ${deadlyFile}. Skipping write.`);
+          }
+        } catch {}
+      }
+      if (shouldWrite) {
+        fs.writeFileSync(deadlyFile, JSON.stringify(deadlyData, null, 2));
+        console.log(`💾 Saved Deadly Assault data to: ${deadlyFile}`);
+      }
     }
 
     // Save Shiyu Defense data
@@ -220,8 +327,11 @@ class AutomatedFetcher {
       if (!fs.existsSync(shiyuFolder)) {
         fs.mkdirSync(shiyuFolder, { recursive: true });
       }
-
-      const shiyuFile = path.join(shiyuFolder, `${month}_week${week}.json`);
+      const { start, end } = AutomatedFetcher.getSeasonWindow("shiyu", data.shiyu);
+      const shiyuFile = path.join(
+        shiyuFolder,
+        AutomatedFetcher.buildFileName("shiyu", start, end)
+      );
       const shiyuData = {
         ...data.shiyu,
         metadata: {
@@ -231,8 +341,26 @@ class AutomatedFetcher {
           automated: true,
         },
       };
-      fs.writeFileSync(shiyuFile, JSON.stringify(shiyuData, null, 2));
-      console.log(`💾 Saved Shiyu Defense data to: ${shiyuFile}`);
+      let shouldWrite = true;
+      if (fs.existsSync(shiyuFile)) {
+        try {
+          const existing = JSON.parse(fs.readFileSync(shiyuFile, "utf-8"));
+          const a = AutomatedFetcher.stableStringify(
+            AutomatedFetcher.normalizeForComparison(existing)
+          );
+          const b = AutomatedFetcher.stableStringify(
+            AutomatedFetcher.normalizeForComparison(shiyuData)
+          );
+          if (a === b) {
+            shouldWrite = false;
+            console.log(`⏭️  No changes for Shiyu Defense period ${shiyuFile}. Skipping write.`);
+          }
+        } catch {}
+      }
+      if (shouldWrite) {
+        fs.writeFileSync(shiyuFile, JSON.stringify(shiyuData, null, 2));
+        console.log(`💾 Saved Shiyu Defense data to: ${shiyuFile}`);
+      }
     }
 
     // Also save to data/ directory for backward compatibility

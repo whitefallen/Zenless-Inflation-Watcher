@@ -102,6 +102,57 @@ function formatSeasonWindow(obj) {
   return `${formatDate(start)} - ${formatDate(end)}`;
 }
 
+// --- helpers to build filenames like Mode-YYYY-MM-DD-YYYY-MM-DD.json ---
+function toYMD(date) {
+  const d = new Date(date);
+  const y = d.getUTCFullYear();
+  const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(d.getUTCDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+function timestampObjectToDateString(ts) {
+  if (!ts || typeof ts !== "object") return null;
+  const d = new Date(Date.UTC(ts.year, (ts.month || 1) - 1, ts.day || 1));
+  return toYMD(d);
+}
+
+function parsePossiblyEpochString(v) {
+  if (!v) return null;
+  if (typeof v === "string" && /^\d+$/.test(v)) {
+    const ms = Number(v) * 1000;
+    return toYMD(ms);
+  }
+  try {
+    return toYMD(new Date(v));
+  } catch {
+    return null;
+  }
+}
+
+function getSeasonWindow(mode, payload) {
+  if (!payload || !payload.data) return { start: null, end: null };
+  if (mode === "deadly") {
+    const start = timestampObjectToDateString(payload.data.start_time);
+    const end = timestampObjectToDateString(payload.data.end_time);
+    return { start, end };
+  }
+  const start =
+    timestampObjectToDateString(payload.data.hadal_begin_time) ||
+    parsePossiblyEpochString(payload.data.begin_time);
+  const end =
+    timestampObjectToDateString(payload.data.hadal_end_time) ||
+    parsePossiblyEpochString(payload.data.end_time);
+  return { start, end };
+}
+
+function buildFileName(mode, start, end) {
+  const modeName = mode === "deadly" ? "deadly-assault" : "shiyu-defense";
+  const startSafe = start || "unknown-start";
+  const endSafe = end || "unknown-end";
+  return `${modeName}-${startSafe}-${endSafe}.json`;
+}
+
 function printDeadlyAssaultSummary(data) {
   if (!data || !data.data) return console.log("No Deadly Assault data.");
   const d = data.data;
@@ -530,9 +581,9 @@ async function exportDeadlyAssaultJSON() {
       },
     };
 
-    const { month, week } = getCurrentMonthWeek();
-    const folderPath = "deadlyAssault";
-    const fileName = `${month}_week${week}.json`;
+  const folderPath = "deadlyAssault";
+  const { start, end } = getSeasonWindow("deadly", data);
+  const fileName = buildFileName("deadly", start, end);
 
     // Create folder if it doesn't exist
     if (!fs.existsSync(folderPath)) {
@@ -572,9 +623,9 @@ async function exportShiyuDefenseJSON() {
       },
     };
 
-    const { month, week } = getCurrentMonthWeek();
-    const folderPath = "shiyu";
-    const fileName = `${month}_week${week}.json`;
+  const folderPath = "shiyu";
+  const { start, end } = getSeasonWindow("shiyu", data);
+  const fileName = buildFileName("shiyu", start, end);
 
     // Create folder if it doesn't exist
     if (!fs.existsSync(folderPath)) {
