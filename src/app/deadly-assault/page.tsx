@@ -8,7 +8,21 @@ import { percentile } from "@/lib/utils"
 import type { TimeStamp, DeadlyAssaultData, DeadlyAssaultRun } from "@/types/deadly-assault"
 import { RunDetails } from "@/components/deadly-assault/run-details"
 import { TeamsAggregationTable } from "@/components/deadly-assault/teams-aggregation-table"
+import { BossDifficultyTable } from "@/components/deadly-assault/boss-difficulty-table"
+import { ClearTimeTable } from "@/components/deadly-assault/clear-time-table"
+import { PeriodComparison } from "@/components/deadly-assault/period-comparison"
+import { PersonalBests } from "@/components/deadly-assault/personal-bests"
+import { TimeOfDayAnalysis } from "@/components/deadly-assault/time-of-day-analysis"
+import { Heatmap } from "@/components/deadly-assault/heatmap"
+import { CorrelationAnalysis } from "@/components/deadly-assault/correlation-analysis"
+import { Recommendations } from "@/components/deadly-assault/recommendations"
+import { FilteringControls } from "@/components/deadly-assault/filtering-controls"
+
 import { BossesAggregationTable } from "@/components/deadly-assault/bosses-aggregation-table"
+import { ScoreProgressionChart } from "@/components/deadly-assault/score-progression-chart"
+import { BestWorstRuns } from "@/components/deadly-assault/best-worst-runs"
+// import { CharacterUsageTable } from "@/components/deadly-assault/character-usage-table"
+import { CharacterPerformanceTable } from "@/components/deadly-assault/character-performance-table"
 
 
 function formatDateRangeFromTimeObjects(start?: TimeStamp, end?: TimeStamp) {
@@ -127,55 +141,24 @@ export default async function DeadlyAssaultPage() {
           </div>
 
         <TabsContent value="overview" className="mt-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-6">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-muted/30">
-                <CardTitle className="text-base font-semibold text-purple-600">Highest Total Score</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.highestScore || 'N/A'}</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Average Total Score</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.avgScore ? stats.avgScore.toFixed(2) : 'N/A'}</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Highest Star Count</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.highestStar || 'N/A'}</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Average Star Count</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.avgStar ? stats.avgStar.toFixed(2) : 'N/A'}</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Highest Rank Percentage</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.highestRankPercent ? percentile(stats.highestRankPercent) : 'N/A'}</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Average Rank Percentage</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stats.avgRankPercent ? percentile(stats.avgRankPercent) : 'N/A'}</div>
-              </CardContent>
-            </Card>
+          <div className="space-y-8 px-6">
+            {/* Export/Share controls removed as requested */}
+            <FilteringControls allData={allData || []} onFilter={() => {}} />
+            <ScoreProgressionChart allData={allData || []} />
+            <BestWorstRuns allData={allData || []} />
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold mb-2">Most Used Teams</h3>
+              <TeamsAggregationTable allData={allData || []} />
+            </div>
+            <CharacterPerformanceTable allData={allData || []} />
+            <BossDifficultyTable allData={allData || []} />
+            <ClearTimeTable allData={allData || []} />
+            <PeriodComparison allData={allData || []} />
+            <PersonalBests allData={allData || []} />
+            <TimeOfDayAnalysis allData={allData || []} />
+            <Heatmap allData={allData || []} />
+            <CorrelationAnalysis allData={allData || []} />
+            <Recommendations allData={allData || []} />
           </div>
         </TabsContent>
         <TabsContent value="history" className="mt-6">
