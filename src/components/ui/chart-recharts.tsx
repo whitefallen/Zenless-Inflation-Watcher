@@ -17,10 +17,30 @@ import {
   Legend
 } from "recharts";
 
+
+type LineOption = {
+  dataKey: string;
+  stroke?: string;
+  name?: string;
+};
+
+type ChartType = "line" | "bar" | "pie" | "scatter";
+
+interface ChartOptions {
+  xKey?: string;
+  yKey?: string;
+  valueKey?: string;
+  nameKey?: string;
+  lines?: LineOption[];
+  xLabel?: string;
+  yLabel?: string;
+  [key: string]: unknown;
+}
+
 interface ChartProps {
-  type: "line" | "bar" | "pie" | "scatter";
-  data: any[];
-  options?: any;
+  type: ChartType;
+  data: object[];
+  options?: ChartOptions;
   height?: number;
 }
 
@@ -39,7 +59,7 @@ export function Chart({ type, data, options, height = 300 }: ChartProps) {
             <Tooltip />
             <Legend />
             {Array.isArray(options?.lines)
-              ? options.lines.map((line: any, idx: number) => (
+              ? (options.lines as LineOption[]).map((line, idx) => (
                   <Line
                     key={line.dataKey || idx}
                     type="monotone"
