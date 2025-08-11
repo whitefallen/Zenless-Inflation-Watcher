@@ -22,6 +22,7 @@ type LineOption = {
   dataKey: string;
   stroke?: string;
   name?: string;
+  yAxisId?: string;
 };
 
 type ChartType = "line" | "bar" | "pie" | "scatter";
@@ -56,6 +57,7 @@ export function Chart({ type, data, options, height = 300 }: ChartProps) {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey={options?.xKey || "x"} />
             <YAxis />
+            {options?.yAxisRight && <YAxis {...options.yAxisRight} />}
             <Tooltip />
             <Legend />
             {Array.isArray(options?.lines)
@@ -66,6 +68,7 @@ export function Chart({ type, data, options, height = 300 }: ChartProps) {
                     dataKey={line.dataKey}
                     stroke={line.stroke || "#8884d8"}
                     name={line.name}
+                    yAxisId={line.yAxisId}
                   />
                 ))
               : (
