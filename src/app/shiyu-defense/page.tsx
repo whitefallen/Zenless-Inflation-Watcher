@@ -66,7 +66,7 @@ export default async function ShiyuDefensePage() {
           <div className="mb-2"><b>Run Details:</b></div>
           <div className="space-y-2">
             {d?.data?.all_floor_detail?.map((floor, i) => (
-              <div key={i} className="border rounded p-2 bg-muted/30">
+              <div key={i} className="border rounded p-2 bg-card">
                 <b>Layer {floor.layer_index}:</b> Rating: {floor.rating}, Battle Time: {floor.node_1.battle_time}s
                 <div className="flex gap-2 mt-1">
                   {floor.node_1.avatars.map((a, j) => (
@@ -113,7 +113,7 @@ export default async function ShiyuDefensePage() {
       <div className="overflow-x-auto">
         <table className="min-w-full border rounded">
           <thead>
-            <tr className="bg-muted/50">
+            <tr className="bg-card">
               <th className="px-4 py-2 text-left">Team</th>
               <th className="px-4 py-2 text-left">Times Used</th>
               <th className="px-4 py-2 text-left">Highest Layer</th>
@@ -164,7 +164,7 @@ export default async function ShiyuDefensePage() {
       <div className="overflow-x-auto">
         <table className="min-w-full border rounded">
           <thead>
-            <tr className="bg-muted/50">
+            <tr className="bg-card">
               <th className="px-4 py-2 text-left">Layer</th>
               <th className="px-4 py-2 text-left">Times Cleared</th>
               <th className="px-4 py-2 text-left">Best Rating</th>
@@ -205,7 +205,7 @@ export default async function ShiyuDefensePage() {
 
         <Tabs defaultValue="overview" className="w-full">
           <div className="mx-auto">
-            <TabsList className="inline-flex h-11 items-center justify-center rounded-lg bg-muted/50 p-1">
+            <TabsList className="inline-flex h-11 items-center justify-center rounded-lg bg-card p-1">
               <TabsTrigger value="overview" className="min-w-[120px]">Overview</TabsTrigger>
               <TabsTrigger value="history" className="min-w-[120px]">History</TabsTrigger>
               <TabsTrigger value="teams" className="min-w-[120px]">Teams</TabsTrigger>
@@ -215,7 +215,7 @@ export default async function ShiyuDefensePage() {
         <TabsContent value="overview" className="mt-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-6">
             <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-muted/30">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-card">
                 <CardTitle className="text-base font-semibold text-blue-600">Highest Max Layer</CardTitle>
               </CardHeader>
               <CardContent>

@@ -20,7 +20,7 @@ export function BossesAggregationTable({ allData }: { allData: DeadlyAssaultData
     <div className="overflow-x-auto">
       <table className="min-w-full border rounded">
         <thead>
-          <tr className="bg-muted/50">
+          <tr className="bg-card">
             <th className="px-4 py-2 text-left">Boss</th>
             <th className="px-4 py-2 text-left">Times Fought</th>
             <th className="px-4 py-2 text-left">Highest Score</th>

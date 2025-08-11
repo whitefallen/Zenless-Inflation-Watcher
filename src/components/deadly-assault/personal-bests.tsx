@@ -20,17 +20,17 @@ export function PersonalBests({ allData }: { allData: DeadlyAssaultData[] }) {
     <div className="mb-8">
       <h3 className="text-lg font-semibold mb-2">Personal Bests</h3>
       <div className="grid md:grid-cols-3 gap-4">
-        <div className="border rounded-lg p-4 bg-muted/30">
+        <div className="border rounded-lg p-4 bg-card">
           <h4 className="font-medium mb-1">Best Score</h4>
           <div>Score: {bests.bestScore.score}</div>
           <div>Stars: {bests.bestScore.star}</div>
         </div>
-        <div className="border rounded-lg p-4 bg-muted/30">
+        <div className="border rounded-lg p-4 bg-card">
           <h4 className="font-medium mb-1">Most Stars</h4>
           <div>Score: {bests.bestStars.score}</div>
           <div>Stars: {bests.bestStars.star}</div>
         </div>
-        <div className="border rounded-lg p-4 bg-muted/30">
+        <div className="border rounded-lg p-4 bg-card">
           <h4 className="font-medium mb-1">Fastest Clear</h4>
           <div>Score: {bests.fastest.score}</div>
           <div>Stars: {bests.fastest.star}</div>

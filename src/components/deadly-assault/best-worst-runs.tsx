@@ -16,12 +16,12 @@ export function BestWorstRuns({ allData }: { allData: DeadlyAssaultData[] }) {
   const { best, worst } = getBestWorstRuns(allData);
   return (
     <div className="grid md:grid-cols-2 gap-6 mb-8">
-      <div className="border rounded-lg p-4 bg-muted/30">
-        <h3 className="font-semibold text-lg mb-2 text-green-700">Best Run</h3>
+      <div className="border rounded-lg p-4 bg-card">
+        <h3 className="font-semibold text-lg mb-2 text-primary drop-shadow-sm">Best Run</h3>
         {best ? <RunDetails run={best} /> : <p>No runs available.</p>}
       </div>
-      <div className="border rounded-lg p-4 bg-muted/30">
-        <h3 className="font-semibold text-lg mb-2 text-red-700">Lowest Scoring Run</h3>
+      <div className="border rounded-lg p-4 bg-card">
+        <h3 className="font-semibold text-lg mb-2 text-primary drop-shadow-sm">Lowest Scoring Run</h3>
         {worst ? <RunDetails run={worst} /> : <p>No runs available.</p>}
       </div>
     </div>

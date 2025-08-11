@@ -4,8 +4,8 @@ import React from "react";
 export function ExportShareControls() {
   return (
     <div className="mb-4 flex gap-2 items-center">
-      <button className="px-3 py-1 rounded bg-muted/30 border text-sm" disabled>Export (coming soon)</button>
-      <button className="px-3 py-1 rounded bg-muted/30 border text-sm" disabled>Share (coming soon)</button>
+      <button className="px-3 py-1 rounded bg-card border text-sm" disabled>Export (coming soon)</button>
+      <button className="px-3 py-1 rounded bg-card border text-sm" disabled>Share (coming soon)</button>
     </div>
   );
 }

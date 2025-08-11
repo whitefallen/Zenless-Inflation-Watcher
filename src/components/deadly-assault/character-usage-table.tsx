@@ -24,7 +24,7 @@ export function CharacterUsageTable({ allData }: { allData: DeadlyAssaultData[] 
       <h3 className="text-lg font-semibold mb-2">Most Used Characters</h3>
       <table className="min-w-full border rounded">
         <thead>
-          <tr className="bg-muted/50">
+          <tr className="bg-card">
             <th className="px-4 py-2 text-left">Avatar</th>
             <th className="px-4 py-2 text-left">Times Used</th>
             <th className="px-4 py-2 text-left">Average Score</th>

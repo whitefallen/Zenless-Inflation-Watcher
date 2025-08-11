@@ -105,7 +105,7 @@ export default async function DeadlyAssaultPage() {
           <div className="mb-2"><b>Run Details:</b></div>
           <div className="space-y-2">
             {d?.data?.list?.map((run, i) => (
-              <div key={i} className="border rounded p-2 bg-muted/30">
+              <div key={i} className="border rounded p-2 bg-card">
                 <RunDetails run={run} />
               </div>
             ))}
@@ -129,7 +129,7 @@ export default async function DeadlyAssaultPage() {
 
         <Tabs defaultValue="overview" className="w-full">
           <div className="mx-auto">
-            <TabsList className="inline-flex h-11 items-center justify-center rounded-lg bg-muted/50 p-1">
+            <TabsList className="inline-flex h-11 items-center justify-center rounded-lg bg-card p-1">
               <TabsTrigger value="overview" className="min-w-[120px]">Overview</TabsTrigger>
               <TabsTrigger value="history" className="min-w-[120px]">History</TabsTrigger>
               <TabsTrigger value="teams" className="min-w-[120px]">Teams</TabsTrigger>

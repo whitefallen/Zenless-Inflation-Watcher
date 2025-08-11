@@ -13,7 +13,7 @@ export default function Home() {
 
       <div className="grid gap-4 md:grid-cols-2 w-full">
         <Link href="/deadly-assault" className="w-full">
-          <Card className="hover:bg-muted/50 transition-colors">
+          <Card className="hover:bg-card transition-colors">
             <CardHeader>
               <CardTitle>Deadly Assault</CardTitle>
               <CardDescription>View your performance in Deadly Assault challenges</CardDescription>
@@ -25,7 +25,7 @@ export default function Home() {
         </Link>
 
         <Link href="/shiyu-defense" className="w-full">
-          <Card className="hover:bg-muted/50 transition-colors">
+          <Card className="hover:bg-card transition-colors">
             <CardHeader>
               <CardTitle>Shiyu Defense</CardTitle>
               <CardDescription>View your Shiyu Defense progress and ratings</CardDescription>
