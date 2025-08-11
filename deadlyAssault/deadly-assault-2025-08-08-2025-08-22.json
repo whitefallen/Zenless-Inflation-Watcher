@@ -1,0 +1,235 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2025,
+      "month": 8,
+      "day": 8,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2025,
+      "month": 8,
+      "day": 22,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 730,
+    "list": [
+      {
+        "score": 35465,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2025,
+          "month": 8,
+          "day": 8,
+          "hour": 16,
+          "minute": 29,
+          "second": 58
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/b10b2e1cb21352cd817f84caff3a7268.png",
+            "name": "Miasmic Fiend - Unfathomable",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/c3d3f729bbf445afdee40ff07482b6d1.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/202510eaa232c2377276631d229ce86e.png",
+            "desc": "· Agent DMG <color=#2BAD00>increases by 20%</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by an additional 20%</color>.\\n· After inflicting an Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00>decreases by 10%</color> for 10s. After inflicting Disorder on an enemy, the enemy's DEF <color=#2BAD00>further decreases by 25%</color> for 10s. Each effect's duration refreshes individually.",
+            "name": "Artful"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1261,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1331,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54016,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/4695e3a02f51cad97561deb847dde418.png"
+        }
+      },
+      {
+        "score": 31962,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2025,
+          "month": 8,
+          "day": 8,
+          "hour": 17,
+          "minute": 1,
+          "second": 53
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/6c8a94b7b1d9adb701e0175971d5071e.png",
+            "name": "Notorious - Dead End Butcher",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/c3d3f729bbf445afdee40ff07482b6d1.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/202510eaa232c2377276631d229ce86e.png",
+            "desc": "· Agent DMG <color=#2BAD00>increases by 20%</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by an additional 20%</color>.\\n· After inflicting an Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00>decreases by 10%</color> for 10s. After inflicting Disorder on an enemy, the enemy's DEF <color=#2BAD00>further decreases by 25%</color> for 10s. Each effect's duration refreshes individually.",
+            "name": "Artful"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1221,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1031,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54014,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/83adf895588c6a8806f27336a7e11c65.png"
+        }
+      },
+      {
+        "score": 31115,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2025,
+          "month": 8,
+          "day": 8,
+          "hour": 17,
+          "minute": 24,
+          "second": 4
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/35ecd7ccf77ebc2ece2fe4f6fbe68d1d.png",
+            "name": "Notorious - Marionette",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/c3d3f729bbf445afdee40ff07482b6d1.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/0c1dd35172f2594ab5315315dde48253.png",
+            "desc": "· Agent Assist Attacks, EX Special Attacks, and Ultimates deal <color=#2BAD00>25% more</color> DMG.\\n· When an Agent triggers Quick Assist or Chain Attack, Decibel Generation Rate <color=#2BAD00>increases by 30%</color>, and attacks ignore <color=#2BAD00>20% of enemy RES</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Power On"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1371,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+            "sub_element_type": 2
+          },
+          {
+            "id": 1421,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 5,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1421.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54009,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/86aa1128108ebdd92ab32f2f0e184928.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/1ef09a518c9f183d5001004b98aa3eea.png",
+    "total_score": 98542,
+    "total_star": 9,
+    "zone_id": 69017
+  },
+  "metadata": {
+    "exportDate": "2025-08-09T21:31:51.606Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
