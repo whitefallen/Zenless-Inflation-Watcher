@@ -1,3 +1,4 @@
+"use client";
 import type { DeadlyAssaultData } from "@/types/deadly-assault";
 import { Chart } from "@/components/ui/chart";
 
@@ -18,20 +19,15 @@ function aggregateTimeOfDay(allData: DeadlyAssaultData[]) {
 
 export function TimeOfDayAnalysis({ allData }: { allData: DeadlyAssaultData[] }) {
   const hourCounts = aggregateTimeOfDay(allData);
-  const data = {
-    labels: Array.from({ length: 24 }, (_, i) => `${i}:00`),
-    datasets: [
-      {
-        label: "Runs per Hour",
-        data: hourCounts,
-        backgroundColor: "#60a5fa",
-      },
-    ],
-  };
+  // Recharts expects an array of objects, e.g. [{ hour: '0:00', count: 5 }, ...]
+  const data = Array.from({ length: 24 }, (_, i) => ({
+    hour: `${i}:00`,
+    count: hourCounts[i]
+  }));
   return (
     <div className="mb-8">
       <h3 className="text-lg font-semibold mb-2">Time of Day Analysis</h3>
-      <Chart type="bar" data={data} options={{}} height={250} />
+      <Chart type="bar" data={data} options={{ xKey: "hour", yKey: "count" }} height={250} />
     </div>
   );
 }

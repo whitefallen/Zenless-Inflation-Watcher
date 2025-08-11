@@ -1,3 +1,4 @@
+"use client";
 import type { DeadlyAssaultData } from "@/types/deadly-assault";
 import { Chart } from "@/components/ui/chart";
 
@@ -14,20 +15,12 @@ function getCorrelation(allData: DeadlyAssaultData[]) {
 
 export function CorrelationAnalysis({ allData }: { allData: DeadlyAssaultData[] }) {
   const points = getCorrelation(allData);
-  const data = {
-    datasets: [
-      {
-        label: "Score vs Star",
-        data: points.map(([x, y]) => ({ x, y })),
-        backgroundColor: "#34d399",
-        pointRadius: 4,
-      },
-    ],
-  };
+  // Recharts expects an array of objects, e.g. [{ x: ..., y: ... }, ...]
+  const data = points.map(([x, y]) => ({ x, y }));
   return (
     <div className="mb-8">
       <h3 className="text-lg font-semibold mb-2">Score/Star Correlation</h3>
-      <Chart type="scatter" data={data} options={{ scales: { x: { title: { display: true, text: 'Score' } }, y: { title: { display: true, text: 'Stars' } } } }} height={250} />
+      <Chart type="scatter" data={data} options={{ xKey: "x", yKey: "y", xLabel: "Score", yLabel: "Stars" }} height={250} />
     </div>
   );
 }

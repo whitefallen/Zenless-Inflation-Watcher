@@ -1,28 +1,24 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { getLatestDeadlyAssaultData, getAllDeadlyAssaultData } from "@/lib/deadly-assault"
-// import { FloorDetailCard } from "@/components/deadly-assault/floor-detail-card"
-// import { TeamsOverview } from "@/components/deadly-assault/teams-overview"
-import { Accordion } from "@/components/ui/accordion"
-import { percentile } from "@/lib/utils"
-import type { TimeStamp, DeadlyAssaultData, DeadlyAssaultRun } from "@/types/deadly-assault"
-import { RunDetails } from "@/components/deadly-assault/run-details"
-import { TeamsAggregationTable } from "@/components/deadly-assault/teams-aggregation-table"
-import { BossDifficultyTable } from "@/components/deadly-assault/boss-difficulty-table"
-import { ClearTimeTable } from "@/components/deadly-assault/clear-time-table"
-import { PeriodComparison } from "@/components/deadly-assault/period-comparison"
-import { PersonalBests } from "@/components/deadly-assault/personal-bests"
-import { TimeOfDayAnalysis } from "@/components/deadly-assault/time-of-day-analysis"
-import { Heatmap } from "@/components/deadly-assault/heatmap"
-import { CorrelationAnalysis } from "@/components/deadly-assault/correlation-analysis"
-import { Recommendations } from "@/components/deadly-assault/recommendations"
-import { FilteringControls } from "@/components/deadly-assault/filtering-controls"
 
-import { BossesAggregationTable } from "@/components/deadly-assault/bosses-aggregation-table"
-import { ScoreProgressionChart } from "@/components/deadly-assault/score-progression-chart"
-import { BestWorstRuns } from "@/components/deadly-assault/best-worst-runs"
-// import { CharacterUsageTable } from "@/components/deadly-assault/character-usage-table"
-import { CharacterPerformanceTable } from "@/components/deadly-assault/character-performance-table"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { getLatestDeadlyAssaultData, getAllDeadlyAssaultData } from "@/lib/deadly-assault";
+import { Accordion } from "@/components/ui/accordion";
+import { percentile } from "@/lib/utils";
+import type { TimeStamp, DeadlyAssaultData } from "@/types/deadly-assault";
+import { RunDetails } from "@/components/deadly-assault/run-details";
+import { TeamsAggregationTable } from "@/components/deadly-assault/teams-aggregation-table";
+import { BossDifficultyTable } from "@/components/deadly-assault/boss-difficulty-table";
+// import { ClearTimeTable } from "@/components/deadly-assault/clear-time-table";
+import { PeriodComparison } from "@/components/deadly-assault/period-comparison";
+// import { PersonalBests } from "@/components/deadly-assault/personal-bests";
+// import { TimeOfDayAnalysis } from "@/components/deadly-assault/time-of-day-analysis";
+// import { CorrelationAnalysis } from "@/components/deadly-assault/correlation-analysis";
+import { Recommendations } from "@/components/deadly-assault/recommendations";
+import { FilteringControls } from "@/components/deadly-assault/filtering-controls";
+import { BossesAggregationTable } from "@/components/deadly-assault/bosses-aggregation-table";
+import { ScoreProgressionChart } from "@/components/deadly-assault/score-progression-chart";
+import { BestWorstRuns } from "@/components/deadly-assault/best-worst-runs";
+import { CharacterPerformanceTable } from "@/components/deadly-assault/character-performance-table";
 
 
 function formatDateRangeFromTimeObjects(start?: TimeStamp, end?: TimeStamp) {
@@ -32,6 +28,7 @@ function formatDateRangeFromTimeObjects(start?: TimeStamp, end?: TimeStamp) {
   const fmt = (d: Date) => d.toISOString().slice(0, 10);
   return `${fmt(startDate)} - ${fmt(endDate)}`;
 }
+
 
 function aggregateStats(allData: DeadlyAssaultData[]) {
   const scores: number[] = [];
@@ -55,12 +52,12 @@ function aggregateStats(allData: DeadlyAssaultData[]) {
 
 
 
+
 export default async function DeadlyAssaultPage() {
   const [latestData, allData] = await Promise.all([
     getLatestDeadlyAssaultData(),
     getAllDeadlyAssaultData(),
   ]);
-  const data = latestData;
   const stats = aggregateStats(allData || []);
 
   // Accordion items for history
@@ -152,12 +149,16 @@ export default async function DeadlyAssaultPage() {
             </div>
             <CharacterPerformanceTable allData={allData || []} />
             <BossDifficultyTable allData={allData || []} />
-            <ClearTimeTable allData={allData || []} />
+            {/* <ClearTimeTable allData={allData || []} /> */}
             <PeriodComparison allData={allData || []} />
-            <PersonalBests allData={allData || []} />
-            <TimeOfDayAnalysis allData={allData || []} />
-            <Heatmap allData={allData || []} />
-            <CorrelationAnalysis allData={allData || []} />
+            {/* <PersonalBests allData={allData || []} /> */}
+            {/* <TimeOfDayAnalysis allData={allData || []} /> */}
+            {/* <Heatmap allData={allData || []} /> */}
+            {/* <CorrelationAnalysis allData={allData || []} /> */}
+            {/* <PersonalBests allData={allData || []} /> */}
+            {/* <TimeOfDayAnalysis allData={allData || []} /> */}
+            {/* <Heatmap allData={allData || []} /> */}
+            {/* <CorrelationAnalysis allData={allData || []} /> */}
             <Recommendations allData={allData || []} />
           </div>
         </TabsContent>
@@ -173,7 +174,7 @@ export default async function DeadlyAssaultPage() {
      </Tabs>
       </div>
     </div>
-  )
+  );
 }
 
 

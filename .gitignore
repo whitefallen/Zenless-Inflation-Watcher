@@ -194,3 +194,7 @@ next-env.d.ts
 data/deadly-assault_1500598195_latest.json
 
 data/shiyu-defense_1500598195_latest.json
+
+public/shiyu/
+
+public/deadlyAssault/

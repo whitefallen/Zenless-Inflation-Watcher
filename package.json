@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "auth": "node auth.js",
-    "dev": "next dev --turbopack",
+    "predev": "node scripts/copy-data-to-public.js",
+    "dev": "next dev",
+    "prebuild": "node scripts/copy-data-to-public.js",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -31,6 +33,7 @@
     "puppeteer": "^21.11.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "recharts": "^3.1.2",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {

@@ -29,6 +29,9 @@ jobs:
       - name: Rebuild native modules
         run: npm rebuild
 
+      - name: Copy data files to public
+        run: node scripts/copy-data-to-public.js
+
       - name: Build Next.js app
         run: npm run build
 
