@@ -18,19 +18,19 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 730,
+    "rank_percent": 402,
     "list": [
       {
-        "score": 35465,
+        "score": 27380,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 8,
-          "day": 8,
-          "hour": 16,
-          "minute": 29,
-          "second": 58
+          "day": 10,
+          "hour": 12,
+          "minute": 41,
+          "second": 29
         },
         "boss": [
           {
@@ -48,6 +48,16 @@
           }
         ],
         "avatar_list": [
+          {
+            "id": 1401,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+            "sub_element_type": 0
+          },
           {
             "id": 1261,
             "level": 60,
@@ -67,16 +77,6 @@
             "rank": 0,
             "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331.png",
             "sub_element_type": 0
-          },
-          {
-            "id": 1411,
-            "level": 60,
-            "element_type": 200,
-            "avatar_profession": 4,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
-            "sub_element_type": 0
           }
         ],
         "buddy": {
@@ -87,16 +87,16 @@
         }
       },
       {
-        "score": 31962,
+        "score": 50262,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 8,
-          "day": 8,
-          "hour": 17,
-          "minute": 1,
-          "second": 53
+          "day": 10,
+          "hour": 13,
+          "minute": 3,
+          "second": 7
         },
         "boss": [
           {
@@ -125,31 +125,31 @@
             "sub_element_type": 1
           },
           {
-            "id": 1221,
+            "id": 1411,
             "level": 60,
-            "element_type": 203,
-            "avatar_profession": 3,
+            "element_type": 200,
+            "avatar_profession": 4,
             "rarity": "S",
             "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
             "sub_element_type": 0
           },
           {
-            "id": 1031,
+            "id": 1131,
             "level": 60,
-            "element_type": 205,
+            "element_type": 202,
             "avatar_profession": 4,
             "rarity": "A",
             "rank": 6,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031.png",
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
             "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54014,
+          "id": 54015,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/83adf895588c6a8806f27336a7e11c65.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/cac125e7347d0ff1616b6f57a114b2bf.png"
         }
       },
       {
@@ -222,12 +222,12 @@
     "has_data": true,
     "nick_name": "Whitefallen",
     "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/1ef09a518c9f183d5001004b98aa3eea.png",
-    "total_score": 98542,
+    "total_score": 108757,
     "total_star": 9,
     "zone_id": 69017
   },
   "metadata": {
-    "exportDate": "2025-08-09T21:31:51.606Z",
+    "exportDate": "2025-08-12T11:38:40.051Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
