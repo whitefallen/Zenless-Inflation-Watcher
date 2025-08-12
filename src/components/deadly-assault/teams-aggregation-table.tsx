@@ -1,4 +1,6 @@
+
 import type { DeadlyAssaultData, Avatar } from "@/types/deadly-assault";
+import Image from "next/image";
 
 
 type TeamAggregation = {
@@ -12,7 +14,7 @@ function getTeamsAggregation(allData: DeadlyAssaultData[]): TeamAggregation[] {
   for (const d of allData) {
     for (const run of d?.data?.list || []) {
       const team = run.avatar_list || [];
-      const teamKey = team.map(a => a.id).sort((a, b) => a - b).join('-');
+      const teamKey = team.map((a: Avatar) => a.id).sort((a, b) => a - b).join('-');
       if (!teamMap.has(teamKey)) {
         teamMap.set(teamKey, { avatars: team, count: 0, scores: [] });
       }
@@ -43,7 +45,15 @@ export function TeamsAggregationTable({ allData }: { allData: DeadlyAssaultData[
               <td className="px-4 py-2">
                 <div className="flex gap-1">
                   {team.avatars.map((a) => (
-                    <img key={a.id} src={a.role_square_url} alt={`Avatar #${a.id}`} className="w-7 h-7 rounded-full border inline-block" />
+                    <Image
+                      key={a.id}
+                      src={a.role_square_url}
+                      alt={`Avatar #${a.id}`}
+                      width={28}
+                      height={28}
+                      className="w-7 h-7 rounded-full border inline-block"
+                      unoptimized
+                    />
                   ))}
                 </div>
               </td>

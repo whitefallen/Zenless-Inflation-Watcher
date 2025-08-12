@@ -1,5 +1,7 @@
 import type { DeadlyAssaultData, Boss, Avatar } from "@/types/deadly-assault";
 
+import Image from "next/image";
+
 function aggregateBossDifficulty(allData: DeadlyAssaultData[]) {
   const bossMap = new Map<string, { boss: Boss; count: number; totalScore: number; teams: Avatar[][] }>();
   for (const d of allData) {
@@ -45,7 +47,14 @@ export function BossDifficultyTable({ allData }: { allData: DeadlyAssaultData[] 
             return (
               <tr key={entry.boss.name} className="border-b">
                 <td className="px-4 py-2 flex items-center gap-2">
-                  <img src={entry.boss.icon} alt={entry.boss.name} className="w-7 h-7 rounded inline-block" />
+                  <Image
+                    src={entry.boss.icon}
+                    alt={entry.boss.name}
+                    width={28}
+                    height={28}
+                    className="w-7 h-7 rounded inline-block"
+                    unoptimized
+                  />
                   <span>{entry.boss.name}</span>
                 </td>
                 <td className="px-4 py-2">{entry.count}</td>
@@ -53,7 +62,15 @@ export function BossDifficultyTable({ allData }: { allData: DeadlyAssaultData[] 
                 <td className="px-4 py-2">
                   <div className="flex gap-1">
                     {mostUsedTeam && mostUsedTeam.avatars.map(a => (
-                      <img key={a.id} src={a.role_square_url} alt={`Avatar #${a.id}`} className="w-6 h-6 rounded-full border inline-block" />
+                      <Image
+                        key={a.id}
+                        src={a.role_square_url}
+                        alt={`Avatar #${a.id}`}
+                        width={24}
+                        height={24}
+                        className="w-6 h-6 rounded-full border inline-block"
+                        unoptimized
+                      />
                     ))}
                   </div>
                 </td>

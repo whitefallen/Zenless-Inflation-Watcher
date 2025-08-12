@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 import type { DeadlyAssaultData, DeadlyAssaultRun, TimeStamp } from "@/types/deadly-assault";
 import { RunDetails } from "@/components/deadly-assault/run-details";
@@ -99,7 +100,7 @@ export function BestWorstRuns({ allData }: { allData: DeadlyAssaultData[] }) {
                         <td className="px-2 py-1 border align-middle">
                           <span className="flex flex-wrap gap-1">
                             {run.avatar_list && run.avatar_list.length > 0 ? run.avatar_list.map((a, i) => (
-                              a.role_square_url ? <img key={i} src={a.role_square_url} alt={String(a.id)} className="w-5 h-5 rounded-full border inline-block" /> : <span key={i}>{a.id}</span>
+                              a.role_square_url ? <Image key={i} src={a.role_square_url} alt={String(a.id)} width={20} height={20} className="w-5 h-5 rounded-full border inline-block" unoptimized /> : <span key={i}>{a.id}</span>
                             )) : "N/A"}
                           </span>
                         </td>

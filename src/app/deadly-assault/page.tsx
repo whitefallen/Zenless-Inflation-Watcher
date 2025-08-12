@@ -1,5 +1,6 @@
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from "next/image";
 import { getAllDeadlyAssaultData } from "@/lib/deadly-assault";
 import { Accordion } from "@/components/ui/accordion";
 import { percentile } from "@/lib/utils";
@@ -37,8 +38,8 @@ export default async function DeadlyAssaultPage() {
       title: (
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
           <span className="flex items-center gap-2 font-semibold">
-            {bossIcon && <img src={bossIcon} alt="Boss" className="w-6 h-6 rounded inline-block" />}
-            {avatarIcon && <img src={avatarIcon} alt="Avatar" className="w-6 h-6 rounded-full inline-block border" />}
+            {bossIcon && <Image src={bossIcon} alt="Boss" width={24} height={24} className="w-6 h-6 rounded inline-block" unoptimized />}
+            {avatarIcon && <Image src={avatarIcon} alt="Avatar" width={24} height={24} className="w-6 h-6 rounded-full inline-block border" unoptimized />}
             {starIcon}
             {d?.data?.start_time && d?.data?.end_time
               ? formatDateRangeFromTimeObjects(d.data.start_time as unknown as TimeStamp, d.data.end_time as unknown as TimeStamp)
@@ -59,7 +60,7 @@ export default async function DeadlyAssaultPage() {
               <span key={i} className="inline-flex items-center gap-1 mr-2">
                 {run.avatar_list.map((a, j) => (
                   <span key={j} className="inline-flex items-center gap-1">
-                    {a.role_square_url && <img src={a.role_square_url} alt={`Avatar #${a.id}`} className="w-5 h-5 rounded-full border inline-block" />}
+                    {a.role_square_url && <Image src={a.role_square_url} alt={`Avatar #${a.id}`} width={20} height={20} className="w-5 h-5 rounded-full border inline-block" unoptimized />}
                   </span>
                 ))}
               </span>

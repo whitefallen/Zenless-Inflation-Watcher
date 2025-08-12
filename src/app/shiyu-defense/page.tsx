@@ -1,7 +1,7 @@
 // ...removed unused Card, CardContent, CardHeader, CardTitle imports...
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getAllShiyuDefenseData } from "@/lib/shiyu-defense"
-// import Image from "next/image"
+import Image from "next/image";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense"
 
 import { Accordion } from "@/components/ui/accordion"
@@ -62,7 +62,7 @@ export default async function ShiyuDefensePage() {
                   <div className="mb-1"><b>Team:</b></div>
                   <div className="flex gap-2 mb-1">
                     {floor.node_1?.avatars?.map((a, j) => (
-                      <img key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" />
+                      <Image key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" unoptimized />
                     ))}
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export default async function ShiyuDefensePage() {
                   <div className="mb-1"><b>Team:</b></div>
                   <div className="flex gap-2 mb-1">
                     {floor.node_2?.avatars?.map((a, j) => (
-                      <img key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" />
+                      <Image key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" unoptimized />
                     ))}
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export default async function ShiyuDefensePage() {
             render: (team: TeamAgg) => (
               <div className="flex gap-1">
                 {team.avatars.map((a, i) => (
-                  <img key={i} src={a.role_square_url} alt={`Avatar #${a.id}`} width={28} height={28} className="w-7 h-7 rounded-full border inline-block" loading="lazy" />
+                  <Image key={i} src={a.role_square_url} alt={`Avatar #${a.id}`} width={28} height={28} className="w-7 h-7 rounded-full border inline-block" loading="lazy" unoptimized />
                 ))}
               </div>
             ),

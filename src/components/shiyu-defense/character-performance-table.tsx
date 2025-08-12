@@ -1,5 +1,7 @@
 import type { ShiyuDefenseData, Avatar } from "@/types/shiyu-defense";
 
+import Image from "next/image";
+
 function aggregateCharacterPerformance(allData: ShiyuDefenseData[]) {
   const charMap = new Map<number, { avatar: Avatar; count: number; totalLayer: number; topLayerCount: number }>();
   let bestLayer = 0;
@@ -44,7 +46,14 @@ export function CharacterPerformanceTable({ allData }: { allData: ShiyuDefenseDa
           {perf.map((entry) => (
             <tr key={entry.avatar.id} className="border-b">
               <td className="px-4 py-2 flex items-center gap-2">
-                <img src={entry.avatar.role_square_url} alt={`Avatar #${entry.avatar.id}`} className="w-7 h-7 rounded-full border inline-block" />
+                <Image
+                  src={entry.avatar.role_square_url}
+                  alt={`Avatar #${entry.avatar.id}`}
+                  width={28}
+                  height={28}
+                  className="w-7 h-7 rounded-full border inline-block"
+                  unoptimized
+                />
                 <span>ID: {entry.avatar.id}</span>
               </td>
               <td className="px-4 py-2">{entry.count}</td>

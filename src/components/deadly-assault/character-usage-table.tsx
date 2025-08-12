@@ -1,5 +1,7 @@
 import type { DeadlyAssaultData, Avatar } from "@/types/deadly-assault";
 
+import Image from "next/image";
+
 function aggregateCharacterUsage(allData: DeadlyAssaultData[]) {
   const charMap = new Map<number, { avatar: Avatar; count: number; totalScore: number }>();
   for (const d of allData) {
@@ -34,7 +36,14 @@ export function CharacterUsageTable({ allData }: { allData: DeadlyAssaultData[] 
           {usage.map((entry) => (
             <tr key={entry.avatar.id} className="border-b">
               <td className="px-4 py-2 flex items-center gap-2">
-                <img src={entry.avatar.role_square_url} alt={`Avatar #${entry.avatar.id}`} className="w-7 h-7 rounded-full border inline-block" />
+                <Image
+                  src={entry.avatar.role_square_url}
+                  alt={`Avatar #${entry.avatar.id}`}
+                  width={28}
+                  height={28}
+                  className="w-7 h-7 rounded-full border inline-block"
+                  unoptimized
+                />
                 <span>ID: {entry.avatar.id}</span>
               </td>
               <td className="px-4 py-2">{entry.count}</td>

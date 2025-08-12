@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { DeadlyAssaultData } from "@/types/deadly-assault";
 
 export function BossesAggregationTable({ allData }: { allData: DeadlyAssaultData[] }) {
@@ -32,7 +33,7 @@ export function BossesAggregationTable({ allData }: { allData: DeadlyAssaultData
             <tr key={idx} className="border-b">
               <td className="px-4 py-2">
                 <div className="flex items-center gap-2">
-                  {boss.icon && <img src={boss.icon} alt={boss.name} className="w-7 h-7 rounded inline-block" />}
+                  {boss.icon && <Image src={boss.icon} alt={boss.name} width={28} height={28} className="w-7 h-7 rounded inline-block" unoptimized />}
                   <span>{boss.name}</span>
                 </div>
               </td>

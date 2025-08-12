@@ -1,5 +1,7 @@
 import type { DeadlyAssaultRun } from "@/types/deadly-assault";
 
+import Image from "next/image";
+
 export function RunDetails({ run }: { run: DeadlyAssaultRun }) {
   return (
     <div className="space-y-2">
@@ -9,7 +11,7 @@ export function RunDetails({ run }: { run: DeadlyAssaultRun }) {
         <b>Bosses:</b> <span role="img" aria-label="boss">👹</span>
         {run.boss.map((b, i) => (
           <span key={i} className="inline-flex items-center gap-1 mr-2">
-            {b.icon && <img src={b.icon} alt={b.name} className="w-5 h-5 inline-block rounded" />}
+            {b.icon && <Image src={b.icon} alt={b.name} width={20} height={20} className="w-5 h-5 inline-block rounded" unoptimized />}
             {b.name}
           </span>
         ))}
@@ -18,7 +20,7 @@ export function RunDetails({ run }: { run: DeadlyAssaultRun }) {
         <b>Teams:</b> <span role="img" aria-label="team">👥</span>
         {run.avatar_list.map((a, i) => (
           <span key={i} className="inline-flex items-center gap-1 mr-1">
-            {a.role_square_url && <img src={a.role_square_url} alt={`Avatar #${a.id}`} className="w-5 h-5 rounded-full border inline-block" />}
+            {a.role_square_url && <Image src={a.role_square_url} alt={`Avatar #${a.id}`} width={20} height={20} className="w-5 h-5 rounded-full border inline-block" unoptimized />}
           </span>
         ))}
       </div>
@@ -28,7 +30,7 @@ export function RunDetails({ run }: { run: DeadlyAssaultRun }) {
         </div>
         {run.buffer.map((b, i) => (
           <div key={i} className="flex items-center gap-2 pr-2">
-            {b.icon && <img src={b.icon} alt={b.name} className="w-5 h-5 rounded inline-block" />}
+            {b.icon && <Image src={b.icon} alt={b.name} width={20} height={20} className="w-5 h-5 rounded inline-block" unoptimized />}
             <span className="font-semibold">{b.name}</span>
           </div>
         ))}
