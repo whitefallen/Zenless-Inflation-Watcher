@@ -1,4 +1,4 @@
-import type { DeadlyAssaultData, DeadlyAssaultRun } from "@/types/deadly-assault";
+import type { DeadlyAssaultData } from "@/types/deadly-assault";
 
 function getPersonalBests(allData: DeadlyAssaultData[]) {
   const runs = allData.flatMap(d => d.data.list);

@@ -42,6 +42,7 @@ export interface FloorDetail {
   layer_id: number;
   buffs: Buff[];
   node_1: Node;
+  node_2: Node;
   challenge_time: string;
   zone_name: string;
   floor_challenge_time: TimeStamp;

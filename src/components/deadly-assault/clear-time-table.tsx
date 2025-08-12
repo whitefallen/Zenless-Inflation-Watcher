@@ -1,18 +1,6 @@
 import type { DeadlyAssaultData } from "@/types/deadly-assault";
 
-function aggregateClearTimes(allData: DeadlyAssaultData[]) {
-  const times: number[] = [];
-  for (const d of allData) {
-    for (const run of d.data.list) {
-      // If you have a clear time field, use it here. For now, use challenge_time as a placeholder.
-      // times.push(run.clear_time)
-    }
-  }
-  // Placeholder: return empty array
-  return times;
-}
-
-export function ClearTimeTable({ allData }: { allData: DeadlyAssaultData[] }) {
+export function ClearTimeTable({ }: { allData: DeadlyAssaultData[] }) {
   // Placeholder: no clear time data in current schema
   // const times = aggregateClearTimes(allData);
   return (

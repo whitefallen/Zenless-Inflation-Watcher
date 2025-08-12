@@ -1,20 +1,14 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { getLatestDeadlyAssaultData, getAllDeadlyAssaultData } from "@/lib/deadly-assault";
+import { getAllDeadlyAssaultData } from "@/lib/deadly-assault";
 import { Accordion } from "@/components/ui/accordion";
 import { percentile } from "@/lib/utils";
-import type { TimeStamp, DeadlyAssaultData } from "@/types/deadly-assault";
+import type { TimeStamp } from "@/types/deadly-assault";
 import { RunDetails } from "@/components/deadly-assault/run-details";
 import { TeamsAggregationTable } from "@/components/deadly-assault/teams-aggregation-table";
 import { BossDifficultyTable } from "@/components/deadly-assault/boss-difficulty-table";
-// import { ClearTimeTable } from "@/components/deadly-assault/clear-time-table";
 import { PeriodComparison } from "@/components/deadly-assault/period-comparison";
-// import { PersonalBests } from "@/components/deadly-assault/personal-bests";
-// import { TimeOfDayAnalysis } from "@/components/deadly-assault/time-of-day-analysis";
-// import { CorrelationAnalysis } from "@/components/deadly-assault/correlation-analysis";
 import { Recommendations } from "@/components/deadly-assault/recommendations";
-import { FilteringControls } from "@/components/deadly-assault/filtering-controls";
 import { BossesAggregationTable } from "@/components/deadly-assault/bosses-aggregation-table";
 import { ScoreProgressionChart } from "@/components/deadly-assault/score-progression-chart";
 import { BestWorstRuns } from "@/components/deadly-assault/best-worst-runs";
@@ -29,36 +23,8 @@ function formatDateRangeFromTimeObjects(start?: TimeStamp, end?: TimeStamp) {
   return `${fmt(startDate)} - ${fmt(endDate)}`;
 }
 
-
-function aggregateStats(allData: DeadlyAssaultData[]) {
-  const scores: number[] = [];
-  const stars: number[] = [];
-  const rankPercents: number[] = [];
-  for (const d of allData) {
-    if (d?.data?.total_score) scores.push(d.data.total_score);
-    if (d?.data?.total_star) stars.push(d.data.total_star);
-    if (d?.data?.rank_percent !== undefined) rankPercents.push(d.data.rank_percent);
-  }
-  const avg = (arr: number[]) => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length) : 0;
-  return {
-    highestScore: Math.max(...scores, 0),
-    avgScore: avg(scores),
-    highestStar: Math.max(...stars, 0),
-    avgStar: avg(stars),
-    highestRankPercent: Math.max(...rankPercents, 0),
-    avgRankPercent: avg(rankPercents),
-  };
-}
-
-
-
-
 export default async function DeadlyAssaultPage() {
-  const [latestData, allData] = await Promise.all([
-    getLatestDeadlyAssaultData(),
-    getAllDeadlyAssaultData(),
-  ]);
-  const stats = aggregateStats(allData || []);
+  const allData = await getAllDeadlyAssaultData();
 
   // Accordion items for history
   const historyItems = (allData || []).map((d, idx) => {
@@ -139,8 +105,6 @@ export default async function DeadlyAssaultPage() {
 
         <TabsContent value="overview" className="mt-6">
           <div className="space-y-8 px-6">
-            {/* Export/Share controls removed as requested */}
-            <FilteringControls allData={allData || []} onFilter={() => {}} />
             <ScoreProgressionChart allData={allData || []} />
             <BestWorstRuns allData={allData || []} />
             <div className="mb-8">
@@ -149,16 +113,7 @@ export default async function DeadlyAssaultPage() {
             </div>
             <CharacterPerformanceTable allData={allData || []} />
             <BossDifficultyTable allData={allData || []} />
-            {/* <ClearTimeTable allData={allData || []} /> */}
             <PeriodComparison allData={allData || []} />
-            {/* <PersonalBests allData={allData || []} /> */}
-            {/* <TimeOfDayAnalysis allData={allData || []} /> */}
-            {/* <Heatmap allData={allData || []} /> */}
-            {/* <CorrelationAnalysis allData={allData || []} /> */}
-            {/* <PersonalBests allData={allData || []} /> */}
-            {/* <TimeOfDayAnalysis allData={allData || []} /> */}
-            {/* <Heatmap allData={allData || []} /> */}
-            {/* <CorrelationAnalysis allData={allData || []} /> */}
             <Recommendations allData={allData || []} />
           </div>
         </TabsContent>

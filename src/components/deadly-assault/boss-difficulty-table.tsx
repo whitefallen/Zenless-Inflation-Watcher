@@ -1,4 +1,4 @@
-import type { DeadlyAssaultData, Boss, DeadlyAssaultRun, Avatar } from "@/types/deadly-assault";
+import type { DeadlyAssaultData, Boss, Avatar } from "@/types/deadly-assault";
 
 function aggregateBossDifficulty(allData: DeadlyAssaultData[]) {
   const bossMap = new Map<string, { boss: Boss; count: number; totalScore: number; teams: Avatar[][] }>();
@@ -33,7 +33,7 @@ export function BossDifficultyTable({ allData }: { allData: DeadlyAssaultData[] 
           </tr>
         </thead>
         <tbody>
-          {bosses.map((entry, idx) => {
+          {bosses.map((entry) => {
             // Find most used team for this boss
             const teamCounts = new Map<string, { avatars: Avatar[]; count: number }>();
             for (const team of entry.teams) {

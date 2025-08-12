@@ -3,8 +3,15 @@ import { Chart } from "@/components/ui/chart";
 import type { DeadlyAssaultData } from "@/types/deadly-assault";
 
 export function ScoreProgressionChart({ allData }: { allData: DeadlyAssaultData[] }) {
-  const filtered = (allData || [])
-    .filter(d => d.data && d.data.total_score !== undefined && d.data.total_star !== undefined && d.data.start_time);
+  // Sort by end_time (oldest to newest)
+  const sorted = [...(allData || [])].sort((a, b) => {
+    const aEnd = a.data.end_time;
+    const bEnd = b.data.end_time;
+    const aDate = new Date(aEnd.year, (aEnd.month || 1) - 1, aEnd.day || 1, aEnd.hour || 0, aEnd.minute || 0, aEnd.second || 0);
+    const bDate = new Date(bEnd.year, (bEnd.month || 1) - 1, bEnd.day || 1, bEnd.hour || 0, bEnd.minute || 0, bEnd.second || 0);
+    return aDate.getTime() - bDate.getTime();
+  });
+  const filtered = sorted.filter(d => d.data && d.data.total_score !== undefined && d.data.total_star !== undefined && d.data.start_time);
 
   const data = filtered.map(d => {
     let percentile = d.data.rank_percent !== undefined ? d.data.rank_percent / 100 : null;

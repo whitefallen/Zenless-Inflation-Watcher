@@ -1,15 +1,12 @@
 'use client'
 
-import { Avatar } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 
-import { cleanBuffText } from "@/lib/format-utils"
 import { DeadlyAssaultRun } from "@/types/deadly-assault"
 import { TeamComposition } from "@/components/deadly-assault/team-composition"
 import { BossesList } from "@/components/deadly-assault/bosses-list"
 import { BuffsList } from "@/components/deadly-assault/buffs-list"
-import Image from "next/image"
 
 interface FloorDetailsProps {
   floor: DeadlyAssaultRun

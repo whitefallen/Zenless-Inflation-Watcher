@@ -31,7 +31,7 @@ export function CharacterUsageTable({ allData }: { allData: DeadlyAssaultData[] 
           </tr>
         </thead>
         <tbody>
-          {usage.map((entry, idx) => (
+          {usage.map((entry) => (
             <tr key={entry.avatar.id} className="border-b">
               <td className="px-4 py-2 flex items-center gap-2">
                 <img src={entry.avatar.role_square_url} alt={`Avatar #${entry.avatar.id}`} className="w-7 h-7 rounded-full border inline-block" />

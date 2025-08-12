@@ -1,4 +1,4 @@
-import type { DeadlyAssaultData, DeadlyAssaultRun, Avatar } from "@/types/deadly-assault";
+import type { DeadlyAssaultData, Avatar } from "@/types/deadly-assault";
 
 
 type TeamAggregation = {
@@ -42,7 +42,7 @@ export function TeamsAggregationTable({ allData }: { allData: DeadlyAssaultData[
             <tr key={idx} className="border-b">
               <td className="px-4 py-2">
                 <div className="flex gap-1">
-                  {team.avatars.map((a, i) => (
+                  {team.avatars.map((a) => (
                     <img key={a.id} src={a.role_square_url} alt={`Avatar #${a.id}`} className="w-7 h-7 rounded-full border inline-block" />
                   ))}
                 </div>

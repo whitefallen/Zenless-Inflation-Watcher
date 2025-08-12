@@ -8,17 +8,20 @@ import { FloorDetail } from "@/types/shiyu-defense"
 import Image from "next/image"
 
 interface FloorDetailsProps {
-  floor: FloorDetail
+  floor: FloorDetail;
+  node?: 'node_1' | 'node_2';
 }
 
-export function FloorDetailCard({ floor }: FloorDetailsProps) {
+export function FloorDetailCard({ floor, node = 'node_1' }: FloorDetailsProps) {
+  // Pick node_1 or node_2 for display
+  const nodeData = floor[node];
   return (
     <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-lg font-semibold">{floor.zone_name}</h3>
-            <p className="text-sm text-muted-foreground">Layer {floor.layer_index}</p>
+            <p className="text-sm text-muted-foreground">Layer {floor.layer_index} ({node.replace('_', ' ').toUpperCase()})</p>
           </div>
           <Badge variant={floor.rating === 'S' ? 'default' : 'secondary'}>
             {floor.rating} Rank
@@ -33,7 +36,7 @@ export function FloorDetailCard({ floor }: FloorDetailsProps) {
           <div className="grid gap-4 md:grid-cols-2">
             <div>
               <p className="text-sm text-muted-foreground">Battle Time</p>
-              <p className="font-medium">{floor.node_1.battle_time}s</p>
+              <p className="font-medium">{nodeData.battle_time}s</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Clear Date</p>
@@ -48,7 +51,7 @@ export function FloorDetailCard({ floor }: FloorDetailsProps) {
         <div>
           <h4 className="font-medium mb-2">Team Composition</h4>
           <div className="flex flex-wrap gap-4">
-            {floor.node_1.avatars.map((avatar) => (
+            {nodeData.avatars.map((avatar: import("@/types/shiyu-defense").Avatar) => (
               <div key={avatar.id} className="flex items-center space-x-2">
                 <Avatar>
                   <Image 
@@ -66,22 +69,22 @@ export function FloorDetailCard({ floor }: FloorDetailsProps) {
               </div>
             ))}
           </div>
-          {floor.node_1.buddy && (
+          {nodeData.buddy && (
             <div className="mt-2">
               <p className="text-sm text-muted-foreground">Buddy</p>
               <div className="flex items-center space-x-2 mt-1">
                 <Avatar>
                   <Image 
-                    src={floor.node_1.buddy.bangboo_rectangle_url} 
-                    alt={`Buddy ${floor.node_1.buddy.id}`}
+                    src={nodeData.buddy.bangboo_rectangle_url} 
+                    alt={`Buddy ${nodeData.buddy.id}`}
                     width={40}
                     height={40}
                     unoptimized
                   />
                 </Avatar>
                 <div>
-                  <p className="text-sm font-medium">ID: {floor.node_1.buddy.id}</p>
-                  <p className="text-xs text-muted-foreground">Lv.{floor.node_1.buddy.level} • {floor.node_1.buddy.rarity}</p>
+                  <p className="text-sm font-medium">ID: {nodeData.buddy.id}</p>
+                  <p className="text-xs text-muted-foreground">Lv.{nodeData.buddy.level} • {nodeData.buddy.rarity}</p>
                 </div>
               </div>
             </div>
@@ -92,7 +95,7 @@ export function FloorDetailCard({ floor }: FloorDetailsProps) {
         <div>
           <h4 className="font-medium mb-2">Enemies</h4>
           <div className="flex flex-wrap gap-4">
-            {floor.node_1.monster_info.list.map((monster) => (
+            {nodeData.monster_info.list.map((monster: import("@/types/shiyu-defense").Monster) => (
               <div key={monster.id} className="flex items-center space-x-2">
                 <Avatar>
                   <Image 

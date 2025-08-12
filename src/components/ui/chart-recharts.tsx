@@ -11,7 +11,6 @@ import {
   Bar,
   PieChart,
   Pie,
-  Cell,
   ScatterChart,
   Scatter,
   Legend
