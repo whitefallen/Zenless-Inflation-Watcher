@@ -1,5 +1,6 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import "../metal-mania.css";
 import Image from "next/image";
 import { getAllDeadlyAssaultData } from "@/lib/deadly-assault";
 import { Accordion } from "@/components/ui/accordion";
@@ -86,7 +87,7 @@ export default async function DeadlyAssaultPage() {
     <div className="min-h-screen bg-background">
       <div className="flex flex-col gap-8 container mx-auto py-12 px-4 max-w-5xl">
         <div className="flex flex-col gap-2 text-center pb-8">
-          <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-yellow-400 to-black bg-clip-text text-transparent metal-mania-regular">
             Deadly Assault
           </h1>
           <p className="text-muted-foreground text-lg">

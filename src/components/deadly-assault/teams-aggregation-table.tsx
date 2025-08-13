@@ -1,6 +1,7 @@
 
 import type { DeadlyAssaultData, Avatar } from "@/types/deadly-assault";
 import Image from "next/image";
+import { useMemo } from "react";
 
 
 type TeamAggregation = {
@@ -9,14 +10,14 @@ type TeamAggregation = {
   scores: number[];
 };
 
-function getTeamsAggregation(allData: DeadlyAssaultData[]): TeamAggregation[] {
-  const teamMap = new Map<string, TeamAggregation>();
+function getTeamsAggregation(allData: DeadlyAssaultData[]): Array<TeamAggregation & { teamKey: string }> {
+  const teamMap = new Map<string, TeamAggregation & { teamKey: string }>();
   for (const d of allData) {
     for (const run of d?.data?.list || []) {
       const team = run.avatar_list || [];
-      const teamKey = team.map((a: Avatar) => a.id).sort((a, b) => a - b).join('-');
+      const teamKey = team.map((a: Avatar) => a.id).sort((a, b) => a - b).join("-");
       if (!teamMap.has(teamKey)) {
-        teamMap.set(teamKey, { avatars: team, count: 0, scores: [] });
+        teamMap.set(teamKey, { avatars: team, count: 0, scores: [], teamKey });
       }
       const entry = teamMap.get(teamKey)!;
       entry.count += 1;
@@ -27,7 +28,7 @@ function getTeamsAggregation(allData: DeadlyAssaultData[]): TeamAggregation[] {
 }
 
 export function TeamsAggregationTable({ allData }: { allData: DeadlyAssaultData[] }) {
-  const teams = getTeamsAggregation(allData);
+  const teams = useMemo(() => getTeamsAggregation(allData), [allData]);
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full border rounded">
@@ -40,8 +41,8 @@ export function TeamsAggregationTable({ allData }: { allData: DeadlyAssaultData[
           </tr>
         </thead>
         <tbody>
-          {teams.map((team, idx) => (
-            <tr key={idx} className="border-b">
+          {teams.map((team) => (
+            <tr key={team.teamKey} className="border-b">
               <td className="px-4 py-2">
                 <div className="flex gap-1">
                   {team.avatars.map((a) => (

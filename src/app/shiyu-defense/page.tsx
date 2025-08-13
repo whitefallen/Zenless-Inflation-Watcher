@@ -2,6 +2,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getAllShiyuDefenseData } from "@/lib/shiyu-defense"
 import Image from "next/image";
+import "../metal-mania.css";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense"
 
 import { Accordion } from "@/components/ui/accordion"
@@ -192,7 +193,7 @@ export default async function ShiyuDefensePage() {
     <div className="min-h-screen bg-background">
       <div className="flex flex-col gap-8 container mx-auto py-12 px-4 max-w-5xl">
         <div className="flex flex-col gap-2 text-center pb-8">
-          <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-yellow-400 to-black bg-clip-text text-transparent metal-mania-regular">
             Shiyu Defense
           </h1>
           <p className="text-muted-foreground text-lg">
