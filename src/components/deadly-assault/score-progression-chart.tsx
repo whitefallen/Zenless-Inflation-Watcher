@@ -1,5 +1,6 @@
 "use client";
 import { Chart } from "@/components/ui/chart";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import type { DeadlyAssaultData } from "@/types/deadly-assault";
 
 export function ScoreProgressionChart({ allData }: { allData: DeadlyAssaultData[] }) {
@@ -31,50 +32,54 @@ export function ScoreProgressionChart({ allData }: { allData: DeadlyAssaultData[
   });
 
   return (
-    <div className="mb-8">
-      <h3 className="text-lg font-semibold mb-2">Progression</h3>
-      <div className="grid md:grid-cols-3 gap-6">
-        <div>
-          <h4 className="font-semibold mb-1">Score Progression</h4>
-          <Chart
-            type="line"
-            data={data}
-            options={{
-              xKey: "date",
-              lines: [
-                { dataKey: "score", stroke: "#8b5cf6", name: "Score" }
-              ]
-            }}
-          />
+    <Card className="mb-8">
+      <CardHeader>
+        <CardTitle>Progression</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div>
+            <h4 className="font-semibold mb-1">Score Progression</h4>
+            <Chart
+              type="line"
+              data={data}
+              options={{
+                xKey: "date",
+                lines: [
+                  { dataKey: "score", stroke: "#8b5cf6", name: "Score" }
+                ]
+              }}
+            />
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1">Star Progression</h4>
+            <Chart
+              type="line"
+              data={data}
+              options={{
+                xKey: "date",
+                lines: [
+                  { dataKey: "star", stroke: "#fbbf24", name: "Stars" }
+                ]
+              }}
+            />
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1">Percentile Progression</h4>
+            <Chart
+              type="line"
+              data={data}
+              options={{
+                xKey: "date",
+                lines: [
+                  { dataKey: "percentile", stroke: "#facc15", name: "Percentile (%)" }
+                ],
+                yLabel: "Percentile (lower is better)"
+              }}
+            />
+          </div>
         </div>
-        <div>
-          <h4 className="font-semibold mb-1">Star Progression</h4>
-          <Chart
-            type="line"
-            data={data}
-            options={{
-              xKey: "date",
-              lines: [
-                { dataKey: "star", stroke: "#fbbf24", name: "Stars" }
-              ]
-            }}
-          />
-        </div>
-        <div>
-          <h4 className="font-semibold mb-1">Percentile Progression</h4>
-          <Chart
-            type="line"
-            data={data}
-            options={{
-              xKey: "date",
-              lines: [
-                { dataKey: "percentile", stroke: "#facc15", name: "Percentile (%)" }
-              ],
-              yLabel: "Percentile (lower is better)"
-            }}
-          />
-        </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

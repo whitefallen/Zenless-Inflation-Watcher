@@ -1,5 +1,6 @@
 "use client";
 import { Chart } from "@/components/ui/chart";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense";
 
 export function ScoreProgressionChart({ allData }: { allData: ShiyuDefenseData[] }) {
@@ -23,36 +24,40 @@ export function ScoreProgressionChart({ allData }: { allData: ShiyuDefenseData[]
   });
 
   return (
-    <div className="mb-8">
-      <h3 className="text-lg font-semibold mb-2">Progression</h3>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <h4 className="font-semibold mb-1">Max Layer Progression</h4>
-          <Chart
-            type="line"
-            data={data}
-            options={{
-              xKey: "date",
-              lines: [
-                { dataKey: "maxLayer", stroke: "#0ea5e9", name: "Max Layer" }
-              ]
-            }}
-          />
+    <Card className="mb-8">
+      <CardHeader>
+        <CardTitle>Progression</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 className="font-semibold mb-1">Max Layer Progression</h4>
+            <Chart
+              type="line"
+              data={data}
+              options={{
+                xKey: "date",
+                lines: [
+                  { dataKey: "maxLayer", stroke: "#0ea5e9", name: "Max Layer" }
+                ]
+              }}
+            />
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1">Fastest Layer Time Progression</h4>
+            <Chart
+              type="line"
+              data={data}
+              options={{
+                xKey: "date",
+                lines: [
+                  { dataKey: "fastTime", stroke: "#fbbf24", name: "Fastest Layer Time" }
+                ]
+              }}
+            />
+          </div>
         </div>
-        <div>
-          <h4 className="font-semibold mb-1">Fastest Layer Time Progression</h4>
-          <Chart
-            type="line"
-            data={data}
-            options={{
-              xKey: "date",
-              lines: [
-                { dataKey: "fastTime", stroke: "#fbbf24", name: "Fastest Layer Time" }
-              ]
-            }}
-          />
-        </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
