@@ -1,6 +1,22 @@
+import { AgentInfoCompact } from "@/components/shared/AgentInfoCompact";
+import path from "path";
+import fs from "fs";
 import type { DeadlyAssaultData, Avatar } from "@/types/deadly-assault";
 
-import Image from "next/image";
+function getAgentInfo(id: number) {
+  try {
+    const charPath = path.join(process.cwd(), "public/characters", `${id}.json`);
+    const data = JSON.parse(fs.readFileSync(charPath, "utf-8"));
+    return {
+      name: String(data.Name),
+      weaponType: Object.values(data.WeaponType)[0] ? String(Object.values(data.WeaponType)[0]) : "-",
+      elementType: Object.values(data.ElementType)[0] ? String(Object.values(data.ElementType)[0]) : "-",
+      rarity: Number(data.Rarity) || 0,
+    };
+  } catch {
+    return null;
+  }
+}
 
 function aggregateCharacterPerformance(allData: DeadlyAssaultData[]) {
   const charMap = new Map<number, { avatar: Avatar; count: number; totalScore: number; topRunCount: number }>();
@@ -44,15 +60,10 @@ export function CharacterPerformanceTable({ allData }: { allData: DeadlyAssaultD
           {perf.map((entry) => (
             <tr key={entry.avatar.id} className="border-b">
               <td className="px-4 py-2 flex items-center gap-2">
-                <Image
-                  src={entry.avatar.role_square_url}
-                  alt={`Avatar #${entry.avatar.id}`}
-                  width={28}
-                  height={28}
-                  className="w-7 h-7 rounded-full border inline-block"
-                  unoptimized
-                />
-                <span>ID: {entry.avatar.id}</span>
+                {(() => {
+                  const info = getAgentInfo(entry.avatar.id);
+                  return info ? <AgentInfoCompact {...info} iconUrl={entry.avatar.role_square_url} /> : <span>ID: {entry.avatar.id}</span>;
+                })()}
               </td>
               <td className="px-4 py-2">{entry.count}</td>
               <td className="px-4 py-2">{(entry.totalScore / entry.count).toFixed(2)}</td>

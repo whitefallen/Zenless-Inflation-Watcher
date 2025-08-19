@@ -1,5 +1,5 @@
 import type { ShiyuDefenseData, FloorDetail, TimeStamp } from "@/types/shiyu-defense";
-import { FloorDetailCard } from "@/components/shiyu-defense/floor-detail-card";
+import FloorDetailCard from "@/components/shiyu-defense/floor-detail-card";
 
 // Find fastest and slowest Layer 7 clears for node_1 and node_2 separately
 function getFastestSlowestLayer7ByNode(allData: ShiyuDefenseData[]) {

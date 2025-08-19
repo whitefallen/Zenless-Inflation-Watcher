@@ -1,20 +1,44 @@
-'use client'
-
 import { Avatar } from "@/components/ui/avatar"
+import { AgentInfoCompact } from "@/components/shared/AgentInfoCompact"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { cleanBuffText } from "@/lib/format-utils"
 import { FloorDetail } from "@/types/shiyu-defense"
 import Image from "next/image"
+import path from "path";
+import fs from "fs";
 
 interface FloorDetailsProps {
   floor: FloorDetail;
   node?: 'node_1' | 'node_2';
 }
 
-export function FloorDetailCard({ floor, node = 'node_1' }: FloorDetailsProps) {
+function FloorDetailCard({ floor, node = 'node_1' }: FloorDetailsProps) {
   // Pick node_1 or node_2 for display
   const nodeData = floor[node];
+
+  function getAgentInfo(id: number) {
+    try {
+      const charPath = path.join(process.cwd(), "public/characters", `${id}.json`);
+      const data = JSON.parse(fs.readFileSync(charPath, "utf-8"));
+      const iconPath = data.PartnerInfo?.IconPath || data.IconPath;
+      const iconUrl = iconPath
+        ? iconPath.startsWith('http')
+          ? iconPath
+          : '/characters/' + String(data.Id) + '.png'
+        : undefined;
+      return {
+        name: String(data.Name),
+        weaponType: Object.values(data.WeaponType)[0] ? String(Object.values(data.WeaponType)[0]) : "-",
+        elementType: Object.values(data.ElementType)[0] ? String(Object.values(data.ElementType)[0]) : "-",
+        rarity: Number(data.Rarity) || 0,
+        iconUrl,
+      };
+    } catch {
+      return null;
+    }
+  }
+
   return (
     <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
       <div className="space-y-6">
@@ -51,23 +75,19 @@ export function FloorDetailCard({ floor, node = 'node_1' }: FloorDetailsProps) {
         <div>
           <h4 className="font-medium mb-2">Team Composition</h4>
           <div className="flex flex-wrap gap-4">
-            {nodeData.avatars.map((avatar: import("@/types/shiyu-defense").Avatar) => (
-              <div key={avatar.id} className="flex items-center space-x-2">
-                <Avatar>
-                  <Image 
-                    src={avatar.role_square_url} 
-                    alt={`Character ${avatar.id}`}
-                    width={40}
-                    height={40}
-                    unoptimized
-                  />
-                </Avatar>
-                <div>
-                  <p className="text-sm font-medium">ID: {avatar.id}</p>
-                  <p className="text-xs text-muted-foreground">Lv.{avatar.level} • {avatar.rarity}</p>
+            {nodeData.avatars.map((avatar: import("@/types/shiyu-defense").Avatar) => {
+              const info = getAgentInfo(avatar.id);
+              const iconUrl = avatar.role_square_url || info?.iconUrl || '/placeholder.png';
+              return (
+                <div key={avatar.id} className="flex items-center space-x-2">
+                  {info ? (
+                    <AgentInfoCompact {...info} iconUrl={iconUrl} />
+                  ) : (
+                    <span className="text-xs text-muted-foreground">ID: {avatar.id}</span>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           {nodeData.buddy && (
             <div className="mt-2">
@@ -137,5 +157,7 @@ export function FloorDetailCard({ floor, node = 'node_1' }: FloorDetailsProps) {
         )}
       </div>
     </div>
-  )
+  );
 }
+
+export default FloorDetailCard;

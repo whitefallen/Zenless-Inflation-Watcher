@@ -2,6 +2,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getAllShiyuDefenseData } from "@/lib/shiyu-defense"
 import Image from "next/image";
+import { AgentInfoCompact } from "@/components/shared/AgentInfoCompact";
+import { getAgentInfo } from "@/lib/agent-utils";
 import "../metal-mania.css";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense"
 
@@ -62,9 +64,14 @@ export default async function ShiyuDefensePage() {
                   <div className="mb-1"><b>Battle Time:</b> {floor.node_1?.battle_time ? `${floor.node_1.battle_time}s` : 'N/A'}</div>
                   <div className="mb-1"><b>Team:</b></div>
                   <div className="flex gap-2 mb-1">
-                    {floor.node_1?.avatars?.map((a, j) => (
-                      <Image key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" unoptimized />
-                    ))}
+                    {floor.node_1?.avatars?.map((a, j) => {
+                      const info = getAgentInfo(a.id);
+                      return info ? (
+                        <AgentInfoCompact key={j} {...info} iconUrl={a.role_square_url} />
+                      ) : (
+                        <Image key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" unoptimized />
+                      );
+                    })}
                   </div>
                 </div>
                 {/* Node 2 */}
@@ -73,9 +80,14 @@ export default async function ShiyuDefensePage() {
                   <div className="mb-1"><b>Battle Time:</b> {floor.node_2?.battle_time ? `${floor.node_2.battle_time}s` : 'N/A'}</div>
                   <div className="mb-1"><b>Team:</b></div>
                   <div className="flex gap-2 mb-1">
-                    {floor.node_2?.avatars?.map((a, j) => (
-                      <Image key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" unoptimized />
-                    ))}
+                    {floor.node_2?.avatars?.map((a, j) => {
+                      const info = getAgentInfo(a.id);
+                      return info ? (
+                        <AgentInfoCompact key={j} {...info} iconUrl={a.role_square_url} />
+                      ) : (
+                        <Image key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" unoptimized />
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -127,9 +139,14 @@ export default async function ShiyuDefensePage() {
             label: "Team",
             render: (team: TeamAgg) => (
               <div className="flex gap-1">
-                {team.avatars.map((a, i) => (
-                  <Image key={i} src={a.role_square_url} alt={`Avatar #${a.id}`} width={28} height={28} className="w-7 h-7 rounded-full border inline-block" loading="lazy" unoptimized />
-                ))}
+                {team.avatars.map((a, i) => {
+                  const info = getAgentInfo(a.id);
+                  return info ? (
+                    <AgentInfoCompact key={i} {...info} iconUrl={a.role_square_url} />
+                  ) : (
+                    <Image key={i} src={a.role_square_url} alt={`Avatar #${a.id}`} width={28} height={28} className="w-7 h-7 rounded-full border inline-block" loading="lazy" unoptimized />
+                  );
+                })}
               </div>
             ),
           },
