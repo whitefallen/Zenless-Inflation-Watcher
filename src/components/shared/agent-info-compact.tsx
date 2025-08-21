@@ -22,7 +22,7 @@ export function AgentInfoCompact({ name, weaponType, elementType, rarity, iconUr
       <div className="flex flex-col">
         <span className="font-medium text-sm leading-tight">{name}</span>
         <span className="text-xs text-muted-foreground">
-          {weaponType} • {elementType} • {Array(rarity).fill('★').join('')}
+          {weaponType} • {elementType} • {Array(Math.max(0, Math.min(6, Number(rarity) || 0))).fill('★').join('')}
         </span>
       </div>
     </div>

@@ -1,8 +1,7 @@
 // ...removed unused Card, CardContent, CardHeader, CardTitle imports...
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getAllShiyuDefenseData } from "@/lib/shiyu-defense"
-import Image from "next/image";
-import { AgentInfoCompact } from "@/components/shared/agent-info-compact";
+import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-display";
 import { getAgentInfo } from "@/lib/agent-utils";
 import "../metal-mania.css";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense"
@@ -64,14 +63,20 @@ export default async function ShiyuDefensePage() {
                   <div className="mb-1"><b>Battle Time:</b> {floor.node_1?.battle_time ? `${floor.node_1.battle_time}s` : 'N/A'}</div>
                   <div className="mb-1"><b>Team:</b></div>
                   <div className="flex gap-2 mb-1">
-                    {floor.node_1?.avatars?.map((a, j) => {
-                      const info = getAgentInfo(a.id, { role_square_url: a.role_square_url, rarity: Number(a.rarity) });
-                      return info ? (
-                        <AgentInfoCompact key={j} {...info} />
-                      ) : (
-                        <Image key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" unoptimized />
-                      );
-                    })}
+                    <ResponsiveTeamDisplay
+                      agents={floor.node_1?.avatars?.map(a => {
+                        const info = getAgentInfo(a.id, { role_square_url: a.role_square_url, rarity: a.rarity });
+                        return info || {
+                          id: a.id,
+                          name: `Agent ${a.id}`,
+                          weaponType: '-',
+                          elementType: '-',
+                          rarity: 0,
+                          iconUrl: a.role_square_url || '/placeholder.png'
+                        };
+                      }) || []}
+                      variant="inline"
+                    />
                   </div>
                 </div>
                 {/* Node 2 */}
@@ -80,14 +85,20 @@ export default async function ShiyuDefensePage() {
                   <div className="mb-1"><b>Battle Time:</b> {floor.node_2?.battle_time ? `${floor.node_2.battle_time}s` : 'N/A'}</div>
                   <div className="mb-1"><b>Team:</b></div>
                   <div className="flex gap-2 mb-1">
-                    {floor.node_2?.avatars?.map((a, j) => {
-                      const info = getAgentInfo(a.id, { role_square_url: a.role_square_url, rarity: Number(a.rarity) });
-                      return info ? (
-                        <AgentInfoCompact key={j} {...info} />
-                      ) : (
-                        <Image key={j} src={a.role_square_url} alt={`Avatar #${a.id}`} width={24} height={24} className="w-6 h-6 rounded-full border inline-block" loading="lazy" unoptimized />
-                      );
-                    })}
+                    <ResponsiveTeamDisplay
+                      agents={floor.node_2?.avatars?.map(a => {
+                        const info = getAgentInfo(a.id, { role_square_url: a.role_square_url, rarity: a.rarity });
+                        return info || {
+                          id: a.id,
+                          name: `Agent ${a.id}`,
+                          weaponType: '-',
+                          elementType: '-',
+                          rarity: 0,
+                          iconUrl: a.role_square_url || '/placeholder.png'
+                        };
+                      }) || []}
+                      variant="inline"
+                    />
                   </div>
                 </div>
               </div>
@@ -112,7 +123,7 @@ export default async function ShiyuDefensePage() {
 
   // Teams aggregation
   type TeamAgg = {
-    avatars: { role_square_url: string; id: number }[];
+    avatars: { role_square_url: string; id: number; rarity: string }[];
     count: number;
     layers: number[];
   };
@@ -120,14 +131,19 @@ export default async function ShiyuDefensePage() {
     const teamMap = new Map<string, TeamAgg>();
     for (const d of allData) {
       for (const floor of d?.data?.all_floor_detail || []) {
-        const team = floor.node_1.avatars || [];
-        const teamKey = team.map((a) => a.id).sort((a, b) => a - b).join('-');
-        if (!teamMap.has(teamKey)) {
-          teamMap.set(teamKey, { avatars: team, count: 0, layers: [] });
+        // Process both node_1 and node_2 teams
+        for (const node of [floor.node_1, floor.node_2]) {
+          const team = node.avatars || [];
+          if (team.length > 0) {
+            const teamKey = team.map((a) => a.id).sort((a, b) => a - b).join('-');
+            if (!teamMap.has(teamKey)) {
+              teamMap.set(teamKey, { avatars: team, count: 0, layers: [] });
+            }
+            const entry = teamMap.get(teamKey)!;
+            entry.count += 1;
+            entry.layers.push(floor.layer_index);
+          }
         }
-        const entry = teamMap.get(teamKey)!;
-        entry.count += 1;
-        entry.layers.push(floor.layer_index);
       }
     }
     const teams: TeamAgg[] = Array.from(teamMap.values()).sort((a, b) => b.count - a.count);
@@ -138,15 +154,21 @@ export default async function ShiyuDefensePage() {
           {
             label: "Team",
             render: (team: TeamAgg) => (
-              <div className="flex gap-1">
-                {team.avatars.map((a, i) => {
-                  const info = getAgentInfo(a.id, { role_square_url: a.role_square_url });
-                  return info ? (
-                    <AgentInfoCompact key={i} {...info} />
-                  ) : (
-                    <Image key={i} src={a.role_square_url} alt={`Avatar #${a.id}`} width={28} height={28} className="w-7 h-7 rounded-full border inline-block" loading="lazy" unoptimized />
-                  );
-                })}
+              <div className="max-w-xs">
+                <ResponsiveTeamDisplay
+                  agents={team.avatars.map(a => {
+                    const info = getAgentInfo(a.id, { role_square_url: a.role_square_url });
+                    return info || {
+                      id: a.id,
+                      name: `Agent ${a.id}`,
+                      weaponType: '-',
+                      elementType: '-',
+                      rarity: 0,
+                      iconUrl: a.role_square_url || '/placeholder.png'
+                    };
+                  })}
+                  variant="table"
+                />
               </div>
             ),
           },

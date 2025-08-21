@@ -1,5 +1,6 @@
-import type { ShiyuDefenseData, FloorDetail, TimeStamp } from "@/types/shiyu-defense";
+import type { ShiyuDefenseData, FloorDetail } from "@/types/shiyu-defense";
 import FloorDetailCard from "@/components/shiyu-defense/floor-detail-card";
+import { formatTimeStamp } from "@/lib/date-utils";
 
 // Find fastest and slowest Layer 7 clears for node_1 and node_2 separately
 function getFastestSlowestLayer7ByNode(allData: ShiyuDefenseData[]) {
@@ -25,11 +26,6 @@ function getFastestSlowestLayer7ByNode(allData: ShiyuDefenseData[]) {
   return { fastestNode1, slowestNode1, fastestNode2, slowestNode2 };
 }
 
-function formatDate(ts?: TimeStamp) {
-  if (!ts) return "Unknown";
-  return `${ts.year}-${String(ts.month).padStart(2, '0')}-${String(ts.day).padStart(2, '0')}`;
-}
-
 export function BestWorstRuns({ allData }: { allData: ShiyuDefenseData[] }) {
   const { fastestNode1, slowestNode1, fastestNode2, slowestNode2 } = getFastestSlowestLayer7ByNode(allData);
   return (
@@ -41,7 +37,7 @@ export function BestWorstRuns({ allData }: { allData: ShiyuDefenseData[] }) {
           <b>Fastest Clear</b><br/>
           {fastestNode1 ? <>
             <div className="mb-2 text-sm text-muted-foreground">
-              Cleared on: {formatDate(fastestNode1.floor.floor_challenge_time)}<br/>
+              Cleared on: {formatTimeStamp(fastestNode1.floor.floor_challenge_time)}<br/>
               Battle Time: <b>{fastestNode1.battle_time}s</b>
             </div>
             <FloorDetailCard floor={fastestNode1.floor} node="node_1" />
@@ -51,7 +47,7 @@ export function BestWorstRuns({ allData }: { allData: ShiyuDefenseData[] }) {
           <b>Slowest Clear</b><br/>
           {slowestNode1 ? <>
             <div className="mb-2 text-sm text-muted-foreground">
-              Cleared on: {formatDate(slowestNode1.floor.floor_challenge_time)}<br/>
+              Cleared on: {formatTimeStamp(slowestNode1.floor.floor_challenge_time)}<br/>
               Battle Time: <b>{slowestNode1.battle_time}s</b>
             </div>
             <FloorDetailCard floor={slowestNode1.floor} node="node_1" />
@@ -65,7 +61,7 @@ export function BestWorstRuns({ allData }: { allData: ShiyuDefenseData[] }) {
           <b>Fastest Clear</b><br/>
           {fastestNode2 ? <>
             <div className="mb-2 text-sm text-muted-foreground">
-              Cleared on: {formatDate(fastestNode2.floor.floor_challenge_time)}<br/>
+              Cleared on: {formatTimeStamp(fastestNode2.floor.floor_challenge_time)}<br/>
               Battle Time: <b>{fastestNode2.battle_time}s</b>
             </div>
             <FloorDetailCard floor={fastestNode2.floor} node="node_2" />
@@ -75,7 +71,7 @@ export function BestWorstRuns({ allData }: { allData: ShiyuDefenseData[] }) {
           <b>Slowest Clear</b><br/>
           {slowestNode2 ? <>
             <div className="mb-2 text-sm text-muted-foreground">
-              Cleared on: {formatDate(slowestNode2.floor.floor_challenge_time)}<br/>
+              Cleared on: {formatTimeStamp(slowestNode2.floor.floor_challenge_time)}<br/>
               Battle Time: <b>{slowestNode2.battle_time}s</b>
             </div>
             <FloorDetailCard floor={slowestNode2.floor} node="node_2" />

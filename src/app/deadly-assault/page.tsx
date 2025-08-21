@@ -14,6 +14,8 @@ import { Recommendations } from "@/components/deadly-assault/recommendations";
 import { BossesAggregationTable } from "@/components/deadly-assault/bosses-aggregation-table";
 import { ScoreProgressionChart } from "@/components/deadly-assault/score-progression-chart";
 import { BestWorstRuns } from "@/components/deadly-assault/best-worst-runs";
+import { getAgentInfo } from "@/lib/agent-utils";
+import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-display";
 import { CharacterPerformanceTable } from "@/components/deadly-assault/character-performance-table";
 
 
@@ -59,11 +61,21 @@ export default async function DeadlyAssaultPage() {
           <div className="mb-2 flex items-center gap-2"><b>Teams Used:</b> <span role="img" aria-label="team">👥</span>
             {d?.data?.list?.map((run, i) => (
               <span key={i} className="inline-flex items-center gap-1 mr-2">
-                {run.avatar_list.map((a, j) => (
-                  <span key={j} className="inline-flex items-center gap-1">
-                    {a.role_square_url && <Image src={a.role_square_url} alt={`Avatar #${a.id}`} width={20} height={20} className="w-5 h-5 rounded-full border inline-block" unoptimized />}
-                  </span>
-                ))}
+                <ResponsiveTeamDisplay
+                  agents={run.avatar_list.map(a => {
+                    const info = getAgentInfo(a.id, { role_square_url: a.role_square_url, rarity: a.rarity });
+                    return info || {
+                      id: a.id,
+                      name: `Agent ${a.id}`,
+                      weaponType: '-',
+                      elementType: '-',
+                      rarity: 0,
+                      iconUrl: a.role_square_url || '/placeholder.png'
+                    };
+                  })}
+                  variant="inline"
+                  maxAgents={4}
+                />
               </span>
             ))}
           </div>

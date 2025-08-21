@@ -1,22 +1,18 @@
 import Image from "next/image";
 import type { DeadlyAssaultData } from "@/types/deadly-assault";
+import type { DeadlyAssaultRun } from "@/types/deadly-assault";
+import { useMemo } from "react";
+import { aggregateBossData } from "@/lib/aggregation-utils";
 
 export function BossesAggregationTable({ allData }: { allData: DeadlyAssaultData[] }) {
-  // Map: bossName => { icon, name, count, scores[] }
-  const bossMap = new Map<string, { icon: string; name: string; count: number; scores: number[] }>();
-  for (const d of allData) {
-    for (const run of d?.data?.list || []) {
-      for (const boss of run.boss || []) {
-        if (!bossMap.has(boss.name)) {
-          bossMap.set(boss.name, { icon: boss.icon, name: boss.name, count: 0, scores: [] });
-        }
-        const entry = bossMap.get(boss.name)!;
-        entry.count += 1;
-        entry.scores.push(run.score);
-      }
-    }
-  }
-  const bosses = Array.from(bossMap.values()).sort((a, b) => b.count - a.count);
+  const bosses = useMemo(() => 
+    aggregateBossData<DeadlyAssaultData, DeadlyAssaultRun>(
+      allData,
+      (run) => run.boss,
+      (run) => run.score
+    ), 
+    [allData]
+  );
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full border rounded">
@@ -38,8 +34,8 @@ export function BossesAggregationTable({ allData }: { allData: DeadlyAssaultData
                 </div>
               </td>
               <td className="px-4 py-2">{boss.count}</td>
-              <td className="px-4 py-2 font-semibold">{Math.max(...boss.scores)}</td>
-              <td className="px-4 py-2">{(boss.scores.reduce((a, b) => a + b, 0) / boss.scores.length).toFixed(2)}</td>
+              <td className="px-4 py-2 font-semibold">{boss.maxScore || 'N/A'}</td>
+              <td className="px-4 py-2">{boss.averageScore?.toFixed(2) || 'N/A'}</td>
             </tr>
           ))}
           {bosses.length === 0 && (

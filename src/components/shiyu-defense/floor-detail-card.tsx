@@ -1,5 +1,5 @@
 import { Avatar } from "@/components/ui/avatar"
-import { AgentInfoCompact } from "@/components/shared/agent-info-compact"
+import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-display"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { cleanBuffText } from "@/lib/format-utils"
@@ -51,19 +51,21 @@ function FloorDetailCard({ floor, node = 'node_1' }: FloorDetailsProps) {
         {/* Team Composition */}
         <div>
           <h4 className="font-medium mb-2">Team Composition</h4>
-          <div className="flex flex-wrap gap-4">
-            {nodeData.avatars.map((avatar: import("@/types/shiyu-defense").Avatar) => {
-              const info = getAgentInfo(avatar.id, { role_square_url: avatar.role_square_url, rarity: Number(avatar.rarity) });
-              return (
-                <div key={avatar.id} className="flex items-center space-x-2">
-                  {info ? (
-                    <AgentInfoCompact {...info} />
-                  ) : (
-                    <span className="text-xs text-muted-foreground">ID: {avatar.id}</span>
-                  )}
-                </div>
-              );
-            })}
+          <div className="max-w-lg">
+            <ResponsiveTeamDisplay
+              agents={nodeData.avatars.map((avatar: import("@/types/shiyu-defense").Avatar) => {
+                const info = getAgentInfo(avatar.id, { role_square_url: avatar.role_square_url, rarity: avatar.rarity });
+                return info || {
+                  id: avatar.id,
+                  name: `Agent ${avatar.id}`,
+                  weaponType: '-',
+                  elementType: '-',
+                  rarity: 0,
+                  iconUrl: avatar.role_square_url || '/placeholder.png'
+                };
+              })}
+              variant="inline"
+            />
           </div>
           {nodeData.buddy && (
             <div className="mt-2">

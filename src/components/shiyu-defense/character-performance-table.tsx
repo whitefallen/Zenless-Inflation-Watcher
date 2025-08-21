@@ -1,5 +1,5 @@
 import type { ShiyuDefenseData, Avatar } from "@/types/shiyu-defense";
-import { AgentInfoCompact } from "@/components/shared/agent-info-compact";
+import { AgentInfoMini } from "@/components/shared/agent-info-mini";
 import { getAgentInfo } from "@/lib/agent-utils";
 
 // Ensure proper typing for allData and related variables
@@ -45,12 +45,12 @@ export function CharacterPerformanceTable({ allData }: { allData: ShiyuDefenseDa
         </thead>
         <tbody>
           {perf.map((entry) => {
-            const info = getAgentInfo(entry.avatar.id, { role_square_url: entry.avatar.role_square_url, rarity: Number(entry.avatar.rarity) });
+            const info = getAgentInfo(entry.avatar.id, { role_square_url: entry.avatar.role_square_url, rarity: entry.avatar.rarity });
             return (
               <tr key={entry.avatar.id} className="border-b">
                 <td className="px-4 py-2 flex items-center gap-2">
                   {info ? (
-                    <AgentInfoCompact {...info} />
+                    <AgentInfoMini {...info} />
                   ) : (
                     <span className="text-xs text-muted-foreground">ID: {entry.avatar.id}</span>
                   )}

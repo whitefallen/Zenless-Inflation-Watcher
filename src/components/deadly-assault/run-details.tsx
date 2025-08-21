@@ -1,6 +1,8 @@
 import type { DeadlyAssaultRun } from "@/types/deadly-assault";
 
 import Image from "next/image";
+import { getAgentInfo } from "@/lib/agent-utils";
+import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-display";
 
 export function RunDetails({ run }: { run: DeadlyAssaultRun }) {
   return (
@@ -16,13 +18,22 @@ export function RunDetails({ run }: { run: DeadlyAssaultRun }) {
           </span>
         ))}
       </div>
-      <div className="flex items-center gap-2">
+      <div className="space-y-2">
         <b>Teams:</b> <span role="img" aria-label="team">👥</span>
-        {run.avatar_list.map((a, i) => (
-          <span key={i} className="inline-flex items-center gap-1 mr-1">
-            {a.role_square_url && <Image src={a.role_square_url} alt={`Avatar #${a.id}`} width={20} height={20} className="w-5 h-5 rounded-full border inline-block" unoptimized />}
-          </span>
-        ))}
+        <ResponsiveTeamDisplay
+          agents={run.avatar_list.map(a => {
+            const info = getAgentInfo(a.id, { role_square_url: a.role_square_url, rarity: a.rarity });
+            return info || {
+              id: a.id,
+              name: `Agent ${a.id}`,
+              weaponType: '-',
+              elementType: '-',
+              rarity: 0,
+              iconUrl: a.role_square_url || '/placeholder.png'
+            };
+          })}
+          variant="inline"
+        />
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
