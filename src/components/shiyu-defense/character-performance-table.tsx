@@ -1,19 +1,27 @@
 import type { ShiyuDefenseData, Avatar } from "@/types/shiyu-defense";
 import { AgentInfoCompact } from "@/components/shared/AgentInfoCompact";
+import { getAgentInfo } from "@/lib/agent-utils";
 
 // Ensure proper typing for allData and related variables
 function aggregateCharacterPerformance(allData: ShiyuDefenseData[]): { avatar: Avatar; count: number; totalLayer: number; topLayerCount: number }[] {
   const charMap = new Map<number, { avatar: Avatar; count: number; totalLayer: number; topLayerCount: number }>();
 
   for (const d of allData) {
-    if (!d.avatars || !Array.isArray(d.avatars)) continue; // Ensure avatars is defined and iterable
-    for (const avatar of d.avatars) {
-      if (!charMap.has(avatar.id)) {
-        charMap.set(avatar.id, { avatar, count: 0, totalLayer: 0, topLayerCount: 0 });
+    for (const floor of d.data.all_floor_detail) {
+      for (const node of [floor.node_1, floor.node_2]) {
+        if (!node.avatars || !Array.isArray(node.avatars)) continue; // Ensure avatars is defined and iterable
+        for (const avatar of node.avatars) {
+          if (!charMap.has(avatar.id)) {
+            charMap.set(avatar.id, { avatar, count: 0, totalLayer: 0, topLayerCount: 0 });
+          }
+          const entry = charMap.get(avatar.id)!;
+          entry.count++;
+          entry.totalLayer += floor.layer_index;
+          if (floor.layer_index === d.data.max_layer) {
+            entry.topLayerCount++;
+          }
+        }
       }
-      const entry = charMap.get(avatar.id)!;
-      entry.count++;
-      entry.totalLayer += avatar.layer;
     }
   }
 
