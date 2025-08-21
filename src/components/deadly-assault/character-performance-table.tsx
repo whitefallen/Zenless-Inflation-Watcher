@@ -1,4 +1,4 @@
-import { AgentInfoCompact } from "@/components/shared/AgentInfoCompact";
+import { AgentInfoCompact } from "@/components/shared/agent-info-compact";
 import path from "path";
 import fs from "fs";
 import type { DeadlyAssaultData, Avatar } from "@/types/deadly-assault";

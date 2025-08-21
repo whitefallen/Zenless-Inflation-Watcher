@@ -6,32 +6,21 @@ import fs from "fs";
  * Prioritizes Hoyoverse URLs for images and falls back to local paths or placeholders.
  *
  * @param id - The ID of the agent.
- * @returns An object containing agent details or a fallback object if not found.
+ * @param avatarInfo - The avatar information containing the role_square_url.
+ * @returns An object containing agent details or null if not found.
  */
-export function getAgentInfo(id: number) {
+export function getAgentInfo(id: number, avatarInfo: { role_square_url?: string; rarity?: number }): { name: string; weaponType: string; elementType: string; rarity: number; iconUrl: string } | null {
   try {
     const charPath = path.join(process.cwd(), "public/characters", `${id}.json`);
     const data = JSON.parse(fs.readFileSync(charPath, "utf-8"));
-    const iconPath = data.PartnerInfo?.IconPath || data.IconPath;
-    const iconUrl = iconPath && iconPath.startsWith('http')
-      ? iconPath // Use Hoyoverse URL if available
-      : iconPath
-      ? '/characters/' + String(data.Id) + '.png' // Fallback to local path
-      : '/placeholder.png'; // Final fallback
     return {
       name: String(data.Name),
       weaponType: Object.values(data.WeaponType)[0] ? String(Object.values(data.WeaponType)[0]) : "-",
       elementType: Object.values(data.ElementType)[0] ? String(Object.values(data.ElementType)[0]) : "-",
-      rarity: Number(data.Rarity) || 0,
-      iconUrl,
+      rarity: avatarInfo.rarity || Number(data.Rarity) || 0,
+      iconUrl: avatarInfo.role_square_url || '/placeholder.png',
     };
   } catch {
-    return {
-      name: "Unknown",
-      weaponType: "-",
-      elementType: "-",
-      rarity: 0,
-      iconUrl: '/placeholder.png', // Fallback image
-    };
+    return null;
   }
 }
