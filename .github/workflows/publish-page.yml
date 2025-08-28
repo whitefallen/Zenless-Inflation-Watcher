@@ -1,4 +1,4 @@
-name: Deploy Frontend to GitHub Pages
+name: Deploy PWA to GitHub Pages
 
 on:
   push:
@@ -29,11 +29,21 @@ jobs:
       - name: Rebuild native modules
         run: npm rebuild
 
+      - name: Generate PWA icons
+        run: |
+          npm install -g puppeteer
+          node scripts/generateIconsPNG.js
+
       - name: Copy data files to public
         run: node scripts/copy-data-to-public.js
 
-      - name: Build Next.js app
+      - name: Build Next.js PWA
         run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Verify PWA deployment
+        run: node scripts/verifyPWADeployment.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
