@@ -1,0 +1,26 @@
+# GitHub Pages MIME type configuration for PWA
+# This ensures proper Content-Type headers for PWA files
+
+<Files "*.js">
+  ForceType text/javascript
+</Files>
+
+<Files "manifest.json">
+  ForceType application/manifest+json
+</Files>
+
+<Files "*.json">
+  ForceType application/json
+</Files>
+
+<Files "*.png">
+  ForceType image/png
+</Files>
+
+<Files "*.svg">
+  ForceType image/svg+xml
+</Files>
+
+<Files "offline.html">
+  ForceType text/html
+</Files>
