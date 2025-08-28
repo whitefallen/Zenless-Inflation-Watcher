@@ -8,7 +8,21 @@ const iconSizes = [16, 32, 72, 96, 128, 144, 152, 192, 384, 512];
   console.log('Generating PNG icons from HTML templates...');
   
   try {
-    const browser = await puppeteer.launch();
+    // CI-friendly browser configuration
+    const browser = await puppeteer.launch({
+      headless: 'new', // Use new headless mode
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-accelerated-2d-canvas',
+        '--no-first-run',
+        '--no-zygote',
+        '--single-process', // Helps with CI environments
+        '--disable-gpu'
+      ]
+    });
+    
     const page = await browser.newPage();
     
     for (const size of iconSizes) {

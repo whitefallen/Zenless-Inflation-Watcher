@@ -26,13 +26,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Puppeteer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ca-certificates fonts-liberation libappindicator3-1 libasound2t64 libatk-bridge2.0-0 \
+            libatk1.0-0 libcups2 libdbus-1-3 libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 \
+            libx11-xcb1 libxcomposite1 libxdamage1 libxrandr2 xdg-utils
+
       - name: Rebuild native modules
         run: npm rebuild
 
       - name: Generate PWA icons
         run: |
-          npm install -g puppeteer
-          node scripts/generateIconsPNG.js
+          echo "🎨 Generating PNG icons from HTML templates..."
+          if node scripts/generateIconsPNG.js; then
+            echo "✅ PNG icons generated successfully with Puppeteer"
+          else
+            echo "⚠️ Puppeteer failed, ensuring basic PWA icons exist..."
+            node scripts/ensurePWAIcons.js
+          fi
 
       - name: Copy data files to public
         run: node scripts/copy-data-to-public.js
