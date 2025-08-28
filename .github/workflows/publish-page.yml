@@ -50,6 +50,11 @@ jobs:
       - name: Copy data files to public
         run: node scripts/copy-data-to-public.js
 
+      - name: Generate PWA manifest
+        run: node scripts/generateManifest.js
+        env:
+          NODE_ENV: production
+
       - name: Build Next.js PWA
         run: npm run build
         env:

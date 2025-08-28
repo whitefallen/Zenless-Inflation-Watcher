@@ -16,10 +16,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Get the correct base path for production
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/Zenless-Inflation-Watcher' : '';
+
 export const metadata: Metadata = {
   title: "Zenless Zone Zero Battle Records",
   description: "Track and analyze your Zenless Zone Zero battle performance",
-  manifest: "/manifest.json",
+  manifest: `${basePath}/manifest.json`,
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -61,10 +65,10 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="ZZZ Records" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-TileColor" content="#7c3aed" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
-        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#7c3aed" />
+        <link rel="apple-touch-icon" href={`${basePath}/icons/icon-192x192.png`} />
+        <link rel="icon" type="image/png" sizes="32x32" href={`${basePath}/icons/icon-32x32.png`} />
+        <link rel="icon" type="image/png" sizes="16x16" href={`${basePath}/icons/icon-16x16.png`} />
+        <link rel="mask-icon" href={`${basePath}/icons/safari-pinned-tab.svg`} color="#7c3aed" />
       </head>
       <body
         className={cn(
