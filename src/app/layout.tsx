@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from '@/components/layout/header'
+import { PWAInstallPrompt } from '@/components/pwa/install-prompt'
+import { PWAStatus } from '@/components/pwa/status'
 import { cn } from '@/lib/utils'
 
 const geistSans = Geist({
@@ -17,6 +19,33 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Zenless Zone Zero Battle Records",
   description: "Track and analyze your Zenless Zone Zero battle performance",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "ZZZ Records",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Zenless Zone Zero Battle Records",
+    title: "ZZZ Battle Records",
+    description: "Track and analyze your Zenless Zone Zero battle performance",
+  },
+  twitter: {
+    card: "summary",
+    title: "ZZZ Battle Records",
+    description: "Track and analyze your Zenless Zone Zero battle performance",
+  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#7c3aed',
 };
 
 export default function RootLayout({
@@ -26,6 +55,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="ZZZ Records" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#7c3aed" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#7c3aed" />
+      </head>
       <body
         className={cn(
           `${geistSans.variable} ${geistMono.variable}`,
@@ -39,6 +79,8 @@ export default function RootLayout({
               {children}
             </div>
           </main>
+          <PWAInstallPrompt />
+          <PWAStatus />
         </div>
       </body>
     </html>
