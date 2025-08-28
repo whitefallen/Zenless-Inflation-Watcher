@@ -18,19 +18,19 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 266,
+    "rank_percent": 248,
     "list": [
       {
-        "score": 47961,
+        "score": 46319,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 8,
-          "day": 24,
-          "hour": 12,
-          "minute": 48,
-          "second": 56
+          "day": 25,
+          "hour": 11,
+          "minute": 26,
+          "second": 34
         },
         "boss": [
           {
@@ -42,9 +42,9 @@
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/202510eaa232c2377276631d229ce86e.png",
-            "desc": "· For Agents, <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 30%</color>.\\n· When inflicting Attribute Anomaly on enemies, for the whole squad, ATK <color=#2BAD00>increases by 8%</color> and Decibel Generation Rate <color=#2BAD00>increases by 8%</color> for 20s, stacking up to 4 times. Repeated triggers reset the duration.",
-            "name": "Power Boost"
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/7ad3462f7c6b984cc9144b2de289e0ab.png",
+            "desc": "· After Stunning enemies, their Stun DMG Multiplier <color=#2BAD00>increases by 25%</color>, and their Stun recovery speed <color=#2BAD00>decreases by 10%</color>.\\n· After an Agent uses a Chain Attack, their ATK <color=#2BAD00>increases by 20%</color> and CRIT DMG <color=#2BAD00>by 30%</color> for 20s.",
+            "name": "Lingering Illness"
           }
         ],
         "avatar_list": [
@@ -59,16 +59,6 @@
             "sub_element_type": 1
           },
           {
-            "id": 1411,
-            "level": 60,
-            "element_type": 200,
-            "avatar_profession": 4,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
-            "sub_element_type": 0
-          },
-          {
             "id": 1131,
             "level": 60,
             "element_type": 202,
@@ -77,26 +67,36 @@
             "rank": 6,
             "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
             "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54015,
+          "id": 54001,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/cac125e7347d0ff1616b6f57a114b2bf.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/4fbd37c6fca5a9a10c52348a4dd317d8.png"
         }
       },
       {
-        "score": 30077,
+        "score": 29919,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 8,
-          "day": 24,
-          "hour": 13,
-          "minute": 35,
-          "second": 11
+          "day": 25,
+          "hour": 12,
+          "minute": 36,
+          "second": 39
         },
         "boss": [
           {
@@ -135,34 +135,34 @@
             "sub_element_type": 0
           },
           {
-            "id": 1071,
+            "id": 1031,
             "level": 60,
-            "element_type": 200,
-            "avatar_profession": 5,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1071.png",
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031.png",
             "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54016,
+          "id": 54015,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/4695e3a02f51cad97561deb847dde418.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/cac125e7347d0ff1616b6f57a114b2bf.png"
         }
       },
       {
-        "score": 44921,
+        "score": 47815,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 8,
           "day": 24,
-          "hour": 13,
-          "minute": 59,
-          "second": 18
+          "hour": 22,
+          "minute": 29,
+          "second": 43
         },
         "boss": [
           {
@@ -181,53 +181,53 @@
         ],
         "avatar_list": [
           {
-            "id": 1381,
+            "id": 1221,
             "level": 60,
             "element_type": 203,
-            "avatar_profession": 1,
+            "avatar_profession": 3,
             "rarity": "S",
             "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1381.png",
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
             "sub_element_type": 0
           },
           {
-            "id": 1031,
+            "id": 1411,
             "level": 60,
-            "element_type": 205,
-            "avatar_profession": 4,
-            "rarity": "A",
-            "rank": 6,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031.png",
-            "sub_element_type": 0
-          },
-          {
-            "id": 1311,
-            "level": 60,
-            "element_type": 205,
+            "element_type": 200,
             "avatar_profession": 4,
             "rarity": "S",
             "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1211,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
             "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54009,
-          "rarity": "S",
+          "id": 53010,
+          "rarity": "A",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/86aa1128108ebdd92ab32f2f0e184928.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/5667502908d1afca0ecfd14520104153.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
     "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/1ef09a518c9f183d5001004b98aa3eea.png",
-    "total_score": 122959,
+    "total_score": 124053,
     "total_star": 9,
     "zone_id": 69018
   },
   "metadata": {
-    "exportDate": "2025-08-24T15:23:58.940Z",
+    "exportDate": "2025-08-28T20:32:49.675Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
