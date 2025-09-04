@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 248,
+    "rank_percent": 234,
     "list": [
       {
         "score": 46319,
@@ -34,15 +34,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/6c8a94b7b1d9adb701e0175971d5071e.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/55ae6b8630c0793b4fbad1fc1247da1e.png",
             "name": "Notorious - Dead End Butcher",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/c3d3f729bbf445afdee40ff07482b6d1.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/dcfcfd0cf7b32048b9b4787f7d634199.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/7ad3462f7c6b984cc9144b2de289e0ab.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/b59d8821136158860b20f4b24a74b914.png",
             "desc": "· After Stunning enemies, their Stun DMG Multiplier <color=#2BAD00>increases by 25%</color>, and their Stun recovery speed <color=#2BAD00>decreases by 10%</color>.\\n· After an Agent uses a Chain Attack, their ATK <color=#2BAD00>increases by 20%</color> and CRIT DMG <color=#2BAD00>by 30%</color> for 20s.",
             "name": "Lingering Illness"
           }
@@ -83,7 +83,7 @@
           "id": 54001,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/4fbd37c6fca5a9a10c52348a4dd317d8.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/aad04865a94493e6b59110cabe61c76b.png"
         }
       },
       {
@@ -100,15 +100,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/9a1515e66387b36f6a488149901551b5.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/1072ee44cfdbd0b373718dc7a0c6a6c2.png",
             "name": "Miasma Priest",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/3d0ab41f50a3861c8e6de71002b4ca48.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/3f9a514dea35eb2f4898f1767c83bf56.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/0c1dd35172f2594ab5315315dde48253.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/a5262d10962a2e2e1e0e88016f65c7c9.png",
             "desc": "· Agent Decibel Generation Rate <color=#2BAD00>increases by 20%</color>.\\n· <color=#FFFFFF>Ultimates</color> and <color=#FFFFFF>EX Special Attacks</color> ignore <color=#2BAD00>20%</color> of DMG RES on hit. After an <color=#FFFFFF>Ultimate</color> hits enemies, Agent <color=#FFFFFF>Ultimate</color> and <color=#FFFFFF>EX Special Attack</color> DMG <color=#2BAD00>increase by 50%</color> for 30s, repeated triggers reset the duration.",
             "name": "Sonata"
           }
@@ -149,7 +149,7 @@
           "id": 54015,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/cac125e7347d0ff1616b6f57a114b2bf.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/fe6461c92c6b6d9c2a260bd778826ca4.png"
         }
       },
       {
@@ -166,15 +166,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/35e0e39934ca8bba0821f693954909a7.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/9ce5a42e53bc26572ac401e5c14e9d95.png",
             "name": "Autonomous Assault Unit - Typhon Destroyer",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/af2690b824449f0e80b1e534b0fadd14.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/7b08b7dad238a8a4fac8bbb0d1ffeb74.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/202510eaa232c2377276631d229ce86e.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/567cf9f656aaf11e371a2a359fe2777b.png",
             "desc": "· For Agents, <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 30%</color>.\\n· When inflicting Attribute Anomaly on enemies, for the whole squad, ATK <color=#2BAD00>increases by 8%</color> and Decibel Generation Rate <color=#2BAD00>increases by 8%</color> for 20s, stacking up to 4 times. Repeated triggers reset the duration.",
             "name": "Power Boost"
           }
@@ -215,19 +215,19 @@
           "id": 53010,
           "rarity": "A",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/5667502908d1afca0ecfd14520104153.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/51b806e7d1737d713e6379a6091f403c.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/1ef09a518c9f183d5001004b98aa3eea.png",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/9815b5ec57f95835c9295e11b294f390.png",
     "total_score": 124053,
     "total_star": 9,
     "zone_id": 69018
   },
   "metadata": {
-    "exportDate": "2025-08-28T20:32:49.675Z",
+    "exportDate": "2025-09-04T20:31:56.435Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
