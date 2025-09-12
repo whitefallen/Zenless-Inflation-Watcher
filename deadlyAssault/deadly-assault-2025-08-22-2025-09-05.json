@@ -18,33 +18,33 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 266,
+    "rank_percent": 234,
     "list": [
       {
-        "score": 47961,
+        "score": 46319,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 8,
-          "day": 24,
-          "hour": 12,
-          "minute": 48,
-          "second": 56
+          "day": 25,
+          "hour": 11,
+          "minute": 26,
+          "second": 34
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/6c8a94b7b1d9adb701e0175971d5071e.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/55ae6b8630c0793b4fbad1fc1247da1e.png",
             "name": "Notorious - Dead End Butcher",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/c3d3f729bbf445afdee40ff07482b6d1.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/dcfcfd0cf7b32048b9b4787f7d634199.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/202510eaa232c2377276631d229ce86e.png",
-            "desc": "· For Agents, <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 30%</color>.\\n· When inflicting Attribute Anomaly on enemies, for the whole squad, ATK <color=#2BAD00>increases by 8%</color> and Decibel Generation Rate <color=#2BAD00>increases by 8%</color> for 20s, stacking up to 4 times. Repeated triggers reset the duration.",
-            "name": "Power Boost"
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/b59d8821136158860b20f4b24a74b914.png",
+            "desc": "· After Stunning enemies, their Stun DMG Multiplier <color=#2BAD00>increases by 25%</color>, and their Stun recovery speed <color=#2BAD00>decreases by 10%</color>.\\n· After an Agent uses a Chain Attack, their ATK <color=#2BAD00>increases by 20%</color> and CRIT DMG <color=#2BAD00>by 30%</color> for 20s.",
+            "name": "Lingering Illness"
           }
         ],
         "avatar_list": [
@@ -59,16 +59,6 @@
             "sub_element_type": 1
           },
           {
-            "id": 1411,
-            "level": 60,
-            "element_type": 200,
-            "avatar_profession": 4,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
-            "sub_element_type": 0
-          },
-          {
             "id": 1131,
             "level": 60,
             "element_type": 202,
@@ -77,38 +67,48 @@
             "rank": 6,
             "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
             "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54015,
+          "id": 54001,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/cac125e7347d0ff1616b6f57a114b2bf.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/aad04865a94493e6b59110cabe61c76b.png"
         }
       },
       {
-        "score": 30077,
+        "score": 29919,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 8,
-          "day": 24,
-          "hour": 13,
-          "minute": 35,
-          "second": 11
+          "day": 25,
+          "hour": 12,
+          "minute": 36,
+          "second": 39
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/9a1515e66387b36f6a488149901551b5.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/1072ee44cfdbd0b373718dc7a0c6a6c2.png",
             "name": "Miasma Priest",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/3d0ab41f50a3861c8e6de71002b4ca48.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/3f9a514dea35eb2f4898f1767c83bf56.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/0c1dd35172f2594ab5315315dde48253.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/a5262d10962a2e2e1e0e88016f65c7c9.png",
             "desc": "· Agent Decibel Generation Rate <color=#2BAD00>increases by 20%</color>.\\n· <color=#FFFFFF>Ultimates</color> and <color=#FFFFFF>EX Special Attacks</color> ignore <color=#2BAD00>20%</color> of DMG RES on hit. After an <color=#FFFFFF>Ultimate</color> hits enemies, Agent <color=#FFFFFF>Ultimate</color> and <color=#FFFFFF>EX Special Attack</color> DMG <color=#2BAD00>increase by 50%</color> for 30s, repeated triggers reset the duration.",
             "name": "Sonata"
           }
@@ -135,62 +135,6 @@
             "sub_element_type": 0
           },
           {
-            "id": 1071,
-            "level": 60,
-            "element_type": 200,
-            "avatar_profession": 5,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1071.png",
-            "sub_element_type": 0
-          }
-        ],
-        "buddy": {
-          "id": 54016,
-          "rarity": "S",
-          "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/4695e3a02f51cad97561deb847dde418.png"
-        }
-      },
-      {
-        "score": 44921,
-        "star": 3,
-        "total_star": 3,
-        "challenge_time": {
-          "year": 2025,
-          "month": 8,
-          "day": 24,
-          "hour": 13,
-          "minute": 59,
-          "second": 18
-        },
-        "boss": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/35e0e39934ca8bba0821f693954909a7.png",
-            "name": "Autonomous Assault Unit - Typhon Destroyer",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/af2690b824449f0e80b1e534b0fadd14.png",
-            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
-          }
-        ],
-        "buffer": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/202510eaa232c2377276631d229ce86e.png",
-            "desc": "· For Agents, <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 30%</color>.\\n· When inflicting Attribute Anomaly on enemies, for the whole squad, ATK <color=#2BAD00>increases by 8%</color> and Decibel Generation Rate <color=#2BAD00>increases by 8%</color> for 20s, stacking up to 4 times. Repeated triggers reset the duration.",
-            "name": "Power Boost"
-          }
-        ],
-        "avatar_list": [
-          {
-            "id": 1381,
-            "level": 60,
-            "element_type": 203,
-            "avatar_profession": 1,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1381.png",
-            "sub_element_type": 0
-          },
-          {
             "id": 1031,
             "level": 60,
             "element_type": 205,
@@ -199,35 +143,91 @@
             "rank": 6,
             "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031.png",
             "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54015,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/fe6461c92c6b6d9c2a260bd778826ca4.png"
+        }
+      },
+      {
+        "score": 47815,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2025,
+          "month": 8,
+          "day": 24,
+          "hour": 22,
+          "minute": 29,
+          "second": 43
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/9ce5a42e53bc26572ac401e5c14e9d95.png",
+            "name": "Autonomous Assault Unit - Typhon Destroyer",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/7b08b7dad238a8a4fac8bbb0d1ffeb74.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/567cf9f656aaf11e371a2a359fe2777b.png",
+            "desc": "· For Agents, <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 30%</color>.\\n· When inflicting Attribute Anomaly on enemies, for the whole squad, ATK <color=#2BAD00>increases by 8%</color> and Decibel Generation Rate <color=#2BAD00>increases by 8%</color> for 20s, stacking up to 4 times. Repeated triggers reset the duration.",
+            "name": "Power Boost"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1221,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+            "sub_element_type": 0
           },
           {
-            "id": 1311,
+            "id": 1411,
             "level": 60,
-            "element_type": 205,
+            "element_type": 200,
             "avatar_profession": 4,
             "rarity": "S",
             "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1211,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
             "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54009,
-          "rarity": "S",
+          "id": 53010,
+          "rarity": "A",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/86aa1128108ebdd92ab32f2f0e184928.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/51b806e7d1737d713e6379a6091f403c.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u43ejc/1ef09a518c9f183d5001004b98aa3eea.png",
-    "total_score": 122959,
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ufe9lc/9815b5ec57f95835c9295e11b294f390.png",
+    "total_score": 124053,
     "total_star": 9,
     "zone_id": 69018
   },
   "metadata": {
-    "exportDate": "2025-08-24T15:23:58.940Z",
+    "exportDate": "2025-09-04T20:31:56.435Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
