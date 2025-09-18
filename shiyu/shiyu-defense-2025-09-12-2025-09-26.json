@@ -1,0 +1,873 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "schedule_id": 62030,
+    "begin_time": "1757646000",
+    "end_time": "1758855599",
+    "rating_list": [
+      {
+        "times": 4,
+        "rating": "S"
+      }
+    ],
+    "has_data": true,
+    "all_floor_detail": [
+      {
+        "layer_index": 7,
+        "rating": "S",
+        "layer_id": 6203007,
+        "buffs": [
+          {
+            "title": "Harmony of Strings",
+            "text": "· <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> from Agents increase by 30%. Their Attribute Anomaly DMG increases by 30%.\\n· When there are 1/2 Agents with Attack specialty in the squad, ATK increases by 10%/25% for all squad members."
+          }
+        ],
+        "node_1": {
+          "avatars": [
+            {
+              "id": 1091,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 202,
+              "avatar_profession": 3,
+              "rank": 2,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+              "sub_element_type": 1
+            },
+            {
+              "id": 1131,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 202,
+              "avatar_profession": 4,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1311,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 205,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54001,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/2d7989007f697c321d682d2e7a4e65f6.png"
+          },
+          "element_type_list": [
+            203
+          ],
+          "monster_info": {
+            "level": 70,
+            "list": [
+              {
+                "id": 200092,
+                "name": "Specialized Assault Bomber",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": -1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/3fcd4634814d5d47a23dd6676e63fa3c.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              },
+              {
+                "id": 10029,
+                "name": "Beholder Engine",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 0,
+                "elec_weakness": 1,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/72a28da4d98edc5aab9f6a3c704ab123.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/e9820a238e1433c1052e21e3f92e8b06.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 87
+        },
+        "node_2": {
+          "avatars": [
+            {
+              "id": 1261,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1401,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1411,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54016,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/55912ff0ddb1ca22a9d78248e5f0a923.png"
+          },
+          "element_type_list": [
+            200
+          ],
+          "monster_info": {
+            "level": 70,
+            "list": [
+              {
+                "id": 930176,
+                "name": "Miasmic - Abyssal Enforcer",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": -1,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/4fd9e3f0116b7e8fc1040df7ab208413.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/e9820a238e1433c1052e21e3f92e8b06.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              }
+            ]
+          },
+          "battle_time": 114
+        },
+        "challenge_time": "1757689307",
+        "zone_name": "Critical Node: Seventh Frontier",
+        "floor_challenge_time": {
+          "year": 2025,
+          "month": 9,
+          "day": 12,
+          "hour": 16,
+          "minute": 1,
+          "second": 47
+        }
+      },
+      {
+        "layer_index": 6,
+        "rating": "S",
+        "layer_id": 6203006,
+        "buffs": [
+          {
+            "title": "Harmony of Strings",
+            "text": "· <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> from Agents increase by 30%. Their Attribute Anomaly DMG increases by 30%.\\n· When there are 1/2 Agents with Attack specialty in the squad, ATK increases by 10%/25% for all squad members."
+          }
+        ],
+        "node_1": {
+          "avatars": [
+            {
+              "id": 1221,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 203,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1411,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1211,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 203,
+              "avatar_profession": 4,
+              "rank": 1,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54014,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/45b6a673b3aecc636a2f75a33a7f6911.png"
+          },
+          "element_type_list": [
+            203
+          ],
+          "monster_info": {
+            "level": 65,
+            "list": [
+              {
+                "id": 30027,
+                "name": "Lumberjack",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 0,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/72b9f6297732dd9053f3f49c543e1ac9.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/88b9a172b1a0d189ad1466657d56f49f.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              },
+              {
+                "id": 10033,
+                "name": "Miasmic Trooper - Shieldguard",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/fe7cf41a74b4ad0ae2a25c2249ccf0e1.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/986a30e1864ce61d6968f0377740eeaa.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 90
+        },
+        "node_2": {
+          "avatars": [
+            {
+              "id": 1281,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 200,
+              "avatar_profession": 3,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1171,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 201,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1151,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 201,
+              "avatar_profession": 4,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54006,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7265a862c8d1d501beecf24b9bcdf06b.png"
+          },
+          "element_type_list": [
+            201,
+            200
+          ],
+          "monster_info": {
+            "level": 65,
+            "list": [
+              {
+                "id": 200072,
+                "name": "Shielded Defender",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": -1,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/b097e8ee566197fa1ccb561b84da6596.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/88b9a172b1a0d189ad1466657d56f49f.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              },
+              {
+                "id": 20008,
+                "name": "Lightfoot Rover",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": -1,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/3f6514a97c48ed2c298166601f27e49c.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/88b9a172b1a0d189ad1466657d56f49f.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 10034,
+                "name": "Miasmic Trooper - Cannoneer",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/c05fa4078fa1931f55d84dfbd20bc8e7.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/986a30e1864ce61d6968f0377740eeaa.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 159
+        },
+        "challenge_time": "1757688075",
+        "zone_name": "Critical Node: Sixth Frontier",
+        "floor_challenge_time": {
+          "year": 2025,
+          "month": 9,
+          "day": 12,
+          "hour": 15,
+          "minute": 41,
+          "second": 15
+        }
+      },
+      {
+        "layer_index": 5,
+        "rating": "S",
+        "layer_id": 6203005,
+        "buffs": [
+          {
+            "title": "Harmony of Strings",
+            "text": "· <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> from Agents increase by 30%. Their Attribute Anomaly DMG increases by 30%.\\n· When there are 1/2 Agents with Attack specialty in the squad, ATK increases by 10%/25% for all squad members."
+          }
+        ],
+        "node_1": {
+          "avatars": [
+            {
+              "id": 1281,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 200,
+              "avatar_profession": 3,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1171,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 201,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1151,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 201,
+              "avatar_profession": 4,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54006,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7265a862c8d1d501beecf24b9bcdf06b.png"
+          },
+          "element_type_list": [
+            201,
+            200
+          ],
+          "monster_info": {
+            "level": 60,
+            "list": [
+              {
+                "id": 200251,
+                "name": "Doppelganger - Bellum",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/5604b660fc1857be6091fa6cd14db14a.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/e9820a238e1433c1052e21e3f92e8b06.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200241,
+                "name": "Doppelganger - Pulchra",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7c9fa1ea908bc3acfd019852f8276865.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/e9820a238e1433c1052e21e3f92e8b06.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200231,
+                "name": "Doppelganger - Mors",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/6530ebbb41bb37a0531b877520a63419.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/e9820a238e1433c1052e21e3f92e8b06.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 100181,
+                "name": "Rustler",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/4a4578568e2f43ffd57a25bf2930b3e3.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              },
+              {
+                "id": 100191,
+                "name": "Ambusher",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/d85c139777624bd062d0d4871271607b.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 159
+        },
+        "node_2": {
+          "avatars": [
+            {
+              "id": 1221,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 203,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1411,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1211,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 203,
+              "avatar_profession": 4,
+              "rank": 1,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54014,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/45b6a673b3aecc636a2f75a33a7f6911.png"
+          },
+          "element_type_list": [
+            203
+          ],
+          "monster_info": {
+            "level": 60,
+            "list": [
+              {
+                "id": 300021,
+                "name": "Guardian MK II",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": -1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/c5eedd563c618013476c20e8ad40aa22.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/88b9a172b1a0d189ad1466657d56f49f.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200081,
+                "name": "Lightfoot Rover MK II",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": -1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/c03359a5ac6c4423b565bf3fa0f0fa37.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/88b9a172b1a0d189ad1466657d56f49f.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200091,
+                "name": "Assault Gunner",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": -1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/311dfa756087faead7803533c1e03934.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 100051,
+                "name": "Harrier Jaeger",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 0,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/638010cfa113055a93d924f07016ab34.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 100
+        },
+        "challenge_time": "1757687718",
+        "zone_name": "Critical Node: Fifth Frontier",
+        "floor_challenge_time": {
+          "year": 2025,
+          "month": 9,
+          "day": 12,
+          "hour": 15,
+          "minute": 35,
+          "second": 18
+        }
+      },
+      {
+        "layer_index": 4,
+        "rating": "S",
+        "layer_id": 6203004,
+        "buffs": [
+          {
+            "title": "Harmony of Strings",
+            "text": "· <color=#2EB6FF>Electric DMG</color> and <color=#F0D12B>Physical DMG</color> from Agents increase by 30%. Their Attribute Anomaly DMG increases by 30%.\\n· When there are 1/2 Agents with Attack specialty in the squad, ATK increases by 10%/25% for all squad members."
+          }
+        ],
+        "node_1": {
+          "avatars": [
+            {
+              "id": 1281,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 200,
+              "avatar_profession": 3,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1171,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 201,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1151,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 201,
+              "avatar_profession": 4,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54006,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7265a862c8d1d501beecf24b9bcdf06b.png"
+          },
+          "element_type_list": [
+            201,
+            200
+          ],
+          "monster_info": {
+            "level": 58,
+            "list": [
+              {
+                "id": 200241,
+                "name": "Doppelganger - Pulchra",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7c9fa1ea908bc3acfd019852f8276865.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/e9820a238e1433c1052e21e3f92e8b06.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200231,
+                "name": "Doppelganger - Mors",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/6530ebbb41bb37a0531b877520a63419.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/e9820a238e1433c1052e21e3f92e8b06.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200251,
+                "name": "Doppelganger - Bellum",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/5604b660fc1857be6091fa6cd14db14a.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/e9820a238e1433c1052e21e3f92e8b06.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 100181,
+                "name": "Rustler",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/4a4578568e2f43ffd57a25bf2930b3e3.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              },
+              {
+                "id": 100151,
+                "name": "Looter",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/730437bd6dfd114e897889dc3cda3741.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 64
+        },
+        "node_2": {
+          "avatars": [
+            {
+              "id": 1221,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 203,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1411,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1211,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 203,
+              "avatar_profession": 4,
+              "rank": 1,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54014,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/45b6a673b3aecc636a2f75a33a7f6911.png"
+          },
+          "element_type_list": [
+            203
+          ],
+          "monster_info": {
+            "level": 58,
+            "list": [
+              {
+                "id": 200071,
+                "name": "Heavy Striker MK II",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": -1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/09cdf8b227168eade69b5cb07909c6ae.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/88b9a172b1a0d189ad1466657d56f49f.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200091,
+                "name": "Assault Gunner",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": -1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/311dfa756087faead7803533c1e03934.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200081,
+                "name": "Lightfoot Rover MK II",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": -1,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/c03359a5ac6c4423b565bf3fa0f0fa37.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/88b9a172b1a0d189ad1466657d56f49f.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 100051,
+                "name": "Harrier Jaeger",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 0,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/638010cfa113055a93d924f07016ab34.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              },
+              {
+                "id": 100091,
+                "name": "Demolition Jaeger",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 0,
+                "elec_weakness": 1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/c6c2588144e70defd6fa9c1f9322c4b2.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u3efnc/7226e37f8e6f0aaf4a782fea6aada4f3.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 45
+        },
+        "challenge_time": "1757687366",
+        "zone_name": "Critical Node: Fourth Frontier",
+        "floor_challenge_time": {
+          "year": 2025,
+          "month": 9,
+          "day": 12,
+          "hour": 15,
+          "minute": 29,
+          "second": 26
+        }
+      }
+    ],
+    "fast_layer_time": 109,
+    "max_layer": 7,
+    "hadal_begin_time": {
+      "year": 2025,
+      "month": 9,
+      "day": 12,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "hadal_end_time": {
+      "year": 2025,
+      "month": 9,
+      "day": 26,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "battle_time_47": 818
+  },
+  "metadata": {
+    "exportDate": "2025-09-18T20:33:23.499Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense",
+    "automated": true
+  }
+}
