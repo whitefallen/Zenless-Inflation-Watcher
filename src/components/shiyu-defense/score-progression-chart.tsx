@@ -4,18 +4,23 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense";
 
 export function ScoreProgressionChart({ allData }: { allData: ShiyuDefenseData[] }) {
-  // Sort by end_time (oldest to newest), end_time is a string (ISO or timestamp)
+  // Sort by end_time (oldest to newest), using hadal_end_time TimeStamp objects
   const sorted = [...(allData || [])].sort((a, b) => {
-    const aDate = new Date(a.data.end_time);
-    const bDate = new Date(b.data.end_time);
+    const aEnd = a.data.hadal_end_time;
+    const bEnd = b.data.hadal_end_time;
+    if (!aEnd || !bEnd) return 0;
+    const aDate = new Date(aEnd.year, (aEnd.month || 1) - 1, aEnd.day || 1, aEnd.hour || 0, aEnd.minute || 0, aEnd.second || 0);
+    const bDate = new Date(bEnd.year, (bEnd.month || 1) - 1, bEnd.day || 1, bEnd.hour || 0, bEnd.minute || 0, bEnd.second || 0);
     return aDate.getTime() - bDate.getTime();
   });
-  const filtered = sorted.filter(d => d.data && d.data.max_layer !== undefined && d.data.fast_layer_time !== undefined && d.data.begin_time);
+  const filtered = sorted.filter(d => d.data && d.data.max_layer !== undefined && d.data.fast_layer_time !== undefined && d.data.hadal_begin_time);
 
   const data = filtered.map(d => {
     return {
-      date: d.data.begin_time && d.data.end_time
-        ? `${d.data.begin_time} to ${d.data.end_time}`
+      date: d.data.hadal_begin_time && d.data.hadal_end_time
+        ? `${d.data.hadal_begin_time.year}-${String(d.data.hadal_begin_time.month).padStart(2, '0')}-${String(d.data.hadal_begin_time.day).padStart(2, '0')}`
+          + " to " +
+          `${d.data.hadal_end_time.year}-${String(d.data.hadal_end_time.month).padStart(2, '0')}-${String(d.data.hadal_end_time.day).padStart(2, '0')}`
         : "Unknown",
       maxLayer: d.data.max_layer,
       fastTime: d.data.fast_layer_time,
