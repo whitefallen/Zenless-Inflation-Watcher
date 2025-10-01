@@ -5,6 +5,7 @@ import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-displ
 import { getAgentInfo } from "@/lib/agent-utils";
 import "../metal-mania.css";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense"
+import { formatDateRange } from "@/lib/date-utils"
 
 import { Accordion } from "@/components/ui/accordion"
 import { SharedAggregationTable } from "@/components/shared/aggregation-table"
@@ -23,28 +24,12 @@ export default async function ShiyuDefensePage() {
   // ...stats is unused...
 
   // History accordion
-  function formatTimestamp(ts: string | number | undefined) {
-    if (!ts) return 'N/A';
-    // If string, try to parse as int
-    const num = typeof ts === 'string' ? parseInt(ts, 10) : ts;
-    // If it's a 10-digit timestamp, treat as seconds
-    if (typeof num === 'number' && num > 1000000000 && num < 2000000000) {
-      return new Date(num * 1000).toLocaleDateString();
-    }
-    // If it's a 13-digit timestamp, treat as ms
-    if (typeof num === 'number' && num > 1000000000000) {
-      return new Date(num).toLocaleDateString();
-    }
-    return 'N/A';
-  }
-
   const historyItems = allData.map((d) => {
-    const begin = formatTimestamp(d?.data?.begin_time);
-    const end = formatTimestamp(d?.data?.end_time);
+    const dateRange = formatDateRange(d?.data?.hadal_begin_time, d?.data?.hadal_end_time);
     return {
       title: (
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-          <span className="font-semibold">{begin} - {end}</span>
+          <span className="font-semibold">{dateRange}</span>
           <span className="text-xs text-muted-foreground">UID: {d?.metadata?.uid || 'N/A'}</span>
         </div>
       ),
