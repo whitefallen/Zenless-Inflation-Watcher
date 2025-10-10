@@ -46,7 +46,7 @@ export function ScoreProgressionChart({ allData }: { allData: DeadlyAssaultData[
               options={{
                 xKey: "date",
                 lines: [
-                  { dataKey: "score", stroke: "#8b5cf6", name: "Score" }
+                  { dataKey: "score", stroke: "#6b21a8", name: "Score" }
                 ]
               }}
             />
@@ -59,7 +59,7 @@ export function ScoreProgressionChart({ allData }: { allData: DeadlyAssaultData[
               options={{
                 xKey: "date",
                 lines: [
-                  { dataKey: "star", stroke: "#fbbf24", name: "Stars" }
+                  { dataKey: "star", stroke: "#a16207", name: "Stars" }
                 ]
               }}
             />
@@ -72,7 +72,7 @@ export function ScoreProgressionChart({ allData }: { allData: DeadlyAssaultData[
               options={{
                 xKey: "date",
                 lines: [
-                  { dataKey: "percentile", stroke: "#facc15", name: "Percentile (%)" }
+                  { dataKey: "percentile", stroke: "#a16207", name: "Percentile (%)" }
                 ],
                 yLabel: "Percentile (lower is better)"
               }}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GradeBadge } from "@/components/ui/grade-badge";
 
 interface AgentInfoMiniProps {
   name: string;
@@ -8,9 +9,7 @@ interface AgentInfoMiniProps {
   iconUrl: string;
 }
 
-export function AgentInfoMini({ name, weaponType, elementType, rarity, iconUrl }: AgentInfoMiniProps) {
-  const rarityStars = Array(Math.max(0, Math.min(6, Number(rarity) || 0))).fill('★').join('');
-  
+export function AgentInfoMini({ name, elementType, rarity, iconUrl }: AgentInfoMiniProps) {
   return (
     <div className="flex items-center gap-1 bg-card/50 rounded px-1 py-0.5 border">
       <Image
@@ -24,7 +23,7 @@ export function AgentInfoMini({ name, weaponType, elementType, rarity, iconUrl }
       <div className="flex flex-col min-w-0">
         <span className="font-medium text-xs leading-tight truncate">{name}</span>
         <div className="flex items-center gap-1 text-xs text-muted-foreground">
-          <span className="text-yellow-500">{rarityStars}</span>
+          <GradeBadge stars={rarity} size="xs" />
           <span className="text-xs">•</span>
           <span className="truncate">{elementType}</span>
         </div>

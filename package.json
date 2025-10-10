@@ -12,7 +12,12 @@
     "start": "next start",
     "export": "next export",
     "lint": "next lint",
-    "migrate:filenames": "node scripts/migrate-filenames.js"
+    "migrate:filenames": "node scripts/migrate-filenames.js",
+    "check-architecture": "node scripts/validate-architecture.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "docs": "echo 'Architecture Documentation:' && echo '📚 Full Guide: docs/CLIENT-SERVER-ARCHITECTURE.md' && echo '✅ Checklist: docs/ARCHITECTURE-CHECKLIST.md' && echo '🏗️ System: docs/ARCHITECTURE-SYSTEM.md' && echo '🔧 Linting: docs/ARCHITECTURE-LINTING.md'"
   },
   "author": "",
   "license": "ISC",

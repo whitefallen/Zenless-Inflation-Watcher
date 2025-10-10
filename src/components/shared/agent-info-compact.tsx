@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GradeBadge } from "@/components/ui/grade-badge";
 
 interface AgentInfoCompactProps {
   name: string;
@@ -20,9 +21,12 @@ export function AgentInfoCompact({ name, weaponType, elementType, rarity, iconUr
         unoptimized
       />
       <div className="flex flex-col">
-        <span className="font-medium text-sm leading-tight">{name}</span>
+        <div className="flex items-center gap-2">
+          <span className="font-medium text-sm leading-tight">{name}</span>
+          <GradeBadge stars={rarity} size="xs" />
+        </div>
         <span className="text-xs text-muted-foreground">
-          {weaponType} • {elementType} • {Array(Math.max(0, Math.min(6, Number(rarity) || 0))).fill('★').join('')}
+          {weaponType} • {elementType}
         </span>
       </div>
     </div>

@@ -14,6 +14,7 @@ import { ScoreProgressionChart } from "@/components/shiyu-defense/score-progress
 import { PeriodComparison } from "@/components/shiyu-defense/period-comparison"
 import { Recommendations } from "@/components/shiyu-defense/recommendations"
 import { CharacterPerformanceTable } from "@/components/shiyu-defense/character-performance-table"
+import { ShiyuDefenseTrend } from "@/components/shiyu-defense/shiyu-defense-trend"
 
 
 export default async function ShiyuDefensePage() {
@@ -236,6 +237,7 @@ export default async function ShiyuDefensePage() {
           </div>
         <TabsContent value="overview" className="mt-6">
           <div className="space-y-8 px-6">
+            <ShiyuDefenseTrend data={allData} />
             <ScoreProgressionChart allData={allData} />
             <BestWorstRuns allData={allData} />
             <PeriodComparison allData={allData} />

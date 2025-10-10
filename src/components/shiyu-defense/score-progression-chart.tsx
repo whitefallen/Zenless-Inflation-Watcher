@@ -43,7 +43,7 @@ export function ScoreProgressionChart({ allData }: { allData: ShiyuDefenseData[]
               options={{
                 xKey: "date",
                 lines: [
-                  { dataKey: "maxLayer", stroke: "#0ea5e9", name: "Max Layer" }
+                  { dataKey: "maxLayer", stroke: "#0369a1", name: "Max Layer" }
                 ]
               }}
             />
@@ -56,7 +56,7 @@ export function ScoreProgressionChart({ allData }: { allData: ShiyuDefenseData[]
               options={{
                 xKey: "date",
                 lines: [
-                  { dataKey: "fastTime", stroke: "#fbbf24", name: "Fastest Layer Time" }
+                  { dataKey: "fastTime", stroke: "#a16207", name: "Fastest Layer Time" }
                 ]
               }}
             />

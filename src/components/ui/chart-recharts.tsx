@@ -57,7 +57,15 @@ export function Chart({ type, data, options, height = 300 }: ChartProps) {
             <XAxis dataKey={options?.xKey || "x"} />
             <YAxis />
             {options?.yAxisRight && <YAxis {...options.yAxisRight} />}
-            <Tooltip />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: '#18181b',
+                border: '1px solid #27272a',
+                borderRadius: '6px',
+                color: '#eab308'
+              }}
+              labelStyle={{ color: '#eab308' }}
+            />
             <Legend />
             {Array.isArray(options?.lines)
               ? (options.lines as LineOption[]).map((line, idx) => (
@@ -83,7 +91,15 @@ export function Chart({ type, data, options, height = 300 }: ChartProps) {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey={options?.xKey || "x"} />
             <YAxis />
-            <Tooltip />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: '#18181b',
+                border: '1px solid #27272a',
+                borderRadius: '6px',
+                color: '#eab308'
+              }}
+              labelStyle={{ color: '#eab308' }}
+            />
             <Legend />
             <Bar dataKey={options?.yKey || "y"} fill="#8884d8" />
           </BarChart>
@@ -94,7 +110,15 @@ export function Chart({ type, data, options, height = 300 }: ChartProps) {
         <ResponsiveContainer width="100%" height={height}>
           <PieChart>
             <Pie data={data} dataKey={options?.valueKey || "value"} nameKey={options?.nameKey || "name"} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label />
-            <Tooltip />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: '#18181b',
+                border: '1px solid #27272a',
+                borderRadius: '6px',
+                color: '#eab308'
+              }}
+              labelStyle={{ color: '#eab308' }}
+            />
             <Legend />
           </PieChart>
         </ResponsiveContainer>
@@ -106,7 +130,16 @@ export function Chart({ type, data, options, height = 300 }: ChartProps) {
             <CartesianGrid />
             <XAxis dataKey={options?.xKey || "x"} name={options?.xLabel || "X"} />
             <YAxis dataKey={options?.yKey || "y"} name={options?.yLabel || "Y"} />
-            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+            <Tooltip
+              cursor={{ strokeDasharray: '3 3' }}
+              contentStyle={{
+                backgroundColor: '#18181b',
+                border: '1px solid #27272a',
+                borderRadius: '6px',
+                color: '#eab308'
+              }}
+              labelStyle={{ color: '#eab308' }}
+            />
             <Legend />
             <Scatter name="Data" data={data} fill="#8884d8" />
           </ScatterChart>

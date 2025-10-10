@@ -17,6 +17,7 @@ import { BestWorstRuns } from "@/components/deadly-assault/best-worst-runs";
 import { getAgentInfo } from "@/lib/agent-utils";
 import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-display";
 import { CharacterPerformanceTable } from "@/components/deadly-assault/character-performance-table";
+import { DeadlyAssaultTrend } from "@/components/deadly-assault/deadly-assault-trend";
 
 
 function formatDateRangeFromTimeObjects(start?: TimeStamp, end?: TimeStamp) {
@@ -119,6 +120,7 @@ export default async function DeadlyAssaultPage() {
 
         <TabsContent value="overview" className="mt-6">
           <div className="space-y-8 px-6">
+            <DeadlyAssaultTrend data={allData || []} />
             <ScoreProgressionChart allData={allData || []} />
             <BestWorstRuns allData={allData || []} />
             <div className="mb-8">
