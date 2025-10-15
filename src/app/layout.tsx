@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from '@/components/layout/header'
 import { PWAInstallPrompt } from '@/components/pwa/install-prompt'
 import { PWAStatus } from '@/components/pwa/status'
+import { ErrorBoundary } from '@/components/shared/error-boundary'
 import { cn } from '@/lib/utils'
 
 const geistSans = Geist({
@@ -79,9 +80,11 @@ export default function RootLayout({
         <div className="relative flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">
-            <div className="container mx-auto py-12 px-4">
-              {children}
-            </div>
+            <ErrorBoundary>
+              <div className="container mx-auto py-12 px-4">
+                {children}
+              </div>
+            </ErrorBoundary>
           </main>
           <PWAInstallPrompt />
           <PWAStatus />

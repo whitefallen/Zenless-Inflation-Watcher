@@ -6,6 +6,7 @@ import { getAllDeadlyAssaultData } from "@/lib/deadly-assault";
 import { Accordion } from "@/components/ui/accordion";
 import { percentile } from "@/lib/utils";
 import type { TimeStamp } from "@/types/deadly-assault";
+import { formatDateRange } from "@/lib/date-utils";
 import { RunDetails } from "@/components/deadly-assault/run-details";
 import { TeamsAggregationTable } from "@/components/deadly-assault/teams-aggregation-table";
 import { BossDifficultyTable } from "@/components/deadly-assault/boss-difficulty-table";
@@ -19,14 +20,6 @@ import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-displ
 import { CharacterPerformanceTable } from "@/components/deadly-assault/character-performance-table";
 import { DeadlyAssaultTrend } from "@/components/deadly-assault/deadly-assault-trend";
 
-
-function formatDateRangeFromTimeObjects(start?: TimeStamp, end?: TimeStamp) {
-  if (!start || !end) return "Unknown period";
-  const startDate = new Date(Date.UTC(start.year, (start.month || 1) - 1, start.day || 1));
-  const endDate = new Date(Date.UTC(end.year, (end.month || 1) - 1, end.day || 1));
-  const fmt = (d: Date) => d.toISOString().slice(0, 10);
-  return `${fmt(startDate)} - ${fmt(endDate)}`;
-}
 
 export default async function DeadlyAssaultPage() {
   const allData = await getAllDeadlyAssaultData();
@@ -46,7 +39,7 @@ export default async function DeadlyAssaultPage() {
             {avatarIcon && <Image src={avatarIcon} alt="Avatar" width={24} height={24} className="w-6 h-6 rounded-full inline-block border" unoptimized />}
             {starIcon}
             {d?.data?.start_time && d?.data?.end_time
-              ? formatDateRangeFromTimeObjects(d.data.start_time as unknown as TimeStamp, d.data.end_time as unknown as TimeStamp)
+              ? formatDateRange(d.data.start_time as unknown as TimeStamp, d.data.end_time as unknown as TimeStamp)
               : `Entry ${idx + 1}`}
           </span>
           <span className="text-xs text-muted-foreground flex items-center gap-1">

@@ -3,6 +3,7 @@ import type { DeadlyAssaultRun } from "@/types/deadly-assault";
 import Image from "next/image";
 import { getAgentInfo } from "@/lib/agent-utils";
 import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-display";
+import { SafeBuffText } from "@/components/shared/safe-text-display";
 
 export function RunDetails({ run }: { run: DeadlyAssaultRun }) {
   return (
@@ -47,7 +48,7 @@ export function RunDetails({ run }: { run: DeadlyAssaultRun }) {
         ))}
         {run.buffer.map((b, i) => (
           <div key={i + '-desc'} className="pr-8 text-xs text-muted-foreground">
-            <span dangerouslySetInnerHTML={{ __html: b.desc }} />
+            <SafeBuffText text={b.desc} />
           </div>
         ))}
       </div>
