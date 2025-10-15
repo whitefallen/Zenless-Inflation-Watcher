@@ -6,6 +6,7 @@ import { getAgentInfo } from "@/lib/agent-utils";
 import "../metal-mania.css";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense"
 import { formatDateRange } from "@/lib/date-utils"
+import { SafeBuffText } from "@/components/shared/safe-text-display"
 
 import { Accordion } from "@/components/ui/accordion"
 import { SharedAggregationTable } from "@/components/shared/aggregation-table"
@@ -94,7 +95,7 @@ export default async function ShiyuDefensePage() {
                   <ul className="list-disc ml-6 w-full">
                     {floor.buffs.map((buff, k) => (
                       <li key={k} className="text-left w-full">
-                        <span className="font-semibold">{buff.title}:</span> <span dangerouslySetInnerHTML={{ __html: buff.text.replace(/\\n/g, '<br/>') }} />
+                        <span className="font-semibold">{buff.title}:</span> <SafeBuffText text={buff.text} />
                       </li>
                     ))}
                   </ul>
