@@ -2,7 +2,7 @@
  * EmptyState component for displaying helpful messages when no data is available
  */
 
-import { FileQuestion, ArrowRight, type LucideIcon } from 'lucide-react';
+import { FileQuestion, ArrowRight } from 'lucide-react';
 
 interface EmptyStateProps {
   icon?: React.ComponentType<{ className?: string }>;
