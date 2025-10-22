@@ -9,9 +9,9 @@ _Performance metrics are automatically collected across all main application pag
 ### Lighthouse Scores
 
 [![Lighthouse Performance](https://img.shields.io/lighthouse/performance/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
-[![Lighthouse Accessibility](https://img.shields.io/lighthouse/accessibility/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
 [![Lighthouse Best Practices](https://img.shields.io/lighthouse/best-practices/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
 [![Lighthouse SEO](https://img.shields.io/lighthouse/seo/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
+[![Lighthouse PWA](https://img.shields.io/lighthouse/pwa/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
 
 ### Bundle Size
 
