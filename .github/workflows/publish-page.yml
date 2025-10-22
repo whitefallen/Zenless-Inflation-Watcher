@@ -80,3 +80,10 @@ jobs:
           configPath: .lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
+          artifactName: lighthouse-metrics
+          
+      - name: Display Lighthouse report URLs
+        if: ${{ always() }}
+        run: |
+          echo "Lighthouse reports are available at the following URLs (when provided by the CI action):"
+          echo "Landing page: ${{ steps.lighthouse.outputs.links }}"
