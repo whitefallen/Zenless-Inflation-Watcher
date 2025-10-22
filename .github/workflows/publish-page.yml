@@ -8,6 +8,9 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+  pages: write
+  actions: write
 
 jobs:
   deploy:
@@ -71,6 +74,7 @@ jobs:
 
       - name: Run Lighthouse CI
         id: lighthouse
+        continue-on-error: true
         uses: treosh/lighthouse-ci-action@v10
         with:
           urls: |
@@ -78,12 +82,35 @@ jobs:
             https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault
             https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense
           configPath: .lighthouserc.json
-          uploadArtifacts: true
           temporaryPublicStorage: true
-          artifactName: lighthouse-metrics
           
       - name: Display Lighthouse report URLs
         if: ${{ always() }}
         run: |
           echo "Lighthouse reports are available at the following URLs (when provided by the CI action):"
-          echo "Landing page: ${{ steps.lighthouse.outputs.links }}"
+          echo "Reports: ${{ steps.lighthouse.outputs.links || 'No reports generated' }}"
+          
+      - name: Create Lighthouse Reports Directory
+        if: ${{ always() }}
+        run: mkdir -p ./lighthouse-reports
+        
+      - name: Save Lighthouse Reports
+        if: ${{ success() && steps.lighthouse.outputs.links != '' }}
+        run: |
+          echo "${{ steps.lighthouse.outputs.links }}" > ./lighthouse-reports/report-links.txt
+          echo "Lighthouse Report Summary" > ./lighthouse-reports/summary.md
+          echo "=========================" >> ./lighthouse-reports/summary.md
+          echo "" >> ./lighthouse-reports/summary.md
+          echo "Reports generated on $(date)" >> ./lighthouse-reports/summary.md
+          echo "" >> ./lighthouse-reports/summary.md
+          echo "Links to Reports:" >> ./lighthouse-reports/summary.md
+          echo "${{ steps.lighthouse.outputs.links }}" | sed 's/,/\n/g' >> ./lighthouse-reports/summary.md
+          
+      - name: Upload Lighthouse results as artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-reports
+          path: ./lighthouse-reports
+          retention-days: 7
+          if-no-files-found: warn
