@@ -3,6 +3,7 @@ import path from 'path';
 import { DeadlyAssaultData } from '@/types/deadly-assault';
 import { ShiyuDefenseData } from '@/types/shiyu-defense';
 import { buildFileName, getSeasonWindow } from './date-utils';
+import { logger } from './error-utils';
 
 type DataType = 'deadly-assault' | 'shiyu-defense';
 
@@ -55,6 +56,7 @@ export class DataService {
       const files = await readdir(dataDir);
       
       if (files.length === 0) {
+        logger.warn(`No ${type} data files found`);
         return null;
       }
 
@@ -77,7 +79,7 @@ export class DataService {
       
       return JSON.parse(fileContent) as T;
     } catch (error) {
-      console.error(`Error reading latest ${type} data:`, error);
+      logger.error(`Error reading latest ${type} data:`, error);
       return null;
     }
   }
@@ -111,7 +113,7 @@ export class DataService {
 
       return await Promise.all(dataPromises);
     } catch (error) {
-      console.error(`Error reading all ${type} data:`, error);
+      logger.error(`Error reading all ${type} data:`, error);
       return [];
     }
   }
@@ -137,7 +139,7 @@ export class DataService {
         
       return withEnd.map(({ f, start, end }) => ({ file: f, start, end }));
     } catch (error) {
-      console.error(`Error reading ${type} index:`, error);
+      logger.error(`Error reading ${type} index:`, error);
       return [];
     }
   }
@@ -155,7 +157,7 @@ export class DataService {
       const fileContent = await readFile(filePath, 'utf-8');
       return JSON.parse(fileContent) as T;
     } catch (error) {
-      console.error(`Error reading ${type} data by file:`, error);
+      logger.error(`Error reading ${type} data by file:`, error);
       return null;
     }
   }
@@ -200,7 +202,7 @@ export class DataService {
       
       return fileName;
     } catch (error) {
-      console.error(`Error saving ${type} data:`, error);
+      logger.error(`Error saving ${type} data:`, error);
       return null;
     }
   }
@@ -235,7 +237,7 @@ export class DataService {
 
       return normalizedExisting !== normalizedNew;
     } catch (error) {
-      console.error(`Error checking data changes for ${type}:`, error);
+      logger.error(`Error checking data changes for ${type}:`, error);
       return true; // Assume changed on error
     }
   }
@@ -286,7 +288,7 @@ export class DataService {
       
       return true;
     } catch (error) {
-      console.error('Error exporting to JSON:', error);
+      logger.error('Error exporting to JSON:', error);
       return false;
     }
   }

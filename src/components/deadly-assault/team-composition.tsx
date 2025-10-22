@@ -18,7 +18,7 @@ export function TeamComposition({ floor }: { floor: DeadlyAssaultRun }) {
           });
           
           return (
-            <div key={avatar.id} className="flex items-center space-x-2">
+            <div key={avatar.id} className="flex items-center space-x-2 relative group">
               <Avatar>
                 <Image 
                   src={avatar.role_square_url} 
@@ -37,6 +37,18 @@ export function TeamComposition({ floor }: { floor: DeadlyAssaultRun }) {
                 </div>
                 <p className="text-xs text-muted-foreground">Lv.{avatar.level}</p>
               </div>
+              
+              {/* Tooltip for hover */}
+              {agentInfo && (
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black/90 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20 backdrop-blur-sm border border-gray-600">
+                  <div className="font-medium">{agentInfo.name}</div>
+                  <div className="text-yellow-400">{agentInfo.rarity}-star</div>
+                  <div className="text-blue-400">{agentInfo.elementType} Element</div>
+                  <div className="text-gray-300">Level {avatar.level}</div>
+                  {/* Arrow */}
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/90"></div>
+                </div>
+              )}
             </div>
           );
         })}

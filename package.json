@@ -14,9 +14,6 @@
     "lint": "next lint",
     "migrate:filenames": "node scripts/migrate-filenames.js",
     "check-architecture": "node scripts/validate-architecture.js",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
     "docs": "echo 'Architecture Documentation:' && echo '📚 Full Guide: docs/CLIENT-SERVER-ARCHITECTURE.md' && echo '✅ Checklist: docs/ARCHITECTURE-CHECKLIST.md' && echo '🏗️ System: docs/ARCHITECTURE-SYSTEM.md' && echo '🔧 Linting: docs/ARCHITECTURE-LINTING.md'"
   },
   "author": "",
@@ -41,6 +38,7 @@
     "react-dom": "19.1.0",
     "recharts": "^3.1.2",
     "tailwind-merge": "^3.3.1",
+    "web-vitals": "^5.1.0",
     "workbox-webpack-plugin": "^7.3.0"
   },
   "devDependencies": {

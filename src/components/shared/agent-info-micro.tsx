@@ -52,7 +52,7 @@ export function AgentInfoMicro({
       {/* Tooltip for hover */}
       <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black/90 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20 backdrop-blur-sm border border-gray-600">
         <div className="font-medium">{name}</div>
-        <div className="text-yellow-400">{grade}-Rank ({rarity} stars)</div>
+        <div className="text-yellow-400">{grade}-Rank ({rarity+1} stars)</div>
         {/* Arrow */}
         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/90"></div>
       </div>
