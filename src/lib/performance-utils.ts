@@ -21,7 +21,6 @@ export interface PerformanceMetric {
 const THRESHOLDS = {
   FCP: { good: 1800, poor: 3000 },      // First Contentful Paint
   LCP: { good: 2500, poor: 4000 },      // Largest Contentful Paint
-  FID: { good: 100, poor: 300 },        // First Input Delay
   CLS: { good: 0.1, poor: 0.25 },       // Cumulative Layout Shift
   TTFB: { good: 800, poor: 1800 },      // Time to First Byte
   INP: { good: 200, poor: 500 },        // Interaction to Next Paint
@@ -119,7 +118,7 @@ export async function getCoreWebVitals() {
   
   try {
     // Dynamic import to reduce bundle size
-    const { onCLS, onFCP, onFID, onLCP, onTTFB, onINP } = await import('web-vitals');
+    const { onCLS, onFCP, onLCP, onTTFB, onINP } = await import('web-vitals');
     
     const metrics: PerformanceMetric[] = [];
     
@@ -139,17 +138,6 @@ export async function getCoreWebVitals() {
         name: 'FCP',
         value: metric.value,
         rating: getRating(metric.value, THRESHOLDS.FCP),
-        timestamp: Date.now()
-      };
-      metrics.push(webVital);
-      reportWebVitals(webVital);
-    });
-    
-    onFID((metric) => {
-      const webVital: PerformanceMetric = {
-        name: 'FID',
-        value: metric.value,
-        rating: getRating(metric.value, THRESHOLDS.FID),
         timestamp: Date.now()
       };
       metrics.push(webVital);
