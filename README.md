@@ -1,16 +1,85 @@
 # ZZZ Battle Records
 
-A Node.js application to fetch and display battle records from Zenless Zone Zero (ZZZ) using the Hoyolab API.
+A Next.js 15 Progressive Web App (PWA) for tracking Zenless Zone Zero battle records with automated data collection from Hoyolab API.
 
-## Setup
+## 🚀 Performance Metrics
 
-1. Copy `.env_example` to `.env`:
+*Performance metrics are automatically collected across all main application pages (landing page, Deadly Assault, and Shiyu Defense) via Lighthouse CI on every deployment.*
 
+### Lighthouse Scores
+[![Lighthouse Performance](https://img.shields.io/lighthouse/performance/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
+[![Lighthouse Accessibility](https://img.shields.io/lighthouse/accessibility/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
+[![Lighthouse Best Practices](https://img.shields.io/lighthouse/best-practices/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
+[![Lighthouse SEO](https://img.shields.io/lighthouse/seo/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
+
+### Bundle Size
+[![Package Size](https://img.shields.io/github/repo-size/whitefallen/Zenless-Inflation-Watcher?style=flat-square)](https://github.com/whitefallen/Zenless-Inflation-Watcher)
+[![Last Commit](https://img.shields.io/github/last-commit/whitefallen/Zenless-Inflation-Watcher?style=flat-square)](https://github.com/whitefallen/Zenless-Inflation-Watcher/commits)
+
+### Build Status
+[![Build and Deploy](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/publish-page.yml/badge.svg)](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/publish-page.yml)
+[![Data Fetch](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/automated-fetch.yml/badge.svg)](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/automated-fetch.yml)
+
+## 📱 Web Application
+
+This is a modern PWA built with Next.js 15, featuring:
+
+- **Real-time battle record tracking** for Shiyu Defense and Deadly Assault
+- **Character performance analytics** with detailed statistics
+- **Offline functionality** with service worker caching
+- **Responsive design** optimized for mobile and desktop
+- **Automated data collection** via GitHub Actions
+
+🌐 **Live Demo**: [https://whitefallen.github.io/Zenless-Inflation-Watcher/](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
+
+## 🛠️ Development Setup
+
+### Prerequisites
+
+- Node.js 20+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/whitefallen/Zenless-Inflation-Watcher.git
+   cd Zenless-Inflation-Watcher
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up environment variables for data collection:
    ```bash
    cp .env_example .env
    ```
 
-2. Get your cookies from the browser:
+4. Configure Hoyolab authentication (see Data Collection section below)
+
+5. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
+
+```bash
+npm run build
+npm run start
+```
+
+## 📊 Data Collection Setup
+
+The application includes automated scripts to fetch battle records from Hoyolab API.
+
+### Authentication Setup
+
+1. Get your cookies from the browser:
 
    - Open your browser and go to https://act.hoyolab.com/
    - Open Developer Tools (F12)
@@ -20,7 +89,7 @@ A Node.js application to fetch and display battle records from Zenless Zone Zero
    - Copy the Cookie header value
    - Parse the cookies and add them to your `.env` file
 
-3. Update your `.env` file with the cookie values:
+2. Update your `.env` file with the cookie values:
    ```
    MI18NLANG=de-de
    _HYVUUID=your_hypvuuid_value
@@ -35,75 +104,112 @@ A Node.js application to fetch and display battle records from Zenless Zone Zero
    UID=your_game_uid
    ```
 
-## Usage
+### Automated Data Collection
 
-### Interactive Mode
+The project includes GitHub Actions workflows for automated data collection:
+
+- **Daily Battle Records**: `automated-fetch.yml` - Fetches new battle data daily
+- **Character Updates**: `fetch-characters.yml` - Updates character information
+- **PWA Deployment**: `publish-page.yml` - Builds and deploys the web app
+
+### Manual Data Collection Scripts
+
+For manual data fetching or testing:
 
 ```bash
-node battleRecords.js
-```
+# Authenticate with Hoyolab (run when cookies expire)
+npm run auth
 
-### Command Line Mode
-
-```bash
-# Export Deadly Assault as JSON
-node battleRecords.js export-deadly
-
-# Export Shiyu Defense as JSON
-node battleRecords.js export-shiyu
-
-# Export both as JSON
+# Export battle records
 node battleRecords.js export-all
 
-# Show summaries in console
-node battleRecords.js deadly-summary
-node battleRecords.js shiyu-summary
+# Export specific record types
+node battleRecords.js export-deadly
+node battleRecords.js export-shiyu
 
 # Generate reports
 node battleRecords.js html
 node battleRecords.js text
 ```
 
-### Automated Execution
+### Data Storage
 
-For GitHub Actions or crontab, use the command-line mode:
+Battle records are stored as JSON files in:
+- `deadlyAssault/` - Deadly Assault records
+- `shiyu/` - Shiyu Defense records
+- `public/` - Web app accessible data (copied during build)
 
-```bash
-# Example crontab entry (runs every Sunday at 2 AM)
-0 2 * * 0 cd /path/to/your/project && node battleRecords.js export-all
+## ⚡ Performance & PWA Features
 
-# Example GitHub Actions workflow
-- name: Export Battle Records
-  run: node battleRecords.js export-all
-```
+### Performance Monitoring
+- **Lighthouse CI**: Automated performance testing across all main pages (landing, Deadly Assault, Shiyu Defense)
+- **Core Web Vitals**: Monitored for optimal user experience on every page
+- **PWA Audit**: Ensures installability and offline functionality
+- **Build Size Tracking**: Repository size monitoring
 
-The JSON files will be saved in:
+### PWA Features
+- **Offline Support**: Service worker caches critical resources
+- **Installable**: Add to home screen on mobile devices
+- **Fast Loading**: Optimized bundles with code splitting
+- **Responsive**: Works seamlessly across all devices
 
-- `deadlyAssault/month_week.json` (e.g., `deadlyAssault/7_week3.json`)
-- `shiyu/month_week.json` (e.g., `shiyu/7_week3.json`)
+### Build Optimization
+- **Next.js 15**: Latest framework with App Router
+- **Tailwind CSS**: Utility-first styling with purging
+- **Service Worker**: Automatic caching and offline functionality
+- **Responsive Images**: Optimized character and UI assets
 
-## API Changes
+## 🔧 API Integration
 
-The API has been updated to match the browser request format exactly:
+## 🔧 API Integration
 
-- Removed DS (mihoyo_bbs) authentication
-- Added all necessary cookies from browser request
-- Updated headers to match browser request
-- Simplified authentication process
+The application integrates with Hoyolab's ZZZ API using browser-based authentication:
 
-## Troubleshooting
+- **Cookie-based Auth**: Matches browser request format exactly
+- **Puppeteer Automation**: Automated cookie refresh and authentication
+- **Error Handling**: Robust retry logic and authentication refresh
+- **Rate Limiting**: Respectful API usage with delays
 
+## 🐛 Troubleshooting
+
+### Authentication Issues
 If you get authentication errors:
+1. Run `npm run auth` to refresh cookies
+2. Verify all environment variables are set in `.env`
+3. Check that your Hoyolab session hasn't expired
+4. Ensure your game UID is correct
 
-1. Make sure all cookies are properly set in your `.env` file
-2. Verify that your cookies are not expired
-3. Try refreshing your browser session and getting new cookies
-4. Check that your UID is correct
+### Build Issues
+- Run `npm run check-architecture` to validate project structure
+- Use `npm run docs` to view architecture documentation
+- Check that all data files are copied to `public/` during build
 
-## Files
+### Performance Issues
+- Clear browser cache and service worker
+- Check network tab for failed asset loads
+- Verify PWA is properly installed
 
-- `zzzApi.js` - API wrapper for ZZZ Hoyolab API
-- `battleRecords.js` - Main application for fetching and displaying battle records
-- `templates/` - Handlebars templates for HTML generation
-- `deadlyAssault/` - Directory for exported Deadly Assault JSON files
-- `shiyu/` - Directory for exported Shiyu Defense JSON files
+## 📁 Project Structure
+
+### Core Application (`src/`)
+- `app/` - Next.js 15 App Router pages and layouts
+- `components/` - React components (UI and business logic)
+- `lib/` - Utility functions and data services
+- `types/` - TypeScript type definitions
+- `utils/` - Helper functions
+
+### Data Collection (`root level`)
+- `zzzApi.js` - Hoyolab API wrapper
+- `battleRecords.js` - Main data fetching application
+- `auth.js` - Puppeteer authentication script
+- `automatedFetch.js` - Scheduled data collection
+
+### Build & Deployment (`scripts/`)
+- `copy-data-to-public.js` - Data file synchronization
+- `generateManifest.js` - PWA manifest generation
+- `generateIconsPNG.js` - Icon generation from HTML templates
+
+### Data Storage
+- `deadlyAssault/` - Deadly Assault battle records (JSON)
+- `shiyu/` - Shiyu Defense battle records (JSON)
+- `public/` - Static assets and web-accessible data

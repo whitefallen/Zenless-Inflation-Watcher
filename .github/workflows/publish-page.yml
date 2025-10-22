@@ -68,3 +68,11 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN }}
           publish_dir: ./out
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: https://whitefallen.github.io/Zenless-Inflation-Watcher/
+          configPath: .lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
