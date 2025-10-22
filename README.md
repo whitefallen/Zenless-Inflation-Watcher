@@ -6,12 +6,19 @@ A Next.js 15 Progressive Web App (PWA) for tracking Zenless Zone Zero battle rec
 
 _Performance metrics are automatically collected across all main application pages (landing page, Deadly Assault, and Shiyu Defense) via Lighthouse CI on every deployment._
 
-### Lighthouse Scores
+### Performance Monitoring
 
-[![Lighthouse Performance](https://img.shields.io/lighthouse/performance/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
-[![Lighthouse Best Practices](https://img.shields.io/lighthouse/best-practices/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
-[![Lighthouse SEO](https://img.shields.io/lighthouse/seo/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
-[![Lighthouse PWA](https://img.shields.io/lighthouse/pwa/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
+- **Lighthouse CI**: Automated performance testing across all main pages (landing, Deadly Assault, Shiyu Defense) on every deployment
+- **Core Web Vitals**: Monitored for optimal user experience on every page
+- **PWA Audit**: Ensures installability and offline functionality
+- **Build Size Tracking**: Repository size monitoring
+
+### Performance Thresholds
+
+- **Performance**: ≥75% (ensures good loading speeds)
+- **Best Practices**: ≥80% (code quality and security)
+- **SEO**: ≥80% (search engine optimization)
+- **PWA**: ≥75% (Progressive Web App compliance)
 
 ### Bundle Size
 
