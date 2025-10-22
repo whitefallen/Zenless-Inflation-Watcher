@@ -97,14 +97,36 @@ jobs:
       - name: Save Lighthouse Reports
         if: ${{ success() && steps.lighthouse.outputs.links != '' }}
         run: |
-          echo "${{ steps.lighthouse.outputs.links }}" > ./lighthouse-reports/report-links.txt
-          echo "Lighthouse Report Summary" > ./lighthouse-reports/summary.md
-          echo "=========================" >> ./lighthouse-reports/summary.md
+          # Extract and clean up the Google Storage URLs from the links
+          echo "${{ steps.lighthouse.outputs.links }}" | sed -E 's/https:\/\/whitefallen.github.io\/Zenless-Inflation-Watcher\/[^:]*://' > ./lighthouse-reports/report-links.txt
+          
+          # Create the summary markdown with fixed links
+          echo "# Lighthouse Report Summary" > ./lighthouse-reports/summary.md
           echo "" >> ./lighthouse-reports/summary.md
-          echo "Reports generated on $(date)" >> ./lighthouse-reports/summary.md
+          echo "## Reports generated on $(date)" >> ./lighthouse-reports/summary.md
           echo "" >> ./lighthouse-reports/summary.md
-          echo "Links to Reports:" >> ./lighthouse-reports/summary.md
-          echo "${{ steps.lighthouse.outputs.links }}" | sed 's/,/\n/g' >> ./lighthouse-reports/summary.md
+          echo "## Links to Reports:" >> ./lighthouse-reports/summary.md
+          echo "" >> ./lighthouse-reports/summary.md
+          
+          # Process each link, removing the incorrect prefix
+          echo "${{ steps.lighthouse.outputs.links }}" | tr ',' '\n' | while read link; do
+            page_url=$(echo "$link" | cut -d':' -f1)
+            report_url=$(echo "$link" | cut -d':' -f2-)
+            page_name=$(basename "$page_url")
+            
+            if [ -z "$page_name" ]; then
+              page_name="Landing Page"
+            fi
+            
+            echo "- **$page_name**: [$report_url]($report_url)" >> ./lighthouse-reports/summary.md
+          done
+          
+          echo "" >> ./lighthouse-reports/summary.md
+          echo "## Page URLs Tested:" >> ./lighthouse-reports/summary.md
+          echo "" >> ./lighthouse-reports/summary.md
+          echo "- [Landing Page](https://whitefallen.github.io/Zenless-Inflation-Watcher/)" >> ./lighthouse-reports/summary.md
+          echo "- [Deadly Assault](https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault)" >> ./lighthouse-reports/summary.md
+          echo "- [Shiyu Defense](https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense)" >> ./lighthouse-reports/summary.md
           
       - name: Upload Lighthouse results as artifacts
         if: ${{ always() }}
