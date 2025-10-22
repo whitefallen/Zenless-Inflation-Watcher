@@ -20,3 +20,7 @@ copyAllJson(
   path.join(__dirname, "../deadlyAssault"),
   path.join(__dirname, "../public/deadlyAssault")
 );
+copyAllJson(
+  path.join(__dirname, "../voidFront"),
+  path.join(__dirname, "../public/voidFront")
+);

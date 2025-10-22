@@ -95,7 +95,7 @@ export function formatDate(dateString: string): string {
 /**
  * Gets the season window from API payload data
  */
-export function getSeasonWindow(mode: "deadly" | "shiyu", payload: unknown): { start: string | null; end: string | null } {
+export function getSeasonWindow(mode: "deadly" | "shiyu" | "void-front", payload: unknown): { start: string | null; end: string | null } {
   if (!payload || typeof payload !== 'object' || !('data' in payload) || !payload.data) {
     return { start: null, end: null };
   }
@@ -105,6 +105,14 @@ export function getSeasonWindow(mode: "deadly" | "shiyu", payload: unknown): { s
   if (mode === "deadly") {
     const start = timestampObjectToDateString(data.start_time as TimeStamp);
     const end = timestampObjectToDateString(data.end_time as TimeStamp);
+    return { start, end };
+  } else if (mode === "void-front") {
+    // For Void Front, we'll use current date and add 14 days
+    const now = new Date();
+    const start = toYMD(now);
+    const twoWeeksLater = new Date(now);
+    twoWeeksLater.setDate(twoWeeksLater.getDate() + 14);
+    const end = toYMD(twoWeeksLater);
     return { start, end };
   }
   
@@ -120,8 +128,13 @@ export function getSeasonWindow(mode: "deadly" | "shiyu", payload: unknown): { s
 /**
  * Builds a filename for data storage
  */
-export function buildFileName(mode: "deadly" | "shiyu", start?: string | null, end?: string | null): string {
-  const modeName = mode === "deadly" ? "deadly-assault" : "shiyu-defense";
+export function buildFileName(mode: "deadly" | "shiyu" | "void-front", start?: string | null, end?: string | null): string {
+  const modeNames = {
+    "deadly": "deadly-assault",
+    "shiyu": "shiyu-defense",
+    "void-front": "void-front"
+  };
+  const modeName = modeNames[mode] || "unknown-mode";
   const startSafe = start || "unknown-start";
   const endSafe = end || "unknown-end";
   return `${modeName}-${startSafe}-${endSafe}.json`;

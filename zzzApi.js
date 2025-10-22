@@ -93,6 +93,15 @@ class ZZZApi {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
   }
+
+  // Fetch Void Front battle detail data
+  async getVoidFrontDetail({ uid, void_front_id = 102 }) {
+    const query = `uid=${uid}&region=${this.server}&void_front_id=${void_front_id}`;
+    const url = `${this.baseUrl}/void_front_battle_detail?${query}`;
+    const res = await fetch(url, { headers: this._getHeaders() });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
 }
 
 module.exports = ZZZApi;

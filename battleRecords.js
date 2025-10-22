@@ -147,7 +147,12 @@ function getSeasonWindow(mode, payload) {
 }
 
 function buildFileName(mode, start, end) {
-  const modeName = mode === "deadly" ? "deadly-assault" : "shiyu-defense";
+  const modeNames = {
+    deadly: "deadly-assault",
+    shiyu: "shiyu-defense",
+    "void-front": "void-front",
+  };
+  const modeName = modeNames[mode] || "unknown-mode";
   const startSafe = start || "unknown-start";
   const endSafe = end || "unknown-end";
   return `${modeName}-${startSafe}-${endSafe}.json`;
@@ -581,9 +586,9 @@ async function exportDeadlyAssaultJSON() {
       },
     };
 
-  const folderPath = "deadlyAssault";
-  const { start, end } = getSeasonWindow("deadly", data);
-  const fileName = buildFileName("deadly", start, end);
+    const folderPath = "deadlyAssault";
+    const { start, end } = getSeasonWindow("deadly", data);
+    const fileName = buildFileName("deadly", start, end);
 
     // Create folder if it doesn't exist
     if (!fs.existsSync(folderPath)) {
@@ -623,9 +628,9 @@ async function exportShiyuDefenseJSON() {
       },
     };
 
-  const folderPath = "shiyu";
-  const { start, end } = getSeasonWindow("shiyu", data);
-  const fileName = buildFileName("shiyu", start, end);
+    const folderPath = "shiyu";
+    const { start, end } = getSeasonWindow("shiyu", data);
+    const fileName = buildFileName("shiyu", start, end);
 
     // Create folder if it doesn't exist
     if (!fs.existsSync(folderPath)) {
@@ -649,24 +654,148 @@ async function exportShiyuDefenseJSON() {
   }
 }
 
-// Export both summaries as JSON
+// Print Void Front summary
+function printVoidFrontSummary(data) {
+  if (!data || !data.data) return console.log("No Void Front data.");
+  const d = data.data;
+  console.log("\n===== VOID FRONT SUMMARY =====");
+  console.log("Player:", d.role_basic_info?.nickname || "Unknown");
+  console.log(
+    "Total Score:",
+    d.void_front_battle_abstract_info_brief?.total_score || 0
+  );
+  console.log(
+    "Rank Percent:",
+    d.void_front_battle_abstract_info_brief?.rank_percent || 0
+  );
+  console.log(
+    "Ending Record:",
+    d.void_front_battle_abstract_info_brief?.ending_record_name || "None"
+  );
+
+  if (d.boss_challenge_record) {
+    console.log("\nBoss Challenge:");
+    const main = d.boss_challenge_record.main_challenge_record;
+    console.log(
+      `  Main: ${main.name}, Score: ${main.score}, Star: ${main.star}`
+    );
+
+    if (
+      d.boss_challenge_record.sub_challenge_record &&
+      d.boss_challenge_record.sub_challenge_record.length > 0
+    ) {
+      console.log("  Sub Challenges:");
+      d.boss_challenge_record.sub_challenge_record.forEach((sub, idx) => {
+        console.log(`    #${idx + 1}: ${sub.name}, Star: ${sub.star}`);
+        if (sub.avatar_list && sub.avatar_list.length > 0) {
+          console.log("      Team:");
+          sub.avatar_list.forEach((av) => {
+            console.log(
+              `       - ID: ${av.id}, Rarity: ${av.rarity}, Level: ${
+                av.level
+              }, Element: ${getElementName(av.element_type)}`
+            );
+          });
+        }
+      });
+    }
+  }
+
+  if (d.main_challenge_record_list && d.main_challenge_record_list.length > 0) {
+    console.log("\nMain Challenges:");
+    d.main_challenge_record_list.forEach((main, idx) => {
+      console.log(
+        `  #${idx + 1}: ${main.name}, Score: ${main.score}, Star: ${main.star}`
+      );
+    });
+  }
+
+  console.log("==================================\n");
+}
+
+// Get Void Front data
+async function showVoidFrontDetail() {
+  try {
+    const data = await api.getVoidFrontDetail({ uid });
+    console.log("\n🔮 VOID FRONT DATA\n", JSON.stringify(data, null, 2));
+  } catch (err) {
+    console.error("Error fetching Void Front data:", err.message);
+  }
+}
+
+// Show Void Front summary
+async function showVoidFrontSummary() {
+  try {
+    const data = await api.getVoidFrontDetail({ uid });
+    printVoidFrontSummary(data);
+  } catch (err) {
+    console.error("Error fetching Void Front data:", err.message);
+  }
+}
+
+// Export Void Front data as JSON
+async function exportVoidFrontJSON() {
+  try {
+    const data = await api.getVoidFrontDetail({ uid });
+    const now = new Date();
+    const exportData = {
+      ...data,
+      metadata: {
+        exportDate: now.toISOString(),
+        uid: uid,
+        type: "void_front",
+      },
+    };
+
+    const folderPath = "voidFront";
+    // Format date as YYYY-MM-DD
+    const today = toYMD(now);
+    // Calculate 2 weeks from now
+    const twoWeeksLater = new Date(now);
+    twoWeeksLater.setDate(twoWeeksLater.getDate() + 14);
+    const endDate = toYMD(twoWeeksLater);
+
+    const fileName = buildFileName("void-front", today, endDate);
+
+    // Create folder if it doesn't exist
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath, { recursive: true });
+    }
+
+    const filePath = path.join(folderPath, fileName);
+    fs.writeFileSync(filePath, JSON.stringify(exportData, null, 2));
+    console.log(`📁 Void Front JSON exported: ${filePath}`);
+
+    // Discord notification
+    await discord.sendMessage(`📁 Void Front JSON exported: ${filePath}`);
+
+    return filePath;
+  } catch (err) {
+    console.error("Error exporting Void Front JSON:", err.message);
+    await discord.sendMessage(
+      `❌ Error exporting Void Front JSON: ${err.message}`
+    );
+    throw err;
+  }
+}
+
+// Export all summaries as JSON
 async function exportAllJSON() {
   try {
-    console.log("🔄 Exporting both summaries as JSON...");
-    const [deadlyPath, shiyuPath] = await Promise.all([
+    console.log("🔄 Exporting all summaries as JSON...");
+    const [deadlyPath, shiyuPath, voidFrontPath] = await Promise.all([
       exportDeadlyAssaultJSON(),
       exportShiyuDefenseJSON(),
+      exportVoidFrontJSON(),
     ]);
     console.log("✅ All exports completed successfully!");
     await discord.sendMessage(
-      "✅ Both Deadly Assault and Shiyu Defense JSON exports completed successfully!"
+      "✅ All battle data JSON exports completed successfully!"
     );
-    return { deadlyPath, shiyuPath };
+    return { deadlyPath, shiyuPath, voidFrontPath };
   } catch (err) {
     console.error("Error exporting JSON files:", err.message);
-    await discord.sendMessage(
-      `❌ Error exporting both JSON files: ${err.message}`
-    );
+    await discord.sendMessage(`❌ Error exporting JSON files: ${err.message}`);
     throw err;
   }
 }
@@ -681,6 +810,7 @@ async function mainMenu() {
         choices: [
           { name: "Show Shiyu Defense (Challenge) data", value: "shiyu" },
           { name: "Show Deadly Assault (Memory) data", value: "deadly" },
+          { name: "Show Void Front data", value: "void_front" },
           {
             name: "Show structured Deadly Assault summary",
             value: "deadly_summary",
@@ -689,23 +819,31 @@ async function mainMenu() {
             name: "Show structured Shiyu Defense summary",
             value: "shiyu_summary",
           },
+          {
+            name: "Show structured Void Front summary",
+            value: "void_front_summary",
+          },
           { name: "Generate HTML report", value: "html" },
           { name: "Generate text report", value: "text" },
           { name: "Export Deadly Assault as JSON", value: "export_deadly" },
           { name: "Export Shiyu Defense as JSON", value: "export_shiyu" },
-          { name: "Export both as JSON", value: "export_all" },
+          { name: "Export Void Front as JSON", value: "export_void_front" },
+          { name: "Export all as JSON", value: "export_all" },
           { name: "Exit", value: "exit" },
         ],
       },
     ]);
     if (action === "shiyu") await showShiyuDefense();
     else if (action === "deadly") await showDeadlyAssault();
+    else if (action === "void_front") await showVoidFrontDetail();
     else if (action === "deadly_summary") await showDeadlyAssaultSummary();
     else if (action === "shiyu_summary") await showShiyuDefenseSummary();
+    else if (action === "void_front_summary") await showVoidFrontSummary();
     else if (action === "html") await generateHTMLReport();
     else if (action === "text") await generateTextReport();
     else if (action === "export_deadly") await exportDeadlyAssaultJSON();
     else if (action === "export_shiyu") await exportShiyuDefenseJSON();
+    else if (action === "export_void_front") await exportVoidFrontJSON();
     else if (action === "export_all") await exportAllJSON();
     else if (action === "exit") break;
     console.log("\n---\n");
@@ -732,6 +870,9 @@ async function handleCommandLineArgs() {
       case "export-shiyu":
         await exportShiyuDefenseJSON();
         break;
+      case "export-void-front":
+        await exportVoidFrontJSON();
+        break;
       case "export-all":
         await exportAllJSON();
         break;
@@ -741,6 +882,9 @@ async function handleCommandLineArgs() {
       case "shiyu-summary":
         await showShiyuDefenseSummary();
         break;
+      case "void-front-summary":
+        await showVoidFrontSummary();
+        break;
       case "html":
         await generateHTMLReport();
         break;
@@ -749,14 +893,16 @@ async function handleCommandLineArgs() {
         break;
       default:
         console.log("Available commands:");
-        console.log("  export-deadly    - Export Deadly Assault as JSON");
-        console.log("  export-shiyu     - Export Shiyu Defense as JSON");
-        console.log("  export-all       - Export both as JSON");
-        console.log("  deadly-summary   - Show Deadly Assault summary");
-        console.log("  shiyu-summary    - Show Shiyu Defense summary");
-        console.log("  html             - Generate HTML report");
-        console.log("  text             - Generate text report");
-        console.log("  (no args)        - Run interactive menu");
+        console.log("  export-deadly     - Export Deadly Assault as JSON");
+        console.log("  export-shiyu      - Export Shiyu Defense as JSON");
+        console.log("  export-void-front - Export Void Front as JSON");
+        console.log("  export-all        - Export all as JSON");
+        console.log("  deadly-summary    - Show Deadly Assault summary");
+        console.log("  shiyu-summary     - Show Shiyu Defense summary");
+        console.log("  void-front-summary- Show Void Front summary");
+        console.log("  html              - Generate HTML report");
+        console.log("  text              - Generate text report");
+        console.log("  (no args)         - Run interactive menu");
         break;
     }
   } catch (error) {

@@ -2,6 +2,55 @@ import { mapStarRatingToGrade } from "@/utils/ratingMapper";
 import type { AgentInfo, Avatar } from "@/types/shared";
 
 /**
+ * Client-safe version of getAgentInfo - uses props instead of filesystem
+ * For use in client components only
+ */
+export function getAgentInfoClient(id: number, avatarInfo?: Partial<Avatar>): AgentInfo {
+  // Fallback for when character data file doesn't exist
+  let fallbackRarity = 0;
+  if (avatarInfo?.rarity !== undefined) {
+    if (typeof avatarInfo.rarity === 'string') {
+      if (avatarInfo.rarity === 'S') {
+        fallbackRarity = 4;
+      } else if (avatarInfo.rarity === 'A') {
+        fallbackRarity = 3;
+      } else {
+        fallbackRarity = Number(avatarInfo.rarity) || 0;
+      }
+    } else {
+      fallbackRarity = Number(avatarInfo.rarity);
+    }
+  }
+  
+  return {
+    id,
+    name: `Agent ${id}`,
+    weaponType: "-",
+    elementType: "-",
+    rarity: fallbackRarity,
+    iconUrl: avatarInfo?.role_square_url || '/placeholder.png',
+    level: avatarInfo?.level,
+  };
+}
+
+/**
+ * Gets the element name from element type number
+ */
+export function getElementName(elementType?: number): string {
+  const ELEMENT_NAMES: Record<number, string> = {
+    200: "Physical",
+    201: "Fire",
+    202: "Ice",
+    203: "Electric",
+    204: "Growth",
+    205: "Ether"
+  };
+  
+  if (elementType === undefined) return "Unknown";
+  return ELEMENT_NAMES[elementType] || "Unknown";
+}
+
+/**
  * Gets the grade (A/S) for an agent based on rarity (client-safe version)
  */
 export function getAgentGrade(agent: AgentInfo | Avatar): string {

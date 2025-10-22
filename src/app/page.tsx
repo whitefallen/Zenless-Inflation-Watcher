@@ -11,7 +11,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 w-full">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 w-full">
         <Link href="/deadly-assault" className="w-full">
           <Card className="hover:bg-card transition-colors">
             <CardHeader>
@@ -32,6 +32,18 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <p>Monitor floor completions, team compositions, and battle times</p>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link href="/void-front" className="w-full">
+          <Card className="hover:bg-card transition-colors">
+            <CardHeader>
+              <CardTitle>Void Front</CardTitle>
+              <CardDescription>View your Void Front battle challenges and scores</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Track challenge progress, team compositions, and boss battles</p>
             </CardContent>
           </Card>
         </Link>

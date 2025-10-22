@@ -31,6 +31,13 @@ class AutomatedFetcher {
         intervalDays: 14,
         name: "Deadly Assault",
       },
+      voidfront: {
+        // Void Front reset cycle (14 days, same as Shiyu Defense)
+        // First cycle: 2025-10-17, next: 2025-10-31, 2025-11-14, etc.
+        baseDate: new Date("2025-10-17"),
+        intervalDays: 14,
+        name: "Void Front",
+      },
     };
   }
 
@@ -75,6 +82,36 @@ class AutomatedFetcher {
       );
       return { start, end };
     }
+    if (mode === "voidfront") {
+      // For Void Front, calculate the 14-day window based on the base reset date
+      // Since the API doesn't provide date information
+      const now = new Date();
+      
+      // Get the base date for Void Front from the reset schedules
+      // We need to access it via the instance since this is a static method
+      const fetcher = new AutomatedFetcher();
+      const voidfrontSchedule = fetcher.resetSchedules.voidfront;
+      
+      // Calculate the start of the current 14-day cycle
+      const daysSinceBase = Math.floor(
+        (now - voidfrontSchedule.baseDate) / (1000 * 60 * 60 * 24)
+      );
+      const cycleNumber = Math.floor(daysSinceBase / voidfrontSchedule.intervalDays);
+      
+      // Calculate start and end dates based on the current cycle
+      const startDate = new Date(voidfrontSchedule.baseDate);
+      startDate.setDate(
+        startDate.getDate() + cycleNumber * voidfrontSchedule.intervalDays
+      );
+      
+      const endDate = new Date(startDate);
+      endDate.setDate(endDate.getDate() + voidfrontSchedule.intervalDays - 1); // 14-day window
+      
+      return {
+        start: AutomatedFetcher.toYMD(startDate),
+        end: AutomatedFetcher.toYMD(endDate),
+      };
+    }
     // shiyu
     // Prefer hadal_* if present (object timestamps), else begin_time/end_time strings
     const start =
@@ -89,7 +126,15 @@ class AutomatedFetcher {
   }
 
   static buildFileName(mode, start, end) {
-    const modeName = mode === "deadly" ? "deadly-assault" : "shiyu-defense";
+    let modeName;
+    if (mode === "deadly") {
+      modeName = "deadly-assault";
+    } else if (mode === "voidfront") {
+      modeName = "void-front";
+    } else {
+      modeName = "shiyu-defense";
+    }
+
     const startSafe = start || "unknown-start";
     const endSafe = end || "unknown-end";
     return `${modeName}-${startSafe}-${endSafe}.json`;
@@ -121,11 +166,11 @@ class AutomatedFetcher {
     return clone;
   }
 
-  // Always fetch both modes - scores only update when there's a new high score
+  // Always fetch all modes - scores only update when there's a new high score
   shouldFetchMode(mode) {
     const schedule = this.resetSchedules[mode];
     const now = new Date();
-
+    
     // Calculate days since the base reset date for logging
     const daysSinceBase = Math.floor(
       (now - schedule.baseDate) / (1000 * 60 * 60 * 24)
@@ -136,10 +181,8 @@ class AutomatedFetcher {
       `📅 ${schedule.name}: ${daysSinceLastReset} days since last reset (Always fetch)`
     );
 
-    return true; // Always fetch both modes
-  }
-
-  // Main fetch function
+    return true; // Always fetch all modes
+  }  // Main fetch function
   async fetchData() {
     const uid = process.env.UID;
 
@@ -154,15 +197,19 @@ class AutomatedFetcher {
     console.log(`🚀 Starting automated data fetch for UID: ${uid}`);
     console.log("📅 Checking reset schedules...");
 
-    // Always fetch both modes - scores only update when there's a new high score
+    // Always fetch all modes - scores only update when there's a new high score
     const shouldFetchDeadly = this.shouldFetchMode("deadly");
     const shouldFetchShiyu = this.shouldFetchMode("shiyu");
+    const shouldFetchVoidFront = this.shouldFetchMode("voidfront");
 
-    console.log("📊 Fetching both Deadly Assault and Shiyu Defense data");
+    console.log(
+      "📊 Fetching Deadly Assault, Shiyu Defense, and Void Front data"
+    );
 
     await this.discord.notifyWorkflowStart(uid, {
       deadly: shouldFetchDeadly,
       shiyu: shouldFetchShiyu,
+      voidfront: shouldFetchVoidFront,
     });
 
     try {
@@ -186,6 +233,7 @@ class AutomatedFetcher {
       const data = await this.fetchScheduledData(api, uid, {
         deadly: shouldFetchDeadly,
         shiyu: shouldFetchShiyu,
+        voidfront: shouldFetchVoidFront,
       });
 
       // Save data to files
@@ -195,6 +243,7 @@ class AutomatedFetcher {
       await this.discord.notifyDataFetchSuccess(data, uid, {
         deadly: shouldFetchDeadly,
         shiyu: shouldFetchShiyu,
+        voidfront: shouldFetchVoidFront,
       });
 
       console.log("✅ Automated fetch completed successfully");
@@ -257,6 +306,23 @@ class AutomatedFetcher {
       console.log("⏭️  Skipping Shiyu Defense (not in reset window)");
     }
 
+    if (schedule.voidfront) {
+      try {
+        console.log("📊 Fetching Void Front data...");
+        data.voidfront = await api.getVoidFrontDetail({ uid });
+        console.log(
+          `✅ Void Front: ${
+            data.voidfront?.data?.main_challenge_record_list?.length || 0
+          } challenge records`
+        );
+      } catch (error) {
+        console.error("❌ Void Front fetch failed:", error.message);
+        data.voidfront = null;
+      }
+    } else {
+      console.log("⏭️  Skipping Void Front (not in reset window)");
+    }
+
     return data;
   }
 
@@ -285,7 +351,10 @@ class AutomatedFetcher {
       if (!fs.existsSync(deadlyFolder)) {
         fs.mkdirSync(deadlyFolder, { recursive: true });
       }
-      const { start, end } = AutomatedFetcher.getSeasonWindow("deadly", data.deadly);
+      const { start, end } = AutomatedFetcher.getSeasonWindow(
+        "deadly",
+        data.deadly
+      );
       const deadlyFile = path.join(
         deadlyFolder,
         AutomatedFetcher.buildFileName("deadly", start, end)
@@ -311,7 +380,9 @@ class AutomatedFetcher {
           );
           if (a === b) {
             shouldWrite = false;
-            console.log(`⏭️  No changes for Deadly Assault period ${deadlyFile}. Skipping write.`);
+            console.log(
+              `⏭️  No changes for Deadly Assault period ${deadlyFile}. Skipping write.`
+            );
           }
         } catch {}
       }
@@ -327,7 +398,10 @@ class AutomatedFetcher {
       if (!fs.existsSync(shiyuFolder)) {
         fs.mkdirSync(shiyuFolder, { recursive: true });
       }
-      const { start, end } = AutomatedFetcher.getSeasonWindow("shiyu", data.shiyu);
+      const { start, end } = AutomatedFetcher.getSeasonWindow(
+        "shiyu",
+        data.shiyu
+      );
       const shiyuFile = path.join(
         shiyuFolder,
         AutomatedFetcher.buildFileName("shiyu", start, end)
@@ -353,13 +427,62 @@ class AutomatedFetcher {
           );
           if (a === b) {
             shouldWrite = false;
-            console.log(`⏭️  No changes for Shiyu Defense period ${shiyuFile}. Skipping write.`);
+            console.log(
+              `⏭️  No changes for Shiyu Defense period ${shiyuFile}. Skipping write.`
+            );
           }
         } catch {}
       }
       if (shouldWrite) {
         fs.writeFileSync(shiyuFile, JSON.stringify(shiyuData, null, 2));
         console.log(`💾 Saved Shiyu Defense data to: ${shiyuFile}`);
+      }
+    }
+
+    // Save Void Front data
+    if (data.voidfront) {
+      const voidFrontFolder = path.join(__dirname, "voidFront");
+      if (!fs.existsSync(voidFrontFolder)) {
+        fs.mkdirSync(voidFrontFolder, { recursive: true });
+      }
+      const { start, end } = AutomatedFetcher.getSeasonWindow(
+        "voidfront",
+        data.voidfront
+      );
+      const voidFrontFile = path.join(
+        voidFrontFolder,
+        AutomatedFetcher.buildFileName("voidfront", start, end)
+      );
+      const voidFrontData = {
+        ...data.voidfront,
+        metadata: {
+          exportDate: timestamp,
+          uid: uid,
+          type: "void_front",
+          automated: true,
+        },
+      };
+      let shouldWrite = true;
+      if (fs.existsSync(voidFrontFile)) {
+        try {
+          const existing = JSON.parse(fs.readFileSync(voidFrontFile, "utf-8"));
+          const a = AutomatedFetcher.stableStringify(
+            AutomatedFetcher.normalizeForComparison(existing)
+          );
+          const b = AutomatedFetcher.stableStringify(
+            AutomatedFetcher.normalizeForComparison(voidFrontData)
+          );
+          if (a === b) {
+            shouldWrite = false;
+            console.log(
+              `⏭️  No changes for Void Front period ${voidFrontFile}. Skipping write.`
+            );
+          }
+        } catch {}
+      }
+      if (shouldWrite) {
+        fs.writeFileSync(voidFrontFile, JSON.stringify(voidFrontData, null, 2));
+        console.log(`💾 Saved Void Front data to: ${voidFrontFile}`);
       }
     }
 
@@ -378,12 +501,22 @@ class AutomatedFetcher {
       dataDir,
       `shiyu-defense_${uid}_latest.json`
     );
+    const latestVoidFrontFile = path.join(
+      dataDir,
+      `void-front_${uid}_latest.json`
+    );
 
     if (data.deadly) {
       fs.writeFileSync(latestDeadlyFile, JSON.stringify(data.deadly, null, 2));
     }
     if (data.shiyu) {
       fs.writeFileSync(latestShiyuFile, JSON.stringify(data.shiyu, null, 2));
+    }
+    if (data.voidfront) {
+      fs.writeFileSync(
+        latestVoidFrontFile,
+        JSON.stringify(data.voidfront, null, 2)
+      );
     }
   }
 
@@ -402,6 +535,16 @@ class AutomatedFetcher {
         totalScore: data.shiyu?.data?.total_score || 0,
         totalStars: data.shiyu?.data?.total_star || 0,
       },
+      voidfront: {
+        count: data.voidfront?.data?.main_challenge_record_list?.length || 0,
+        player: data.voidfront?.data?.role_basic_info?.nickname || "Unknown",
+        totalScore:
+          data.voidfront?.data?.void_front_battle_abstract_info_brief
+            ?.total_score || 0,
+        rank:
+          data.voidfront?.data?.void_front_battle_abstract_info_brief
+            ?.rank_percent || 0,
+      },
     };
 
     return summary;
@@ -414,6 +557,8 @@ class AutomatedFetcher {
 
     Object.keys(this.resetSchedules).forEach((mode) => {
       const schedule = this.resetSchedules[mode];
+      
+      // All modes use standard interval-based resets
       const daysSinceBase = Math.floor(
         (now - schedule.baseDate) / (1000 * 60 * 60 * 24)
       );

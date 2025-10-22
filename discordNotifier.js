@@ -90,9 +90,25 @@ class DiscordNotifier {
       });
     }
 
+    // Add Void Front field
+    if (schedule.voidfront) {
+      fields.push({
+        name: "Void Front",
+        value: data.voidfront
+          ? `✅ ${
+              data.voidfront.data?.main_challenge_record_list?.length || 0
+            } records`
+          : "❌ No data",
+        inline: true,
+      });
+    }
+
     // Add player info
     const playerName =
-      data.deadly?.data?.nick_name || data.shiyu?.data?.nick_name || "Unknown";
+      data.deadly?.data?.nick_name ||
+      data.shiyu?.data?.nick_name ||
+      data.voidfront?.data?.role_basic_info?.nickname ||
+      "Unknown";
     fields.push({
       name: "Player",
       value: playerName,
@@ -188,10 +204,11 @@ class DiscordNotifier {
     ];
 
     // Add schedule information
-    if (schedule.deadly || schedule.shiyu) {
+    if (schedule.deadly || schedule.shiyu || schedule.voidfront) {
       const modes = [];
       if (schedule.deadly) modes.push("Deadly Assault");
       if (schedule.shiyu) modes.push("Shiyu Defense");
+      if (schedule.voidfront) modes.push("Void Front");
 
       fields.push({
         name: "Fetching Modes",

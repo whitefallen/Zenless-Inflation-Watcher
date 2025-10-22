@@ -2,10 +2,11 @@ import { readFile, readdir } from 'fs/promises';
 import path from 'path';
 import { DeadlyAssaultData } from '@/types/deadly-assault';
 import { ShiyuDefenseData } from '@/types/shiyu-defense';
+import { VoidFrontData } from '@/types/void-front';
 import { buildFileName, getSeasonWindow } from './date-utils';
 import { logger } from './error-utils';
 
-type DataType = 'deadly-assault' | 'shiyu-defense';
+type DataType = 'deadly-assault' | 'shiyu-defense' | 'void-front';
 
 interface DataIndex {
   file: string;
@@ -19,13 +20,30 @@ interface DataIndex {
 export class DataService {
   private getDataDirectory(type: DataType): string {
     const baseDir = process.cwd();
-    return type === 'deadly-assault' 
-      ? path.join(baseDir, 'deadlyAssault')
-      : path.join(baseDir, 'shiyu');
+    if (type === 'deadly-assault') {
+      return path.join(baseDir, 'deadlyAssault');
+    } else if (type === 'shiyu-defense') {
+      return path.join(baseDir, 'shiyu');
+    } else if (type === 'void-front') {
+      return path.join(baseDir, 'voidFront');
+    } else {
+      return path.join(baseDir, 'data');
+    }
   }
 
   private parseEndDateFromFilename(fileName: string, type: DataType): number | null {
-    const prefix = type === 'deadly-assault' ? 'deadly-assault' : 'shiyu-defense';
+    let prefix: string;
+    
+    if (type === 'deadly-assault') {
+      prefix = 'deadly-assault';
+    } else if (type === 'shiyu-defense') {
+      prefix = 'shiyu-defense';
+    } else if (type === 'void-front') {
+      prefix = 'void-front';
+    } else {
+      prefix = type;
+    }
+    
     const pattern = new RegExp(`^${prefix}-(\\d{4}-\\d{2}-\\d{2})-(\\d{4}-\\d{2}-\\d{2})\\.json$`);
     const match = fileName.match(pattern);
     
@@ -37,7 +55,18 @@ export class DataService {
   }
 
   private parseWindowFromFilename(fileName: string, type: DataType): { start?: string; end?: string } {
-    const prefix = type === 'deadly-assault' ? 'deadly-assault' : 'shiyu-defense';
+    let prefix: string;
+    
+    if (type === 'deadly-assault') {
+      prefix = 'deadly-assault';
+    } else if (type === 'shiyu-defense') {
+      prefix = 'shiyu-defense';
+    } else if (type === 'void-front') {
+      prefix = 'void-front';
+    } else {
+      prefix = type;
+    }
+    
     const pattern = new RegExp(`^${prefix}-(\\d{4}-\\d{2}-\\d{2})-(\\d{4}-\\d{2}-\\d{2})\\.json$`);
     const match = fileName.match(pattern);
     
@@ -50,7 +79,7 @@ export class DataService {
   /**
    * Get the latest data file for a given type
    */
-  async getLatestData<T extends DeadlyAssaultData | ShiyuDefenseData>(type: DataType): Promise<T | null> {
+  async getLatestData<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(type: DataType): Promise<T | null> {
     try {
       const dataDir = this.getDataDirectory(type);
       const files = await readdir(dataDir);
@@ -87,7 +116,7 @@ export class DataService {
   /**
    * Get all data files for a given type, sorted by date
    */
-  async getAllData<T extends DeadlyAssaultData | ShiyuDefenseData>(type: DataType): Promise<T[]> {
+  async getAllData<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(type: DataType): Promise<T[]> {
     try {
       const dataDir = this.getDataDirectory(type);
       const files = await readdir(dataDir);
@@ -147,7 +176,7 @@ export class DataService {
   /**
    * Get data by specific filename
    */
-  async getDataByFile<T extends DeadlyAssaultData | ShiyuDefenseData>(
+  async getDataByFile<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(
     fileName: string, 
     type: DataType
   ): Promise<T | null> {
@@ -165,7 +194,7 @@ export class DataService {
   /**
    * Save data with proper filename and metadata
    */
-  async saveData<T extends DeadlyAssaultData | ShiyuDefenseData>(
+  async saveData<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(
     data: T,
     uid: string,
     type: DataType,
@@ -210,7 +239,7 @@ export class DataService {
   /**
    * Check if data has changed compared to existing file
    */
-  async hasDataChanged<T extends DeadlyAssaultData | ShiyuDefenseData>(
+  async hasDataChanged<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(
     newData: T,
     type: DataType
   ): Promise<boolean> {
@@ -245,7 +274,7 @@ export class DataService {
   /**
    * Get summary statistics for data
    */
-  getDataSummary<T extends DeadlyAssaultData | ShiyuDefenseData>(data: T, type: DataType): Record<string, unknown> {
+  getDataSummary<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(data: T, type: DataType): Record<string, unknown> {
     if (type === 'deadly-assault') {
       const deadlyData = data as DeadlyAssaultData;
       return {
@@ -255,7 +284,7 @@ export class DataService {
         totalStars: deadlyData.data?.total_star || 0,
         rankPercent: deadlyData.data?.rank_percent,
       };
-    } else {
+    } else if (type === 'shiyu-defense') {
       const shiyuData = data as ShiyuDefenseData;
       return {
         count: shiyuData.data?.all_floor_detail?.length || 0,
@@ -263,6 +292,16 @@ export class DataService {
         maxLayer: shiyuData.data?.max_layer || 0,
         fastTime: shiyuData.data?.fast_layer_time || 0,
         rating: shiyuData.data?.rating_list?.[0]?.rating || "N/A",
+      };
+    } else {
+      // Void Front data
+      const voidFrontData = data as VoidFrontData;
+      return {
+        player: voidFrontData.data?.role_basic_info?.nickname || "Unknown",
+        totalScore: voidFrontData.data?.void_front_battle_abstract_info_brief?.total_score || 0,
+        rankPercent: voidFrontData.data?.void_front_battle_abstract_info_brief?.rank_percent || 0,
+        endingRecord: voidFrontData.data?.void_front_battle_abstract_info_brief?.ending_record_name || "Unknown",
+        mainChallenges: voidFrontData.data?.main_challenge_record_list?.length || 0,
       };
     }
   }
