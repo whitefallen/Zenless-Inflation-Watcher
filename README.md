@@ -4,19 +4,22 @@ A Next.js 15 Progressive Web App (PWA) for tracking Zenless Zone Zero battle rec
 
 ## 🚀 Performance Metrics
 
-*Performance metrics are automatically collected across all main application pages (landing page, Deadly Assault, and Shiyu Defense) via Lighthouse CI on every deployment.*
+_Performance metrics are automatically collected across all main application pages (landing page, Deadly Assault, and Shiyu Defense) via Lighthouse CI on every deployment._
 
 ### Lighthouse Scores
+
 [![Lighthouse Performance](https://img.shields.io/lighthouse/performance/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
 [![Lighthouse Accessibility](https://img.shields.io/lighthouse/accessibility/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
 [![Lighthouse Best Practices](https://img.shields.io/lighthouse/best-practices/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
 [![Lighthouse SEO](https://img.shields.io/lighthouse/seo/https/whitefallen.github.io/Zenless-Inflation-Watcher/?style=flat-square&logo=lighthouse)](https://whitefallen.github.io/Zenless-Inflation-Watcher/)
 
 ### Bundle Size
+
 [![Package Size](https://img.shields.io/github/repo-size/whitefallen/Zenless-Inflation-Watcher?style=flat-square)](https://github.com/whitefallen/Zenless-Inflation-Watcher)
 [![Last Commit](https://img.shields.io/github/last-commit/whitefallen/Zenless-Inflation-Watcher?style=flat-square)](https://github.com/whitefallen/Zenless-Inflation-Watcher/commits)
 
 ### Build Status
+
 [![Build and Deploy](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/publish-page.yml/badge.svg)](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/publish-page.yml)
 [![Data Fetch](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/automated-fetch.yml/badge.svg)](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/automated-fetch.yml)
 
@@ -42,17 +45,20 @@ This is a modern PWA built with Next.js 15, featuring:
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/whitefallen/Zenless-Inflation-Watcher.git
    cd Zenless-Inflation-Watcher
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Set up environment variables for data collection:
+
    ```bash
    cp .env_example .env
    ```
@@ -60,6 +66,7 @@ This is a modern PWA built with Next.js 15, featuring:
 4. Configure Hoyolab authentication (see Data Collection section below)
 
 5. Start development server:
+
    ```bash
    npm run dev
    ```
@@ -135,6 +142,7 @@ node battleRecords.js text
 ### Data Storage
 
 Battle records are stored as JSON files in:
+
 - `deadlyAssault/` - Deadly Assault records
 - `shiyu/` - Shiyu Defense records
 - `public/` - Web app accessible data (copied during build)
@@ -142,18 +150,21 @@ Battle records are stored as JSON files in:
 ## ⚡ Performance & PWA Features
 
 ### Performance Monitoring
+
 - **Lighthouse CI**: Automated performance testing across all main pages (landing, Deadly Assault, Shiyu Defense)
 - **Core Web Vitals**: Monitored for optimal user experience on every page
 - **PWA Audit**: Ensures installability and offline functionality
 - **Build Size Tracking**: Repository size monitoring
 
 ### PWA Features
+
 - **Offline Support**: Service worker caches critical resources
 - **Installable**: Add to home screen on mobile devices
 - **Fast Loading**: Optimized bundles with code splitting
 - **Responsive**: Works seamlessly across all devices
 
 ### Build Optimization
+
 - **Next.js 15**: Latest framework with App Router
 - **Tailwind CSS**: Utility-first styling with purging
 - **Service Worker**: Automatic caching and offline functionality
@@ -173,18 +184,22 @@ The application integrates with Hoyolab's ZZZ API using browser-based authentica
 ## 🐛 Troubleshooting
 
 ### Authentication Issues
+
 If you get authentication errors:
+
 1. Run `npm run auth` to refresh cookies
 2. Verify all environment variables are set in `.env`
 3. Check that your Hoyolab session hasn't expired
 4. Ensure your game UID is correct
 
 ### Build Issues
+
 - Run `npm run check-architecture` to validate project structure
 - Use `npm run docs` to view architecture documentation
 - Check that all data files are copied to `public/` during build
 
 ### Performance Issues
+
 - Clear browser cache and service worker
 - Check network tab for failed asset loads
 - Verify PWA is properly installed
@@ -192,6 +207,7 @@ If you get authentication errors:
 ## 📁 Project Structure
 
 ### Core Application (`src/`)
+
 - `app/` - Next.js 15 App Router pages and layouts
 - `components/` - React components (UI and business logic)
 - `lib/` - Utility functions and data services
@@ -199,17 +215,20 @@ If you get authentication errors:
 - `utils/` - Helper functions
 
 ### Data Collection (`root level`)
+
 - `zzzApi.js` - Hoyolab API wrapper
 - `battleRecords.js` - Main data fetching application
 - `auth.js` - Puppeteer authentication script
 - `automatedFetch.js` - Scheduled data collection
 
 ### Build & Deployment (`scripts/`)
+
 - `copy-data-to-public.js` - Data file synchronization
 - `generateManifest.js` - PWA manifest generation
 - `generateIconsPNG.js` - Icon generation from HTML templates
 
 ### Data Storage
+
 - `deadlyAssault/` - Deadly Assault battle records (JSON)
 - `shiyu/` - Shiyu Defense battle records (JSON)
 - `public/` - Static assets and web-accessible data

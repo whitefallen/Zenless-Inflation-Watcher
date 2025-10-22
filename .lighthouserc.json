@@ -3,12 +3,7 @@
     "collect": {
       "numberOfRuns": 3,
       "startServerCommand": "echo 'Server not needed for static site'",
-      "startServerReadyPattern": "echo 'Ready'",
-      "url": [
-        "https://whitefallen.github.io/Zenless-Inflation-Watcher/",
-        "https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault",
-        "https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense"
-      ]
+      "startServerReadyPattern": "echo 'Ready'"
     },
     "assert": {
       "assertions": {
@@ -18,9 +13,6 @@
         "categories:seo": ["error", {"minScore": 0.9}],
         "categories:pwa": ["error", {"minScore": 0.8}]
       }
-    },
-    "upload": {
-      "target": "temporary-public-storage"
     }
   }
 }
