@@ -70,6 +70,7 @@ jobs:
           publish_dir: ./out
 
       - name: Run Lighthouse CI
+        id: lighthouse
         uses: treosh/lighthouse-ci-action@v10
         with:
           urls: |
@@ -77,4 +78,5 @@ jobs:
             https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault
             https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense
           configPath: .lighthouserc.json
-          uploadArtifacts: false
+          uploadArtifacts: true
+          temporaryPublicStorage: true

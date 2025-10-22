@@ -6,19 +6,28 @@ A Next.js 15 Progressive Web App (PWA) for tracking Zenless Zone Zero battle rec
 
 _Performance metrics are automatically collected across all main application pages (landing page, Deadly Assault, and Shiyu Defense) via Lighthouse CI on every deployment._
 
-### Performance Monitoring
+### Lighthouse Scores
 
-- **Lighthouse CI**: Automated performance testing across all main pages (landing, Deadly Assault, Shiyu Defense) on every deployment
-- **Core Web Vitals**: Monitored for optimal user experience on every page
-- **PWA Audit**: Ensures installability and offline functionality
-- **Build Size Tracking**: Repository size monitoring
+#### Landing Page
 
-### Performance Thresholds
+[![Performance](https://img.shields.io/github/workflow/status/whitefallen/Zenless-Inflation-Watcher/Deploy%20PWA%20to%20GitHub%20Pages?label=performance&logo=lighthouse&style=flat-square)](https://github.com/whitefallen/Zenless-Inflation-Watcher/actions/workflows/publish-page.yml)
+[![View Report](https://img.shields.io/badge/PageSpeed-View%20Report-blue?style=flat-square)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/)
 
-- **Performance**: ≥75% (ensures good loading speeds)
-- **Best Practices**: ≥80% (code quality and security)
-- **SEO**: ≥80% (search engine optimization)
-- **PWA**: ≥75% (Progressive Web App compliance)
+#### Deadly Assault
+
+[![Lighthouse Performance](https://img.shields.io/lighthouse/performance/https/whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault)
+[![Lighthouse Accessibility](https://img.shields.io/lighthouse/accessibility/https/whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault)
+[![Lighthouse Best Practices](https://img.shields.io/lighthouse/best-practices/https/whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault)
+[![Lighthouse SEO](https://img.shields.io/lighthouse/seo/https/whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault)
+[![Lighthouse PWA](https://img.shields.io/lighthouse/pwa/https/whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault)
+
+#### Shiyu Defense
+
+[![Lighthouse Performance](https://img.shields.io/lighthouse/performance/https/whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense)
+[![Lighthouse Accessibility](https://img.shields.io/lighthouse/accessibility/https/whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense)
+[![Lighthouse Best Practices](https://img.shields.io/lighthouse/best-practices/https/whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense)
+[![Lighthouse SEO](https://img.shields.io/lighthouse/seo/https/whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense)
+[![Lighthouse PWA](https://img.shields.io/lighthouse/pwa/https/whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/report?url=https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense)
 
 ### Bundle Size
 
