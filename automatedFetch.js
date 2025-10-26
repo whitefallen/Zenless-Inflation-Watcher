@@ -86,27 +86,29 @@ class AutomatedFetcher {
       // For Void Front, calculate the 14-day window based on the base reset date
       // Since the API doesn't provide date information
       const now = new Date();
-      
+
       // Get the base date for Void Front from the reset schedules
       // We need to access it via the instance since this is a static method
       const fetcher = new AutomatedFetcher();
       const voidfrontSchedule = fetcher.resetSchedules.voidfront;
-      
+
       // Calculate the start of the current 14-day cycle
       const daysSinceBase = Math.floor(
         (now - voidfrontSchedule.baseDate) / (1000 * 60 * 60 * 24)
       );
-      const cycleNumber = Math.floor(daysSinceBase / voidfrontSchedule.intervalDays);
-      
+      const cycleNumber = Math.floor(
+        daysSinceBase / voidfrontSchedule.intervalDays
+      );
+
       // Calculate start and end dates based on the current cycle
       const startDate = new Date(voidfrontSchedule.baseDate);
       startDate.setDate(
         startDate.getDate() + cycleNumber * voidfrontSchedule.intervalDays
       );
-      
+
       const endDate = new Date(startDate);
       endDate.setDate(endDate.getDate() + voidfrontSchedule.intervalDays - 1); // 14-day window
-      
+
       return {
         start: AutomatedFetcher.toYMD(startDate),
         end: AutomatedFetcher.toYMD(endDate),
@@ -170,7 +172,7 @@ class AutomatedFetcher {
   shouldFetchMode(mode) {
     const schedule = this.resetSchedules[mode];
     const now = new Date();
-    
+
     // Calculate days since the base reset date for logging
     const daysSinceBase = Math.floor(
       (now - schedule.baseDate) / (1000 * 60 * 60 * 24)
@@ -182,7 +184,7 @@ class AutomatedFetcher {
     );
 
     return true; // Always fetch all modes
-  }  // Main fetch function
+  } // Main fetch function
   async fetchData() {
     const uid = process.env.UID;
 
@@ -557,7 +559,7 @@ class AutomatedFetcher {
 
     Object.keys(this.resetSchedules).forEach((mode) => {
       const schedule = this.resetSchedules[mode];
-      
+
       // All modes use standard interval-based resets
       const daysSinceBase = Math.floor(
         (now - schedule.baseDate) / (1000 * 60 * 60 * 24)
