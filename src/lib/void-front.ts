@@ -1,5 +1,3 @@
-import { readFile } from 'fs/promises';
-import path from 'path';
 import { VoidFrontData } from '@/types/void-front';
 import { DataService } from './data-service';
 

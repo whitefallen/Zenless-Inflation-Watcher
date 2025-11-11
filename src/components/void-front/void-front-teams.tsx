@@ -3,7 +3,7 @@
 import { VoidFrontData } from "@/types/void-front";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatTimeStamp } from "@/lib/date-utils";
-import { getAgentInfoClient, getElementName } from "@/lib/grade-utils";
+import { getAgentInfoClient } from "@/lib/grade-utils";
 import { ResponsiveTeamDisplay } from "../shared/responsive-team-display";
 
 interface VoidFrontTeamsProps {

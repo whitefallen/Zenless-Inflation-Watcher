@@ -28,6 +28,14 @@ export function MainNav() {
       >
         Shiyu Defense
       </Link>
+      <Link
+        href="/void-front"
+        className={`text-sm font-medium transition-colors hover:text-primary ${
+          pathname === '/void-front' ? 'text-foreground' : 'text-foreground/60'
+        }`}
+      >
+        Void Front
+      </Link>
     </nav>
   )
 }
