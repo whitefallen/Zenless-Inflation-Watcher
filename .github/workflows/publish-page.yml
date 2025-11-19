@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:
+      
+  workflow_run:
+    workflows: ["Automated ZZZ Data Fetch"]  # exact name of the first workflow
+    types:
+      - completed
 
 permissions:
   contents: write
@@ -136,3 +140,4 @@ jobs:
           path: ./lighthouse-reports
           retention-days: 7
           if-no-files-found: warn
+
