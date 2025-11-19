@@ -18,19 +18,19 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 573,
+    "rank_percent": 440,
     "list": [
       {
-        "score": 32286,
+        "score": 36088,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 11,
-          "day": 3,
-          "hour": 20,
-          "minute": 9,
-          "second": 28
+          "day": 8,
+          "hour": 16,
+          "minute": 29,
+          "second": 43
         },
         "boss": [
           {
@@ -49,23 +49,23 @@
         ],
         "avatar_list": [
           {
-            "id": 1371,
+            "id": 1051,
             "level": 60,
-            "element_type": 205,
+            "element_type": 202,
             "avatar_profession": 6,
             "rarity": "S",
             "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
-            "sub_element_type": 2
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
+            "sub_element_type": 0
           },
           {
-            "id": 1251,
+            "id": 1141,
             "level": 60,
-            "element_type": 203,
+            "element_type": 202,
             "avatar_profession": 2,
             "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1251.png",
+            "rank": 4,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
             "sub_element_type": 0
           },
           {
@@ -80,23 +80,23 @@
           }
         ],
         "buddy": {
-          "id": 54017,
+          "id": 54018,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/3c08e96072ef178e340abe896067fe6b.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/a21657d6b5ef65d6fa2120da9f1560f7.png"
         }
       },
       {
-        "score": 35334,
+        "score": 34654,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 11,
-          "day": 3,
-          "hour": 20,
-          "minute": 21,
-          "second": 38
+          "day": 8,
+          "hour": 15,
+          "minute": 58,
+          "second": 28
         },
         "boss": [
           {
@@ -153,16 +153,16 @@
         }
       },
       {
-        "score": 30245,
+        "score": 30348,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 11,
-          "day": 3,
-          "hour": 20,
-          "minute": 15,
-          "second": 13
+          "day": 8,
+          "hour": 16,
+          "minute": 19,
+          "second": 38
         },
         "boss": [
           {
@@ -222,14 +222,14 @@
     "has_data": true,
     "nick_name": "Whitefallen",
     "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/d728835e2608c88b9d491466eccd48c3.png",
-    "total_score": 97865,
+    "total_score": 101090,
     "total_star": 9,
     "zone_id": 69023,
     "total_max_score": 195000,
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2025-11-06T20:35:28.995Z",
+    "exportDate": "2025-11-13T20:35:43.308Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
