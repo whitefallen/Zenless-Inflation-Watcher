@@ -92,6 +92,7 @@ jobs:
           path: |
             deadlyAssault/
             shiyu/
+            voidFront/
           retention-days: 30
 
       - name: Commit battle data files
@@ -99,6 +100,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add deadlyAssault/ shiyu/
+          git add deadlyAssault/ shiyu/ voidFront/
           git commit -m "Update battle data - $(date)" || echo "No changes to commit"
           git push || echo "Push failed (expected if no changes)"
