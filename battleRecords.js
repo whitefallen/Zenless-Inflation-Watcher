@@ -102,60 +102,35 @@ function formatSeasonWindow(obj) {
   return `${formatDate(start)} - ${formatDate(end)}`;
 }
 
-// --- helpers to build filenames like Mode-YYYY-MM-DD-YYYY-MM-DD.json ---
-function toYMD(date) {
-  const d = new Date(date);
-  const y = d.getUTCFullYear();
-  const m = String(d.getUTCMonth() + 1).padStart(2, "0");
-  const day = String(d.getUTCDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
-}
-
-function timestampObjectToDateString(ts) {
-  if (!ts || typeof ts !== "object") return null;
-  const d = new Date(Date.UTC(ts.year, (ts.month || 1) - 1, ts.day || 1));
-  return toYMD(d);
-}
-
-function parsePossiblyEpochString(v) {
-  if (!v) return null;
-  if (typeof v === "string" && /^\d+$/.test(v)) {
-    const ms = Number(v) * 1000;
-    return toYMD(ms);
-  }
-  try {
-    return toYMD(new Date(v));
-  } catch {
-    return null;
-  }
-}
-
-function getSeasonWindow(mode, payload) {
-  if (!payload || !payload.data) return { start: null, end: null };
+// --- helpers to build filenames like Mode-ID.json ---
+/**
+ * Extract the season ID from API response based on game mode
+ * - Deadly Assault: data.zone_id
+ * - Shiyu Defense: data.schedule_id
+ * - Void Front: data.void_front_battle_abstract_info_brief.void_front_id
+ */
+function getSeasonId(mode, payload) {
+  if (!payload || !payload.data) return null;
+  
   if (mode === "deadly") {
-    const start = timestampObjectToDateString(payload.data.start_time);
-    const end = timestampObjectToDateString(payload.data.end_time);
-    return { start, end };
+    return payload.data.zone_id || null;
+  } else if (mode === "shiyu") {
+    return payload.data.schedule_id || null;
+  } else if (mode === "void-front") {
+    return payload.data.void_front_battle_abstract_info_brief?.void_front_id || null;
   }
-  const start =
-    timestampObjectToDateString(payload.data.hadal_begin_time) ||
-    parsePossiblyEpochString(payload.data.begin_time);
-  const end =
-    timestampObjectToDateString(payload.data.hadal_end_time) ||
-    parsePossiblyEpochString(payload.data.end_time);
-  return { start, end };
+  return null;
 }
 
-function buildFileName(mode, start, end) {
+function buildFileName(mode, seasonId) {
   const modeNames = {
     deadly: "deadly-assault",
     shiyu: "shiyu-defense",
     "void-front": "void-front",
   };
   const modeName = modeNames[mode] || "unknown-mode";
-  const startSafe = start || "unknown-start";
-  const endSafe = end || "unknown-end";
-  return `${modeName}-${startSafe}-${endSafe}.json`;
+  const idSafe = seasonId != null ? String(seasonId) : "unknown-id";
+  return `${modeName}-${idSafe}.json`;
 }
 
 function printDeadlyAssaultSummary(data) {
@@ -587,8 +562,8 @@ async function exportDeadlyAssaultJSON() {
     };
 
     const folderPath = "deadlyAssault";
-    const { start, end } = getSeasonWindow("deadly", data);
-    const fileName = buildFileName("deadly", start, end);
+    const seasonId = getSeasonId("deadly", data);
+    const fileName = buildFileName("deadly", seasonId);
 
     // Create folder if it doesn't exist
     if (!fs.existsSync(folderPath)) {
@@ -629,8 +604,8 @@ async function exportShiyuDefenseJSON() {
     };
 
     const folderPath = "shiyu";
-    const { start, end } = getSeasonWindow("shiyu", data);
-    const fileName = buildFileName("shiyu", start, end);
+    const seasonId = getSeasonId("shiyu", data);
+    const fileName = buildFileName("shiyu", seasonId);
 
     // Create folder if it doesn't exist
     if (!fs.existsSync(folderPath)) {
@@ -748,14 +723,8 @@ async function exportVoidFrontJSON() {
     };
 
     const folderPath = "voidFront";
-    // Format date as YYYY-MM-DD
-    const today = toYMD(now);
-    // Calculate 2 weeks from now
-    const twoWeeksLater = new Date(now);
-    twoWeeksLater.setDate(twoWeeksLater.getDate() + 14);
-    const endDate = toYMD(twoWeeksLater);
-
-    const fileName = buildFileName("void-front", today, endDate);
+    const seasonId = getSeasonId("void-front", data);
+    const fileName = buildFileName("void-front", seasonId);
 
     // Create folder if it doesn't exist
     if (!fs.existsSync(folderPath)) {

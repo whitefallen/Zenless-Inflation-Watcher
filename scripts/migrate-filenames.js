@@ -1,64 +1,41 @@
 /*
-  Migration script: Rename files from legacy month_week.json to
-  Mode-YYYY-MM-DD-YYYY-MM-DD.json when season dates can be derived
+  Migration script: Rename files from legacy date-based naming to
+  ID-based naming (Mode-ID.json) using season IDs from the JSON data
+  
+  - Deadly Assault: data.zone_id
+  - Shiyu Defense: data.schedule_id
+  - Void Front: data.void_front_battle_abstract_info_brief.void_front_id
 */
 
 const fs = require('fs');
 const fsp = require('fs/promises');
 const path = require('path');
 
-function toYMD(date) {
-  const d = new Date(date);
-  const y = d.getUTCFullYear();
-  const m = String(d.getUTCMonth() + 1).padStart(2, '0');
-  const day = String(d.getUTCDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
-}
-
-function timestampObjectToDateString(ts) {
-  if (!ts || typeof ts !== 'object') return null;
-  const d = new Date(Date.UTC(ts.year, (ts.month || 1) - 1, ts.day || 1));
-  return toYMD(d);
-}
-
-function parsePossiblyEpochString(v) {
-  if (!v) return null;
-  if (typeof v === 'string' && /^\d+$/.test(v)) {
-    const ms = Number(v) * 1000;
-    return toYMD(ms);
-  }
-  if (typeof v === 'number') {
-    return toYMD(v * 1000);
-  }
-  try {
-    return toYMD(new Date(v));
-  } catch {
-    return null;
-  }
-}
-
-function deriveWindow(mode, json) {
-  if (!json || !json.data) return { start: null, end: null };
+/**
+ * Extract the season ID from API response based on game mode
+ */
+function getSeasonId(mode, json) {
+  if (!json || !json.data) return null;
+  
   if (mode === 'deadly') {
-    const start = timestampObjectToDateString(json.data.start_time);
-    const end = timestampObjectToDateString(json.data.end_time);
-    return { start, end };
+    return json.data.zone_id || null;
+  } else if (mode === 'shiyu') {
+    return json.data.schedule_id || null;
+  } else if (mode === 'void-front') {
+    return json.data.void_front_battle_abstract_info_brief?.void_front_id || null;
   }
-  // shiyu
-  const start =
-    timestampObjectToDateString(json.data.hadal_begin_time) ||
-    parsePossiblyEpochString(json.data.begin_time);
-  const end =
-    timestampObjectToDateString(json.data.hadal_end_time) ||
-    parsePossiblyEpochString(json.data.end_time);
-  return { start, end };
+  return null;
 }
 
-function buildFileName(mode, start, end) {
-  const modeName = mode === 'deadly' ? 'deadly-assault' : 'shiyu-defense';
-  const startSafe = start || 'unknown-start';
-  const endSafe = end || 'unknown-end';
-  return `${modeName}-${startSafe}-${endSafe}.json`;
+function buildFileName(mode, seasonId) {
+  const modeNames = {
+    'deadly': 'deadly-assault',
+    'shiyu': 'shiyu-defense',
+    'void-front': 'void-front'
+  };
+  const modeName = modeNames[mode] || 'unknown-mode';
+  const idSafe = seasonId != null ? String(seasonId) : 'unknown-id';
+  return `${modeName}-${idSafe}.json`;
 }
 
 async function migrateDir(dir, mode) {
@@ -70,12 +47,18 @@ async function migrateDir(dir, mode) {
   const files = await fsp.readdir(full);
   let migrated = 0;
   let skipped = 0;
+  
+  const prefix = mode === 'deadly' ? 'deadly-assault' : (mode === 'void-front' ? 'void-front' : 'shiyu-defense');
+  
   for (const file of files) {
     if (!file.endsWith('.json')) continue;
-    // skip already migrated files
-    if (/^(deadly-assault|shiyu-defense)-\d{4}-\d{2}-\d{2}-\d{4}-\d{2}-\d{2}\.json$/.test(file)) {
+    
+    // Skip already migrated files (new ID-based pattern: prefix-ID.json)
+    const idPattern = new RegExp(`^${prefix}-(\\d+)\\.json$`);
+    if (idPattern.test(file)) {
       continue;
     }
+    
     const srcPath = path.join(full, file);
     let json;
     try {
@@ -86,19 +69,23 @@ async function migrateDir(dir, mode) {
       skipped++;
       continue;
     }
-    const { start, end } = deriveWindow(mode, json);
-    if (!start || !end) {
-      console.warn(`Skipping ${dir}/${file}: could not derive season window`);
+    
+    const seasonId = getSeasonId(mode, json);
+    if (seasonId == null) {
+      console.warn(`Skipping ${dir}/${file}: could not derive season ID`);
       skipped++;
       continue;
     }
-    const targetName = buildFileName(mode, start, end);
+    
+    const targetName = buildFileName(mode, seasonId);
     const dstPath = path.join(full, targetName);
+    
     if (fs.existsSync(dstPath)) {
       console.warn(`Conflict for ${dir}/${file} -> ${targetName}: target exists. Leaving original in place.`);
       skipped++;
       continue;
     }
+    
     await fsp.rename(srcPath, dstPath);
     console.log(`Renamed ${dir}/${file} -> ${targetName}`);
     migrated++;
@@ -110,6 +97,7 @@ async function migrateDir(dir, mode) {
   try {
     await migrateDir('deadlyAssault', 'deadly');
     await migrateDir('shiyu', 'shiyu');
+    await migrateDir('voidFront', 'void-front');
     console.log('Migration completed.');
     process.exit(0);
   } catch (e) {
@@ -117,5 +105,3 @@ async function migrateDir(dir, mode) {
     process.exit(1);
   }
 })();
-
-

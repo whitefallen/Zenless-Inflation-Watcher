@@ -93,7 +93,42 @@ export function formatDate(dateString: string): string {
 }
 
 /**
- * Gets the season window from API payload data
+ * Gets the season ID from API payload data
+ * - Deadly Assault: data.zone_id
+ * - Shiyu Defense: data.schedule_id  
+ * - Void Front: data.void_front_battle_abstract_info_brief.void_front_id
+ */
+export function getSeasonId(mode: "deadly" | "shiyu" | "void-front", payload: unknown): number | null {
+  if (!payload || typeof payload !== 'object' || !('data' in payload)) {
+    return null;
+  }
+  
+  const payloadData = (payload as { data: unknown }).data;
+  if (!payloadData || typeof payloadData !== 'object') {
+    return null;
+  }
+  
+  const data = payloadData as Record<string, unknown>;
+  
+  if (mode === "deadly") {
+    return typeof data.zone_id === 'number' ? data.zone_id : null;
+  } else if (mode === "shiyu") {
+    return typeof data.schedule_id === 'number' ? data.schedule_id : null;
+  } else if (mode === "void-front") {
+    const vfData = data.void_front_battle_abstract_info_brief;
+    if (vfData && typeof vfData === 'object' && 'void_front_id' in vfData) {
+      const vfObj = vfData as { void_front_id: unknown };
+      if (typeof vfObj.void_front_id === 'number') {
+        return vfObj.void_front_id;
+      }
+    }
+    return null;
+  }
+  return null;
+}
+
+/**
+ * Gets the season window from API payload data (legacy - for backwards compatibility)
  */
 export function getSeasonWindow(mode: "deadly" | "shiyu" | "void-front", payload: unknown): { start: string | null; end: string | null } {
   if (!payload || typeof payload !== 'object' || !('data' in payload) || !payload.data) {
@@ -126,9 +161,23 @@ export function getSeasonWindow(mode: "deadly" | "shiyu" | "void-front", payload
 }
 
 /**
- * Builds a filename for data storage
+ * Builds a filename for data storage using season ID
  */
-export function buildFileName(mode: "deadly" | "shiyu" | "void-front", start?: string | null, end?: string | null): string {
+export function buildFileName(mode: "deadly" | "shiyu" | "void-front", seasonId?: number | null): string {
+  const modeNames = {
+    "deadly": "deadly-assault",
+    "shiyu": "shiyu-defense",
+    "void-front": "void-front"
+  };
+  const modeName = modeNames[mode] || "unknown-mode";
+  const idSafe = seasonId != null ? String(seasonId) : "unknown-id";
+  return `${modeName}-${idSafe}.json`;
+}
+
+/**
+ * Legacy filename builder using date ranges (for backwards compatibility)
+ */
+export function buildFileNameLegacy(mode: "deadly" | "shiyu" | "void-front", start?: string | null, end?: string | null): string {
   const modeNames = {
     "deadly": "deadly-assault",
     "shiyu": "shiyu-defense",
