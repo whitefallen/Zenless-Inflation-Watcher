@@ -16,6 +16,19 @@ interface DataIndex {
   end?: string;
 }
 
+// Regex patterns cache for better performance
+const ID_PATTERNS: Record<DataType, RegExp> = {
+  'deadly-assault': /^deadly-assault-(\d+)\.json$/,
+  'shiyu-defense': /^shiyu-defense-(\d+)\.json$/,
+  'void-front': /^void-front-(\d+)\.json$/
+};
+
+const DATE_PATTERNS: Record<DataType, RegExp> = {
+  'deadly-assault': /^deadly-assault-(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})\.json$/,
+  'shiyu-defense': /^shiyu-defense-(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})\.json$/,
+  'void-front': /^void-front-(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})\.json$/
+};
+
 /**
  * Centralized data service for loading game data
  */
@@ -34,45 +47,21 @@ export class DataService {
   }
 
   private parseSeasonIdFromFilename(fileName: string, type: DataType): number | null {
-    let prefix: string;
+    const pattern = ID_PATTERNS[type];
+    if (!pattern) return null;
     
-    if (type === 'deadly-assault') {
-      prefix = 'deadly-assault';
-    } else if (type === 'shiyu-defense') {
-      prefix = 'shiyu-defense';
-    } else if (type === 'void-front') {
-      prefix = 'void-front';
-    } else {
-      prefix = type;
-    }
-    
-    // New ID-based pattern: gameMode-ID.json
-    const idPattern = new RegExp(`^${prefix}-(\\d+)\\.json$`);
-    const idMatch = fileName.match(idPattern);
-    
-    if (idMatch) {
-      return parseInt(idMatch[1], 10);
+    const match = fileName.match(pattern);
+    if (match) {
+      return parseInt(match[1], 10);
     }
     return null;
   }
 
   private parseEndDateFromFilename(fileName: string, type: DataType): number | null {
-    let prefix: string;
+    const pattern = DATE_PATTERNS[type];
+    if (!pattern) return null;
     
-    if (type === 'deadly-assault') {
-      prefix = 'deadly-assault';
-    } else if (type === 'shiyu-defense') {
-      prefix = 'shiyu-defense';
-    } else if (type === 'void-front') {
-      prefix = 'void-front';
-    } else {
-      prefix = type;
-    }
-    
-    // Legacy date-based pattern: gameMode-startDate-endDate.json
-    const pattern = new RegExp(`^${prefix}-(\\d{4}-\\d{2}-\\d{2})-(\\d{4}-\\d{2}-\\d{2})\\.json$`);
     const match = fileName.match(pattern);
-    
     if (match) {
       const endDate = new Date(match[2] + 'T00:00:00Z').getTime();
       return Number.isNaN(endDate) ? null : endDate;
@@ -81,32 +70,22 @@ export class DataService {
   }
 
   private parseWindowFromFilename(fileName: string, type: DataType): { seasonId?: number; start?: string; end?: string } {
-    let prefix: string;
-    
-    if (type === 'deadly-assault') {
-      prefix = 'deadly-assault';
-    } else if (type === 'shiyu-defense') {
-      prefix = 'shiyu-defense';
-    } else if (type === 'void-front') {
-      prefix = 'void-front';
-    } else {
-      prefix = type;
+    // Try ID-based pattern first
+    const idPattern = ID_PATTERNS[type];
+    if (idPattern) {
+      const idMatch = fileName.match(idPattern);
+      if (idMatch) {
+        return { seasonId: parseInt(idMatch[1], 10) };
+      }
     }
     
-    // New ID-based pattern: gameMode-ID.json
-    const idPattern = new RegExp(`^${prefix}-(\\d+)\\.json$`);
-    const idMatch = fileName.match(idPattern);
-    
-    if (idMatch) {
-      return { seasonId: parseInt(idMatch[1], 10) };
-    }
-    
-    // Legacy date-based pattern: gameMode-startDate-endDate.json
-    const datePattern = new RegExp(`^${prefix}-(\\d{4}-\\d{2}-\\d{2})-(\\d{4}-\\d{2}-\\d{2})\\.json$`);
-    const dateMatch = fileName.match(datePattern);
-    
-    if (dateMatch) {
-      return { start: dateMatch[1], end: dateMatch[2] };
+    // Try date-based pattern
+    const datePattern = DATE_PATTERNS[type];
+    if (datePattern) {
+      const dateMatch = fileName.match(datePattern);
+      if (dateMatch) {
+        return { start: dateMatch[1], end: dateMatch[2] };
+      }
     }
     return {};
   }
@@ -225,7 +204,12 @@ export class DataService {
           return b.f.localeCompare(a.f);
         });
         
-      return parsed.map(({ f, seasonId, start, end }) => ({ file: f, seasonId: seasonId ?? undefined, start, end }));
+      return parsed.map(({ f, seasonId, start, end }) => ({ 
+        file: f, 
+        seasonId: seasonId || undefined, 
+        start, 
+        end 
+      }));
     } catch (error) {
       logger.error(`Error reading ${type} index:`, error);
       return [];

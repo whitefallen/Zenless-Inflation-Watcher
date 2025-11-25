@@ -99,20 +99,28 @@ export function formatDate(dateString: string): string {
  * - Void Front: data.void_front_battle_abstract_info_brief.void_front_id
  */
 export function getSeasonId(mode: "deadly" | "shiyu" | "void-front", payload: unknown): number | null {
-  if (!payload || typeof payload !== 'object' || !('data' in payload) || !payload.data) {
+  if (!payload || typeof payload !== 'object' || !('data' in payload)) {
     return null;
   }
   
-  const data = payload.data as Record<string, unknown>;
+  const payloadData = (payload as { data: unknown }).data;
+  if (!payloadData || typeof payloadData !== 'object') {
+    return null;
+  }
+  
+  const data = payloadData as Record<string, unknown>;
   
   if (mode === "deadly") {
     return typeof data.zone_id === 'number' ? data.zone_id : null;
   } else if (mode === "shiyu") {
     return typeof data.schedule_id === 'number' ? data.schedule_id : null;
   } else if (mode === "void-front") {
-    const vfData = data.void_front_battle_abstract_info_brief as Record<string, unknown> | undefined;
-    if (vfData && typeof vfData.void_front_id === 'number') {
-      return vfData.void_front_id;
+    const vfData = data.void_front_battle_abstract_info_brief;
+    if (vfData && typeof vfData === 'object' && 'void_front_id' in vfData) {
+      const vfObj = vfData as { void_front_id: unknown };
+      if (typeof vfObj.void_front_id === 'number') {
+        return vfObj.void_front_id;
+      }
     }
     return null;
   }
