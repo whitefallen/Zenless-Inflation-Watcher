@@ -26,41 +26,41 @@
         "node_1": {
           "avatars": [
             {
-              "id": 1371,
+              "id": 1321,
               "level": 60,
               "rarity": "S",
-              "element_type": 205,
-              "avatar_profession": 6,
+              "element_type": 201,
+              "avatar_profession": 1,
               "rank": 0,
-              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
-              "sub_element_type": 2
-            },
-            {
-              "id": 1031,
-              "level": 60,
-              "rarity": "A",
-              "element_type": 205,
-              "avatar_profession": 4,
-              "rank": 6,
-              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
               "sub_element_type": 0
             },
             {
-              "id": 1451,
+              "id": 1481,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 2,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1311,
               "level": 60,
               "rarity": "S",
               "element_type": 205,
               "avatar_profession": 4,
               "rank": 0,
-              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
               "sub_element_type": 0
             }
           ],
           "buddy": {
-            "id": 54009,
+            "id": 54020,
             "rarity": "S",
-            "level": 60,
-            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/5fbfc110308d6cafb37ebe8e138e757a.png"
+            "level": 40,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/4bc36a42e1badb2c85d60d758427e27a.png"
           },
           "element_type_list": [
             205
@@ -96,7 +96,7 @@
               }
             ]
           },
-          "battle_time": 125
+          "battle_time": 109
         },
         "node_2": {
           "avatars": [
@@ -158,17 +158,17 @@
               }
             ]
           },
-          "battle_time": 75
+          "battle_time": 85
         },
-        "challenge_time": "1763745353",
+        "challenge_time": "1764537697",
         "zone_name": "Critical Node: Seventh Frontier",
         "floor_challenge_time": {
           "year": 2025,
           "month": 11,
-          "day": 21,
-          "hour": 18,
-          "minute": 15,
-          "second": 53
+          "day": 30,
+          "hour": 22,
+          "minute": 21,
+          "second": 37
         }
       },
       {
@@ -811,10 +811,10 @@
       "minute": 59,
       "second": 59
     },
-    "battle_time_47": 625
+    "battle_time_47": 619
   },
   "metadata": {
-    "exportDate": "2025-11-27T20:32:37.502Z",
+    "exportDate": "2025-12-04T20:38:22.816Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
