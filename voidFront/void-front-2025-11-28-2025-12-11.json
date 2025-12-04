@@ -1,0 +1,960 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "void_front_battle_abstract_info_brief": {
+      "void_front_id": 102,
+      "end_ts_over_42_days": true,
+      "end_ts": 0,
+      "has_ending_record": true,
+      "ending_record_name": "Ending 1: Pathfinder",
+      "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/6b40ee2f321248dddc8e5ac202068a00.png",
+      "total_score": 538104,
+      "rank_percent": 193,
+      "max_score": 663000,
+      "left_ts": 0,
+      "ending_record_id": 1
+    },
+    "boss_challenge_record": {
+      "boss_info": {
+        "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/cb00174d5457d26f42c7a16274fca2f5.png",
+        "name": "Wandering Hunter",
+        "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+        "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+      },
+      "main_challenge_record": {
+        "battle_id": 1020803,
+        "node_id": 10208,
+        "name": "LAST NODE",
+        "score": 109745,
+        "star": "S",
+        "score_ratio": "2.8",
+        "challenge_time": {
+          "year": 2025,
+          "month": 11,
+          "day": 30,
+          "hour": 15,
+          "minute": 6,
+          "second": 54
+        },
+        "buffer": {
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/9946bcab40ce2ce3a526a33626163fe0.png",
+          "desc": "· When an Agent with Rupture specialty has HP below 80%/50% of their Max HP, their attacks ignore <color=#2BAD00>10%/25%</color> of the enemy's <color=#98EFF0>Ice RES</color>.\\n· When Agents activate or extend an Ether Veil, the whole squad's Sheer DMG <color=#2BAD00>increases by 20%</color>, CRIT DMG <color=#2BAD00>increases by 30%</color> for 20s, repeated triggers reset the duration.",
+          "name": "Raging Waves"
+        },
+        "max_score": 182000,
+        "avatar_list": [
+          {
+            "id": 1051,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54018,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/86058ba1d4c4acef77927bca05be4537.png"
+        },
+        "sub_challenge_record": [
+          {
+            "battle_id": 1020804,
+            "name": "4-1 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1371,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 6,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+                "sub_element_type": 2
+              },
+              {
+                "id": 1421,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 5,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1421.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1031,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54009,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/5fbfc110308d6cafb37ebe8e138e757a.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/128df030c616267fa8dd3106c2feecca.png",
+              "desc": "· Agent Max HP <color=#2BAD00>increases by 20%</color>, Ultimate DMG <color=#2BAD00>increases by 40%</color>.\\n· After using an EX Special Attack, Energy and Adrenaline Generation Rate <color=#2BAD00>increase by 20%</color> and <color=#FE437E>Ether DMG</color> <color=#2BAD00>increases by 35%</color> for 20s, and repeated triggers reset the duration.",
+              "name": "Gathering Point"
+            }
+          },
+          {
+            "battle_id": 1020813,
+            "name": "4-2 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1281,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1171,
+                "level": 60,
+                "element_type": 201,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1151,
+                "level": 60,
+                "element_type": 201,
+                "avatar_profession": 4,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54006,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/a927bd3b5bc43dd114d9604a3fa6ae99.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b79e046bb611c733efbf8005f65349fa.png",
+              "desc": "· Increases the Agent's Anomaly Buildup Rate <color=#2BAD00>by 20%</color>.\\n· When inflicting <color=#FFFFFF>Attribute Anomaly</color> on enemies, all squad members <color=#2BAD00>gain 60 points of Anomaly Proficiency</color>, and DMG caused by <color=#FFFFFF>Disorder</color> <color=#2BAD00>increases by 40%</color> for 15 seconds.",
+              "name": "Aberration"
+            }
+          },
+          {
+            "battle_id": 1020814,
+            "name": "4-3 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1091,
+                "level": 60,
+                "element_type": 202,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                "sub_element_type": 1
+              },
+              {
+                "id": 1411,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1131,
+                "level": 60,
+                "element_type": 202,
+                "avatar_profession": 4,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54001,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b17cc9cdbc4ace59e7441ee2a47c6c3c.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b79e046bb611c733efbf8005f65349fa.png",
+              "desc": "· Increases the Agent's Anomaly Buildup Rate <color=#2BAD00>by 20%</color>.\\n· When inflicting <color=#FFFFFF>Attribute Anomaly</color> on enemies, all squad members <color=#2BAD00>gain 60 points of Anomaly Proficiency</color>, and DMG caused by <color=#FFFFFF>Disorder</color> <color=#2BAD00>increases by 40%</color> for 15 seconds.",
+              "name": "Aberration"
+            }
+          },
+          {
+            "battle_id": 1020810,
+            "name": "4-4 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1261,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1401,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1331,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331_3113311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54016,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f6248c3094ff8657730346108c38184d.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b79e046bb611c733efbf8005f65349fa.png",
+              "desc": "· Increases the Agent's Anomaly Buildup Rate <color=#2BAD00>by 20%</color>.\\n· When inflicting <color=#FFFFFF>Attribute Anomaly</color> on enemies, all squad members <color=#2BAD00>gain 60 points of Anomaly Proficiency</color>, and DMG caused by <color=#FFFFFF>Disorder</color> <color=#2BAD00>increases by 40%</color> for 15 seconds.",
+              "name": "Aberration"
+            }
+          }
+        ]
+      }
+    },
+    "main_challenge_record_list": [
+      {
+        "battle_id": 1020601,
+        "node_id": 10206,
+        "name": "BATTLE 03",
+        "score": 142158,
+        "star": "S",
+        "score_ratio": "2.8",
+        "challenge_time": {
+          "year": 2025,
+          "month": 11,
+          "day": 30,
+          "hour": 15,
+          "minute": 1,
+          "second": 54
+        },
+        "buffer": {
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/1bed98b8311bf30ca6ac2c2a5a036aef.png",
+          "desc": "· Agent Max HP <color=#2BAD00>increases by 30%</color>, Ultimate DMG <color=#2BAD00>increases by 40%</color>.\\n· After using an Ultimate, Energy and Adrenaline Generation Rate <color=#2BAD00>increase by 15%</color>, <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increase by 40%</color> for 20s.",
+          "name": "Meditation"
+        },
+        "max_score": 182000,
+        "avatar_list": [
+          {
+            "id": 1371,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+            "sub_element_type": 2
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54017,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/dd55575f3863f231cc2b8f89cc46e826.png"
+        },
+        "sub_challenge_record": [
+          {
+            "battle_id": 1020602,
+            "name": "3-1 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1281,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1171,
+                "level": 60,
+                "element_type": 201,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1151,
+                "level": 60,
+                "element_type": 201,
+                "avatar_profession": 4,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54006,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/a927bd3b5bc43dd114d9604a3fa6ae99.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f5903782fd87b66a725d5a438d3e2e76.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
+              "name": "Graceful Mastery"
+            }
+          },
+          {
+            "battle_id": 1020603,
+            "name": "3-2 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1221,
+                "level": 60,
+                "element_type": 203,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1331,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331_3113311.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1211,
+                "level": 60,
+                "element_type": 203,
+                "avatar_profession": 4,
+                "rarity": "S",
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 53010,
+              "rarity": "A",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/131edf6006035ce8c672fdeb0898a620.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f5903782fd87b66a725d5a438d3e2e76.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
+              "name": "Graceful Mastery"
+            }
+          },
+          {
+            "battle_id": 1020604,
+            "name": "3-3 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1091,
+                "level": 60,
+                "element_type": 202,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                "sub_element_type": 1
+              },
+              {
+                "id": 1141,
+                "level": 60,
+                "element_type": 202,
+                "avatar_profession": 2,
+                "rarity": "S",
+                "rank": 4,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1131,
+                "level": 60,
+                "element_type": 202,
+                "avatar_profession": 4,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54001,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b17cc9cdbc4ace59e7441ee2a47c6c3c.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f5903782fd87b66a725d5a438d3e2e76.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
+              "name": "Graceful Mastery"
+            }
+          },
+          {
+            "battle_id": 1020605,
+            "name": "3-4 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1261,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1401,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1411,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54016,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f6248c3094ff8657730346108c38184d.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f5903782fd87b66a725d5a438d3e2e76.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
+              "name": "Graceful Mastery"
+            }
+          }
+        ]
+      },
+      {
+        "battle_id": 1020401,
+        "node_id": 10204,
+        "name": "BATTLE 02",
+        "score": 141724,
+        "star": "S",
+        "score_ratio": "2.3",
+        "challenge_time": {
+          "year": 2025,
+          "month": 11,
+          "day": 15,
+          "hour": 16,
+          "minute": 2,
+          "second": 36
+        },
+        "buffer": {
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b79e046bb611c733efbf8005f65349fa.png",
+          "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>30%</color> and <color=#FFFFFF>Disorder</color> DMG by <color=#2BAD00>40%</color>.\\n· When inflicting <color=#FFFFFF>Disorder</color> on an enemy, recovers all squad members' Energy by <color=#FFFFFF>10</color> and increases Agent's ATK by <color=#FFFFFF>25%</color> for 30s. The Energy Generation effect can trigger once every 20s.",
+          "name": "Spirit Break"
+        },
+        "max_score": 149500,
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1131,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54001,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b17cc9cdbc4ace59e7441ee2a47c6c3c.png"
+        },
+        "sub_challenge_record": [
+          {
+            "battle_id": 1020402,
+            "name": "2-1 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1221,
+                "level": 60,
+                "element_type": 203,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1071,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 5,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1071.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1211,
+                "level": 60,
+                "element_type": 203,
+                "avatar_profession": 4,
+                "rarity": "S",
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 53010,
+              "rarity": "A",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/131edf6006035ce8c672fdeb0898a620.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b79e046bb611c733efbf8005f65349fa.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>30%</color> and <color=#FFFFFF>Disorder</color> DMG by <color=#2BAD00>40%</color>.\\n· When inflicting <color=#FFFFFF>Disorder</color> on an enemy, recovers all squad members' Energy by <color=#FFFFFF>10</color> and increases Agent's ATK by <color=#FFFFFF>25%</color> for 30s. The Energy Generation effect can trigger once every 20s.",
+              "name": "Spirit Break"
+            }
+          },
+          {
+            "battle_id": 1020403,
+            "name": "2-2 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1281,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1171,
+                "level": 60,
+                "element_type": 201,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1151,
+                "level": 60,
+                "element_type": 201,
+                "avatar_profession": 4,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54006,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/a927bd3b5bc43dd114d9604a3fa6ae99.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b79e046bb611c733efbf8005f65349fa.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>30%</color> and <color=#FFFFFF>Disorder</color> DMG by <color=#2BAD00>40%</color>.\\n· When inflicting <color=#FFFFFF>Disorder</color> on an enemy, recovers all squad members' Energy by <color=#FFFFFF>10</color> and increases Agent's ATK by <color=#FFFFFF>25%</color> for 30s. The Energy Generation effect can trigger once every 20s.",
+              "name": "Spirit Break"
+            }
+          },
+          {
+            "battle_id": 1020404,
+            "name": "2-3 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1331,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331_3113311.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1031,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54009,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/5fbfc110308d6cafb37ebe8e138e757a.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b79e046bb611c733efbf8005f65349fa.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>30%</color> and <color=#FFFFFF>Disorder</color> DMG by <color=#2BAD00>40%</color>.\\n· When inflicting <color=#FFFFFF>Disorder</color> on an enemy, recovers all squad members' Energy by <color=#FFFFFF>10</color> and increases Agent's ATK by <color=#FFFFFF>25%</color> for 30s. The Energy Generation effect can trigger once every 20s.",
+              "name": "Spirit Break"
+            }
+          }
+        ]
+      },
+      {
+        "battle_id": 1020201,
+        "node_id": 10202,
+        "name": "BATTLE 01",
+        "score": 144477,
+        "star": "S",
+        "score_ratio": "2.3",
+        "challenge_time": {
+          "year": 2025,
+          "month": 10,
+          "day": 21,
+          "hour": 5,
+          "minute": 56,
+          "second": 5
+        },
+        "buffer": {
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f5903782fd87b66a725d5a438d3e2e76.png",
+          "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
+          "name": "Graceful Mastery"
+        },
+        "max_score": 149500,
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1131,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54001,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b17cc9cdbc4ace59e7441ee2a47c6c3c.png"
+        },
+        "sub_challenge_record": [
+          {
+            "battle_id": 1020202,
+            "name": "1-1 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1371,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 6,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+                "sub_element_type": 2
+              },
+              {
+                "id": 1071,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 5,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1071.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1451,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54017,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/dd55575f3863f231cc2b8f89cc46e826.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/1bed98b8311bf30ca6ac2c2a5a036aef.png",
+              "desc": "· Agent Max HP <color=#2BAD00>increases by 30%</color>, Ultimate DMG <color=#2BAD00>increases by 40%</color>.\\n· After using an Ultimate, Energy and Adrenaline Generation Rate <color=#2BAD00>increase by 15%</color>, <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increase by 40%</color> for 20s.",
+              "name": "Meditation"
+            }
+          },
+          {
+            "battle_id": 1020203,
+            "name": "1-2 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1281,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1171,
+                "level": 60,
+                "element_type": 201,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1151,
+                "level": 60,
+                "element_type": 201,
+                "avatar_profession": 4,
+                "rarity": "A",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54006,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/a927bd3b5bc43dd114d9604a3fa6ae99.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f5903782fd87b66a725d5a438d3e2e76.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
+              "name": "Graceful Mastery"
+            }
+          },
+          {
+            "battle_id": 1020204,
+            "name": "1-3 ",
+            "star": "S",
+            "avatar_list": [
+              {
+                "id": 1261,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1401,
+                "level": 60,
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1331,
+                "level": 60,
+                "element_type": 205,
+                "avatar_profession": 3,
+                "rarity": "S",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331_3113311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54016,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f6248c3094ff8657730346108c38184d.png"
+            },
+            "buffer": {
+              "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f5903782fd87b66a725d5a438d3e2e76.png",
+              "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
+              "name": "Graceful Mastery"
+            }
+          }
+        ]
+      }
+    ],
+    "role_basic_info": {
+      "server": "prod_gf_eu",
+      "nickname": "Whitefallen",
+      "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/3191e4f6baf6e83ca3296fa4d17eccba.png"
+    }
+  },
+  "metadata": {
+    "exportDate": "2025-12-04T20:38:22.816Z",
+    "uid": "1500598195",
+    "type": "void_front",
+    "automated": true
+  }
+}
