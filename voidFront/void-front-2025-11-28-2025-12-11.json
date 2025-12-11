@@ -9,8 +9,8 @@
       "has_ending_record": true,
       "ending_record_name": "Ending 1: Pathfinder",
       "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/6b40ee2f321248dddc8e5ac202068a00.png",
-      "total_score": 538104,
-      "rank_percent": 193,
+      "total_score": 540701,
+      "rank_percent": 180,
       "max_score": 663000,
       "left_ts": 0,
       "ending_record_id": 1
@@ -282,16 +282,16 @@
         "battle_id": 1020601,
         "node_id": 10206,
         "name": "BATTLE 03",
-        "score": 142158,
+        "score": 144755,
         "star": "S",
         "score_ratio": "2.8",
         "challenge_time": {
           "year": 2025,
-          "month": 11,
-          "day": 30,
-          "hour": 15,
-          "minute": 1,
-          "second": 54
+          "month": 12,
+          "day": 7,
+          "hour": 13,
+          "minute": 23,
+          "second": 14
         },
         "buffer": {
           "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/1bed98b8311bf30ca6ac2c2a5a036aef.png",
@@ -332,10 +332,10 @@
           }
         ],
         "buddy": {
-          "id": 54017,
+          "id": 54020,
           "rarity": "S",
-          "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/dd55575f3863f231cc2b8f89cc46e826.png"
+          "level": 50,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/4bc36a42e1badb2c85d60d758427e27a.png"
         },
         "sub_challenge_record": [
           {
@@ -952,7 +952,7 @@
     }
   },
   "metadata": {
-    "exportDate": "2025-12-04T20:38:22.816Z",
+    "exportDate": "2025-12-11T20:36:27.981Z",
     "uid": "1500598195",
     "type": "void_front",
     "automated": true

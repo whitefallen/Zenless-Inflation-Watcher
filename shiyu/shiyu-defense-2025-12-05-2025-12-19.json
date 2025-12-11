@@ -1,0 +1,786 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "schedule_id": 62036,
+    "begin_time": "1764903600",
+    "end_time": "1766113199",
+    "rating_list": [
+      {
+        "times": 4,
+        "rating": "S"
+      }
+    ],
+    "has_data": true,
+    "all_floor_detail": [
+      {
+        "layer_index": 7,
+        "rating": "S",
+        "layer_id": 6203607,
+        "buffs": [
+          {
+            "title": "Deceitful Steps",
+            "text": "· When an Agent with the <color=#FFFFFF>[Stun]</color> specialty hits a Stunned enemy, the enemy's Stun DMG Multiplier increases by 50%.\\n· Agent EX Special Attack and Ultimate DMG increase by 60%."
+          }
+        ],
+        "node_1": {
+          "avatars": [
+            {
+              "id": 1091,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 202,
+              "avatar_profession": 3,
+              "rank": 2,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+              "sub_element_type": 1
+            },
+            {
+              "id": 1141,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 202,
+              "avatar_profession": 2,
+              "rank": 4,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1411,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54001,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b17cc9cdbc4ace59e7441ee2a47c6c3c.png"
+          },
+          "element_type_list": [
+            201,
+            202
+          ],
+          "monster_info": {
+            "level": 70,
+            "list": [
+              {
+                "id": 30039,
+                "name": "Haytor",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 1,
+                "elec_weakness": -1,
+                "ether_weakness": 0,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/4abc73f103cb610b41133dc410175a0c.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              }
+            ]
+          },
+          "battle_time": 95
+        },
+        "node_2": {
+          "avatars": [
+            {
+              "id": 1321,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 201,
+              "avatar_profession": 1,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1481,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 2,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1311,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 205,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54020,
+            "rarity": "S",
+            "level": 50,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/4bc36a42e1badb2c85d60d758427e27a.png"
+          },
+          "element_type_list": [
+            201,
+            200
+          ],
+          "monster_info": {
+            "level": 70,
+            "list": [
+              {
+                "id": 30002,
+                "name": "Guardian",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": -1,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/497ec5c55629340c1ed94d4251e7d965.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/85f82f3f023ea198c474055615e66f89.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 300372,
+                "name": "Miasmic - Doppelganger - The Defector",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": -1,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/019e16057fa5ab4b2c53405b5c24caa3.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              }
+            ]
+          },
+          "battle_time": 108
+        },
+        "challenge_time": "1764957495",
+        "zone_name": "Critical Node: Seventh Frontier",
+        "floor_challenge_time": {
+          "year": 2025,
+          "month": 12,
+          "day": 5,
+          "hour": 18,
+          "minute": 58,
+          "second": 15
+        }
+      },
+      {
+        "layer_index": 6,
+        "rating": "S",
+        "layer_id": 6203606,
+        "buffs": [
+          {
+            "title": "Deceitful Steps",
+            "text": "· When an Agent with the <color=#FFFFFF>[Stun]</color> specialty hits a Stunned enemy, the enemy's Stun DMG Multiplier increases by 50%.\\n· Agent EX Special Attack and Ultimate DMG increase by 60%."
+          }
+        ],
+        "node_1": {
+          "avatars": [
+            {
+              "id": 1371,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 205,
+              "avatar_profession": 6,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+              "sub_element_type": 2
+            },
+            {
+              "id": 1481,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 2,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1451,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 205,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54020,
+            "rarity": "S",
+            "level": 50,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/4bc36a42e1badb2c85d60d758427e27a.png"
+          },
+          "element_type_list": [
+            202,
+            205
+          ],
+          "monster_info": {
+            "level": 65,
+            "list": [
+              {
+                "id": 930166,
+                "name": "Tepes",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/cc88e67296fa50cf277e2427f908e117.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              }
+            ]
+          },
+          "battle_time": 84
+        },
+        "node_2": {
+          "avatars": [
+            {
+              "id": 1091,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 202,
+              "avatar_profession": 3,
+              "rank": 2,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+              "sub_element_type": 1
+            },
+            {
+              "id": 1171,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 201,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1411,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 200,
+              "avatar_profession": 4,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54016,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f6248c3094ff8657730346108c38184d.png"
+          },
+          "element_type_list": [
+            201,
+            200
+          ],
+          "monster_info": {
+            "level": 65,
+            "list": [
+              {
+                "id": 30019,
+                "name": "Rampant Brute",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/a75cd10957cc9ff1361a3ce095138276.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f1d1e972d2daab8cffde2da4f9a4355a.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              },
+              {
+                "id": 200172,
+                "name": "Troublemaker - Wanted Enforcer",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/865c94392a9438aea635ed540c73eac9.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f1d1e972d2daab8cffde2da4f9a4355a.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
+              }
+            ]
+          },
+          "battle_time": 83
+        },
+        "challenge_time": "1764971000",
+        "zone_name": "Critical Node: Sixth Frontier",
+        "floor_challenge_time": {
+          "year": 2025,
+          "month": 12,
+          "day": 5,
+          "hour": 22,
+          "minute": 43,
+          "second": 20
+        }
+      },
+      {
+        "layer_index": 5,
+        "rating": "S",
+        "layer_id": 6203605,
+        "buffs": [
+          {
+            "title": "Deceitful Steps",
+            "text": "· When an Agent with the <color=#FFFFFF>[Stun]</color> specialty hits a Stunned enemy, the enemy's Stun DMG Multiplier increases by 50%.\\n· Agent EX Special Attack and Ultimate DMG increase by 60%."
+          }
+        ],
+        "node_1": {
+          "avatars": [
+            {
+              "id": 1091,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 202,
+              "avatar_profession": 3,
+              "rank": 2,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+              "sub_element_type": 1
+            },
+            {
+              "id": 1141,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 202,
+              "avatar_profession": 2,
+              "rank": 4,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1131,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 202,
+              "avatar_profession": 4,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54001,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b17cc9cdbc4ace59e7441ee2a47c6c3c.png"
+          },
+          "element_type_list": [
+            205
+          ],
+          "monster_info": {
+            "level": 60,
+            "list": [
+              {
+                "id": 20027,
+                "name": "Miasmic - Trinox",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": -1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/539e0437ff3cb07ac673624594b6c834.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 10030,
+                "name": "Fossor",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/40035a931035e615f5fa3d0ef522a1fd.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              },
+              {
+                "id": 10031,
+                "name": "Sordidus",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/1c5050a8842c57c0f82b076b7aa68a84.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 78
+        },
+        "node_2": {
+          "avatars": [
+            {
+              "id": 1281,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 200,
+              "avatar_profession": 3,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1171,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 201,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1151,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 201,
+              "avatar_profession": 4,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54006,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/a927bd3b5bc43dd114d9604a3fa6ae99.png"
+          },
+          "element_type_list": [
+            201,
+            200
+          ],
+          "monster_info": {
+            "level": 60,
+            "list": [
+              {
+                "id": 20031,
+                "name": "Miasmic - Wicked Wraith",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 1,
+                "elec_weakness": -1,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/6ea1086ff5025a7b56f22dfa0efe65c1.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 200241,
+                "name": "Doppelganger - Pulchra",
+                "weak_element_type": 0,
+                "ice_weakness": -1,
+                "fire_weakness": 1,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/356c2342aadab798bbd42bd1a4ae350a.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              }
+            ]
+          },
+          "battle_time": 125
+        },
+        "challenge_time": "1764953925",
+        "zone_name": "Critical Node: Fifth Frontier",
+        "floor_challenge_time": {
+          "year": 2025,
+          "month": 12,
+          "day": 5,
+          "hour": 17,
+          "minute": 58,
+          "second": 45
+        }
+      },
+      {
+        "layer_index": 4,
+        "rating": "S",
+        "layer_id": 6203604,
+        "buffs": [
+          {
+            "title": "Deceitful Steps",
+            "text": "· When an Agent with the <color=#FFFFFF>[Stun]</color> specialty hits a Stunned enemy, the enemy's Stun DMG Multiplier increases by 50%.\\n· Agent EX Special Attack and Ultimate DMG increase by 60%."
+          }
+        ],
+        "node_1": {
+          "avatars": [
+            {
+              "id": 1091,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 202,
+              "avatar_profession": 3,
+              "rank": 2,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+              "sub_element_type": 1
+            },
+            {
+              "id": 1141,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 202,
+              "avatar_profession": 2,
+              "rank": 4,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1131,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 202,
+              "avatar_profession": 4,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54001,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b17cc9cdbc4ace59e7441ee2a47c6c3c.png"
+          },
+          "element_type_list": [
+            202,
+            205
+          ],
+          "monster_info": {
+            "level": 58,
+            "list": [
+              {
+                "id": 30000,
+                "name": "Dullahan",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/627b290c69cf39506de576ec6913b1a7.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 20000,
+                "name": "Farbauti",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/0f9a17a2d8d037170039128afd9cb3da.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 930168,
+                "name": "Banyrek",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/e0901aa7f29dc1232303db91d103d0d3.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 10014,
+                "name": "Mandrake",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/43023781b8f1338000ccaca78afc6e95.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              },
+              {
+                "id": 10003,
+                "name": "Hoplitai",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/b67666c5309f4169d68bd3269b914a7d.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              },
+              {
+                "id": 10001,
+                "name": "Alpeca",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/d56f6cb2826d4207ebacab0ec12ae637.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 52
+        },
+        "node_2": {
+          "avatars": [
+            {
+              "id": 1281,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 200,
+              "avatar_profession": 3,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1171,
+              "level": 60,
+              "rarity": "S",
+              "element_type": 201,
+              "avatar_profession": 3,
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1151,
+              "level": 60,
+              "rarity": "A",
+              "element_type": 201,
+              "avatar_profession": 4,
+              "rank": 6,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1151.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54006,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/a927bd3b5bc43dd114d9604a3fa6ae99.png"
+          },
+          "element_type_list": [
+            202,
+            200
+          ],
+          "monster_info": {
+            "level": 58,
+            "list": [
+              {
+                "id": 20032,
+                "name": "Ionized - Pugnus",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 0,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/d3971bdf1aad68ed0c935ec58a0d2bf0.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 30001,
+                "name": "Thanatos",
+                "weak_element_type": 0,
+                "ice_weakness": 1,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 0,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/4ba2efe003542d16ab2700766779501d.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_2.png"
+              },
+              {
+                "id": 10032,
+                "name": "Miasma Spawn",
+                "weak_element_type": 0,
+                "ice_weakness": 0,
+                "fire_weakness": 0,
+                "elec_weakness": 0,
+                "ether_weakness": 1,
+                "physics_weakness": 1,
+                "icon_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/ddbcf87feb3f8f7243da1030f1b4d6c7.png",
+                "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+                "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_1.png"
+              }
+            ]
+          },
+          "battle_time": 84
+        },
+        "challenge_time": "1764953448",
+        "zone_name": "Critical Node: Fourth Frontier",
+        "floor_challenge_time": {
+          "year": 2025,
+          "month": 12,
+          "day": 5,
+          "hour": 17,
+          "minute": 50,
+          "second": 48
+        }
+      }
+    ],
+    "fast_layer_time": 136,
+    "max_layer": 7,
+    "hadal_begin_time": {
+      "year": 2025,
+      "month": 12,
+      "day": 5,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "hadal_end_time": {
+      "year": 2025,
+      "month": 12,
+      "day": 19,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "battle_time_47": 709
+  },
+  "metadata": {
+    "exportDate": "2025-12-11T20:36:27.981Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense",
+    "automated": true
+  }
+}
