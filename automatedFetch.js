@@ -83,35 +83,11 @@ class AutomatedFetcher {
       return { start, end };
     }
     if (mode === "voidfront") {
-      // For Void Front, calculate the 14-day window based on the base reset date
-      // Since the API doesn't provide date information
-      const now = new Date();
-
-      // Get the base date for Void Front from the reset schedules
-      // We need to access it via the instance since this is a static method
-      const fetcher = new AutomatedFetcher();
-      const voidfrontSchedule = fetcher.resetSchedules.voidfront;
-
-      // Calculate the start of the current 14-day cycle
-      const daysSinceBase = Math.floor(
-        (now - voidfrontSchedule.baseDate) / (1000 * 60 * 60 * 24)
-      );
-      const cycleNumber = Math.floor(
-        daysSinceBase / voidfrontSchedule.intervalDays
-      );
-
-      // Calculate start and end dates based on the current cycle
-      const startDate = new Date(voidfrontSchedule.baseDate);
-      startDate.setDate(
-        startDate.getDate() + cycleNumber * voidfrontSchedule.intervalDays
-      );
-
-      const endDate = new Date(startDate);
-      endDate.setDate(endDate.getDate() + voidfrontSchedule.intervalDays - 1); // 14-day window
-
+      // For Void Front, use "current" as the filename since it can update anytime
+      // This ensures we always update the same file with the latest data
       return {
-        start: AutomatedFetcher.toYMD(startDate),
-        end: AutomatedFetcher.toYMD(endDate),
+        start: "current",
+        end: "latest",
       };
     }
     // shiyu
@@ -464,28 +440,11 @@ class AutomatedFetcher {
           automated: true,
         },
       };
-      let shouldWrite = true;
-      if (fs.existsSync(voidFrontFile)) {
-        try {
-          const existing = JSON.parse(fs.readFileSync(voidFrontFile, "utf-8"));
-          const a = AutomatedFetcher.stableStringify(
-            AutomatedFetcher.normalizeForComparison(existing)
-          );
-          const b = AutomatedFetcher.stableStringify(
-            AutomatedFetcher.normalizeForComparison(voidFrontData)
-          );
-          if (a === b) {
-            shouldWrite = false;
-            console.log(
-              `⏭️  No changes for Void Front period ${voidFrontFile}. Skipping write.`
-            );
-          }
-        } catch {}
-      }
-      if (shouldWrite) {
-        fs.writeFileSync(voidFrontFile, JSON.stringify(voidFrontData, null, 2));
-        console.log(`💾 Saved Void Front data to: ${voidFrontFile}`);
-      }
+      
+      // Always write Void Front data since it can update anytime (no fixed cycles)
+      // This ensures we always have the latest scores, even if they haven't changed
+      fs.writeFileSync(voidFrontFile, JSON.stringify(voidFrontData, null, 2));
+      console.log(`💾 Saved Void Front data to: ${voidFrontFile} (always updated)`);
     }
 
     // Also save to data/ directory for backward compatibility
