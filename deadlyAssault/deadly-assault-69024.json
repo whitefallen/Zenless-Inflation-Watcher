@@ -18,31 +18,31 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 189,
+    "rank_percent": 215,
     "list": [
       {
-        "score": 38174,
+        "score": 42687,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 11,
-          "day": 26,
-          "hour": 22,
-          "minute": 0,
-          "second": 24
+          "day": 15,
+          "hour": 0,
+          "minute": 31,
+          "second": 52
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/cb00174d5457d26f42c7a16274fca2f5.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/4d3a4537ca4ac1b0722bd14e28dc0723.png",
             "name": "Wandering Hunter",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/892966769ad3c36e9c6192a9dfb67478.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/e3269af2563a3de119026bfc3251210a.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/9946bcab40ce2ce3a526a33626163fe0.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/27f200930e479e080622a9eba14b7179.png",
             "desc": "· When an Agent with Rupture specialty has HP below 80%/50% of their Max HP, their attacks ignore <color=#2BAD00>10%/25%</color> of the enemy's <color=#98EFF0>Ice RES</color>.\\n· When Agents activate or extend an Ether Veil, the whole squad's Sheer DMG <color=#2BAD00>increases by 20%</color>, CRIT DMG <color=#2BAD00>increases by 30%</color> for 20s, repeated triggers reset the duration.",
             "name": "Raging Waves"
           }
@@ -69,46 +69,46 @@
             "sub_element_type": 0
           },
           {
-            "id": 1311,
+            "id": 1451,
             "level": 60,
             "element_type": 205,
             "avatar_profession": 4,
             "rarity": "S",
             "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
             "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54018,
-          "rarity": "S",
+          "id": 53001,
+          "rarity": "A",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/86058ba1d4c4acef77927bca05be4537.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/70b6199437d20efc7437a6fa3b2ddefa.png"
         }
       },
       {
-        "score": 45910,
+        "score": 41768,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 11,
-          "day": 21,
-          "hour": 22,
+          "day": 14,
+          "hour": 19,
           "minute": 40,
           "second": 59
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/efa68a267c0aeb8e5a28668566e14c10.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/3876d0bacdf7d797d8b2d9c2ca41a40c.png",
             "name": "Autonomous Assault Unit - Typhon Destroyer",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/85f82f3f023ea198c474055615e66f89.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/e36358972f26e7f8c7521cb295911708.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_3.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/5a39ade7e36a08bab21f607bf050a454.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/706c439ba06ea50344fe4f9cc268eb33.png",
             "desc": "· <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>EX Special Attack</color>, and <color=#FFFFFF>Dash Attack</color> DMG increases by <color=#2BAD00>30%</color>.\\n· After triggering a <color=#FFFFFF>Perfect Dodge</color> or <color=#FFFFFF>Perfect Assist</color>, increases all squad members' ATK by <color=#2BAD00>10%</color> and CRIT DMG by <color=#2BAD00>10%</color> for 15s. Stacks up to 3 times. The duration of each stack is calculated separately.",
             "name": "Interrupt"
           }
@@ -125,16 +125,6 @@
             "sub_element_type": 1
           },
           {
-            "id": 1221,
-            "level": 60,
-            "element_type": 203,
-            "avatar_profession": 3,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
-            "sub_element_type": 0
-          },
-          {
             "id": 1411,
             "level": 60,
             "element_type": 200,
@@ -143,38 +133,48 @@
             "rank": 0,
             "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
             "sub_element_type": 0
+          },
+          {
+            "id": 1131,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+            "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54014,
+          "id": 54001,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/d4a17dcfc9bbd82017b3c307631084b0.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/d2a8a11b986920180ae8502e5ac68f4c.png"
         }
       },
       {
-        "score": 38387,
+        "score": 35840,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2025,
           "month": 11,
-          "day": 26,
-          "hour": 21,
-          "minute": 55,
-          "second": 40
+          "day": 15,
+          "hour": 0,
+          "minute": 27,
+          "second": 2
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/0241af4aeee1134c27929da8f7287c9f.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/bbda550035a522afd028eb1d3cbe5b34.png",
             "name": "Miasma Priest",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f1d1e972d2daab8cffde2da4f9a4355a.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/4ac14f0c23a2505386f8ca386650382f.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/128df030c616267fa8dd3106c2feecca.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/2a6bc0e1df34c315d6b410b0eec59036.png",
             "desc": "· Agent Max HP <color=#2BAD00>increases by 20%</color>, Ultimate DMG <color=#2BAD00>increases by 40%</color>.\\n· After using an EX Special Attack, Energy and Adrenaline Generation Rate <color=#2BAD00>increase by 20%</color> and <color=#FE437E>Ether DMG</color> <color=#2BAD00>increases by 35%</color> for 20s, and repeated triggers reset the duration.",
             "name": "Gathering Point"
           }
@@ -191,23 +191,23 @@
             "sub_element_type": 2
           },
           {
-            "id": 1421,
+            "id": 1251,
             "level": 60,
-            "element_type": 200,
-            "avatar_profession": 5,
-            "rarity": "A",
-            "rank": 6,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1421.png",
+            "element_type": 203,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1251.png",
             "sub_element_type": 0
           },
           {
-            "id": 1451,
+            "id": 1311,
             "level": 60,
             "element_type": 205,
             "avatar_profession": 4,
             "rarity": "S",
             "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
             "sub_element_type": 0
           }
         ],
@@ -215,21 +215,21 @@
           "id": 54017,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/dd55575f3863f231cc2b8f89cc46e826.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/3c08e96072ef178e340abe896067fe6b.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u98dvc/f670049111b21d6466b1b5f20d6e1239.png",
-    "total_score": 122471,
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u542tc/d728835e2608c88b9d491466eccd48c3.png",
+    "total_score": 120295,
     "total_star": 9,
     "zone_id": 69024,
     "total_max_score": 195000,
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2025-11-27T20:32:37.502Z",
+    "exportDate": "2025-11-24T17:13:12.770Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true

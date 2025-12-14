@@ -3,16 +3,31 @@ import path from 'path';
 import { DeadlyAssaultData } from '@/types/deadly-assault';
 import { ShiyuDefenseData } from '@/types/shiyu-defense';
 import { VoidFrontData } from '@/types/void-front';
-import { buildFileName, getSeasonWindow } from './date-utils';
+import { buildFileName, getSeasonId } from './date-utils';
 import { logger } from './error-utils';
 
 type DataType = 'deadly-assault' | 'shiyu-defense' | 'void-front';
 
 interface DataIndex {
   file: string;
+  seasonId?: number;
+  // Legacy fields for backwards compatibility
   start?: string;
   end?: string;
 }
+
+// Regex patterns cache for better performance
+const ID_PATTERNS: Record<DataType, RegExp> = {
+  'deadly-assault': /^deadly-assault-(\d+)\.json$/,
+  'shiyu-defense': /^shiyu-defense-(\d+)\.json$/,
+  'void-front': /^void-front-(\d+)\.json$/
+};
+
+const DATE_PATTERNS: Record<DataType, RegExp> = {
+  'deadly-assault': /^deadly-assault-(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})\.json$/,
+  'shiyu-defense': /^shiyu-defense-(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})\.json$/,
+  'void-front': /^void-front-(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})\.json$/
+};
 
 /**
  * Centralized data service for loading game data
@@ -31,22 +46,22 @@ export class DataService {
     }
   }
 
-  private parseEndDateFromFilename(fileName: string, type: DataType): number | null {
-    let prefix: string;
+  private parseSeasonIdFromFilename(fileName: string, type: DataType): number | null {
+    const pattern = ID_PATTERNS[type];
+    if (!pattern) return null;
     
-    if (type === 'deadly-assault') {
-      prefix = 'deadly-assault';
-    } else if (type === 'shiyu-defense') {
-      prefix = 'shiyu-defense';
-    } else if (type === 'void-front') {
-      prefix = 'void-front';
-    } else {
-      prefix = type;
-    }
-    
-    const pattern = new RegExp(`^${prefix}-(\\d{4}-\\d{2}-\\d{2})-(\\d{4}-\\d{2}-\\d{2})\\.json$`);
     const match = fileName.match(pattern);
+    if (match) {
+      return parseInt(match[1], 10);
+    }
+    return null;
+  }
+
+  private parseEndDateFromFilename(fileName: string, type: DataType): number | null {
+    const pattern = DATE_PATTERNS[type];
+    if (!pattern) return null;
     
+    const match = fileName.match(pattern);
     if (match) {
       const endDate = new Date(match[2] + 'T00:00:00Z').getTime();
       return Number.isNaN(endDate) ? null : endDate;
@@ -54,24 +69,23 @@ export class DataService {
     return null;
   }
 
-  private parseWindowFromFilename(fileName: string, type: DataType): { start?: string; end?: string } {
-    let prefix: string;
-    
-    if (type === 'deadly-assault') {
-      prefix = 'deadly-assault';
-    } else if (type === 'shiyu-defense') {
-      prefix = 'shiyu-defense';
-    } else if (type === 'void-front') {
-      prefix = 'void-front';
-    } else {
-      prefix = type;
+  private parseWindowFromFilename(fileName: string, type: DataType): { seasonId?: number; start?: string; end?: string } {
+    // Try ID-based pattern first
+    const idPattern = ID_PATTERNS[type];
+    if (idPattern) {
+      const idMatch = fileName.match(idPattern);
+      if (idMatch) {
+        return { seasonId: parseInt(idMatch[1], 10) };
+      }
     }
     
-    const pattern = new RegExp(`^${prefix}-(\\d{4}-\\d{2}-\\d{2})-(\\d{4}-\\d{2}-\\d{2})\\.json$`);
-    const match = fileName.match(pattern);
-    
-    if (match) {
-      return { start: match[1], end: match[2] };
+    // Try date-based pattern
+    const datePattern = DATE_PATTERNS[type];
+    if (datePattern) {
+      const dateMatch = fileName.match(datePattern);
+      if (dateMatch) {
+        return { start: dateMatch[1], end: dateMatch[2] };
+      }
     }
     return {};
   }
@@ -89,18 +103,28 @@ export class DataService {
         return null;
       }
 
-      // Prefer new naming by end date
-      const withEnd = files
-        .map((f) => ({ f, end: this.parseEndDateFromFilename(f, type) }))
-        .filter((x) => x.end !== null) as { f: string; end: number }[];
+      // Prefer new ID-based naming (higher ID = newer season)
+      const withSeasonId = files
+        .map((f) => ({ f, seasonId: this.parseSeasonIdFromFilename(f, type) }))
+        .filter((x) => x.seasonId !== null) as { f: string; seasonId: number }[];
 
       let latestFile: string;
-      if (withEnd.length > 0) {
-        withEnd.sort((a, b) => b.end - a.end);
-        latestFile = withEnd[0].f;
+      if (withSeasonId.length > 0) {
+        withSeasonId.sort((a, b) => b.seasonId - a.seasonId);
+        latestFile = withSeasonId[0].f;
       } else {
-        // Fallback: previous behavior (lexicographic reverse)
-        latestFile = files.sort().reverse()[0];
+        // Fallback to legacy date-based files
+        const withEnd = files
+          .map((f) => ({ f, end: this.parseEndDateFromFilename(f, type) }))
+          .filter((x) => x.end !== null) as { f: string; end: number }[];
+
+        if (withEnd.length > 0) {
+          withEnd.sort((a, b) => b.end - a.end);
+          latestFile = withEnd[0].f;
+        } else {
+          // Final fallback: lexicographic reverse
+          latestFile = files.sort().reverse()[0];
+        }
       }
 
       const filePath = path.join(dataDir, latestFile);
@@ -114,22 +138,31 @@ export class DataService {
   }
 
   /**
-   * Get all data files for a given type, sorted by date
+   * Get all data files for a given type, sorted by season ID (descending)
    */
   async getAllData<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(type: DataType): Promise<T[]> {
     try {
       const dataDir = this.getDataDirectory(type);
       const files = await readdir(dataDir);
       
-      // Prefer sorting by end date if possible
+      // Prefer sorting by season ID (higher ID = newer)
+      const withSeasonId = files
+        .map((f) => ({ f, seasonId: this.parseSeasonIdFromFilename(f, type) }))
+        .filter((x) => x.seasonId !== null) as { f: string; seasonId: number }[];
+
+      // Also collect legacy date-based files
       const withEnd = files
         .map((f) => ({ f, end: this.parseEndDateFromFilename(f, type) }))
-        .filter((x) => x.end !== null) as { f: string; end: number }[];
+        .filter((x) => x.end !== null && !withSeasonId.some(s => s.f === x.f)) as { f: string; end: number }[];
 
       let ordered: string[];
-      if (withEnd.length > 0) {
+      if (withSeasonId.length > 0 || withEnd.length > 0) {
+        // Sort ID-based by seasonId descending
+        withSeasonId.sort((a, b) => b.seasonId - a.seasonId);
+        // Sort date-based by end date descending
         withEnd.sort((a, b) => b.end - a.end);
-        ordered = withEnd.map((x) => x.f);
+        // ID-based files come first (newer scheme), then legacy
+        ordered = [...withSeasonId.map((x) => x.f), ...withEnd.map((x) => x.f)];
       } else {
         ordered = files.sort().reverse();
       }
@@ -148,25 +181,35 @@ export class DataService {
   }
 
   /**
-   * Get data index (list of available files with date ranges)
+   * Get data index (list of available files with season IDs or date ranges)
    */
   async getDataIndex(type: DataType): Promise<DataIndex[]> {
     try {
       const dataDir = this.getDataDirectory(type);
       const files = await readdir(dataDir);
       
-      const withEnd = files
+      const parsed = files
         .map((f) => ({ 
           f, 
+          seasonId: this.parseSeasonIdFromFilename(f, type),
           endTs: this.parseEndDateFromFilename(f, type), 
           ...this.parseWindowFromFilename(f, type) 
         }))
         .sort((a, b) => {
+          // Sort by season ID first (higher = newer), then by end date
+          if (a.seasonId !== null && b.seasonId !== null) return (b.seasonId - a.seasonId);
+          if (a.seasonId !== null) return -1; // ID-based comes first
+          if (b.seasonId !== null) return 1;
           if (a.endTs !== null && b.endTs !== null) return (b.endTs! - a.endTs!);
           return b.f.localeCompare(a.f);
         });
         
-      return withEnd.map(({ f, start, end }) => ({ file: f, start, end }));
+      return parsed.map(({ f, seasonId, start, end }) => ({ 
+        file: f, 
+        seasonId: seasonId || undefined, 
+        start, 
+        end 
+      }));
     } catch (error) {
       logger.error(`Error reading ${type} index:`, error);
       return [];
@@ -209,10 +252,10 @@ export class DataService {
         fs.mkdirSync(dataDir, { recursive: true });
       }
 
-      // Get season window and build filename
-      const mode = type === 'deadly-assault' ? 'deadly' : 'shiyu';
-      const { start, end } = getSeasonWindow(mode, data);
-      const fileName = buildFileName(mode, start, end);
+      // Get season ID and build filename
+      const mode = type === 'deadly-assault' ? 'deadly' : (type === 'void-front' ? 'void-front' : 'shiyu');
+      const seasonId = getSeasonId(mode, data);
+      const fileName = buildFileName(mode, seasonId);
       const filePath = path.join(dataDir, fileName);
 
       // Add metadata
@@ -244,9 +287,9 @@ export class DataService {
     type: DataType
   ): Promise<boolean> {
     try {
-      const mode = type === 'deadly-assault' ? 'deadly' : 'shiyu';
-      const { start, end } = getSeasonWindow(mode, newData);
-      const fileName = buildFileName(mode, start, end);
+      const mode = type === 'deadly-assault' ? 'deadly' : (type === 'void-front' ? 'void-front' : 'shiyu');
+      const seasonId = getSeasonId(mode, newData);
+      const fileName = buildFileName(mode, seasonId);
       
       const dataDir = this.getDataDirectory(type);
       const filePath = path.join(dataDir, fileName);
