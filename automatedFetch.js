@@ -71,39 +71,24 @@ class AutomatedFetcher {
     }
   }
 
-  static getSeasonWindow(mode, payload) {
-    if (!payload || !payload.data) return { start: null, end: null };
+  static getSeasonId(mode, payload) {
+    if (!payload || !payload.data) return null;
+    
     if (mode === "deadly") {
-      const start = AutomatedFetcher.timestampObjectToDateString(
-        payload.data.start_time
-      );
-      const end = AutomatedFetcher.timestampObjectToDateString(
-        payload.data.end_time
-      );
-      return { start, end };
+      // Deadly Assault uses zone_id
+      return payload.data.zone_id || null;
     }
+    
     if (mode === "voidfront") {
-      // For Void Front, use "current" as the filename since it can update anytime
-      // This ensures we always update the same file with the latest data
-      return {
-        start: "current",
-        end: "latest",
-      };
+      // Void Front uses void_front_id from the abstract info
+      return payload.data.void_front_battle_abstract_info_brief?.void_front_id || null;
     }
-    // shiyu
-    // Prefer hadal_* if present (object timestamps), else begin_time/end_time strings
-    const start =
-      AutomatedFetcher.timestampObjectToDateString(
-        payload.data.hadal_begin_time
-      ) || AutomatedFetcher.parsePossiblyEpochString(payload.data.begin_time);
-    const end =
-      AutomatedFetcher.timestampObjectToDateString(
-        payload.data.hadal_end_time
-      ) || AutomatedFetcher.parsePossiblyEpochString(payload.data.end_time);
-    return { start, end };
+    
+    // Shiyu Defense uses schedule_id
+    return payload.data.schedule_id || null;
   }
 
-  static buildFileName(mode, start, end) {
+  static buildFileName(mode, seasonId) {
     let modeName;
     if (mode === "deadly") {
       modeName = "deadly-assault";
@@ -113,9 +98,8 @@ class AutomatedFetcher {
       modeName = "shiyu-defense";
     }
 
-    const startSafe = start || "unknown-start";
-    const endSafe = end || "unknown-end";
-    return `${modeName}-${startSafe}-${endSafe}.json`;
+    const idSafe = seasonId || "unknown-id";
+    return `${modeName}-${idSafe}.json`;
   }
 
   static stableStringify(value) {
@@ -329,13 +313,10 @@ class AutomatedFetcher {
       if (!fs.existsSync(deadlyFolder)) {
         fs.mkdirSync(deadlyFolder, { recursive: true });
       }
-      const { start, end } = AutomatedFetcher.getSeasonWindow(
-        "deadly",
-        data.deadly
-      );
+      const seasonId = AutomatedFetcher.getSeasonId("deadly", data.deadly);
       const deadlyFile = path.join(
         deadlyFolder,
-        AutomatedFetcher.buildFileName("deadly", start, end)
+        AutomatedFetcher.buildFileName("deadly", seasonId)
       );
       const deadlyData = {
         ...data.deadly,
@@ -376,13 +357,10 @@ class AutomatedFetcher {
       if (!fs.existsSync(shiyuFolder)) {
         fs.mkdirSync(shiyuFolder, { recursive: true });
       }
-      const { start, end } = AutomatedFetcher.getSeasonWindow(
-        "shiyu",
-        data.shiyu
-      );
+      const seasonId = AutomatedFetcher.getSeasonId("shiyu", data.shiyu);
       const shiyuFile = path.join(
         shiyuFolder,
-        AutomatedFetcher.buildFileName("shiyu", start, end)
+        AutomatedFetcher.buildFileName("shiyu", seasonId)
       );
       const shiyuData = {
         ...data.shiyu,
@@ -423,13 +401,10 @@ class AutomatedFetcher {
       if (!fs.existsSync(voidFrontFolder)) {
         fs.mkdirSync(voidFrontFolder, { recursive: true });
       }
-      const { start, end } = AutomatedFetcher.getSeasonWindow(
-        "voidfront",
-        data.voidfront
-      );
+      const seasonId = AutomatedFetcher.getSeasonId("voidfront", data.voidfront);
       const voidFrontFile = path.join(
         voidFrontFolder,
-        AutomatedFetcher.buildFileName("voidfront", start, end)
+        AutomatedFetcher.buildFileName("voidfront", seasonId)
       );
       const voidFrontData = {
         ...data.voidfront,
