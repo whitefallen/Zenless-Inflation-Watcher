@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2025,
+      "month": 12,
+      "day": 12,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 1,
+      "day": 2,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 259,
+    "list": [
+      {
+        "score": 37368,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2025,
+          "month": 12,
+          "day": 12,
+          "hour": 23,
+          "minute": 2,
+          "second": 21
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/d1fd013b7afbdb77735dc784ea51473c.png",
+            "name": "Wandering Hunter",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/0c649d8abba7097e566041e2ea78b959.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/9f738869148a55f2110a37382031d812.png",
+            "desc": "· Agent Sheer DMG <color=#2BAD00>increases by 15%</color>. When Agents with [Rupture] specialty hit enemies with attacks, ignore <color=#2BAD00>20%</color> of the target's All-DMG RES.\\n· After activating an EX Special Attack, Agent <color=#FF5521>Fire DMG</color> increases by 30% for 15s. Repeated triggers reset the duration.",
+            "name": "Break Through"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1371,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+            "sub_element_type": 2
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54020,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/675bd4fbb8820ec956de5b55ebdeaa88.png"
+        }
+      },
+      {
+        "score": 27083,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2025,
+          "month": 12,
+          "day": 13,
+          "hour": 14,
+          "minute": 13,
+          "second": 2
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/2ae51a5a843c939a80ca5494d885c96f.png",
+            "name": "??? the Thrall",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/8922556c1534f079a5443d1cb46c5ed8.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/9f738869148a55f2110a37382031d812.png",
+            "desc": "· Agent Sheer DMG <color=#2BAD00>increases by 15%</color>. When Agents with [Rupture] specialty hit enemies with attacks, ignore <color=#2BAD00>20%</color> of the target's All-DMG RES.\\n· After activating an EX Special Attack, Agent <color=#FF5521>Fire DMG</color> increases by 30% for 15s. Repeated triggers reset the duration.",
+            "name": "Break Through"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1051,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1141,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 4,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54018,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/daa75bfb216ec04aac1ece3d35d097ab.png"
+        }
+      },
+      {
+        "score": 44594,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2025,
+          "month": 12,
+          "day": 13,
+          "hour": 13,
+          "minute": 54,
+          "second": 11
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/b6c29fd9a88c7c75fa857c7aaffc9aa1.png",
+            "name": "Sacrifice - Bringer",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/45d1b399d3bd9adf4b35be21de1d8ae2.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/da58663d85e7b6dd41716226d7c01894.png",
+            "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
+            "name": "Graceful Mastery"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1131,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54001,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/7bcdf2c8a35d29d47d10fc39a84bf469.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/514ea3dc5de0a167ac2c0c3e181a2c38.png",
+    "total_score": 109045,
+    "total_star": 9,
+    "zone_id": 69026,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2025-12-25T20:36:41.485Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
