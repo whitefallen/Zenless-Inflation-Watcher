@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 259,
+    "rank_percent": 332,
     "list": [
       {
         "score": 37368,
@@ -34,16 +34,16 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/d1fd013b7afbdb77735dc784ea51473c.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/970381083f6c2c8513035040f07582e1.png",
             "name": "Wandering Hunter",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/0c649d8abba7097e566041e2ea78b959.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/e42b0ec23d884df4991a161c0cb977fb.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/9f738869148a55f2110a37382031d812.png",
-            "desc": "· Agent Sheer DMG <color=#2BAD00>increases by 15%</color>. When Agents with [Rupture] specialty hit enemies with attacks, ignore <color=#2BAD00>20%</color> of the target's All-DMG RES.\\n· After activating an EX Special Attack, Agent <color=#FF5521>Fire DMG</color> increases by 30% for 15s. Repeated triggers reset the duration.",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/126e78bb3c199400f1700b1450e950c0.png",
+            "desc": "· Agent Sheer DMG <color=#2BAD00>increases by 15%</color>. When Agents with [Rupture] specialty hit enemies with attacks, ignore <color=#2BAD00>20%</color> of the target's All-DMG RES.\\n· After activating an EX Special Attack, Agent <color=#FF5521>Fire DMG</color> increases by 40% for 15s. Repeated triggers reset the duration.",
             "name": "Break Through"
           }
         ],
@@ -83,7 +83,7 @@
           "id": 54020,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/675bd4fbb8820ec956de5b55ebdeaa88.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/82ef480c05aade1bd9c7c37d350a18c0.png"
         }
       },
       {
@@ -100,16 +100,16 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/2ae51a5a843c939a80ca5494d885c96f.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/0ebfd8cd5c765de88f5b5a66e5d65526.png",
             "name": "??? the Thrall",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/8922556c1534f079a5443d1cb46c5ed8.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/2eeba6f0e863e13b7901a9a264f4aae2.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/9f738869148a55f2110a37382031d812.png",
-            "desc": "· Agent Sheer DMG <color=#2BAD00>increases by 15%</color>. When Agents with [Rupture] specialty hit enemies with attacks, ignore <color=#2BAD00>20%</color> of the target's All-DMG RES.\\n· After activating an EX Special Attack, Agent <color=#FF5521>Fire DMG</color> increases by 30% for 15s. Repeated triggers reset the duration.",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/126e78bb3c199400f1700b1450e950c0.png",
+            "desc": "· Agent Sheer DMG <color=#2BAD00>increases by 15%</color>. When Agents with [Rupture] specialty hit enemies with attacks, ignore <color=#2BAD00>20%</color> of the target's All-DMG RES.\\n· After activating an EX Special Attack, Agent <color=#FF5521>Fire DMG</color> increases by 40% for 15s. Repeated triggers reset the duration.",
             "name": "Break Through"
           }
         ],
@@ -149,7 +149,7 @@
           "id": 54018,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/daa75bfb216ec04aac1ece3d35d097ab.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/01ddf9861db815d890cc9d631c978cb0.png"
         }
       },
       {
@@ -166,15 +166,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/b6c29fd9a88c7c75fa857c7aaffc9aa1.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/ed6b346a3744b8fc309599cf0a3200df.png",
             "name": "Sacrifice - Bringer",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/45d1b399d3bd9adf4b35be21de1d8ae2.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/a65d9608691e944221cd8f020e666b90.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/da58663d85e7b6dd41716226d7c01894.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/3b903f6c54225deba93bab4b59a5c1c3.png",
             "desc": "· Increases Agent Anomaly Buildup Rate by <color=#2BAD00>25%</color> and Anomaly Proficiency by <color=#2BAD00>40</color>.\\n· When an enemy suffers an Attribute Anomaly, Agents recover <color=#2BAD00>500</color> additional Decibels and ATK increases by <color=#2BAD00>30%</color> for 15s. The Decibel recovery effect can trigger once every 15s.",
             "name": "Graceful Mastery"
           }
@@ -215,13 +215,13 @@
           "id": 54001,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/7bcdf2c8a35d29d47d10fc39a84bf469.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/7352054a0bfdb5c9b50eeeff9d6e5c42.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue2ezc/514ea3dc5de0a167ac2c0c3e181a2c38.png",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/e8ef07841c393cbd08f264b5d49aecc4.png",
     "total_score": 109045,
     "total_star": 9,
     "zone_id": 69026,
@@ -229,7 +229,7 @@
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2025-12-25T20:36:41.485Z",
+    "exportDate": "2026-01-01T20:37:38.413Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
