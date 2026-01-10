@@ -81,10 +81,21 @@ class DiscordNotifier {
 
     // Add Shiyu Defense field
     if (schedule.shiyu) {
+      let recordCount = 0;
+      if (data.shiyu) {
+        if (data.shiyu.data?.hadal_ver === "v2") {
+          // Hadal v2 format - count teams from 4th and 5th floors
+          recordCount = (data.shiyu.data?.hadal_info_v2?.fitfh_layer_detail?.layer_challenge_info_list?.length || 0) +
+            (data.shiyu.data?.hadal_info_v2?.fourth_layer_detail?.layer_challenge_info_list?.length || 0);
+        } else {
+          // Legacy v1 format
+          recordCount = data.shiyu.data?.all_floor_detail?.length || 0;
+        }
+      }
       fields.push({
-        name: "Shiyu Defense",
+        name: "Shiyu Defense (Hadal)",
         value: data.shiyu
-          ? `✅ ${data.shiyu.data?.all_floor_detail?.length || 0} records`
+          ? `✅ ${recordCount} teams`
           : "❌ No data",
         inline: true,
       });
@@ -106,7 +117,8 @@ class DiscordNotifier {
     // Add player info
     const playerName =
       data.deadly?.data?.nick_name ||
-      data.shiyu?.data?.nick_name ||
+      data.shiyu?.data?.nick_name || // v2 format
+      data.shiyu?.data?.hadal_info_v2?.nick_name || // v1 legacy
       data.voidfront?.data?.role_basic_info?.nickname ||
       "Unknown";
     fields.push({

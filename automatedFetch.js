@@ -253,12 +253,14 @@ class AutomatedFetcher {
 
     if (schedule.shiyu) {
       try {
-        console.log("📊 Fetching Shiyu Defense data...");
-        data.shiyu = await api.getChallenge({ uid });
+        console.log("📊 Fetching Shiyu Defense (Hadal v2) data...");
+        data.shiyu = await api.getHadalInfoV2({ uid });
+        const recordCount = data.shiyu?.data?.hadal_ver === "v2" 
+          ? (data.shiyu?.data?.hadal_info_v2?.fitfh_layer_detail?.layer_challenge_info_list?.length || 0) +
+            (data.shiyu?.data?.hadal_info_v2?.fourth_layer_detail?.layer_challenge_info_list?.length || 0)
+          : data.shiyu?.data?.all_floor_detail?.length || 0;
         console.log(
-          `✅ Shiyu Defense: ${
-            data.shiyu?.data?.all_floor_detail?.length || 0
-          } records`
+          `✅ Shiyu Defense: ${recordCount} teams`
         );
       } catch (error) {
         console.error("❌ Shiyu Defense fetch failed:", error.message);
