@@ -25,7 +25,10 @@ function parseWindowFromFilename(fileName: string): { start?: string; end?: stri
 export async function getLatestShiyuDefenseData(): Promise<ShiyuDefenseData | null> {
   try {
     // Get list of files in the directory
-    const files = await readdir(DATA_DIR);
+    const allFiles = await readdir(DATA_DIR);
+    
+    // Filter out files with "unknown-id" (created when session expires)
+    const files = allFiles.filter(f => !f.includes('unknown-id'));
     
     if (files.length === 0) {
       return null;
@@ -57,7 +60,10 @@ export async function getLatestShiyuDefenseData(): Promise<ShiyuDefenseData | nu
 
 export async function getAllShiyuDefenseData(): Promise<ShiyuDefenseData[]> {
   try {
-    const files = await readdir(DATA_DIR);
+    const allFiles = await readdir(DATA_DIR);
+    
+    // Filter out files with "unknown-id" (created when session expires)
+    const files = allFiles.filter(f => !f.includes('unknown-id'));
     // Prefer sorting by end date if possible
     const withEnd = files
       .map((f) => ({ f, end: parseEndDateFromFilename(f) }))
@@ -86,7 +92,10 @@ export async function getAllShiyuDefenseData(): Promise<ShiyuDefenseData[]> {
 
 export async function getShiyuDefenseIndex(): Promise<Array<{ file: string; start?: string; end?: string }>> {
   try {
-    const files = await readdir(DATA_DIR);
+    const allFiles = await readdir(DATA_DIR);
+    
+    // Filter out files with "unknown-id" (created when session expires)
+    const files = allFiles.filter(f => !f.includes('unknown-id'));
     const withEnd = files
       .map((f) => ({ f, endTs: parseEndDateFromFilename(f), ...parseWindowFromFilename(f) }))
       .sort((a, b) => {

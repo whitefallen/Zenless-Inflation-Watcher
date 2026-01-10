@@ -96,7 +96,10 @@ export class DataService {
   async getLatestData<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(type: DataType): Promise<T | null> {
     try {
       const dataDir = this.getDataDirectory(type);
-      const files = await readdir(dataDir);
+      const allFiles = await readdir(dataDir);
+      
+      // Filter out files with "unknown-id" (created when session expires)
+      const files = allFiles.filter(f => !f.includes('unknown-id'));
       
       if (files.length === 0) {
         logger.warn(`No ${type} data files found`);
@@ -143,7 +146,10 @@ export class DataService {
   async getAllData<T extends DeadlyAssaultData | ShiyuDefenseData | VoidFrontData>(type: DataType): Promise<T[]> {
     try {
       const dataDir = this.getDataDirectory(type);
-      const files = await readdir(dataDir);
+      const allFiles = await readdir(dataDir);
+      
+      // Filter out files with "unknown-id" (created when session expires)
+      const files = allFiles.filter(f => !f.includes('unknown-id'));
       
       // Prefer sorting by season ID (higher ID = newer)
       const withSeasonId = files
@@ -186,7 +192,10 @@ export class DataService {
   async getDataIndex(type: DataType): Promise<DataIndex[]> {
     try {
       const dataDir = this.getDataDirectory(type);
-      const files = await readdir(dataDir);
+      const allFiles = await readdir(dataDir);
+      
+      // Filter out files with "unknown-id" (created when session expires)
+      const files = allFiles.filter(f => !f.includes('unknown-id'));
       
       const parsed = files
         .map((f) => ({ 
