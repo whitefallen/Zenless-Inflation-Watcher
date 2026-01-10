@@ -21,16 +21,16 @@
     "rank_percent": 358,
     "list": [
       {
-        "score": 45079,
+        "score": 48368,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
           "month": 1,
-          "day": 4,
+          "day": 10,
           "hour": 23,
-          "minute": 24,
-          "second": 59
+          "minute": 16,
+          "second": 42
         },
         "boss": [
           {
@@ -69,13 +69,13 @@
             "sub_element_type": 0
           },
           {
-            "id": 1311,
+            "id": 1341,
             "level": 60,
-            "element_type": 205,
-            "avatar_profession": 4,
+            "element_type": 202,
+            "avatar_profession": 5,
             "rarity": "S",
             "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
             "sub_element_type": 0
           }
         ],
@@ -87,16 +87,16 @@
         }
       },
       {
-        "score": 31500,
+        "score": 33235,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
           "month": 1,
-          "day": 3,
-          "hour": 22,
-          "minute": 5,
-          "second": 1
+          "day": 10,
+          "hour": 23,
+          "minute": 42,
+          "second": 45
         },
         "boss": [
           {
@@ -146,23 +146,23 @@
           }
         ],
         "buddy": {
-          "id": 54018,
+          "id": 54016,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/01ddf9861db815d890cc9d631c978cb0.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/e5a6cb1bcc1419a10236719f0ea45639.png"
         }
       },
       {
-        "score": 31422,
+        "score": 29192,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
           "month": 1,
-          "day": 3,
-          "hour": 22,
-          "minute": 45,
-          "second": 47
+          "day": 10,
+          "hour": 23,
+          "minute": 31,
+          "second": 51
         },
         "boss": [
           {
@@ -229,7 +229,7 @@
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2026-01-10T23:11:17.708Z",
+    "exportDate": "2026-01-10T23:52:23.543Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
