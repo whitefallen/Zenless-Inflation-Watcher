@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 409,
+    "rank_percent": 358,
     "list": [
       {
         "score": 45079,
@@ -222,14 +222,14 @@
     "has_data": true,
     "nick_name": "Whitefallen",
     "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/e8ef07841c393cbd08f264b5d49aecc4.png",
-    "total_score": 108001,
+    "total_score": 110795,
     "total_star": 9,
     "zone_id": 69027,
     "total_max_score": 195000,
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2026-01-08T20:39:36.841Z",
+    "exportDate": "2026-01-10T23:11:17.708Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
