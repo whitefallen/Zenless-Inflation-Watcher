@@ -73,19 +73,30 @@ class AutomatedFetcher {
 
   static getSeasonId(mode, payload) {
     if (!payload || !payload.data) return null;
-    
+
     if (mode === "deadly") {
       // Deadly Assault uses zone_id
       return payload.data.zone_id || null;
     }
-    
+
     if (mode === "voidfront") {
       // Void Front uses void_front_id from the abstract info
-      return payload.data.void_front_battle_abstract_info_brief?.void_front_id || null;
+      return (
+        payload.data.void_front_battle_abstract_info_brief?.void_front_id ||
+        null
+      );
     }
-    
-    // Shiyu Defense uses schedule_id
-    return payload.data.schedule_id || null;
+
+    if (mode === "shiyu") {
+      // Check for v2 (Hadal) format first
+      if (payload.data.hadal_ver === "v2" && payload.data.hadal_info_v2) {
+        return payload.data.hadal_info_v2.zone_id || null;
+      }
+      // Fallback to v1 format
+      return payload.data.schedule_id || null;
+    }
+
+    return null;
   }
 
   static buildFileName(mode, seasonId) {
@@ -255,13 +266,14 @@ class AutomatedFetcher {
       try {
         console.log("📊 Fetching Shiyu Defense (Hadal v2) data...");
         data.shiyu = await api.getHadalInfoV2({ uid });
-        const recordCount = data.shiyu?.data?.hadal_ver === "v2" 
-          ? (data.shiyu?.data?.hadal_info_v2?.fitfh_layer_detail?.layer_challenge_info_list?.length || 0) +
-            (data.shiyu?.data?.hadal_info_v2?.fourth_layer_detail?.layer_challenge_info_list?.length || 0)
-          : data.shiyu?.data?.all_floor_detail?.length || 0;
-        console.log(
-          `✅ Shiyu Defense: ${recordCount} teams`
-        );
+        const recordCount =
+          data.shiyu?.data?.hadal_ver === "v2"
+            ? (data.shiyu?.data?.hadal_info_v2?.fitfh_layer_detail
+                ?.layer_challenge_info_list?.length || 0) +
+              (data.shiyu?.data?.hadal_info_v2?.fourth_layer_detail
+                ?.layer_challenge_info_list?.length || 0)
+            : data.shiyu?.data?.all_floor_detail?.length || 0;
+        console.log(`✅ Shiyu Defense: ${recordCount} teams`);
       } catch (error) {
         console.error("❌ Shiyu Defense fetch failed:", error.message);
         data.shiyu = null;
@@ -403,7 +415,10 @@ class AutomatedFetcher {
       if (!fs.existsSync(voidFrontFolder)) {
         fs.mkdirSync(voidFrontFolder, { recursive: true });
       }
-      const seasonId = AutomatedFetcher.getSeasonId("voidfront", data.voidfront);
+      const seasonId = AutomatedFetcher.getSeasonId(
+        "voidfront",
+        data.voidfront
+      );
       const voidFrontFile = path.join(
         voidFrontFolder,
         AutomatedFetcher.buildFileName("voidfront", seasonId)
@@ -417,11 +432,13 @@ class AutomatedFetcher {
           automated: true,
         },
       };
-      
+
       // Always write Void Front data since it can update anytime (no fixed cycles)
       // This ensures we always have the latest scores, even if they haven't changed
       fs.writeFileSync(voidFrontFile, JSON.stringify(voidFrontData, null, 2));
-      console.log(`💾 Saved Void Front data to: ${voidFrontFile} (always updated)`);
+      console.log(
+        `💾 Saved Void Front data to: ${voidFrontFile} (always updated)`
+      );
     }
 
     // Also save to data/ directory for backward compatibility

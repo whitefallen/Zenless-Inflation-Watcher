@@ -85,8 +85,11 @@ class DiscordNotifier {
       if (data.shiyu) {
         if (data.shiyu.data?.hadal_ver === "v2") {
           // Hadal v2 format - count teams from 4th and 5th floors
-          recordCount = (data.shiyu.data?.hadal_info_v2?.fitfh_layer_detail?.layer_challenge_info_list?.length || 0) +
-            (data.shiyu.data?.hadal_info_v2?.fourth_layer_detail?.layer_challenge_info_list?.length || 0);
+          recordCount =
+            (data.shiyu.data?.hadal_info_v2?.fitfh_layer_detail
+              ?.layer_challenge_info_list?.length || 0) +
+            (data.shiyu.data?.hadal_info_v2?.fourth_layer_detail
+              ?.layer_challenge_info_list?.length || 0);
         } else {
           // Legacy v1 format
           recordCount = data.shiyu.data?.all_floor_detail?.length || 0;
@@ -94,9 +97,7 @@ class DiscordNotifier {
       }
       fields.push({
         name: "Shiyu Defense (Hadal)",
-        value: data.shiyu
-          ? `✅ ${recordCount} teams`
-          : "❌ No data",
+        value: data.shiyu ? `✅ ${recordCount} teams` : "❌ No data",
         inline: true,
       });
     }
