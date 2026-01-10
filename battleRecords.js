@@ -106,7 +106,8 @@ function formatSeasonWindow(obj) {
 /**
  * Extract the season ID from API response based on game mode
  * - Deadly Assault: data.zone_id
- * - Shiyu Defense: data.schedule_id
+ * - Shiyu Defense v1: data.schedule_id
+ * - Shiyu Defense v2 (Hadal): data.hadal_info_v2.zone_id
  * - Void Front: data.void_front_battle_abstract_info_brief.void_front_id
  */
 function getSeasonId(mode, payload) {
@@ -115,6 +116,11 @@ function getSeasonId(mode, payload) {
   if (mode === "deadly") {
     return payload.data.zone_id || null;
   } else if (mode === "shiyu") {
+    // Check for v2 (Hadal) format first
+    if (payload.data.hadal_ver === "v2" && payload.data.hadal_info_v2) {
+      return payload.data.hadal_info_v2.zone_id || null;
+    }
+    // Fallback to v1 format
     return payload.data.schedule_id || null;
   } else if (mode === "void-front") {
     return payload.data.void_front_battle_abstract_info_brief?.void_front_id || null;
@@ -193,7 +199,81 @@ function printDeadlyAssaultSummary(data) {
 function printShiyuDefenseSummary(data) {
   if (!data || !data.data) return console.log("No Shiyu Defense data.");
   const d = data.data;
-  console.log("\n===== SHIYU DEFENSE SUMMARY =====");
+  
+  // Check if this is Hadal v2 format
+  if (d.hadal_ver === "v2" && d.hadal_info_v2) {
+    const hadal = d.hadal_info_v2;
+    console.log("\n===== HADAL BLACKSITE (SHIYU DEFENSE V2) SUMMARY =====");
+    console.log("Season:", formatSeasonWindow(hadal));
+    console.log("Player:", d.nick_name || "Unknown");
+    console.log("Overall Rating:", hadal.brief?.rating || "N/A");
+    console.log("Total Score:", hadal.brief?.score || 0);
+    console.log("Max Score:", hadal.brief?.max_score || 0);
+    console.log("Rank Percent:", hadal.brief?.rank_percent || 0);
+    console.log("Total Battle Time:", hadal.brief?.battle_time || 0, "seconds");
+    console.log("Passed 5th Floor:", hadal.pass_fifth_floor ? "Yes" : "No");
+    
+    // Print 5th floor details
+    if (hadal.fitfh_layer_detail?.layer_challenge_info_list) {
+      console.log("\n--- 5th Floor (Node 7) Teams ---");
+      hadal.fitfh_layer_detail.layer_challenge_info_list.forEach((layer, idx) => {
+        console.log(`\nTeam ${idx + 1} (Layer ${layer.layer_id}, Rating: ${layer.rating})`);
+        console.log(`  Score: ${layer.score}/${layer.max_score}`);
+        console.log(`  Battle Time: ${layer.battle_time}s`);
+        if (layer.buffer) {
+          console.log(`  Buff: ${layer.buffer.title}`);
+        }
+        if (layer.avatar_list && layer.avatar_list.length > 0) {
+          console.log("  Team:");
+          layer.avatar_list.forEach((av) => {
+            console.log(
+              `    - ID: ${av.id}, Rarity: ${av.rarity}, Level: ${
+                av.level
+              }, Element: ${getElementName(av.element_type)}`
+            );
+          });
+        }
+        if (layer.buddy) {
+          console.log(
+            `  Buddy: ID: ${layer.buddy.id}, Rarity: ${layer.buddy.rarity}, Level: ${layer.buddy.level}`
+          );
+        }
+      });
+    }
+    
+    // Print 4th floor details
+    if (hadal.fourth_layer_detail?.layer_challenge_info_list) {
+      console.log("\n--- 4th Floor (Node 6) Teams ---");
+      console.log(`Overall Rating: ${hadal.fourth_layer_detail.rating}`);
+      if (hadal.fourth_layer_detail.buffer) {
+        console.log(`Buff: ${hadal.fourth_layer_detail.buffer.title}`);
+      }
+      hadal.fourth_layer_detail.layer_challenge_info_list.forEach((layer, idx) => {
+        console.log(`\nTeam ${idx + 1} (Layer ${layer.layer_id})`);
+        console.log(`  Battle Time: ${layer.battle_time}s`);
+        if (layer.avatar_list && layer.avatar_list.length > 0) {
+          console.log("  Team:");
+          layer.avatar_list.forEach((av) => {
+            console.log(
+              `    - ID: ${av.id}, Rarity: ${av.rarity}, Level: ${
+                av.level
+              }, Element: ${getElementName(av.element_type)}`
+            );
+          });
+        }
+        if (layer.buddy) {
+          console.log(
+            `  Buddy: ID: ${layer.buddy.id}, Rarity: ${layer.buddy.rarity}, Level: ${layer.buddy.level}`
+          );
+        }
+      });
+    }
+    console.log("==================================\n");
+    return;
+  }
+  
+  // Legacy v1 format (kept for backward compatibility with old data files)
+  console.log("\n===== SHIYU DEFENSE SUMMARY (LEGACY V1) =====");
   console.log("Season:", formatSeasonWindow(d));
   if (Array.isArray(d.all_floor_detail)) {
     [0, 1].forEach((idx) => {
@@ -256,9 +336,9 @@ function printShiyuDefenseSummary(data) {
 // --- CLI Features ---
 async function showShiyuDefense() {
   try {
-    const data = await api.getChallenge({ uid });
+    const data = await api.getHadalInfoV2({ uid });
     console.log(
-      "\n\uD83D\uDEE1\uFE0F SHIYU DEFENSE DATA\n",
+      "\n🛡️ SHIYU DEFENSE (HADAL BLACKSITE V2) DATA\n",
       JSON.stringify(data, null, 2)
     );
   } catch (err) {
@@ -298,7 +378,7 @@ const shiyuDefenseTemplate = Handlebars.compile(
 async function generateHTMLReport() {
   try {
     const [challenge, memory] = await Promise.all([
-      api.getChallenge({ uid }),
+      api.getHadalInfoV2({ uid }),
       api.getMemoryDetail({ uid }),
     ]);
 
@@ -403,9 +483,113 @@ function prepareShiyuDefenseData(data) {
       maxLayer: "N/A",
       fastLayerTime: "N/A",
       battleTime47: "N/A",
+      floorDetails: [],
     };
 
   const d = data.data;
+  
+  // Handle Hadal v2 format
+  if (d.hadal_ver === "v2" && d.hadal_info_v2) {
+    const hadal = d.hadal_info_v2;
+    const floorDetails = [];
+    
+    // Process 5th floor teams
+    if (hadal.fitfh_layer_detail?.layer_challenge_info_list) {
+      hadal.fitfh_layer_detail.layer_challenge_info_list.forEach((layer, idx) => {
+        const floorDetail = {
+          layerIndex: 7,
+          teamNumber: idx + 1,
+          rating: layer.rating,
+          score: layer.score,
+          maxScore: layer.max_score,
+        };
+        
+        if (layer.buffer) {
+          floorDetail.buffs = [{
+            title: layer.buffer.title,
+            text: layer.buffer.text.replace(/<[^>]*>/g, "").replace(/\\n/g, " "),
+          }];
+        }
+        
+        if (layer.avatar_list && layer.avatar_list.length > 0) {
+          floorDetail.node1 = {
+            battleTime: formatTime(layer.battle_time || 0),
+            avatars: layer.avatar_list.map((avatar) => ({
+              id: avatar.id,
+              rarity: avatar.rarity,
+              level: avatar.level,
+              elementName: getElementName(avatar.element_type),
+              elementColor: ELEMENT_COLORS[avatar.element_type] || "#666",
+            })),
+          };
+          
+          if (layer.buddy) {
+            floorDetail.node1.buddy = {
+              id: layer.buddy.id,
+              rarity: layer.buddy.rarity,
+              level: layer.buddy.level,
+            };
+          }
+        }
+        
+        floorDetails.push(floorDetail);
+      });
+    }
+    
+    // Process 4th floor teams
+    if (hadal.fourth_layer_detail?.layer_challenge_info_list) {
+      hadal.fourth_layer_detail.layer_challenge_info_list.forEach((layer, idx) => {
+        const floorDetail = {
+          layerIndex: 6,
+          teamNumber: idx + 1,
+          rating: hadal.fourth_layer_detail.rating,
+        };
+        
+        if (hadal.fourth_layer_detail.buffer) {
+          floorDetail.buffs = [{
+            title: hadal.fourth_layer_detail.buffer.title,
+            text: hadal.fourth_layer_detail.buffer.text.replace(/<[^>]*>/g, "").replace(/\\n/g, " "),
+          }];
+        }
+        
+        if (layer.avatar_list && layer.avatar_list.length > 0) {
+          floorDetail.node1 = {
+            battleTime: formatTime(layer.battle_time || 0),
+            avatars: layer.avatar_list.map((avatar) => ({
+              id: avatar.id,
+              rarity: avatar.rarity,
+              level: avatar.level,
+              elementName: getElementName(avatar.element_type),
+              elementColor: ELEMENT_COLORS[avatar.element_type] || "#666",
+            })),
+          };
+          
+          if (layer.buddy) {
+            floorDetail.node1.buddy = {
+              id: layer.buddy.id,
+              rarity: layer.buddy.rarity,
+              level: layer.buddy.level,
+            };
+          }
+        }
+        
+        floorDetails.push(floorDetail);
+      });
+    }
+    
+    return {
+      season: formatSeasonWindow(hadal),
+      maxLayer: hadal.pass_fifth_floor ? 7 : 6,
+      rating: hadal.brief?.rating || "N/A",
+      score: hadal.brief?.score || 0,
+      maxScore: hadal.brief?.max_score || 0,
+      fastLayerTime: formatTime(hadal.brief?.battle_time || 0),
+      battleTime47: "N/A",
+      floorDetails,
+    };
+  }
+  
+  // Legacy v1 format
   const floorDetails = [];
 
   if (Array.isArray(d.all_floor_detail)) {
@@ -491,7 +675,7 @@ function prepareShiyuDefenseData(data) {
 async function generateTextReport() {
   try {
     const [challenge, memory] = await Promise.all([
-      api.getChallenge({ uid }),
+      api.getHadalInfoV2({ uid }),
       api.getMemoryDetail({ uid }),
     ]);
     let report = "\uD83C\uDFAE ZENLESS ZONE ZERO - BATTLE RECORDS REPORT\n";
@@ -523,7 +707,7 @@ async function showDeadlyAssaultSummary() {
 
 async function showShiyuDefenseSummary() {
   try {
-    const data = await api.getChallenge({ uid });
+    const data = await api.getHadalInfoV2({ uid });
     printShiyuDefenseSummary(data);
   } catch (err) {
     console.error("Error fetching Shiyu Defense data:", err.message);
@@ -590,16 +774,17 @@ async function exportDeadlyAssaultJSON() {
 // Export Shiyu Defense summary as JSON
 async function exportShiyuDefenseJSON() {
   try {
-    const data = await api.getChallenge({ uid });
-    const structuredData = prepareShiyuDefenseData(data);
-
+    const data = await api.getHadalInfoV2({ uid });
+    
+    // Export raw API response directly (no transformation needed)
     // Add metadata
     const exportData = {
-      ...structuredData,
+      ...data,
       metadata: {
         exportDate: new Date().toISOString(),
         uid: uid,
         type: "shiyu_defense",
+        automated: false,
       },
     };
 

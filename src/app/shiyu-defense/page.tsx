@@ -8,6 +8,7 @@ import { formatDateRange } from "@/lib/date-utils"
 import { SafeBuffText } from "@/components/shared/safe-text-display"
 
 import { Accordion } from "@/components/ui/accordion"
+// Legacy v1 components (time-based)
 import { BestWorstRuns } from "@/components/shiyu-defense/best-worst-runs"
 import { ScoreProgressionChart } from "@/components/shiyu-defense/score-progression-chart"
 import { PeriodComparison } from "@/components/shiyu-defense/period-comparison"
@@ -16,14 +17,19 @@ import { CharacterPerformanceTable } from "@/components/shiyu-defense/character-
 import { ShiyuDefenseTrend } from "@/components/shiyu-defense/shiyu-defense-trend"
 import { ShiyuTeamsAggregationTable } from "@/components/shiyu-defense/teams-aggregation-table"
 import { ShiyuFloorsAggregationTable } from "@/components/shiyu-defense/floors-aggregation-table"
+// New v2 components (score-based)
+import { HadalTrend } from "@/components/shiyu-defense-v2/hadal-trend"
+import { ScoreProgressionChartV2 } from "@/components/shiyu-defense-v2/score-progression-chart"
 
 
 export default async function ShiyuDefensePage() {
   const allData = await getAllShiyuDefenseData();
-  // Aggregation helpers
-  // ...aggregateStats removed (unused)...
-
-  // ...stats is unused...
+  
+  // Separate v2 (Hadal Blacksite, score-based) from v1 (legacy, time-based)
+  const v2Data = allData.filter(d => d.data.max_layer === 7);
+  const v1Data = allData.filter(d => d.data.max_layer !== 7);
+  const hasV2Data = v2Data.length > 0;
+  const hasV1Data = v1Data.length > 0;
 
   // History accordion
   const historyItems = allData.map((d) => {
@@ -116,34 +122,56 @@ export default async function ShiyuDefensePage() {
             Shiyu Defense
           </h1>
           <p className="text-muted-foreground text-lg">
-            View and analyze your Shiyu Defense performance data.
+            {hasV2Data ? "Hadal Blacksite - Score-Based Performance Tracking" : "View and analyze your Shiyu Defense performance data."}
           </p>
         </div>
 
-        <Tabs defaultValue="overview" className="w-full">
+        <Tabs defaultValue={hasV2Data ? "hadal-v2" : "overview"} className="w-full">
           <div className="mx-auto">
             <TabsList className="inline-flex h-11 items-center justify-center rounded-lg bg-card p-1">
-              <TabsTrigger value="overview" className="min-w-[120px]">Overview</TabsTrigger>
+              {hasV2Data && <TabsTrigger value="hadal-v2" className="min-w-[140px]">Hadal Blacksite</TabsTrigger>}
+              {hasV1Data && <TabsTrigger value="overview" className="min-w-[120px]">Legacy (V1)</TabsTrigger>}
               <TabsTrigger value="history" className="min-w-[120px]">History</TabsTrigger>
               <TabsTrigger value="teams" className="min-w-[120px]">Teams</TabsTrigger>
               <TabsTrigger value="floors" className="min-w-[120px]">Floors</TabsTrigger>
             </TabsList>
           </div>
-        <TabsContent value="overview" className="mt-6">
-          <div className="space-y-8 px-6">
-            <ShiyuDefenseTrend data={allData} />
-            <ScoreProgressionChart allData={allData} />
-            <BestWorstRuns allData={allData} />
-            <PeriodComparison allData={allData} />
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold mb-2">Most Used Teams</h3>
-              <ShiyuTeamsAggregationTable allData={allData} />
+        
+        {/* New v2 Hadal Blacksite Tab (Score-based) */}
+        {hasV2Data && (
+          <TabsContent value="hadal-v2" className="mt-6">
+            <div className="space-y-8 px-6">
+              <HadalTrend data={v2Data} />
+              <ScoreProgressionChartV2 allData={v2Data} />
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold mb-2">Team Compositions</h3>
+                <ShiyuTeamsAggregationTable allData={v2Data} />
+              </div>
+              <CharacterPerformanceTable allData={v2Data} />
+              <ShiyuFloorsAggregationTable allData={v2Data} />
             </div>
-            <CharacterPerformanceTable allData={allData} />
-            <ShiyuFloorsAggregationTable allData={allData} />
-            <Recommendations allData={allData} />
-          </div>
-        </TabsContent>
+          </TabsContent>
+        )}
+
+        {/* Legacy v1 Tab (Time-based) */}
+        {hasV1Data && (
+          <TabsContent value="overview" className="mt-6">
+            <div className="space-y-8 px-6">
+              <ShiyuDefenseTrend data={v1Data} />
+              <ScoreProgressionChart allData={v1Data} />
+              <BestWorstRuns allData={v1Data} />
+              <PeriodComparison allData={v1Data} />
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold mb-2">Most Used Teams</h3>
+                <ShiyuTeamsAggregationTable allData={v1Data} />
+              </div>
+              <CharacterPerformanceTable allData={v1Data} />
+              <ShiyuFloorsAggregationTable allData={v1Data} />
+              <Recommendations allData={v1Data} />
+            </div>
+          </TabsContent>
+        )}
+        
         <TabsContent value="history" className="mt-6">
           <Accordion items={historyItems} />
         </TabsContent>

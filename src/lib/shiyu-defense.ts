@@ -1,8 +1,125 @@
 import { readFile, readdir } from 'fs/promises';
 import path from 'path';
-import { ShiyuDefenseData } from '@/types/shiyu-defense';
+import { ShiyuDefenseData, HadalInfoV2Data, isHadalV2Data, ShiyuDefenseDataAny, FloorDetail } from '@/types/shiyu-defense';
 
 const DATA_DIR = path.join(process.cwd(), 'shiyu');
+
+/**
+ * Converts Hadal v2 format to legacy ShiyuDefenseData format for backward compatibility
+ * NEW MAPPING: 5th floor = node 7, 4th floor = node 6
+ * Supports iterating through 2-3 teams/bosses dynamically
+ */
+function normalizeHadalV2ToLegacy(v2Data: HadalInfoV2Data): ShiyuDefenseData {
+  const { hadal_info_v2 } = v2Data.data;
+  const allFloorDetails: FloorDetail[] = [];
+
+  // 4th floor (node 6) - typically 2 teams/bosses
+  if (hadal_info_v2.fourth_layer_detail?.layer_challenge_info_list) {
+    hadal_info_v2.fourth_layer_detail.layer_challenge_info_list.forEach((layer, index) => {
+      allFloorDetails.push({
+        layer_index: 6,
+        rating: hadal_info_v2.fourth_layer_detail.rating,
+        layer_id: layer.layer_id,
+        buffs: [hadal_info_v2.fourth_layer_detail.buffer],
+        node_1: {
+          avatars: layer.avatar_list,
+          buddy: layer.buddy,
+          element_type_list: [...new Set(layer.avatar_list.map(a => a.element_type))],
+          monster_info: {
+            level: 0,
+            list: [{
+              id: 0,
+              name: `Boss ${index + 1}`,
+              weak_element_type: 0,
+              ice_weakness: 0,
+              fire_weakness: 0,
+              elec_weakness: 0,
+              ether_weakness: 0,
+              physics_weakness: 0,
+              icon_url: '',
+              race_icon: '',
+              bg_icon: ''
+            }]
+          },
+          battle_time: layer.battle_time
+        },
+        node_2: {
+          avatars: [],
+          buddy: { id: 0, rarity: 'S', level: 0, bangboo_rectangle_url: '' },
+          element_type_list: [],
+          monster_info: { level: 0, list: [] },
+          battle_time: 0
+        },
+        challenge_time: hadal_info_v2.fourth_layer_detail.challenge_time.year.toString(),
+        zone_name: `Fourth Floor - Team ${index + 1}`,
+        floor_challenge_time: hadal_info_v2.fourth_layer_detail.challenge_time
+      });
+    });
+  }
+
+  // 5th floor (node 7) - typically 3 teams/bosses
+  if (hadal_info_v2.fitfh_layer_detail?.layer_challenge_info_list) {
+    hadal_info_v2.fitfh_layer_detail.layer_challenge_info_list.forEach((layer, index) => {
+      allFloorDetails.push({
+        layer_index: 7,
+        rating: layer.rating,
+        layer_id: layer.layer_id,
+        buffs: [layer.buffer],
+        node_1: {
+          avatars: layer.avatar_list,
+          buddy: layer.buddy,
+          element_type_list: [...new Set(layer.avatar_list.map(a => a.element_type))],
+          monster_info: {
+            level: 0,
+            list: [{
+              id: 0,
+              name: '',
+              weak_element_type: 0,
+              ice_weakness: 0,
+              fire_weakness: 0,
+              elec_weakness: 0,
+              ether_weakness: 0,
+              physics_weakness: 0,
+              icon_url: layer.monster_pic,
+              race_icon: '',
+              bg_icon: ''
+            }]
+          },
+          battle_time: layer.battle_time
+        },
+        node_2: {
+          avatars: [],
+          buddy: { id: 0, rarity: 'S', level: 0, bangboo_rectangle_url: '' },
+          element_type_list: [],
+          monster_info: { level: 0, list: [] },
+          battle_time: 0
+        },
+        challenge_time: hadal_info_v2.brief.challenge_time.year.toString(),
+        zone_name: `Fifth Floor - Team ${index + 1}`,
+        floor_challenge_time: hadal_info_v2.brief.challenge_time
+      });
+    });
+  }
+
+  return {
+    retcode: v2Data.retcode,
+    message: v2Data.message,
+    data: {
+      schedule_id: hadal_info_v2.zone_id,
+      begin_time: hadal_info_v2.begin_time,
+      end_time: hadal_info_v2.end_time,
+      rating_list: [{ times: 1, rating: hadal_info_v2.brief.rating }],
+      has_data: true,
+      all_floor_detail: allFloorDetails,
+      fast_layer_time: hadal_info_v2.brief.battle_time,
+      max_layer: 7, // Always 7 for new format (representing node 7)
+      hadal_begin_time: hadal_info_v2.hadal_begin_time,
+      hadal_end_time: hadal_info_v2.hadal_end_time,
+      battle_time_47: 0
+    },
+    metadata: v2Data.metadata
+  };
+}
 
 function parseEndDateFromFilename(fileName: string): number | null {
   // Expected new format: shiyu-defense-YYYY-MM-DD-YYYY-MM-DD.json
@@ -50,8 +167,14 @@ export async function getLatestShiyuDefenseData(): Promise<ShiyuDefenseData | nu
 
     const filePath = path.join(DATA_DIR, latestFile);
     const fileContent = await readFile(filePath, 'utf-8');
+    const data = JSON.parse(fileContent) as ShiyuDefenseDataAny;
     
-    return JSON.parse(fileContent) as ShiyuDefenseData;
+    // Convert Hadal v2 format to legacy format for compatibility
+    if (isHadalV2Data(data)) {
+      return normalizeHadalV2ToLegacy(data);
+    }
+    
+    return data;
   } catch (error) {
     console.error('Error reading shiyu defense data:', error);
     return null;
@@ -80,7 +203,14 @@ export async function getAllShiyuDefenseData(): Promise<ShiyuDefenseData[]> {
     const dataPromises = ordered.map(async (file) => {
       const filePath = path.join(DATA_DIR, file);
       const fileContent = await readFile(filePath, 'utf-8');
-      return JSON.parse(fileContent) as ShiyuDefenseData;
+      const data = JSON.parse(fileContent) as ShiyuDefenseDataAny;
+      
+      // Convert Hadal v2 format to legacy format for compatibility
+      if (isHadalV2Data(data)) {
+        return normalizeHadalV2ToLegacy(data);
+      }
+      
+      return data;
     });
 
     return await Promise.all(dataPromises);
@@ -113,7 +243,14 @@ export async function getShiyuDefenseDataByFile(fileName: string): Promise<Shiyu
   try {
     const filePath = path.join(DATA_DIR, fileName);
     const fileContent = await readFile(filePath, 'utf-8');
-    return JSON.parse(fileContent) as ShiyuDefenseData;
+    const data = JSON.parse(fileContent) as ShiyuDefenseDataAny;
+    
+    // Convert Hadal v2 format to legacy format for compatibility
+    if (isHadalV2Data(data)) {
+      return normalizeHadalV2ToLegacy(data);
+    }
+    
+    return data;
   } catch (error) {
     console.error('Error reading shiyu defense data by file:', error);
     return null;

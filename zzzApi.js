@@ -76,10 +76,10 @@ class ZZZApi {
     };
   }
 
-  // Fetch Shiyu Defense (Challenge) detail data
-  async getChallenge({ uid, schedule_type = 1 }) {
-    const query = `server=${this.server}&role_id=${uid}&schedule_type=${schedule_type}`;
-    const url = `${this.baseUrl}/challenge?${query}`;
+  // Fetch Shiyu Defense / Hadal Blacksite detail data
+  async getHadalInfoV2({ uid, schedule_type = 1 }) {
+    const query = `role_id=${uid}&server=${this.server}&schedule_type=${schedule_type}`;
+    const url = `${this.baseUrl}/hadal_info_v2?${query}`;
     const res = await fetch(url, { headers: this._getHeaders() });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();

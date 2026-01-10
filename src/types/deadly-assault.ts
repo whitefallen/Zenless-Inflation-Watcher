@@ -12,6 +12,8 @@ export interface DeadlyAssaultData {
     total_score: number;
     total_star: number;
     zone_id: number;
+    total_max_score: number;
+    room_max_score: number;
   };
   metadata?: {
     exportDate: string;
