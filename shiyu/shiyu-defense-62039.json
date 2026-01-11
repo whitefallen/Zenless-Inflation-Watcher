@@ -24,17 +24,17 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 125343,
-        "rank_percent": 308,
-        "battle_time": 288,
+        "score": 134034,
+        "rank_percent": 162,
+        "battle_time": 326,
         "rating": "S+",
         "challenge_time": {
           "year": 2026,
           "month": 1,
-          "day": 10,
-          "hour": 22,
-          "minute": 19,
-          "second": 15
+          "day": 11,
+          "hour": 16,
+          "minute": 24,
+          "second": 8
         },
         "max_score": 150000
       },
@@ -47,7 +47,7 @@
               "title": "Frost-Bitten Iron",
               "text": "· Agent CRIT DMG increases by 15%. While in <color=#FFFFFF>Ether Veil</color>, Agent ATK increases by 25%, and attacks ignore 10% of enemy's DEF."
             },
-            "score": 49033,
+            "score": 47502,
             "avatar_list": [
               {
                 "id": 1431,
@@ -60,16 +60,6 @@
                 "sub_element_type": 4
               },
               {
-                "id": 1481,
-                "level": 60,
-                "rarity": "S",
-                "element_type": 200,
-                "avatar_profession": 2,
-                "rank": 0,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
-                "sub_element_type": 0
-              },
-              {
                 "id": 1341,
                 "level": 60,
                 "rarity": "S",
@@ -77,6 +67,16 @@
                 "avatar_profession": 5,
                 "rank": 0,
                 "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
                 "sub_element_type": 0
               }
             ],
@@ -86,7 +86,7 @@
               "level": 60,
               "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/0dab4dab3c321353a70f7a439f9bae8a.png"
             },
-            "battle_time": 68,
+            "battle_time": 90,
             "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/d46db54d80fbc5eb26cf73eeb1cd4986.png",
             "max_score": 50000
           },
@@ -147,7 +147,7 @@
               "title": "Blazing Stream",
               "text": "· Agent Sheer DMG increases by 10%, CRIT DMG increases by 25%.\\n· When an Agent's <color=#FFFFFF>Ultimate</color> hits enemies, ignores 10% of their All-DMG RES."
             },
-            "score": 34257,
+            "score": 44479,
             "avatar_list": [
               {
                 "id": 1371,
@@ -160,13 +160,13 @@
                 "sub_element_type": 2
               },
               {
-                "id": 1071,
+                "id": 1481,
                 "level": 60,
                 "rarity": "S",
                 "element_type": 200,
-                "avatar_profession": 5,
+                "avatar_profession": 2,
                 "rank": 0,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1071.png",
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
                 "sub_element_type": 0
               },
               {
@@ -181,12 +181,12 @@
               }
             ],
             "buddy": {
-              "id": 54018,
+              "id": 54020,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/01ddf9861db815d890cc9d631c978cb0.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/82ef480c05aade1bd9c7c37d350a18c0.png"
             },
-            "battle_time": 131,
+            "battle_time": 147,
             "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/69fdaccdef309e614a980cc00ceeb89f.png",
             "max_score": 50000
           }
@@ -300,9 +300,9 @@
     "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/e8ef07841c393cbd08f264b5d49aecc4.png"
   },
   "metadata": {
-    "exportDate": "2026-01-10T23:37:04.908Z",
+    "exportDate": "2026-01-11T17:32:05.407Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
-    "automated": false
+    "automated": true
   }
 }

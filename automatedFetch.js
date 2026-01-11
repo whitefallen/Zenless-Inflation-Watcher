@@ -75,7 +75,7 @@ class AutomatedFetcher {
     if (!payload || !payload.data) return null;
 
     if (mode === "deadly") {
-      // Deadly Assault uses zone_id
+      // Deadly Assault uses zone_id at data.zone_id
       return payload.data.zone_id || null;
     }
 
