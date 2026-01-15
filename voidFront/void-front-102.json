@@ -9,10 +9,10 @@
       "has_ending_record": true,
       "ending_record_name": "Ending 3: In the Name of Legend",
       "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/aa3e2c579c712b230465ca924fd5c2f8.png",
-      "total_score": 558919,
-      "rank_percent": 168,
+      "total_score": 577960,
+      "rank_percent": 130,
       "max_score": 663000,
-      "left_ts": 2107677,
+      "left_ts": 1750770,
       "ending_record_id": 3
     },
     "boss_challenge_record": {
@@ -26,16 +26,16 @@
         "battle_id": 1020801,
         "node_id": 10208,
         "name": "LAST NODE",
-        "score": 120017,
+        "score": 124001,
         "star": "S",
         "score_ratio": "2.8",
         "challenge_time": {
           "year": 2026,
           "month": 1,
-          "day": 10,
-          "hour": 12,
-          "minute": 53,
-          "second": 20
+          "day": 13,
+          "hour": 9,
+          "minute": 13,
+          "second": 14
         },
         "buffer": {
           "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/c264fd36b5b9bd46947854695629c991.png",
@@ -536,16 +536,16 @@
         "battle_id": 1020401,
         "node_id": 10204,
         "name": "BATTLE 02",
-        "score": 124697,
+        "score": 139331,
         "star": "S",
         "score_ratio": "2.3",
         "challenge_time": {
           "year": 2026,
           "month": 1,
-          "day": 10,
-          "hour": 13,
-          "minute": 37,
-          "second": 42
+          "day": 13,
+          "hour": 9,
+          "minute": 2,
+          "second": 50
         },
         "buffer": {
           "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/dd780ec6c7ea476f53ba3dae1c7dc4d3.png",
@@ -742,16 +742,16 @@
         "battle_id": 1020201,
         "node_id": 10202,
         "name": "BATTLE 01",
-        "score": 144477,
+        "score": 144900,
         "star": "S",
         "score_ratio": "2.3",
         "challenge_time": {
-          "year": 2025,
-          "month": 10,
-          "day": 21,
-          "hour": 5,
-          "minute": 56,
-          "second": 5
+          "year": 2026,
+          "month": 1,
+          "day": 13,
+          "hour": 9,
+          "minute": 8,
+          "second": 19
         },
         "buffer": {
           "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/3b903f6c54225deba93bab4b59a5c1c3.png",
@@ -952,7 +952,7 @@
     }
   },
   "metadata": {
-    "exportDate": "2026-01-11T17:32:05.407Z",
+    "exportDate": "2026-01-15T20:40:29.416Z",
     "uid": "1500598195",
     "type": "void_front",
     "automated": true
