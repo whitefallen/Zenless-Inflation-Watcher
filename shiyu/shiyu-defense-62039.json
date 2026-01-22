@@ -24,17 +24,17 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 135890,
-        "rank_percent": 152,
-        "battle_time": 389,
+        "score": 136376,
+        "rank_percent": 144,
+        "battle_time": 337,
         "rating": "S+",
         "challenge_time": {
           "year": 2026,
           "month": 1,
-          "day": 14,
-          "hour": 18,
-          "minute": 30,
-          "second": 8
+          "day": 19,
+          "hour": 20,
+          "minute": 40,
+          "second": 54
         },
         "max_score": 150000
       },
@@ -84,10 +84,10 @@
               "id": 54017,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/0dab4dab3c321353a70f7a439f9bae8a.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/7c99ff3b0be07a602171550d40d97921.png"
             },
             "battle_time": 77,
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/d46db54d80fbc5eb26cf73eeb1cd4986.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/3e05b13c2ca06de27e0a1e88f8452140.png",
             "max_score": 50000
           },
           {
@@ -134,10 +134,10 @@
               "id": 54014,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/3f2f8f1f2715cfed7eac369291953a41.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/a21b398084a3a6f2c94e6107cfaa4598.png"
             },
             "battle_time": 165,
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/938ec130205ed2a2c3de736f9cf2140d.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/80adbce0253b0fc77a24af08d07af8f3.png",
             "max_score": 50000
           },
           {
@@ -147,7 +147,7 @@
               "title": "Blazing Stream",
               "text": "· Agent Sheer DMG increases by 10%, CRIT DMG increases by 25%.\\n· When an Agent's <color=#FFFFFF>Ultimate</color> hits enemies, ignores 10% of their All-DMG RES."
             },
-            "score": 44479,
+            "score": 44965,
             "avatar_list": [
               {
                 "id": 1371,
@@ -184,10 +184,10 @@
               "id": 54020,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/82ef480c05aade1bd9c7c37d350a18c0.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/f3b2f5f240dd78703edf5575150ebfa3.png"
             },
-            "battle_time": 147,
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/69fdaccdef309e614a980cc00ceeb89f.png",
+            "battle_time": 95,
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/3df67c42124c3c41dd1ddb25e80655ef.png",
             "max_score": 50000
           }
         ]
@@ -246,7 +246,7 @@
               "id": 54006,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/c985e0e729e1e67480dae4028b3fd3ee.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/19437b296153082a9ab8bdfac2e0598d.png"
             }
           },
           {
@@ -288,7 +288,7 @@
               "id": 54001,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/7352054a0bfdb5c9b50eeeff9d6e5c42.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/6581ed4facebd3e341febdf1f001a2be.png"
             }
           }
         ]
@@ -297,10 +297,10 @@
       "end_time": "1769137199"
     },
     "nick_name": "Whitefallen",
-    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uec84c/e8ef07841c393cbd08f264b5d49aecc4.png"
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/1569cec36e9038c7cf75766e33db7c0f.png"
   },
   "metadata": {
-    "exportDate": "2026-01-15T20:40:29.416Z",
+    "exportDate": "2026-01-22T20:42:25.863Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
