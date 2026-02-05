@@ -10,9 +10,9 @@
       "ending_record_name": "Ending 3: In the Name of Legend",
       "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/c6b40766395b233ccafbb7e746221de7.png",
       "total_score": 604320,
-      "rank_percent": 85,
+      "rank_percent": 84,
       "max_score": 663000,
-      "left_ts": 540896,
+      "left_ts": 0,
       "ending_record_id": 3
     },
     "boss_challenge_record": {
@@ -952,7 +952,7 @@
     }
   },
   "metadata": {
-    "exportDate": "2026-01-29T20:45:03.420Z",
+    "exportDate": "2026-02-05T20:48:43.311Z",
     "uid": "1500598195",
     "type": "void_front",
     "automated": true

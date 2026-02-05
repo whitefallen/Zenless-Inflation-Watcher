@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 1,
+      "day": 30,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 2,
+      "day": 13,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 258,
+    "list": [
+      {
+        "score": 50461,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 1,
+          "day": 31,
+          "hour": 14,
+          "minute": 5,
+          "second": 12
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/180d7badd190ba277aa47175982a32fb.png",
+            "name": "Primordial Nightmare",
+            "race_icon": "",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/154afef696fbea32864981bd827d9bea.png",
+            "desc": "· While in Ether Veil, Agent ATK <color=#2BAD00>increases by 20%</color>, CRIT DMG <color=#2BAD00>increases by 20%</color>.\\n· Enemy Stun DMG Multiplier <color=#2BAD00>increases by 30%</color>, and when Agent Basic Attacks and Ultimates hit enemies, they ignore <color=#2BAD00>10%</color> of <color=#F0D12B>Physical RES</color> and <color=#2BAD00>10%</color> of DEF.",
+            "name": "Adjudication"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1341,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 5,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54020,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/f3b2f5f240dd78703edf5575150ebfa3.png"
+        }
+      },
+      {
+        "score": 49943,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 1,
+          "day": 31,
+          "hour": 14,
+          "minute": 45,
+          "second": 54
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/f0ce9f96bfbbd770d258293d9fec55ad.png",
+            "name": "Unknown Corruption Complex",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/b62e09ed2efa1c3f23aa2564baff1b0c.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/868c1a3dc2eadfc08f0a905ab22bfbfd.png",
+            "desc": "· Agent <color=#98EFF0>Ice DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 30%</color>.\\n· When inflicting Attribute Anomaly on enemies, the whole squad's ATK <color=#2BAD00>increases by 25%</color> and Decibel Generation Rate <color=#2BAD00>increases by 20%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Frost Night"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1131,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54001,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/6581ed4facebd3e341febdf1f001a2be.png"
+        }
+      },
+      {
+        "score": 34404,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 1,
+          "day": 31,
+          "hour": 14,
+          "minute": 36,
+          "second": 29
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/ae5b5f47b97ff613cebe24b664067d8e.png",
+            "name": "Wandering Hunter",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/b62e09ed2efa1c3f23aa2564baff1b0c.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/9401e90dce0cf696a4793f8f27595fb9.png",
+            "desc": "· After Stunning enemies, their Stun DMG Multiplier <color=#2BAD00>increases by 35%</color>, and their Stun recovery speed <color=#2BAD00>decreases by 10%</color>.\\n· After an Agent uses an <color=#FFFFFF>EX Special Attack</color>, their CRIT DMG <color=#2BAD00>increases by 40%</color> for 20s.",
+            "name": "Formation Breaker"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1371,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+            "sub_element_type": 2
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54017,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/7c99ff3b0be07a602171550d40d97921.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/1569cec36e9038c7cf75766e33db7c0f.png",
+    "total_score": 134808,
+    "total_star": 9,
+    "zone_id": 69029,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2026-02-05T20:48:43.311Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
