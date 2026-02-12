@@ -1,0 +1,308 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "hadal_ver": "v2",
+    "hadal_info_v2": {
+      "zone_id": 62041,
+      "hadal_begin_time": {
+        "year": 2026,
+        "month": 2,
+        "day": 6,
+        "hour": 4,
+        "minute": 0,
+        "second": 0
+      },
+      "hadal_end_time": {
+        "year": 2026,
+        "month": 2,
+        "day": 20,
+        "hour": 3,
+        "minute": 59,
+        "second": 59
+      },
+      "pass_fifth_floor": true,
+      "brief": {
+        "cur_period_zone_layer_count": 5,
+        "score": 138865,
+        "rank_percent": 145,
+        "battle_time": 267,
+        "rating": "S+",
+        "challenge_time": {
+          "year": 2026,
+          "month": 2,
+          "day": 7,
+          "hour": 23,
+          "minute": 42,
+          "second": 9
+        },
+        "max_score": 150000
+      },
+      "fitfh_layer_detail": {
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62041051,
+            "rating": "S",
+            "buffer": {
+              "title": "Thunderclap Shimmer",
+              "text": "· Agent CRIT DMG increases by 20%.\\n· While in <color=#FFFFFF>Ether Veil</color>, Agent <color=#F0D12B>Physical DMG</color> increases by 15%, and attacks ignore 10% of enemy's DEF."
+            },
+            "score": 47391,
+            "avatar_list": [
+              {
+                "id": 1431,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+                "sub_element_type": 4
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1341,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 5,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54021,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/a3741515706bb035f5b8e75185e49b85.png"
+            },
+            "battle_time": 71,
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/ad4fbca7d7f81377b33f29b1e1e2680f.png",
+            "max_score": 50000
+          },
+          {
+            "layer_id": 62041052,
+            "rating": "S",
+            "buffer": {
+              "title": "Chaotic Blitz",
+              "text": "· Agent <color=#2EB6FF>Electric DMG</color> increases by 15%.\\n· Agent <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>EX Special Attack</color>, and <color=#FFFFFF>Ultimate</color> deal 20% increased DMG and ignore 10% of enemy All-DMG RES on hit."
+            },
+            "score": 48452,
+            "avatar_list": [
+              {
+                "id": 1091,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                "sub_element_type": 1
+              },
+              {
+                "id": 1221,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 203,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1411,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54014,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/2c3dd553261211927d32f61ee069b807.png"
+            },
+            "battle_time": 78,
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/e6ab0a9d00079d78df45c559dbda259d.png",
+            "max_score": 50000
+          },
+          {
+            "layer_id": 62041053,
+            "rating": "S",
+            "buffer": {
+              "title": "Everlasting Night Flame",
+              "text": "· Agent <color=#FF5521>Fire DMG</color> increases by 20% and Agent ATK increases by 10%.\\n· The Agent gains an additional 40 initial Energy and deals 40% bonus CRIT DMG."
+            },
+            "score": 43022,
+            "avatar_list": [
+              {
+                "id": 1321,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 201,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54015,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/e68d52ae0d1f108878e23bb2610c2e89.png"
+            },
+            "battle_time": 118,
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/96d13328f3ad3d95d49041345cf052b9.png",
+            "max_score": 50000
+          }
+        ]
+      },
+      "fourth_layer_detail": {
+        "buffer": {
+          "title": "Thunderclap Shimmer",
+          "text": "· Agent CRIT DMG increases by 20%.\\n· While in <color=#FFFFFF>Ether Veil</color>, Agent <color=#F0D12B>Physical DMG</color> increases by 15%, and attacks ignore 10% of enemy's DEF."
+        },
+        "challenge_time": {
+          "year": 2026,
+          "month": 2,
+          "day": 6,
+          "hour": 18,
+          "minute": 8,
+          "second": 42
+        },
+        "rating": "S",
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62041041,
+            "battle_time": 81,
+            "avatar_list": [
+              {
+                "id": 1061,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1061.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54020,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/4f210bfc5f3e1b4ebefb7a3554ec1c8f.png"
+            }
+          },
+          {
+            "layer_id": 62041042,
+            "battle_time": 211,
+            "avatar_list": [
+              {
+                "id": 1131,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 202,
+                "avatar_profession": 4,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1141,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 2,
+                "rank": 4,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1031,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54001,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/44b70ae3a9d0cf44925e3981215aa8ab.png"
+            }
+          }
+        ]
+      },
+      "begin_time": "1770346800",
+      "end_time": "1771556399"
+    },
+    "nick_name": "Whitefallen",
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/720bc1108972008415db331dc6f9d2e6.png"
+  },
+  "metadata": {
+    "exportDate": "2026-02-12T20:49:54.345Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense",
+    "automated": true
+  }
+}

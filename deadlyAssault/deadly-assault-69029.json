@@ -18,31 +18,31 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 258,
+    "rank_percent": 181,
     "list": [
       {
-        "score": 50461,
+        "score": 56549,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
-          "month": 1,
-          "day": 31,
-          "hour": 14,
-          "minute": 5,
-          "second": 12
+          "month": 2,
+          "day": 6,
+          "hour": 12,
+          "minute": 55,
+          "second": 6
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/180d7badd190ba277aa47175982a32fb.png",
-            "name": "Primordial Nightmare",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/e8dd6e35dd74005305c502baa27183f5.png",
+            "name": "Primordial Nightmare - \"The Creator\"",
             "race_icon": "",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/154afef696fbea32864981bd827d9bea.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/5831c4c2820d5031a937c41a03e47534.png",
             "desc": "· While in Ether Veil, Agent ATK <color=#2BAD00>increases by 20%</color>, CRIT DMG <color=#2BAD00>increases by 20%</color>.\\n· Enemy Stun DMG Multiplier <color=#2BAD00>increases by 30%</color>, and when Agent Basic Attacks and Ultimates hit enemies, they ignore <color=#2BAD00>10%</color> of <color=#F0D12B>Physical RES</color> and <color=#2BAD00>10%</color> of DEF.",
             "name": "Adjudication"
           }
@@ -69,46 +69,46 @@
             "sub_element_type": 0
           },
           {
-            "id": 1311,
+            "id": 1491,
             "level": 60,
-            "element_type": 205,
+            "element_type": 200,
             "avatar_profession": 4,
             "rarity": "S",
-            "rank": 1,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
             "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54020,
+          "id": 54021,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/f3b2f5f240dd78703edf5575150ebfa3.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/a3741515706bb035f5b8e75185e49b85.png"
         }
       },
       {
-        "score": 49943,
+        "score": 49104,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
-          "month": 1,
-          "day": 31,
-          "hour": 14,
-          "minute": 45,
-          "second": 54
+          "month": 2,
+          "day": 6,
+          "hour": 11,
+          "minute": 16,
+          "second": 41
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/f0ce9f96bfbbd770d258293d9fec55ad.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/3fb4de8eeb71a2b9f60c7434fe735a07.png",
             "name": "Unknown Corruption Complex",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/b62e09ed2efa1c3f23aa2564baff1b0c.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/9485925d18925e3eed438985d09860ef.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/868c1a3dc2eadfc08f0a905ab22bfbfd.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/2d1384f348212c9aeee5acfa291b1ff4.png",
             "desc": "· Agent <color=#98EFF0>Ice DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 30%</color>.\\n· When inflicting Attribute Anomaly on enemies, the whole squad's ATK <color=#2BAD00>increases by 25%</color> and Decibel Generation Rate <color=#2BAD00>increases by 20%</color> for 20s. Repeated triggers reset the duration.",
             "name": "Frost Night"
           }
@@ -146,35 +146,35 @@
           }
         ],
         "buddy": {
-          "id": 54001,
+          "id": 54014,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/6581ed4facebd3e341febdf1f001a2be.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/2c3dd553261211927d32f61ee069b807.png"
         }
       },
       {
-        "score": 34404,
+        "score": 36473,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
-          "month": 1,
-          "day": 31,
-          "hour": 14,
-          "minute": 36,
-          "second": 29
+          "month": 2,
+          "day": 6,
+          "hour": 11,
+          "minute": 11,
+          "second": 27
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/ae5b5f47b97ff613cebe24b664067d8e.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/99db841ebda97de120a3c78eec89120f.png",
             "name": "Wandering Hunter",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/b62e09ed2efa1c3f23aa2564baff1b0c.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/9485925d18925e3eed438985d09860ef.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/9401e90dce0cf696a4793f8f27595fb9.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/a7bd68d5129125effc3c610f072e8d86.png",
             "desc": "· After Stunning enemies, their Stun DMG Multiplier <color=#2BAD00>increases by 35%</color>, and their Stun recovery speed <color=#2BAD00>decreases by 10%</color>.\\n· After an Agent uses an <color=#FFFFFF>EX Special Attack</color>, their CRIT DMG <color=#2BAD00>increases by 40%</color> for 20s.",
             "name": "Formation Breaker"
           }
@@ -215,21 +215,21 @@
           "id": 54017,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/7c99ff3b0be07a602171550d40d97921.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/35d13fcdc9c451dfea942c3ece099a7e.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc9e6c/1569cec36e9038c7cf75766e33db7c0f.png",
-    "total_score": 134808,
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uf098c/720bc1108972008415db331dc6f9d2e6.png",
+    "total_score": 142126,
     "total_star": 9,
     "zone_id": 69029,
     "total_max_score": 195000,
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2026-02-05T20:48:43.311Z",
+    "exportDate": "2026-02-12T20:49:54.345Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
