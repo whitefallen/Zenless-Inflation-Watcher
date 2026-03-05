@@ -25,7 +25,7 @@
       "brief": {
         "cur_period_zone_layer_count": 5,
         "score": 136830,
-        "rank_percent": 153,
+        "rank_percent": 148,
         "battle_time": 271,
         "rating": "S+",
         "challenge_time": {
@@ -84,10 +84,10 @@
               "id": 54021,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/0f1665632955936e3412c93c95feb112.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/48a36d37ad8812e00f18f24ca68b934e.png"
             },
             "battle_time": 89,
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/4230389658e3439c81097477b9fa32e5.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/4fad85d6305cba734dd17f5e1c5302a4.png",
             "max_score": 50000
           },
           {
@@ -134,10 +134,10 @@
               "id": 54001,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/75ca93e621bd1000b782ce34cd102f64.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/61ee906f8b0d4d30edf1605158aaafc3.png"
             },
             "battle_time": 87,
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/dc5226822662e25611d57f6f96a2246f.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/7495427d9a3302b8e0c4c5b1f1e781a8.png",
             "max_score": 50000
           },
           {
@@ -184,10 +184,10 @@
               "id": 54020,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/d13ab0c65aa4085e35873e53c05f558d.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/5c5eae7302c76cdfa04adda1fb693162.png"
             },
             "battle_time": 95,
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/efd7c17fba9536f58baccde803442266.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/bd08dbc571db405ec562940d3c82af00.png",
             "max_score": 50000
           }
         ]
@@ -246,7 +246,7 @@
               "id": 54013,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/f406c30760b8fd938fd5c70a33c055ab.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/aae7664806ff1f21583540e0928d5796.png"
             }
           },
           {
@@ -288,7 +288,7 @@
               "id": 54001,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/75ca93e621bd1000b782ce34cd102f64.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/61ee906f8b0d4d30edf1605158aaafc3.png"
             }
           }
         ]
@@ -297,10 +297,10 @@
       "end_time": "1772765999"
     },
     "nick_name": "Whitefallen",
-    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ua3cad/5cc77f2f32e6e4523501239f7b77e984.png"
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/5ffb63bbebc99fab710ea7a95d84e26f.png"
   },
   "metadata": {
-    "exportDate": "2026-02-26T20:56:10.334Z",
+    "exportDate": "2026-03-05T20:51:56.755Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
