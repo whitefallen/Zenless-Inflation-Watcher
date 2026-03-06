@@ -1,3 +1,4 @@
+const withPWA = require('@ducanh2912/next-pwa').default;
 const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
@@ -7,7 +8,7 @@ const nextConfig = {
   assetPrefix: isProd ? '/Zenless-Inflation-Watcher/' : '',
 };
 
-module.exports = require('next-pwa')({
+module.exports = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,

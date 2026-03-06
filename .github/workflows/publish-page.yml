@@ -32,6 +32,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
 
       - name: Install Puppeteer dependencies
         run: |
@@ -53,6 +55,8 @@ jobs:
             echo "⚠️ Puppeteer failed, ensuring basic PWA icons exist..."
             node scripts/ensurePWAIcons.js
           fi
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
 
       - name: Copy data files to public
         run: node scripts/copy-data-to-public.js
