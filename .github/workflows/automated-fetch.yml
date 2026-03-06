@@ -27,6 +27,8 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
 
       - name: Install Puppeteer dependencies
         run: |
@@ -78,6 +80,7 @@ jobs:
         run: node auth.js
         env:
           NODE_ENV: production
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
 
       - name: Run automated fetch
         run: node automatedFetch.js
