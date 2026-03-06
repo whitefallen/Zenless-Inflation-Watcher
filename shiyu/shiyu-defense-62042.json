@@ -1,0 +1,308 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "hadal_ver": "v2",
+    "hadal_info_v2": {
+      "zone_id": 62042,
+      "hadal_begin_time": {
+        "year": 2026,
+        "month": 2,
+        "day": 20,
+        "hour": 4,
+        "minute": 0,
+        "second": 0
+      },
+      "hadal_end_time": {
+        "year": 2026,
+        "month": 3,
+        "day": 6,
+        "hour": 3,
+        "minute": 59,
+        "second": 59
+      },
+      "pass_fifth_floor": true,
+      "brief": {
+        "cur_period_zone_layer_count": 5,
+        "score": 136830,
+        "rank_percent": 148,
+        "battle_time": 271,
+        "rating": "S+",
+        "challenge_time": {
+          "year": 2026,
+          "month": 2,
+          "day": 20,
+          "hour": 16,
+          "minute": 32,
+          "second": 57
+        },
+        "max_score": 150000
+      },
+      "fitfh_layer_detail": {
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62042051,
+            "rating": "S",
+            "buffer": {
+              "title": "Fleeting Glory",
+              "text": "· While in <color=#FFFFFF>Ether Veil</color>, Agent ATK increases by 25% and CRIT DMG increases by 20%.\\n· When Agents hit enemies, they ignore 10% of enemy <color=#F0D12B>Physical RES</color>."
+            },
+            "score": 48481,
+            "avatar_list": [
+              {
+                "id": 1431,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+                "sub_element_type": 4
+              },
+              {
+                "id": 1341,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 5,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54021,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/48a36d37ad8812e00f18f24ca68b934e.png"
+            },
+            "battle_time": 89,
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/4fad85d6305cba734dd17f5e1c5302a4.png",
+            "max_score": 50000
+          },
+          {
+            "layer_id": 62042052,
+            "rating": "S",
+            "buffer": {
+              "title": "Accumulating Frost",
+              "text": "· Agent <color=#98EFF0>Ice DMG</color> increases by 20%, Basic Attack DMG increases by 40%.\\n· After an Agent uses an EX Special Attack, the Agent's <color=#98EFF0>Ice DMG</color> additionally increases by 20% for 15s, repeated triggers reset the duration."
+            },
+            "score": 43796,
+            "avatar_list": [
+              {
+                "id": 1091,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                "sub_element_type": 1
+              },
+              {
+                "id": 1411,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1131,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 202,
+                "avatar_profession": 4,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54001,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/61ee906f8b0d4d30edf1605158aaafc3.png"
+            },
+            "battle_time": 87,
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/7495427d9a3302b8e0c4c5b1f1e781a8.png",
+            "max_score": 50000
+          },
+          {
+            "layer_id": 62042053,
+            "rating": "S",
+            "buffer": {
+              "title": "Frostbite Variant",
+              "text": "· Agent Max HP increases by 15%, <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> increase by 20%.\\n· When an Agent activates <color=#FFFFFF>Ultimate</color>, their Sheer DMG increases by 15% for 20s. Repeated triggers reset the duration."
+            },
+            "score": 44553,
+            "avatar_list": [
+              {
+                "id": 1371,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 6,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+                "sub_element_type": 2
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1451,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54020,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/5c5eae7302c76cdfa04adda1fb693162.png"
+            },
+            "battle_time": 95,
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/bd08dbc571db405ec562940d3c82af00.png",
+            "max_score": 50000
+          }
+        ]
+      },
+      "fourth_layer_detail": {
+        "buffer": {
+          "title": "Fleeting Glory",
+          "text": "· While in <color=#FFFFFF>Ether Veil</color>, Agent ATK increases by 25% and CRIT DMG increases by 20%.\\n· When Agents hit enemies, they ignore 10% of enemy <color=#F0D12B>Physical RES</color>."
+        },
+        "challenge_time": {
+          "year": 2026,
+          "month": 2,
+          "day": 20,
+          "hour": 15,
+          "minute": 46,
+          "second": 11
+        },
+        "rating": "S",
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62042041,
+            "battle_time": 115,
+            "avatar_list": [
+              {
+                "id": 1061,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1061.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54013,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/aae7664806ff1f21583540e0928d5796.png"
+            }
+          },
+          {
+            "layer_id": 62042042,
+            "battle_time": 170,
+            "avatar_list": [
+              {
+                "id": 1131,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 202,
+                "avatar_profession": 4,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1141,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 2,
+                "rank": 4,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1031,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54001,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/61ee906f8b0d4d30edf1605158aaafc3.png"
+            }
+          }
+        ]
+      },
+      "begin_time": "1771556400",
+      "end_time": "1772765999"
+    },
+    "nick_name": "Whitefallen",
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/5ffb63bbebc99fab710ea7a95d84e26f.png"
+  },
+  "metadata": {
+    "exportDate": "2026-03-05T20:51:56.755Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense",
+    "automated": true
+  }
+}
