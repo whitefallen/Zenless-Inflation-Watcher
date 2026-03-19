@@ -24,17 +24,17 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 128578,
-        "rank_percent": 263,
-        "battle_time": 338,
+        "score": 133025,
+        "rank_percent": 177,
+        "battle_time": 284,
         "rating": "S+",
         "challenge_time": {
           "year": 2026,
           "month": 3,
-          "day": 7,
-          "hour": 16,
-          "minute": 5,
-          "second": 0
+          "day": 17,
+          "hour": 11,
+          "minute": 31,
+          "second": 38
         },
         "max_score": 150000
       },
@@ -47,7 +47,7 @@
               "title": "Thunder Crimson Blaze",
               "text": "· Agent <color=#F0D12B>Physical DMG</color> and <color=#2EB6FF>Electric DMG</color> increase by 15%, while their CRIT DMG increases by 20%.\\n· When an Agent with Attack specialty hits an enemy and crits, enemy DEF drops by 10% for 5s. Repeated triggers reset the duration."
             },
-            "score": 48086,
+            "score": 48604,
             "avatar_list": [
               {
                 "id": 1431,
@@ -86,7 +86,7 @@
               "level": 60,
               "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/48a36d37ad8812e00f18f24ca68b934e.png"
             },
-            "battle_time": 82,
+            "battle_time": 70,
             "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/401760e34c4726d9d12f01e0684d1fdd.png",
             "max_score": 50000
           },
@@ -97,7 +97,7 @@
               "title": "Flameheart Lithic Core",
               "text": "· Agent Sheer DMG increases by 10%.\\n· While in <color=#FFFFFF>Ether Veil</color>, Agent Sheer DMG further increases by 15%, and attacks ignore 15% of enemy All-DMG RES on hit."
             },
-            "score": 40289,
+            "score": 42086,
             "avatar_list": [
               {
                 "id": 1371,
@@ -136,7 +136,7 @@
               "level": 60,
               "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/43b77c18c342a00d6584e2112c01584c.png"
             },
-            "battle_time": 136,
+            "battle_time": 102,
             "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/4fad85d6305cba734dd17f5e1c5302a4.png",
             "max_score": 50000
           },
@@ -147,7 +147,7 @@
               "title": "Mecha Wings",
               "text": "· Agent <color=#FE437E>Ether DMG</color> increases by 20%. \\n· While in <color=#FFFFFF>Ether Veil</color>, Agent ATK increases by 30%, and attacks ignore 10% of enemy <color=#FE437E>Ether RES</color>."
             },
-            "score": 40203,
+            "score": 42335,
             "avatar_list": [
               {
                 "id": 1091,
@@ -186,7 +186,7 @@
               "level": 60,
               "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/4a500e5ae28dbe7f1ee3cfe27fa10120.png"
             },
-            "battle_time": 120,
+            "battle_time": 112,
             "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/ddf8df428c9d2ee4bcac6ced5104c50a.png",
             "max_score": 50000
           }
@@ -300,7 +300,7 @@
     "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/080f42e1d34d31b74c370c287619bc34.png"
   },
   "metadata": {
-    "exportDate": "2026-03-12T20:46:20.030Z",
+    "exportDate": "2026-03-19T20:50:34.552Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true

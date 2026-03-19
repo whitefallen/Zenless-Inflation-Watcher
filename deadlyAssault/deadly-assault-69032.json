@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 3,
+      "day": 13,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 3,
+      "day": 27,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 262,
+    "list": [
+      {
+        "score": 32454,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 3,
+          "day": 17,
+          "hour": 11,
+          "minute": 53,
+          "second": 10
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/a1ed8405e9b9bfd5a014bcf6d3bb006f.png",
+            "name": "Miasmic Fiend - Unfathomable",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/bff8453e9e1d275bcb67e754778362d1.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/03bd9eaba1b193e59b894db63640a941.png",
+            "desc": "· <color=#FFFFFF>Ultimate</color> DMG <color=#2BAD00>increases</color> by 30%. When launching <color=#FFFFFF>Ultimate</color>, the Agent's ATK <color=#2BAD00>increases</color> by 15% for 15s. Repeated triggers reset the duration.\\n· After enemies become Stunned, their Stun DMG Multiplier <color=#2BAD00>increases by 35%</color>.",
+            "name": "Harnessing Change"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1371,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+            "sub_element_type": 2
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54017,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/e4baaede0f5691085195637fec5e15ca.png"
+        }
+      },
+      {
+        "score": 54533,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 3,
+          "day": 17,
+          "hour": 12,
+          "minute": 6,
+          "second": 40
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/d5dd31216d4712bc779c50e7ac7cb58b.png",
+            "name": "Ye Shiyuan the Thrall",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/b87cb875d1193967ab749e87ed9df380.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/5d30eb525ce5f4ac5281a6a76b2152cc.png",
+            "desc": "· Agent CRIT DMG <color=#2BAD00>increases by 30%</color>.\\n· ATK of Agents with Attack specialty <color=#2BAD00>increases by 10%</color>. Their Basic Attack DMG <color=#2BAD00>increases by 30%</color> and ignore <color=#2BAD00>15%</color> of enemy DEF.",
+            "name": "Heartcrusher"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1341,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 5,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54021,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/48a36d37ad8812e00f18f24ca68b934e.png"
+        }
+      },
+      {
+        "score": 44468,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 3,
+          "day": 17,
+          "hour": 12,
+          "minute": 55,
+          "second": 25
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/866e8ca748f23835866514278e5635be.png",
+            "name": "Notorious - Pompey",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/bff8453e9e1d275bcb67e754778362d1.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/afc869bc432ddf4f2ec954ba2ae1e67b.png",
+            "desc": "· After an Agent inflicts an Attribute Anomaly on an enemy, the enemy's All-Attribute RES is reduced by <color=#2BAD00>10%</color>, and <color=#FE437E>Ether RES</color> is reduced by <color=#2BAD00>15%</color> for 15s. Repeated triggers refresh the duration.\\n· Agent EX Special Attack, Chain Attack, and Ultimate Anomaly Buildup increases by <color=#2BAD00>15%</color>. Agent Attribute Anomaly DMG increases by <color=#2BAD00>15%</color>, and Abloom DMG increases by <color=#2BAD00>20%</color>.",
+            "name": "Psychics"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54015,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/ddca07a7bcd1d632b448a66993c4a3c9.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5fdgd/080f42e1d34d31b74c370c287619bc34.png",
+    "total_score": 131455,
+    "total_star": 9,
+    "zone_id": 69032,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2026-03-19T20:50:34.552Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
