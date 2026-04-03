@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 3,
+      "day": 27,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 4,
+      "day": 10,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 264,
+    "list": [
+      {
+        "score": 33452,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 3,
+          "day": 31,
+          "hour": 11,
+          "minute": 31,
+          "second": 15
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/bb757081b5cf783a8f8f1b05152d8b91.png",
+            "name": "Sanguine Sweeper",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/ddd39a8383d0cd7c7f8acac62a89050a.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/59d50e4dcaaca503bf504f179938c886.png",
+            "desc": "· When an Agent inflicts an Attribute Anomaly on an enemy, the enemy recovers from Stun <color=#2BAD00>15% slower</color>, and the whole squad's ATK <color=#2BAD00>increases by 15%</color> for 20s. Repeated triggers reset the duration.\\n· When an enemy is Stunned, the whole squad recovers <color=#2BAD00>20 Energy</color>, and Abloom DMG <color=#2BAD00>increases by 30%</color> for 30s. Repeated triggers reset the duration. The Energy Generation effect can trigger once every 30s.",
+            "name": "Metamorph"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1221,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1511,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54020,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/f9f1354087d6d54685f55355d2289690.png"
+        }
+      },
+      {
+        "score": 42311,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 3,
+          "day": 31,
+          "hour": 11,
+          "minute": 36,
+          "second": 4
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/548008347131ec7321c36a06103e0fe6.png",
+            "name": "Miasma Priest",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/ddd39a8383d0cd7c7f8acac62a89050a.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/c7281a1186b8941032215434cb39e6b7.png",
+            "desc": "· Agent Ultimate DMG <color=#2BAD00>increases by 30%</color>. After an Agent launches an Ultimate, the whole squad's Sheer DMG <color=#2BAD00>increases by 10%</color> and CRIT DMG <color=#2BAD00>increases by 25%</color> for 20s. Repeated triggers reset the duration.\\n· After an Agent Stuns an enemy, their Stun DMG Multiplier <color=#2BAD00>increases by 20%</color>.",
+            "name": "Spectral Rupture"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1371,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+            "sub_element_type": 2
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54017,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/7661733bdb9deee4ad3a320bf31c9af3.png"
+        }
+      },
+      {
+        "score": 47552,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 3,
+          "day": 31,
+          "hour": 11,
+          "minute": 25,
+          "second": 20
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/20b1ce4ebd6cbcfb311f0ddaf09882b8.png",
+            "name": "Notorious - Marionette",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/d49a1f208a2b715531441dee01bfa137.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/7346e7d1d172585de0a7401b752833ee.png",
+            "desc": "· Agent <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge Counter</color>, and <color=#FFFFFF>Ultimate</color> DMG is <color=#2BAD00>increased by 20%</color>, and ignores <color=#2BAD00>30%</color> of the enemy's <color=#98EFF0>Ice RES</color>.\\n· When inflicting Disorder on an enemy, Agent CRIT DMG is <color=#2BAD00>increased by 50%</color>, the enemy's Stun recovery speed is <color=#2BAD00>decreased by 15%</color>, and the Stun DMG Multiplier is <color=#2BAD00>increased by 30%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Sudden Nightfall"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1031,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54003,
+          "rarity": "A",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/9193fc662f25ad13ef2ac487b858969c.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/1a4c0538f21d98022496f59b3e95d4ee.png",
+    "total_score": 123315,
+    "total_star": 9,
+    "zone_id": 69033,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2026-04-02T20:45:45.673Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}

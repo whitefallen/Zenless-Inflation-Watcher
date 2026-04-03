@@ -24,8 +24,8 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 128402,
-        "rank_percent": 220,
+        "score": 128718,
+        "rank_percent": 218,
         "rating": "S+",
         "max_score": 150000
       },
@@ -38,7 +38,7 @@
               "title": "Dawn's Guiding Light",
               "text": "· Agent ATK increases by 30%, CRIT DMG increases by 15%.\\n· Enemy Stun DMG Multiplier increases by 20%."
             },
-            "score": 47624,
+            "score": 47898,
             "avatar_list": [
               {
                 "id": 1431,
@@ -82,10 +82,10 @@
             "challenge_time": {
               "year": 2026,
               "month": 3,
-              "day": 20,
-              "hour": 17,
-              "minute": 4,
-              "second": 46
+              "day": 29,
+              "hour": 12,
+              "minute": 38,
+              "second": 57
             }
           },
           {
@@ -152,7 +152,7 @@
               "title": "Frosty Fire",
               "text": "· Agent <color=#98EFF0>Ice DMG</color> and <color=#FE437E>Ether DMG</color> increase by 15%.\\n· While Agents are in an <color=#FFFFFF>Ether Veil</color>, CRIT DMG increases by 40% and Sheer DMG increases by 20%. These buffs are removed when exiting <color=#FFFFFF>Ether Veil</color>."
             },
-            "score": 40600,
+            "score": 40642,
             "avatar_list": [
               {
                 "id": 1091,
@@ -196,9 +196,9 @@
             "challenge_time": {
               "year": 2026,
               "month": 3,
-              "day": 20,
-              "hour": 16,
-              "minute": 43,
+              "day": 29,
+              "hour": 12,
+              "minute": 31,
               "second": 26
             }
           }
@@ -326,7 +326,7 @@
     "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/1a4c0538f21d98022496f59b3e95d4ee.png"
   },
   "metadata": {
-    "exportDate": "2026-03-26T20:44:14.944Z",
+    "exportDate": "2026-04-02T20:45:45.673Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
