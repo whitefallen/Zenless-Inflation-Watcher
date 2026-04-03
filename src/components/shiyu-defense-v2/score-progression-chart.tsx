@@ -6,14 +6,8 @@ import type { ShiyuDefenseData } from "@/types/shiyu-defense";
 
 export function ScoreProgressionChartV2({ allData }: { allData: ShiyuDefenseData[] }) {
   const chartData = useMemo(() => {
-    // Filter for v2 data that has score information
-    const v2Data = allData.filter(d => {
-      // Check if this is normalized v2 data by looking for max_layer: 7
-      return d.data.max_layer === 7;
-    });
-
     // Sort by end time
-    const sorted = [...v2Data].sort((a, b) => {
+    const sorted = [...allData].sort((a, b) => {
       const aEnd = a.data.hadal_end_time;
       const bEnd = b.data.hadal_end_time;
       const aDate = new Date(aEnd.year, (aEnd.month || 1) - 1, aEnd.day || 1);
@@ -39,10 +33,14 @@ export function ScoreProgressionChartV2({ allData }: { allData: ShiyuDefenseData
         battleTime: totalBattleTime,
         rating,
         floors: d.data.all_floor_detail.length,
-        maxLayer: d.data.max_layer
+        maxLayer: d.data.max_layer,
+        score: d.data.hadal_score ?? null,
+        maxScore: d.data.hadal_max_score ?? null
       };
     });
   }, [allData]);
+
+  const hasScoreData = chartData.some((entry) => typeof entry.score === "number");
 
   return (
     <Card className="mb-8">
@@ -50,7 +48,7 @@ export function ScoreProgressionChartV2({ allData }: { allData: ShiyuDefenseData
         <CardTitle>Score Progression Trend</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <div>
             <h4 className="font-semibold mb-1">Battle Time Progression</h4>
             <Chart
@@ -77,6 +75,21 @@ export function ScoreProgressionChartV2({ allData }: { allData: ShiyuDefenseData
               }}
             />
           </div>
+          {hasScoreData && (
+            <div>
+              <h4 className="font-semibold mb-1">Score Progression</h4>
+              <Chart
+                type="line"
+                data={chartData}
+                options={{
+                  xKey: "date",
+                  lines: [
+                    { dataKey: "score", stroke: "#16a34a", name: "Score" }
+                  ]
+                }}
+              />
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>

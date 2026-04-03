@@ -14,12 +14,16 @@ export interface ShiyuDefenseData {
     hadal_begin_time: TimeStamp;
     hadal_end_time: TimeStamp;
     battle_time_47: number;
+    hadal_score?: number;
+    hadal_rank_percent?: number;
+    hadal_max_score?: number;
   };
   metadata?: {
     exportDate: string;
     uid: string;
     type: string;
     automated: boolean;
+    sourceVersion?: "v1" | "v2";
   };
 }
 
@@ -38,6 +42,7 @@ export interface HadalInfoV2Data {
     uid: string;
     type: string;
     automated: boolean;
+    sourceVersion?: "v1" | "v2";
   };
 }
 

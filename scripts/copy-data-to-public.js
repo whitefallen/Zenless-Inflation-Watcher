@@ -17,10 +17,10 @@ function cleanupUnknownIdFiles(dir) {
 function copyAllJson(srcDir, destDir) {
   if (!fs.existsSync(srcDir)) return;
   if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
-  
+
   // Clean up any existing unknown-id files in destination
   cleanupUnknownIdFiles(destDir);
-  
+
   for (const file of fs.readdirSync(srcDir)) {
     if (file.endsWith(".json")) {
       // Skip files with "unknown-id" (created when session expires)
@@ -35,13 +35,13 @@ function copyAllJson(srcDir, destDir) {
 
 copyAllJson(
   path.join(__dirname, "../shiyu"),
-  path.join(__dirname, "../public/shiyu")
+  path.join(__dirname, "../public/shiyu"),
 );
 copyAllJson(
   path.join(__dirname, "../deadlyAssault"),
-  path.join(__dirname, "../public/deadlyAssault")
+  path.join(__dirname, "../public/deadlyAssault"),
 );
 copyAllJson(
   path.join(__dirname, "../voidFront"),
-  path.join(__dirname, "../public/voidFront")
+  path.join(__dirname, "../public/voidFront"),
 );

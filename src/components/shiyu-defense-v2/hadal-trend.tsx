@@ -3,10 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { ShiyuDefenseData } from "@/types/shiyu-defense";
 
 export function HadalTrend({ data }: { data: ShiyuDefenseData[] }) {
-  // Filter for v2 data
-  const v2Data = data.filter(d => d.data.max_layer === 7);
-
-  if (v2Data.length === 0) {
+  if (data.length === 0) {
     return (
       <Card className="mb-8">
         <CardHeader>
@@ -19,7 +16,7 @@ export function HadalTrend({ data }: { data: ShiyuDefenseData[] }) {
     );
   }
 
-  const latest = v2Data[0];
+  const latest = data[0];
   const totalTeams = latest.data.all_floor_detail.length;
   const totalBattleTime = latest.data.all_floor_detail.reduce(
     (sum, floor) => sum + (floor.node_1?.battle_time || 0),

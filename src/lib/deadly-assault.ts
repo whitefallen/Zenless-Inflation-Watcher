@@ -22,6 +22,15 @@ function parseWindowFromFilename(fileName: string): { start?: string; end?: stri
   return {};
 }
 
+function parseScheduleIdFromFilename(fileName: string): number | null {
+  const m = fileName.match(/^deadly-assault-(\d+)\.json$/);
+  if (m) {
+    const id = Number(m[1]);
+    return Number.isNaN(id) ? null : id;
+  }
+  return null;
+}
+
 export async function getLatestDeadlyAssaultData(): Promise<DeadlyAssaultData | null> {
   try {
     // Get list of files in the directory
@@ -39,10 +48,17 @@ export async function getLatestDeadlyAssaultData(): Promise<DeadlyAssaultData | 
       .map((f) => ({ f, end: parseEndDateFromFilename(f) }))
       .filter((x) => x.end !== null) as { f: string; end: number }[];
 
+    const withSchedule = files
+      .map((f) => ({ f, id: parseScheduleIdFromFilename(f) }))
+      .filter((x) => x.id !== null) as { f: string; id: number }[];
+
     let latestFile: string;
     if (withEnd.length > 0) {
       withEnd.sort((a, b) => b.end - a.end);
       latestFile = withEnd[0].f;
+    } else if (withSchedule.length > 0) {
+      withSchedule.sort((a, b) => b.id - a.id);
+      latestFile = withSchedule[0].f;
     } else {
       // Fallback: previous behavior (lexicographic reverse)
       latestFile = files.sort().reverse()[0];
@@ -69,10 +85,17 @@ export async function getAllDeadlyAssaultData(): Promise<DeadlyAssaultData[]> {
       .map((f) => ({ f, end: parseEndDateFromFilename(f) }))
       .filter((x) => x.end !== null) as { f: string; end: number }[];
 
+    const withSchedule = files
+      .map((f) => ({ f, id: parseScheduleIdFromFilename(f) }))
+      .filter((x) => x.id !== null) as { f: string; id: number }[];
+
     let ordered: string[];
     if (withEnd.length > 0) {
       withEnd.sort((a, b) => b.end - a.end);
       ordered = withEnd.map((x) => x.f);
+    } else if (withSchedule.length > 0) {
+      withSchedule.sort((a, b) => b.id - a.id);
+      ordered = withSchedule.map((x) => x.f);
     } else {
       ordered = files.sort().reverse();
     }

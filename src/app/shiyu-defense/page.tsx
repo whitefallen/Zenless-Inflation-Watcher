@@ -20,14 +20,16 @@ import { ShiyuFloorsAggregationTable } from "@/components/shiyu-defense/floors-a
 // New v2 components (score-based)
 import { HadalTrend } from "@/components/shiyu-defense-v2/hadal-trend"
 import { ScoreProgressionChartV2 } from "@/components/shiyu-defense-v2/score-progression-chart"
+import { HadalSummaryCards } from "@/components/shiyu-defense-v2/hadal-summary-cards"
+import { HadalBreakdownCharts } from "@/components/shiyu-defense-v2/hadal-breakdown-charts"
 
 
 export default async function ShiyuDefensePage() {
   const allData = await getAllShiyuDefenseData();
   
   // Separate v2 (Hadal Blacksite, score-based) from v1 (legacy, time-based)
-  const v2Data = allData.filter(d => d.data.max_layer === 7);
-  const v1Data = allData.filter(d => d.data.max_layer !== 7);
+  const v2Data = allData.filter(d => d.metadata?.sourceVersion === "v2");
+  const v1Data = allData.filter(d => d.metadata?.sourceVersion !== "v2");
   const hasV2Data = v2Data.length > 0;
   const hasV1Data = v1Data.length > 0;
 
@@ -126,6 +128,12 @@ export default async function ShiyuDefensePage() {
           </p>
         </div>
 
+        {allData.length === 0 && (
+          <div className="rounded-lg border bg-card p-6 text-center text-muted-foreground">
+            No Shiyu Defense data available yet. Run the fetch scripts to populate your local data folders.
+          </div>
+        )}
+
         <Tabs defaultValue={hasV2Data ? "hadal-v2" : "overview"} className="w-full">
           <div className="mx-auto">
             <TabsList className="inline-flex h-11 items-center justify-center rounded-lg bg-card p-1">
@@ -141,8 +149,10 @@ export default async function ShiyuDefensePage() {
         {hasV2Data && (
           <TabsContent value="hadal-v2" className="mt-6">
             <div className="space-y-8 px-6">
+              <HadalSummaryCards data={v2Data} />
               <HadalTrend data={v2Data} />
               <ScoreProgressionChartV2 allData={v2Data} />
+              <HadalBreakdownCharts data={v2Data} />
               <div className="mb-8">
                 <h3 className="text-lg font-semibold mb-2">Team Compositions</h3>
                 <ShiyuTeamsAggregationTable allData={v2Data} />

@@ -146,12 +146,12 @@ class AutomatedFetcher {
 
     // Calculate days since the base reset date for logging
     const daysSinceBase = Math.floor(
-      (now - schedule.baseDate) / (1000 * 60 * 60 * 24)
+      (now - schedule.baseDate) / (1000 * 60 * 60 * 24),
     );
     const daysSinceLastReset = daysSinceBase % schedule.intervalDays;
 
     console.log(
-      `📅 ${schedule.name}: ${daysSinceLastReset} days since last reset (Always fetch)`
+      `📅 ${schedule.name}: ${daysSinceLastReset} days since last reset (Always fetch)`,
     );
 
     return true; // Always fetch all modes
@@ -162,7 +162,7 @@ class AutomatedFetcher {
     if (!uid) {
       console.error("❌ No UID found in environment");
       await this.discord.sendMessage(
-        "❌ No UID configured for automated fetch"
+        "❌ No UID configured for automated fetch",
       );
       return { success: false, error: "No UID configured" };
     }
@@ -176,7 +176,7 @@ class AutomatedFetcher {
     const shouldFetchVoidFront = this.shouldFetchMode("voidfront");
 
     console.log(
-      "📊 Fetching Deadly Assault, Shiyu Defense, and Void Front data"
+      "📊 Fetching Deadly Assault, Shiyu Defense, and Void Front data",
     );
 
     await this.discord.notifyWorkflowStart(uid, {
@@ -194,7 +194,7 @@ class AutomatedFetcher {
         console.error("❌ Authentication failed");
         await this.discord.notifyAuthFailure(
           new Error("Authentication check failed"),
-          uid
+          uid,
         );
         return { success: false, error: "Authentication failed" };
       }
@@ -252,7 +252,7 @@ class AutomatedFetcher {
         console.log("📊 Fetching Deadly Assault data...");
         data.deadly = await api.getMemoryDetail({ uid });
         console.log(
-          `✅ Deadly Assault: ${data.deadly?.data?.list?.length || 0} records`
+          `✅ Deadly Assault: ${data.deadly?.data?.list?.length || 0} records`,
         );
       } catch (error) {
         console.error("❌ Deadly Assault fetch failed:", error.message);
@@ -289,7 +289,7 @@ class AutomatedFetcher {
         console.log(
           `✅ Void Front: ${
             data.voidfront?.data?.main_challenge_record_list?.length || 0
-          } challenge records`
+          } challenge records`,
         );
       } catch (error) {
         console.error("❌ Void Front fetch failed:", error.message);
@@ -330,7 +330,7 @@ class AutomatedFetcher {
       const seasonId = AutomatedFetcher.getSeasonId("deadly", data.deadly);
       const deadlyFile = path.join(
         deadlyFolder,
-        AutomatedFetcher.buildFileName("deadly", seasonId)
+        AutomatedFetcher.buildFileName("deadly", seasonId),
       );
       const deadlyData = {
         ...data.deadly,
@@ -346,15 +346,15 @@ class AutomatedFetcher {
         try {
           const existing = JSON.parse(fs.readFileSync(deadlyFile, "utf-8"));
           const a = AutomatedFetcher.stableStringify(
-            AutomatedFetcher.normalizeForComparison(existing)
+            AutomatedFetcher.normalizeForComparison(existing),
           );
           const b = AutomatedFetcher.stableStringify(
-            AutomatedFetcher.normalizeForComparison(deadlyData)
+            AutomatedFetcher.normalizeForComparison(deadlyData),
           );
           if (a === b) {
             shouldWrite = false;
             console.log(
-              `⏭️  No changes for Deadly Assault period ${deadlyFile}. Skipping write.`
+              `⏭️  No changes for Deadly Assault period ${deadlyFile}. Skipping write.`,
             );
           }
         } catch {}
@@ -374,7 +374,7 @@ class AutomatedFetcher {
       const seasonId = AutomatedFetcher.getSeasonId("shiyu", data.shiyu);
       const shiyuFile = path.join(
         shiyuFolder,
-        AutomatedFetcher.buildFileName("shiyu", seasonId)
+        AutomatedFetcher.buildFileName("shiyu", seasonId),
       );
       const shiyuData = {
         ...data.shiyu,
@@ -390,15 +390,15 @@ class AutomatedFetcher {
         try {
           const existing = JSON.parse(fs.readFileSync(shiyuFile, "utf-8"));
           const a = AutomatedFetcher.stableStringify(
-            AutomatedFetcher.normalizeForComparison(existing)
+            AutomatedFetcher.normalizeForComparison(existing),
           );
           const b = AutomatedFetcher.stableStringify(
-            AutomatedFetcher.normalizeForComparison(shiyuData)
+            AutomatedFetcher.normalizeForComparison(shiyuData),
           );
           if (a === b) {
             shouldWrite = false;
             console.log(
-              `⏭️  No changes for Shiyu Defense period ${shiyuFile}. Skipping write.`
+              `⏭️  No changes for Shiyu Defense period ${shiyuFile}. Skipping write.`,
             );
           }
         } catch {}
@@ -417,11 +417,11 @@ class AutomatedFetcher {
       }
       const seasonId = AutomatedFetcher.getSeasonId(
         "voidfront",
-        data.voidfront
+        data.voidfront,
       );
       const voidFrontFile = path.join(
         voidFrontFolder,
-        AutomatedFetcher.buildFileName("voidfront", seasonId)
+        AutomatedFetcher.buildFileName("voidfront", seasonId),
       );
       const voidFrontData = {
         ...data.voidfront,
@@ -437,7 +437,7 @@ class AutomatedFetcher {
       // This ensures we always have the latest scores, even if they haven't changed
       fs.writeFileSync(voidFrontFile, JSON.stringify(voidFrontData, null, 2));
       console.log(
-        `💾 Saved Void Front data to: ${voidFrontFile} (always updated)`
+        `💾 Saved Void Front data to: ${voidFrontFile} (always updated)`,
       );
     }
 
@@ -450,15 +450,15 @@ class AutomatedFetcher {
     // Save latest files for easy access
     const latestDeadlyFile = path.join(
       dataDir,
-      `deadly-assault_${uid}_latest.json`
+      `deadly-assault_${uid}_latest.json`,
     );
     const latestShiyuFile = path.join(
       dataDir,
-      `shiyu-defense_${uid}_latest.json`
+      `shiyu-defense_${uid}_latest.json`,
     );
     const latestVoidFrontFile = path.join(
       dataDir,
-      `void-front_${uid}_latest.json`
+      `void-front_${uid}_latest.json`,
     );
 
     if (data.deadly) {
@@ -470,7 +470,7 @@ class AutomatedFetcher {
     if (data.voidfront) {
       fs.writeFileSync(
         latestVoidFrontFile,
-        JSON.stringify(data.voidfront, null, 2)
+        JSON.stringify(data.voidfront, null, 2),
       );
     }
   }
@@ -515,7 +515,7 @@ class AutomatedFetcher {
 
       // All modes use standard interval-based resets
       const daysSinceBase = Math.floor(
-        (now - schedule.baseDate) / (1000 * 60 * 60 * 24)
+        (now - schedule.baseDate) / (1000 * 60 * 60 * 24),
       );
       const daysSinceLastReset = daysSinceBase % schedule.intervalDays;
       const daysUntilNextReset = schedule.intervalDays - daysSinceLastReset;
@@ -547,7 +547,7 @@ if (require.main === module) {
   Object.keys(resetDates).forEach((mode) => {
     const info = resetDates[mode];
     console.log(
-      `  ${fetcher.resetSchedules[mode].name}: ${info.nextResetDate} (${info.daysUntilNextReset} days)`
+      `  ${fetcher.resetSchedules[mode].name}: ${info.nextResetDate} (${info.daysUntilNextReset} days)`,
     );
   });
 
