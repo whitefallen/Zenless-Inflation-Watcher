@@ -124,9 +124,9 @@ export interface FloorDetail {
   buffs: Buff[];
   node_1: Node;
   node_2: Node;
-  challenge_time: string;
+  challenge_time?: string;
   zone_name: string;
-  floor_challenge_time: TimeStamp;
+  floor_challenge_time?: TimeStamp;
 }
 
 export interface Buff {

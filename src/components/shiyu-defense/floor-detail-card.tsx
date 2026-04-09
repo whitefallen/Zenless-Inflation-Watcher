@@ -42,7 +42,9 @@ function FloorDetailCard({ floor, node = 'node_1' }: FloorDetailsProps) {
             <div>
               <p className="text-sm text-muted-foreground">Clear Date</p>
               <p className="font-medium">
-                {`${floor.floor_challenge_time.year}-${String(floor.floor_challenge_time.month).padStart(2, '0')}-${String(floor.floor_challenge_time.day).padStart(2, '0')}`}
+                {floor.floor_challenge_time
+                  ? `${floor.floor_challenge_time.year}-${String(floor.floor_challenge_time.month).padStart(2, '0')}-${String(floor.floor_challenge_time.day).padStart(2, '0')}`
+                  : 'N/A'}
               </p>
             </div>
           </div>
