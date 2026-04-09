@@ -18,19 +18,19 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 264,
+    "rank_percent": 225,
     "list": [
       {
-        "score": 33452,
+        "score": 34406,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
-          "month": 3,
-          "day": 31,
-          "hour": 11,
-          "minute": 31,
-          "second": 15
+          "month": 4,
+          "day": 6,
+          "hour": 10,
+          "minute": 9,
+          "second": 27
         },
         "boss": [
           {
@@ -80,10 +80,10 @@
           }
         ],
         "buddy": {
-          "id": 54020,
+          "id": 54016,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/f9f1354087d6d54685f55355d2289690.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/eb49578a9a451b52ce771eb82f0545d9.png"
         }
       },
       {
@@ -153,16 +153,16 @@
         }
       },
       {
-        "score": 47552,
+        "score": 49121,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
           "month": 3,
           "day": 31,
-          "hour": 11,
-          "minute": 25,
-          "second": 20
+          "hour": 12,
+          "minute": 15,
+          "second": 56
         },
         "boss": [
           {
@@ -222,14 +222,14 @@
     "has_data": true,
     "nick_name": "Whitefallen",
     "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/1a4c0538f21d98022496f59b3e95d4ee.png",
-    "total_score": 123315,
+    "total_score": 125838,
     "total_star": 9,
     "zone_id": 69033,
     "total_max_score": 195000,
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2026-04-02T20:45:45.673Z",
+    "exportDate": "2026-04-09T21:00:35.337Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
