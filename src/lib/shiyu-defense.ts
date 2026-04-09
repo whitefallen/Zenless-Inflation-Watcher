@@ -116,6 +116,12 @@ function normalizeHadalV2ToLegacy(v2Data: HadalInfoV2Data): ShiyuDefenseData {
     .filter((t) => t > 0);
   const fastLayerTime = battleTimes.length > 0 ? Math.min(...battleTimes) : 0;
   const rating = hadal_info_v2.brief?.rating || 'N/A';
+  const normalizedMetadata = {
+    exportDate: v2Data.metadata?.exportDate ?? new Date().toISOString(),
+    uid: v2Data.metadata?.uid ?? 'unknown',
+    type: v2Data.metadata?.type ?? 'shiyu-defense',
+    automated: v2Data.metadata?.automated ?? false
+  };
 
   return {
     retcode: v2Data.retcode,
@@ -137,9 +143,23 @@ function normalizeHadalV2ToLegacy(v2Data: HadalInfoV2Data): ShiyuDefenseData {
       hadal_max_score: hadal_info_v2.brief?.max_score
     },
     metadata: {
-      ...v2Data.metadata,
+      ...normalizedMetadata,
       sourceVersion: 'v2'
     }
+  };
+}
+
+function normalizeLegacyMetadata(metadata?: {
+  exportDate?: string;
+  uid?: string;
+  type?: string;
+  automated?: boolean;
+}) {
+  return {
+    exportDate: metadata?.exportDate ?? new Date().toISOString(),
+    uid: metadata?.uid ?? 'unknown',
+    type: metadata?.type ?? 'shiyu-defense',
+    automated: metadata?.automated ?? false
   };
 }
 
@@ -215,7 +235,7 @@ export async function getLatestShiyuDefenseData(): Promise<ShiyuDefenseData | nu
     return {
       ...data,
       metadata: {
-        ...data.metadata,
+        ...normalizeLegacyMetadata(data.metadata),
         sourceVersion: 'v1'
       }
     };
@@ -265,7 +285,7 @@ export async function getAllShiyuDefenseData(): Promise<ShiyuDefenseData[]> {
         return {
           ...data,
           metadata: {
-            ...data.metadata,
+            ...normalizeLegacyMetadata(data.metadata),
             sourceVersion: 'v1'
           }
         };
@@ -316,7 +336,7 @@ export async function getShiyuDefenseDataByFile(fileName: string): Promise<Shiyu
     return {
       ...data,
       metadata: {
-        ...data.metadata,
+        ...normalizeLegacyMetadata(data.metadata),
         sourceVersion: 'v1'
       }
     };
