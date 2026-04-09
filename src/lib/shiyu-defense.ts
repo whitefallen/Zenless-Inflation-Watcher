@@ -26,11 +26,9 @@ function toUnixSeconds(ts?: TimeStamp): string {
 function normalizeHadalV2ToLegacy(v2Data: HadalInfoV2Data): ShiyuDefenseData {
   const { hadal_info_v2 } = v2Data.data;
   const allFloorDetails: FloorDetail[] = [];
-  const fallbackChallengeTime = hadal_info_v2.hadal_begin_time;
 
   // 4th floor (node 6) - typically 2 teams/bosses
   if (hadal_info_v2.fourth_layer_detail?.layer_challenge_info_list) {
-    const floorChallengeTime = hadal_info_v2.fourth_layer_detail.challenge_time || fallbackChallengeTime;
     hadal_info_v2.fourth_layer_detail.layer_challenge_info_list.forEach((layer, index) => {
       allFloorDetails.push({
         layer_index: 6,
@@ -66,9 +64,7 @@ function normalizeHadalV2ToLegacy(v2Data: HadalInfoV2Data): ShiyuDefenseData {
           monster_info: { level: 0, list: [] },
           battle_time: 0
         },
-        challenge_time: floorChallengeTime?.year?.toString() || '0',
-        zone_name: `Fourth Floor - Team ${index + 1}`,
-        floor_challenge_time: floorChallengeTime || fallbackChallengeTime
+        zone_name: `Fourth Floor - Team ${index + 1}`
       });
     });
   }
@@ -76,7 +72,6 @@ function normalizeHadalV2ToLegacy(v2Data: HadalInfoV2Data): ShiyuDefenseData {
   // 5th floor (node 7) - typically 3 teams/bosses
   if (hadal_info_v2.fitfh_layer_detail?.layer_challenge_info_list) {
     hadal_info_v2.fitfh_layer_detail.layer_challenge_info_list.forEach((layer, index) => {
-      const layerChallengeTime = layer.challenge_time || hadal_info_v2.brief?.challenge_time || fallbackChallengeTime;
       allFloorDetails.push({
         layer_index: 7,
         rating: layer.rating,
@@ -111,9 +106,7 @@ function normalizeHadalV2ToLegacy(v2Data: HadalInfoV2Data): ShiyuDefenseData {
           monster_info: { level: 0, list: [] },
           battle_time: 0
         },
-        challenge_time: layerChallengeTime?.year?.toString() || '0',
-        zone_name: `Fifth Floor - Team ${index + 1}`,
-        floor_challenge_time: layerChallengeTime || fallbackChallengeTime
+        zone_name: `Fifth Floor - Team ${index + 1}`
       });
     });
   }
