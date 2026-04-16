@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 4,
+      "day": 10,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 4,
+      "day": 24,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 270,
+    "list": [
+      {
+        "score": 34443,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 4,
+          "day": 15,
+          "hour": 18,
+          "minute": 29,
+          "second": 20
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/16a56cabf5a4dd3ed35514ed5b5bda50.png",
+            "name": "Discordant Solo - Vesper",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/11f86f373df6a83d9c9e35b119326e45.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/6b1c3c2aaaa2ce9ffd4f55fa565ba1b6.png",
+            "desc": "· Agent <color=#FFFFFF>Dodge Counter</color> and <color=#FFFFFF>EX Special Attack</color> DMG <color=#2BAD00>increases by 30%</color>.\\n· When an Agent hits an enemy that is not Stunned, the Daze dealt <color=#2BAD00>increases by 10%</color>. When hitting a Stunned enemy, CRIT DMG <color=#2BAD00>increases by 30%</color>, and the enemy's Stun DMG Multiplier <color=#2BAD00>increases by 25%</color>.",
+            "name": "Collapse"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1401,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1511,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54016,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b55355540dbf43280dd06ecee46dc533.png"
+        }
+      },
+      {
+        "score": 40890,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 4,
+          "day": 14,
+          "hour": 21,
+          "minute": 5,
+          "second": 43
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/f1367fbfa95133938cf365531fa09aa7.png",
+            "name": "Unknown Corruption Complex",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/34612bb0a8d65bd05f5a8b311b54a36a.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/6b1c3c2aaaa2ce9ffd4f55fa565ba1b6.png",
+            "desc": "· Agent <color=#FFFFFF>Dodge Counter</color> and <color=#FFFFFF>EX Special Attack</color> DMG <color=#2BAD00>increases by 30%</color>.\\n· When an Agent hits an enemy that is not Stunned, the Daze dealt <color=#2BAD00>increases by 10%</color>. When hitting a Stunned enemy, CRIT DMG <color=#2BAD00>increases by 30%</color>, and the enemy's Stun DMG Multiplier <color=#2BAD00>increases by 25%</color>.",
+            "name": "Collapse"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1031,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "A",
+            "rank": 6,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54003,
+          "rarity": "A",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/7edabb7316b9cd6238ca7d2a43420762.png"
+        }
+      },
+      {
+        "score": 49845,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 4,
+          "day": 14,
+          "hour": 21,
+          "minute": 22,
+          "second": 9
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/6b195dc915415256fb606bd06ec93004.png",
+            "name": "Ye Shiyuan the Thrall",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/f3ac4f866cae976602d70cd2e79d3af3.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/787b8003bb5bd325874162e82dbd970e.png",
+            "desc": "· When there are 1/2 Agents with Attack specialty in the squad, the whole squad's CRIT DMG <color=#2BAD00>increases by 20%/60%</color>.\\n· After an EX Special Attack or Ultimate, the Agent's <color=#2EB6FF>Electric DMG</color> <color=#2BAD00>increases</color> by 20%. For Agents with Attack specialty, their DMG <color=#2BAD00>further increases by 30%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Combined Attack"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54021,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b09e78da7f9571d08da4155c54a90df1.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/9422bec81c7b09ebebde13abc6a6c279.png",
+    "total_score": 125178,
+    "total_star": 9,
+    "zone_id": 69034,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2026-04-16T20:59:24.421Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}

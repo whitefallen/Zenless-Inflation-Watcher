@@ -24,8 +24,8 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 126922,
-        "rank_percent": 264,
+        "score": 128229,
+        "rank_percent": 229,
         "rating": "S+",
         "max_score": 150000
       },
@@ -38,7 +38,7 @@
               "title": "Thunder Crimson Blaze",
               "text": "· Agent <color=#F0D12B>Physical DMG</color> and <color=#2EB6FF>Electric DMG</color> increase by 15%, while their CRIT DMG increases by 20%.\\n· When an Agent with Attack specialty hits an enemy and crits, enemy DEF drops by 10% for 5s. Repeated triggers reset the duration."
             },
-            "score": 47856,
+            "score": 48700,
             "avatar_list": [
               {
                 "id": 1431,
@@ -75,17 +75,17 @@
               "id": 54021,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/878c284139a9f2c4a0a377faf253e112.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b09e78da7f9571d08da4155c54a90df1.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/fd84d820411c333833357d1e9365b5e6.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b782597e587fceea0bf85da8f9999be2.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
               "month": 4,
-              "day": 3,
-              "hour": 16,
+              "day": 14,
+              "hour": 10,
               "minute": 28,
-              "second": 43
+              "second": 21
             }
           },
           {
@@ -95,7 +95,7 @@
               "title": "Enigmatic Spectrum",
               "text": "· Agent <color=#FE437E>Ether DMG</color> increases by 20%.\\n· After enemies are Stunned, they recover from Stun 20% slower, and Attribute Anomaly DMG taken increases by 20%."
             },
-            "score": 37428,
+            "score": 36087,
             "avatar_list": [
               {
                 "id": 1401,
@@ -118,31 +118,31 @@
                 "sub_element_type": 0
               },
               {
-                "id": 1311,
+                "id": 1411,
                 "level": 60,
                 "rarity": "S",
-                "element_type": 205,
+                "element_type": 200,
                 "avatar_profession": 4,
-                "rank": 1,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
                 "sub_element_type": 0
               }
             ],
             "buddy": {
-              "id": 54009,
+              "id": 54016,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/963dadbaa0b9801ada16e0e74b4805bd.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b55355540dbf43280dd06ecee46dc533.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/a6054171f95b99493fe06554d76e78ea.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/55c75c6c994812b6b5c3700a6dee0de2.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
               "month": 4,
-              "day": 3,
-              "hour": 16,
-              "minute": 19,
-              "second": 0
+              "day": 11,
+              "hour": 15,
+              "minute": 33,
+              "second": 53
             }
           },
           {
@@ -152,7 +152,7 @@
               "title": "Accumulating Frost",
               "text": "· Agent <color=#98EFF0>Ice DMG</color> increases by 20%, Basic Attack DMG increases by 40%.\\n· After an Agent uses an EX Special Attack, the Agent's <color=#98EFF0>Ice DMG</color> additionally increases by 20% for 15s, repeated triggers reset the duration."
             },
-            "score": 41638,
+            "score": 43442,
             "avatar_list": [
               {
                 "id": 1091,
@@ -165,41 +165,41 @@
                 "sub_element_type": 1
               },
               {
-                "id": 1411,
+                "id": 1031,
                 "level": 60,
-                "rarity": "S",
-                "element_type": 200,
+                "rarity": "A",
+                "element_type": 205,
                 "avatar_profession": 4,
-                "rank": 0,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
                 "sub_element_type": 0
               },
               {
-                "id": 1131,
+                "id": 1311,
                 "level": 60,
-                "rarity": "A",
-                "element_type": 202,
+                "rarity": "S",
+                "element_type": 205,
                 "avatar_profession": 4,
-                "rank": 6,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
                 "sub_element_type": 0
               }
             ],
             "buddy": {
-              "id": 54001,
-              "rarity": "S",
+              "id": 54003,
+              "rarity": "A",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/64d277e9ca77a961a11f139f31346488.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/7edabb7316b9cd6238ca7d2a43420762.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/5696110268418b32f8e2c87fae1af721.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/6899c7dc161d944cd44603a18f00fa76.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
               "month": 4,
-              "day": 3,
-              "hour": 16,
-              "minute": 35,
-              "second": 14
+              "day": 11,
+              "hour": 15,
+              "minute": 24,
+              "second": 45
             }
           }
         ]
@@ -257,7 +257,7 @@
               "id": 54014,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/c67b0251ce124c388b1a331b9c375dec.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/38078248c3453b2ba06d26354cb4a430.png"
             },
             "challenge_time": {
               "year": 2026,
@@ -306,7 +306,7 @@
               "id": 54009,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/963dadbaa0b9801ada16e0e74b4805bd.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/4ad64341745dd1fd3bc722f3b571d419.png"
             },
             "challenge_time": {
               "year": 2026,
@@ -323,10 +323,10 @@
       "end_time": "1776394799"
     },
     "nick_name": "Whitefallen",
-    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u5efkd/1a4c0538f21d98022496f59b3e95d4ee.png"
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/9422bec81c7b09ebebde13abc6a6c279.png"
   },
   "metadata": {
-    "exportDate": "2026-04-09T21:00:35.337Z",
+    "exportDate": "2026-04-16T20:59:24.421Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
