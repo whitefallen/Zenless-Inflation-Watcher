@@ -1,0 +1,334 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "hadal_ver": "v2",
+    "hadal_info_v2": {
+      "zone_id": 62046,
+      "hadal_begin_time": {
+        "year": 2026,
+        "month": 4,
+        "day": 17,
+        "hour": 4,
+        "minute": 0,
+        "second": 0
+      },
+      "hadal_end_time": {
+        "year": 2026,
+        "month": 5,
+        "day": 1,
+        "hour": 3,
+        "minute": 59,
+        "second": 59
+      },
+      "pass_fifth_floor": true,
+      "brief": {
+        "cur_period_zone_layer_count": 5,
+        "score": 131491,
+        "rank_percent": 181,
+        "rating": "S+",
+        "max_score": 150000
+      },
+      "fitfh_layer_detail": {
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62046051,
+            "rating": "S",
+            "buffer": {
+              "title": "Mecha Wings",
+              "text": "· Agent <color=#FE437E>Ether DMG</color> increases by 20%. \\n· While in <color=#FFFFFF>Ether Veil</color>, Agent ATK increases by 30%, and attacks ignore 10% of enemy <color=#FE437E>Ether RES</color>."
+            },
+            "score": 44766,
+            "avatar_list": [
+              {
+                "id": 1091,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                "sub_element_type": 1
+              },
+              {
+                "id": 1511,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54015,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/aec16db68e49a9ff403343969db66325.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/65a4bb96b1ca62fa6da751bf7045a79d.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 4,
+              "day": 21,
+              "hour": 10,
+              "minute": 17,
+              "second": 51
+            }
+          },
+          {
+            "layer_id": 62046052,
+            "rating": "S",
+            "buffer": {
+              "title": "Piercing Thunder Strike",
+              "text": "· Agent <color=#2EB6FF>Electric DMG</color> increases by 20%.\\n· Agent <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>EX Special Attack</color> deal 40% increased DMG and ignore 15% of enemy DEF."
+            },
+            "score": 47587,
+            "avatar_list": [
+              {
+                "id": 1341,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 5,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1431,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+                "sub_element_type": 4
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54021,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b09e78da7f9571d08da4155c54a90df1.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/0248f8752ffb84313f18a243123aecb2.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 4,
+              "day": 19,
+              "hour": 20,
+              "minute": 34,
+              "second": 13
+            }
+          },
+          {
+            "layer_id": 62046053,
+            "rating": "S",
+            "buffer": {
+              "title": "Frostbound Radiance",
+              "text": "· Agent Max HP increases by 15%, <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> increase by 20%.\\n· When an Agent activates an EX Special Attack, their Sheer DMG increases by 15% for 15s. Repeated triggers reset the duration."
+            },
+            "score": 39138,
+            "avatar_list": [
+              {
+                "id": 1371,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 6,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+                "sub_element_type": 2
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1451,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54003,
+              "rarity": "A",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/7edabb7316b9cd6238ca7d2a43420762.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/09896487e729243c174635cce603b263.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 4,
+              "day": 19,
+              "hour": 20,
+              "minute": 55,
+              "second": 33
+            }
+          }
+        ]
+      },
+      "fourth_layer_detail": {
+        "buffer": {
+          "title": "Piercing Thunder Strike",
+          "text": "· Agent <color=#2EB6FF>Electric DMG</color> increases by 20%.\\n· Agent <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>EX Special Attack</color> deal 40% increased DMG and ignore 15% of enemy DEF."
+        },
+        "challenge_time": {
+          "year": 2026,
+          "month": 4,
+          "day": 17,
+          "hour": 15,
+          "minute": 27,
+          "second": 31
+        },
+        "rating": "S",
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62046041,
+            "avatar_list": [
+              {
+                "id": 1521,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 203,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1521.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54020,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/ddbe46d33cc6c7ab59a8bfa8d828e39b.png"
+            },
+            "challenge_time": {
+              "year": 2026,
+              "month": 4,
+              "day": 17,
+              "hour": 15,
+              "minute": 27,
+              "second": 31
+            }
+          },
+          {
+            "layer_id": 62046042,
+            "avatar_list": [
+              {
+                "id": 1511,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1331,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331_3113311.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54003,
+              "rarity": "A",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/7edabb7316b9cd6238ca7d2a43420762.png"
+            },
+            "challenge_time": {
+              "year": 2026,
+              "month": 4,
+              "day": 17,
+              "hour": 15,
+              "minute": 27,
+              "second": 31
+            }
+          }
+        ]
+      },
+      "begin_time": "1776394800",
+      "end_time": "1777604399"
+    },
+    "nick_name": "Whitefallen",
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/9422bec81c7b09ebebde13abc6a6c279.png"
+  },
+  "metadata": {
+    "exportDate": "2026-04-23T21:01:10.485Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense",
+    "automated": true
+  }
+}
