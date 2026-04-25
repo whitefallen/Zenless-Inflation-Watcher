@@ -1,0 +1,718 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "void_front_id": 201,
+    "void_front_battle_detail": {
+      "void_front_battle_abstract_info_brief": {
+        "void_front_id": 201,
+        "end_ts_over_42_days": true,
+        "end_ts": 0,
+        "has_ending_record": true,
+        "ending_record_name": "Ending 2: Truth Buried in the Void",
+        "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/18c4d020808f7a5ce576a324a7a74f6d.png",
+        "total_score": 398876,
+        "rank_percent": 227,
+        "max_score": 481000,
+        "left_ts": 0,
+        "ending_record_id": 5,
+        "start_time": {
+          "year": 2026,
+          "month": 2,
+          "day": 5,
+          "hour": 4,
+          "minute": 0,
+          "second": 0
+        },
+        "end_time": null
+      },
+      "boss_challenge_record": {
+        "boss_info": {
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/0ad335a2e1a20be84508fee8d931c42a.png",
+          "name": "Primordial Nightmare - \"The Creator\"",
+          "race_icon": "",
+          "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+        },
+        "main_challenge_record": {
+          "battle_id": 2010402,
+          "node_id": 20104,
+          "name": "LAST NODE",
+          "score": 144995,
+          "star": "S",
+          "score_ratio": "2.8",
+          "challenge_time": {
+            "year": 2026,
+            "month": 2,
+            "day": 7,
+            "hour": 5,
+            "minute": 5,
+            "second": 49
+          },
+          "buffer": {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/787b8003bb5bd325874162e82dbd970e.png",
+            "desc": "· Agents deal <color=#2BAD00>20% more</color> DMG and attacks ignore <color=#2BAD00>10%</color> of enemy All-DMG RES.\\n· Attack specialty Agents' ATK <color=#2BAD00>increases by 20%</color>, Basic Attack DMG <color=#2BAD00>increases by 40%</color>, and ignore <color=#2BAD00>20%</color> of enemy DEF.",
+            "name": "Tempering Body"
+          },
+          "max_score": 182000,
+          "avatar_list": [
+            {
+              "id": 1431,
+              "level": 60,
+              "element_type": 200,
+              "avatar_profession": 1,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+              "sub_element_type": 4
+            },
+            {
+              "id": 1481,
+              "level": 60,
+              "element_type": 200,
+              "avatar_profession": 2,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1491,
+              "level": 60,
+              "element_type": 200,
+              "avatar_profession": 4,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54021,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b09e78da7f9571d08da4155c54a90df1.png"
+          },
+          "sub_challenge_record": [
+            {
+              "battle_id": 2010406,
+              "name": "3-1",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1381,
+                  "level": 60,
+                  "element_type": 203,
+                  "avatar_profession": 1,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1381.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1251,
+                  "level": 60,
+                  "element_type": 203,
+                  "avatar_profession": 2,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1251.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1211,
+                  "level": 60,
+                  "element_type": 203,
+                  "avatar_profession": 4,
+                  "rarity": "S",
+                  "rank": 1,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54014,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/38078248c3453b2ba06d26354cb4a430.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/787b8003bb5bd325874162e82dbd970e.png",
+                "desc": "· Agents deal <color=#2BAD00>20% more</color> DMG and attacks ignore <color=#2BAD00>10%</color> of enemy All-DMG RES.\\n· Attack specialty Agents' ATK <color=#2BAD00>increases by 20%</color>, Basic Attack DMG <color=#2BAD00>increases by 40%</color>, and ignore <color=#2BAD00>20%</color> of enemy DEF.",
+                "name": "Tempering Body"
+              }
+            },
+            {
+              "battle_id": 2010407,
+              "name": "3-2",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1401,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1221,
+                  "level": 60,
+                  "element_type": 203,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1411,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 4,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54016,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b55355540dbf43280dd06ecee46dc533.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/3bc1a3bb2f157e8537c266100f45deb2.png",
+                "desc": "· Agent DMG <color=#2BAD00>increases by 20%</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by an additional 20%</color>.\\n· After inflicting an Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00>decreases by 10%</color> for 10s. After inflicting Disorder on an enemy, the enemy's DEF <color=#2BAD00>further decreases by 25%</color> for 10s. Each effect's duration refreshes individually.",
+                "name": "Artful"
+              }
+            },
+            {
+              "battle_id": 2010408,
+              "name": "3-3",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1371,
+                  "level": 60,
+                  "element_type": 205,
+                  "avatar_profession": 6,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+                  "sub_element_type": 2
+                },
+                {
+                  "id": 1071,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 5,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1071.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1031,
+                  "level": 60,
+                  "element_type": 205,
+                  "avatar_profession": 4,
+                  "rarity": "A",
+                  "rank": 6,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1031_3110311.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54015,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/aec16db68e49a9ff403343969db66325.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/efc90659cae652d099fb2eb4bce1b6f8.png",
+                "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 10%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent Sheer DMG additionally <color=#2BAD00>increases by 30%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 45%</color> for 10s. Repeated triggers reset the duration.",
+                "name": "Pinnacle"
+              }
+            },
+            {
+              "battle_id": 2010410,
+              "name": "3-4",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1051,
+                  "level": 60,
+                  "element_type": 202,
+                  "avatar_profession": 6,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1141,
+                  "level": 60,
+                  "element_type": 202,
+                  "avatar_profession": 2,
+                  "rarity": "S",
+                  "rank": 4,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1141.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1451,
+                  "level": 60,
+                  "element_type": 205,
+                  "avatar_profession": 4,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54001,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/594d784a6115e8a8d98b980dc6e24f6d.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/efc90659cae652d099fb2eb4bce1b6f8.png",
+                "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 10%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent Sheer DMG additionally <color=#2BAD00>increases by 30%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 45%</color> for 10s. Repeated triggers reset the duration.",
+                "name": "Pinnacle"
+              }
+            }
+          ]
+        }
+      },
+      "main_challenge_record_list": [
+        {
+          "battle_id": 2010201,
+          "node_id": 20102,
+          "name": "BATTLE 02",
+          "score": 141029,
+          "star": "S",
+          "score_ratio": "2.3",
+          "challenge_time": {
+            "year": 2026,
+            "month": 2,
+            "day": 17,
+            "hour": 7,
+            "minute": 19,
+            "second": 32
+          },
+          "buffer": {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/787b8003bb5bd325874162e82dbd970e.png",
+            "desc": "· Agents deal <color=#2BAD00>20% more</color> DMG and attacks ignore <color=#2BAD00>10%</color> of enemy All-DMG RES.\\n· Attack specialty Agents' ATK <color=#2BAD00>increases by 20%</color>, Basic Attack DMG <color=#2BAD00>increases by 40%</color>, and ignore <color=#2BAD00>20%</color> of enemy DEF.",
+            "name": "Tempering Body"
+          },
+          "max_score": 149500,
+          "avatar_list": [
+            {
+              "id": 1431,
+              "level": 60,
+              "element_type": 200,
+              "avatar_profession": 1,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+              "sub_element_type": 4
+            },
+            {
+              "id": 1481,
+              "level": 60,
+              "element_type": 200,
+              "avatar_profession": 2,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1491,
+              "level": 60,
+              "element_type": 200,
+              "avatar_profession": 4,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54021,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b09e78da7f9571d08da4155c54a90df1.png"
+          },
+          "sub_challenge_record": [
+            {
+              "battle_id": 2010202,
+              "name": "2-1",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1321,
+                  "level": 60,
+                  "element_type": 201,
+                  "avatar_profession": 1,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1101,
+                  "level": 60,
+                  "element_type": 201,
+                  "avatar_profession": 2,
+                  "rarity": "S",
+                  "rank": 1,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1101.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1311,
+                  "level": 60,
+                  "element_type": 205,
+                  "avatar_profession": 4,
+                  "rarity": "S",
+                  "rank": 1,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54015,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/aec16db68e49a9ff403343969db66325.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/787b8003bb5bd325874162e82dbd970e.png",
+                "desc": "· Agents deal <color=#2BAD00>20% more</color> DMG and attacks ignore <color=#2BAD00>10%</color> of enemy All-DMG RES.\\n· Attack specialty Agents' ATK <color=#2BAD00>increases by 20%</color>, Basic Attack DMG <color=#2BAD00>increases by 40%</color>, and ignore <color=#2BAD00>20%</color> of enemy DEF.",
+                "name": "Tempering Body"
+              }
+            },
+            {
+              "battle_id": 2010203,
+              "name": "2-2",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1091,
+                  "level": 60,
+                  "element_type": 202,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 2,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                  "sub_element_type": 1
+                },
+                {
+                  "id": 1221,
+                  "level": 60,
+                  "element_type": 203,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1131,
+                  "level": 60,
+                  "element_type": 202,
+                  "avatar_profession": 4,
+                  "rarity": "A",
+                  "rank": 6,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54001,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/594d784a6115e8a8d98b980dc6e24f6d.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/3bc1a3bb2f157e8537c266100f45deb2.png",
+                "desc": "· Agent <color=#FE437E>Ether Anomaly Buildup Rate</color> and <color=#F0D12B>Physical Anomaly Buildup Rate</color> is increased by <color=#2BAD00>25%</color>, and Anomaly Proficiency by <color=#2BAD00>60</color> points.\\n· When triggering an Attribute Anomaly, the enemy's DEF is reduced by <color=#2BAD00>10%</color>, and the damage they receive from Attribute Anomalies will be increased by <color=#2BAD00>30%</color> for 20s. Repeated triggers reset the duration.",
+                "name": "Transformation Charge"
+              }
+            },
+            {
+              "battle_id": 2010204,
+              "name": "2-3",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1261,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1401,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1411,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 4,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54011,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/f947c484443e29bfe01c4344696cc20b.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/3bc1a3bb2f157e8537c266100f45deb2.png",
+                "desc": "· Agent <color=#FE437E>Ether Anomaly Buildup Rate</color> and <color=#F0D12B>Physical Anomaly Buildup Rate</color> is increased by <color=#2BAD00>25%</color>, and Anomaly Proficiency by <color=#2BAD00>60</color> points.\\n· When triggering an Attribute Anomaly, the enemy's DEF is reduced by <color=#2BAD00>10%</color>, and the damage they receive from Attribute Anomalies will be increased by <color=#2BAD00>30%</color> for 20s. Repeated triggers reset the duration.",
+                "name": "Transformation Charge"
+              }
+            }
+          ]
+        },
+        {
+          "battle_id": 2010101,
+          "node_id": 20101,
+          "name": "BATTLE 01",
+          "score": 112852,
+          "star": "S",
+          "score_ratio": "2.3",
+          "challenge_time": {
+            "year": 2026,
+            "month": 3,
+            "day": 6,
+            "hour": 6,
+            "minute": 34,
+            "second": 22
+          },
+          "buffer": {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/efc90659cae652d099fb2eb4bce1b6f8.png",
+            "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 10%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent Sheer DMG additionally <color=#2BAD00>increases by 30%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 45%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "Pinnacle"
+          },
+          "max_score": 149500,
+          "avatar_list": [
+            {
+              "id": 1051,
+              "level": 60,
+              "element_type": 202,
+              "avatar_profession": 6,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1481,
+              "level": 60,
+              "element_type": 200,
+              "avatar_profession": 2,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1451,
+              "level": 60,
+              "element_type": 205,
+              "avatar_profession": 4,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+              "sub_element_type": 0
+            }
+          ],
+          "buddy": {
+            "id": 54018,
+            "rarity": "S",
+            "level": 60,
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/cb6d58a5c87ee20496fde100582efb8c.png"
+          },
+          "sub_challenge_record": [
+            {
+              "battle_id": 2010102,
+              "name": "1-1",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1431,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 1,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+                  "sub_element_type": 4
+                },
+                {
+                  "id": 1341,
+                  "level": 60,
+                  "element_type": 202,
+                  "avatar_profession": 5,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1491,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 4,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54021,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b09e78da7f9571d08da4155c54a90df1.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/33366e52e5404d20e945511cf3a61e2b.png",
+                "desc": "· Agents within Ether Veil have their ATK <color=#2BAD00>increased by 15%</color>, and when their <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Ultimate</color> hits an enemy, it ignores <color=#2BAD00>15%</color> of enemy DEF.\\n· After an Agent with Assist specialty activates an <color=#FFFFFF>EX Special Attack</color>, the whole squad's <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by 20%</color> and their CRIT DMG <color=#2BAD00>increases by 40%</color> for 20s. Repeated triggers reset the duration.",
+                "name": "Ride the Current"
+              }
+            },
+            {
+              "battle_id": 2010103,
+              "name": "1-2",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1281,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 3,
+                  "rarity": "A",
+                  "rank": 6,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1171,
+                  "level": 60,
+                  "element_type": 201,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1411,
+                  "level": 60,
+                  "element_type": 200,
+                  "avatar_profession": 4,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54016,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b55355540dbf43280dd06ecee46dc533.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/a65164e9de5d5c31fbb383224f3fc589.png",
+                "desc": "· Increases the Agent's Anomaly Buildup Rate <color=#2BAD00>by 20%</color>.\\n· When inflicting <color=#FFFFFF>Attribute Anomaly</color> on enemies, all squad members <color=#2BAD00>gain 60 points of Anomaly Proficiency</color>, and DMG caused by <color=#FFFFFF>Disorder</color> <color=#2BAD00>increases by 40%</color> for 15 seconds.",
+                "name": "Aberration"
+              }
+            },
+            {
+              "battle_id": 2010104,
+              "name": "1-3",
+              "star": "S",
+              "avatar_list": [
+                {
+                  "id": 1091,
+                  "level": 60,
+                  "element_type": 202,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 2,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                  "sub_element_type": 1
+                },
+                {
+                  "id": 1221,
+                  "level": 60,
+                  "element_type": 203,
+                  "avatar_profession": 3,
+                  "rarity": "S",
+                  "rank": 0,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+                  "sub_element_type": 0
+                },
+                {
+                  "id": 1131,
+                  "level": 60,
+                  "element_type": 202,
+                  "avatar_profession": 4,
+                  "rarity": "A",
+                  "rank": 6,
+                  "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1131.png",
+                  "sub_element_type": 0
+                }
+              ],
+              "buddy": {
+                "id": 54001,
+                "rarity": "S",
+                "level": 60,
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/594d784a6115e8a8d98b980dc6e24f6d.png"
+              },
+              "buffer": {
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/a65164e9de5d5c31fbb383224f3fc589.png",
+                "desc": "· Increases the Agent's Anomaly Buildup Rate <color=#2BAD00>by 20%</color>.\\n· When inflicting <color=#FFFFFF>Attribute Anomaly</color> on enemies, all squad members <color=#2BAD00>gain 60 points of Anomaly Proficiency</color>, and DMG caused by <color=#FFFFFF>Disorder</color> <color=#2BAD00>increases by 40%</color> for 15 seconds.",
+                "name": "Aberration"
+              }
+            }
+          ]
+        }
+      ],
+      "role_basic_info": {
+        "server": "prod_gf_eu",
+        "nickname": "Whitefallen",
+        "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/9422bec81c7b09ebebde13abc6a6c279.png"
+      }
+    }
+  },
+  "metadata": {
+    "exportDate": "2026-04-25T21:06:27.659Z",
+    "uid": "1500598195",
+    "type": "void_front",
+    "automated": true
+  }
+}

@@ -8,6 +8,7 @@ import { getAgentInfo } from "@/lib/agent-utils";
 import { VoidFrontOverview } from "@/components/void-front/void-front-overview";
 import { VoidFrontChallengeDetails } from "@/components/void-front/void-front-challenge-details";
 import { VoidFrontTeams } from "@/components/void-front/void-front-teams";
+import { VfAnalytics } from "@/components/void-front/vf-analytics";
 import { percentile } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/shared/page-header";
@@ -150,15 +151,19 @@ export default async function VoidFrontPage() {
       />
 
       <div className="flex flex-col gap-8 container mx-auto py-8 px-4 max-w-5xl">
-        <Tabs defaultValue="overview" className="w-full">
+        <Tabs defaultValue="analytics" className="w-full">
           <div>
             <TabsList>
+              <TabsTrigger value="analytics">Analytics</TabsTrigger>
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="history">History</TabsTrigger>
-              <TabsTrigger value="challenges">Challenges</TabsTrigger>
               <TabsTrigger value="teams">Teams</TabsTrigger>
             </TabsList>
           </div>
+
+          <TabsContent value="analytics" className="mt-6">
+            <VfAnalytics data={allData || []} />
+          </TabsContent>
 
           <TabsContent value="overview" className="mt-6">
             <div className="space-y-8">
@@ -168,12 +173,6 @@ export default async function VoidFrontPage() {
 
           <TabsContent value="history" className="mt-6">
             <Accordion items={historyItems} />
-          </TabsContent>
-
-          <TabsContent value="challenges" className="mt-6">
-            {allData && allData.length > 0 && (
-              <VoidFrontChallengeDetails challenge={allData[0].data.boss_challenge_record.main_challenge_record} />
-            )}
           </TabsContent>
 
           <TabsContent value="teams" className="mt-6">

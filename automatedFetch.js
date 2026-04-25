@@ -81,10 +81,7 @@ class AutomatedFetcher {
 
     if (mode === "voidfront") {
       // Void Front uses void_front_id from the abstract info
-      return (
-        payload.data.void_front_battle_abstract_info_brief?.void_front_id ||
-        null
-      );
+      return payload.data.void_front_id || null;
     }
 
     if (mode === "shiyu") {

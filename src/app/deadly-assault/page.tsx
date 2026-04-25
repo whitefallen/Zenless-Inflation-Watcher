@@ -18,6 +18,7 @@ import { getAgentInfo } from "@/lib/agent-utils";
 import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-display";
 import { CharacterPerformanceTable } from "@/components/deadly-assault/character-performance-table";
 import { DeadlyAssaultTrend } from "@/components/deadly-assault/deadly-assault-trend";
+import { DaAnalytics } from "@/components/deadly-assault/da-analytics";
 import { PageHeader } from "@/components/shared/page-header";
 
 
@@ -110,7 +111,8 @@ export default async function DeadlyAssaultPage() {
         <Tabs defaultValue="overview" className="w-full">
           <div>
             <TabsList>
-              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="overview">Analytics</TabsTrigger>
+              <TabsTrigger value="deep-dive">Deep Dive</TabsTrigger>
               <TabsTrigger value="history">History</TabsTrigger>
               <TabsTrigger value="teams">Teams</TabsTrigger>
               <TabsTrigger value="bosses">Bosses</TabsTrigger>
@@ -118,17 +120,14 @@ export default async function DeadlyAssaultPage() {
           </div>
 
           <TabsContent value="overview" className="mt-6">
+            {/* New analytics-first overview */}
+            <DaAnalytics data={allData || []} />
+          </TabsContent>
+          <TabsContent value="deep-dive" className="mt-6">
             <div className="space-y-8">
               <DeadlyAssaultTrend data={allData || []} />
               <ScoreProgressionChart allData={allData || []} />
               <BestWorstRuns allData={allData || []} />
-              <div>
-                <h3 className="text-sm font-bold tracking-widest uppercase text-[#6b7280] mb-4 flex items-center gap-2">
-                  <span className="w-1 h-4 bg-[#f5c842] inline-block" />
-                  Most Used Teams
-                </h3>
-                <TeamsAggregationTable allData={allData || []} />
-              </div>
               <CharacterPerformanceTable allData={allData || []} />
               <BossDifficultyTable allData={allData || []} />
               <PeriodComparison allData={allData || []} />

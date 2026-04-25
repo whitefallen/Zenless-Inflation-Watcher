@@ -16,7 +16,9 @@ import { CharacterPerformanceTable } from "@/components/shiyu-defense/character-
 import { ShiyuDefenseTrend } from "@/components/shiyu-defense/shiyu-defense-trend"
 import { ShiyuTeamsAggregationTable } from "@/components/shiyu-defense/teams-aggregation-table"
 import { ShiyuFloorsAggregationTable } from "@/components/shiyu-defense/floors-aggregation-table"
-// New v2 components (score-based)
+// New v2 components (score-based) — analytics-first
+import { HadalAnalytics } from "@/components/shiyu-defense-v2/hadal-analytics"
+// Legacy v2 fallback components
 import { HadalTrend } from "@/components/shiyu-defense-v2/hadal-trend"
 import { ScoreProgressionChartV2 } from "@/components/shiyu-defense-v2/score-progression-chart"
 import { HadalSummaryCards } from "@/components/shiyu-defense-v2/hadal-summary-cards"
@@ -159,21 +161,8 @@ export default async function ShiyuDefensePage() {
 
           {hasV2Data && (
             <TabsContent value="hadal-v2" className="mt-6">
-              <div className="space-y-8">
-                <HadalSummaryCards data={v2Data} />
-                <HadalTrend data={v2Data} />
-                <ScoreProgressionChartV2 allData={v2Data} />
-                <HadalBreakdownCharts data={v2Data} />
-                <div>
-                  <h3 className="text-sm font-bold tracking-widest uppercase text-[#6b7280] mb-4 flex items-center gap-2">
-                    <span className="w-1 h-4 bg-[#00d4ff] inline-block" />
-                    Team Compositions
-                  </h3>
-                  <ShiyuTeamsAggregationTable allData={v2Data} />
-                </div>
-                <CharacterPerformanceTable allData={v2Data} />
-                <ShiyuFloorsAggregationTable allData={v2Data} />
-              </div>
+              {/* HadalAnalytics reads the raw hadal_info_v2 schema directly */}
+              <HadalAnalytics data={v2Data} />
             </TabsContent>
           )}
 
