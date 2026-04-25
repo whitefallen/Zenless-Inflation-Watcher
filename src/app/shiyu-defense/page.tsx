@@ -1,9 +1,8 @@
-// ...removed unused Card, CardContent, CardHeader, CardTitle imports...
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getAllShiyuDefenseData } from "@/lib/shiyu-defense"
 import { ResponsiveTeamDisplay } from "@/components/shared/responsive-team-display";
 import { getAgentInfo } from "@/lib/agent-utils";
-import "../metal-mania.css";
+import { PageHeader } from "@/components/shared/page-header";
 import { formatDateRange } from "@/lib/date-utils"
 import { SafeBuffText } from "@/components/shared/safe-text-display"
 
@@ -117,81 +116,98 @@ export default async function ShiyuDefensePage() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="flex flex-col gap-8 container mx-auto py-12 px-4 max-w-5xl">
-        <div className="flex flex-col gap-2 text-center pb-8">
-          <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-yellow-300 to-zinc-700 bg-clip-text text-transparent metal-mania-regular">
-            Shiyu Defense
-          </h1>
-          <p className="text-muted-foreground text-lg">
-            {hasV2Data ? "Hadal Blacksite - Score-Based Performance Tracking" : "View and analyze your Shiyu Defense performance data."}
-          </p>
-        </div>
+    <div className="min-h-screen bg-background -mt-12 -mx-4">
+      <PageHeader
+        code="02"
+        title="Shiyu Defense"
+        subtitle={hasV2Data ? "Hadal Blacksite" : "Floor Gauntlet"}
+        description={hasV2Data
+          ? "Score-based performance tracking across Hadal Blacksite seasons."
+          : "Analyze floor completions, team compositions, and battle times."}
+        accent="cyan"
+        stats={allData.length > 0 ? [
+          { label: "Seasons Tracked", value: allData.length, accent: "cyan" },
+          { label: "V2 Score-based", value: v2Data.length, accent: "gold" },
+          { label: "V1 Legacy", value: v1Data.length, accent: "orange" },
+        ] : undefined}
+      />
 
+      <div className="flex flex-col gap-8 container mx-auto py-8 px-4 max-w-5xl">
         {allData.length === 0 && (
-          <div className="rounded-lg border bg-card p-6 text-center text-muted-foreground">
+          <div
+            className="border p-6 text-center text-[#6b7280] text-sm"
+            style={{
+              background: 'rgba(0,212,255,0.04)',
+              borderColor: 'rgba(0,212,255,0.15)',
+              clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))',
+            }}
+          >
             No Shiyu Defense data available yet. Run the fetch scripts to populate your local data folders.
           </div>
         )}
 
         <Tabs defaultValue={hasV2Data ? "hadal-v2" : "overview"} className="w-full">
-          <div className="mx-auto">
-            <TabsList className="inline-flex h-11 items-center justify-center rounded-lg bg-card p-1">
-              {hasV2Data && <TabsTrigger value="hadal-v2" className="min-w-[140px]">Hadal Blacksite</TabsTrigger>}
-              {hasV1Data && <TabsTrigger value="overview" className="min-w-[120px]">Legacy (V1)</TabsTrigger>}
-              <TabsTrigger value="history" className="min-w-[120px]">History</TabsTrigger>
-              <TabsTrigger value="teams" className="min-w-[120px]">Teams</TabsTrigger>
-              <TabsTrigger value="floors" className="min-w-[120px]">Floors</TabsTrigger>
+          <div>
+            <TabsList>
+              {hasV2Data && <TabsTrigger value="hadal-v2">Hadal Blacksite</TabsTrigger>}
+              {hasV1Data && <TabsTrigger value="overview">Legacy (V1)</TabsTrigger>}
+              <TabsTrigger value="history">History</TabsTrigger>
+              <TabsTrigger value="teams">Teams</TabsTrigger>
+              <TabsTrigger value="floors">Floors</TabsTrigger>
             </TabsList>
           </div>
-        
-        {/* New v2 Hadal Blacksite Tab (Score-based) */}
-        {hasV2Data && (
-          <TabsContent value="hadal-v2" className="mt-6">
-            <div className="space-y-8 px-6">
-              <HadalSummaryCards data={v2Data} />
-              <HadalTrend data={v2Data} />
-              <ScoreProgressionChartV2 allData={v2Data} />
-              <HadalBreakdownCharts data={v2Data} />
-              <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-2">Team Compositions</h3>
-                <ShiyuTeamsAggregationTable allData={v2Data} />
-              </div>
-              <CharacterPerformanceTable allData={v2Data} />
-              <ShiyuFloorsAggregationTable allData={v2Data} />
-            </div>
-          </TabsContent>
-        )}
 
-        {/* Legacy v1 Tab (Time-based) */}
-        {hasV1Data && (
-          <TabsContent value="overview" className="mt-6">
-            <div className="space-y-8 px-6">
-              <ShiyuDefenseTrend data={v1Data} />
-              <ScoreProgressionChart allData={v1Data} />
-              <BestWorstRuns allData={v1Data} />
-              <PeriodComparison allData={v1Data} />
-              <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-2">Most Used Teams</h3>
-                <ShiyuTeamsAggregationTable allData={v1Data} />
+          {hasV2Data && (
+            <TabsContent value="hadal-v2" className="mt-6">
+              <div className="space-y-8">
+                <HadalSummaryCards data={v2Data} />
+                <HadalTrend data={v2Data} />
+                <ScoreProgressionChartV2 allData={v2Data} />
+                <HadalBreakdownCharts data={v2Data} />
+                <div>
+                  <h3 className="text-sm font-bold tracking-widest uppercase text-[#6b7280] mb-4 flex items-center gap-2">
+                    <span className="w-1 h-4 bg-[#00d4ff] inline-block" />
+                    Team Compositions
+                  </h3>
+                  <ShiyuTeamsAggregationTable allData={v2Data} />
+                </div>
+                <CharacterPerformanceTable allData={v2Data} />
+                <ShiyuFloorsAggregationTable allData={v2Data} />
               </div>
-              <CharacterPerformanceTable allData={v1Data} />
-              <ShiyuFloorsAggregationTable allData={v1Data} />
-              <Recommendations allData={v1Data} />
-            </div>
+            </TabsContent>
+          )}
+
+          {hasV1Data && (
+            <TabsContent value="overview" className="mt-6">
+              <div className="space-y-8">
+                <ShiyuDefenseTrend data={v1Data} />
+                <ScoreProgressionChart allData={v1Data} />
+                <BestWorstRuns allData={v1Data} />
+                <PeriodComparison allData={v1Data} />
+                <div>
+                  <h3 className="text-sm font-bold tracking-widest uppercase text-[#6b7280] mb-4 flex items-center gap-2">
+                    <span className="w-1 h-4 bg-[#00d4ff] inline-block" />
+                    Most Used Teams
+                  </h3>
+                  <ShiyuTeamsAggregationTable allData={v1Data} />
+                </div>
+                <CharacterPerformanceTable allData={v1Data} />
+                <ShiyuFloorsAggregationTable allData={v1Data} />
+                <Recommendations allData={v1Data} />
+              </div>
+            </TabsContent>
+          )}
+
+          <TabsContent value="history" className="mt-6">
+            <Accordion items={historyItems} />
           </TabsContent>
-        )}
-        
-        <TabsContent value="history" className="mt-6">
-          <Accordion items={historyItems} />
-        </TabsContent>
-        <TabsContent value="teams" className="mt-6">
-          <ShiyuTeamsAggregationTable allData={allData} />
-        </TabsContent>
-        <TabsContent value="floors" className="mt-6">
-          <ShiyuFloorsAggregationTable allData={allData} />
-        </TabsContent>
-      </Tabs>
+          <TabsContent value="teams" className="mt-6">
+            <ShiyuTeamsAggregationTable allData={allData} />
+          </TabsContent>
+          <TabsContent value="floors" className="mt-6">
+            <ShiyuFloorsAggregationTable allData={allData} />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   )

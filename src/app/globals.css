@@ -43,80 +43,61 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* ─── ZZZ Color Palette ────────────────────────────────────────────────────
+   Inspired by Zenless Zone Zero's UI: dark urban noir, electric yellow-gold,
+   neon cyan accents, sharp geometric shapes.
+   ──────────────────────────────────────────────────────────────────────── */
 :root {
-  --radius: 0.625rem;
-  --background: #000000;
-  --foreground: #eab308;
-  --card: #18181b;
-  --card-foreground: #eab308;
-  --popover: #18181b;
-  --popover-foreground: #eab308;
-  --primary: #eab308;
-  --primary-foreground: #18181b;
-  --secondary: #fde047;
-  --secondary-foreground: #18181b;
-  --muted: #fef9c3;
-  --muted-foreground: #a16207;
-  --accent: #eab308;
-  --accent-foreground: #18181b;
-  --destructive: #f87171;
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #eab308;
-  --chart-1: #eab308;
-  --chart-2: #fde047;
-  --chart-3: #fef9c3;
-  --chart-4: #a16207;
-  --chart-5: #18181b;
-  --sidebar: #18181b;
-  --sidebar-foreground: #eab308;
-  --sidebar-primary: #eab308;
-  --sidebar-primary-foreground: #18181b;
-  --sidebar-accent: #fde047;
-  --sidebar-accent-foreground: #18181b;
-  --sidebar-border: #27272a;
-  --sidebar-ring: #eab308;
-}
+  --radius: 0.25rem; /* sharper corners — ZZZ style */
 
-.dark {
-  --background: #000000;
-  --foreground: #facc15;
-  --card: #18181b;
-  --card-foreground: #facc15;
-  --popover: #18181b;
-  --popover-foreground: #facc15;
-  --primary: #facc15;
-  --primary-foreground: #18181b;
-  --secondary: #fde047;
-  --secondary-foreground: #18181b;
-  --muted: #fef9c3;
-  --muted-foreground: #a16207;
-  --accent: #facc15;
-  --accent-foreground: #18181b;
-  --destructive: #f87171;
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #facc15;
-  --chart-1: #facc15;
-  --chart-2: #fde047;
-  --chart-3: #fef9c3;
-  --chart-4: #a16207;
-  --chart-5: #18181b;
-  --sidebar: #18181b;
-  --sidebar-foreground: #facc15;
-  --sidebar-primary: #facc15;
-  --sidebar-primary-foreground: #18181b;
-  --sidebar-accent: #fde047;
-  --sidebar-accent-foreground: #18181b;
-  --sidebar-border: #27272a;
-  --sidebar-ring: #facc15;
-}
+  /* Base surfaces */
+  --background: #08090d;
+  --foreground: #e8e0cc;
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+  /* Cards / panels */
+  --card: #0f1117;
+  --card-foreground: #e8e0cc;
+
+  /* Popover */
+  --popover: #0f1117;
+  --popover-foreground: #e8e0cc;
+
+  /* Primary — ZZZ electric yellow-gold */
+  --primary: #f5c842;
+  --primary-foreground: #08090d;
+
+  /* Secondary — warm off-white */
+  --secondary: #1e2130;
+  --secondary-foreground: #e8e0cc;
+
+  /* Muted */
+  --muted: #161921;
+  --muted-foreground: #6b7280;
+
+  /* Accent — neon cyan (ZZZ ability color) */
+  --accent: #00d4ff;
+  --accent-foreground: #08090d;
+
+  /* Destructive */
+  --destructive: #ff4d4d;
+
+  /* Borders & inputs */
+  --border: #1e2438;
+  --input: #1e2438;
+  --ring: #f5c842;
+
+  /* Charts — ZZZ-themed palette */
+  --chart-1: #f5c842;   /* primary gold */
+  --chart-2: #00d4ff;   /* neon cyan */
+  --chart-3: #ff6b35;   /* vivid orange */
+  --chart-4: #a855f7;   /* electric purple */
+  --chart-5: #22d3ee;   /* teal */
+
+  /* Sidebar */
+  --sidebar: #0a0c12;
+  --sidebar-foreground: #e8e0cc;
+  --sidebar-primary: #f5c842;
+  --sidebar-primary-foreground: #08090d;
+  --sidebar-accent: #1e2130;
+  --sidebar-accent-foreground: #e8e0cc;
+  --sidebar-border: #1e2438;
