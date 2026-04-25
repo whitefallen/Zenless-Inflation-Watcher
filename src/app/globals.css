@@ -43,73 +43,113 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* ─── ZZZ Color Palette ────────────────────────────────────────────────────
+   Inspired by Zenless Zone Zero's UI: dark urban noir, electric yellow-gold,
+   neon cyan accents, sharp geometric shapes.
+   ──────────────────────────────────────────────────────────────────────── */
 :root {
-  --radius: 0.625rem;
-  --background: #000000;
-  --foreground: #eab308;
-  --card: #18181b;
-  --card-foreground: #eab308;
-  --popover: #18181b;
-  --popover-foreground: #eab308;
-  --primary: #eab308;
-  --primary-foreground: #18181b;
-  --secondary: #fde047;
-  --secondary-foreground: #18181b;
-  --muted: #fef9c3;
-  --muted-foreground: #a16207;
-  --accent: #eab308;
-  --accent-foreground: #18181b;
-  --destructive: #f87171;
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #eab308;
-  --chart-1: #eab308;
-  --chart-2: #fde047;
-  --chart-3: #fef9c3;
-  --chart-4: #a16207;
-  --chart-5: #18181b;
-  --sidebar: #18181b;
-  --sidebar-foreground: #eab308;
-  --sidebar-primary: #eab308;
-  --sidebar-primary-foreground: #18181b;
-  --sidebar-accent: #fde047;
-  --sidebar-accent-foreground: #18181b;
-  --sidebar-border: #27272a;
-  --sidebar-ring: #eab308;
+  --radius: 0.25rem; /* sharper corners — ZZZ style */
+
+  /* Base surfaces */
+  --background: #08090d;
+  --foreground: #e8e0cc;
+
+  /* Cards / panels */
+  --card: #0f1117;
+  --card-foreground: #e8e0cc;
+
+  /* Popover */
+  --popover: #0f1117;
+  --popover-foreground: #e8e0cc;
+
+  /* Primary — ZZZ electric yellow-gold */
+  --primary: #f5c842;
+  --primary-foreground: #08090d;
+
+  /* Secondary — warm off-white */
+  --secondary: #1e2130;
+  --secondary-foreground: #e8e0cc;
+
+  /* Muted */
+  --muted: #161921;
+  --muted-foreground: #6b7280;
+
+  /* Accent — neon cyan (ZZZ ability color) */
+  --accent: #00d4ff;
+  --accent-foreground: #08090d;
+
+  /* Destructive */
+  --destructive: #ff4d4d;
+
+  /* Borders & inputs */
+  --border: #1e2438;
+  --input: #1e2438;
+  --ring: #f5c842;
+
+  /* Charts — ZZZ-themed palette */
+  --chart-1: #f5c842;   /* primary gold */
+  --chart-2: #00d4ff;   /* neon cyan */
+  --chart-3: #ff6b35;   /* vivid orange */
+  --chart-4: #a855f7;   /* electric purple */
+  --chart-5: #22d3ee;   /* teal */
+
+  /* Sidebar */
+  --sidebar: #0a0c12;
+  --sidebar-foreground: #e8e0cc;
+  --sidebar-primary: #f5c842;
+  --sidebar-primary-foreground: #08090d;
+  --sidebar-accent: #1e2130;
+  --sidebar-accent-foreground: #e8e0cc;
+  --sidebar-border: #1e2438;
+  --sidebar-ring: #f5c842;
+
+  /* ZZZ custom tokens */
+  --zzz-gold: #f5c842;
+  --zzz-gold-dim: #c9a22e;
+  --zzz-cyan: #00d4ff;
+  --zzz-cyan-dim: #0099bb;
+  --zzz-orange: #ff6b35;
+  --zzz-purple: #a855f7;
+  --zzz-surface-1: #0f1117;
+  --zzz-surface-2: #161921;
+  --zzz-surface-3: #1e2130;
+  --zzz-border-bright: #2a3050;
+  --zzz-glow-gold: 0 0 12px rgba(245, 200, 66, 0.4);
+  --zzz-glow-cyan: 0 0 12px rgba(0, 212, 255, 0.4);
 }
 
 .dark {
-  --background: #000000;
-  --foreground: #facc15;
-  --card: #18181b;
-  --card-foreground: #facc15;
-  --popover: #18181b;
-  --popover-foreground: #facc15;
-  --primary: #facc15;
-  --primary-foreground: #18181b;
-  --secondary: #fde047;
-  --secondary-foreground: #18181b;
-  --muted: #fef9c3;
-  --muted-foreground: #a16207;
-  --accent: #facc15;
-  --accent-foreground: #18181b;
-  --destructive: #f87171;
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #facc15;
-  --chart-1: #facc15;
-  --chart-2: #fde047;
-  --chart-3: #fef9c3;
-  --chart-4: #a16207;
-  --chart-5: #18181b;
-  --sidebar: #18181b;
-  --sidebar-foreground: #facc15;
-  --sidebar-primary: #facc15;
-  --sidebar-primary-foreground: #18181b;
-  --sidebar-accent: #fde047;
-  --sidebar-accent-foreground: #18181b;
-  --sidebar-border: #27272a;
-  --sidebar-ring: #facc15;
+  --background: #08090d;
+  --foreground: #e8e0cc;
+  --card: #0f1117;
+  --card-foreground: #e8e0cc;
+  --popover: #0f1117;
+  --popover-foreground: #e8e0cc;
+  --primary: #f5c842;
+  --primary-foreground: #08090d;
+  --secondary: #1e2130;
+  --secondary-foreground: #e8e0cc;
+  --muted: #161921;
+  --muted-foreground: #6b7280;
+  --accent: #00d4ff;
+  --accent-foreground: #08090d;
+  --destructive: #ff4d4d;
+  --border: #1e2438;
+  --input: #1e2438;
+  --ring: #f5c842;
+  --chart-1: #f5c842;
+  --chart-2: #00d4ff;
+  --chart-3: #ff6b35;
+  --chart-4: #a855f7;
+  --chart-5: #22d3ee;
+  --sidebar: #0a0c12;
+  --sidebar-foreground: #e8e0cc;
+  --sidebar-primary: #f5c842;
+  --sidebar-primary-foreground: #08090d;
+  --sidebar-accent: #1e2130;
+  --sidebar-accent-foreground: #e8e0cc;
+  --sidebar-border: #1e2438;
+  --sidebar-ring: #f5c842;
 }
 
 @layer base {
@@ -119,4 +159,144 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ─── ZZZ Global Styles ─────────────────────────────────────────────────── */
+@layer components {
+  /* Neon glow text */
+  .zzz-glow-gold {
+    text-shadow: 0 0 8px rgba(245, 200, 66, 0.7), 0 0 20px rgba(245, 200, 66, 0.3);
+  }
+  .zzz-glow-cyan {
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.7), 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+
+  /* Corner-cut (ZZZ signature shape) */
+  .zzz-clip {
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .zzz-clip-sm {
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+  .zzz-clip-lg {
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+
+  /* Scanline overlay effect */
+  .zzz-scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* ZZZ card style */
+  .zzz-card {
+    background: var(--zzz-surface-1);
+    border: 1px solid var(--zzz-border-bright);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .zzz-card:hover {
+    border-color: var(--zzz-gold-dim);
+    box-shadow: var(--zzz-glow-gold);
+  }
+
+  /* Gold accent border-left */
+  .zzz-accent-left {
+    border-left: 3px solid var(--zzz-gold);
+  }
+  .zzz-accent-left-cyan {
+    border-left: 3px solid var(--zzz-cyan);
+  }
+
+  /* Gradient heading */
+  .zzz-heading {
+    background: linear-gradient(90deg, #f5c842 0%, #fde68a 50%, #e8e0cc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Horizontal rule ZZZ style */
+  .zzz-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--zzz-gold), transparent);
+    border: none;
+  }
+
+  /* Stat badge */
+  .zzz-stat-badge {
+    background: var(--zzz-surface-3);
+    border: 1px solid var(--zzz-border-bright);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+  }
+
+  /* Nav link active indicator */
+  .zzz-nav-active {
+    color: var(--zzz-gold);
+    position: relative;
+  }
+  .zzz-nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--zzz-gold);
+    box-shadow: 0 0 6px var(--zzz-gold);
+  }
+
+  /* Animated gradient background for hero sections */
+  .zzz-hero-bg {
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 200, 66, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 60%),
+      var(--background);
+  }
+
+  /* Section label */
+  .zzz-section-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--zzz-cyan);
+  }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--zzz-surface-2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--zzz-border-bright);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--zzz-gold-dim);
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(245, 200, 66, 0.25);
+  color: #f5c842;
 }
