@@ -1,5 +1,25 @@
 import { Avatar, Boss, Buffer, Buddy, TimeStamp } from './deadly-assault';
 
+// v2 schema: data wraps everything inside void_front_battle_detail
+export interface VoidFrontDataV2 {
+  retcode: number;
+  message: string;
+  data: {
+    void_front_id: number;
+    void_front_battle_detail: {
+      void_front_battle_abstract_info_brief: VoidFrontData['data']['void_front_battle_abstract_info_brief'];
+      boss_challenge_record: VoidFrontData['data']['boss_challenge_record'];
+      main_challenge_record_list: VoidFrontChallenge[];
+      role_basic_info: VoidFrontData['data']['role_basic_info'];
+    };
+  };
+  metadata?: VoidFrontData['metadata'];
+}
+
+export function isVoidFrontV2(d: VoidFrontData | VoidFrontDataV2): d is VoidFrontDataV2 {
+  return d?.data != null && 'void_front_battle_detail' in d.data;
+}
+
 export interface VoidFrontData {
   retcode: number;
   message: string;
