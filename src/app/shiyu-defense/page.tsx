@@ -18,11 +18,6 @@ import { ShiyuTeamsAggregationTable } from "@/components/shiyu-defense/teams-agg
 import { ShiyuFloorsAggregationTable } from "@/components/shiyu-defense/floors-aggregation-table"
 // New v2 components (score-based) — analytics-first
 import { HadalAnalytics } from "@/components/shiyu-defense-v2/hadal-analytics"
-// Legacy v2 fallback components
-import { HadalTrend } from "@/components/shiyu-defense-v2/hadal-trend"
-import { ScoreProgressionChartV2 } from "@/components/shiyu-defense-v2/score-progression-chart"
-import { HadalSummaryCards } from "@/components/shiyu-defense-v2/hadal-summary-cards"
-import { HadalBreakdownCharts } from "@/components/shiyu-defense-v2/hadal-breakdown-charts"
 // Cross-mode insight components
 import { RecordsPanel } from "@/components/analytics/records-panel"
 import { ElementUsageTrend } from "@/components/analytics/element-usage-trend"
