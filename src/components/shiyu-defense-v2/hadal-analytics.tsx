@@ -78,6 +78,38 @@ export function HadalAnalytics({ data }: HadalAnalyticsProps) {
     [data]
   )
 
+  // Score trend (oldest → newest)
+  const trendData = useMemo(() => [...v2].reverse().map((d, i) => {
+    const label = d.data.hadal_begin_time
+      ? formatTimestamp(d.data.hadal_begin_time)
+      : `#${i + 1}`
+    const score = d.data.hadal_score ?? 0
+    const max = d.data.hadal_max_score ?? 1
+    return { label, score, pct: Math.round((score / max) * 100) }
+  }), [v2])
+
+  // Floor breakdown for latest season (5th floor nodes only, layer_index === 7)
+  const latestFloorDetail = v2[0]?.data.all_floor_detail ?? []
+  const fifthFloorNodes = useMemo(
+    () => latestFloorDetail.filter(f => f.layer_index === 7),
+    [latestFloorDetail]
+  )
+
+  // Agent usage across all v2 seasons
+  const agentMap = useMemo(() => {
+    const map = new Map<number, { url: string; count: number; element: number; rarity: string }>()
+    for (const d of v2) {
+      for (const floor of d.data.all_floor_detail) {
+        for (const a of floor.node_1?.avatars ?? []) {
+          const existing = map.get(a.id)
+          if (existing) { existing.count++ }
+          else { map.set(a.id, { url: a.role_square_url, count: 1, element: a.element_type, rarity: a.rarity }) }
+        }
+      }
+    }
+    return Array.from(map.entries()).sort((a, b) => b[1].count - a[1].count).slice(0, 12)
+  }, [v2])
+
   if (v2.length === 0) {
     return (
       <div
@@ -98,37 +130,6 @@ export function HadalAnalytics({ data }: HadalAnalyticsProps) {
   const { hadal_score, hadal_max_score, hadal_rank_percent, all_floor_detail, hadal_begin_time, hadal_end_time } = latest.data
   const rating = latest.data.rating_list?.[0]?.rating ?? '?'
   const scorePercent = hadal_max_score && hadal_score ? (hadal_score / hadal_max_score) * 100 : 0
-
-  // Score trend (oldest → newest)
-  const trendData = useMemo(() => [...v2].reverse().map((d, i) => {
-    const label = d.data.hadal_begin_time
-      ? formatTimestamp(d.data.hadal_begin_time)
-      : `#${i + 1}`
-    const score = d.data.hadal_score ?? 0
-    const max = d.data.hadal_max_score ?? 1
-    return { label, score, pct: Math.round((score / max) * 100) }
-  }), [v2])
-
-  // Floor breakdown for latest season (5th floor nodes only, layer_index === 7)
-  const fifthFloorNodes = useMemo(
-    () => all_floor_detail.filter(f => f.layer_index === 7),
-    [all_floor_detail]
-  )
-
-  // Agent usage across all v2 seasons
-  const agentMap = useMemo(() => {
-    const map = new Map<number, { url: string; count: number; element: number; rarity: string }>()
-    for (const d of v2) {
-      for (const floor of d.data.all_floor_detail) {
-        for (const a of floor.node_1?.avatars ?? []) {
-          const existing = map.get(a.id)
-          if (existing) { existing.count++ }
-          else { map.set(a.id, { url: a.role_square_url, count: 1, element: a.element_type, rarity: a.rarity }) }
-        }
-      }
-    }
-    return Array.from(map.entries()).sort((a, b) => b[1].count - a[1].count).slice(0, 12)
-  }, [v2])
 
   const accentColor = '#00d4ff'
   const accentDim = 'rgba(0,212,255,0.06)'
