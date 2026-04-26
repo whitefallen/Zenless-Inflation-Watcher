@@ -89,10 +89,9 @@ export function HadalAnalytics({ data }: HadalAnalyticsProps) {
   }), [v2])
 
   // Floor breakdown for latest season (5th floor nodes only, layer_index === 7)
-  const latestFloorDetail = v2[0]?.data.all_floor_detail ?? []
   const fifthFloorNodes = useMemo(
-    () => latestFloorDetail.filter(f => f.layer_index === 7),
-    [latestFloorDetail]
+    () => (v2[0]?.data.all_floor_detail ?? []).filter(f => f.layer_index === 7),
+    [v2]
   )
 
   // Agent usage across all v2 seasons
@@ -127,7 +126,7 @@ export function HadalAnalytics({ data }: HadalAnalyticsProps) {
 
   // Latest season first
   const latest = v2[0]
-  const { hadal_score, hadal_max_score, hadal_rank_percent, all_floor_detail, hadal_begin_time, hadal_end_time } = latest.data
+  const { hadal_score, hadal_max_score, hadal_rank_percent, hadal_begin_time, hadal_end_time } = latest.data
   const rating = latest.data.rating_list?.[0]?.rating ?? '?'
   const scorePercent = hadal_max_score && hadal_score ? (hadal_score / hadal_max_score) * 100 : 0
 
