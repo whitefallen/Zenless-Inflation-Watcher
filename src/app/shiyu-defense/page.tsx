@@ -19,10 +19,7 @@ import { ShiyuFloorsAggregationTable } from "@/components/shiyu-defense/floors-a
 // New v2 components (score-based) — analytics-first
 import { HadalAnalytics } from "@/components/shiyu-defense-v2/hadal-analytics"
 // Cross-mode insight components
-import { RecordsPanel } from "@/components/analytics/records-panel"
-import { ElementUsageTrend } from "@/components/analytics/element-usage-trend"
-import { AgentSynergyHeatmap } from "@/components/analytics/agent-synergy-heatmap"
-import { buildHadalRecords, buildHadalElementUsage, buildHadalTeams } from "@/lib/analytics-extractors"
+import { HadalInsights } from "@/components/analytics/hadal-insights"
 
 
 export default async function ShiyuDefensePage() {
@@ -169,15 +166,7 @@ export default async function ShiyuDefensePage() {
 
           {hasV2Data && (
             <TabsContent value="insights" className="mt-6">
-              <div className="space-y-6">
-                <RecordsPanel
-                  title="Personal Bests"
-                  accent="#00d4ff"
-                  records={buildHadalRecords(v2Data)}
-                />
-                <ElementUsageTrend accent="#00d4ff" data={buildHadalElementUsage(v2Data)} />
-                <AgentSynergyHeatmap accent="#00d4ff" teams={buildHadalTeams(v2Data)} />
-              </div>
+              <HadalInsights data={v2Data} />
             </TabsContent>
           )}
 

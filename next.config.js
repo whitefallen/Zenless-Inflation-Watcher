@@ -1,3 +1,4 @@
+const path = require('path');
 const withPWA = require('@ducanh2912/next-pwa').default;
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -6,6 +7,10 @@ const nextConfig = {
   output: 'export', // important for static site
   basePath: isProd ? '/Zenless-Inflation-Watcher' : '',
   assetPrefix: isProd ? '/Zenless-Inflation-Watcher/' : '',
+  // Pin Next's project root so it doesn't walk up to a stray lockfile in $HOME
+  // and resolve modules against the wrong dependency tree (which causes
+  // "Object.c [as require]" failures during prerender on Windows).
+  outputFileTracingRoot: path.join(__dirname),
 };
 
 module.exports = withPWA({

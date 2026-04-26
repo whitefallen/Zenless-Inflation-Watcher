@@ -1,10 +1,7 @@
 'use client'
 
-export interface RecordItem {
-  label: string
-  value: string | number
-  sublabel?: string
-}
+import type { RecordItem } from './types'
+export type { RecordItem }
 
 interface RecordsPanelProps {
   title: string

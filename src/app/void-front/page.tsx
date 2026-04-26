@@ -12,10 +12,7 @@ import { VfAnalytics } from "@/components/void-front/vf-analytics";
 import { percentile } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/shared/page-header";
-import { RecordsPanel } from "@/components/analytics/records-panel";
-import { ElementUsageTrend } from "@/components/analytics/element-usage-trend";
-import { AgentSynergyHeatmap } from "@/components/analytics/agent-synergy-heatmap";
-import { buildVfRecords, buildVfElementUsage, buildVfTeams } from "@/lib/analytics-extractors";
+import { VfInsights } from "@/components/analytics/vf-insights";
 
 export default async function VoidFrontPage() {
   const allData = await getAllVoidFrontData();
@@ -171,15 +168,7 @@ export default async function VoidFrontPage() {
           </TabsContent>
 
           <TabsContent value="insights" className="mt-6">
-            <div className="space-y-6">
-              <RecordsPanel
-                title="Personal Bests"
-                accent="#a855f7"
-                records={buildVfRecords(allData || [])}
-              />
-              <ElementUsageTrend accent="#a855f7" data={buildVfElementUsage(allData || [])} />
-              <AgentSynergyHeatmap accent="#a855f7" teams={buildVfTeams(allData || [])} />
-            </div>
+            <VfInsights data={allData || []} />
           </TabsContent>
 
           <TabsContent value="overview" className="mt-6">

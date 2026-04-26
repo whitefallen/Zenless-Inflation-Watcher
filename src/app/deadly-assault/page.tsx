@@ -20,10 +20,7 @@ import { CharacterPerformanceTable } from "@/components/deadly-assault/character
 import { DeadlyAssaultTrend } from "@/components/deadly-assault/deadly-assault-trend";
 import { DaAnalytics } from "@/components/deadly-assault/da-analytics";
 import { PageHeader } from "@/components/shared/page-header";
-import { RecordsPanel } from "@/components/analytics/records-panel";
-import { ElementUsageTrend } from "@/components/analytics/element-usage-trend";
-import { AgentSynergyHeatmap } from "@/components/analytics/agent-synergy-heatmap";
-import { buildDaRecords, buildDaElementUsage, buildDaTeams } from "@/lib/analytics-extractors";
+import { DaInsights } from "@/components/analytics/da-insights";
 
 
 export default async function DeadlyAssaultPage() {
@@ -129,15 +126,7 @@ export default async function DeadlyAssaultPage() {
             <DaAnalytics data={allData || []} />
           </TabsContent>
           <TabsContent value="insights" className="mt-6">
-            <div className="space-y-6">
-              <RecordsPanel
-                title="Personal Bests"
-                accent="#f5c842"
-                records={buildDaRecords(allData || [])}
-              />
-              <ElementUsageTrend accent="#f5c842" data={buildDaElementUsage(allData || [])} />
-              <AgentSynergyHeatmap accent="#f5c842" teams={buildDaTeams(allData || [])} />
-            </div>
+            <DaInsights data={allData || []} />
           </TabsContent>
           <TabsContent value="deep-dive" className="mt-6">
             <div className="space-y-8">
