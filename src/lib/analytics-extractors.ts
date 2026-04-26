@@ -1,10 +1,16 @@
 import type { DeadlyAssaultData, TimeStamp } from '@/types/deadly-assault'
 import type { ShiyuDefenseData } from '@/types/shiyu-defense'
 import type { VoidFrontData } from '@/types/void-front'
-import type { RecordItem } from '@/components/analytics/records-panel'
-import type { InflationSeriesPoint } from '@/components/analytics/inflation-tracker'
-import type { ElementSeasonPoint } from '@/components/analytics/element-usage-trend'
-import type { SynergyTeam } from '@/components/analytics/agent-synergy-heatmap'
+import type {
+  RecordItem,
+  InflationSeriesPoint,
+  ElementSeasonPoint,
+  SynergyTeam,
+  CompareSeason,
+  CompareMetric,
+  AgentEntry,
+} from '@/components/analytics/types'
+export type { AgentEntry }
 
 // ── Time helpers ────────────────────────────────────────────────────────────
 
@@ -262,4 +268,209 @@ export function buildVfTeams(data: VoidFrontData[]): SynergyTeam[] {
     }
   }
   return teams
+}
+
+// ── Season comparison ───────────────────────────────────────────────────────
+
+function daSeasonId(d: DeadlyAssaultData): string {
+  const t = d.data?.end_time
+  return t ? `${t.year}-${t.month}-${t.day}` : `da-${tsToMs(t)}`
+}
+
+export function buildDaCompareSeasons(data: DeadlyAssaultData[]): CompareSeason[] {
+  return data
+    .filter(d => d.data?.end_time)
+    .map(d => ({ id: daSeasonId(d), label: tsToLabel(d.data.end_time), ts: tsToMs(d.data.end_time) }))
+}
+
+export function buildDaCompareMetrics(data: DeadlyAssaultData[], seasonId: string): CompareMetric[] {
+  const d = data.find(x => daSeasonId(x) === seasonId)
+  if (!d) return []
+  const score = d.data?.total_score ?? 0
+  const max = d.data?.total_max_score ?? 1
+  const pct = (score / max) * 100
+  const rank = (d.data?.rank_percent ?? 0) / 100
+  return [
+    { label: 'Total Score', value: score, display: fmt(score) },
+    { label: 'Score %', value: Number(pct.toFixed(1)), unit: '%' },
+    { label: 'Stars', value: d.data?.total_star ?? 0 },
+    { label: 'Rank %', value: rank, display: `top ${rank}%`, lowerIsBetter: true, unit: '%' },
+    { label: 'Runs', value: d.data?.list?.length ?? 0 },
+  ]
+}
+
+function hadalSeasonId(d: ShiyuDefenseData): string {
+  const t = d.data?.hadal_begin_time
+  return t ? `hadal-${t.year}-${t.month}-${t.day}` : `hadal-${tsToMs(t)}`
+}
+
+export function buildHadalCompareSeasons(data: ShiyuDefenseData[]): CompareSeason[] {
+  return data
+    .filter(d => d.metadata?.sourceVersion === 'v2' && d.data.hadal_score !== undefined)
+    .map(d => ({
+      id: hadalSeasonId(d),
+      label: tsToLabel(d.data?.hadal_begin_time),
+      ts: tsToMs(d.data?.hadal_begin_time),
+    }))
+}
+
+export function buildHadalCompareMetrics(data: ShiyuDefenseData[], seasonId: string): CompareMetric[] {
+  const d = data.find(x => hadalSeasonId(x) === seasonId)
+  if (!d) return []
+  const score = d.data?.hadal_score ?? 0
+  const max = d.data?.hadal_max_score ?? 1
+  const rating = d.data?.rating_list?.[0]?.rating ?? '—'
+  const floors = d.data?.all_floor_detail?.length ?? 0
+  const rank = (d.data?.hadal_rank_percent ?? 0) / 100
+  return [
+    { label: 'Hadal Score', value: score, display: fmt(score) },
+    { label: 'Score %', value: Number(((score / max) * 100).toFixed(1)), unit: '%' },
+    { label: 'Rating', value: NaN, display: rating },
+    { label: 'Rank %', value: rank, display: `top ${rank}%`, lowerIsBetter: true, unit: '%' },
+    { label: 'Floors Cleared', value: floors },
+  ]
+}
+
+function vfSeasonId(d: VoidFrontData): string {
+  const ts = d?.data?.void_front_battle_abstract_info_brief?.end_ts
+  return ts ? `vf-${ts}` : `vf-${unixSecondsToMs(ts)}`
+}
+
+export function buildVfCompareSeasons(data: VoidFrontData[]): CompareSeason[] {
+  return data
+    .filter(d => d?.data?.void_front_battle_abstract_info_brief?.end_ts)
+    .map(d => ({
+      id: vfSeasonId(d),
+      label: unixSecondsToLabel(d.data.void_front_battle_abstract_info_brief.end_ts),
+      ts: unixSecondsToMs(d.data.void_front_battle_abstract_info_brief.end_ts),
+    }))
+}
+
+export function buildVfCompareMetrics(data: VoidFrontData[], seasonId: string): CompareMetric[] {
+  const d = data.find(x => vfSeasonId(x) === seasonId)
+  if (!d) return []
+  const brief = d.data?.void_front_battle_abstract_info_brief
+  if (!brief) return []
+  const pct = brief.max_score > 0 ? (brief.total_score / brief.max_score) * 100 : 0
+  const challenges = d.data?.main_challenge_record_list?.length ?? 0
+  const rank = (brief.rank_percent ?? 0) / 100
+  return [
+    { label: 'Total Score', value: brief.total_score ?? 0, display: fmt(brief.total_score) },
+    { label: 'Score %', value: Number(pct.toFixed(1)), unit: '%' },
+    { label: 'Rank %', value: rank, display: `top ${rank.toFixed(2)}%`, lowerIsBetter: true, unit: '%' },
+    { label: 'Challenges', value: challenges },
+  ]
+}
+
+// ── Agent universe (for filter-by-agent UI) ─────────────────────────────────
+
+function dedupeAgentSet(
+  seasons: { ids: Set<number>; icons: Record<number, string> }[]
+): AgentEntry[] {
+  const seasonCounts = new Map<number, number>()
+  const icons: Record<number, string> = {}
+  for (const s of seasons) {
+    for (const id of s.ids) {
+      seasonCounts.set(id, (seasonCounts.get(id) ?? 0) + 1)
+      if (!icons[id] && s.icons[id]) icons[id] = s.icons[id]
+    }
+  }
+  return Array.from(seasonCounts.entries())
+    .map(([id, count]) => ({ id, iconUrl: icons[id] ?? '', seasonCount: count }))
+    .sort((a, b) => b.seasonCount - a.seasonCount || a.id - b.id)
+}
+
+export function buildDaAgentUniverse(data: DeadlyAssaultData[]): AgentEntry[] {
+  const seasons = data.map(d => {
+    const ids = new Set<number>()
+    const icons: Record<number, string> = {}
+    for (const run of d.data?.list ?? []) {
+      for (const a of run.avatar_list ?? []) {
+        ids.add(a.id)
+        if (a.role_square_url) icons[a.id] = a.role_square_url
+      }
+    }
+    return { ids, icons }
+  })
+  return dedupeAgentSet(seasons)
+}
+
+export function buildHadalAgentUniverse(data: ShiyuDefenseData[]): AgentEntry[] {
+  const seasons = data
+    .filter(d => d.metadata?.sourceVersion === 'v2')
+    .map(d => {
+      const ids = new Set<number>()
+      const icons: Record<number, string> = {}
+      for (const floor of d.data?.all_floor_detail ?? []) {
+        for (const node of [floor.node_1, floor.node_2]) {
+          if (!node) continue
+          for (const a of node.avatars ?? []) {
+            ids.add(a.id)
+            if (a.role_square_url) icons[a.id] = a.role_square_url
+          }
+        }
+      }
+      return { ids, icons }
+    })
+  return dedupeAgentSet(seasons)
+}
+
+export function buildVfAgentUniverse(data: VoidFrontData[]): AgentEntry[] {
+  const seasons = data.map(d => {
+    const ids = new Set<number>()
+    const icons: Record<number, string> = {}
+    for (const ch of d?.data?.main_challenge_record_list ?? []) {
+      for (const a of ch.avatar_list ?? []) {
+        ids.add(a.id)
+        if (a.role_square_url) icons[a.id] = a.role_square_url
+      }
+    }
+    return { ids, icons }
+  })
+  return dedupeAgentSet(seasons)
+}
+
+// ── Filter helpers (keep only seasons containing ALL of the chosen agent ids)
+
+export function filterDaByAgents(
+  data: DeadlyAssaultData[],
+  agentIds: number[]
+): DeadlyAssaultData[] {
+  if (agentIds.length === 0) return data
+  return data.filter(d => {
+    const present = new Set<number>()
+    for (const run of d.data?.list ?? []) for (const a of run.avatar_list ?? []) present.add(a.id)
+    return agentIds.every(id => present.has(id))
+  })
+}
+
+export function filterHadalByAgents(
+  data: ShiyuDefenseData[],
+  agentIds: number[]
+): ShiyuDefenseData[] {
+  if (agentIds.length === 0) return data
+  return data.filter(d => {
+    const present = new Set<number>()
+    for (const floor of d.data?.all_floor_detail ?? []) {
+      for (const node of [floor.node_1, floor.node_2]) {
+        if (!node) continue
+        for (const a of node.avatars ?? []) present.add(a.id)
+      }
+    }
+    return agentIds.every(id => present.has(id))
+  })
+}
+
+export function filterVfByAgents(
+  data: VoidFrontData[],
+  agentIds: number[]
+): VoidFrontData[] {
+  if (agentIds.length === 0) return data
+  return data.filter(d => {
+    const present = new Set<number>()
+    for (const ch of d?.data?.main_challenge_record_list ?? []) {
+      for (const a of ch.avatar_list ?? []) present.add(a.id)
+    }
+    return agentIds.every(id => present.has(id))
+  })
 }

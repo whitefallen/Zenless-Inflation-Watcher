@@ -6,22 +6,8 @@ import {
   CartesianGrid, ReferenceLine,
 } from 'recharts'
 
-export interface InflationSeriesPoint {
-  /** Sortable timestamp (ms since epoch). Used to align series across modes. */
-  ts: number
-  /** Display label for this season (e.g. "Mar 2026"). */
-  label: string
-  /** Score expressed as a 0–100 percentage of that season's max. */
-  scorePct: number
-}
-
-export interface InflationSeries {
-  /** Mode display name. */
-  name: string
-  /** Hex accent color. */
-  color: string
-  points: InflationSeriesPoint[]
-}
+import type { InflationSeriesPoint, InflationSeries } from './types'
+export type { InflationSeriesPoint, InflationSeries }
 
 interface InflationTrackerProps {
   series: InflationSeries[]

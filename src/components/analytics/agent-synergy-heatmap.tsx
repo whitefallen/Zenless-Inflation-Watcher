@@ -3,12 +3,8 @@
 import { useMemo } from 'react'
 import Image from 'next/image'
 
-export interface SynergyTeam {
-  agentIds: number[]
-  agentIcons: Record<number, string>
-  /** Optional score, used for avg-score column when present. */
-  score?: number
-}
+import type { SynergyTeam } from './types'
+export type { SynergyTeam }
 
 interface AgentSynergyHeatmapProps {
   teams: SynergyTeam[]

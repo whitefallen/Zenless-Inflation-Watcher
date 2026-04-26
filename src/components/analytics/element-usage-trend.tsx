@@ -20,14 +20,8 @@ const ELEMENT_COLORS: Record<number, string> = {
   205: '#ef4444',
 }
 
-export interface ElementSeasonPoint {
-  /** Display label, e.g. "Mar 2026". */
-  label: string
-  /** Sortable timestamp (ms since epoch). */
-  ts: number
-  /** Map of element_type -> usage count for the season. */
-  counts: Record<number, number>
-}
+import type { ElementSeasonPoint } from './types'
+export type { ElementSeasonPoint }
 
 interface ElementUsageTrendProps {
   data: ElementSeasonPoint[]
