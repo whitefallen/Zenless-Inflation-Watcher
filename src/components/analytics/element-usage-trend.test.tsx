@@ -8,11 +8,11 @@ describe('ElementUsageTrend', () => {
     expect(screen.getByText(/No element usage data available/i)).toBeInTheDocument()
   })
 
-  it('renders a hint when only one season is provided (chart needs ≥2 points)', () => {
+  it('renders chart heading even with only one season (BarChart handles single bar)', () => {
     render(
       <ElementUsageTrend data={[{ label: 'Jan', ts: 1, counts: { 200: 3 } }]} />
     )
-    expect(screen.getByText(/At least two seasons/i)).toBeInTheDocument()
+    expect(screen.getByText(/Element usage over time/i)).toBeInTheDocument()
   })
 
   it('renders chart heading when data is provided', () => {

@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react'
 import {
-  AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid,
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid,
 } from 'recharts'
 
 // Element id -> display name. Aligned with the analytics components in the repo.
@@ -93,7 +93,7 @@ export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }
     return { rows: built, elementsPresent: presentIds }
   }, [data, normalize])
 
-  if (rows.length < 2) {
+  if (rows.length === 0 || elementsPresent.length === 0) {
     return (
       <section
         className="p-6 text-center text-[#6b7280] text-sm"
@@ -104,9 +104,7 @@ export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }
             'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))',
         }}
       >
-        {rows.length === 0
-          ? 'No element usage data available.'
-          : 'At least two seasons of data are needed for the element trend chart.'}
+        No element usage data available.
       </section>
     )
   }
@@ -132,7 +130,7 @@ export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }
       </p>
       <div style={{ width: '100%', height: 280 }}>
         <ResponsiveContainer>
-          <AreaChart data={rows} margin={{ top: 12, right: 16, left: 0, bottom: 8 }}>
+          <BarChart data={rows} margin={{ top: 12, right: 16, left: 0, bottom: 8 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#1e2438" />
             <XAxis dataKey="label" stroke="#6b7280" tick={{ fontSize: 11 }} />
             <YAxis
@@ -141,24 +139,22 @@ export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }
               domain={normalize ? [0, 100] : undefined}
               tickFormatter={normalize ? (v: number) => `${Math.round(v)}%` : undefined}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.04)' }} />
             <Legend wrapperStyle={{ fontSize: 11, color: '#e8e0cc' }} />
             {elementsPresent.map(id => {
               const name = ELEMENT_NAMES[id] ?? `Element ${id}`
               const color = ELEMENT_COLORS[id] ?? '#6b7280'
               return (
-                <Area
+                <Bar
                   key={id}
-                  type="monotone"
                   dataKey={name}
-                  stackId="1"
-                  stroke={color}
+                  stackId="elements"
                   fill={color}
-                  fillOpacity={0.55}
+                  fillOpacity={0.85}
                 />
               )
             })}
-          </AreaChart>
+          </BarChart>
         </ResponsiveContainer>
       </div>
     </section>
