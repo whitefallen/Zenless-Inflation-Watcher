@@ -93,7 +93,7 @@ export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }
     return { rows: built, elementsPresent: presentIds }
   }, [data, normalize])
 
-  if (rows.length === 0) {
+  if (rows.length < 2) {
     return (
       <section
         className="p-6 text-center text-[#6b7280] text-sm"
@@ -104,7 +104,9 @@ export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }
             'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))',
         }}
       >
-        No element usage data available.
+        {rows.length === 0
+          ? 'No element usage data available.'
+          : 'At least two seasons of data are needed for the element trend chart.'}
       </section>
     )
   }
