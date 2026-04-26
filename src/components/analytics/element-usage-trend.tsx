@@ -1,11 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid,
-} from 'recharts'
 
-// Element id -> display name. Aligned with the analytics components in the repo.
 const ELEMENT_NAMES: Record<number, string> = {
   200: 'Physical',
   201: 'Ice',
@@ -36,64 +32,43 @@ export interface ElementSeasonPoint {
 interface ElementUsageTrendProps {
   data: ElementSeasonPoint[]
   accent?: string
-  /** Render counts as % of season total instead of raw counts. */
-  normalize?: boolean
 }
 
-interface ChartRow {
+interface Row {
   ts: number
   label: string
-  [elementName: string]: number | string
+  total: number
+  /** id -> { count, pct } */
+  byId: Record<number, { count: number; pct: number }>
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function CustomTooltip({ active, payload, label }: any) {
-  if (!active || !payload?.length) return null
-  return (
-    <div
-      className="text-xs text-[#e8e0cc] px-3 py-2"
-      style={{
-        background: '#0d0f17',
-        border: '1px solid rgba(0,212,255,0.3)',
-        clipPath: 'polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px))',
-      }}
-    >
-      <div className="font-bold text-[#00d4ff] mb-1">{label}</div>
-      {payload
-        .slice()
-        .sort((a: { value: number }, b: { value: number }) => b.value - a.value)
-        .map((p: { name: string; value: number; color: string }, i: number) => (
-          <div key={i} style={{ color: p.color }}>
-            {p.name}: {typeof p.value === 'number' ? p.value.toFixed(1) : p.value}
-          </div>
-        ))}
-    </div>
-  )
-}
-
-export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }: ElementUsageTrendProps) {
-  const { rows, elementsPresent } = useMemo(() => {
+export function ElementUsageTrend({ data, accent = '#00d4ff' }: ElementUsageTrendProps) {
+  const { rows, presentIds } = useMemo(() => {
     const present = new Set<number>()
     for (const p of data) {
-      for (const k of Object.keys(p.counts)) present.add(Number(k))
-    }
-    const presentIds = Array.from(present).sort()
-    const sorted = [...data].sort((a, b) => a.ts - b.ts)
-    const built: ChartRow[] = sorted.map(p => {
-      const total = Object.values(p.counts).reduce((s, v) => s + v, 0) || 1
-      const row: ChartRow = { ts: p.ts, label: p.label }
-      // Fill every element key (default 0) so recharts stack math doesn't see undefined → NaN
-      for (const id of presentIds) {
-        const name = ELEMENT_NAMES[id] ?? `Element ${id}`
-        const v = p.counts[id] ?? 0
-        row[name] = normalize ? Number(((v / total) * 100).toFixed(1)) : v
+      for (const k of Object.keys(p.counts)) {
+        const id = Number(k)
+        if (Number.isFinite(id) && id in ELEMENT_NAMES) present.add(id)
       }
-      return row
-    })
-    return { rows: built, elementsPresent: presentIds }
-  }, [data, normalize])
+    }
+    const ids = Array.from(present).sort((a, b) => a - b)
 
-  if (rows.length === 0 || elementsPresent.length === 0) {
+    const sorted = [...data].sort((a, b) => a.ts - b.ts)
+    const built: Row[] = sorted.map(p => {
+      const byId: Record<number, { count: number; pct: number }> = {}
+      let total = 0
+      for (const id of ids) total += p.counts[id] ?? 0
+      for (const id of ids) {
+        const count = p.counts[id] ?? 0
+        byId[id] = { count, pct: total > 0 ? (count / total) * 100 : 0 }
+      }
+      return { ts: p.ts, label: p.label, total, byId }
+    })
+
+    return { rows: built, presentIds: ids }
+  }, [data])
+
+  if (rows.length === 0 || presentIds.length === 0) {
     return (
       <section
         className="p-6 text-center text-[#6b7280] text-sm"
@@ -119,43 +94,55 @@ export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }
           'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))',
       }}
     >
-      <div className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1" style={{ color: accent, opacity: 0.8 }}>
+      <div
+        className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1"
+        style={{ color: accent, opacity: 0.8 }}
+      >
         Element Trend
       </div>
-      <h3 className="text-lg font-black text-[#e8e0cc] mb-1">
-        Element usage over time
-      </h3>
+      <h3 className="text-lg font-black text-[#e8e0cc] mb-1">Element usage over time</h3>
       <p className="text-xs text-[#6b7280] mb-4">
-        {normalize ? 'Share of agent picks per element each season.' : 'Raw count of agent picks per element each season.'}
+        Share of agent picks per element each season.
       </p>
-      <div style={{ width: '100%', height: 280 }}>
-        <ResponsiveContainer>
-          <BarChart data={rows} margin={{ top: 12, right: 16, left: 0, bottom: 8 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e2438" />
-            <XAxis dataKey="label" stroke="#6b7280" tick={{ fontSize: 11 }} />
-            <YAxis
-              stroke="#6b7280"
-              tick={{ fontSize: 11 }}
-              domain={normalize ? [0, 100] : undefined}
-              tickFormatter={normalize ? (v: number) => `${Math.round(v)}%` : undefined}
+
+      {/* Legend */}
+      <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-[11px]">
+        {presentIds.map(id => (
+          <div key={id} className="flex items-center gap-1.5 text-[#e8e0cc]">
+            <span
+              className="inline-block w-2.5 h-2.5"
+              style={{ background: ELEMENT_COLORS[id] }}
             />
-            <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.04)' }} />
-            <Legend wrapperStyle={{ fontSize: 11, color: '#e8e0cc' }} />
-            {elementsPresent.map(id => {
-              const name = ELEMENT_NAMES[id] ?? `Element ${id}`
-              const color = ELEMENT_COLORS[id] ?? '#6b7280'
-              return (
-                <Bar
-                  key={id}
-                  dataKey={name}
-                  stackId="elements"
-                  fill={color}
-                  fillOpacity={0.85}
-                />
-              )
-            })}
-          </BarChart>
-        </ResponsiveContainer>
+            {ELEMENT_NAMES[id]}
+          </div>
+        ))}
+      </div>
+
+      {/* Stacked bars (one per season) */}
+      <div className="flex flex-col gap-2">
+        {rows.map(row => (
+          <div key={row.ts} className="flex items-center gap-3">
+            <div className="text-[10px] tabular-nums text-[#6b7280] w-16 shrink-0 truncate">
+              {row.label}
+            </div>
+            <div className="flex-1 h-5 bg-[#1e2438] flex overflow-hidden">
+              {presentIds.map(id => {
+                const seg = row.byId[id]
+                if (!seg || seg.pct <= 0) return null
+                return (
+                  <div
+                    key={id}
+                    title={`${ELEMENT_NAMES[id]}: ${seg.count} (${seg.pct.toFixed(1)}%)`}
+                    style={{ width: `${seg.pct}%`, background: ELEMENT_COLORS[id] }}
+                  />
+                )
+              })}
+            </div>
+            <div className="text-[10px] tabular-nums text-[#6b7280] w-10 text-right shrink-0">
+              {row.total}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
