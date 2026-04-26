@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 4,
+      "day": 24,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 5,
+      "day": 8,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 375,
+    "list": [
+      {
+        "score": 34916,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 4,
+          "day": 24,
+          "hour": 16,
+          "minute": 34,
+          "second": 3
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b83ecf7a316455c93b9681fef3aa4fab.png",
+            "name": "Sanguine Sweeper",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/f3ac4f866cae976602d70cd2e79d3af3.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/6b1c3c2aaaa2ce9ffd4f55fa565ba1b6.png",
+            "desc": "· When an Agent inflicts an Attribute Anomaly on an enemy, the enemy recovers from Stun <color=#2BAD00>15% slower</color>, and the whole squad's ATK <color=#2BAD00>increases by 15%</color> for 20s. Repeated triggers reset the duration.\\n· When an enemy is Stunned, the whole squad recovers <color=#2BAD00>20 Energy</color>, and Abloom DMG <color=#2BAD00>increases by 30%</color> for 30s. Repeated triggers reset the duration. The Energy Generation effect can trigger once every 30s.",
+            "name": "Metamorph"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1221,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1221.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1511,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54010,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/1f502126f8c1af7987afa2a5a0e5dda0.png"
+        }
+      },
+      {
+        "score": 43461,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 4,
+          "day": 24,
+          "hour": 16,
+          "minute": 22,
+          "second": 14
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/0ad335a2e1a20be84508fee8d931c42a.png",
+            "name": "Primordial Nightmare - \"The Creator\"",
+            "race_icon": "",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/787b8003bb5bd325874162e82dbd970e.png",
+            "desc": "· Agent CRIT DMG <color=#2BAD00>increases by 30%</color>.\\n· ATK of Agents with Attack specialty <color=#2BAD00>increases by 10%</color>. Their Basic Attack DMG <color=#2BAD00>increases by 30%</color> and ignore <color=#2BAD00>15%</color> of enemy DEF.",
+            "name": "Heartcrusher"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1341,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 5,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54021,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/b09e78da7f9571d08da4155c54a90df1.png"
+        }
+      },
+      {
+        "score": 32118,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 4,
+          "day": 24,
+          "hour": 15,
+          "minute": 48,
+          "second": 33
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/cc58af2c7f645a8234fc0c6b3d309243.png",
+            "name": "The Defiler",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/32b85a16818d9b50c4ac7c9cd50a146d.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/787b8003bb5bd325874162e82dbd970e.png",
+            "desc": "· Agent CRIT DMG <color=#2BAD00>increases by 30%</color>.\\n· ATK of Agents with Attack specialty <color=#2BAD00>increases by 10%</color>. Their Basic Attack DMG <color=#2BAD00>increases by 30%</color> and ignore <color=#2BAD00>15%</color> of enemy DEF.",
+            "name": "Heartcrusher"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1321,
+            "level": 60,
+            "element_type": 201,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54015,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/aec16db68e49a9ff403343969db66325.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uda4md/9422bec81c7b09ebebde13abc6a6c279.png",
+    "total_score": 110495,
+    "total_star": 9,
+    "zone_id": 69035,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2026-04-25T20:56:12.094Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
