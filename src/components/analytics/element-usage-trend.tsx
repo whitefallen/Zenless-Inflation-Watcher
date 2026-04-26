@@ -74,19 +74,23 @@ function CustomTooltip({ active, payload, label }: any) {
 export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }: ElementUsageTrendProps) {
   const { rows, elementsPresent } = useMemo(() => {
     const present = new Set<number>()
+    for (const p of data) {
+      for (const k of Object.keys(p.counts)) present.add(Number(k))
+    }
+    const presentIds = Array.from(present).sort()
     const sorted = [...data].sort((a, b) => a.ts - b.ts)
     const built: ChartRow[] = sorted.map(p => {
       const total = Object.values(p.counts).reduce((s, v) => s + v, 0) || 1
       const row: ChartRow = { ts: p.ts, label: p.label }
-      for (const [k, v] of Object.entries(p.counts)) {
-        const id = Number(k)
-        present.add(id)
+      // Fill every element key (default 0) so recharts stack math doesn't see undefined → NaN
+      for (const id of presentIds) {
         const name = ELEMENT_NAMES[id] ?? `Element ${id}`
+        const v = p.counts[id] ?? 0
         row[name] = normalize ? Number(((v / total) * 100).toFixed(1)) : v
       }
       return row
     })
-    return { rows: built, elementsPresent: Array.from(present).sort() }
+    return { rows: built, elementsPresent: presentIds }
   }, [data, normalize])
 
   if (rows.length === 0) {
@@ -126,13 +130,14 @@ export function ElementUsageTrend({ data, accent = '#00d4ff', normalize = true }
       </p>
       <div style={{ width: '100%', height: 280 }}>
         <ResponsiveContainer>
-          <AreaChart data={rows} margin={{ top: 12, right: 16, left: 0, bottom: 8 }} stackOffset={normalize ? 'expand' : 'none'}>
+          <AreaChart data={rows} margin={{ top: 12, right: 16, left: 0, bottom: 8 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#1e2438" />
             <XAxis dataKey="label" stroke="#6b7280" tick={{ fontSize: 11 }} />
             <YAxis
               stroke="#6b7280"
               tick={{ fontSize: 11 }}
-              tickFormatter={normalize ? (v: number) => `${Math.round(v * 100)}%` : undefined}
+              domain={normalize ? [0, 100] : undefined}
+              tickFormatter={normalize ? (v: number) => `${Math.round(v)}%` : undefined}
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend wrapperStyle={{ fontSize: 11, color: '#e8e0cc' }} />
