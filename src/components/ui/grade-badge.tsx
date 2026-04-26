@@ -1,4 +1,4 @@
-import { mapStarRatingToGrade, getGradeColorClass } from '@/utils/ratingMapper';
+import { mapStarRatingToGrade } from '@/utils/ratingMapper';
 
 interface GradeBadgeProps {
   stars: number;

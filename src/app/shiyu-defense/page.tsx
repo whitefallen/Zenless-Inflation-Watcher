@@ -18,11 +18,11 @@ import { ShiyuTeamsAggregationTable } from "@/components/shiyu-defense/teams-agg
 import { ShiyuFloorsAggregationTable } from "@/components/shiyu-defense/floors-aggregation-table"
 // New v2 components (score-based) — analytics-first
 import { HadalAnalytics } from "@/components/shiyu-defense-v2/hadal-analytics"
-// Legacy v2 fallback components
-import { HadalTrend } from "@/components/shiyu-defense-v2/hadal-trend"
-import { ScoreProgressionChartV2 } from "@/components/shiyu-defense-v2/score-progression-chart"
-import { HadalSummaryCards } from "@/components/shiyu-defense-v2/hadal-summary-cards"
-import { HadalBreakdownCharts } from "@/components/shiyu-defense-v2/hadal-breakdown-charts"
+// Cross-mode insight components
+import { RecordsPanel } from "@/components/analytics/records-panel"
+import { ElementUsageTrend } from "@/components/analytics/element-usage-trend"
+import { AgentSynergyHeatmap } from "@/components/analytics/agent-synergy-heatmap"
+import { buildHadalRecords, buildHadalElementUsage, buildHadalTeams } from "@/lib/analytics-extractors"
 
 
 export default async function ShiyuDefensePage() {
@@ -152,6 +152,7 @@ export default async function ShiyuDefensePage() {
           <div>
             <TabsList>
               {hasV2Data && <TabsTrigger value="hadal-v2">Hadal Blacksite</TabsTrigger>}
+              {hasV2Data && <TabsTrigger value="insights">Insights</TabsTrigger>}
               {hasV1Data && <TabsTrigger value="overview">Legacy (V1)</TabsTrigger>}
               <TabsTrigger value="history">History</TabsTrigger>
               <TabsTrigger value="teams">Teams</TabsTrigger>
@@ -163,6 +164,20 @@ export default async function ShiyuDefensePage() {
             <TabsContent value="hadal-v2" className="mt-6">
               {/* HadalAnalytics reads the raw hadal_info_v2 schema directly */}
               <HadalAnalytics data={v2Data} />
+            </TabsContent>
+          )}
+
+          {hasV2Data && (
+            <TabsContent value="insights" className="mt-6">
+              <div className="space-y-6">
+                <RecordsPanel
+                  title="Personal Bests"
+                  accent="#00d4ff"
+                  records={buildHadalRecords(v2Data)}
+                />
+                <ElementUsageTrend accent="#00d4ff" data={buildHadalElementUsage(v2Data)} />
+                <AgentSynergyHeatmap accent="#00d4ff" teams={buildHadalTeams(v2Data)} />
+              </div>
             </TabsContent>
           )}
 

@@ -3,7 +3,7 @@
 import { useMemo } from 'react'
 import {
   AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  Tooltip, ResponsiveContainer, ReferenceLine, Cell, ScatterChart, Scatter, ZAxis
+  Tooltip, ResponsiveContainer, ReferenceLine, Cell
 } from 'recharts'
 import type { DeadlyAssaultData } from "@/types/deadly-assault"
 import { percentile } from '@/lib/utils'
