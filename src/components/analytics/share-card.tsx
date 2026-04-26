@@ -26,10 +26,23 @@ export function ShareCard({ mode, title, stats, accent = '#00d4ff' }: ShareCardP
     try {
       // Dynamic import — html-to-image uses canvas/Image APIs that aren't safe to load on the server
       const { toPng } = await import('html-to-image')
-      const dataUrl = await toPng(cardRef.current, {
+      const node = cardRef.current
+      // Use the node's actual rendered size so html-to-image doesn't crop based on
+      // the parent's margin/centering offset (which made the export cut off on the left).
+      const rect = node.getBoundingClientRect()
+      const dataUrl = await toPng(node, {
         pixelRatio: 2,
         backgroundColor: '#0d0f17',
         cacheBust: true,
+        width: rect.width,
+        height: rect.height,
+        canvasWidth: rect.width,
+        canvasHeight: rect.height,
+        style: {
+          margin: '0',
+          transform: 'none',
+          transformOrigin: 'top left',
+        },
       })
       const link = document.createElement('a')
       link.download = `zzz-${mode.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}.png`
@@ -81,14 +94,16 @@ export function ShareCard({ mode, title, stats, accent = '#00d4ff' }: ShareCardP
         <div className="text-[11px] text-[#ef4444] mb-3">Couldn&apos;t export image: {err}</div>
       )}
 
-      {/* The card itself — kept at fixed pixel dims so the exported PNG is consistent */}
-      <div
-        ref={cardRef}
-        className="relative mx-auto"
-        style={{
-          width: 600,
-          maxWidth: '100%',
-          aspectRatio: '1200 / 630',
+      {/* Wrapper handles centering; the captured node itself has no offset margin
+          so html-to-image lays it out from (0,0) and doesn't crop on the left. */}
+      <div className="flex justify-center">
+        <div
+          ref={cardRef}
+          className="relative"
+          style={{
+            width: 600,
+            maxWidth: '100%',
+            aspectRatio: '1200 / 630',
           background: 'linear-gradient(135deg, #0d0f17 0%, #14182a 100%)',
           border: `1px solid ${accent}55`,
           padding: 32,
@@ -138,6 +153,7 @@ export function ShareCard({ mode, title, stats, accent = '#00d4ff' }: ShareCardP
             <span>zenless · battle records</span>
             <span style={{ color: accent }}>{new Date().toISOString().slice(0, 10)}</span>
           </div>
+        </div>
         </div>
       </div>
     </section>
