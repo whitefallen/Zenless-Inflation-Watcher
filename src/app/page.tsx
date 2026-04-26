@@ -1,4 +1,9 @@
 import Link from "next/link"
+import { getAllDeadlyAssaultData } from "@/lib/deadly-assault"
+import { getAllShiyuDefenseData } from "@/lib/shiyu-defense"
+import { getAllVoidFrontData } from "@/lib/void-front"
+import { InflationTracker } from "@/components/analytics/inflation-tracker"
+import { buildDaInflation, buildHadalInflation, buildVfInflation } from "@/lib/analytics-extractors"
 
 const modes = [
   {
@@ -57,7 +62,19 @@ const modes = [
   },
 ]
 
-export default function Home() {
+export default async function Home() {
+  const [daData, shiyuData, vfData] = await Promise.all([
+    getAllDeadlyAssaultData().catch(() => []),
+    getAllShiyuDefenseData().catch(() => []),
+    getAllVoidFrontData().catch(() => []),
+  ])
+
+  const inflationSeries = [
+    { name: 'Deadly Assault', color: '#f5c842', points: buildDaInflation(daData) },
+    { name: 'Hadal Blacksite', color: '#00d4ff', points: buildHadalInflation(shiyuData) },
+    { name: 'Void Front', color: '#a855f7', points: buildVfInflation(vfData) },
+  ].filter(s => s.points.length > 0)
+
   return (
     <div className="zzz-hero-bg min-h-[calc(100vh-4rem)] relative">
       <div
@@ -148,6 +165,9 @@ export default function Home() {
             </Link>
           ))}
         </div>
+
+        {/* Inflation tracker — cross-mode score% over time */}
+        {inflationSeries.length > 0 && <InflationTracker series={inflationSeries} />}
 
         {/* Footer info row */}
         <div className="flex flex-wrap gap-6 items-center pt-4 border-t border-[#1e2438]">

@@ -20,6 +20,10 @@ import { CharacterPerformanceTable } from "@/components/deadly-assault/character
 import { DeadlyAssaultTrend } from "@/components/deadly-assault/deadly-assault-trend";
 import { DaAnalytics } from "@/components/deadly-assault/da-analytics";
 import { PageHeader } from "@/components/shared/page-header";
+import { RecordsPanel } from "@/components/analytics/records-panel";
+import { ElementUsageTrend } from "@/components/analytics/element-usage-trend";
+import { AgentSynergyHeatmap } from "@/components/analytics/agent-synergy-heatmap";
+import { buildDaRecords, buildDaElementUsage, buildDaTeams } from "@/lib/analytics-extractors";
 
 
 export default async function DeadlyAssaultPage() {
@@ -112,6 +116,7 @@ export default async function DeadlyAssaultPage() {
           <div>
             <TabsList>
               <TabsTrigger value="overview">Analytics</TabsTrigger>
+              <TabsTrigger value="insights">Insights</TabsTrigger>
               <TabsTrigger value="deep-dive">Deep Dive</TabsTrigger>
               <TabsTrigger value="history">History</TabsTrigger>
               <TabsTrigger value="teams">Teams</TabsTrigger>
@@ -122,6 +127,17 @@ export default async function DeadlyAssaultPage() {
           <TabsContent value="overview" className="mt-6">
             {/* New analytics-first overview */}
             <DaAnalytics data={allData || []} />
+          </TabsContent>
+          <TabsContent value="insights" className="mt-6">
+            <div className="space-y-6">
+              <RecordsPanel
+                title="Personal Bests"
+                accent="#f5c842"
+                records={buildDaRecords(allData || [])}
+              />
+              <ElementUsageTrend accent="#f5c842" data={buildDaElementUsage(allData || [])} />
+              <AgentSynergyHeatmap accent="#f5c842" teams={buildDaTeams(allData || [])} />
+            </div>
           </TabsContent>
           <TabsContent value="deep-dive" className="mt-6">
             <div className="space-y-8">

@@ -12,6 +12,10 @@ import { VfAnalytics } from "@/components/void-front/vf-analytics";
 import { percentile } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/shared/page-header";
+import { RecordsPanel } from "@/components/analytics/records-panel";
+import { ElementUsageTrend } from "@/components/analytics/element-usage-trend";
+import { AgentSynergyHeatmap } from "@/components/analytics/agent-synergy-heatmap";
+import { buildVfRecords, buildVfElementUsage, buildVfTeams } from "@/lib/analytics-extractors";
 
 export default async function VoidFrontPage() {
   const allData = await getAllVoidFrontData();
@@ -155,6 +159,7 @@ export default async function VoidFrontPage() {
           <div>
             <TabsList>
               <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              <TabsTrigger value="insights">Insights</TabsTrigger>
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="history">History</TabsTrigger>
               <TabsTrigger value="teams">Teams</TabsTrigger>
@@ -163,6 +168,18 @@ export default async function VoidFrontPage() {
 
           <TabsContent value="analytics" className="mt-6">
             <VfAnalytics data={allData || []} />
+          </TabsContent>
+
+          <TabsContent value="insights" className="mt-6">
+            <div className="space-y-6">
+              <RecordsPanel
+                title="Personal Bests"
+                accent="#a855f7"
+                records={buildVfRecords(allData || [])}
+              />
+              <ElementUsageTrend accent="#a855f7" data={buildVfElementUsage(allData || [])} />
+              <AgentSynergyHeatmap accent="#a855f7" teams={buildVfTeams(allData || [])} />
+            </div>
           </TabsContent>
 
           <TabsContent value="overview" className="mt-6">
