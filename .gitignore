@@ -204,3 +204,6 @@ public/voidFront/
 data/
 
 void_front_battle_detail.json
+
+*storybook.log
+storybook-static
