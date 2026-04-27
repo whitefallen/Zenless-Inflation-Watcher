@@ -5,22 +5,22 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center border px-2 py-0.5 text-xs font-bold tracking-wider uppercase w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-[color,box-shadow] overflow-hidden",
+  "inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden border px-2 py-0.5 text-xs font-bold uppercase tracking-normal whitespace-nowrap transition-[color,box-shadow] [&>svg]:pointer-events-none [&>svg]:size-3",
   {
     variants: {
       variant: {
         default:
-          "border-[#f5c842]/30 bg-[#f5c842]/10 text-[#f5c842]",
+          "border-[#ffd400]/35 bg-[#ffd400]/10 text-[#ffd400]",
         secondary:
-          "border-[#1e2438] bg-[#1e2130] text-[#e8e0cc]",
+          "border-[#2b2b33] bg-[#18181d] text-[#f4f4f0]",
         destructive:
-          "border-[#ff4d4d]/30 bg-[#ff4d4d]/10 text-[#ff4d4d]",
+          "border-[#ff3d2e]/35 bg-[#ff3d2e]/10 text-[#ff3d2e]",
         outline:
-          "border-[#1e2438] text-[#e8e0cc] hover:border-[#2a3050]",
+          "border-[#3a3a42] text-[#f4f4f0] hover:border-[#5a5a62]",
         cyan:
-          "border-[#00d4ff]/30 bg-[#00d4ff]/10 text-[#00d4ff]",
+          "border-[#2be0ff]/35 bg-[#2be0ff]/10 text-[#2be0ff]",
         purple:
-          "border-[#a855f7]/30 bg-[#a855f7]/10 text-[#a855f7]",
+          "border-[#2be0ff]/35 bg-[#2be0ff]/10 text-[#2be0ff]",
       },
     },
     defaultVariants: {
@@ -42,7 +42,7 @@ function Badge({
     <Comp
       data-slot="badge"
       className={cn(badgeVariants({ variant }), className)}
-      style={{ clipPath: 'polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px))', ...(props as React.HTMLAttributes<HTMLElement>).style }}
+      style={(props as React.HTMLAttributes<HTMLElement>).style}
       {...props}
     />
   )

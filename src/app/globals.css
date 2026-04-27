@@ -6,8 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Bahnschrift", "Segoe UI", "Arial Narrow", sans-serif;
+  --font-mono: "Consolas", "Courier New", monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -43,148 +43,123 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* ─── ZZZ Color Palette ────────────────────────────────────────────────────
-   Inspired by Zenless Zone Zero's UI: dark urban noir, electric yellow-gold,
-   neon cyan accents, sharp geometric shapes.
-   ──────────────────────────────────────────────────────────────────────── */
 :root {
-  --radius: 0.25rem; /* sharper corners — ZZZ style */
-
-  /* Base surfaces */
-  --background: #08090d;
-  --foreground: #e8e0cc;
-
-  /* Cards / panels */
-  --card: #0f1117;
-  --card-foreground: #e8e0cc;
-
-  /* Popover */
-  --popover: #0f1117;
-  --popover-foreground: #e8e0cc;
-
-  /* Primary — ZZZ electric yellow-gold */
-  --primary: #f5c842;
-  --primary-foreground: #08090d;
-
-  /* Secondary — warm off-white */
-  --secondary: #1e2130;
-  --secondary-foreground: #e8e0cc;
-
-  /* Muted */
-  --muted: #161921;
-  --muted-foreground: #6b7280;
-
-  /* Accent — neon cyan (ZZZ ability color) */
-  --accent: #00d4ff;
-  --accent-foreground: #08090d;
-
-  /* Destructive */
-  --destructive: #ff4d4d;
-
-  /* Borders & inputs */
-  --border: #1e2438;
-  --input: #1e2438;
-  --ring: #f5c842;
-
-  /* Charts — ZZZ-themed palette */
-  --chart-1: #f5c842;   /* primary gold */
-  --chart-2: #00d4ff;   /* neon cyan */
-  --chart-3: #ff6b35;   /* vivid orange */
-  --chart-4: #a855f7;   /* electric purple */
-  --chart-5: #22d3ee;   /* teal */
-
-  /* Sidebar */
-  --sidebar: #0a0c12;
-  --sidebar-foreground: #e8e0cc;
-  --sidebar-primary: #f5c842;
-  --sidebar-primary-foreground: #08090d;
-  --sidebar-accent: #1e2130;
-  --sidebar-accent-foreground: #e8e0cc;
-  --sidebar-border: #1e2438;
-  --sidebar-ring: #f5c842;
-
-  /* ZZZ custom tokens */
-  --zzz-gold: #f5c842;
-  --zzz-gold-dim: #c9a22e;
-  --zzz-cyan: #00d4ff;
-  --zzz-cyan-dim: #0099bb;
-  --zzz-orange: #ff6b35;
-  --zzz-purple: #a855f7;
-  --zzz-surface-1: #0f1117;
-  --zzz-surface-2: #161921;
-  --zzz-surface-3: #1e2130;
-  --zzz-border-bright: #2a3050;
-  --zzz-glow-gold: 0 0 12px rgba(245, 200, 66, 0.4);
-  --zzz-glow-cyan: 0 0 12px rgba(0, 212, 255, 0.4);
+  --radius: 0.125rem;
+  --background: #0a0a0b;
+  --foreground: #f4f4f0;
+  --card: #131316;
+  --card-foreground: #f4f4f0;
+  --popover: #131316;
+  --popover-foreground: #f4f4f0;
+  --primary: #ffd400;
+  --primary-foreground: #0a0a0b;
+  --secondary: #18181d;
+  --secondary-foreground: #f4f4f0;
+  --muted: #121217;
+  --muted-foreground: #8f919c;
+  --accent: #2be0ff;
+  --accent-foreground: #0a0a0b;
+  --destructive: #ff3d2e;
+  --border: #2b2b33;
+  --input: #2b2b33;
+  --ring: #ffd400;
+  --chart-1: #ffd400;
+  --chart-2: #2be0ff;
+  --chart-3: #ff3d2e;
+  --chart-4: #f4f4f0;
+  --chart-5: #8f919c;
+  --sidebar: #101014;
+  --sidebar-foreground: #f4f4f0;
+  --sidebar-primary: #ffd400;
+  --sidebar-primary-foreground: #0a0a0b;
+  --sidebar-accent: #18181d;
+  --sidebar-accent-foreground: #f4f4f0;
+  --sidebar-border: #2b2b33;
+  --sidebar-ring: #ffd400;
+  --zzz-gold: #ffd400;
+  --zzz-gold-dim: #d8b300;
+  --zzz-cyan: #2be0ff;
+  --zzz-cyan-dim: #1aa5be;
+  --zzz-red: #ff3d2e;
+  --zzz-surface-1: #131316;
+  --zzz-surface-2: #18181d;
+  --zzz-surface-3: #202028;
+  --zzz-border-bright: #3a3a42;
+  --zzz-panel-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
 }
 
 .dark {
-  --background: #08090d;
-  --foreground: #e8e0cc;
-  --card: #0f1117;
-  --card-foreground: #e8e0cc;
-  --popover: #0f1117;
-  --popover-foreground: #e8e0cc;
-  --primary: #f5c842;
-  --primary-foreground: #08090d;
-  --secondary: #1e2130;
-  --secondary-foreground: #e8e0cc;
-  --muted: #161921;
-  --muted-foreground: #6b7280;
-  --accent: #00d4ff;
-  --accent-foreground: #08090d;
-  --destructive: #ff4d4d;
-  --border: #1e2438;
-  --input: #1e2438;
-  --ring: #f5c842;
-  --chart-1: #f5c842;
-  --chart-2: #00d4ff;
-  --chart-3: #ff6b35;
-  --chart-4: #a855f7;
-  --chart-5: #22d3ee;
-  --sidebar: #0a0c12;
-  --sidebar-foreground: #e8e0cc;
-  --sidebar-primary: #f5c842;
-  --sidebar-primary-foreground: #08090d;
-  --sidebar-accent: #1e2130;
-  --sidebar-accent-foreground: #e8e0cc;
-  --sidebar-border: #1e2438;
-  --sidebar-ring: #f5c842;
+  --background: #0a0a0b;
+  --foreground: #f4f4f0;
+  --card: #131316;
+  --card-foreground: #f4f4f0;
+  --popover: #131316;
+  --popover-foreground: #f4f4f0;
+  --primary: #ffd400;
+  --primary-foreground: #0a0a0b;
+  --secondary: #18181d;
+  --secondary-foreground: #f4f4f0;
+  --muted: #121217;
+  --muted-foreground: #8f919c;
+  --accent: #2be0ff;
+  --accent-foreground: #0a0a0b;
+  --destructive: #ff3d2e;
+  --border: #2b2b33;
+  --input: #2b2b33;
+  --ring: #ffd400;
+  --chart-1: #ffd400;
+  --chart-2: #2be0ff;
+  --chart-3: #ff3d2e;
+  --chart-4: #f4f4f0;
+  --chart-5: #8f919c;
+  --sidebar: #101014;
+  --sidebar-foreground: #f4f4f0;
+  --sidebar-primary: #ffd400;
+  --sidebar-primary-foreground: #0a0a0b;
+  --sidebar-accent: #18181d;
+  --sidebar-accent-foreground: #f4f4f0;
+  --sidebar-border: #2b2b33;
+  --sidebar-ring: #ffd400;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at top left, rgba(255, 212, 0, 0.08), transparent 24%),
+      radial-gradient(circle at 85% 24%, rgba(43, 224, 255, 0.08), transparent 20%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0));
+    letter-spacing: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
 }
 
-/* ─── ZZZ Global Styles ─────────────────────────────────────────────────── */
 @layer components {
-  /* Neon glow text */
-  .zzz-glow-gold {
-    text-shadow: 0 0 8px rgba(245, 200, 66, 0.7), 0 0 20px rgba(245, 200, 66, 0.3);
-  }
-  .zzz-glow-cyan {
-    text-shadow: 0 0 8px rgba(0, 212, 255, 0.7), 0 0 20px rgba(0, 212, 255, 0.3);
-  }
-
-  /* Corner-cut (ZZZ signature shape) */
   .zzz-clip {
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
   }
+
   .zzz-clip-sm {
     clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
   }
+
   .zzz-clip-lg {
     clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
   }
 
-  /* Scanline overlay effect */
   .zzz-scanlines::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: repeating-linear-gradient(
@@ -197,106 +172,94 @@
     pointer-events: none;
   }
 
-  /* ZZZ card style */
   .zzz-card {
     background: var(--zzz-surface-1);
     border: 1px solid var(--zzz-border-bright);
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
     position: relative;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: var(--zzz-panel-shadow);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   }
+
   .zzz-card:hover {
-    border-color: var(--zzz-gold-dim);
-    box-shadow: var(--zzz-glow-gold);
+    transform: translateY(-2px);
   }
 
-  /* Gold accent border-left */
-  .zzz-accent-left {
-    border-left: 3px solid var(--zzz-gold);
-  }
-  .zzz-accent-left-cyan {
-    border-left: 3px solid var(--zzz-cyan);
-  }
-
-  /* Gradient heading */
   .zzz-heading {
-    background: linear-gradient(90deg, #f5c842 0%, #fde68a 50%, #e8e0cc 100%);
+    background: linear-gradient(90deg, #ffd400 0%, #f4f4f0 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Horizontal rule ZZZ style */
   .zzz-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--zzz-gold), transparent);
+    background: linear-gradient(90deg, var(--zzz-gold), rgba(255, 212, 0, 0));
     border: none;
   }
 
-  /* Stat badge */
   .zzz-stat-badge {
-    background: var(--zzz-surface-3);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--zzz-border-bright);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0;
     text-transform: uppercase;
-    padding: 0.15rem 0.5rem;
-    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+    padding: 0.3rem 0.55rem;
   }
 
-  /* Nav link active indicator */
-  .zzz-nav-active {
-    color: var(--zzz-gold);
-    position: relative;
-  }
-  .zzz-nav-active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--zzz-gold);
-    box-shadow: 0 0 6px var(--zzz-gold);
-  }
-
-  /* Animated gradient background for hero sections */
   .zzz-hero-bg {
     background:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 200, 66, 0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+      radial-gradient(circle at 16% 20%, rgba(255, 212, 0, 0.09), transparent 18%),
+      radial-gradient(circle at 82% 34%, rgba(43, 224, 255, 0.08), transparent 18%),
+      radial-gradient(circle at 70% 82%, rgba(255, 61, 46, 0.07), transparent 22%),
       var(--background);
   }
 
-  /* Section label */
   .zzz-section-label {
-    font-size: 0.65rem;
+    font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.15em;
+    letter-spacing: 0;
     text-transform: uppercase;
-    color: var(--zzz-cyan);
+    color: var(--zzz-gold);
+  }
+
+  .zzz-kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: rgba(244, 244, 240, 0.66);
+  }
+
+  .zzz-grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }
 
-/* ─── Scrollbar ─────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--zzz-surface-2);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--zzz-border-bright);
   border-radius: 0;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--zzz-gold-dim);
 }
 
-/* ─── Selection ─────────────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(245, 200, 66, 0.25);
-  color: #f5c842;
+  background: rgba(255, 212, 0, 0.25);
+  color: #ffd400;
 }

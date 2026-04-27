@@ -31,20 +31,20 @@ export default async function VoidFrontPage() {
     return {
       title: (
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-          <span className="flex items-center gap-2 font-semibold text-[#e8e0cc]">
+          <span className="flex items-center gap-2 font-semibold text-[#f4f4f0]">
             {bossIcon && <Image src={bossIcon} alt="Boss" width={24} height={24} className="w-6 h-6 inline-block" unoptimized />}
-            {avatarIcon && <Image src={avatarIcon} alt="Avatar" width={24} height={24} className="w-6 h-6 inline-block border border-[#1e2438]" unoptimized />}
+            {avatarIcon && <Image src={avatarIcon} alt="Avatar" width={24} height={24} className="w-6 h-6 inline-block border border-[#3a3a42]" unoptimized />}
             {firstChallenge && lastChallenge
-              ? `${formatTimeStamp(firstChallenge)} — ${formatTimeStamp(lastChallenge)}`
+              ? `${formatTimeStamp(firstChallenge)} - ${formatTimeStamp(lastChallenge)}`
               : `Entry ${idx + 1}`}
           </span>
-          <span className="text-xs text-[#a855f7] font-bold">
+          <span className="text-xs text-[#2be0ff] font-bold">
             Score: {d?.data?.void_front_battle_abstract_info_brief?.total_score ?? 'N/A'}
           </span>
         </div>
       ),
       content: (
-        <div className="text-sm text-[#e8e0cc]">
+        <div className="text-sm text-[#f4f4f0]">
           <div className="mb-2 flex items-center gap-2"><b className="text-[#6b7280]">UID:</b> {d?.metadata?.uid || 'N/A'}</div>
           <div className="mb-2 flex items-center gap-2"><b className="text-[#6b7280]">Player:</b> {d?.data?.role_basic_info?.nickname || 'N/A'}</div>
           <div className="mb-2 flex items-center gap-2">
@@ -67,7 +67,7 @@ export default async function VoidFrontPage() {
                 alt="Ending Record"
                 width={320}
                 height={180}
-                className="border border-[#1e2438]"
+                className="border border-[#3a3a42]"
                 style={{ clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))' }}
                 unoptimized
               />
@@ -77,7 +77,7 @@ export default async function VoidFrontPage() {
           {d?.data?.boss_challenge_record?.boss_info && (
             <div className="mb-3 flex flex-col gap-2">
               <b className="text-[#6b7280]">Boss Challenge:</b>
-              <div className="border border-[#1e2438] p-3 bg-[#0f1117] flex items-center gap-3"
+              <div className="border border-[#3a3a42] p-3 bg-[#131316] flex items-center gap-3"
                 style={{ clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))' }}>
                 {d.data.boss_challenge_record.boss_info.icon && (
                   <Image
@@ -89,14 +89,14 @@ export default async function VoidFrontPage() {
                   />
                 )}
                 <div>
-                  <div className="font-bold text-[#e8e0cc]">{d.data.boss_challenge_record.boss_info.name}</div>
+                  <div className="font-bold text-[#f4f4f0]">{d.data.boss_challenge_record.boss_info.name}</div>
                   <div className="text-xs text-[#6b7280]">
                     Score: {d.data.boss_challenge_record.main_challenge_record.score} / {d.data.boss_challenge_record.main_challenge_record.max_score}
-                    <span className="ml-1 text-[#f5c842]">({d.data.boss_challenge_record.main_challenge_record.score_ratio}×)</span>
+                    <span className="ml-1 text-[#ffd400]">({d.data.boss_challenge_record.main_challenge_record.score_ratio}x)</span>
                   </div>
                 </div>
-                <div className="ml-auto font-black text-[#a855f7] text-xl">
-                  {d.data.boss_challenge_record.main_challenge_record.star}★
+                <div className="ml-auto font-black text-[#2be0ff] text-xl">
+                  {d.data.boss_challenge_record.main_challenge_record.star} star
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default async function VoidFrontPage() {
 
           <div className="mt-3 space-y-2">
             {d?.data?.main_challenge_record_list?.map((challenge, i) => (
-              <div key={i} className="border border-[#1e2438] p-2 bg-[#0f1117]"
+              <div key={i} className="border border-[#3a3a42] p-2 bg-[#131316]"
                 style={{ clipPath: 'polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))' }}>
                 <VoidFrontChallengeDetails challenge={challenge} isCompact={true} />
               </div>
@@ -137,21 +137,22 @@ export default async function VoidFrontPage() {
   });
 
   return (
-    <div className="min-h-screen bg-background -mt-12 -mx-4">
-      {/* Page Header */}
+    <div className="relative min-h-screen zzz-hero-bg">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.16] zzz-grid-bg" />
+      <div className="relative flex flex-col gap-8">
       <PageHeader
-        code="03"
+        code="02"
         title="Void Front"
         subtitle="Combat Ops"
         description="Review challenge progress, team compositions, and boss battle outcomes."
-        accent="purple"
+        accent="cyan"
         stats={totalSeasons > 0 ? [
-          { label: "Seasons Tracked", value: totalSeasons, accent: "purple" },
+          { label: "Seasons Tracked", value: totalSeasons, accent: "cyan" },
           { label: "Latest Score", value: latestScore, accent: "gold" },
         ] : undefined}
       />
 
-      <div className="flex flex-col gap-8 container mx-auto py-8 px-4 max-w-5xl">
+      <div className="flex flex-col gap-8">
         <Tabs defaultValue="analytics" className="w-full">
           <div>
             <TabsList>
@@ -187,6 +188,7 @@ export default async function VoidFrontPage() {
             </div>
           </TabsContent>
         </Tabs>
+      </div>
       </div>
     </div>
   );

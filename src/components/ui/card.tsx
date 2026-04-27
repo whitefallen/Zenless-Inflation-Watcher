@@ -6,13 +6,10 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-[#0f1117] text-[#e8e0cc] flex flex-col gap-6 border border-[#1e2438] py-6 shadow-sm transition-colors duration-200",
-        "hover:border-[#2a3050]",
+        "flex flex-col gap-5 border border-[#3a3a42] bg-[#131316] py-5 text-[#f4f4f0] shadow-sm transition-colors duration-200",
+        "hover:border-[#5a5a62]",
         className
       )}
-      style={{
-        clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))',
-      }}
       {...props}
     />
   )
@@ -23,7 +20,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-header"
       className={cn(
-        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-5",
         className
       )}
       {...props}
@@ -35,7 +32,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn("leading-none font-bold tracking-tight text-[#e8e0cc]", className)}
+      className={cn("font-display text-lg leading-none tracking-normal text-[#f4f4f0]", className)}
       {...props}
     />
   )
@@ -45,7 +42,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-description"
-      className={cn("text-[#6b7280] text-sm", className)}
+      className={cn("text-sm text-[#8f919c]", className)}
       {...props}
     />
   )
@@ -68,7 +65,7 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn("px-6", className)}
+      className={cn("px-5", className)}
       {...props}
     />
   )
@@ -78,7 +75,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-footer"
-      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+      className={cn("flex items-center px-5 [.border-t]:pt-5", className)}
       {...props}
     />
   )

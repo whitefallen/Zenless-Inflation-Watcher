@@ -3,7 +3,7 @@ import React from 'react'
 interface StatItem {
   label: string
   value: string | number
-  accent?: 'gold' | 'cyan' | 'purple' | 'orange'
+  accent?: 'gold' | 'cyan' | 'red' | 'orange' | 'purple'
 }
 
 interface PageHeaderProps {
@@ -12,35 +12,47 @@ interface PageHeaderProps {
   subtitle: string
   description?: string
   stats?: StatItem[]
-  accent?: 'gold' | 'cyan' | 'purple'
+  accent?: 'gold' | 'cyan' | 'red' | 'purple'
 }
 
 const accentConfig = {
   gold: {
-    color: '#f5c842',
-    dimColor: 'rgba(245,200,66,0.08)',
-    border: 'rgba(245,200,66,0.2)',
-    glow: '0 0 20px rgba(245,200,66,0.15)',
+    color: '#ffd400',
+    border: '#5f5518',
+    tint: 'rgba(255, 212, 0, 0.06)',
   },
   cyan: {
-    color: '#00d4ff',
-    dimColor: 'rgba(0,212,255,0.06)',
-    border: 'rgba(0,212,255,0.2)',
-    glow: '0 0 20px rgba(0,212,255,0.12)',
+    color: '#2be0ff',
+    border: '#1b5662',
+    tint: 'rgba(43, 224, 255, 0.06)',
+  },
+  red: {
+    color: '#ff3d2e',
+    border: '#69312c',
+    tint: 'rgba(255, 61, 46, 0.06)',
   },
   purple: {
-    color: '#a855f7',
-    dimColor: 'rgba(168,85,247,0.06)',
-    border: 'rgba(168,85,247,0.2)',
-    glow: '0 0 20px rgba(168,85,247,0.12)',
+    color: '#2be0ff',
+    border: '#1b5662',
+    tint: 'rgba(43, 224, 255, 0.06)',
   },
 }
 
 const statAccentConfig: Record<string, { color: string }> = {
-  gold: { color: '#f5c842' },
-  cyan: { color: '#00d4ff' },
-  purple: { color: '#a855f7' },
-  orange: { color: '#ff6b35' },
+  gold: { color: '#ffd400' },
+  cyan: { color: '#2be0ff' },
+  red: { color: '#ff3d2e' },
+  purple: { color: '#2be0ff' },
+  orange: { color: '#ff3d2e' },
+}
+
+function splitTitle(title: string) {
+  const parts = title.trim().split(/\s+/)
+  if (parts.length < 2) return { top: title, bottom: '' }
+  return {
+    top: parts.slice(0, -1).join(' '),
+    bottom: parts[parts.length - 1],
+  }
 }
 
 export function PageHeader({
@@ -52,62 +64,75 @@ export function PageHeader({
   accent = 'gold',
 }: PageHeaderProps) {
   const cfg = accentConfig[accent]
+  const titleParts = splitTitle(title)
 
   return (
-    <div className="relative overflow-hidden" style={{ background: cfg.dimColor }}>
-      {/* Top border accent */}
-      <div className="h-[2px] w-full" style={{ background: `linear-gradient(90deg, transparent, ${cfg.color}, transparent)` }} />
+    <section
+      className="relative overflow-hidden border border-[#3a3a42] bg-[#0f0f12]"
+      style={{ boxShadow: '0 24px 70px rgba(0,0,0,0.28)' }}
+    >
+      <div className="pointer-events-none absolute inset-0 opacity-[0.16] zzz-grid-bg" />
+      <div className="relative grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="border-b border-[#3a3a42] p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="h-3 w-16" style={{ background: cfg.color }} />
+            <span className="text-[0.72rem] font-semibold tracking-normal uppercase" style={{ color: cfg.color }}>
+              Sector {code}
+            </span>
+          </div>
 
-      <div className="px-6 py-8 flex flex-col gap-5">
-        {/* Code + subtitle row */}
-        <div className="flex items-center gap-3">
-          <span
-            className="text-[10px] font-black tracking-[0.25em] px-2 py-0.5 shrink-0"
-            style={{
-              color: cfg.color,
-              border: `1px solid ${cfg.border}`,
-              clipPath: 'polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px))',
-            }}
-          >
-            {code}
-          </span>
-          <span className="text-[10px] font-bold tracking-[0.2em] uppercase" style={{ color: cfg.color, opacity: 0.65 }}>
-            {subtitle}
-          </span>
+          <div className="space-y-3">
+            <p className="zzz-kicker">{subtitle}</p>
+            <h1 className="font-display text-5xl leading-[0.9] tracking-normal text-[#f4f4f0] sm:text-6xl">
+              {titleParts.top || title}
+              {titleParts.bottom && (
+                <>
+                  <br />
+                  <span className="text-transparent" style={{ WebkitTextStroke: `2px ${cfg.color}` }}>
+                    {titleParts.bottom}
+                  </span>
+                </>
+              )}
+            </h1>
+            {description && (
+              <p className="max-w-2xl text-base leading-relaxed text-[#a1a3ad]">
+                {description}
+              </p>
+            )}
+          </div>
         </div>
 
-        {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-black tracking-tight leading-[1.1] text-[#e8e0cc]">
-          {title}
-        </h1>
-
-        {/* Description */}
-        {description && (
-          <p className="text-sm text-[#6b7280] max-w-xl leading-relaxed">{description}</p>
-        )}
-
-        {/* Stats row */}
-        {stats && stats.length > 0 && (
-          <div className="flex flex-wrap gap-4 pt-2 border-t border-[#1e2438]">
-            {stats.map((stat) => {
-              const statColor = stat.accent ? statAccentConfig[stat.accent]?.color ?? cfg.color : cfg.color
-              return (
-                <div key={stat.label} className="flex flex-col gap-0.5">
-                  <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#6b7280]">
-                    {stat.label}
-                  </span>
-                  <span className="text-lg font-black" style={{ color: statColor }}>
-                    {stat.value}
-                  </span>
-                </div>
-              )
-            })}
+        <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10" style={{ background: cfg.tint }}>
+          <div>
+            <div className="text-[0.72rem] font-semibold tracking-normal uppercase text-[#8f919c]">
+              Current log
+            </div>
+            <div className="mt-2 font-display text-2xl tracking-normal text-[#f4f4f0]">
+              Patrol report online
+            </div>
           </div>
-        )}
+
+          {stats && stats.length > 0 && (
+            <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {stats.map((stat) => {
+                const statColor = stat.accent ? statAccentConfig[stat.accent]?.color ?? cfg.color : cfg.color
+                return (
+                  <div key={stat.label} className="border border-[#3a3a42] bg-[#131316] p-3">
+                    <div className="text-[0.68rem] font-semibold uppercase tracking-normal text-[#8f919c]">
+                      {stat.label}
+                    </div>
+                    <div className="mt-2 font-display text-2xl tracking-normal" style={{ color: statColor }}>
+                      {stat.value}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Bottom border */}
-      <div className="h-px w-full" style={{ background: cfg.border }} />
-    </div>
+      <div className="h-[3px] w-full" style={{ background: cfg.color }} />
+    </section>
   )
 }

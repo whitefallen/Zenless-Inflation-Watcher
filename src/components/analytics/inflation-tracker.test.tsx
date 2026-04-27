@@ -14,7 +14,7 @@ describe('InflationTracker', () => {
         series={[
           {
             name: 'Deadly Assault',
-            color: '#f5c842',
+            color: '#ffd400',
             points: [
               { ts: 1, label: 'Jan', scorePct: 80 },
               { ts: 2, label: 'Feb', scorePct: 75 },
@@ -23,6 +23,6 @@ describe('InflationTracker', () => {
         ]}
       />
     )
-    expect(screen.getByText(/Score % across seasons/i)).toBeInTheDocument()
+    expect(screen.getByText(/Score pressure across seasons/i)).toBeInTheDocument()
   })
 })

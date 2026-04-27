@@ -16,7 +16,7 @@ import { CharacterPerformanceTable } from "@/components/shiyu-defense/character-
 import { ShiyuDefenseTrend } from "@/components/shiyu-defense/shiyu-defense-trend"
 import { ShiyuTeamsAggregationTable } from "@/components/shiyu-defense/teams-aggregation-table"
 import { ShiyuFloorsAggregationTable } from "@/components/shiyu-defense/floors-aggregation-table"
-// New v2 components (score-based) — analytics-first
+// New v2 components (score-based), analytics-first
 import { HadalAnalytics } from "@/components/shiyu-defense-v2/hadal-analytics"
 // Cross-mode insight components
 import { HadalInsights } from "@/components/analytics/hadal-insights"
@@ -115,30 +115,30 @@ export default async function ShiyuDefensePage() {
   });
 
   return (
-    <div className="min-h-screen bg-background -mt-12 -mx-4">
+    <div className="relative min-h-screen zzz-hero-bg">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.16] zzz-grid-bg" />
+      <div className="relative flex flex-col gap-8">
       <PageHeader
-        code="02"
+        code="01"
         title="Shiyu Defense"
         subtitle={hasV2Data ? "Hadal Blacksite" : "Floor Gauntlet"}
         description={hasV2Data
           ? "Score-based performance tracking across Hadal Blacksite seasons."
           : "Analyze floor completions, team compositions, and battle times."}
-        accent="cyan"
+        accent="gold"
         stats={allData.length > 0 ? [
-          { label: "Seasons Tracked", value: allData.length, accent: "cyan" },
+          { label: "Seasons Tracked", value: allData.length, accent: "gold" },
           { label: "V2 Score-based", value: v2Data.length, accent: "gold" },
-          { label: "V1 Legacy", value: v1Data.length, accent: "orange" },
+          { label: "V1 Legacy", value: v1Data.length, accent: "red" },
         ] : undefined}
       />
 
-      <div className="flex flex-col gap-8 container mx-auto py-8 px-4 max-w-5xl">
+      <div className="flex flex-col gap-8">
         {allData.length === 0 && (
           <div
-            className="border p-6 text-center text-[#6b7280] text-sm"
+            className="border border-[#3a3a42] bg-[#131316] p-6 text-center text-sm text-[#8f919c]"
             style={{
-              background: 'rgba(0,212,255,0.04)',
-              borderColor: 'rgba(0,212,255,0.15)',
-              clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))',
+              boxShadow: '0 20px 70px rgba(0,0,0,0.28)',
             }}
           >
             No Shiyu Defense data available yet. Run the fetch scripts to populate your local data folders.
@@ -178,8 +178,8 @@ export default async function ShiyuDefensePage() {
                 <BestWorstRuns allData={v1Data} />
                 <PeriodComparison allData={v1Data} />
                 <div>
-                  <h3 className="text-sm font-bold tracking-widest uppercase text-[#6b7280] mb-4 flex items-center gap-2">
-                    <span className="w-1 h-4 bg-[#00d4ff] inline-block" />
+                  <h3 className="text-sm font-bold tracking-normal uppercase text-[#8f919c] mb-4 flex items-center gap-2">
+                    <span className="w-1 h-4 bg-[#ffd400] inline-block" />
                     Most Used Teams
                   </h3>
                   <ShiyuTeamsAggregationTable allData={v1Data} />
@@ -201,6 +201,7 @@ export default async function ShiyuDefensePage() {
             <ShiyuFloorsAggregationTable allData={allData} />
           </TabsContent>
         </Tabs>
+      </div>
       </div>
     </div>
   )

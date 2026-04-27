@@ -39,23 +39,23 @@ export default async function DeadlyAssaultPage() {
     return {
       title: (
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-          <span className="flex items-center gap-2 font-semibold text-[#e8e0cc]">
+          <span className="flex items-center gap-2 font-semibold text-[#f4f4f0]">
             {bossIcon && <Image src={bossIcon} alt="Boss" width={24} height={24} className="w-6 h-6 inline-block" unoptimized />}
-            {avatarIcon && <Image src={avatarIcon} alt="Avatar" width={24} height={24} className="w-6 h-6 inline-block border border-[#1e2438]" unoptimized />}
+            {avatarIcon && <Image src={avatarIcon} alt="Avatar" width={24} height={24} className="w-6 h-6 inline-block border border-[#3a3a42]" unoptimized />}
             {d?.data?.start_time && d?.data?.end_time
               ? formatDateRange(d.data.start_time as unknown as TimeStamp, d.data.end_time as unknown as TimeStamp)
               : `Entry ${idx + 1}`}
           </span>
-          <span className="text-xs text-[#f5c842] font-bold">
+          <span className="text-xs text-[#ff3d2e] font-bold">
             Score: {d?.data?.total_score ?? 'N/A'}
           </span>
         </div>
       ),
       content: (
-        <div className="text-sm text-[#e8e0cc]">
+        <div className="text-sm text-[#f4f4f0]">
           <div className="mb-2 flex items-center gap-2"><b className="text-[#6b7280]">UID:</b> {d?.metadata?.uid || 'N/A'}</div>
           <div className="mb-2 flex items-center gap-2"><b className="text-[#6b7280]">Rank %:</b> {d?.data?.rank_percent !== undefined ? percentile(d.data.rank_percent) : 'N/A'}</div>
-          <div className="mb-2 flex items-center gap-2"><b className="text-[#6b7280]">Total Stars:</b> <span className="text-[#f5c842]">{d?.data?.total_star ?? 'N/A'}</span></div>
+          <div className="mb-2 flex items-center gap-2"><b className="text-[#6b7280]">Total Stars:</b> <span className="text-[#ff3d2e]">{d?.data?.total_star ?? 'N/A'}</span></div>
           <div className="mb-2 flex flex-wrap items-center gap-2"><b className="text-[#6b7280]">Teams Used:</b>
             {d?.data?.list?.map((run, i) => (
               <span key={i} className="inline-flex items-center gap-1 mr-2">
@@ -81,7 +81,7 @@ export default async function DeadlyAssaultPage() {
           <div className="mb-4"><b className="text-[#6b7280]">Run Details:</b></div>
           <div className="space-y-2">
             {d?.data?.list?.map((run, i) => (
-              <div key={i} className="border border-[#1e2438] p-3 bg-[#0f1117]"
+              <div key={i} className="border border-[#3a3a42] p-3 bg-[#131316]"
                 style={{ clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))' }}>
                 <RunDetails run={run} />
               </div>
@@ -93,22 +93,23 @@ export default async function DeadlyAssaultPage() {
   });
 
   return (
-    <div className="min-h-screen bg-background -mt-12 -mx-4">
-      {/* Page Header */}
+    <div className="relative min-h-screen zzz-hero-bg">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.16] zzz-grid-bg" />
+      <div className="relative flex flex-col gap-8">
       <PageHeader
-        code="01"
+        code="03"
         title="Deadly Assault"
         subtitle="Boss Challenge"
         description="Track scores, star ratings, boss completions and team performance across every season."
-        accent="gold"
+        accent="red"
         stats={totalSeasons > 0 ? [
-          { label: "Seasons Tracked", value: totalSeasons, accent: "gold" },
-          { label: "Latest Score", value: latestScore, accent: "gold" },
+          { label: "Seasons Tracked", value: totalSeasons, accent: "red" },
+          { label: "Latest Score", value: latestScore, accent: "red" },
           { label: "Latest Stars", value: latestStars, accent: "cyan" },
         ] : undefined}
       />
 
-      <div className="flex flex-col gap-8 container mx-auto py-8 px-4 max-w-5xl">
+      <div className="flex flex-col gap-8">
         <Tabs defaultValue="overview" className="w-full">
           <div>
             <TabsList>
@@ -149,6 +150,7 @@ export default async function DeadlyAssaultPage() {
             <BossesAggregationTable allData={allData || []} />
           </TabsContent>
         </Tabs>
+      </div>
       </div>
     </div>
   );

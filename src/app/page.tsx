@@ -1,64 +1,40 @@
 import Link from "next/link"
+import { InflationTracker } from "@/components/analytics/inflation-tracker"
+import { buildDaInflation, buildHadalInflation, buildVfInflation } from "@/lib/analytics-extractors"
 import { getAllDeadlyAssaultData } from "@/lib/deadly-assault"
 import { getAllShiyuDefenseData } from "@/lib/shiyu-defense"
 import { getAllVoidFrontData } from "@/lib/void-front"
-import { InflationTracker } from "@/components/analytics/inflation-tracker"
-import { buildDaInflation, buildHadalInflation, buildVfInflation } from "@/lib/analytics-extractors"
 
 const modes = [
   {
-    href: "/deadly-assault",
-    code: "01",
-    title: "Deadly Assault",
-    subtitle: "Boss Challenge",
-    description: "Track scores, star ratings, and boss completion stats across every season.",
-    stats: ["Score Progression", "Boss Difficulty", "Team Performance"],
-    accent: "#f5c842",
-    accentDim: "rgba(245, 200, 66, 0.08)",
-    accentBorder: "rgba(245, 200, 66, 0.2)",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-        <path d="M20 4 L36 32 H4 Z" stroke="#f5c842" strokeWidth="1.5" fill="rgba(245,200,66,0.08)" />
-        <path d="M20 12 L28 28 H12 Z" fill="#f5c842" opacity="0.4" />
-        <circle cx="20" cy="20" r="2" fill="#f5c842" />
-      </svg>
-    ),
-  },
-  {
     href: "/shiyu-defense",
-    code: "02",
-    title: "Shiyu Defense",
-    subtitle: "Floor Gauntlet",
-    description: "Analyze floor completions, Hadal Blacksite scores, and team compositions over time.",
-    stats: ["Floor Analytics", "Hadal Score", "Character Usage"],
-    accent: "#00d4ff",
-    accentDim: "rgba(0, 212, 255, 0.06)",
-    accentBorder: "rgba(0, 212, 255, 0.2)",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-        <rect x="6" y="6" width="28" height="28" stroke="#00d4ff" strokeWidth="1.5" fill="rgba(0,212,255,0.06)" />
-        <rect x="12" y="12" width="16" height="16" stroke="#00d4ff" strokeWidth="1" fill="rgba(0,212,255,0.1)" />
-        <rect x="17" y="17" width="6" height="6" fill="#00d4ff" opacity="0.7" />
-      </svg>
-    ),
+    titleTop: "SHIYU",
+    titleBottom: "DEFENSE",
+    subtitle: "Floor gauntlet analytics and Hadal Blacksite tracking.",
+    stats: ["Floor analytics", "Hadal score", "Character usage"],
+    accent: "#ffd400",
+    accentBorder: "#5f5518",
+    accentTint: "rgba(255, 212, 0, 0.06)",
   },
   {
     href: "/void-front",
-    code: "03",
-    title: "Void Front",
-    subtitle: "Combat Ops",
-    description: "Review challenge progress, team compositions, and boss battle outcomes.",
-    stats: ["Challenge Data", "Team Builds", "Boss Battles"],
-    accent: "#a855f7",
-    accentDim: "rgba(168, 85, 247, 0.06)",
-    accentBorder: "rgba(168, 85, 247, 0.2)",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-        <polygon points="20,4 36,14 36,26 20,36 4,26 4,14" stroke="#a855f7" strokeWidth="1.5" fill="rgba(168,85,247,0.06)" />
-        <polygon points="20,10 30,17 30,23 20,30 10,23 10,17" fill="#a855f7" opacity="0.2" />
-        <circle cx="20" cy="20" r="3" fill="#a855f7" opacity="0.8" />
-      </svg>
-    ),
+    titleTop: "VOID",
+    titleBottom: "FRONT",
+    subtitle: "Challenge progress, squad review, and boss encounter history.",
+    stats: ["Challenge data", "Team builds", "Boss battles"],
+    accent: "#2be0ff",
+    accentBorder: "#1b5662",
+    accentTint: "rgba(43, 224, 255, 0.06)",
+  },
+  {
+    href: "/deadly-assault",
+    titleTop: "DEADLY",
+    titleBottom: "ASSAULT",
+    subtitle: "Boss score tracking, performance trends, and clear-speed pressure.",
+    stats: ["Score progression", "Boss difficulty", "Team performance"],
+    accent: "#ff3d2e",
+    accentBorder: "#69312c",
+    accentTint: "rgba(255, 61, 46, 0.06)",
   },
 ]
 
@@ -70,122 +46,139 @@ export default async function Home() {
   ])
 
   const inflationSeries = [
-    { name: 'Deadly Assault', color: '#f5c842', points: buildDaInflation(daData) },
-    { name: 'Hadal Blacksite', color: '#00d4ff', points: buildHadalInflation(shiyuData) },
-    { name: 'Void Front', color: '#a855f7', points: buildVfInflation(vfData) },
-  ].filter(s => s.points.length > 0)
+    { name: "Deadly Assault", color: "#ff3d2e", points: buildDaInflation(daData) },
+    { name: "Hadal Blacksite", color: "#ffd400", points: buildHadalInflation(shiyuData) },
+    { name: "Void Front", color: "#2be0ff", points: buildVfInflation(vfData) },
+  ].filter((series) => series.points.length > 0)
 
   return (
-    <div className="zzz-hero-bg min-h-[calc(100vh-4rem)] relative">
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#f5c842 1px, transparent 1px), linear-gradient(90deg, #f5c842 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
+    <div className="relative min-h-[calc(100vh-5rem)] overflow-hidden zzz-hero-bg">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.2] zzz-grid-bg" />
 
-      <div className="relative max-w-5xl mx-auto py-16 px-4 flex flex-col gap-14">
-        {/* Hero */}
-        <div className="flex flex-col gap-4">
-          <div className="zzz-section-label">Battle Performance Dashboard</div>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.1]">
-            <span className="zzz-heading">Battle Records</span>
-            <br />
-            <span className="text-[#e8e0cc]/40 text-2xl md:text-3xl font-light tracking-widest">ZENLESS ZONE ZERO</span>
-          </h1>
-          <p className="text-[#6b7280] text-base max-w-xl leading-relaxed">
-            Deep analytics for your ZZZ combat performance — scores, trends, team compositions,
-            and efficiency metrics across all three endgame modes.
-          </p>
-          <div className="zzz-divider w-64 mt-2" />
-        </div>
+      <div className="relative flex flex-col gap-10 py-8 sm:gap-12 sm:py-12">
+        <section className="border border-[#3a3a42] bg-[#0f0f12]">
+          <div className="grid gap-0 xl:grid-cols-[1.25fr_0.75fr]">
+            <div className="border-b border-[#3a3a42] p-6 sm:p-8 xl:border-b-0 xl:border-r xl:p-10">
+              <div className="mb-5 inline-flex items-center gap-3">
+                <span className="h-3 w-16 bg-[#ffd400]" />
+                <span className="zzz-section-label">Inflation Watcher</span>
+              </div>
+              <div className="space-y-3">
+                <p className="zzz-kicker">Zenless Zone Zero / Patrol Log</p>
+                <h1 className="font-display text-5xl leading-[0.9] tracking-normal text-[#f4f4f0] sm:text-6xl lg:text-7xl">
+                  BATTLE
+                  <br />
+                  RECORDS
+                </h1>
+                <p className="max-w-2xl text-base leading-relaxed text-[#a1a3ad] sm:text-lg">
+                  A redesigned operations board for reading your endgame history at a glance:
+                  Shiyu Defense, Void Front, and Deadly Assault in one strong visual system.
+                </p>
+              </div>
+            </div>
 
-        {/* Mode cards */}
-        <div className="grid gap-5 md:grid-cols-3">
+            <div className="flex flex-col justify-between p-6 sm:p-8 xl:p-10">
+              <div className="space-y-3">
+                <div className="text-[0.72rem] font-semibold tracking-normal uppercase text-[#8f919c]">
+                  Current coverage
+                </div>
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="border border-[#3a3a42] bg-[#131316] p-3">
+                    <div className="font-display text-3xl tracking-normal text-[#ffd400]">3</div>
+                    <div className="text-xs uppercase tracking-normal text-[#8f919c]">Modes</div>
+                  </div>
+                  <div className="border border-[#3a3a42] bg-[#131316] p-3">
+                    <div className="font-display text-3xl tracking-normal text-[#2be0ff]">{inflationSeries.length}</div>
+                    <div className="text-xs uppercase tracking-normal text-[#8f919c]">Trend lines</div>
+                  </div>
+                  <div className="border border-[#3a3a42] bg-[#131316] p-3">
+                    <div className="font-display text-3xl tracking-normal text-[#ff3d2e]">24/7</div>
+                    <div className="text-xs uppercase tracking-normal text-[#8f919c]">Local log</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 border-t border-[#3a3a42] pt-5">
+                <div className="text-[0.72rem] font-semibold tracking-normal uppercase text-[#8f919c]">
+                  Reading mode
+                </div>
+                <div className="mt-2 font-display text-2xl leading-tight tracking-normal text-[#f4f4f0]">
+                  Editorial layout. Hard contrast. Fast scan.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="grid gap-5 xl:grid-cols-3">
           {modes.map((mode) => (
             <Link key={mode.href} href={mode.href} className="group block">
               <div
-                className="relative h-full p-5 flex flex-col gap-4 transition-all duration-300"
+                className="relative flex h-full min-h-[25rem] flex-col overflow-hidden border p-6 sm:p-7"
                 style={{
-                  background: mode.accentDim,
-                  border: `1px solid ${mode.accentBorder}`,
-                  clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))',
+                  background: `linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0)), ${mode.accentTint}`,
+                  borderColor: mode.accentBorder,
+                  boxShadow: "0 24px 60px rgba(0,0,0,0.28)",
                 }}
               >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{
-                    background: `radial-gradient(ellipse 80% 60% at 50% 0%, ${mode.accentBorder} 0%, transparent 70%)`,
-                  }}
-                />
+                <div className="mb-8 h-3 w-16 shrink-0" style={{ background: mode.accent }} />
 
-                <div className="flex items-start justify-between relative">
-                  {mode.icon}
-                  <span
-                    className="text-[10px] font-black tracking-[0.2em] px-1.5 py-0.5"
-                    style={{
-                      color: mode.accent,
-                      border: `1px solid ${mode.accentBorder}`,
-                      clipPath: 'polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px))',
-                    }}
-                  >
-                    {mode.code}
-                  </span>
-                </div>
-
-                <div className="relative flex flex-col gap-1">
-                  <div className="text-[10px] font-bold tracking-[0.15em] uppercase" style={{ color: mode.accent, opacity: 0.7 }}>
-                    {mode.subtitle}
+                <div className="space-y-1">
+                  <div className="font-display text-4xl leading-[0.88] tracking-normal text-[#f4f4f0] sm:text-5xl">
+                    {mode.titleTop}
                   </div>
-                  <h2 className="text-lg font-black tracking-tight text-[#e8e0cc] group-hover:text-white transition-colors">
-                    {mode.title}
-                  </h2>
-                  <p className="text-xs text-[#6b7280] leading-relaxed mt-1">{mode.description}</p>
+                  <div
+                    className="font-display text-4xl leading-[0.88] tracking-normal text-transparent sm:text-5xl"
+                    style={{ WebkitTextStroke: `2px ${mode.accent}` }}
+                  >
+                    {mode.titleBottom}
+                  </div>
                 </div>
 
-                <div className="relative flex flex-col gap-1.5 mt-auto pt-3 border-t" style={{ borderColor: mode.accentBorder }}>
+                <div className="mt-6 max-w-sm text-sm leading-relaxed text-[#a1a3ad] sm:text-base">
+                  {mode.subtitle}
+                </div>
+
+                <div className="mt-auto space-y-3 border-t pt-5" style={{ borderColor: mode.accentBorder }}>
                   {mode.stats.map((stat) => (
-                    <div key={stat} className="flex items-center gap-2 text-[11px] text-[#6b7280]">
-                      <span className="w-1 h-1 rounded-full shrink-0" style={{ background: mode.accent, opacity: 0.7 }} />
+                    <div key={stat} className="flex items-center gap-3 text-sm uppercase tracking-normal text-[#c8cad0]">
+                      <span className="h-2 w-2 shrink-0" style={{ background: mode.accent }} />
                       {stat}
                     </div>
                   ))}
                 </div>
 
                 <div
-                  className="relative flex items-center justify-between text-[11px] font-bold tracking-wider uppercase transition-colors"
-                  style={{ color: mode.accent }}
+                  className="mt-8 flex items-center justify-between border-t pt-4 text-sm uppercase tracking-normal"
+                  style={{ borderColor: mode.accentBorder, color: mode.accent }}
                 >
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">View Analytics</span>
-                  <span className="ml-auto group-hover:translate-x-1 transition-transform duration-200">&#8594;</span>
+                  <span>Open board</span>
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">-&gt;</span>
                 </div>
               </div>
             </Link>
           ))}
-        </div>
+        </section>
 
-        {/* Inflation tracker — cross-mode score% over time */}
         {inflationSeries.length > 0 && <InflationTracker series={inflationSeries} />}
 
-        {/* Footer info row */}
-        <div className="flex flex-wrap gap-6 items-center pt-4 border-t border-[#1e2438]">
-          <div className="flex flex-col gap-0.5">
-            <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#6b7280]">Data Source</span>
-            <span className="text-xs text-[#e8e0cc]/60">Local JSON · Auto-updated</span>
+        <section className="grid gap-4 border-t border-[#2b2b33] pt-6 sm:grid-cols-3">
+          <div className="border border-[#2b2b33] bg-[#131316] p-4">
+            <div className="text-[0.72rem] font-semibold tracking-normal uppercase text-[#8f919c]">Data Source</div>
+            <div className="mt-2 font-display text-xl tracking-normal text-[#f4f4f0]">Local JSON</div>
+            <div className="text-sm text-[#8f919c]">Auto-updated records from your archive.</div>
           </div>
-          <div className="w-px h-6 bg-[#1e2438]" />
-          <div className="flex flex-col gap-0.5">
-            <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#6b7280]">Modes Tracked</span>
-            <span className="text-xs text-[#e8e0cc]/60">3 Endgame Sectors</span>
+          <div className="border border-[#2b2b33] bg-[#131316] p-4">
+            <div className="text-[0.72rem] font-semibold tracking-normal uppercase text-[#8f919c]">Modes Tracked</div>
+            <div className="mt-2 font-display text-xl tracking-normal text-[#f4f4f0]">3 Endgame Sectors</div>
+            <div className="text-sm text-[#8f919c]">Shiyu Defense, Void Front, and Deadly Assault.</div>
           </div>
-          <div className="w-px h-6 bg-[#1e2438]" />
-          <div className="flex flex-col gap-0.5">
-            <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-[#6b7280]">Version</span>
-            <span className="text-xs text-[#00d4ff]/60">Revamp · 2026</span>
+          <div className="border border-[#2b2b33] bg-[#131316] p-4">
+            <div className="text-[0.72rem] font-semibold tracking-normal uppercase text-[#8f919c]">Visual Pass</div>
+            <div className="mt-2 font-display text-xl tracking-normal text-[#f4f4f0]">Patrol Log 2026</div>
+            <div className="text-sm text-[#8f919c]">Reference-matched shell, cards, and tracker styling.</div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   )

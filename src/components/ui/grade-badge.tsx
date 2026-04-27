@@ -7,12 +7,11 @@ interface GradeBadgeProps {
   size?: 'xs' | 'sm' | 'md' | 'lg';
 }
 
-// ZZZ-style grade colors
 const gradeColors: Record<string, { border: string; bg: string; text: string }> = {
-  S: { border: 'rgba(245,200,66,0.4)', bg: 'rgba(245,200,66,0.12)', text: '#f5c842' },
-  A: { border: 'rgba(0,212,255,0.4)', bg: 'rgba(0,212,255,0.10)', text: '#00d4ff' },
-  B: { border: 'rgba(168,85,247,0.4)', bg: 'rgba(168,85,247,0.10)', text: '#a855f7' },
-  C: { border: 'rgba(255,107,53,0.4)', bg: 'rgba(255,107,53,0.10)', text: '#ff6b35' },
+  S: { border: 'rgba(255,212,0,0.45)', bg: 'rgba(255,212,0,0.12)', text: '#ffd400' },
+  A: { border: 'rgba(43,224,255,0.45)', bg: 'rgba(43,224,255,0.10)', text: '#2be0ff' },
+  B: { border: 'rgba(255,61,46,0.35)', bg: 'rgba(255,61,46,0.10)', text: '#ff3d2e' },
+  C: { border: 'rgba(143,145,156,0.45)', bg: 'rgba(143,145,156,0.10)', text: '#8f919c' },
 };
 
 export function GradeBadge({
@@ -22,7 +21,7 @@ export function GradeBadge({
   size = 'md'
 }: GradeBadgeProps) {
   const grade = mapStarRatingToGrade(stars);
-  const colors = gradeColors[grade] ?? { border: 'rgba(107,114,128,0.4)', bg: 'rgba(107,114,128,0.1)', text: '#6b7280' };
+  const colors = gradeColors[grade] ?? { border: 'rgba(143,145,156,0.4)', bg: 'rgba(143,145,156,0.1)', text: '#8f919c' };
 
   const sizeClasses = {
     xs: 'px-1 py-0 text-[10px] min-w-[18px]',
@@ -33,13 +32,11 @@ export function GradeBadge({
 
   return (
     <span
-      className={`inline-flex items-center justify-center font-black tracking-wider border ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-center justify-center border font-black tracking-normal ${sizeClasses[size]} ${className}`}
       style={{
         borderColor: colors.border,
         background: colors.bg,
         color: colors.text,
-        clipPath: 'polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px))',
-        textShadow: `0 0 8px ${colors.text}88`,
       }}
       title={`${stars} star${stars !== 1 ? 's' : ''} (${grade} rank)`}
     >
