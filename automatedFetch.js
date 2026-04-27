@@ -206,8 +206,8 @@ class AutomatedFetcher {
         voidfront: shouldFetchVoidFront,
       });
 
-      // Save data to files
-      await this.saveData(data, uid);
+      // Save data to files (returns per-mode { wrote, isNew, file, seasonId })
+      const saveResult = await this.saveData(data, uid);
 
       // Send success notification
       await this.discord.notifyDataFetchSuccess(data, uid, {
@@ -215,6 +215,12 @@ class AutomatedFetcher {
         shiyu: shouldFetchShiyu,
         voidfront: shouldFetchVoidFront,
       });
+
+      // Fire a separate notification ONLY when one or more modes wrote a brand-new
+      // season file. Suppressed by default to avoid spamming if the env var is unset.
+      if (process.env.DISCORD_NOTIFY_NEW_SEASON !== "false") {
+        await this.discord.notifyNewSeason(saveResult, data, uid);
+      }
 
       console.log("✅ Automated fetch completed successfully");
       return { success: true, data };
@@ -314,9 +320,16 @@ class AutomatedFetcher {
     return { month, week };
   }
 
-  // Save data to files using Mode-StartDate-EndDate naming
+  // Save data to files using Mode-StartDate-EndDate naming.
+  // Returns { deadly, shiyu, voidfront } each with { wrote, isNew, file, seasonId }
+  // so callers can decide whether to fire a new-season Discord notification.
   async saveData(data, uid) {
     const timestamp = new Date().toISOString();
+    const result = {
+      deadly: { wrote: false, isNew: false, file: null, seasonId: null },
+      shiyu: { wrote: false, isNew: false, file: null, seasonId: null },
+      voidfront: { wrote: false, isNew: false, file: null, seasonId: null },
+    };
 
     // Save Deadly Assault data
     if (data.deadly) {
@@ -329,6 +342,10 @@ class AutomatedFetcher {
         deadlyFolder,
         AutomatedFetcher.buildFileName("deadly", seasonId),
       );
+      const isNew = !fs.existsSync(deadlyFile);
+      result.deadly.file = deadlyFile;
+      result.deadly.seasonId = seasonId;
+      result.deadly.isNew = isNew;
       const deadlyData = {
         ...data.deadly,
         metadata: {
@@ -339,7 +356,7 @@ class AutomatedFetcher {
         },
       };
       let shouldWrite = true;
-      if (fs.existsSync(deadlyFile)) {
+      if (!isNew) {
         try {
           const existing = JSON.parse(fs.readFileSync(deadlyFile, "utf-8"));
           const a = AutomatedFetcher.stableStringify(
@@ -358,6 +375,7 @@ class AutomatedFetcher {
       }
       if (shouldWrite) {
         fs.writeFileSync(deadlyFile, JSON.stringify(deadlyData, null, 2));
+        result.deadly.wrote = true;
         console.log(`💾 Saved Deadly Assault data to: ${deadlyFile}`);
       }
     }
@@ -373,6 +391,10 @@ class AutomatedFetcher {
         shiyuFolder,
         AutomatedFetcher.buildFileName("shiyu", seasonId),
       );
+      const isNew = !fs.existsSync(shiyuFile);
+      result.shiyu.file = shiyuFile;
+      result.shiyu.seasonId = seasonId;
+      result.shiyu.isNew = isNew;
       const shiyuData = {
         ...data.shiyu,
         metadata: {
@@ -383,7 +405,7 @@ class AutomatedFetcher {
         },
       };
       let shouldWrite = true;
-      if (fs.existsSync(shiyuFile)) {
+      if (!isNew) {
         try {
           const existing = JSON.parse(fs.readFileSync(shiyuFile, "utf-8"));
           const a = AutomatedFetcher.stableStringify(
@@ -402,6 +424,7 @@ class AutomatedFetcher {
       }
       if (shouldWrite) {
         fs.writeFileSync(shiyuFile, JSON.stringify(shiyuData, null, 2));
+        result.shiyu.wrote = true;
         console.log(`💾 Saved Shiyu Defense data to: ${shiyuFile}`);
       }
     }
@@ -420,6 +443,10 @@ class AutomatedFetcher {
         voidFrontFolder,
         AutomatedFetcher.buildFileName("voidfront", seasonId),
       );
+      const isNew = !fs.existsSync(voidFrontFile);
+      result.voidfront.file = voidFrontFile;
+      result.voidfront.seasonId = seasonId;
+      result.voidfront.isNew = isNew;
       const voidFrontData = {
         ...data.voidfront,
         metadata: {
@@ -433,6 +460,7 @@ class AutomatedFetcher {
       // Always write Void Front data since it can update anytime (no fixed cycles)
       // This ensures we always have the latest scores, even if they haven't changed
       fs.writeFileSync(voidFrontFile, JSON.stringify(voidFrontData, null, 2));
+      result.voidfront.wrote = true;
       console.log(
         `💾 Saved Void Front data to: ${voidFrontFile} (always updated)`,
       );
@@ -470,6 +498,8 @@ class AutomatedFetcher {
         JSON.stringify(data.voidfront, null, 2),
       );
     }
+
+    return result;
   }
 
   // Get data summary for notifications

@@ -244,6 +244,78 @@ class DiscordNotifier {
     await this.sendEmbed(embed);
   }
 
+  // Notification fired only when one or more modes saved a NEW season file
+  // (i.e. a season transition was detected). saveResult is the structure
+  // returned by AutomatedFetcher#saveData; data is the parsed payload, used
+  // to surface the headline score for each newly-tracked season.
+  async notifyNewSeason(saveResult, data, uid) {
+    const newSeasons = [];
+
+    if (saveResult?.deadly?.isNew && data.deadly) {
+      const score = data.deadly.data?.total_score ?? 0;
+      const stars = data.deadly.data?.total_star ?? 0;
+      newSeasons.push({
+        name: "Deadly Assault",
+        seasonId: saveResult.deadly.seasonId,
+        summary: `Score ${score.toLocaleString()} · ${stars}★`,
+        emoji: "⚔️",
+      });
+    }
+
+    if (saveResult?.shiyu?.isNew && data.shiyu) {
+      const v2 = data.shiyu.data?.hadal_ver === "v2";
+      const score = v2
+        ? data.shiyu.data?.hadal_info_v2?.brief?.score
+        : data.shiyu.data?.hadal_score;
+      const rating = v2
+        ? data.shiyu.data?.hadal_info_v2?.brief?.rating
+        : data.shiyu.data?.rating_list?.[0]?.rating;
+      newSeasons.push({
+        name: "Shiyu Defense (Hadal)",
+        seasonId: saveResult.shiyu.seasonId,
+        summary: `Score ${score?.toLocaleString?.() ?? "—"} · Rating ${rating ?? "—"}`,
+        emoji: "🏯",
+      });
+    }
+
+    if (saveResult?.voidfront?.isNew && data.voidfront) {
+      const brief =
+        data.voidfront.data?.void_front_battle_abstract_info_brief;
+      const score = brief?.total_score ?? 0;
+      const ending = brief?.ending_record_name || "Unknown ending";
+      newSeasons.push({
+        name: "Void Front",
+        seasonId: saveResult.voidfront.seasonId,
+        summary: `Score ${score.toLocaleString()} · ${ending}`,
+        emoji: "🌌",
+      });
+    }
+
+    if (newSeasons.length === 0) return;
+
+    const playerName =
+      data.deadly?.data?.nick_name ||
+      data.shiyu?.data?.nick_name ||
+      data.shiyu?.data?.hadal_info_v2?.nick_name ||
+      data.voidfront?.data?.role_basic_info?.nickname ||
+      "Unknown";
+
+    const embed = {
+      color: 0xa855f7, // ZZZ purple
+      title: `🆕 New ${newSeasons.length === 1 ? "season" : "seasons"} detected`,
+      description: `Tracked a new season for **${playerName}** (UID ${uid}).`,
+      fields: newSeasons.map((s) => ({
+        name: `${s.emoji} ${s.name}`,
+        value: `\`${s.seasonId ?? "—"}\`\n${s.summary}`,
+        inline: true,
+      })),
+      timestamp: new Date().toISOString(),
+      footer: { text: "ZZZ Battle Bot · new-season alert" },
+    };
+
+    await this.sendEmbed(embed);
+  }
+
   // Notification for rate limiting
   async notifyRateLimit(uid) {
     const embed = {
