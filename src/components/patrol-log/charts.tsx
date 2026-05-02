@@ -31,7 +31,7 @@ interface TooltipState {
 
 export function AreaLineChart({
   data, height = 240, color = 'var(--tape)', yKey = 'score', yLabel = '',
-  formatY = (v: number) => String(v),
+  formatY = (v: number) => String(v), invertY = false,
 }: {
   data: Array<Record<string, unknown>>;
   height?: number;
@@ -39,6 +39,7 @@ export function AreaLineChart({
   yKey?: string;
   yLabel?: string;
   formatY?: (v: number) => string;
+  invertY?: boolean;
 }) {
   const [ref, w] = useContainerWidth();
   const [tip, setTip] = useState<TooltipState | null>(null);
@@ -55,7 +56,10 @@ export function AreaLineChart({
   const lo = Math.max(0, yMin - pad), hi = yMax + pad;
 
   const xAt = (i: number) => padL + (data.length === 1 ? innerW / 2 : (i / (data.length - 1)) * innerW);
-  const yAt = (v: number) => padT + innerH - ((v - lo) / (hi - lo)) * innerH;
+  // invertY: low values plot high (good) — e.g. rank_percent where lower % = better
+  const yAt = invertY
+    ? (v: number) => padT + ((v - lo) / (hi - lo)) * innerH
+    : (v: number) => padT + innerH - ((v - lo) / (hi - lo)) * innerH;
   const ticks = 4;
   const gridY = Array.from({ length: ticks + 1 }, (_, i) => lo + (hi - lo) * (i / ticks));
   const points = data.map((d, i) => `${xAt(i)},${yAt((d[yKey] as number) || 0)}`);

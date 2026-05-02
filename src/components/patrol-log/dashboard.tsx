@@ -30,6 +30,8 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
   const topChars = Object.values(charCount).sort((a, b) => b.count - a.count).slice(0, 8);
 
   const shiyuDelta = shiyuLatest && shiyuPrev ? shiyuLatest.brief.score - shiyuPrev.brief.score : 0;
+  const daPrev = data.deadlyAssault[data.deadlyAssault.length - 2];
+  const daDelta = daLatest && daPrev ? daLatest.total_score - daPrev.total_score : null;
 
   return (
     <div className="fade-up">
@@ -75,6 +77,7 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
             stat={fmtNum(shiyuLatest?.brief?.score)} statLabel="LATEST SCORE"
             rating={shiyuLatest?.brief?.rating}
             rank={shiyuLatest ? `Top ${((shiyuLatest.brief.rank_percent || 0) / 100).toFixed(2)}%` : undefined}
+            delta={shiyuDelta}
             sticker={shiyuLatest?.pass5 ? '5F CLEAR' : '5F INCOMPLETE'}
             onClick={() => onNav('shiyu')} />
           <ModuleCard num="02" tag="VOID" title="Void Front"
@@ -82,6 +85,7 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
             stat={fmtNum(vf?.total_score)} statLabel="ENDING SCORE"
             rating={String(vf?.main?.star ?? '—')}
             rank={vf ? `Top ${((vf.rank_percent || 0) / 100).toFixed(2)}%` : undefined}
+            delta={null}
             sticker={vf?.ending}
             onClick={() => onNav('voidfront')} />
           <ModuleCard num="03" tag="DEADLY" title="Deadly Assault"
@@ -89,6 +93,7 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
             stat={fmtNum(daLatest?.total_score)} statLabel="LATEST TOTAL"
             rating={`${daLatest?.total_star ?? '—'}★`}
             rank={daLatest ? `Top ${(daLatest.rank_percent / 100).toFixed(2)}%` : undefined}
+            delta={daDelta}
             sticker={`${daLatest?.total_star ?? 0}★ ACROSS ${daLatest?.runs?.length ?? 0} RUNS`}
             onClick={() => onNav('deadly')} />
         </div>
@@ -148,9 +153,9 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
   );
 }
 
-function ModuleCard({ num, tag, title, sub, stat, statLabel, rating, rank, sticker, onClick }: {
+function ModuleCard({ num, tag, title, sub, stat, statLabel, rating, rank, delta, sticker, onClick }: {
   num: string; tag: string; title: string; sub: string; stat: string;
-  statLabel: string; rating?: string; rank?: string; sticker?: string; onClick: () => void;
+  statLabel: string; rating?: string; rank?: string; delta?: number | null; sticker?: string; onClick: () => void;
 }) {
   return (
     <div className="panel relative" style={{ cursor: 'pointer' }}
@@ -171,8 +176,16 @@ function ModuleCard({ num, tag, title, sub, stat, statLabel, rating, rank, stick
           </div>
           {rating && <div className={`rating ${ratingClass(rating)}`}>{rating}</div>}
         </div>
-        {sticker && <div style={{ marginTop: 12 }}><span className="sticker dark">{sticker}</span></div>}
-        <div style={{ marginTop: 16, fontFamily: 'Archivo Black', fontSize: 11, letterSpacing: '0.12em', color: 'var(--tape)' }}>OPEN DOSSIER →</div>
+        {delta != null && (
+          <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 6 }}>
+            <span style={{ fontFamily: 'JetBrains Mono', fontSize: 11, color: delta >= 0 ? 'var(--acid)' : 'var(--hot)', fontWeight: 700 }}>
+              {delta >= 0 ? '▲' : '▼'} {delta >= 0 ? '+' : ''}{fmtNum(delta)}
+            </span>
+            <span className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>VS PREV PERIOD</span>
+          </div>
+        )}
+        {sticker && <div style={{ marginTop: 10 }}><span className="sticker dark">{sticker}</span></div>}
+        <div style={{ marginTop: 14, fontFamily: 'Archivo Black', fontSize: 11, letterSpacing: '0.12em', color: 'var(--tape)' }}>OPEN DOSSIER →</div>
       </div>
     </div>
   );
@@ -180,9 +193,14 @@ function ModuleCard({ num, tag, title, sub, stat, statLabel, rating, rank, stick
 
 function InflationSummary({ data, onNav }: { data: ZZZData; onNav: (v: string) => void }) {
   const shiyu = data.shiyu[data.shiyu.length - 1];
+  const shiyuPrev = data.shiyu[data.shiyu.length - 2];
   const vf = data.voidFront[0];
-  const da = data.deadlyAssault[data.deadlyAssault.length - 1] as { total_score: number; total_star: number; rank_percent: number; runs: Array<{ score: number; boss: Array<{ name?: string }> }> };
+  const da = data.deadlyAssault[data.deadlyAssault.length - 1] as { total_score: number; total_star: number; rank_percent: number; total_max_score?: number; runs: Array<{ score: number; boss: Array<{ name?: string }> }> };
+  const daPrev = data.deadlyAssault[data.deadlyAssault.length - 2] as typeof da | undefined;
   const vfMain = (vf as unknown as Record<string, unknown>)?.main as Record<string, unknown> | undefined;
+
+  const shiyuDelta = shiyuPrev ? shiyu.brief.score - shiyuPrev.brief.score : null;
+  const daDelta = daPrev ? da.total_score - daPrev.total_score : null;
 
   const cards = [
     {
@@ -191,6 +209,7 @@ function InflationSummary({ data, onNav }: { data: ZZZData; onNav: (v: string) =
       label: 'of ceiling reached',
       detail: `${shiyu?.brief?.rating ?? '—'} · Top ${((shiyu?.brief?.rank_percent || 0) / 100).toFixed(2)}%`,
       note: shiyu?.pass5 ? 'Floor-five confirmed.' : 'Floor-five pending.',
+      delta: shiyuDelta,
     },
     {
       tag: 'VOID', color: 'var(--cyan)', route: 'voidfront',
@@ -198,6 +217,7 @@ function InflationSummary({ data, onNav }: { data: ZZZData; onNav: (v: string) =
       label: (() => { const vfAny = vf as unknown as Record<string, number>; return vfAny?.max_score ? `of ${fmtNum(vfAny.max_score)} ceiling` : 'of ceiling'; })(),
       detail: `Ending: ${vf?.ending || '—'} · ${vfMain?.star ?? '—'}★`,
       note: `Total: ${fmtNum(vf?.total_score)}.`,
+      delta: null as number | null,
     },
     {
       tag: 'DEADLY', color: 'var(--hot)', route: 'deadly',
@@ -208,6 +228,7 @@ function InflationSummary({ data, onNav }: { data: ZZZData; onNav: (v: string) =
         const best = da?.runs?.reduce((b, r) => r.score > (b?.score ?? 0) ? r : b, null as typeof da.runs[0] | null);
         return best ? `Best: ${best.boss[0]?.name || '—'}.` : '';
       })(),
+      delta: daDelta,
     },
   ];
 
@@ -229,6 +250,14 @@ function InflationSummary({ data, onNav }: { data: ZZZData; onNav: (v: string) =
             <div style={{ borderTop: '1px solid var(--line)', paddingTop: 12 }}>
               <div className="hairline" style={{ fontSize: 10, marginBottom: 4 }}>{c.detail}</div>
               <div style={{ fontSize: 12, color: 'var(--ink-dim)' }}>{c.note}</div>
+              {c.delta != null && (
+                <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontFamily: 'JetBrains Mono', fontSize: 11, color: c.delta >= 0 ? 'var(--acid)' : 'var(--hot)', fontWeight: 700 }}>
+                    {c.delta >= 0 ? '▲' : '▼'} {c.delta >= 0 ? '+' : ''}{fmtNum(c.delta)}
+                  </span>
+                  <span className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>VS PREV</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -243,9 +272,13 @@ function RecentOps({ data, onNav }: { data: ZZZData; onNav: (v: string) => void 
   data.shiyu.slice(-2).forEach(p => p.layers.slice(0, 2).forEach(L => {
     ops.push({ kind: 'shiyu', label: 'HADAL F' + String(L.layer_id).slice(-1), score: L.score, rating: L.rating, time: L.challenge_time, route: 'shiyu' });
   }));
-  data.deadlyAssault.slice(-2).forEach(p => p.runs.slice(0, 2).forEach(r => {
+  data.deadlyAssault.slice(-2).forEach(p => (p.runs as Array<{ boss: Array<{ name?: string }>; score: number; star: number; challenge_time?: unknown }>).forEach(r => {
     ops.push({ kind: 'deadly', label: r.boss[0]?.name?.slice(0, 24) || 'Boss', score: r.score, rating: r.star + '★', time: r.challenge_time, route: 'deadly' });
   }));
+  data.voidFront.slice(-1).forEach(vf => {
+    const main = (vf as unknown as Record<string, unknown>)?.main as Record<string, unknown> | undefined;
+    ops.push({ kind: 'void', label: vf.boss?.name?.slice(0, 24) || 'VOID FRONT', score: vf.total_score, rating: String(main?.star ?? '—') + '★', time: main?.challenge_time, route: 'voidfront' });
+  });
   ops.sort((a, b) => {
     const da = tsToDate(a.time as Parameters<typeof tsToDate>[0]);
     const db = tsToDate(b.time as Parameters<typeof tsToDate>[0]);
@@ -264,7 +297,7 @@ function RecentOps({ data, onNav }: { data: ZZZData; onNav: (v: string) => void 
           onMouseEnter={e => (e.currentTarget.style.background = 'var(--asphalt-3)')}
           onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
         >
-          <div className="hairline" style={{ color: o.kind === 'shiyu' ? 'var(--tape)' : 'var(--hot)' }}>{o.kind.toUpperCase()}</div>
+          <div className="hairline" style={{ color: o.kind === 'shiyu' ? 'var(--tape)' : o.kind === 'void' ? 'var(--cyan)' : 'var(--hot)' }}>{o.kind.toUpperCase()}</div>
           <div style={{ fontFamily: 'Inter', fontWeight: 600, fontSize: 13 }}>{o.label}</div>
           <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 13 }}>{fmtNum(o.score)}</div>
           <div className={`rating ${ratingClass(o.rating)}`} style={{ width: 28, height: 28, fontSize: 13 }}>{o.rating}</div>

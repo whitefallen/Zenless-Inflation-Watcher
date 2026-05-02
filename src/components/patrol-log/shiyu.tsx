@@ -85,17 +85,22 @@ export function ShiyuView({ data, onAgent }: { data: ZZZData; onAgent: (a: Avata
           <div className="panel">
             <div className="panel-header">
               <span className="dot" />
-              <span className="hairline">SERVER RANK % OVER TIME</span>
+              <span className="hairline">SERVER RANK % · LOWER IS BETTER ↓</span>
             </div>
             <div className="panel-body" style={{ padding: '24px 8px 8px 8px' }}>
-              <AreaLineChart data={trendData} height={chartH} color="#2BE0FF" yKey="rank" formatY={v => v.toFixed(2) + '%'} />
+              <AreaLineChart data={trendData} height={chartH} color="#2BE0FF" yKey="rank" formatY={v => v.toFixed(2) + '%'} invertY />
             </div>
           </div>
         </div>
 
         <SectionDiv num="02">Cycle Scrubber</SectionDiv>
         <PeriodScrubber
-          periods={periods.map(p => ({ id: p.zone_id, label: fmtTsShort(p.begin), score: p.brief?.score }))}
+          periods={periods.map((p, i) => ({
+            id: p.zone_id,
+            label: fmtTsShort(p.begin),
+            score: p.brief?.score,
+            delta: i > 0 ? (p.brief?.score || 0) - (periods[i - 1].brief?.score || 0) : null,
+          }))}
           active={activeIdx}
           onPick={setActiveIdx}
         />
@@ -180,7 +185,10 @@ function FloorCard({ layer, idx, onOpen, filterChar }: {
         <div className="hairline">FLOOR · {String(layer.layer_id).slice(-2)}</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, margin: '8px 0 12px' }}>
           <div className={`rating ${ratingClass(layer.rating)}`} style={{ width: 28, height: 28, fontSize: 14 }}>{layer.rating}</div>
-          <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 18, color: 'var(--tape)' }}>{fmtNum(layer.score)}</div>
+          <div>
+            <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 18, color: 'var(--tape)' }}>{fmtNum(layer.score)}</div>
+            {layer.max_score ? <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)', marginTop: 1 }}>{((layer.score / layer.max_score) * 100).toFixed(1)}% of {fmtNum(layer.max_score)}</div> : null}
+          </div>
         </div>
         <div style={{ height: 6, background: 'var(--asphalt-3)', position: 'relative', marginBottom: 12, border: '1px solid var(--line)' }}>
           <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${completion}%`, background: 'var(--tape)' }} />

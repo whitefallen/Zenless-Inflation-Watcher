@@ -193,22 +193,34 @@ export function DeadlyView({ data, onAgent }: { data: ZZZData; onAgent: (a: Avat
 
       <div className="view-content" style={{ maxWidth: 1400, margin: '0 auto', padding: '32px' }}>
         <SectionDiv num="01">Inflation Curve</SectionDiv>
-        <div className="panel">
-          <div className="panel-header">
-            <span className="dot" />
-            <span className="hairline">SCORE PER CYCLE · {periods.length} POINTS</span>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div className="panel">
+            <div className="panel-header">
+              <span className="dot" />
+              <span className="hairline">SCORE PER CYCLE · {periods.length} POINTS</span>
+            </div>
+            <div className="panel-body" style={{ padding: '24px 8px 8px 8px' }}>
+              <AreaLineChart data={trendData} height={chartH} color="#FF3D2E" yKey="score" formatY={v => (v / 1000).toFixed(0) + 'k'} />
+            </div>
           </div>
-          <div className="panel-body" style={{ padding: '24px 8px 8px 8px' }}>
-            <AreaLineChart data={trendData} height={chartH} color="#FF3D2E" yKey="score" formatY={v => (v / 1000).toFixed(0) + 'k'} />
+          <div className="panel">
+            <div className="panel-header">
+              <span className="dot" />
+              <span className="hairline">SERVER RANK % · LOWER IS BETTER ↓</span>
+            </div>
+            <div className="panel-body" style={{ padding: '24px 8px 8px 8px' }}>
+              <AreaLineChart data={trendData} height={chartH} color="#2BE0FF" yKey="rank" formatY={v => (v / 100).toFixed(2) + '%'} invertY />
+            </div>
           </div>
         </div>
 
         <SectionDiv num="02">Cycle Scrubber</SectionDiv>
         <PeriodScrubber
-          periods={periods.map(p => ({
+          periods={periods.map((p, i) => ({
             id: fmtTsShortAny(p.start_time || p.begin_time),
             label: 'CYC',
             score: p.total_score,
+            delta: i > 0 ? p.total_score - periods[i - 1].total_score : null,
           }))}
           active={activeIdx}
           onPick={setActiveIdx}

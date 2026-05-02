@@ -145,7 +145,7 @@ export function TopBar({ active, onNav }: { active: string; onNav: (v: string) =
 }
 
 export function PeriodScrubber({ periods, active, onPick, label }: {
-  periods: Array<{ id: string | number; label: string; score?: number | null }>;
+  periods: Array<{ id: string | number; label: string; score?: number | null; delta?: number | null }>;
   active: number;
   onPick: (i: number) => void;
   label?: string;
@@ -159,6 +159,11 @@ export function PeriodScrubber({ periods, active, onPick, label }: {
             <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, letterSpacing: '0.12em', color: 'var(--ink-faint)' }}>#{p.id}</div>
             <div style={{ fontFamily: 'Archivo Black, sans-serif', fontSize: 12, marginTop: 2 }}>{p.label}</div>
             {p.score != null && <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 11, color: 'var(--tape)', marginTop: 4 }}>{fmtNum(p.score)}</div>}
+            {p.delta != null && p.delta !== 0 && (
+              <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 9, marginTop: 2, color: p.delta > 0 ? 'var(--acid)' : 'var(--hot)' }}>
+                {p.delta > 0 ? '▲' : '▼'} {fmtNum(Math.abs(p.delta))}
+              </div>
+            )}
           </div>
         ))}
       </div>

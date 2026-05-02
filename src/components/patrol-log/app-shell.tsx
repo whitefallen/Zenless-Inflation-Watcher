@@ -6,9 +6,17 @@ import { ShiyuView } from './shiyu';
 import { VoidFrontView, DeadlyView } from './other-views';
 import type { ZZZData, AvatarInfo } from './types';
 
+const VALID_VIEWS = ['dashboard', 'shiyu', 'deadly', 'voidfront'];
+
 export function PatrolLogApp() {
   const [data, setData] = useState<ZZZData | null>(null);
-  const [view, setView] = useState('dashboard');
+  const [view, setView] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '');
+      if (VALID_VIEWS.includes(hash)) return hash;
+    }
+    return 'dashboard';
+  });
   const [agentModal, setAgentModal] = useState<AvatarInfo | null>(null);
   const [navigating, setNavigating] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -22,6 +30,7 @@ export function PatrolLogApp() {
 
   const goTo = useCallback((next: string) => {
     if (next === view) return;
+    window.location.hash = next;
     setNavigating(true);
     setTimeout(() => {
       setView(next);
@@ -29,6 +38,19 @@ export function PatrolLogApp() {
       setNavigating(false);
     }, 220);
   }, [view]);
+
+  // Browser back/forward via hash change
+  useEffect(() => {
+    const onHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (VALID_VIEWS.includes(hash)) {
+        setView(hash);
+        window.scrollTo(0, 0);
+      }
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
 
   useEffect(() => {
     if (!data) return;
