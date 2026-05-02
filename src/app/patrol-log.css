@@ -555,4 +555,10 @@
   /* Modal: full-screen sheet on mobile */
   [data-patrol-log] .modal-backdrop { padding: 0; align-items: flex-end; }
   [data-patrol-log] .modal { max-height: 92dvh; width: 100%; box-shadow: none; border-left: none; border-right: none; border-bottom: none; }
+
+  /* Modal squad: single column, compact rows */
+  [data-patrol-log] .modal-squad-grid { grid-template-columns: 1fr !important; gap: 6px !important; }
+  [data-patrol-log] .modal-squad-grid .panel > div { padding: 8px !important; gap: 8px !important; }
+  [data-patrol-log] .modal-squad-grid .display { font-size: 14px !important; }
+  [data-patrol-log] .modal-squad-grid .hairline { font-size: 8px !important; }
 }

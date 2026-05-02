@@ -248,7 +248,7 @@ function LayerModal({ layer, period, onClose, onAgent }: {
             </div>
           )}
           <div className="hairline" style={{ marginBottom: 12 }}>SQUAD · {layer.avatars.length} AGENTS</div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+          <div className="modal-squad-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {layer.avatars.map((a, i) => {
               const ae = a as AvatarExt;
               return (
