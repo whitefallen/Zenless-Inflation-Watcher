@@ -551,4 +551,8 @@
   /* Tighter hero padding on narrow screens */
   [data-patrol-log] .slice { padding: 24px 16px !important; }
   [data-patrol-log] .view-content { padding: 24px 16px 48px !important; }
+
+  /* Modal: full-screen sheet on mobile */
+  [data-patrol-log] .modal-backdrop { padding: 0; align-items: flex-end; }
+  [data-patrol-log] .modal { max-height: 92dvh; width: 100%; box-shadow: none; border-left: none; border-right: none; border-bottom: none; }
 }
