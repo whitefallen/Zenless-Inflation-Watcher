@@ -106,7 +106,7 @@ export function ShiyuView({ data, onAgent }: { data: ZZZData; onAgent: (a: Avata
         />
 
         <SectionDiv num="03">Floor Ledger</SectionDiv>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12 }} className="panel-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12 }} className="panel-grid floor-grid">
           {layers.map((L, i) => (
             <FloorCard key={i} layer={L} idx={i} onOpen={() => setLayerModal(L)} filterChar={filterChar} />
           ))}

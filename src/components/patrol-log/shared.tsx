@@ -54,7 +54,7 @@ export function Agent({ a, size = 'md', onClick }: { a: AvatarInfo; size?: 'sm'|
       title={`Agent ${a.id} · ${el.name} · ${professionName(a.profession)}`}
     >
       <div className="badge-element" style={{ background: el.color }} />
-      {a.url && <img src={a.url} alt="" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />}
+      {a.url && <img src={a.url} alt="" loading="lazy" decoding="async" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />}
       {a.rank > 0 && <div className="badge-rank">M{a.rank}</div>}
     </div>
   );

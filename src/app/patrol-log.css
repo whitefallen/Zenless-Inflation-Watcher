@@ -362,7 +362,7 @@
 [data-patrol-log] .modal button:hover { transform: rotate(90deg); }
 
 /* ---- Period chip ---- */
-[data-patrol-log] .period-chip { flex-shrink: 0; display: flex; flex-direction: column; align-items: stretch; background: var(--asphalt-2); border: 1.5px solid var(--line); padding: 8px 10px; cursor: pointer; min-width: 100px; transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; }
+[data-patrol-log] .period-chip { flex-shrink: 0; display: flex; flex-direction: column; align-items: stretch; background: var(--asphalt-2); border: 1.5px solid var(--line); padding: 8px 10px; cursor: pointer; min-width: 100px; min-height: 56px; transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; }
 [data-patrol-log] .period-chip:hover { border-color: var(--ink-dim); background: var(--asphalt-3); transform: translateY(-3px); }
 [data-patrol-log] .period-chip.active { border-color: var(--tape); background: var(--asphalt-3); transform: translateY(-3px) scale(1.04); animation: activePulse 2s ease-in-out infinite; }
 [data-patrol-log] .period-chip.active::before { content: ''; position: absolute; left: 0; right: 0; bottom: -1.5px; height: 2px; background: var(--tape); }
@@ -529,6 +529,9 @@
   [data-patrol-log] .topbar-live { display: none !important; }
   [data-patrol-log] .hamburger { display: flex; }
 
+  /* Period chips: larger tap targets on mobile */
+  [data-patrol-log] .period-chip { min-height: 72px; padding: 12px 12px; }
+
   /* Boss ledger: drop runs count column on mobile */
   [data-patrol-log] .boss-row { grid-template-columns: 24px 1fr 72px; }
   [data-patrol-log] .boss-runs { display: none; }
@@ -542,6 +545,8 @@
 
   /* Override inline-styled grids that can't use classes */
   [data-patrol-log] .panel-grid { grid-template-columns: 1fr !important; }
+  /* Floor ledger: 2 columns fit on mobile without being too dense */
+  [data-patrol-log] .floor-grid { grid-template-columns: repeat(2, 1fr) !important; }
 
   /* Tighter hero padding on narrow screens */
   [data-patrol-log] .slice { padding: 24px 16px !important; }

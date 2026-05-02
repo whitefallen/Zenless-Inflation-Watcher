@@ -1,15 +1,24 @@
 'use client';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { TopBar, Agent, Stat, elementInfo, professionName } from './shared';
 import { Dashboard } from './dashboard';
 import { ShiyuView } from './shiyu';
 import { VoidFrontView, DeadlyView } from './other-views';
-import type { ZZZData, AvatarInfo } from './types';
+import type { ZZZData, AvatarInfo, ShiyuPeriod, DeadlyAssaultPeriod, VoidFrontPeriod } from './types';
 
 const VALID_VIEWS = ['dashboard', 'shiyu', 'deadly', 'voidfront'];
 
+/** Map from view name to the JSON file it needs and the ZZZData key it populates. */
+const VIEW_FILES: Record<string, { file: string; key: keyof ZZZData }> = {
+  shiyu:     { file: '/data/zzz-shiyu.json',    key: 'shiyu' },
+  deadly:    { file: '/data/zzz-deadly.json',   key: 'deadlyAssault' },
+  voidfront: { file: '/data/zzz-voidfront.json', key: 'voidFront' },
+};
+
+/** Views that are needed to render the dashboard. */
+const DASHBOARD_DEPS = ['shiyu', 'deadly', 'voidfront'] as const;
+
 export function PatrolLogApp() {
-  const [data, setData] = useState<ZZZData | null>(null);
   const [view, setView] = useState(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.replace('#', '');
@@ -17,16 +26,45 @@ export function PatrolLogApp() {
     }
     return 'dashboard';
   });
-  const [agentModal, setAgentModal] = useState<AvatarInfo | null>(null);
-  const [navigating, setNavigating] = useState(false);
+
+  // Per-key data parts — loaded independently.
+  const [shiyuData,  setShiyuData]  = useState<ShiyuPeriod[] | null>(null);
+  const [daData,     setDaData]     = useState<DeadlyAssaultPeriod[] | null>(null);
+  const [vfData,     setVfData]     = useState<VoidFrontPeriod[] | null>(null);
+
+  const loadingRef = useRef<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetch('/data/zzz-data.json')
-      .then(r => r.json())
-      .then(setData)
-      .catch(() => setError('Failed to load patrol data.'));
+  const [agentModal, setAgentModal] = useState<AvatarInfo | null>(null);
+  const [navigating, setNavigating] = useState(false);
+
+  // Fetch a single view-slice and populate the appropriate state.
+  const loadSlice = useCallback((v: string) => {
+    if (!(v in VIEW_FILES)) return;
+    if (loadingRef.current.has(v)) return;
+    loadingRef.current.add(v);
+
+    const { file, key } = VIEW_FILES[v];
+    fetch(file)
+      .then(r => { if (!r.ok) throw new Error(`${r.status} ${file}`); return r.json(); })
+      .then((d: Partial<ZZZData>) => {
+        if (key === 'shiyu')          setShiyuData(d.shiyu ?? null);
+        else if (key === 'deadlyAssault') setDaData(d.deadlyAssault ?? null);
+        else if (key === 'voidFront') setVfData(d.voidFront ?? null);
+      })
+      .catch(() => setError(`Failed to load ${v} patrol data.`));
   }, []);
+
+  // On mount and on view change, trigger the right fetches.
+  useEffect(() => {
+    if (view === 'dashboard') {
+      // Dashboard needs all three — kick them off in parallel.
+      DASHBOARD_DEPS.forEach(loadSlice);
+    } else {
+      // Specific view: load just what it needs.
+      loadSlice(view);
+    }
+  }, [view, loadSlice]);
 
   const goTo = useCallback((next: string) => {
     if (next === view) return;
@@ -39,27 +77,23 @@ export function PatrolLogApp() {
     }, 220);
   }, [view]);
 
-  // Browser back/forward via hash change
+  // Browser back/forward via hash change.
   useEffect(() => {
     const onHash = () => {
       const hash = window.location.hash.replace('#', '');
-      if (VALID_VIEWS.includes(hash)) {
-        setView(hash);
-        window.scrollTo(0, 0);
-      }
+      if (VALID_VIEWS.includes(hash)) { setView(hash); window.scrollTo(0, 0); }
     };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
+  // Scroll-reveal IntersectionObserver.
+  const allDataReady = shiyuData || daData || vfData;
   useEffect(() => {
-    if (!data) return;
+    if (!allDataReady) return;
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in-view');
-          obs.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
     setTimeout(() => {
@@ -69,7 +103,23 @@ export function PatrolLogApp() {
       });
     }, 100);
     return () => obs.disconnect();
-  }, [data, view]);
+  }, [allDataReady, view]);
+
+  // Build a ZZZData object from whatever is currently loaded.
+  // Views only use their own key, so empty fallbacks are safe for non-loaded slices.
+  const data: ZZZData = {
+    shiyu:           shiyuData  ?? [],
+    deadlyAssault:   daData     ?? [],
+    voidFront:       vfData     ?? [],
+  };
+
+  // Determine whether the currently displayed view has its data.
+  const viewReady =
+    view === 'dashboard' ? (!!shiyuData && !!daData && !!vfData)
+    : view === 'shiyu'     ? !!shiyuData
+    : view === 'deadly'    ? !!daData
+    : view === 'voidfront' ? !!vfData
+    : false;
 
   if (error) {
     return (
@@ -80,7 +130,7 @@ export function PatrolLogApp() {
     );
   }
 
-  if (!data) {
+  if (!viewReady) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div className="hairline pulse">◤ LOADING PATROL DATA ◢</div>
