@@ -15,79 +15,88 @@ const VIEW_FILES: Record<string, { file: string; key: keyof ZZZData }> = {
   voidfront: { file: '/data/zzz-voidfront.json', key: 'voidFront' },
 };
 
-/** Views that are needed to render the dashboard. */
 const DASHBOARD_DEPS = ['shiyu', 'deadly', 'voidfront'] as const;
+
+/**
+ * Parse `#view` or `#view/periodId` from the URL hash.
+ * Returns `{ view, periodId }` — periodId is a number if present, else null.
+ */
+function parseHash(raw: string): { view: string; periodId: number | null } {
+  const [viewPart, idPart] = raw.replace(/^#/, '').split('/');
+  const view = VALID_VIEWS.includes(viewPart) ? viewPart : 'dashboard';
+  const periodId = idPart ? parseInt(idPart, 10) || null : null;
+  return { view, periodId };
+}
 
 export function PatrolLogApp() {
   const [view, setView] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash.replace('#', '');
-      if (VALID_VIEWS.includes(hash)) return hash;
-    }
+    if (typeof window !== 'undefined') return parseHash(window.location.hash).view;
     return 'dashboard';
   });
+  const [initialPeriodId, setInitialPeriodId] = useState<number | null>(() => {
+    if (typeof window !== 'undefined') return parseHash(window.location.hash).periodId;
+    return null;
+  });
 
-  // Per-key data parts — loaded independently.
   const [shiyuData,  setShiyuData]  = useState<ShiyuPeriod[] | null>(null);
   const [daData,     setDaData]     = useState<DeadlyAssaultPeriod[] | null>(null);
   const [vfData,     setVfData]     = useState<VoidFrontPeriod[] | null>(null);
 
   const loadingRef = useRef<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
-
   const [agentModal, setAgentModal] = useState<AvatarInfo | null>(null);
   const [navigating, setNavigating] = useState(false);
 
-  // Fetch a single view-slice and populate the appropriate state.
   const loadSlice = useCallback((v: string) => {
     if (!(v in VIEW_FILES)) return;
     if (loadingRef.current.has(v)) return;
     loadingRef.current.add(v);
-
     const { file, key } = VIEW_FILES[v];
     fetch(file)
       .then(r => { if (!r.ok) throw new Error(`${r.status} ${file}`); return r.json(); })
       .then((d: Partial<ZZZData>) => {
-        if (key === 'shiyu')          setShiyuData(d.shiyu ?? null);
+        if (key === 'shiyu')              setShiyuData(d.shiyu ?? null);
         else if (key === 'deadlyAssault') setDaData(d.deadlyAssault ?? null);
-        else if (key === 'voidFront') setVfData(d.voidFront ?? null);
+        else if (key === 'voidFront')     setVfData(d.voidFront ?? null);
       })
       .catch(() => setError(`Failed to load ${v} patrol data.`));
   }, []);
 
-  // On mount and on view change, trigger the right fetches.
   useEffect(() => {
-    if (view === 'dashboard') {
-      // Dashboard needs all three — kick them off in parallel.
-      DASHBOARD_DEPS.forEach(loadSlice);
-    } else {
-      // Specific view: load just what it needs.
-      loadSlice(view);
-    }
+    if (view === 'dashboard') DASHBOARD_DEPS.forEach(loadSlice);
+    else loadSlice(view);
   }, [view, loadSlice]);
 
-  const goTo = useCallback((next: string) => {
-    if (next === view) return;
-    window.location.hash = next;
+  /**
+   * Navigate to a view, optionally pinning a specific period.
+   * Writes `#view` or `#view/periodId` to the URL.
+   */
+  const goTo = useCallback((next: string, pid?: number | null) => {
+    const [nextView] = next.split('/');
+    if (nextView === view && pid == null) return;
+    const hash = pid != null ? `${nextView}/${pid}` : nextView;
+    window.location.hash = hash;
     setNavigating(true);
     setTimeout(() => {
-      setView(next);
+      setView(nextView);
+      setInitialPeriodId(pid ?? null);
       window.scrollTo(0, 0);
       setNavigating(false);
     }, 220);
   }, [view]);
 
-  // Browser back/forward via hash change.
+  // Browser back/forward — re-parse the hash on every hashchange.
   useEffect(() => {
     const onHash = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (VALID_VIEWS.includes(hash)) { setView(hash); window.scrollTo(0, 0); }
+      const { view: v, periodId } = parseHash(window.location.hash);
+      setView(v);
+      setInitialPeriodId(periodId);
+      window.scrollTo(0, 0);
     };
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  // Scroll-reveal IntersectionObserver.
   const allDataReady = shiyuData || daData || vfData;
   useEffect(() => {
     if (!allDataReady) return;
@@ -98,22 +107,18 @@ export function PatrolLogApp() {
     }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
     setTimeout(() => {
       document.querySelectorAll('.panel:not(.in-view)').forEach(el => {
-        el.classList.add('reveal-on-view');
-        obs.observe(el);
+        el.classList.add('reveal-on-view'); obs.observe(el);
       });
     }, 100);
     return () => obs.disconnect();
   }, [allDataReady, view]);
 
-  // Build a ZZZData object from whatever is currently loaded.
-  // Views only use their own key, so empty fallbacks are safe for non-loaded slices.
   const data: ZZZData = {
-    shiyu:           shiyuData  ?? [],
-    deadlyAssault:   daData     ?? [],
-    voidFront:       vfData     ?? [],
+    shiyu:         shiyuData  ?? [],
+    deadlyAssault: daData     ?? [],
+    voidFront:     vfData     ?? [],
   };
 
-  // Determine whether the currently displayed view has its data.
   const viewReady =
     view === 'dashboard' ? (!!shiyuData && !!daData && !!vfData)
     : view === 'shiyu'     ? !!shiyuData
@@ -121,31 +126,27 @@ export function PatrolLogApp() {
     : view === 'voidfront' ? !!vfData
     : false;
 
-  if (error) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16 }}>
-        <div className="hairline" style={{ color: 'var(--hot)' }}>◤ PATROL DATA UNAVAILABLE ◢</div>
-        <div style={{ color: 'var(--ink-dim)', fontSize: 13 }}>{error}</div>
-      </div>
-    );
-  }
+  if (error) return (
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16 }}>
+      <div className="hairline" style={{ color: 'var(--hot)' }}>◤ PATROL DATA UNAVAILABLE ◢</div>
+      <div style={{ color: 'var(--ink-dim)', fontSize: 13 }}>{error}</div>
+    </div>
+  );
 
-  if (!viewReady) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div className="hairline pulse">◤ LOADING PATROL DATA ◢</div>
-      </div>
-    );
-  }
+  if (!viewReady) return (
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="hairline pulse">◤ LOADING PATROL DATA ◢</div>
+    </div>
+  );
 
   return (
     <>
       <TopBar active={view} onNav={goTo} />
-      <div key={view} className={navigating ? 'view-leaving' : 'view-entering'}>
+      <div key={view + String(initialPeriodId)} className={navigating ? 'view-leaving' : 'view-entering'}>
         {view === 'dashboard'  && <Dashboard  data={data} onNav={goTo} />}
-        {view === 'shiyu'      && <ShiyuView  data={data} onAgent={setAgentModal} />}
-        {view === 'voidfront'  && <VoidFrontView data={data} onAgent={setAgentModal} />}
-        {view === 'deadly'     && <DeadlyView data={data} onAgent={setAgentModal} />}
+        {view === 'shiyu'      && <ShiyuView  data={data} onAgent={setAgentModal} initialPeriodId={initialPeriodId} onPeriodChange={pid => goTo('shiyu', pid)} />}
+        {view === 'voidfront'  && <VoidFrontView data={data} onAgent={setAgentModal} initialPeriodId={initialPeriodId} onPeriodChange={pid => goTo('voidfront', pid)} />}
+        {view === 'deadly'     && <DeadlyView data={data} onAgent={setAgentModal} initialPeriodId={initialPeriodId} onPeriodChange={pid => goTo('deadly', pid)} />}
       </div>
 
       {agentModal && (

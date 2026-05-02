@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Sticker, Stat, SectionDiv, PeriodScrubber, Agent, Team, InflationIndexPanel, fmtNum, fmtDateRange, elementInfo, professionName } from './shared';
+import { Sticker, Stat, SectionDiv, PeriodScrubber, Agent, Team, InflationIndexPanel, fmtNum, fmtDateRange, elementInfo, professionName, ratingClass } from './shared';
 import { AreaLineChart, useChartH } from './charts';
 import type { ZZZData, AvatarInfo } from './types';
 
@@ -42,9 +42,15 @@ function cleanText(t: string): string {
   return (t || '').replace(/<color=#[0-9A-F]+>/gi, '').replace(/<\/color>/gi, '').replace(/\\n/g, '\n');
 }
 
-export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: AvatarInfo) => void }) {
+export function VoidFrontView({ data, onAgent, initialPeriodId, onPeriodChange }: { data: ZZZData; onAgent: (a: AvatarInfo) => void; initialPeriodId?: number | null; onPeriodChange?: (id: number) => void }) {
   const periods = data.voidFront;
-  const [activeIdx, setActiveIdx] = useState(periods.length - 1);
+  const [activeIdx, setActiveIdx] = useState(() => {
+    if (initialPeriodId != null) {
+      const idx = periods.findIndex(p => (p as unknown as Record<string, number>).void_front_id === initialPeriodId);
+      if (idx !== -1) return idx;
+    }
+    return periods.length - 1;
+  });
   const vf = periods[activeIdx];
   if (!vf) return <div className="empty">No Void Front data.</div>;
   const main = (vf as unknown as Record<string, unknown>).main as Record<string, unknown> | undefined;
@@ -85,23 +91,49 @@ export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: A
                 delta: i > 0 ? p.total_score - periods[i - 1].total_score : null,
               }))}
               active={activeIdx}
-              onPick={setActiveIdx}
+              onPick={i => { setActiveIdx(i); onPeriodChange?.((periods[i] as unknown as Record<string, number>).void_front_id ?? i); }}
             />
           </>
         )}
 
-        {/* Boss record */}
+        {/* Boss record + main challenge squad */}
         {vf.boss && (
           <>
             <SectionDiv num="02">Target Record</SectionDiv>
             <div className="panel">
               <div className="panel-body" style={{ padding: 24 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', gap: 32 }}>
                   <div>
                     <div className="hairline" style={{ marginBottom: 8 }}>BOSS TARGET</div>
                     <div className="display" style={{ fontSize: 36 }}>{vf.boss.name}</div>
-                    <div className="hairline" style={{ marginTop: 8 }}>ID #{vf.boss.id}</div>
+                    {main?.score != null && (
+                      <div style={{ marginTop: 8, display: 'flex', gap: 16, alignItems: 'center' }}>
+                        <div>
+                          <div className="hairline" style={{ fontSize: 9 }}>LAST NODE SCORE</div>
+                          <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 22, color: 'var(--cyan)' }}>
+                            {fmtNum(main.score as number)}
+                            {main.max_score != null && <span style={{ fontSize: 13, color: 'var(--ink-faint)', marginLeft: 4 }}>/ {fmtNum(main.max_score as number)}</span>}
+                          </div>
+                        </div>
+                        {main.score_ratio != null && (
+                          <div>
+                            <div className="hairline" style={{ fontSize: 9 }}>RATIO</div>
+                            <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 22 }}>{String(main.score_ratio)}×</div>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
+                  {(main?.avatars as AvatarInfo[] | undefined)?.length ? (
+                    <div>
+                      <div className="hairline" style={{ marginBottom: 10 }}>LAST NODE SQUAD</div>
+                      <div style={{ display: 'flex', gap: 8 }}>
+                        {(main!.avatars as AvatarInfo[]).map((a, i) => (
+                          <Agent key={i} a={a} size="lg" onClick={onAgent} />
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -112,21 +144,19 @@ export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: A
         {subs.length > 0 && (
           <>
             <SectionDiv num="03">Sub-Challenges</SectionDiv>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }} className="panel-grid">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }} className="panel-grid">
               {subs.map((s: unknown, i: number) => {
                 const sub = s as Record<string, unknown>;
+                const buf = sub.buffer as Record<string, string> | undefined;
                 return (
                   <div key={i} className="panel relative">
-                    <div className="corner-tag">{i + 1}</div>
-                    <div style={{ padding: 14 }}>
-                      <div className="hairline" style={{ marginBottom: 6 }}>{sub.name as string || `Challenge ${i + 1}`}</div>
-                      <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 22, color: 'var(--cyan)', marginBottom: 8 }}>
-                        {fmtNum(sub.score as number)}
+                    <div className="corner-tag">{sub.name as string || i + 1}</div>
+                    <div style={{ padding: 12 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10, marginTop: 4 }}>
+                        <div className={`rating ${ratingClass(sub.star as string)}`} style={{ width: 24, height: 24, fontSize: 12 }}>{sub.star as string}</div>
+                        {buf?.name && <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>⚡ {buf.name.slice(0, 20)}</div>}
                       </div>
-                      {sub.score_ratio != null && (
-                        <div className="hairline" style={{ marginBottom: 8 }}>{sub.score_ratio as number}× ratio</div>
-                      )}
-                      <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
+                      <div style={{ display: 'flex', gap: 6 }}>
                         {((sub.avatars as AvatarInfo[]) || []).map((a: AvatarInfo, j: number) => (
                           <Agent key={j} a={a} size="sm" onClick={onAgent} />
                         ))}
@@ -161,9 +191,15 @@ export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: A
   );
 }
 
-export function DeadlyView({ data, onAgent }: { data: ZZZData; onAgent: (a: AvatarInfo) => void }) {
+export function DeadlyView({ data, onAgent, initialPeriodId, onPeriodChange }: { data: ZZZData; onAgent: (a: AvatarInfo) => void; initialPeriodId?: number | null; onPeriodChange?: (id: number) => void }) {
   const periods = data.deadlyAssault as unknown as DAExt[];
-  const [activeIdx, setActiveIdx] = useState(periods.length - 1);
+  const [activeIdx, setActiveIdx] = useState(() => {
+    if (initialPeriodId != null) {
+      const idx = periods.findIndex(p => (p as unknown as { zone_id?: number }).zone_id === initialPeriodId);
+      if (idx !== -1) return idx;
+    }
+    return periods.length - 1;
+  });
   const [runModal, setRunModal] = useState<RunExt | null>(null);
   const period = periods[activeIdx];
   const chartH = useChartH(240, 160);
@@ -241,7 +277,7 @@ export function DeadlyView({ data, onAgent }: { data: ZZZData; onAgent: (a: Avat
             delta: i > 0 ? p.total_score - periods[i - 1].total_score : null,
           }))}
           active={activeIdx}
-          onPick={setActiveIdx}
+          onPick={i => { setActiveIdx(i); onPeriodChange?.((periods[i] as unknown as { zone_id?: number }).zone_id ?? i); }}
         />
 
         <SectionDiv num="03">Runs · This Cycle</SectionDiv>

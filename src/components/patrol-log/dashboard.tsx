@@ -27,7 +27,7 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
     charCount[a.id] = charCount[a.id] || { ...a, count: 0 };
     charCount[a.id].count++;
   })));
-  const topChars = Object.values(charCount).sort((a, b) => b.count - a.count).slice(0, 8);
+  const topChars = Object.values(charCount).sort((a, b) => b.count - a.count);
 
   const shiyuDelta = shiyuLatest && shiyuPrev ? shiyuLatest.brief.score - shiyuPrev.brief.score : 0;
   const daPrev = data.deadlyAssault[data.deadlyAssault.length - 2];
@@ -113,24 +113,7 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
         <InflationSummary data={data} onNav={onNav} />
 
         <div className="rg-2" style={{ marginTop: 24 }}>
-          <div className="panel">
-            <div className="panel-header">
-              <span className="dot" />
-              <span className="hairline">MOST DEPLOYED · CROSS-MODE</span>
-            </div>
-            <div className="panel-body">
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
-                {topChars.map((c, i) => (
-                  <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: '8px 4px', background: 'var(--asphalt-3)', position: 'relative' }}>
-                    <div style={{ position: 'absolute', top: 4, left: 4, fontFamily: 'Archivo Black', fontSize: 10, color: 'var(--tape)' }}>#{i + 1}</div>
-                    <Agent a={c} size="md" />
-                    <div className="hairline" style={{ fontSize: 9, marginTop: 2 }}>{elementInfo(c.element).short}</div>
-                    <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 14, color: 'var(--tape)' }}>{c.count}×</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <AgentUsageChart chars={topChars} />
 
           <div className="panel">
             <div className="panel-header">
@@ -304,6 +287,41 @@ function RecentOps({ data, onNav }: { data: ZZZData; onNav: (v: string) => void 
           <div className={`rating ${ratingClass(o.rating)}`} style={{ width: 28, height: 28, fontSize: 13 }}>{o.rating}</div>
         </div>
       ))}
+    </div>
+  );
+}
+
+function AgentUsageChart({ chars }: { chars: Array<AvatarInfo & { count: number }> }) {
+  const max = chars[0]?.count || 1;
+  return (
+    <div className="panel">
+      <div className="panel-header">
+        <span className="dot" />
+        <span className="hairline">MOST DEPLOYED · ALL TIME · CROSS-MODE</span>
+        <span className="hairline" style={{ marginLeft: 'auto' }}>{chars.length} AGENTS</span>
+      </div>
+      <div className="panel-body" style={{ padding: '12px 16px' }}>
+        {chars.map((c, i) => (
+          <div key={c.id} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+            <div style={{ fontFamily: 'Archivo Black', fontSize: 10, color: 'var(--tape)', width: 18, textAlign: 'right', flexShrink: 0 }}>#{i + 1}</div>
+            <Agent a={c} size="sm" />
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ flex: 1, height: 8, background: 'var(--asphalt-3)', border: '1px solid var(--line)', position: 'relative' }}>
+                  <div style={{
+                    position: 'absolute', left: 0, top: 0, bottom: 0,
+                    width: `${(c.count / max) * 100}%`,
+                    background: `color-mix(in srgb, var(--tape) ${Math.max(22, 100 - i * 7)}%, var(--asphalt-3))`,
+                    transition: 'width 0.6s cubic-bezier(0.2,0.8,0.2,1)',
+                  }} />
+                </div>
+                <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 12, color: 'var(--tape)', width: 32, textAlign: 'right', flexShrink: 0 }}>{c.count}×</div>
+              </div>
+              <div className="hairline" style={{ fontSize: 8, color: elementInfo(c.element).color, marginTop: 2 }}>{elementInfo(c.element).short}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

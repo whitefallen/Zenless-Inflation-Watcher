@@ -19,9 +19,15 @@ type LayerExt = ShiyuLayer & {
 };
 type AvatarExt = AvatarInfo & { level?: number };
 
-export function ShiyuView({ data, onAgent }: { data: ZZZData; onAgent: (a: AvatarInfo) => void }) {
+export function ShiyuView({ data, onAgent, initialPeriodId, onPeriodChange }: { data: ZZZData; onAgent: (a: AvatarInfo) => void; initialPeriodId?: number | null; onPeriodChange?: (id: number) => void }) {
   const periods = data.shiyu;
-  const [activeIdx, setActiveIdx] = useState(periods.length - 1);
+  const [activeIdx, setActiveIdx] = useState(() => {
+    if (initialPeriodId != null) {
+      const idx = periods.findIndex(p => p.zone_id === initialPeriodId);
+      if (idx !== -1) return idx;
+    }
+    return periods.length - 1;
+  });
   const [filterChar, setFilterChar] = useState<number | null>(null);
   const [layerModal, setLayerModal] = useState<LayerExt | null>(null);
   const chartH = useChartH(220, 160);
@@ -102,7 +108,7 @@ export function ShiyuView({ data, onAgent }: { data: ZZZData; onAgent: (a: Avata
             delta: i > 0 ? (p.brief?.score || 0) - (periods[i - 1].brief?.score || 0) : null,
           }))}
           active={activeIdx}
-          onPick={setActiveIdx}
+          onPick={i => { setActiveIdx(i); onPeriodChange?.(periods[i].zone_id); }}
         />
 
         <SectionDiv num="03">Floor Ledger</SectionDiv>
