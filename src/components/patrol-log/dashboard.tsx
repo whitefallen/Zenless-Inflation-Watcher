@@ -51,9 +51,8 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
             Inflation tracker for New Eridu. Three combat trials, one ledger. Watch your score climb,
             your meta drift, and the server inch its standards higher every fortnight.
           </div>
-          <div className="rg-4">
+          <div className="rg-3">
             <Stat label="Latest Hadal Score" value={fmtNum(shiyuLatest?.brief?.score)} sub={`${shiyuLatest?.brief?.rating} · Top ${((shiyuLatest?.brief?.rank_percent || 0) / 100).toFixed(2)}%`} accent />
-            <Stat label="Δ vs Prev Period" value={(shiyuDelta >= 0 ? '+' : '') + fmtNum(shiyuDelta)} sub={`Trend: ${shiyuDelta >= 0 ? 'INFLATING ↑' : 'COOLING ↓'}`} />
             <Stat label="Deadly Assault" value={fmtNum(daLatest?.total_score)} sub={`Top ${((daLatest?.rank_percent || 0) / 100).toFixed(2)}% · ${daLatest?.total_star}★`} />
             <Stat label="Void Front Run" value={fmtNum(vf?.total_score)} sub={`${vf?.boss?.name || '—'} · ${vf?.main?.score_ratio ?? '—'}× ratio`} />
           </div>
