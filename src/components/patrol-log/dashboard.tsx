@@ -8,7 +8,7 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
   const shiyuLatest = data.shiyu[data.shiyu.length - 1];
   const shiyuPrev = data.shiyu[data.shiyu.length - 2];
   const daLatest = data.deadlyAssault[data.deadlyAssault.length - 1];
-  const vf = data.voidFront[0];
+  const vf = data.voidFront[data.voidFront.length - 1];
 
   const chartH = useChartH(280, 180);
 
@@ -84,7 +84,7 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
             stat={fmtNum(vf?.total_score)} statLabel="ENDING SCORE"
             rating={String(vf?.main?.star ?? '—')}
             rank={vf ? `Top ${((vf.rank_percent || 0) / 100).toFixed(2)}%` : undefined}
-            delta={null}
+            delta={(() => { const prev = data.voidFront[data.voidFront.length - 2]; return prev ? vf.total_score - prev.total_score : null; })()}
             sticker={vf?.ending}
             onClick={() => onNav('voidfront')} />
           <ModuleCard num="03" tag="DEADLY" title="Deadly Assault"
@@ -193,13 +193,15 @@ function ModuleCard({ num, tag, title, sub, stat, statLabel, rating, rank, delta
 function InflationSummary({ data, onNav }: { data: ZZZData; onNav: (v: string) => void }) {
   const shiyu = data.shiyu[data.shiyu.length - 1];
   const shiyuPrev = data.shiyu[data.shiyu.length - 2];
-  const vf = data.voidFront[0];
+  const vf = data.voidFront[data.voidFront.length - 1];
   const da = data.deadlyAssault[data.deadlyAssault.length - 1] as { total_score: number; total_star: number; rank_percent: number; total_max_score?: number; runs: Array<{ score: number; boss: Array<{ name?: string }> }> };
   const daPrev = data.deadlyAssault[data.deadlyAssault.length - 2] as typeof da | undefined;
   const vfMain = (vf as unknown as Record<string, unknown>)?.main as Record<string, unknown> | undefined;
 
+  const vfPrev = data.voidFront[data.voidFront.length - 2];
   const shiyuDelta = shiyuPrev ? shiyu.brief.score - shiyuPrev.brief.score : null;
   const daDelta = daPrev ? da.total_score - daPrev.total_score : null;
+  const vfDelta = vfPrev ? vf.total_score - vfPrev.total_score : null;
 
   const cards = [
     {
@@ -216,7 +218,7 @@ function InflationSummary({ data, onNav }: { data: ZZZData; onNav: (v: string) =
       label: (() => { const vfAny = vf as unknown as Record<string, number>; return vfAny?.max_score ? `of ${fmtNum(vfAny.max_score)} ceiling` : 'of ceiling'; })(),
       detail: `Ending: ${vf?.ending || '—'} · ${vfMain?.star ?? '—'}★`,
       note: `Total: ${fmtNum(vf?.total_score)}.`,
-      delta: null as number | null,
+      delta: vfDelta,
     },
     {
       tag: 'DEADLY', color: 'var(--hot)', route: 'deadly',

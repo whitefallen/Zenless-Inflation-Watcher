@@ -43,7 +43,9 @@ function cleanText(t: string): string {
 }
 
 export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: AvatarInfo) => void }) {
-  const vf = data.voidFront[0];
+  const periods = data.voidFront;
+  const [activeIdx, setActiveIdx] = useState(periods.length - 1);
+  const vf = periods[activeIdx];
   if (!vf) return <div className="empty">No Void Front data.</div>;
   const main = (vf as unknown as Record<string, unknown>).main as Record<string, unknown> | undefined;
   const subs = (main?.sub_challenges as unknown[]) || [];
@@ -54,7 +56,7 @@ export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: A
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
             <Sticker variant="cyan">VOID // FRONT</Sticker>
-            <span className="hairline">EXPEDITION LOG</span>
+            <span className="hairline">EXPEDITION LOG · PERIOD {(vf as unknown as Record<string, number>).void_front_id ?? activeIdx + 1}</span>
           </div>
           <div className="kinetic" style={{ fontSize: 'clamp(40px, 6vw, 72px)', marginBottom: 16 }}>
             VOID <span className="stroke">FRONT</span>
@@ -72,10 +74,26 @@ export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: A
       </div>
 
       <div className="view-content" style={{ maxWidth: 1400, margin: '0 auto', padding: '32px' }}>
+        {periods.length > 1 && (
+          <>
+            <SectionDiv num="01">Period Scrubber</SectionDiv>
+            <PeriodScrubber
+              periods={periods.map((p, i) => ({
+                id: (p as unknown as Record<string, number>).void_front_id ?? i + 1,
+                label: p.ending?.replace(/^Ending \d+: /, '').slice(0, 18) || '—',
+                score: p.total_score,
+                delta: i > 0 ? p.total_score - periods[i - 1].total_score : null,
+              }))}
+              active={activeIdx}
+              onPick={setActiveIdx}
+            />
+          </>
+        )}
+
         {/* Boss record */}
         {vf.boss && (
           <>
-            <SectionDiv num="01">Target Record</SectionDiv>
+            <SectionDiv num="02">Target Record</SectionDiv>
             <div className="panel">
               <div className="panel-body" style={{ padding: 24 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
@@ -93,7 +111,7 @@ export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: A
         {/* Sub-challenges */}
         {subs.length > 0 && (
           <>
-            <SectionDiv num="02">Sub-Challenges</SectionDiv>
+            <SectionDiv num="03">Sub-Challenges</SectionDiv>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }} className="panel-grid">
               {subs.map((s: unknown, i: number) => {
                 const sub = s as Record<string, unknown>;
@@ -121,7 +139,7 @@ export function VoidFrontView({ data, onAgent }: { data: ZZZData; onAgent: (a: A
           </>
         )}
 
-        <SectionDiv num="03">Inflation Index</SectionDiv>
+        <SectionDiv num="04">Inflation Index</SectionDiv>
         <InflationIndexPanel
           headline={vf.max_score ? `${((vf.total_score / vf.max_score) * 100).toFixed(1)}%` : '—'}
           headlineLabel={vf.max_score ? `of ${fmtNum(vf.max_score)} point ceiling reached` : 'of ceiling reached'}
