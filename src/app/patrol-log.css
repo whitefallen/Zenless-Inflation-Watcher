@@ -403,7 +403,7 @@
 }
 
 /* ---- Fade-up ---- */
-[data-patrol-log] .fade-up { animation: fadeUp 0.4s ease-out backwards; }
+[data-patrol-log] .fade-up { }
 
 /* ---- Slide right ---- */
 [data-patrol-log] .slide-right { animation: slideRight 0.3s ease-out backwards; }
