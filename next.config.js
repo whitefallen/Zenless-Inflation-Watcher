@@ -7,6 +7,9 @@ const nextConfig = {
   output: 'export', // important for static site
   basePath: isProd ? '/Zenless-Inflation-Watcher' : '',
   assetPrefix: isProd ? '/Zenless-Inflation-Watcher/' : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/Zenless-Inflation-Watcher' : '',
+  },
   // Pin Next's project root so it doesn't walk up to a stray lockfile in $HOME
   // and resolve modules against the wrong dependency tree (which causes
   // "Object.c [as require]" failures during prerender on Windows).
