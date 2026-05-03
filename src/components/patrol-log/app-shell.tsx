@@ -8,11 +8,13 @@ import type { ZZZData, AvatarInfo, ShiyuPeriod, DeadlyAssaultPeriod, VoidFrontPe
 
 const VALID_VIEWS = ['dashboard', 'shiyu', 'deadly', 'voidfront'];
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 /** Map from view name to the JSON file it needs and the ZZZData key it populates. */
 const VIEW_FILES: Record<string, { file: string; key: keyof ZZZData }> = {
-  shiyu:     { file: '/data/zzz-shiyu.json',    key: 'shiyu' },
-  deadly:    { file: '/data/zzz-deadly.json',   key: 'deadlyAssault' },
-  voidfront: { file: '/data/zzz-voidfront.json', key: 'voidFront' },
+  shiyu:     { file: `${BASE}/data/zzz-shiyu.json`,    key: 'shiyu' },
+  deadly:    { file: `${BASE}/data/zzz-deadly.json`,   key: 'deadlyAssault' },
+  voidfront: { file: `${BASE}/data/zzz-voidfront.json`, key: 'voidFront' },
 };
 
 const DASHBOARD_DEPS = ['shiyu', 'deadly', 'voidfront'] as const;
