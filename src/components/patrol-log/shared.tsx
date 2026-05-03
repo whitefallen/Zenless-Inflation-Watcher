@@ -123,7 +123,7 @@ export function TopBar({ active, onNav }: { active: string; onNav: (v: string) =
         </div>
         <div style={{ flex: 1 }} />
         <div className="topbar-live" style={{ display: 'flex', alignItems: 'center', padding: '0 16px', gap: 12, fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: 'var(--ink-dim)' }}>
-          <span style={{ display: 'inline-block', width: 8, height: 8, background: 'var(--acid)', borderRadius: '50%', animation: 'pulse 2s ease-in-out infinite' }} />
+          <span style={{ display: 'inline-block', width: 8, height: 8, background: 'var(--acid)', borderRadius: '50%' }} />
           <span>LIVE</span>
         </div>
         <button className="hamburger" onClick={() => { setMenuOpen(o => { if (!o) window.scrollTo({ top: 0, behavior: 'smooth' }); return !o; }); }} aria-label="Menu">

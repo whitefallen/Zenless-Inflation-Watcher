@@ -458,8 +458,8 @@
 @keyframes cornerStamp { 0% { transform: translateX(50px) rotate(8deg); opacity: 0; } 60% { transform: translateX(-3px) rotate(-1deg); opacity: 1; } 100% { transform: translateX(0) rotate(0); opacity: 1; } }
 @keyframes heartbeat { 0%, 100% { transform: scale(1); } 20% { transform: scale(1.4); } 40% { transform: scale(1); } }
 @keyframes floorReveal { from { opacity: 0; transform: translateY(40px) rotateX(-15deg); transform-origin: top; } to { opacity: 1; transform: translateY(0) rotateX(0); } }
-@keyframes viewEnter { from { opacity: 0; transform: translateX(20px); filter: blur(6px); } to { opacity: 1; transform: translateX(0); filter: blur(0); } }
-@keyframes viewLeave { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(-20px); filter: blur(4px); } }
+@keyframes viewEnter { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes viewLeave { from { opacity: 1; } to { opacity: 0; } }
 @keyframes modalIn { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
 @keyframes backdropIn { from { opacity: 0; backdrop-filter: blur(0px); } to { opacity: 1; backdrop-filter: blur(4px); } }
 @keyframes drawLine { from { stroke-dashoffset: 2000; } to { stroke-dashoffset: 0; } }
