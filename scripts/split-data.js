@@ -8,18 +8,25 @@
  *
  * Run: node scripts/split-data.js
  *
- * The app shell lazy-loads these files instead of the monolithic zzz-data.json,
- * so navigating directly to #shiyu only fetches shiyu data.
+ * If zzz-data.json doesn't exist yet, build-data.js is run first automatically.
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = join(__dirname, '..', 'public', 'data');
+const sourceFile = join(dataDir, 'zzz-data.json');
 
-const full = JSON.parse(readFileSync(join(dataDir, 'zzz-data.json'), 'utf8'));
+if (!existsSync(sourceFile)) {
+  console.log('zzz-data.json not found — running build-data.js first...');
+  mkdirSync(dataDir, { recursive: true });
+  execFileSync(process.execPath, [join(__dirname, 'build-data.js')], { stdio: 'inherit' });
+}
+
+const full = JSON.parse(readFileSync(sourceFile, 'utf8'));
 
 const slices = {
   'zzz-shiyu.json':    { shiyu: full.shiyu },

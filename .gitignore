@@ -201,7 +201,8 @@ public/deadlyAssault/
 
 public/voidFront/
 
-data/
+/data/
+public/data/*.json
 
 void_front_battle_detail.json
 

@@ -1,10 +1,13 @@
-import { readFileSync, writeFileSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const OUT = join(__dirname, '..', 'public', 'data', 'zzz-data.json');
+
+// Ensure public/data/ exists (it's gitignored so won't be present in CI)
+mkdirSync(join(__dirname, '..', 'public', 'data'), { recursive: true });
 
 function mapAvatar(a) {
   return {
