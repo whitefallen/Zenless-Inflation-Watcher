@@ -17,6 +17,7 @@ type RunExt = {
 type DAExt = {
   schedule_id?: number;
   total_score: number;
+  total_max_score?: number;
   total_star: number;
   rank_percent: number;
   start_time?: Record<string, number>;
