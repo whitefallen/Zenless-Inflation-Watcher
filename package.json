@@ -7,7 +7,7 @@
     "test:watch": "vitest",
     "prepare": "husky",
     "auth": "node auth.js",
-    "predev": "node scripts/copy-data-to-public.js && node scripts/generateManifest.js",
+    "predev": "node scripts/copy-data-to-public.js && node scripts/build-data.js && node scripts/split-data.js && node scripts/generateManifest.js",
     "dev": "next dev",
     "prebuild": "node scripts/copy-data-to-public.js && node scripts/build-data.js && node scripts/split-data.js && node scripts/generateManifest.js",
     "build": "next build",

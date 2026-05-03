@@ -47,7 +47,6 @@ export function PatrolLogApp() {
   const loadingRef = useRef<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
   const [agentModal, setAgentModal] = useState<AvatarInfo | null>(null);
-  const [navigating, setNavigating] = useState(false);
 
   const loadSlice = useCallback((v: string) => {
     if (!(v in VIEW_FILES)) return;
@@ -78,13 +77,9 @@ export function PatrolLogApp() {
     if (nextView === view && pid == null) return;
     const hash = pid != null ? `${nextView}/${pid}` : nextView;
     window.location.hash = hash;
-    setNavigating(true);
-    setTimeout(() => {
-      setView(nextView);
-      setInitialPeriodId(pid ?? null);
-      window.scrollTo(0, 0);
-      setNavigating(false);
-    }, 220);
+    setView(nextView);
+    setInitialPeriodId(pid ?? null);
+    window.scrollTo(0, 0);
   }, [view]);
 
   // Browser back/forward — re-parse the hash on every hashchange.
@@ -144,7 +139,7 @@ export function PatrolLogApp() {
   return (
     <>
       <TopBar active={view} onNav={goTo} />
-      <div key={view + String(initialPeriodId)} className={navigating ? 'view-leaving' : 'view-entering'}>
+      <div key={view + String(initialPeriodId)} className="view-entering">
         {view === 'dashboard'  && <Dashboard  data={data} onNav={goTo} />}
         {view === 'shiyu'      && <ShiyuView  data={data} onAgent={setAgentModal} initialPeriodId={initialPeriodId} onPeriodChange={pid => goTo('shiyu', pid)} />}
         {view === 'voidfront'  && <VoidFrontView data={data} onAgent={setAgentModal} initialPeriodId={initialPeriodId} onPeriodChange={pid => goTo('voidfront', pid)} />}

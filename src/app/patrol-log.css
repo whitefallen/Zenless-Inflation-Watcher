@@ -216,7 +216,7 @@
   transition: transform 0.2s;
   cursor: pointer;
 }
-[data-patrol-log] .brand-block:hover { animation: brandFlicker 0.6s steps(1, end); transform: scale(1.02); }
+[data-patrol-log] .brand-block:hover { transform: scale(1.02); }
 [data-patrol-log] .nav-links { display: flex; gap: 0; height: 100%; }
 [data-patrol-log] .nav-link {
   display: flex;
@@ -364,7 +364,7 @@
 /* ---- Period chip ---- */
 [data-patrol-log] .period-chip { flex-shrink: 0; display: flex; flex-direction: column; align-items: stretch; background: var(--asphalt-2); border: 1.5px solid var(--line); padding: 8px 10px; cursor: pointer; min-width: 100px; min-height: 56px; transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; }
 [data-patrol-log] .period-chip:hover { border-color: var(--ink-dim); background: var(--asphalt-3); transform: translateY(-3px); }
-[data-patrol-log] .period-chip.active { border-color: var(--tape); background: var(--asphalt-3); transform: translateY(-3px) scale(1.04); animation: activePulse 2s ease-in-out infinite; }
+[data-patrol-log] .period-chip.active { border-color: var(--tape); background: var(--asphalt-3); transform: translateY(-3px) scale(1.04); }
 [data-patrol-log] .period-chip.active::before { content: ''; position: absolute; left: 0; right: 0; bottom: -1.5px; height: 2px; background: var(--tape); }
 
 /* ---- Chart tooltip ---- */
@@ -381,8 +381,6 @@
 [data-patrol-log] .reveal-on-view.in-view { opacity: 1; transform: translateY(0); }
 
 /* ---- View transitions ---- */
-[data-patrol-log] .view-entering { animation: viewEnter 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
-[data-patrol-log] .view-leaving { animation: viewLeave 0.22s ease-in forwards; }
 
 /* ---- Loading ---- */
 [data-patrol-log] .pulse { animation: pulse 1.6s ease-in-out infinite; position: relative; }
@@ -405,7 +403,7 @@
 }
 
 /* ---- Fade-up ---- */
-[data-patrol-log] .fade-up { animation: fadeUp 0.4s ease-out backwards; }
+[data-patrol-log] .fade-up { }
 
 /* ---- Slide right ---- */
 [data-patrol-log] .slide-right { animation: slideRight 0.3s ease-out backwards; }
@@ -419,7 +417,7 @@
 [data-patrol-log] .panel-grid > .panel:nth-child(6) { animation: floorReveal 0.5s 400ms cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
 
 /* ---- Hairline live cursor ---- */
-[data-patrol-log] .hairline.live::after { content: '_'; margin-left: 4px; animation: blink 1s steps(1) infinite; color: var(--tape); }
+[data-patrol-log] .hairline.live::after { content: '_'; margin-left: 4px; color: var(--tape); }
 
 /* ---- Scrollbars ---- */
 [data-patrol-log] ::-webkit-scrollbar { width: 10px; height: 10px; }
@@ -458,7 +456,7 @@
 @keyframes cornerStamp { 0% { transform: translateX(50px) rotate(8deg); opacity: 0; } 60% { transform: translateX(-3px) rotate(-1deg); opacity: 1; } 100% { transform: translateX(0) rotate(0); opacity: 1; } }
 @keyframes heartbeat { 0%, 100% { transform: scale(1); } 20% { transform: scale(1.4); } 40% { transform: scale(1); } }
 @keyframes floorReveal { from { opacity: 0; transform: translateY(40px) rotateX(-15deg); transform-origin: top; } to { opacity: 1; transform: translateY(0) rotateX(0); } }
-@keyframes viewEnter { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes viewEnter { from { opacity: 0; } to { opacity: 1; } }
 @keyframes viewLeave { from { opacity: 1; } to { opacity: 0; } }
 @keyframes modalIn { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
 @keyframes backdropIn { from { opacity: 0; backdrop-filter: blur(0px); } to { opacity: 1; backdrop-filter: blur(4px); } }
