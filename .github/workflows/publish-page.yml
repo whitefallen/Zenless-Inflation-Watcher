@@ -58,9 +58,6 @@ jobs:
       - name: Copy data files to public
         run: node scripts/copy-data-to-public.js
 
-      - name: Split data into per-view files
-        run: node scripts/split-data.js
-
       - name: Generate PWA manifest
         run: node scripts/generateManifest.js
         env:
