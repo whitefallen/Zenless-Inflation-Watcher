@@ -381,7 +381,6 @@
 [data-patrol-log] .reveal-on-view.in-view { opacity: 1; transform: translateY(0); }
 
 /* ---- View transitions ---- */
-[data-patrol-log] .view-entering { animation: viewEnter 0.25s ease-out; }
 
 /* ---- Loading ---- */
 [data-patrol-log] .pulse { animation: pulse 1.6s ease-in-out infinite; position: relative; }
