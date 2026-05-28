@@ -8,6 +8,7 @@ import { getAgentInfo } from "@/lib/agent-utils";
 import { VoidFrontOverview } from "@/components/void-front/void-front-overview";
 import { VoidFrontChallengeDetails } from "@/components/void-front/void-front-challenge-details";
 import { VoidFrontTeams } from "@/components/void-front/void-front-teams";
+import { VoidFrontTeamsTable } from "@/components/void-front/void-front-teams-table";
 import { VfAnalytics } from "@/components/void-front/vf-analytics";
 import { percentile } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -183,6 +184,7 @@ export default async function VoidFrontPage() {
 
           <TabsContent value="teams" className="mt-6">
             <div className="space-y-8">
+              <VoidFrontTeamsTable data={allData || []} />
               <VoidFrontTeams data={allData || []} />
             </div>
           </TabsContent>

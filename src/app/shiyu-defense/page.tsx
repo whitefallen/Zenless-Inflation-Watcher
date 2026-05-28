@@ -18,6 +18,7 @@ import { ShiyuTeamsAggregationTable } from "@/components/shiyu-defense/teams-agg
 import { ShiyuFloorsAggregationTable } from "@/components/shiyu-defense/floors-aggregation-table"
 // New v2 components (score-based) — analytics-first
 import { HadalAnalytics } from "@/components/shiyu-defense-v2/hadal-analytics"
+import { HadalTeamsTable } from "@/components/shiyu-defense-v2/hadal-teams-table"
 // Cross-mode insight components
 import { HadalInsights } from "@/components/analytics/hadal-insights"
 
@@ -159,8 +160,11 @@ export default async function ShiyuDefensePage() {
 
           {hasV2Data && (
             <TabsContent value="hadal-v2" className="mt-6">
-              {/* HadalAnalytics reads the raw hadal_info_v2 schema directly */}
-              <HadalAnalytics data={v2Data} />
+              <div className="space-y-6">
+                {/* HadalAnalytics reads the raw hadal_info_v2 schema directly */}
+                <HadalAnalytics data={v2Data} />
+                <HadalTeamsTable data={v2Data} />
+              </div>
             </TabsContent>
           )}
 
@@ -195,7 +199,10 @@ export default async function ShiyuDefensePage() {
             <Accordion items={historyItems} />
           </TabsContent>
           <TabsContent value="teams" className="mt-6">
-            <ShiyuTeamsAggregationTable allData={allData} />
+            <div className="space-y-6">
+              {hasV2Data && <HadalTeamsTable data={v2Data} />}
+              {hasV1Data && <ShiyuTeamsAggregationTable allData={v1Data} />}
+            </div>
           </TabsContent>
           <TabsContent value="floors" className="mt-6">
             <ShiyuFloorsAggregationTable allData={allData} />
