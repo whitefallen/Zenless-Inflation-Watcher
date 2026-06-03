@@ -255,10 +255,11 @@ export async function getAllShiyuDefenseData(): Promise<ShiyuDefenseData[]> {
     const withSchedule = files
       .map((f) => ({ f, id: parseScheduleIdFromFilename(f) }))
       .filter((x) => x.id !== null) as { f: string; id: number }[];
+    const scheduleFiles = new Set(withSchedule.map((s) => s.f));
 
     const withEnd = files
       .map((f) => ({ f, end: parseEndDateFromFilename(f) }))
-      .filter((x) => x.end !== null && !withSchedule.some((s) => s.f === x.f)) as { f: string; end: number }[];
+      .filter((x) => x.end !== null && !scheduleFiles.has(x.f)) as { f: string; end: number }[];
 
     let ordered: string[];
     if (withSchedule.length > 0 || withEnd.length > 0) {
