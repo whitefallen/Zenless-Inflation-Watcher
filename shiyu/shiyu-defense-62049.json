@@ -1,0 +1,334 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "hadal_ver": "v2",
+    "hadal_info_v2": {
+      "zone_id": 62049,
+      "hadal_begin_time": {
+        "year": 2026,
+        "month": 5,
+        "day": 29,
+        "hour": 4,
+        "minute": 0,
+        "second": 0
+      },
+      "hadal_end_time": {
+        "year": 2026,
+        "month": 6,
+        "day": 12,
+        "hour": 3,
+        "minute": 59,
+        "second": 59
+      },
+      "pass_fifth_floor": true,
+      "brief": {
+        "cur_period_zone_layer_count": 5,
+        "score": 123080,
+        "rank_percent": 214,
+        "rating": "S+",
+        "max_score": 150000
+      },
+      "fitfh_layer_detail": {
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62049051,
+            "rating": "S",
+            "buffer": {
+              "title": "Overwhelming Force",
+              "text": "· Agent Sheer DMG increases by 35%, and their <color=#F0D12B>Physical DMG</color> increases by 10%.\\n· Agent <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>EX Special Attack</color>, and <color=#FFFFFF>Ultimate</color> ignore 10% of enemy <color=#F0D12B>Physical RES</color> on hit."
+            },
+            "score": 44941,
+            "avatar_list": [
+              {
+                "id": 1431,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+                "sub_element_type": 4
+              },
+              {
+                "id": 1341,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 5,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54021,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/3a27e973a885551c33ba7031aa409007.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/312c5ba6871a6535d5f341a26c68f748.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 5,
+              "day": 29,
+              "hour": 16,
+              "minute": 40,
+              "second": 58
+            }
+          },
+          {
+            "layer_id": 62049052,
+            "rating": "S",
+            "buffer": {
+              "title": "Perpetual Frigidity",
+              "text": "· Agent <color=#98EFF0>Ice DMG</color> increases by 10%, and Anomaly Proficiency increases by 40.\\n· When an enemy is inflicted with an Attribute Anomaly, the whole squad's <color=#FFFFFF>Abloom</color> DMG increases by 30%, and <color=#FFFFFF>Abloom</color> DMG ignores 20% of enemy <color=#98EFF0>Ice RES</color> for 10s. Repeated triggers reset the duration."
+            },
+            "score": 43734,
+            "avatar_list": [
+              {
+                "id": 1091,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                "sub_element_type": 1
+              },
+              {
+                "id": 1511,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1411,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54001,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/7f63e910eddfc83ba5208c3653e51fb3.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/4899bacd16d9d35fa48e446b2819280e.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 5,
+              "day": 29,
+              "hour": 17,
+              "minute": 9,
+              "second": 34
+            }
+          },
+          {
+            "layer_id": 62049053,
+            "rating": "S",
+            "buffer": {
+              "title": "Piercing Thunder Strike",
+              "text": "· Agent <color=#2EB6FF>Electric DMG</color> increases by 20%.\\n· Agent <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>EX Special Attack</color> deal 40% increased DMG and ignore 15% of enemy DEF."
+            },
+            "score": 34405,
+            "avatar_list": [
+              {
+                "id": 1521,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 203,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1521.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54014,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/057a1b5188acab60431f718614097b06.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/e477ab6edcbf33a42cc73beee3c3b34c.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 5,
+              "day": 29,
+              "hour": 17,
+              "minute": 6,
+              "second": 50
+            }
+          }
+        ]
+      },
+      "fourth_layer_detail": {
+        "buffer": {
+          "title": "Overwhelming Force",
+          "text": "· Agent Sheer DMG increases by 35%, and their <color=#F0D12B>Physical DMG</color> increases by 10%.\\n· Agent <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>EX Special Attack</color>, and <color=#FFFFFF>Ultimate</color> ignore 10% of enemy <color=#F0D12B>Physical RES</color> on hit."
+        },
+        "challenge_time": {
+          "year": 2026,
+          "month": 5,
+          "day": 29,
+          "hour": 15,
+          "minute": 10,
+          "second": 39
+        },
+        "rating": "S",
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62049041,
+            "avatar_list": [
+              {
+                "id": 1061,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1061.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54020,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/7f91b4106100015af0e131e3b504168e.png"
+            },
+            "challenge_time": {
+              "year": 2026,
+              "month": 5,
+              "day": 29,
+              "hour": 15,
+              "minute": 10,
+              "second": 39
+            }
+          },
+          {
+            "layer_id": 62049042,
+            "avatar_list": [
+              {
+                "id": 1261,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1331,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331_3113311.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1511,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54010,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/5784f3cfc9a7da3129329de04d3d4faf.png"
+            },
+            "challenge_time": {
+              "year": 2026,
+              "month": 5,
+              "day": 29,
+              "hour": 15,
+              "minute": 10,
+              "second": 39
+            }
+          }
+        ]
+      },
+      "begin_time": "1780023600",
+      "end_time": "1781233199"
+    },
+    "nick_name": "Whitefallen",
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/ee50b9d5c30305927f4feb7af37f4313.png"
+  },
+  "metadata": {
+    "exportDate": "2026-06-03T06:55:26.243Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense",
+    "automated": true
+  }
+}
