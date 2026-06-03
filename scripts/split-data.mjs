@@ -23,7 +23,7 @@ const sourceFile = join(dataDir, 'zzz-data.json');
 if (!existsSync(sourceFile)) {
   console.log('zzz-data.json not found — running build-data.js first...');
   mkdirSync(dataDir, { recursive: true });
-  execFileSync(process.execPath, [join(__dirname, 'build-data.js')], { stdio: 'inherit' });
+  execFileSync(process.execPath, [join(__dirname, 'build-data.mjs')], { stdio: 'inherit' });
 }
 
 const full = JSON.parse(readFileSync(sourceFile, 'utf8'));
