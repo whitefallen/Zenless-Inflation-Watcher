@@ -43,7 +43,7 @@ export async function getLatestDeadlyAssaultData(): Promise<DeadlyAssaultData | 
       return null;
     }
 
-    // Prefer new naming by end date
+    // Prefer ID-based naming (newer scheme), fallback to legacy date-based naming
     const withEnd = files
       .map((f) => ({ f, end: parseEndDateFromFilename(f) }))
       .filter((x) => x.end !== null) as { f: string; end: number }[];
@@ -53,12 +53,12 @@ export async function getLatestDeadlyAssaultData(): Promise<DeadlyAssaultData | 
       .filter((x) => x.id !== null) as { f: string; id: number }[];
 
     let latestFile: string;
-    if (withEnd.length > 0) {
-      withEnd.sort((a, b) => b.end - a.end);
-      latestFile = withEnd[0].f;
-    } else if (withSchedule.length > 0) {
+    if (withSchedule.length > 0) {
       withSchedule.sort((a, b) => b.id - a.id);
       latestFile = withSchedule[0].f;
+    } else if (withEnd.length > 0) {
+      withEnd.sort((a, b) => b.end - a.end);
+      latestFile = withEnd[0].f;
     } else {
       // Fallback: previous behavior (lexicographic reverse)
       latestFile = files.sort().reverse()[0];
@@ -80,22 +80,20 @@ export async function getAllDeadlyAssaultData(): Promise<DeadlyAssaultData[]> {
     
     // Filter out files with "unknown-id" (created when session expires)
     const files = allFiles.filter(f => !f.includes('unknown-id'));
-    // Prefer sorting by end date if possible
-    const withEnd = files
-      .map((f) => ({ f, end: parseEndDateFromFilename(f) }))
-      .filter((x) => x.end !== null) as { f: string; end: number }[];
-
+    // Prefer sorting by ID-based naming (newer), then include legacy date-based files
     const withSchedule = files
       .map((f) => ({ f, id: parseScheduleIdFromFilename(f) }))
       .filter((x) => x.id !== null) as { f: string; id: number }[];
 
+    const withEnd = files
+      .map((f) => ({ f, end: parseEndDateFromFilename(f) }))
+      .filter((x) => x.end !== null && !withSchedule.some((s) => s.f === x.f)) as { f: string; end: number }[];
+
     let ordered: string[];
-    if (withEnd.length > 0) {
-      withEnd.sort((a, b) => b.end - a.end);
-      ordered = withEnd.map((x) => x.f);
-    } else if (withSchedule.length > 0) {
+    if (withSchedule.length > 0 || withEnd.length > 0) {
       withSchedule.sort((a, b) => b.id - a.id);
-      ordered = withSchedule.map((x) => x.f);
+      withEnd.sort((a, b) => b.end - a.end);
+      ordered = [...withSchedule.map((x) => x.f), ...withEnd.map((x) => x.f)];
     } else {
       ordered = files.sort().reverse();
     }
@@ -121,8 +119,16 @@ export async function getDeadlyAssaultIndex(): Promise<Array<{ file: string; sta
     const files = allFiles.filter(f => !f.includes('unknown-id'));
     
     const withEnd = files
-      .map((f) => ({ f, endTs: parseEndDateFromFilename(f), ...parseWindowFromFilename(f) }))
+      .map((f) => ({
+        f,
+        id: parseScheduleIdFromFilename(f),
+        endTs: parseEndDateFromFilename(f),
+        ...parseWindowFromFilename(f)
+      }))
       .sort((a, b) => {
+        if (a.id !== null && b.id !== null) return b.id - a.id;
+        if (a.id !== null) return -1;
+        if (b.id !== null) return 1;
         if (a.endTs !== null && b.endTs !== null) return (b.endTs! - a.endTs!);
         return b.f.localeCompare(a.f);
       });
@@ -143,4 +149,3 @@ export async function getDeadlyAssaultDataByFile(fileName: string): Promise<Dead
     return null;
   }
 }
-
