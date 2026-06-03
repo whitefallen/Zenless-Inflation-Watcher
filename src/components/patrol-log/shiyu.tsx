@@ -149,7 +149,76 @@ export function ShiyuView({ data, onAgent, initialPeriodId, onPeriodChange }: { 
           </div>
         </div>
 
-        <SectionDiv num="05">Server Inflation Index</SectionDiv>
+        <SectionDiv num="05">Cross-Season Squad Ledger</SectionDiv>
+        {(() => {
+          const map = new Map<string, { avatars: AvatarInfo[]; count: number; ratings: string[]; scores: number[]; periods: Set<number> }>();
+          data.shiyu.forEach((p, pi) => {
+            (p.layers || []).forEach(L => {
+              if (!L.avatars?.length) return;
+              const sorted = [...L.avatars].sort((a, b) => a.id - b.id);
+              const key = sorted.map(a => a.id).join('-');
+              if (!map.has(key)) map.set(key, { avatars: sorted, count: 0, ratings: [], scores: [], periods: new Set() });
+              const e = map.get(key)!;
+              e.count++;
+              if (L.rating) e.ratings.push(L.rating);
+              if (L.score > 0) e.scores.push(L.score);
+              e.periods.add(pi);
+            });
+          });
+          const squads = Array.from(map.values()).sort((a, b) => b.count - a.count);
+          if (!squads.length) return null;
+          const ratingOrder = ['S+', 'S', 'A', 'B', 'C'];
+          return (
+            <div className="panel">
+              <div className="panel-header">
+                <span className="dot" />
+                <span className="hairline">{squads.length} UNIQUE SQUADS · {data.shiyu.length} CYCLES ON RECORD</span>
+              </div>
+              <div className="panel-body">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  {squads.map((s, i) => {
+                    const bestRating = [...s.ratings].sort((a, b) => ratingOrder.indexOf(a) - ratingOrder.indexOf(b))[0] || '—';
+                    return (
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '10px 12px', background: 'var(--asphalt)', border: '1px solid var(--line)' }}>
+                        <div style={{ display: 'flex', gap: 6 }}>
+                          {s.avatars.map((a, j) => <Agent key={j} a={a} size="sm" onClick={onAgent} />)}
+                        </div>
+                        <div style={{ display: 'flex', gap: 20, marginLeft: 'auto', alignItems: 'center' }}>
+                          <div>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>DEPLOYMENTS</div>
+                            <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 18, color: 'var(--tape)' }}>×{s.count}</div>
+                          </div>
+                          <div>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>CYCLES</div>
+                            <div className="tabular" style={{ fontSize: 14, color: 'var(--ink-dim)' }}>{s.periods.size}</div>
+                          </div>
+                          {s.scores.length > 0 && (
+                            <div>
+                              <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>BEST SCORE</div>
+                              <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: 'var(--tape)' }}>{fmtNum(Math.max(...s.scores))}</div>
+                            </div>
+                          )}
+                          {s.scores.length > 0 && (
+                            <div>
+                              <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>AVG SCORE</div>
+                              <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: 'var(--ink-dim)' }}>{fmtNum(Math.round(s.scores.reduce((a, b) => a + b, 0) / s.scores.length))}</div>
+                            </div>
+                          )}
+                          <div>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>BEST RATING</div>
+                            <div className={`rating ${ratingClass(bestRating)}`} style={{ width: 28, height: 28, fontSize: 13 }}>{bestRating}</div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
+        <SectionDiv num="06">Server Inflation Index</SectionDiv>
         <InflationIndexPanel
           headline={period?.brief?.max_score ? `${((period.brief.score / period.brief.max_score) * 100).toFixed(1)}%` : '—'}
           headlineLabel="of cycle ceiling reached"

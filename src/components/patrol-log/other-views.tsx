@@ -170,7 +170,82 @@ export function VoidFrontView({ data, onAgent, initialPeriodId, onPeriodChange }
           </>
         )}
 
-        <SectionDiv num="04">Inflation Index</SectionDiv>
+        <SectionDiv num="04">Cross-Season Squad Ledger</SectionDiv>
+        {(() => {
+          const map = new Map<string, { avatars: AvatarInfo[]; count: number; scores: number[]; names: string[]; periods: Set<number> }>();
+          data.voidFront.forEach((p, pi) => {
+            const m = (p as unknown as Record<string, unknown>).main as Record<string, unknown> | undefined;
+            const challenges = (m?.sub_challenges as unknown[]) || (p.challenges as unknown[]) || [];
+            challenges.forEach((ch: unknown) => {
+              const c = ch as Record<string, unknown>;
+              const avatars = (c.avatars as AvatarInfo[]) || [];
+              if (!avatars.length) return;
+              const sorted = [...avatars].sort((a, b) => a.id - b.id);
+              const key = sorted.map(a => a.id).join('-');
+              if (!map.has(key)) map.set(key, { avatars: sorted, count: 0, scores: [], names: [], periods: new Set() });
+              const e = map.get(key)!;
+              e.count++;
+              const score = typeof c.score === 'number' ? c.score : 0;
+              if (score > 0) e.scores.push(score);
+              const name = typeof c.name === 'string' ? c.name : '';
+              if (name && !e.names.includes(name)) e.names.push(name);
+              e.periods.add(pi);
+            });
+          });
+          const squads = Array.from(map.values()).sort((a, b) => b.count - a.count);
+          if (!squads.length) return null;
+          return (
+            <div className="panel">
+              <div className="panel-header">
+                <span className="dot" />
+                <span className="hairline">{squads.length} UNIQUE SQUADS · {data.voidFront.length} PERIODS LOGGED</span>
+              </div>
+              <div className="panel-body">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  {squads.map((s, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '10px 12px', background: 'var(--asphalt)', border: '1px solid var(--line)' }}>
+                      <div style={{ display: 'flex', gap: 6 }}>
+                        {s.avatars.map((a, j) => <Agent key={j} a={a} size="sm" onClick={onAgent} />)}
+                      </div>
+                      <div style={{ display: 'flex', gap: 20, marginLeft: 'auto', alignItems: 'center' }}>
+                        <div>
+                          <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>DEPLOYMENTS</div>
+                          <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 18, color: 'var(--tape)' }}>×{s.count}</div>
+                        </div>
+                        <div>
+                          <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>PERIODS</div>
+                          <div className="tabular" style={{ fontSize: 14, color: 'var(--ink-dim)' }}>{s.periods.size}</div>
+                        </div>
+                        {s.scores.length > 0 && (
+                          <div>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>BEST SCORE</div>
+                            <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: 'var(--cyan)' }}>{fmtNum(Math.max(...s.scores))}</div>
+                          </div>
+                        )}
+                        {s.scores.length > 0 && (
+                          <div>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>AVG SCORE</div>
+                            <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: 'var(--ink-dim)' }}>{fmtNum(Math.round(s.scores.reduce((a, b) => a + b, 0) / s.scores.length))}</div>
+                          </div>
+                        )}
+                        {s.names.length > 0 && (
+                          <div style={{ maxWidth: 160 }}>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>CHALLENGES</div>
+                            <div style={{ fontSize: 10, color: 'var(--ink-dim)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                              {s.names.slice(0, 2).join(', ')}{s.names.length > 2 ? ` +${s.names.length - 2}` : ''}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
+        <SectionDiv num="05">Inflation Index</SectionDiv>
         <InflationIndexPanel
           headline={vf.max_score ? `${((vf.total_score / vf.max_score) * 100).toFixed(1)}%` : '—'}
           headlineLabel={vf.max_score ? `of ${fmtNum(vf.max_score)} point ceiling reached` : 'of ceiling reached'}
@@ -345,7 +420,78 @@ export function DeadlyView({ data, onAgent, initialPeriodId, onPeriodChange }: {
           </div>
         </div>
 
-        <SectionDiv num="05">Inflation Index</SectionDiv>
+        <SectionDiv num="05">Cross-Season Squad Ledger</SectionDiv>
+        {(() => {
+          const map = new Map<string, { avatars: AvatarInfo[]; count: number; scores: number[]; bosses: string[]; periods: Set<number> }>();
+          (data.deadlyAssault as unknown as DAExt[]).forEach((p, pi) => {
+            (p.runs || []).forEach(run => {
+              const avatars = (run as unknown as RunExt).avatars || [];
+              if (!avatars.length) return;
+              const sorted = [...avatars].sort((a, b) => a.id - b.id);
+              const key = sorted.map(a => a.id).join('-');
+              if (!map.has(key)) map.set(key, { avatars: sorted, count: 0, scores: [], bosses: [], periods: new Set() });
+              const e = map.get(key)!;
+              e.count++;
+              if (run.score > 0) e.scores.push(run.score);
+              const bossName = run.boss?.[0]?.name;
+              if (bossName && !e.bosses.includes(bossName)) e.bosses.push(bossName);
+              e.periods.add(pi);
+            });
+          });
+          const squads = Array.from(map.values()).sort((a, b) => b.count - a.count);
+          if (!squads.length) return null;
+          return (
+            <div className="panel">
+              <div className="panel-header">
+                <span className="dot" />
+                <span className="hairline">{squads.length} UNIQUE SQUADS · {data.deadlyAssault.length} CYCLES ON RECORD</span>
+              </div>
+              <div className="panel-body">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  {squads.map((s, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '10px 12px', background: 'var(--asphalt)', border: '1px solid var(--line)' }}>
+                      <div style={{ display: 'flex', gap: 6 }}>
+                        {s.avatars.map((a, j) => <Agent key={j} a={a} size="sm" onClick={onAgent} />)}
+                      </div>
+                      <div style={{ display: 'flex', gap: 20, marginLeft: 'auto', alignItems: 'center' }}>
+                        <div>
+                          <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>DEPLOYMENTS</div>
+                          <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 18, color: 'var(--tape)' }}>×{s.count}</div>
+                        </div>
+                        <div>
+                          <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>CYCLES</div>
+                          <div className="tabular" style={{ fontSize: 14, color: 'var(--ink-dim)' }}>{s.periods.size}</div>
+                        </div>
+                        {s.scores.length > 0 && (
+                          <div>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>BEST SCORE</div>
+                            <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: 'var(--hot)' }}>{fmtNum(Math.max(...s.scores))}</div>
+                          </div>
+                        )}
+                        {s.scores.length > 0 && (
+                          <div>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>AVG SCORE</div>
+                            <div className="tabular" style={{ fontFamily: 'JetBrains Mono', fontSize: 14, color: 'var(--ink-dim)' }}>{fmtNum(Math.round(s.scores.reduce((a, b) => a + b, 0) / s.scores.length))}</div>
+                          </div>
+                        )}
+                        {s.bosses.length > 0 && (
+                          <div style={{ maxWidth: 180 }}>
+                            <div className="hairline" style={{ fontSize: 9, color: 'var(--ink-faint)' }}>BOSSES</div>
+                            <div style={{ fontSize: 10, color: 'var(--ink-dim)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                              {s.bosses.slice(0, 2).join(', ')}{s.bosses.length > 2 ? ` +${s.bosses.length - 2}` : ''}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
+        <SectionDiv num="06">Inflation Index</SectionDiv>
         {(() => {
           const maxScore = period?.total_max_score;
           const pct = maxScore ? ((( period?.total_score || 0) / maxScore) * 100).toFixed(1) : null;
