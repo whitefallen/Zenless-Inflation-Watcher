@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 5,
+      "day": 8,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 5,
+      "day": 22,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 182,
+    "list": [
+      {
+        "score": 44479,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 5,
+          "day": 12,
+          "hour": 14,
+          "minute": 59,
+          "second": 22
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/51f82ca252b6a0f857390e62bf95912f.png",
+            "name": "Phaethon of the Scorched Horizon",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/e168d72efd51808783db1acb7b203ee2.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/a214e853b17a49f8c2ab0d2e1dfd9f94.png",
+            "desc": "· Agent Anomaly Proficiency <color=#2BAD00>increases by 30 pts</color>, and <color=#FFFFFF>Abloom</color> deals <color=#2BAD00>10% bonus</color> DMG.\\n· After inflicting <color=#FFFFFF>Abloom</color> on enemies, enemy <color=#98EFF0>Ice RES</color> <color=#2BAD00>drops by 25%</color>, and Agents deal <color=#2BAD00>30% bonus</color> <color=#98EFF0>Ice DMG</color> for 15s. Repeated triggers reset the duration.",
+            "name": "Scorching Frost"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1541,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1541.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1511,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 53021,
+          "rarity": "A",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/5895798b92aedff4cbe14d8700ba74c0.png"
+        }
+      },
+      {
+        "score": 39866,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 5,
+          "day": 10,
+          "hour": 12,
+          "minute": 49,
+          "second": 57
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/ed8400c738d6e0ec7a3923c2ee0eaef1.png",
+            "name": "Wandering Hunter",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/e168d72efd51808783db1acb7b203ee2.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/99194b69ef5a84d9711e952b11de4744.png",
+            "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 15%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent <color=#FE437E>Ether DMG</color> <color=#2BAD00>increases by 25%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 25%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "Breakthrough"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1371,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+            "sub_element_type": 2
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54017,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/25c5786f1ce9545b26182cc81da4af86.png"
+        }
+      },
+      {
+        "score": 47567,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 5,
+          "day": 12,
+          "hour": 14,
+          "minute": 51,
+          "second": 57
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/3ddc51c8909c707a9c0f4f030316c7fe.png",
+            "name": "The Defiler",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/57961e13ce6cae95516841f926449bf5.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/221b7485462af9f743cfc4a42ef2f738.png",
+            "desc": "· When there are 1/2 Agents with Attack specialty in the squad, the whole squad's CRIT DMG <color=#2BAD00>increases by 20%/60%</color>.\\n· After an EX Special Attack or Ultimate, the Agent's <color=#2EB6FF>Electric DMG</color> <color=#2BAD00>increases</color> by 20%. For Agents with Attack specialty, their DMG <color=#2BAD00>further increases by 30%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Combined Attack"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1341,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 5,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54010,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/8140883e1b211ff8e36914bb3088d0dd.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_uc8fqd/806825c211e517a4f08906b3b7039317.png",
+    "total_score": 131912,
+    "total_star": 9,
+    "zone_id": 69036,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2026-05-14T21:16:55.767Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
