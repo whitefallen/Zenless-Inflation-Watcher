@@ -25,7 +25,7 @@
       "brief": {
         "cur_period_zone_layer_count": 5,
         "score": 123080,
-        "rank_percent": 215,
+        "rank_percent": 201,
         "rating": "S+",
         "max_score": 150000
       },
@@ -326,7 +326,7 @@
     "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/ee50b9d5c30305927f4feb7af37f4313.png"
   },
   "metadata": {
-    "exportDate": "2026-06-04T21:49:02.464Z",
+    "exportDate": "2026-06-11T22:07:54.683Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
