@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 196,
+    "rank_percent": 170,
     "list": [
       {
         "score": 47077,
@@ -34,15 +34,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/e2f52e0cead3f11885d141d9b7226f38.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/f9f51a2b591cbed48cb1ff47856b0378.png",
             "name": "Miasmic Fiend - Unfathomable",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/9581c014205bd3c5201bb5095491c3a1.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/e485184069fe37796169943a2961d395.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/c93f3475ee0749c47b895538f541dab5.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/52dabf6539164027c3307a8adbad5497.png",
             "desc": "· Agent <color=#98EFF0>Ice DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 40%</color>, and <color=#FFFFFF>Abloom</color> DMG <color=#2BAD00>increases by 20%</color>.\\n· After an Agent inflicts an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, their DEF <color=#2BAD00>is reduced by 15%</color>, and their <color=#98EFF0>Ice RES</color> <color=#2BAD00>is reduced by 30%</color> for 10s. Repeated triggers reset the duration.",
             "name": "Chilling Edge"
           }
@@ -83,7 +83,7 @@
           "id": 54001,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/7f63e910eddfc83ba5208c3653e51fb3.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/9543dae1ff83680d3af0f8d82fc122a3.png"
         }
       },
       {
@@ -100,15 +100,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/3add18c238d572e391d425b06ade8a7a.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/0f980eba8ea1b52c2dd88f18b77eb1c3.png",
             "name": "Ye Shiyuan the Thrall",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/8995be2bb71f7c4bb152978b356df115.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/4963b32808844f528a56d922ec340402.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/eeb161563c916755fe72a5fadfebbedb.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/851a39c69c01c8ba1143d7d8487ba164.png",
             "desc": "· Agent Sheer DMG <color=#2BAD00>increases by 20%</color>.\\n· After launching EX Special Attack, Agents with Rupture specialty deal <color=#2BAD00>50% bonus</color> CRIT DMG, and their <color=#FFFFFF>EX Special Attack</color> as well as <color=#FFFFFF>Ultimate</color> ignore <color=#2BAD00>30%</color> of enemy <color=#F0D12B>Physical RES</color> on hit for 15s. Repeated triggers reset the duration.",
             "name": "Decree"
           }
@@ -149,7 +149,7 @@
           "id": 54018,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/61e4dad32c15d78f693ebaf2d7414258.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/be46d97d272c3eb4fd6ecbaf98b78561.png"
         }
       },
       {
@@ -166,15 +166,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/e3d710495f466c17e9aebba129ec1e0d.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/107e3ddcc9542c1b724d498c96d16b3d.png",
             "name": "The Defiler",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/07955fb3e1c20d0935e57abaea176447.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/0e36b85e98147bbd92b656cc2df5d6a4.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/2d8a86b1bc31c3a9d3244100237f1cf3.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/6122ee417805828d9d5867226527a142.png",
             "desc": "· Agent CRIT DMG <color=#2BAD00>increases by 30%</color>.\\n· ATK of Agents with Attack specialty <color=#2BAD00>increases by 10%</color>. Their Basic Attack DMG <color=#2BAD00>increases by 30%</color> and ignore <color=#2BAD00>15%</color> of enemy DEF.",
             "name": "Heartcrusher"
           }
@@ -215,13 +215,13 @@
           "id": 54021,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/3a27e973a885551c33ba7031aa409007.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/dada035d2032e27a7aed2a3f829d1667.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u069sd/ee50b9d5c30305927f4feb7af37f4313.png",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/33743c932c030c514af9d0fe5839b7f5.png",
     "total_score": 135949,
     "total_star": 9,
     "zone_id": 69038,
@@ -229,7 +229,7 @@
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2026-06-11T22:07:54.683Z",
+    "exportDate": "2026-06-18T22:21:57.312Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
