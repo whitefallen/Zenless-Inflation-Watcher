@@ -5,37 +5,37 @@
     "start_time": {
       "year": 2026,
       "month": 6,
-      "day": 5,
+      "day": 19,
       "hour": 4,
       "minute": 0,
       "second": 0
     },
     "end_time": {
       "year": 2026,
-      "month": 6,
-      "day": 19,
+      "month": 7,
+      "day": 3,
       "hour": 3,
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 170,
+    "rank_percent": 196,
     "list": [
       {
-        "score": 47077,
+        "score": 43932,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
           "month": 6,
-          "day": 5,
-          "hour": 15,
-          "minute": 54,
-          "second": 20
+          "day": 25,
+          "hour": 20,
+          "minute": 24,
+          "second": 30
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/f9f51a2b591cbed48cb1ff47856b0378.png",
-            "name": "Miasmic Fiend - Unfathomable",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/1e4edfacedf68477dc34277eebc6766c.png",
+            "name": "Girtablullu",
             "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/e485184069fe37796169943a2961d395.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
@@ -43,8 +43,74 @@
         "buffer": [
           {
             "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/52dabf6539164027c3307a8adbad5497.png",
-            "desc": "· Agent <color=#98EFF0>Ice DMG</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increase by 40%</color>, and <color=#FFFFFF>Abloom</color> DMG <color=#2BAD00>increases by 20%</color>.\\n· After an Agent inflicts an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, their DEF <color=#2BAD00>is reduced by 15%</color>, and their <color=#98EFF0>Ice RES</color> <color=#2BAD00>is reduced by 30%</color> for 10s. Repeated triggers reset the duration.",
-            "name": "Chilling Edge"
+            "desc": "· Agent ATK <color=#2BAD00>increases by 10%</color>. After inflicting <color=#FFFFFF>Vortex</color> on an enemy, the whole squad's ATK <color=#2BAD00>increases by 5%</color>, and Anomaly Proficiency <color=#2BAD00>increases by 10</color>, lasting for 15s, stacking up to 3 times. Repeated triggers reset the duration.\\n· After inflicting a <color=#A6C5FD>Wind</color> or <color=#98EFF0>Ice</color> Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00> decreases by 10%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Northern Wind"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1541,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1541.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54001,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/9543dae1ff83680d3af0f8d82fc122a3.png"
+        }
+      },
+      {
+        "score": 52540,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 6,
+          "day": 25,
+          "hour": 20,
+          "minute": 29,
+          "second": 19
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/5883e836dd182bb744e092e9ce4ff0ef.png",
+            "name": "Notorious - Marionette",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/e485184069fe37796169943a2961d395.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/6122ee417805828d9d5867226527a142.png",
+            "desc": "· <color=#FFFFFF>Attack</color> specialty Agents' <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increases by 35%</color>.\\n· <color=#FFFFFF>Basic Attack</color> and <color=#FFFFFF>Ultimate</color> <color=#2BAD00>deal 20%</color> more DMG, ignoring <color=#2BAD00>10%</color> of the enemy's <color=#2BAD00>DEF</color>. After launching a <color=#FFFFFF>Chain Attack</color>/<color=#FFFFFF>EX Special Attack</color>, the Agent's CRIT DMG <color=#2BAD00>increases by 45%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Onslaught"
           }
         ],
         "avatar_list": [
@@ -69,34 +135,34 @@
             "sub_element_type": 0
           },
           {
-            "id": 1411,
+            "id": 1311,
             "level": 60,
-            "element_type": 200,
+            "element_type": 205,
             "avatar_profession": 4,
             "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
             "sub_element_type": 0
           }
         ],
         "buddy": {
-          "id": 54001,
-          "rarity": "S",
+          "id": 54003,
+          "rarity": "A",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/9543dae1ff83680d3af0f8d82fc122a3.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/dfe5d29ef6ab9d2c3a0e2edbfcbd0e28.png"
         }
       },
       {
-        "score": 40301,
+        "score": 43541,
         "star": 3,
         "total_star": 3,
         "challenge_time": {
           "year": 2026,
           "month": 6,
-          "day": 5,
-          "hour": 16,
-          "minute": 48,
-          "second": 55
+          "day": 25,
+          "hour": 20,
+          "minute": 35,
+          "second": 38
         },
         "boss": [
           {
@@ -108,75 +174,9 @@
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/851a39c69c01c8ba1143d7d8487ba164.png",
-            "desc": "· Agent Sheer DMG <color=#2BAD00>increases by 20%</color>.\\n· After launching EX Special Attack, Agents with Rupture specialty deal <color=#2BAD00>50% bonus</color> CRIT DMG, and their <color=#FFFFFF>EX Special Attack</color> as well as <color=#FFFFFF>Ultimate</color> ignore <color=#2BAD00>30%</color> of enemy <color=#F0D12B>Physical RES</color> on hit for 15s. Repeated triggers reset the duration.",
-            "name": "Decree"
-          }
-        ],
-        "avatar_list": [
-          {
-            "id": 1051,
-            "level": 60,
-            "element_type": 202,
-            "avatar_profession": 6,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
-            "sub_element_type": 0
-          },
-          {
-            "id": 1481,
-            "level": 60,
-            "element_type": 200,
-            "avatar_profession": 2,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
-            "sub_element_type": 0
-          },
-          {
-            "id": 1451,
-            "level": 60,
-            "element_type": 205,
-            "avatar_profession": 4,
-            "rarity": "S",
-            "rank": 0,
-            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
-            "sub_element_type": 0
-          }
-        ],
-        "buddy": {
-          "id": 54018,
-          "rarity": "S",
-          "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/be46d97d272c3eb4fd6ecbaf98b78561.png"
-        }
-      },
-      {
-        "score": 48571,
-        "star": 3,
-        "total_star": 3,
-        "challenge_time": {
-          "year": 2026,
-          "month": 6,
-          "day": 5,
-          "hour": 17,
-          "minute": 2,
-          "second": 41
-        },
-        "boss": [
-          {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/107e3ddcc9542c1b724d498c96d16b3d.png",
-            "name": "The Defiler",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/0e36b85e98147bbd92b656cc2df5d6a4.png",
-            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
-          }
-        ],
-        "buffer": [
-          {
             "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/6122ee417805828d9d5867226527a142.png",
-            "desc": "· Agent CRIT DMG <color=#2BAD00>increases by 30%</color>.\\n· ATK of Agents with Attack specialty <color=#2BAD00>increases by 10%</color>. Their Basic Attack DMG <color=#2BAD00>increases by 30%</color> and ignore <color=#2BAD00>15%</color> of enemy DEF.",
-            "name": "Heartcrusher"
+            "desc": "· <color=#FFFFFF>Attack</color> specialty Agents' <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increases by 35%</color>.\\n· <color=#FFFFFF>Basic Attack</color> and <color=#FFFFFF>Ultimate</color> <color=#2BAD00>deal 20%</color> more DMG, ignoring <color=#2BAD00>10%</color> of the enemy's <color=#2BAD00>DEF</color>. After launching a <color=#FFFFFF>Chain Attack</color>/<color=#FFFFFF>EX Special Attack</color>, the Agent's CRIT DMG <color=#2BAD00>increases by 45%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Onslaught"
           }
         ],
         "avatar_list": [
@@ -222,14 +222,14 @@
     "has_data": true,
     "nick_name": "Whitefallen",
     "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/33743c932c030c514af9d0fe5839b7f5.png",
-    "total_score": 135949,
+    "total_score": 140013,
     "total_star": 9,
-    "zone_id": 69038,
+    "zone_id": 69039,
     "total_max_score": 195000,
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2026-06-18T22:21:57.312Z",
+    "exportDate": "2026-06-25T21:50:00.227Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
