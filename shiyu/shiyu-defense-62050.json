@@ -24,8 +24,8 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 133235,
-        "rank_percent": 160,
+        "score": 134506,
+        "rank_percent": 159,
         "rating": "S+",
         "max_score": 150000
       },
@@ -38,7 +38,7 @@
               "title": "Flowing Frost",
               "text": "· Agent Anomaly Proficiency increases by 30 pts, and <color=#FFFFFF>Abloom</color> deals 20% bonus DMG.\\n· After an Agent uses an <color=#FFFFFF>EX Special Attack</color>, the Agent's <color=#98EFF0>Ice DMG</color> additionally increases by 20% for 15s. Repeated triggers reset the duration."
             },
-            "score": 45120,
+            "score": 46391,
             "avatar_list": [
               {
                 "id": 1091,
@@ -61,31 +61,31 @@
                 "sub_element_type": 0
               },
               {
-                "id": 1411,
+                "id": 1311,
                 "level": 60,
                 "rarity": "S",
-                "element_type": 200,
+                "element_type": 205,
                 "avatar_profession": 4,
-                "rank": 0,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
                 "sub_element_type": 0
               }
             ],
             "buddy": {
-              "id": 54010,
+              "id": 54015,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/70794137e38296e773527ed7aa282cf8.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/2a701831cf6ac53cbdeedc1973b4c954.png"
             },
             "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/fa7aa81c69af05f99e24e1a303d3e9fb.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
               "month": 6,
-              "day": 12,
-              "hour": 17,
-              "minute": 8,
-              "second": 8
+              "day": 25,
+              "hour": 21,
+              "minute": 43,
+              "second": 51
             }
           },
           {
@@ -326,7 +326,7 @@
     "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/33743c932c030c514af9d0fe5839b7f5.png"
   },
   "metadata": {
-    "exportDate": "2026-06-18T22:21:57.312Z",
+    "exportDate": "2026-06-25T21:50:00.227Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
