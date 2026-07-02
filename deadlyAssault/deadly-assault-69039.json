@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 196,
+    "rank_percent": 182,
     "list": [
       {
         "score": 43932,
@@ -34,15 +34,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/1e4edfacedf68477dc34277eebc6766c.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/da25bd23af99f8a08b70b060bb43fb04.png",
             "name": "Girtablullu",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/e485184069fe37796169943a2961d395.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/3a982cb806f12bdb1da4e120a9ee1043.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/52dabf6539164027c3307a8adbad5497.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/6e9b4d012b23e943d7e23133d55a1d5d.png",
             "desc": "· Agent ATK <color=#2BAD00>increases by 10%</color>. After inflicting <color=#FFFFFF>Vortex</color> on an enemy, the whole squad's ATK <color=#2BAD00>increases by 5%</color>, and Anomaly Proficiency <color=#2BAD00>increases by 10</color>, lasting for 15s, stacking up to 3 times. Repeated triggers reset the duration.\\n· After inflicting a <color=#A6C5FD>Wind</color> or <color=#98EFF0>Ice</color> Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00> decreases by 10%</color> for 20s. Repeated triggers reset the duration.",
             "name": "Northern Wind"
           }
@@ -83,7 +83,7 @@
           "id": 54001,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/9543dae1ff83680d3af0f8d82fc122a3.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/8e43f5b3018bf787f02f72dc5472f8eb.png"
         }
       },
       {
@@ -100,15 +100,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/5883e836dd182bb744e092e9ce4ff0ef.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/fab8a23a75f85f6c3ec7883d277755be.png",
             "name": "Notorious - Marionette",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/e485184069fe37796169943a2961d395.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/3a982cb806f12bdb1da4e120a9ee1043.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/6122ee417805828d9d5867226527a142.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/97ed325f0f8fbeb30534a5cdf42e6f31.png",
             "desc": "· <color=#FFFFFF>Attack</color> specialty Agents' <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increases by 35%</color>.\\n· <color=#FFFFFF>Basic Attack</color> and <color=#FFFFFF>Ultimate</color> <color=#2BAD00>deal 20%</color> more DMG, ignoring <color=#2BAD00>10%</color> of the enemy's <color=#2BAD00>DEF</color>. After launching a <color=#FFFFFF>Chain Attack</color>/<color=#FFFFFF>EX Special Attack</color>, the Agent's CRIT DMG <color=#2BAD00>increases by 45%</color> for 20s. Repeated triggers reset the duration.",
             "name": "Onslaught"
           }
@@ -149,7 +149,7 @@
           "id": 54003,
           "rarity": "A",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/dfe5d29ef6ab9d2c3a0e2edbfcbd0e28.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/affe245cee10a30f3959d83b8e4500c3.png"
         }
       },
       {
@@ -166,15 +166,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/0f980eba8ea1b52c2dd88f18b77eb1c3.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/ba335d68ad2eab971c61a7cfe1c3b753.png",
             "name": "Ye Shiyuan the Thrall",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/4963b32808844f528a56d922ec340402.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/efa5e54d498055f501ea160f18c0b084.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/6122ee417805828d9d5867226527a142.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/97ed325f0f8fbeb30534a5cdf42e6f31.png",
             "desc": "· <color=#FFFFFF>Attack</color> specialty Agents' <color=#FE437E>Ether DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increases by 35%</color>.\\n· <color=#FFFFFF>Basic Attack</color> and <color=#FFFFFF>Ultimate</color> <color=#2BAD00>deal 20%</color> more DMG, ignoring <color=#2BAD00>10%</color> of the enemy's <color=#2BAD00>DEF</color>. After launching a <color=#FFFFFF>Chain Attack</color>/<color=#FFFFFF>EX Special Attack</color>, the Agent's CRIT DMG <color=#2BAD00>increases by 45%</color> for 20s. Repeated triggers reset the duration.",
             "name": "Onslaught"
           }
@@ -215,13 +215,13 @@
           "id": 54021,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/dada035d2032e27a7aed2a3f829d1667.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/f10224794c8ed261af9969dc27a87da1.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u1afxd/33743c932c030c514af9d0fe5839b7f5.png",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/063e1a82d519cce8d20144e7cf221084.png",
     "total_score": 140013,
     "total_star": 9,
     "zone_id": 69039,
@@ -229,7 +229,7 @@
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2026-06-25T21:50:00.227Z",
+    "exportDate": "2026-07-02T21:18:12.406Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
