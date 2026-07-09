@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 7,
+      "day": 3,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 7,
+      "day": 17,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 282,
+    "list": [
+      {
+        "score": 41698,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 7,
+          "day": 3,
+          "hour": 18,
+          "minute": 28,
+          "second": 45
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/5284609081bfaba161f1098cdc8d1300.png",
+            "name": "Girtablullu",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/2be8cb8b884dab184682b00478f7f471.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/43f73ffc46f6696a31f6cb60b966febc.png",
+            "desc": "· Agent ATK <color=#2BAD00>increases by 10%</color>. After inflicting <color=#FFFFFF>Vortex</color> on an enemy, the whole squad's ATK <color=#2BAD00>increases by 5%</color>, and Anomaly Proficiency <color=#2BAD00>increases by 10</color>, lasting for 15s, stacking up to 3 times. Repeated triggers reset the duration.\\n· After inflicting a <color=#A6C5FD>Wind</color> or <color=#98EFF0>Ice</color> Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00> decreases by 10%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Northern Wind"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1171,
+            "level": 60,
+            "element_type": 201,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54022,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a5be98906126df963169caa343656c66.png"
+        }
+      },
+      {
+        "score": 40796,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 7,
+          "day": 3,
+          "hour": 18,
+          "minute": 12,
+          "second": 36
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/13ab26dd4e14275e4add63372c53d6fd.png",
+            "name": "Primordial Nightmare - \"The Creator\"",
+            "race_icon": "",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a6e7a008548e5f0ff4b59f7670840385.png",
+            "desc": "· DMG dealt by Agents <color=#2BAD00>increases by 20%</color>, and CRIT DMG <color=#2BAD00>increases by 20%</color>.\\n· <color=#FFFFFF>Attack</color> specialty Agents' ATK <color=#2BAD00>increases by 10%</color>, DMG dealt by <color=#FFFFFF>Basic Attack</color>/<color=#FFFFFF>Ultimate</color> <color=#2BAD00>increases by 20%</color>, and ignore <color=#2BAD00>10%</color> of enemies' DEF.",
+            "name": "Huntdown"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1341,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 5,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54021,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/7d95f4f7097bf282b447f4296461760e.png"
+        }
+      },
+      {
+        "score": 40416,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 7,
+          "day": 3,
+          "hour": 18,
+          "minute": 48,
+          "second": 21
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/347bf787f3a080b0371119e68b0dd8ed.png",
+            "name": "Ye Shiyuan the Thrall",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/88b650c55be3ad831c667faca0d5206b.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/43f73ffc46f6696a31f6cb60b966febc.png",
+            "desc": "· Agent ATK <color=#2BAD00>increases by 10%</color>. After inflicting <color=#FFFFFF>Vortex</color> on an enemy, the whole squad's ATK <color=#2BAD00>increases by 5%</color>, and Anomaly Proficiency <color=#2BAD00>increases by 10</color>, lasting for 15s, stacking up to 3 times. Repeated triggers reset the duration.\\n· After inflicting a <color=#A6C5FD>Wind</color> or <color=#98EFF0>Ice</color> Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00> decreases by 10%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Northern Wind"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1511,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54003,
+          "rarity": "A",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/b2674e9933f44dda8e251d59455af77f.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/9a595a13880150b7d2975565528d9e65.png",
+    "total_score": 122910,
+    "total_star": 9,
+    "zone_id": 69040,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2026-07-09T21:36:14.368Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
