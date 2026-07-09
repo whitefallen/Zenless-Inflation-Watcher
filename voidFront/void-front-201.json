@@ -10,9 +10,9 @@
         "end_ts": 0,
         "has_ending_record": true,
         "ending_record_name": "Ending 2: Truth Buried in the Void",
-        "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/7dc2bc087057ce8141ae97922f751903.png",
+        "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/f9dbaffcdddc0696eb544a95a8e94f24.png",
         "total_score": 410834,
-        "rank_percent": 197,
+        "rank_percent": 198,
         "max_score": 481000,
         "left_ts": 0,
         "ending_record_id": 5,
@@ -28,7 +28,7 @@
       },
       "boss_challenge_record": {
         "boss_info": {
-          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/eb7bb9ba0307db3abbf9ae504cc7d212.png",
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/13ab26dd4e14275e4add63372c53d6fd.png",
           "name": "Primordial Nightmare - \"The Creator\"",
           "race_icon": "",
           "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
@@ -49,7 +49,7 @@
             "second": 50
           },
           "buffer": {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/97ed325f0f8fbeb30534a5cdf42e6f31.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a6e7a008548e5f0ff4b59f7670840385.png",
             "desc": "· Agents deal <color=#2BAD00>20% more</color> DMG and attacks ignore <color=#2BAD00>10%</color> of enemy All-DMG RES.\\n· Attack specialty Agents' ATK <color=#2BAD00>increases by 20%</color>, Basic Attack DMG <color=#2BAD00>increases by 40%</color>, and ignore <color=#2BAD00>20%</color> of enemy DEF.",
             "name": "Tempering Body"
           },
@@ -90,7 +90,7 @@
             "id": 54021,
             "rarity": "S",
             "level": 60,
-            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/f10224794c8ed261af9969dc27a87da1.png"
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/7d95f4f7097bf282b447f4296461760e.png"
           },
           "sub_challenge_record": [
             {
@@ -133,10 +133,10 @@
                 "id": 54014,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/99ca4e7c0c7a120387aa2b25a3da4902.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/ae85a5e69d3b440f24a88534b64c18fb.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/97ed325f0f8fbeb30534a5cdf42e6f31.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a6e7a008548e5f0ff4b59f7670840385.png",
                 "desc": "· Agents deal <color=#2BAD00>20% more</color> DMG and attacks ignore <color=#2BAD00>10%</color> of enemy All-DMG RES.\\n· Attack specialty Agents' ATK <color=#2BAD00>increases by 20%</color>, Basic Attack DMG <color=#2BAD00>increases by 40%</color>, and ignore <color=#2BAD00>20%</color> of enemy DEF.",
                 "name": "Tempering Body"
               }
@@ -181,10 +181,10 @@
                 "id": 54016,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/1dfd874b248a17a95f832e30b1f54765.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/22812b0d25954b22477d03847d614fe5.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/6e9b4d012b23e943d7e23133d55a1d5d.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/43f73ffc46f6696a31f6cb60b966febc.png",
                 "desc": "· Agent DMG <color=#2BAD00>increases by 20%</color> and <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by an additional 20%</color>.\\n· After inflicting an Attribute Anomaly on an enemy, the enemy's DEF <color=#2BAD00>decreases by 10%</color> for 10s. After inflicting Disorder on an enemy, the enemy's DEF <color=#2BAD00>further decreases by 25%</color> for 10s. Each effect's duration refreshes individually.",
                 "name": "Artful"
               }
@@ -229,10 +229,10 @@
                 "id": 54015,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/ed279614fe357c145b207b2c873dcb94.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/1e6c354d63affdd1e9c65949985eff7f.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/3f3e9aa74b5e481cf530fd48f66c89e0.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/aca291c61c113d3b174ac155a9cae33d.png",
                 "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 10%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent Sheer DMG additionally <color=#2BAD00>increases by 30%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 45%</color> for 10s. Repeated triggers reset the duration.",
                 "name": "Pinnacle"
               }
@@ -277,10 +277,10 @@
                 "id": 54001,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/8e43f5b3018bf787f02f72dc5472f8eb.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/de7b457157f76481a78de26516384c33.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/3f3e9aa74b5e481cf530fd48f66c89e0.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/aca291c61c113d3b174ac155a9cae33d.png",
                 "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 10%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent Sheer DMG additionally <color=#2BAD00>increases by 30%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 45%</color> for 10s. Repeated triggers reset the duration.",
                 "name": "Pinnacle"
               }
@@ -305,7 +305,7 @@
             "second": 49
           },
           "buffer": {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/97ed325f0f8fbeb30534a5cdf42e6f31.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a6e7a008548e5f0ff4b59f7670840385.png",
             "desc": "· Agent ATK <color=#2BAD00>increases by 16%</color>, and enemy Stun DMG Multiplier <color=#2BAD00>increases by 30%</color>.\\n· When in Ether Veil, Agent attacks that hit enemies ignore <color=#2BAD00>10%</color> of <color=#F0D12B>Physical RES</color> and <color=#2BAD00>15%</color> of DEF.",
             "name": "Focus Energy"
           },
@@ -346,7 +346,7 @@
             "id": 54021,
             "rarity": "S",
             "level": 60,
-            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/f10224794c8ed261af9969dc27a87da1.png"
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/7d95f4f7097bf282b447f4296461760e.png"
           },
           "sub_challenge_record": [
             {
@@ -389,10 +389,10 @@
                 "id": 54015,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/ed279614fe357c145b207b2c873dcb94.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/1e6c354d63affdd1e9c65949985eff7f.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/97ed325f0f8fbeb30534a5cdf42e6f31.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a6e7a008548e5f0ff4b59f7670840385.png",
                 "desc": "· Agents deal <color=#2BAD00>20% more</color> DMG and attacks ignore <color=#2BAD00>10%</color> of enemy All-DMG RES.\\n· Attack specialty Agents' ATK <color=#2BAD00>increases by 20%</color>, Basic Attack DMG <color=#2BAD00>increases by 40%</color>, and ignore <color=#2BAD00>20%</color> of enemy DEF.",
                 "name": "Tempering Body"
               }
@@ -437,10 +437,10 @@
                 "id": 54001,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/8e43f5b3018bf787f02f72dc5472f8eb.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/de7b457157f76481a78de26516384c33.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/6e9b4d012b23e943d7e23133d55a1d5d.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/43f73ffc46f6696a31f6cb60b966febc.png",
                 "desc": "· Agent <color=#FE437E>Ether Anomaly Buildup Rate</color> and <color=#F0D12B>Physical Anomaly Buildup Rate</color> is increased by <color=#2BAD00>25%</color>, and Anomaly Proficiency by <color=#2BAD00>60</color> points.\\n· When triggering an Attribute Anomaly, the enemy's DEF is reduced by <color=#2BAD00>10%</color>, and the damage they receive from Attribute Anomalies will be increased by <color=#2BAD00>30%</color> for 20s. Repeated triggers reset the duration.",
                 "name": "Transformation Charge"
               }
@@ -485,10 +485,10 @@
                 "id": 54011,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/f639bcb47dbade4e91d285b19c7ce733.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/78cd90d49f77188db111f68a7e8e0394.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/6e9b4d012b23e943d7e23133d55a1d5d.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/43f73ffc46f6696a31f6cb60b966febc.png",
                 "desc": "· Agent <color=#FE437E>Ether Anomaly Buildup Rate</color> and <color=#F0D12B>Physical Anomaly Buildup Rate</color> is increased by <color=#2BAD00>25%</color>, and Anomaly Proficiency by <color=#2BAD00>60</color> points.\\n· When triggering an Attribute Anomaly, the enemy's DEF is reduced by <color=#2BAD00>10%</color>, and the damage they receive from Attribute Anomalies will be increased by <color=#2BAD00>30%</color> for 20s. Repeated triggers reset the duration.",
                 "name": "Transformation Charge"
               }
@@ -511,7 +511,7 @@
             "second": 2
           },
           "buffer": {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/3f3e9aa74b5e481cf530fd48f66c89e0.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/aca291c61c113d3b174ac155a9cae33d.png",
             "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 10%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent Sheer DMG additionally <color=#2BAD00>increases by 30%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 45%</color> for 10s. Repeated triggers reset the duration.",
             "name": "Pinnacle"
           },
@@ -552,7 +552,7 @@
             "id": 54017,
             "rarity": "S",
             "level": 60,
-            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/0228cfdf144d9c77ea260d524b8ae636.png"
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/2ae24215899637e3ad679595a3caaf43.png"
           },
           "sub_challenge_record": [
             {
@@ -595,10 +595,10 @@
                 "id": 54021,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/f10224794c8ed261af9969dc27a87da1.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/7d95f4f7097bf282b447f4296461760e.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/ce318c684aff0ca6297d1ed7ddc49897.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/148a5926bcba17153e31012960f7906c.png",
                 "desc": "· Agents within Ether Veil have their ATK <color=#2BAD00>increased by 15%</color>, and when their <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Ultimate</color> hits an enemy, it ignores <color=#2BAD00>15%</color> of enemy DEF.\\n· After an Agent with Assist specialty activates an <color=#FFFFFF>EX Special Attack</color>, the whole squad's <color=#F0D12B>Physical DMG</color> <color=#2BAD00>increases by 20%</color> and their CRIT DMG <color=#2BAD00>increases by 40%</color> for 20s. Repeated triggers reset the duration.",
                 "name": "Ride the Current"
               }
@@ -643,10 +643,10 @@
                 "id": 54016,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/1dfd874b248a17a95f832e30b1f54765.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/22812b0d25954b22477d03847d614fe5.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/8b62baa706fd51b30a8e5dbb5173a57b.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/0e65edf451e0123f0bd375beccd03d3b.png",
                 "desc": "· Increases the Agent's Anomaly Buildup Rate <color=#2BAD00>by 20%</color>.\\n· When inflicting <color=#FFFFFF>Attribute Anomaly</color> on enemies, all squad members <color=#2BAD00>gain 60 points of Anomaly Proficiency</color>, and DMG caused by <color=#FFFFFF>Disorder</color> <color=#2BAD00>increases by 40%</color> for 15 seconds.",
                 "name": "Aberration"
               }
@@ -691,10 +691,10 @@
                 "id": 54001,
                 "rarity": "S",
                 "level": 60,
-                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/8e43f5b3018bf787f02f72dc5472f8eb.png"
+                "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/de7b457157f76481a78de26516384c33.png"
               },
               "buffer": {
-                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/8b62baa706fd51b30a8e5dbb5173a57b.png",
+                "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/0e65edf451e0123f0bd375beccd03d3b.png",
                 "desc": "· Increases the Agent's Anomaly Buildup Rate <color=#2BAD00>by 20%</color>.\\n· When inflicting <color=#FFFFFF>Attribute Anomaly</color> on enemies, all squad members <color=#2BAD00>gain 60 points of Anomaly Proficiency</color>, and DMG caused by <color=#FFFFFF>Disorder</color> <color=#2BAD00>increases by 40%</color> for 15 seconds.",
                 "name": "Aberration"
               }
@@ -705,12 +705,12 @@
       "role_basic_info": {
         "server": "prod_gf_eu",
         "nickname": "Whitefallen",
-        "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/063e1a82d519cce8d20144e7cf221084.png"
+        "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/9a595a13880150b7d2975565528d9e65.png"
       }
     }
   },
   "metadata": {
-    "exportDate": "2026-07-02T21:18:12.406Z",
+    "exportDate": "2026-07-09T21:36:14.368Z",
     "uid": "1500598195",
     "type": "void_front",
     "automated": true

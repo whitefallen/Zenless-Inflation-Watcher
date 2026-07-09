@@ -24,8 +24,8 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 135450,
-        "rank_percent": 189,
+        "score": 136985,
+        "rank_percent": 171,
         "rating": "S+",
         "max_score": 150000
       },
@@ -75,9 +75,9 @@
               "id": 54022,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/b0de749d122beaf2eab54572238d64f0.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a5be98906126df963169caa343656c66.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/6bab2ad97614e61935f3cd1853c0d5d9.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/e63891c70fc6948bf7c70194d560a0c1.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
@@ -132,9 +132,9 @@
               "id": 54021,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/f10224794c8ed261af9969dc27a87da1.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/7d95f4f7097bf282b447f4296461760e.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/b58d894982eec0845334eb83d8d67598.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/70db8a38a0d23ebc4205e1d9382e56ff.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
@@ -189,9 +189,9 @@
               "id": 54015,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/ed279614fe357c145b207b2c873dcb94.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/1e6c354d63affdd1e9c65949985eff7f.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/5e5c13308e14f14be78c434927735c27.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/88f46b168ebffe88b028d39a3a349ec5.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
@@ -257,7 +257,7 @@
               "id": 54003,
               "rarity": "A",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/affe245cee10a30f3959d83b8e4500c3.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/b2674e9933f44dda8e251d59455af77f.png"
             },
             "challenge_time": {
               "year": 2026,
@@ -306,7 +306,7 @@
               "id": 54010,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/2fdcc5bf3e2d913fff272b4b5e5ae7e0.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/92cfd828e3e9aca149e883b4d00da9ee.png"
             },
             "challenge_time": {
               "year": 2026,
@@ -323,10 +323,10 @@
       "end_time": "1783652399"
     },
     "nick_name": "Whitefallen",
-    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9fczd/063e1a82d519cce8d20144e7cf221084.png"
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/9a595a13880150b7d2975565528d9e65.png"
   },
   "metadata": {
-    "exportDate": "2026-07-02T21:18:12.406Z",
+    "exportDate": "2026-07-09T21:36:14.368Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
