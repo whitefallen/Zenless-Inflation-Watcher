@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 282,
+    "rank_percent": 256,
     "list": [
       {
         "score": 41698,
@@ -229,7 +229,7 @@
     "room_max_score": 65000
   },
   "metadata": {
-    "exportDate": "2026-07-09T21:36:14.368Z",
+    "exportDate": "2026-07-16T21:11:00.641Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
