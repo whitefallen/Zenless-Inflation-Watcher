@@ -1,0 +1,237 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 7,
+      "day": 17,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 7,
+      "day": 29,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 242,
+    "list": [
+      {
+        "score": 45464,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 7,
+          "day": 17,
+          "hour": 17,
+          "minute": 21,
+          "second": 30
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/3c797f02e3d1300c1a6c690a37867058.png",
+            "name": "Phaethon of the Scorched Horizon",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/2be8cb8b884dab184682b00478f7f471.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/43f73ffc46f6696a31f6cb60b966febc.png",
+            "desc": "· Agent's <color=#A6C5FD>Wind DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increase by 20%</color>, and their Anomaly Proficiency <color=#2BAD00>increases by 20</color>.\\n· When an <color=#FFFFFF>Attribute Anomaly</color> is inflicted on an enemy, the enemy's All-DMG RES <color=#2BAD00> is reduced by 10%</color>, and Attribute Anomaly DMG dealt by the whole squad <color=#2BAD00>increases by 10%</color> for 15s. Repeated triggers reset the duration.",
+            "name": "Frostbite Breath"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1541,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1541.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54022,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a5be98906126df963169caa343656c66.png"
+        }
+      },
+      {
+        "score": 43727,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 7,
+          "day": 18,
+          "hour": 18,
+          "minute": 11,
+          "second": 12
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/5829096fba6dea2463ee45be690a43fb.png",
+            "name": "Notorious - Pompey",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/2be8cb8b884dab184682b00478f7f471.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/a6e7a008548e5f0ff4b59f7670840385.png",
+            "desc": "· Daze inflicted by the Agent increases by <color=#2BAD00>20%</color>. <color=#FFFFFF>Ultimate</color>/<color=#FFFFFF>Chain Attack</color> ignore <color=#2BAD00>30%</color> of the enemy's All-Attribute RES.\\n· After launching a <color=#FFFFFF>Chain Attack</color>, the whole squad's ATK increases by <color=#2BAD00>10%</color> and CRIT DMG increases by <color=#2BAD00>15%</color> for 20s, stacking up to 3 times. Repeated triggers reset the duration.",
+            "name": "Oblivion"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1321,
+            "level": 60,
+            "element_type": 201,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54015,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/1e6c354d63affdd1e9c65949985eff7f.png"
+        }
+      },
+      {
+        "score": 37180,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 7,
+          "day": 18,
+          "hour": 18,
+          "minute": 2,
+          "second": 38
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/8b51e440e361c444780c1e4d600ebbbe.png",
+            "name": "Miasmic Fiend - Unfathomable",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/2be8cb8b884dab184682b00478f7f471.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/43f73ffc46f6696a31f6cb60b966febc.png",
+            "desc": "· Agent's <color=#A6C5FD>Wind DMG</color> and <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increase by 20%</color>, and their Anomaly Proficiency <color=#2BAD00>increases by 20</color>.\\n· When an <color=#FFFFFF>Attribute Anomaly</color> is inflicted on an enemy, the enemy's All-DMG RES <color=#2BAD00> is reduced by 10%</color>, and Attribute Anomaly DMG dealt by the whole squad <color=#2BAD00>increases by 10%</color> for 15s. Repeated triggers reset the duration.",
+            "name": "Frostbite Breath"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1511,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54010,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/92cfd828e3e9aca149e883b4d00da9ee.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u7f11d/9a595a13880150b7d2975565528d9e65.png",
+    "total_score": 126371,
+    "total_star": 9,
+    "zone_id": 69041,
+    "total_max_score": 195000,
+    "room_max_score": 65000
+  },
+  "metadata": {
+    "exportDate": "2026-07-23T21:15:08.698Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
