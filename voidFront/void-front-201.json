@@ -12,7 +12,7 @@
         "ending_record_name": "Ending 2: Truth Buried in the Void",
         "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue005d/b728503695b01064094b6a2df067b89d.png",
         "total_score": 410834,
-        "rank_percent": 204,
+        "rank_percent": 213,
         "max_score": 481000,
         "left_ts": 0,
         "ending_record_id": 5,
@@ -705,12 +705,12 @@
       "role_basic_info": {
         "server": "prod_gf_eu",
         "nickname": "Whitefallen",
-        "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue005d/5daa6481e1bffb70ad1ba7710c5ab170.png"
+        "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue005d/558b519aa6a9744854c5983611d2fa89.png"
       }
     }
   },
   "metadata": {
-    "exportDate": "2026-07-30T21:18:43.245Z",
+    "exportDate": "2026-08-07T00:55:23.812Z",
     "uid": "1500598195",
     "type": "void_front",
     "automated": true
