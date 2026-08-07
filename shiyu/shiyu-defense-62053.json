@@ -24,8 +24,8 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 134921,
-        "rank_percent": 255,
+        "score": 137338,
+        "rank_percent": 291,
         "rating": "S+",
         "max_score": 150000
       },
@@ -95,8 +95,18 @@
               "title": "Chain Circuit",
               "text": "· Agent's Anomaly Proficiency increases by 20 points, and Attribute Anomaly DMG increases by 15%.\\n· When there are 1/2 Agents with the <color=#FFFFFF>Anomaly</color> specialty in the squad, Attribute Anomaly DMG dealt to enemies ignores 5%/15% of their All-Attribute RES."
             },
-            "score": 42611,
+            "score": 47823,
             "avatar_list": [
+              {
+                "id": 1581,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 300,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+                "sub_element_type": 0
+              },
               {
                 "id": 1171,
                 "level": 60,
@@ -116,16 +126,6 @@
                 "rank": 0,
                 "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
                 "sub_element_type": 0
-              },
-              {
-                "id": 1411,
-                "level": 60,
-                "rarity": "S",
-                "element_type": 200,
-                "avatar_profession": 4,
-                "rank": 0,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
-                "sub_element_type": 0
               }
             ],
             "buddy": {
@@ -138,11 +138,11 @@
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
-              "month": 7,
-              "day": 24,
-              "hour": 16,
-              "minute": 59,
-              "second": 28
+              "month": 8,
+              "day": 1,
+              "hour": 14,
+              "minute": 1,
+              "second": 48
             }
           },
           {
@@ -152,7 +152,7 @@
               "title": "Operation Zero",
               "text": "· Agent <color=#98EFF0>Ice DMG</color> and <color=#FE437E>Ether DMG</color> increase by 30%.\\n· Agent <color=#FFFFFF>Basic Attack</color> and <color=#FFFFFF>Chain Attack</color> DMG increase by 20%, and CRIT DMG increases by 35%."
             },
-            "score": 48007,
+            "score": 45212,
             "avatar_list": [
               {
                 "id": 1091,
@@ -195,11 +195,11 @@
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
-              "month": 7,
-              "day": 24,
-              "hour": 16,
-              "minute": 56,
-              "second": 16
+              "month": 8,
+              "day": 1,
+              "hour": 14,
+              "minute": 6,
+              "second": 53
             }
           }
         ]
@@ -323,10 +323,10 @@
       "end_time": "1786071599"
     },
     "nick_name": "Whitefallen",
-    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue005d/5daa6481e1bffb70ad1ba7710c5ab170.png"
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_ue005d/558b519aa6a9744854c5983611d2fa89.png"
   },
   "metadata": {
-    "exportDate": "2026-07-30T21:18:43.245Z",
+    "exportDate": "2026-08-07T00:55:23.812Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true
