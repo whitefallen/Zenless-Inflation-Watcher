@@ -518,6 +518,44 @@
 [data-patrol-log] .panel-grid { display: grid; gap: 16px; }
 [data-patrol-log] .boss-row { display: grid; grid-template-columns: 24px 1fr 80px 80px; gap: 12px; align-items: center; }
 
+/* ---- Holo Boss ---- */
+[data-patrol-log] .holo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+/* Column layout + stretch keeps the metrics and squad on a shared baseline
+   across cards, despite boss names wrapping to different heights and the
+   flawless badge only appearing on some. */
+[data-patrol-log] .holo-grid > .holo-card { display: flex; flex-direction: column; }
+[data-patrol-log] .holo-card-body { padding: 14px; margin-top: auto; }
+[data-patrol-log] .holo-card-head { min-height: 96px; }
+[data-patrol-log] .holo-card { border-color: var(--line); }
+[data-patrol-log] .holo-card:hover { border-color: var(--cyan); box-shadow: 0 0 18px rgba(43, 224, 255, 0.22); }
+[data-patrol-log] .holo-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1.5px solid var(--line);
+  background: linear-gradient(90deg, rgba(43, 224, 255, 0.10), transparent);
+}
+[data-patrol-log] .holo-boss-name {
+  font-size: 13px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+[data-patrol-log] .holo-medal { margin-left: auto; flex-shrink: 0; filter: drop-shadow(0 0 6px rgba(43, 224, 255, 0.55)); }
+[data-patrol-log] .holo-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px; }
+[data-patrol-log] .holo-time { font-family: 'Archivo Black', sans-serif; font-size: 22px; color: var(--cyan); }
+[data-patrol-log] .holo-rank { font-family: 'Archivo Black', sans-serif; font-size: 22px; color: var(--ink); }
+[data-patrol-log] .holo-flawless {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  padding: 3px 6px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
 /* ---- Hard mode: cordoned-off danger zone ---- */
 [data-patrol-log] .hard-zone {
   margin-top: 32px;
@@ -601,6 +639,7 @@
   [data-patrol-log] .panel-grid { grid-template-columns: 1fr !important; }
   [data-patrol-log] .hard-run-grid { grid-template-columns: 1fr; }
   [data-patrol-log] .hard-rank { margin-left: 0; }
+  [data-patrol-log] .holo-grid { grid-template-columns: 1fr !important; }
   /* Floor ledger: 2 columns fit on mobile without being too dense */
   [data-patrol-log] .floor-grid { grid-template-columns: repeat(2, 1fr) !important; }
 

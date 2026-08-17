@@ -117,6 +117,7 @@ export function TopBar({ active, onNav }: { active: string; onNav: (v: string) =
     { id: 'shiyu',     label: 'Shiyu Defense' },
     { id: 'deadly',    label: 'Deadly Assault' },
     { id: 'voidfront', label: 'Void Front' },
+    { id: 'holo',      label: 'Holo Boss' },
   ];
   const handleNav = (id: string) => { onNav(id); setMenuOpen(false); window.scrollTo({ top: 0 }); };
   return (

@@ -38,6 +38,14 @@ class AutomatedFetcher {
         intervalDays: 14,
         name: "Void Front",
       },
+      holo: {
+        // Holo Boss runs a long season rather than a fortnightly cycle —
+        // the 2026-06-17 one ends 2026-10-21 (~126 days). The interval is only
+        // used for logging; every mode is fetched on each run regardless.
+        baseDate: new Date("2026-06-17"),
+        intervalDays: 126,
+        name: "Holo Boss",
+      },
     };
   }
 
@@ -78,6 +86,9 @@ class AutomatedFetcher {
     const d = payload && payload.data;
     if (!d) return false;
     if (payload.retcode !== 0) return false;
+    // Holo Boss signals "not played / not unlocked" with unlock:false instead
+    // of the has_data flag the other modes use.
+    if (d.unlock === false) return false;
     return d.has_data !== false;
   }
 
@@ -125,6 +136,16 @@ class AutomatedFetcher {
       return payload.data.void_front_id || null;
     }
 
+    if (mode === "holo") {
+      // Holo Boss ships no zone/schedule id, so the season start doubles as
+      // one: 2026-06-17 -> 20260617.
+      const t = payload.data.start_time;
+      if (!t || !t.year || !t.month || !t.day) return null;
+      return (
+        t.year * 10000 + t.month * 100 + t.day
+      );
+    }
+
     if (mode === "shiyu") {
       // Check for v2 (Hadal) format first
       if (payload.data.hadal_ver === "v2" && payload.data.hadal_info_v2) {
@@ -155,6 +176,8 @@ class AutomatedFetcher {
       modeName = "deadly-assault";
     } else if (mode === "voidfront") {
       modeName = "void-front";
+    } else if (mode === "holo") {
+      modeName = "holo-boss";
     } else {
       modeName = "shiyu-defense";
     }
@@ -224,15 +247,17 @@ class AutomatedFetcher {
     const shouldFetchDeadly = this.shouldFetchMode("deadly");
     const shouldFetchShiyu = this.shouldFetchMode("shiyu");
     const shouldFetchVoidFront = this.shouldFetchMode("voidfront");
+    const shouldFetchHolo = this.shouldFetchMode("holo");
 
     console.log(
-      "📊 Fetching Deadly Assault, Shiyu Defense, and Void Front data",
+      "📊 Fetching Deadly Assault, Shiyu Defense, Void Front and Holo Boss data",
     );
 
     await this.discord.notifyWorkflowStart(uid, {
       deadly: shouldFetchDeadly,
       shiyu: shouldFetchShiyu,
       voidfront: shouldFetchVoidFront,
+      holo: shouldFetchHolo,
     });
 
     try {
@@ -257,6 +282,7 @@ class AutomatedFetcher {
         deadly: shouldFetchDeadly,
         shiyu: shouldFetchShiyu,
         voidfront: shouldFetchVoidFront,
+        holo: shouldFetchHolo,
       });
 
       // Save data to files (returns per-mode { wrote, isNew, file, seasonId })
@@ -267,6 +293,7 @@ class AutomatedFetcher {
         deadly: shouldFetchDeadly,
         shiyu: shouldFetchShiyu,
         voidfront: shouldFetchVoidFront,
+        holo: shouldFetchHolo,
       });
 
       // Fire a separate notification ONLY when one or more modes wrote a brand-new
@@ -355,6 +382,21 @@ class AutomatedFetcher {
       console.log("⏭️  Skipping Void Front (not in reset window)");
     }
 
+    if (schedule.holo) {
+      try {
+        console.log("📊 Fetching Holo Boss data...");
+        data.holo = await api.getHoloBossDetail({ uid });
+        console.log(
+          `✅ Holo Boss: ${data.holo?.data?.list?.length || 0} boss clears`,
+        );
+      } catch (error) {
+        console.error("❌ Holo Boss fetch failed:", error.message);
+        data.holo = null;
+      }
+    } else {
+      console.log("⏭️  Skipping Holo Boss (not in reset window)");
+    }
+
     return data;
   }
 
@@ -382,6 +424,7 @@ class AutomatedFetcher {
       deadly: { wrote: false, isNew: false, file: null, seasonId: null },
       shiyu: { wrote: false, isNew: false, file: null, seasonId: null },
       voidfront: { wrote: false, isNew: false, file: null, seasonId: null },
+      holo: { wrote: false, isNew: false, file: null, seasonId: null },
     };
 
     // Save Deadly Assault data
@@ -538,6 +581,65 @@ class AutomatedFetcher {
       console.log(
         `💾 Saved Void Front data to: ${voidFrontFile} (always updated)`,
       );
+    }
+
+    // Save Holo Boss data
+    const holoSeasonId = AutomatedFetcher.getSeasonId("holo", data.holo);
+    if (data.holo && !holoSeasonId) {
+      result.holo.error = AutomatedFetcher.reportMissingSeasonId(
+        "Holo Boss",
+        data.holo,
+      );
+    }
+    if (data.holo && holoSeasonId) {
+      const holoFolder = path.join(__dirname, "holoBoss");
+      if (!fs.existsSync(holoFolder)) {
+        fs.mkdirSync(holoFolder, { recursive: true });
+      }
+      const seasonId = holoSeasonId;
+      const holoFile = path.join(
+        holoFolder,
+        AutomatedFetcher.buildFileName("holo", seasonId),
+      );
+      const isNew = !fs.existsSync(holoFile);
+      result.holo.file = holoFile;
+      result.holo.seasonId = seasonId;
+      result.holo.isNew = isNew;
+      const holoData = {
+        ...data.holo,
+        metadata: {
+          exportDate: timestamp,
+          uid: uid,
+          type: "holo_boss",
+          automated: true,
+        },
+      };
+
+      // The season runs for months and clears can improve at any time, so
+      // rewrite only when something other than the export timestamp changed.
+      let shouldWrite = true;
+      if (!isNew) {
+        try {
+          const existing = JSON.parse(fs.readFileSync(holoFile, "utf-8"));
+          const a = AutomatedFetcher.stableStringify(
+            AutomatedFetcher.normalizeForComparison(existing),
+          );
+          const b = AutomatedFetcher.stableStringify(
+            AutomatedFetcher.normalizeForComparison(holoData),
+          );
+          if (a === b) {
+            shouldWrite = false;
+            console.log(
+              `⏭️  No changes for Holo Boss season ${holoFile}. Skipping write.`,
+            );
+          }
+        } catch {}
+      }
+      if (shouldWrite) {
+        fs.writeFileSync(holoFile, JSON.stringify(holoData, null, 2));
+        result.holo.wrote = true;
+        console.log(`💾 Saved Holo Boss data to: ${holoFile}`);
+      }
     }
 
     // Also save to data/ directory for backward compatibility

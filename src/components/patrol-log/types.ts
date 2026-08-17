@@ -95,8 +95,36 @@ export interface DeadlyAssaultPeriod {
   hard_runs?: DARun[];
 }
 
+export interface HoloClear {
+  boss?: string;
+  boss_icon?: string;
+  medal_icon?: string;
+  medal_id?: number;
+  /** Cleared without taking damage — the medal condition. */
+  no_injured: boolean;
+  rank: number;
+  star: number;
+  /** Clear duration in seconds. The API sends this as a TimeStamp-shaped
+   *  duration (hour/minute/second), not a wall-clock time. */
+  clear_seconds: number;
+  avatars: AvatarInfo[];
+}
+
+export interface HoloBossSeason {
+  /** Derived from start_time (YYYYMMDD) — the payload carries no zone id. */
+  season_id: number;
+  start_time?: TimeStamp;
+  end_time?: TimeStamp;
+  unlock: boolean;
+  total_star: number;
+  /** Count of clears earning the no-damage medal. */
+  flawless: number;
+  clears: HoloClear[];
+}
+
 export interface ZZZData {
   shiyu: ShiyuPeriod[];
   voidFront: VoidFrontPeriod[];
   deadlyAssault: DeadlyAssaultPeriod[];
+  holoBoss: HoloBossSeason[];
 }

@@ -190,14 +190,65 @@ function buildVoidFront() {
   return periods;
 }
 
+// ── HOLO BOSS ─────────────────────────────────────────────────────────────────
+function buildHoloBoss() {
+  const dir = join(ROOT, 'holoBoss');
+  let files;
+  try {
+    files = readdirSync(dir).filter(f => f.endsWith('.json') && !f.includes('unknown'));
+  } catch {
+    return []; // folder only exists once the mode has been fetched
+  }
+
+  const seasons = [];
+  for (const file of files) {
+    const raw = JSON.parse(readFileSync(join(dir, file), 'utf8'));
+    if (!raw.data) continue;
+
+    const d = raw.data;
+    const clears = (d.list ?? []).map(r => ({
+      boss: r.boss?.name,
+      boss_icon: r.boss?.icon,
+      medal_icon: r.boss?.medal?.medal_icon,
+      medal_id: r.boss?.medal?.medal_id,
+      no_injured: r.boss?.medal?.is_no_injured ?? false,
+      rank: r.rank,
+      star: r.star,
+      // challenge_time here is a DURATION (the clear time), not a timestamp.
+      clear_seconds: (r.challenge_time?.hour ?? 0) * 3600
+        + (r.challenge_time?.minute ?? 0) * 60
+        + (r.challenge_time?.second ?? 0),
+      avatars: (r.avatar_list ?? []).map(mapAvatar),
+    }));
+
+    seasons.push({
+      // No zone/schedule id in this payload — the start date identifies it.
+      season_id: d.start_time
+        ? d.start_time.year * 10000 + d.start_time.month * 100 + d.start_time.day
+        : 0,
+      start_time: d.start_time,
+      end_time: d.end_time,
+      unlock: d.unlock ?? false,
+      total_star: clears.reduce((sum, c) => sum + (c.star || 0), 0),
+      flawless: clears.filter(c => c.no_injured).length,
+      clears,
+    });
+  }
+
+  seasons.sort((a, b) => a.season_id - b.season_id);
+  return seasons;
+}
+
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 const shiyu = buildShiyu();
 const deadlyAssault = buildDeadlyAssault();
 const voidFront = buildVoidFront();
+const holoBoss = buildHoloBoss();
 
 console.log(`✓ shiyu: ${shiyu.length} periods`);
 console.log(`✓ deadlyAssault: ${deadlyAssault.length} periods`);
 console.log(`✓ voidFront: ${voidFront.length} periods`);
+console.log(`✓ holoBoss: ${holoBoss.length} seasons`);
 
-writeFileSync(OUT, JSON.stringify({ shiyu, deadlyAssault, voidFront }));
+writeFileSync(OUT, JSON.stringify({ shiyu, deadlyAssault, voidFront, holoBoss }));
 console.log(`✓ wrote ${OUT}`);

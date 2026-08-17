@@ -115,6 +115,14 @@ class ZZZApi {
     return this._getJson(`${this.baseUrl}/mem_detail?${query}`);
   }
 
+  // Fetch Holo Boss (Hollow Zero boss rush) detail data.
+  // Served from the act host only. Note the response carries no zone/schedule
+  // id — the season is identified by start_time.
+  async getHoloBossDetail({ uid, schedule_type = 1 }) {
+    const query = `region=${this.server}&uid=${uid}&schedule_type=${schedule_type}`;
+    return this._getJson(`${this.actBaseUrl}/holo_boss_detail?${query}`);
+  }
+
   // Fetch Void Front battle detail data
   async getVoidFrontDetail({ uid, schedule_type = 1 }) {
     const query = `uid=${uid}&region=${this.server}&schedule_type=${schedule_type}`;

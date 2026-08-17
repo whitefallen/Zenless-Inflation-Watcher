@@ -32,6 +32,7 @@ const slices = {
   'zzz-shiyu.json':    { shiyu: full.shiyu },
   'zzz-deadly.json':   { deadlyAssault: full.deadlyAssault },
   'zzz-voidfront.json':{ voidFront: full.voidFront },
+  'zzz-holo.json':     { holoBoss: full.holoBoss },
 };
 
 for (const [file, data] of Object.entries(slices)) {

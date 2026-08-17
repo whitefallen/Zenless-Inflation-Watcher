@@ -45,3 +45,7 @@ copyAllJson(
   path.join(__dirname, "../voidFront"),
   path.join(__dirname, "../public/voidFront"),
 );
+copyAllJson(
+  path.join(__dirname, "../holoBoss"),
+  path.join(__dirname, "../public/holoBoss"),
+);

@@ -4,9 +4,10 @@ import { TopBar, Agent, Stat, elementInfo, professionName } from './shared';
 import { Dashboard } from './dashboard';
 import { ShiyuView } from './shiyu';
 import { VoidFrontView, DeadlyView } from './other-views';
-import type { ZZZData, AvatarInfo, ShiyuPeriod, DeadlyAssaultPeriod, VoidFrontPeriod } from './types';
+import { HoloView } from './holo';
+import type { ZZZData, AvatarInfo, ShiyuPeriod, DeadlyAssaultPeriod, VoidFrontPeriod, HoloBossSeason } from './types';
 
-const VALID_VIEWS = ['dashboard', 'shiyu', 'deadly', 'voidfront'];
+const VALID_VIEWS = ['dashboard', 'shiyu', 'deadly', 'voidfront', 'holo'];
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -15,6 +16,7 @@ const VIEW_FILES: Record<string, { file: string; key: keyof ZZZData }> = {
   shiyu:     { file: `${BASE}/data/zzz-shiyu.json`,    key: 'shiyu' },
   deadly:    { file: `${BASE}/data/zzz-deadly.json`,   key: 'deadlyAssault' },
   voidfront: { file: `${BASE}/data/zzz-voidfront.json`, key: 'voidFront' },
+  holo:      { file: `${BASE}/data/zzz-holo.json`,     key: 'holoBoss' },
 };
 
 const DASHBOARD_DEPS = ['shiyu', 'deadly', 'voidfront'] as const;
@@ -43,6 +45,7 @@ export function PatrolLogApp() {
   const [shiyuData,  setShiyuData]  = useState<ShiyuPeriod[] | null>(null);
   const [daData,     setDaData]     = useState<DeadlyAssaultPeriod[] | null>(null);
   const [vfData,     setVfData]     = useState<VoidFrontPeriod[] | null>(null);
+  const [holoData,   setHoloData]   = useState<HoloBossSeason[] | null>(null);
 
   const loadingRef = useRef<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
@@ -59,6 +62,7 @@ export function PatrolLogApp() {
         if (key === 'shiyu')              setShiyuData(d.shiyu ?? null);
         else if (key === 'deadlyAssault') setDaData(d.deadlyAssault ?? null);
         else if (key === 'voidFront')     setVfData(d.voidFront ?? null);
+        else if (key === 'holoBoss')      setHoloData(d.holoBoss ?? null);
       })
       .catch(() => setError(`Failed to load ${v} patrol data.`));
   }, []);
@@ -114,6 +118,7 @@ export function PatrolLogApp() {
     shiyu:         shiyuData  ?? [],
     deadlyAssault: daData     ?? [],
     voidFront:     vfData     ?? [],
+    holoBoss:      holoData   ?? [],
   };
 
   const viewReady =
@@ -121,6 +126,7 @@ export function PatrolLogApp() {
     : view === 'shiyu'     ? !!shiyuData
     : view === 'deadly'    ? !!daData
     : view === 'voidfront' ? !!vfData
+    : view === 'holo'      ? !!holoData
     : false;
 
   if (error) return (
@@ -144,6 +150,7 @@ export function PatrolLogApp() {
         {view === 'shiyu'      && <ShiyuView  data={data} onAgent={setAgentModal} initialPeriodId={initialPeriodId} onPeriodChange={pid => goTo('shiyu', pid)} />}
         {view === 'voidfront'  && <VoidFrontView data={data} onAgent={setAgentModal} initialPeriodId={initialPeriodId} onPeriodChange={pid => goTo('voidfront', pid)} />}
         {view === 'deadly'     && <DeadlyView data={data} onAgent={setAgentModal} initialPeriodId={initialPeriodId} onPeriodChange={pid => goTo('deadly', pid)} />}
+        {view === 'holo'       && <HoloView   data={data} onAgent={setAgentModal} />}
       </div>
 
       {agentModal && (
