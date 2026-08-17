@@ -1,0 +1,191 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 6,
+      "day": 17,
+      "hour": 6,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 10,
+      "day": 21,
+      "hour": 5,
+      "minute": 59,
+      "second": 59
+    },
+    "list": [
+      {
+        "rank": 462,
+        "star": 4,
+        "challenge_time": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "hour": 0,
+          "minute": 1,
+          "second": 39
+        },
+        "boss": {
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/8d4c21a4f57892179e40ff56c19ee809.png",
+          "name": "Integrated - Primordial Nightmare - \"The Creator\"",
+          "medal": {
+            "medal_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/815ff73c07c79d61d563b3b2a58322b7.png",
+            "medal_id": 11001,
+            "is_no_injured": true
+          }
+        },
+        "avatar_list": [
+          {
+            "id": 1321,
+            "level": 0,
+            "element_type": 201,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1571,
+            "level": 0,
+            "element_type": 201,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1571.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1481,
+            "level": 0,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          }
+        ]
+      },
+      {
+        "rank": 667,
+        "star": 4,
+        "challenge_time": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "hour": 0,
+          "minute": 1,
+          "second": 47
+        },
+        "boss": {
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/dc61baab50df342455e1d00714a37326.png",
+          "name": "Drowned Ideal - Komano Manato",
+          "medal": {
+            "medal_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/a7a4a0d45f1c77b0cc09ede6bcdf17b7.png",
+            "medal_id": 11002,
+            "is_no_injured": true
+          }
+        },
+        "avatar_list": [
+          {
+            "id": 1051,
+            "level": 0,
+            "element_type": 202,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1481,
+            "level": 0,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 0,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ]
+      },
+      {
+        "rank": 1006,
+        "star": 4,
+        "challenge_time": {
+          "year": 0,
+          "month": 0,
+          "day": 0,
+          "hour": 0,
+          "minute": 2,
+          "second": 21
+        },
+        "boss": {
+          "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/7290c6d3ff73c9e92b21808cbb905d25.png",
+          "name": "Shining Promise - Billy",
+          "medal": {
+            "medal_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/bdf0379cb98bb8120f7f5af9ce00b8e6.png",
+            "medal_id": 11003,
+            "is_no_injured": false
+          }
+        },
+        "avatar_list": [
+          {
+            "id": 1051,
+            "level": 0,
+            "element_type": 202,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1481,
+            "level": 0,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 0,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ]
+      }
+    ],
+    "unlock": true,
+    "refresh_time": 5567967
+  },
+  "metadata": {
+    "exportDate": "2026-08-17T11:20:33.581Z",
+    "uid": "1500598195",
+    "type": "holo_boss",
+    "automated": true
+  }
+}
