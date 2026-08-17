@@ -78,7 +78,7 @@ function buildDeadlyAssault() {
     if (!raw.data) continue;
 
     const d = raw.data;
-    const runs = (d.list ?? []).map(r => ({
+    const mapRun = r => ({
       boss: r.boss,
       score: r.score,
       star: r.star,
@@ -87,7 +87,12 @@ function buildDeadlyAssault() {
       buffer: r.buffer,
       avatars: (r.avatar_list ?? []).map(mapAvatar),
       buddy: mapBuddy(r.buddy),
-    }));
+    });
+    const runs = (d.list ?? []).map(mapRun);
+    // hadal_mem_detail_v2 added a separate hard track. It is scored
+    // independently — total_score/total_max_score cover d.list only — so keep it
+    // out of `runs` rather than merging the two.
+    const hardRuns = (d.hard_list ?? []).map(mapRun);
 
     periods.push({
       start_time: d.start_time,
@@ -99,6 +104,9 @@ function buildDeadlyAssault() {
       total_star: d.total_star,
       rank_percent: d.rank_percent,
       runs,
+      has_hard: d.has_hard ?? false,
+      hard_rank_percent: d.hard_rank_percent ?? 0,
+      hard_runs: hardRuns,
     });
   }
 

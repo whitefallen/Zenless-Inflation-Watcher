@@ -17,6 +17,17 @@ class ZZZApi {
     this.role_id = uid;
     this.baseUrl =
       "https://sg-public-api.hoyolab.com/event/game_record_zzz/api/zzz";
+    // The in-game event site serves the v2 endpoints from the "act" host.
+    // Both hosts route hadal_mem_detail_v2, but this is the one HoyoLab itself
+    // calls, so it is tried first.
+    this.actBaseUrl =
+      "https://sg-act-public-api.hoyolab.com/event/game_record_zzz/api/zzz";
+  }
+
+  async _getJson(url) {
+    const res = await fetch(url, { headers: this._getHeaders() });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
   }
 
   // Helper to build the Cookie header
@@ -79,28 +90,37 @@ class ZZZApi {
   // Fetch Shiyu Defense / Hadal Blacksite detail data
   async getHadalInfoV2({ uid, schedule_type = 1 }) {
     const query = `role_id=${uid}&server=${this.server}&schedule_type=${schedule_type}`;
-    const url = `${this.baseUrl}/hadal_info_v2?${query}`;
-    const res = await fetch(url, { headers: this._getHeaders() });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.json();
+    return this._getJson(`${this.baseUrl}/hadal_info_v2?${query}`);
   }
 
-  // Fetch Deadly Assault (Memory) detail data
+  // Fetch Deadly Assault (Memory) detail data — v2 endpoint.
+  // Supersedes mem_detail, which has returned has_data:false / zone_id:0 for
+  // every cycle since 2026-07-29. Falls back to the non-act host, which routes
+  // the same path, before the caller drops to v1.
+  async getHadalMemDetailV2({ uid, schedule_type = 1 }) {
+    const query = `uid=${uid}&region=${this.server}&schedule_type=${schedule_type}`;
+    try {
+      return await this._getJson(
+        `${this.actBaseUrl}/hadal_mem_detail_v2?${query}`,
+      );
+    } catch {
+      return this._getJson(`${this.baseUrl}/hadal_mem_detail_v2?${query}`);
+    }
+  }
+
+  // Fetch Deadly Assault (Memory) detail data — legacy v1 endpoint, kept as a
+  // fallback for older schedule_types that may still be served by it.
   async getMemoryDetail({ uid, schedule_type = 1 }) {
     const query = `uid=${uid}&region=${this.server}&schedule_type=${schedule_type}`;
-    const url = `${this.baseUrl}/mem_detail?${query}`;
-    const res = await fetch(url, { headers: this._getHeaders() });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.json();
+    return this._getJson(`${this.baseUrl}/mem_detail?${query}`);
   }
 
   // Fetch Void Front battle detail data
   async getVoidFrontDetail({ uid, schedule_type = 1 }) {
     const query = `uid=${uid}&region=${this.server}&schedule_type=${schedule_type}`;
-    const url = `${this.baseUrl}/void_front_battle_period_detail?${query}`;
-    const res = await fetch(url, { headers: this._getHeaders() });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.json();
+    return this._getJson(
+      `${this.baseUrl}/void_front_battle_period_detail?${query}`,
+    );
   }
 }
 

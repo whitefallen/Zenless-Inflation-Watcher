@@ -89,7 +89,6 @@ jobs:
         with:
           urls: |
             https://whitefallen.github.io/Zenless-Inflation-Watcher/
-            https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault
             https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense
           configPath: .lighthouserc.json
           temporaryPublicStorage: true
@@ -135,7 +134,6 @@ jobs:
           echo "## Page URLs Tested:" >> ./lighthouse-reports/summary.md
           echo "" >> ./lighthouse-reports/summary.md
           echo "- [Landing Page](https://whitefallen.github.io/Zenless-Inflation-Watcher/)" >> ./lighthouse-reports/summary.md
-          echo "- [Deadly Assault](https://whitefallen.github.io/Zenless-Inflation-Watcher/deadly-assault)" >> ./lighthouse-reports/summary.md
           echo "- [Shiyu Defense](https://whitefallen.github.io/Zenless-Inflation-Watcher/shiyu-defense)" >> ./lighthouse-reports/summary.md
           
       - name: Upload Lighthouse results as artifacts

@@ -25,6 +25,11 @@ type DAExt = {
   end_time?: Record<string, number>;
   begin_time?: Record<string, number>;
   runs: RunExt[];
+  // Separate hard track from hadal_mem_detail_v2. Scored independently of
+  // total_score / rank_percent, so it is never folded into `runs`.
+  has_hard?: boolean;
+  hard_rank_percent?: number;
+  hard_runs?: RunExt[];
 };
 
 function fmtTs(ts: unknown): string {
@@ -393,6 +398,62 @@ export function DeadlyView({ data, onAgent, initialPeriodId, onPeriodChange }: {
             </div>
           ))}
         </div>
+
+        {period?.has_hard && (period?.hard_runs?.length ?? 0) > 0 && (
+          <div className="hard-zone">
+            <div className="tape-strip" />
+            <div className="hard-zone-body">
+              <div className="hard-zone-head">
+                <span className="hard-badge">⚠ HARD MODE</span>
+                <span className="hairline hard-zone-sub">
+                  RATED SEPARATELY · NOT IN CYCLE TOTAL
+                </span>
+                {period.hard_rank_percent != null && (
+                  <span className="hard-rank tabular">
+                    TOP {(period.hard_rank_percent / 100).toFixed(2)}%
+                  </span>
+                )}
+              </div>
+              <div className="hard-run-grid">
+                {(period.hard_runs || []).map((run, i) => (
+                  <div
+                    key={i}
+                    className="panel relative hard-run"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => setRunModal(run)}
+                  >
+                    <div className="corner-tag hard-corner-tag">HARD {i + 1}</div>
+                    <div style={{ position: 'relative', height: 100, overflow: 'hidden', borderBottom: '1.5px solid var(--hot)' }}>
+                      {run.boss[0]?.bg_icon && (
+                        <Image src={run.boss[0].bg_icon} fill sizes="(max-width: 768px) 100vw, 33vw" unoptimized style={{ objectFit: 'cover', opacity: 0.45 }} alt="" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                      )}
+                      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', gap: 12, padding: 12, background: 'linear-gradient(90deg, rgba(38,8,6,0.92), rgba(38,8,6,0.35))' }}>
+                        {run.boss[0]?.icon && (
+                          <Image src={run.boss[0].icon} width={64} height={64} unoptimized style={{ width: 64, height: 64, objectFit: 'cover', border: '1.5px solid var(--hot)' }} alt="" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                        )}
+                        <div>
+                          <div className="hairline" style={{ color: 'var(--hot)' }}>HARD TARGET</div>
+                          <div className="display" style={{ fontSize: 14 }}>{run.boss[0]?.name}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ padding: 14 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+                        <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 22, color: 'var(--hot)' }}>{fmtNum(run.score)}</div>
+                        <div className="tabular" style={{ fontFamily: 'Archivo Black', fontSize: 16 }}>{run.star}/{run.total_star ?? 3}★</div>
+                      </div>
+                      <Team avatars={run.avatars} size="sm" />
+                      {run.buffer?.[0]?.name && (
+                        <div className="hairline" style={{ fontSize: 9, marginTop: 10 }}>⚡ {run.buffer[0].name}</div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="tape-strip" />
+          </div>
+        )}
 
         <SectionDiv num="04">Boss Difficulty Ledger</SectionDiv>
         <div className="panel">

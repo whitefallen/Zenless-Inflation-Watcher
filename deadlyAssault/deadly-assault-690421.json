@@ -1,0 +1,307 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 7,
+      "day": 29,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 8,
+      "day": 14,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 159,
+    "list": [
+      {
+        "score": 65000,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 1,
+          "hour": 13,
+          "minute": 53,
+          "second": 8
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/39e7466c4be8f130c62b6d699a57927a.png",
+            "name": "Girtablullu - Stagnant Aberrant",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fda09e2f9c2994338ac12730121f7f0d.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/4659b5ac6b112d35e85901ba64be0d55.png",
+            "desc": "· If there are 2/3 Agents in the squad with <color=#FFFFFF>Anomaly</color> specialty, the whole squad's Anomaly Proficiency <color=#2BAD00>increases by 30/70</color> respectively, and Attribute Anomaly DMG dealt <color=#2BAD00>increases by 10%/25%</color> respectively.\\n· After inflicting an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, the enemy's All-Attribute RES is <color=#2BAD00>reduced by 15%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "United Strength"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1261,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54023,
+          "rarity": "S",
+          "level": 40,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/f0294f8211592f415e3c51e71a5184f0.png"
+        }
+      },
+      {
+        "score": 46816,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 7,
+          "day": 31,
+          "hour": 23,
+          "minute": 11,
+          "second": 4
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/424a8ae163e43fe108df3315003ee454.png",
+            "name": "Notorious - Dead End Butcher",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fda09e2f9c2994338ac12730121f7f0d.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/a9021cbb3cff5af647df0a54a5fbd921.png",
+            "desc": "· Agent ATK <color=#2BAD00>increases by 10%</color>, their Anomaly Proficiency <color=#2BAD00>increases by 30 pts</color>, and their CRIT DMG <color=#2BAD00>increases by 40%</color>.\\n· After an Agent inflicts <color=#FFFFFF>Attribute Anomaly</color> on an enemy, their DEF <color=#2BAD00>decreases by 10%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "Sneak Attack"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1511,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1311,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54003,
+          "rarity": "A",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/06c328ba7da743a8898a26508673172a.png"
+        }
+      },
+      {
+        "score": 45895,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 7,
+          "day": 29,
+          "hour": 19,
+          "minute": 20,
+          "second": 41
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/a30262994eb8453fa18de709120d22d6.png",
+            "name": "Unknown Corruption Complex",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fda09e2f9c2994338ac12730121f7f0d.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/a9021cbb3cff5af647df0a54a5fbd921.png",
+            "desc": "· Agent CRIT DMG <color=#2BAD00>increases by 30%</color>.\\n· ATK of Agents with Attack specialty <color=#2BAD00>increases by 10%</color>. Their Basic Attack DMG <color=#2BAD00>increases by 30%</color> and ignore <color=#2BAD00>15%</color> of enemy DEF.",
+            "name": "Heartcrusher"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1341,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 5,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54021,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/b30496feb49ca204ae77fac7e1f54f10.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/b6d82706c261a0c11053f4063a994ad5.png",
+    "total_score": 157711,
+    "total_star": 9,
+    "zone_id": 690421,
+    "total_max_score": 195000,
+    "room_max_score": 65000,
+    "has_hard": true,
+    "hard_list": [
+      {
+        "score": 33778,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 2,
+          "hour": 11,
+          "minute": 34,
+          "second": 18
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/99828db75c88f9644f5cfc29f8ca6e19.png",
+            "name": "Integrated - Girtablullu",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fda09e2f9c2994338ac12730121f7f0d.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/4659b5ac6b112d35e85901ba64be0d55.png",
+            "desc": "· If there are 2/3 Agents in the squad with <color=#FFFFFF>Anomaly</color> specialty, the whole squad's Anomaly Proficiency <color=#2BAD00>increases by 30/70</color> respectively, and Attribute Anomaly DMG dealt <color=#2BAD00>increases by 10%/25%</color> respectively.\\n· After inflicting an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, the enemy's All-Attribute RES is <color=#2BAD00>reduced by 15%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "United Strength"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1261,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 53002,
+          "rarity": "A",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/3fbbd185ce079490c8d1f90f494a3e6b.png"
+        }
+      }
+    ],
+    "hard_rank_percent": 951
+  },
+  "metadata": {
+    "exportDate": "2026-08-17T10:09:12.520Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": false
+  }
+}

@@ -208,3 +208,14 @@ void_front_battle_detail.json
 
 *storybook.log
 storybook-static
+
+# next-pwa build output. Regenerated into public/ by `next build` and copied
+# into out/, which is what publish-page.yml deploys — so the committed copies
+# were never the deploy source, they only produced a diff on every build.
+# The workbox-/fallback- names are content-hashed, so tracking them also left
+# stale copies behind whenever the hash changed.
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map
+public/fallback-*.js

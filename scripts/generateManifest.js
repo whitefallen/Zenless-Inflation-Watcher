@@ -86,24 +86,15 @@ const manifest = {
       "label": "Mobile Battle Records"
     }
   ],
+  // The per-mode routes were removed — the Patrol Log SPA at / owns every mode
+  // now, switching via in-app tabs rather than URLs. The shortcut points there;
+  // deep-linking a mode would need the SPA to read a query param first.
   "shortcuts": [
     {
-      "name": "Shiyu Defense",
-      "short_name": "Shiyu",
-      "description": "View Shiyu Defense records",
-      "url": `${basePath}/shiyu-defense`,
-      "icons": [
-        {
-          "src": `${basePath}/icons/icon-96x96.png`,
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Deadly Assault",
-      "short_name": "Assault",
-      "description": "View Deadly Assault records",
-      "url": `${basePath}/deadly-assault`,
+      "name": "Battle Records",
+      "short_name": "Records",
+      "description": "View Shiyu Defense, Deadly Assault and Void Front records",
+      "url": `${basePath}/`,
       "icons": [
         {
           "src": `${basePath}/icons/icon-96x96.png`,

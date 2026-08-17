@@ -71,12 +71,53 @@ class AutomatedFetcher {
     }
   }
 
+  // True when a response actually carries a played cycle. The API answers
+  // retcode 0 with has_data:false / zone_id:0 for cycles it no longer serves,
+  // which is how deadly-assault-unknown-id.json got written.
+  static hasUsablePayload(payload) {
+    const d = payload && payload.data;
+    if (!d) return false;
+    if (payload.retcode !== 0) return false;
+    return d.has_data !== false;
+  }
+
+  // Deadly Assault moved to the v2 endpoint; v1 has answered has_data:false for
+  // every cycle since 2026-07-29. Try v2, fall back to v1 so an API rollback
+  // does not break the fetch.
+  static async fetchDeadlyAssault(api, uid, schedule_type = 1) {
+    try {
+      const v2 = await api.getHadalMemDetailV2({ uid, schedule_type });
+      if (AutomatedFetcher.hasUsablePayload(v2)) {
+        console.log("   ↳ served by hadal_mem_detail_v2");
+        return v2;
+      }
+      console.warn(
+        `   ⚠️  hadal_mem_detail_v2 returned no data (retcode=${v2?.retcode}, has_data=${v2?.data?.has_data}) — trying legacy mem_detail`,
+      );
+    } catch (error) {
+      console.warn(
+        `   ⚠️  hadal_mem_detail_v2 failed (${error.message}) — trying legacy mem_detail`,
+      );
+    }
+
+    const v1 = await api.getMemoryDetail({ uid, schedule_type });
+    console.log("   ↳ served by legacy mem_detail");
+    return v1;
+  }
+
   static getSeasonId(mode, payload) {
     if (!payload || !payload.data) return null;
 
     if (mode === "deadly") {
-      // Deadly Assault uses zone_id at data.zone_id
-      return payload.data.zone_id || null;
+      const d = payload.data;
+      // v1 exposes zone_id at the root; v2 may nest it under a detail object.
+      return (
+        d.zone_id ||
+        d.mem_detail_v2?.zone_id ||
+        d.hadal_mem_detail_v2?.zone_id ||
+        d.hadal_mem_info_v2?.zone_id ||
+        null
+      );
     }
 
     if (mode === "voidfront") {
@@ -94,6 +135,18 @@ class AutomatedFetcher {
     }
 
     return null;
+  }
+
+  // A response with no season id used to be written as "<mode>-unknown-id.json",
+  // which silently stood in for a real cycle. Refuse the write and log enough of
+  // the response to identify a schema change on the next run.
+  static reportMissingSeasonId(label, payload) {
+    const keys = Object.keys(payload?.data || {}).join(", ");
+    const reason =
+      `${label}: no season id in response (retcode=${payload?.retcode}, ` +
+      `has_data=${payload?.data?.has_data}, data keys=[${keys}])`;
+    console.error(`❌ ${reason} — refusing to write a placeholder file.`);
+    return reason;
   }
 
   static buildFileName(mode, seasonId) {
@@ -253,7 +306,7 @@ class AutomatedFetcher {
     if (schedule.deadly) {
       try {
         console.log("📊 Fetching Deadly Assault data...");
-        data.deadly = await api.getMemoryDetail({ uid });
+        data.deadly = await AutomatedFetcher.fetchDeadlyAssault(api, uid);
         console.log(
           `✅ Deadly Assault: ${data.deadly?.data?.list?.length || 0} records`,
         );
@@ -332,12 +385,19 @@ class AutomatedFetcher {
     };
 
     // Save Deadly Assault data
-    if (data.deadly) {
+    const deadlySeasonId = AutomatedFetcher.getSeasonId("deadly", data.deadly);
+    if (data.deadly && !deadlySeasonId) {
+      result.deadly.error = AutomatedFetcher.reportMissingSeasonId(
+        "Deadly Assault",
+        data.deadly,
+      );
+    }
+    if (data.deadly && deadlySeasonId) {
       const deadlyFolder = path.join(__dirname, "deadlyAssault");
       if (!fs.existsSync(deadlyFolder)) {
         fs.mkdirSync(deadlyFolder, { recursive: true });
       }
-      const seasonId = AutomatedFetcher.getSeasonId("deadly", data.deadly);
+      const seasonId = deadlySeasonId;
       const deadlyFile = path.join(
         deadlyFolder,
         AutomatedFetcher.buildFileName("deadly", seasonId),
@@ -381,12 +441,19 @@ class AutomatedFetcher {
     }
 
     // Save Shiyu Defense data
-    if (data.shiyu) {
+    const shiyuSeasonId = AutomatedFetcher.getSeasonId("shiyu", data.shiyu);
+    if (data.shiyu && !shiyuSeasonId) {
+      result.shiyu.error = AutomatedFetcher.reportMissingSeasonId(
+        "Shiyu Defense",
+        data.shiyu,
+      );
+    }
+    if (data.shiyu && shiyuSeasonId) {
       const shiyuFolder = path.join(__dirname, "shiyu");
       if (!fs.existsSync(shiyuFolder)) {
         fs.mkdirSync(shiyuFolder, { recursive: true });
       }
-      const seasonId = AutomatedFetcher.getSeasonId("shiyu", data.shiyu);
+      const seasonId = shiyuSeasonId;
       const shiyuFile = path.join(
         shiyuFolder,
         AutomatedFetcher.buildFileName("shiyu", seasonId),
@@ -430,15 +497,22 @@ class AutomatedFetcher {
     }
 
     // Save Void Front data
-    if (data.voidfront) {
+    const voidFrontSeasonId = AutomatedFetcher.getSeasonId(
+      "voidfront",
+      data.voidfront,
+    );
+    if (data.voidfront && !voidFrontSeasonId) {
+      result.voidfront.error = AutomatedFetcher.reportMissingSeasonId(
+        "Void Front",
+        data.voidfront,
+      );
+    }
+    if (data.voidfront && voidFrontSeasonId) {
       const voidFrontFolder = path.join(__dirname, "voidFront");
       if (!fs.existsSync(voidFrontFolder)) {
         fs.mkdirSync(voidFrontFolder, { recursive: true });
       }
-      const seasonId = AutomatedFetcher.getSeasonId(
-        "voidfront",
-        data.voidfront,
-      );
+      const seasonId = voidFrontSeasonId;
       const voidFrontFile = path.join(
         voidFrontFolder,
         AutomatedFetcher.buildFileName("voidfront", seasonId),

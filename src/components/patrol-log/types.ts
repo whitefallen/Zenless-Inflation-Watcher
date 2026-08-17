@@ -86,6 +86,13 @@ export interface DeadlyAssaultPeriod {
   begin_time: TimeStamp;
   end_time: TimeStamp;
   runs: DARun[];
+  /**
+   * Separate hard track introduced by hadal_mem_detail_v2. Scored on its own —
+   * total_score / total_max_score / rank_percent describe `runs` only.
+   */
+  has_hard?: boolean;
+  hard_rank_percent?: number;
+  hard_runs?: DARun[];
 }
 
 export interface ZZZData {

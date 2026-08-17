@@ -80,22 +80,10 @@
   ],
   "shortcuts": [
     {
-      "name": "Shiyu Defense",
-      "short_name": "Shiyu",
-      "description": "View Shiyu Defense records",
-      "url": "/shiyu-defense",
-      "icons": [
-        {
-          "src": "/icons/icon-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Deadly Assault",
-      "short_name": "Assault",
-      "description": "View Deadly Assault records",
-      "url": "/deadly-assault",
+      "name": "Battle Records",
+      "short_name": "Records",
+      "description": "View Shiyu Defense, Deadly Assault and Void Front records",
+      "url": "/",
       "icons": [
         {
           "src": "/icons/icon-96x96.png",

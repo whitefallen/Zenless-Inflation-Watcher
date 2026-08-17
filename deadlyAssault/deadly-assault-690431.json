@@ -1,0 +1,307 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 8,
+      "day": 14,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 8,
+      "day": 28,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 221,
+    "list": [
+      {
+        "score": 65000,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 16,
+          "hour": 18,
+          "minute": 11,
+          "second": 33
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/39e7466c4be8f130c62b6d699a57927a.png",
+            "name": "Girtablullu - Stagnant Aberrant",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fda09e2f9c2994338ac12730121f7f0d.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/4659b5ac6b112d35e85901ba64be0d55.png",
+            "desc": "· If there are 2/3 Agents in the squad with <color=#FFFFFF>Anomaly</color> specialty, the whole squad's Anomaly Proficiency <color=#2BAD00>increases by 30/70</color> respectively, and Attribute Anomaly DMG dealt <color=#2BAD00>increases by 10%/25%</color> respectively.\\n· After inflicting an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, the enemy's All-Attribute RES is <color=#2BAD00>reduced by 15%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "United Strength"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1261,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54023,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/f0294f8211592f415e3c51e71a5184f0.png"
+        }
+      },
+      {
+        "score": 45144,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 16,
+          "hour": 19,
+          "minute": 5,
+          "second": 3
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/7c60dcf1bd26cd72f327caa1036c31a7.png",
+            "name": "Ye Shiyuan the Thrall",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fd17c0fd50be543894889284c48bc987.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/a9021cbb3cff5af647df0a54a5fbd921.png",
+            "desc": "· For Agents with Attack specialty, their ATK <color=#2BAD00>increases by 25%</color>. When their <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>EX Special Attack</color>, or <color=#FFFFFF>Chain Attack</color> hits an enemy, it ignores <color=#2BAD00>30%</color> of the target's <color=#98EFF0>Ice RES</color> and <color=#FE437E>Ether RES</color>.\\n· When an Agent hits a Stunned enemy, the target's Stun DMG Multiplier <color=#2BAD00>increases by 40%</color> for 5s. Repeated triggers reset the duration.",
+            "name": "Frost Reins"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54021,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/b30496feb49ca204ae77fac7e1f54f10.png"
+        }
+      },
+      {
+        "score": 45040,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 16,
+          "hour": 19,
+          "minute": 21,
+          "second": 37
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/dd5d37f872d854b200eaaa132b418232.png",
+            "name": "Miasma Priest",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fd17c0fd50be543894889284c48bc987.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/cf70307a8fa98dd36931fec049e66181.png",
+            "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 15%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent <color=#FE437E>Ether DMG</color> <color=#2BAD00>increases by 25%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 25%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "Breakthrough"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1371,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 6,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
+            "sub_element_type": 2
+          },
+          {
+            "id": 1571,
+            "level": 60,
+            "element_type": 201,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1571.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1451,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54017,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/659755a693ebf7286a7fa23b82eb46cf.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/b6d82706c261a0c11053f4063a994ad5.png",
+    "total_score": 155184,
+    "total_star": 9,
+    "zone_id": 690431,
+    "total_max_score": 195000,
+    "room_max_score": 65000,
+    "has_hard": true,
+    "hard_list": [
+      {
+        "score": 38524,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 16,
+          "hour": 18,
+          "minute": 5,
+          "second": 38
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/619253c14722cca9ea1b5b9b6d55d376.png",
+            "name": "Rewritten - Sanguine Sweeper",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/9353f6ee313f0f1a1ddfa22a22e8a866.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/4659b5ac6b112d35e85901ba64be0d55.png",
+            "desc": "· If there are 2/3 Agents in the squad with <color=#FFFFFF>Anomaly</color> specialty, the whole squad's Anomaly Proficiency <color=#2BAD00>increases by 30/70</color> respectively, and Attribute Anomaly DMG dealt <color=#2BAD00>increases by 10%/25%</color> respectively.\\n· After inflicting an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, the enemy's All-Attribute RES is <color=#2BAD00>reduced by 15%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "United Strength"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1541,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1541.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54023,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/f0294f8211592f415e3c51e71a5184f0.png"
+        }
+      }
+    ],
+    "hard_rank_percent": 425
+  },
+  "metadata": {
+    "exportDate": "2026-08-17T10:09:19.299Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": false
+  }
+}

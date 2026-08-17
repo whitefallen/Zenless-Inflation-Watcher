@@ -515,6 +515,61 @@
 [data-patrol-log] .panel-grid { display: grid; gap: 16px; }
 [data-patrol-log] .boss-row { display: grid; grid-template-columns: 24px 1fr 80px 80px; gap: 12px; align-items: center; }
 
+/* ---- Hard mode: cordoned-off danger zone ---- */
+[data-patrol-log] .hard-zone {
+  margin-top: 32px;
+  border: 2px solid var(--hot);
+  background:
+    linear-gradient(rgba(255, 61, 46, 0.06), rgba(255, 61, 46, 0.06)),
+    repeating-linear-gradient(135deg, transparent 0 22px, rgba(255, 61, 46, 0.07) 22px 44px);
+  box-shadow: 0 0 0 1px rgba(255, 61, 46, 0.25), 0 0 28px rgba(255, 61, 46, 0.16);
+}
+[data-patrol-log] .hard-zone .tape-strip {
+  background: repeating-linear-gradient(90deg, var(--hot) 0 14px, #000 14px 18px);
+  height: 14px;
+}
+[data-patrol-log] .hard-zone-body { padding: 18px; }
+[data-patrol-log] .hard-zone-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+[data-patrol-log] .hard-badge {
+  background: var(--hot);
+  color: #fff;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  animation: hardPulse 2.4s ease-in-out infinite;
+}
+[data-patrol-log] .hard-zone-sub { color: var(--hot); opacity: 0.85; }
+[data-patrol-log] .hard-rank {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--hot);
+  border: 1px solid var(--hot);
+  padding: 4px 10px;
+}
+[data-patrol-log] .hard-run-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+[data-patrol-log] .hard-run { border-color: var(--hot); background: #16090A; }
+[data-patrol-log] .hard-run:hover { box-shadow: 0 0 18px rgba(255, 61, 46, 0.35); }
+[data-patrol-log] .hard-corner-tag { background: var(--hot); color: #fff; }
+
+@keyframes hardPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 61, 46, 0.55); }
+  50% { box-shadow: 0 0 0 7px rgba(255, 61, 46, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-patrol-log] .hard-badge { animation: none; }
+  [data-patrol-log] .hard-zone .tape-strip { animation: none; }
+}
+
 @media (max-width: 768px) {
   [data-patrol-log] .stat-value { font-size: 22px; }
   [data-patrol-log] .stat-value.lg { font-size: 36px; }
@@ -541,6 +596,8 @@
 
   /* Override inline-styled grids that can't use classes */
   [data-patrol-log] .panel-grid { grid-template-columns: 1fr !important; }
+  [data-patrol-log] .hard-run-grid { grid-template-columns: 1fr; }
+  [data-patrol-log] .hard-rank { margin-left: 0; }
   /* Floor ledger: 2 columns fit on mobile without being too dense */
   [data-patrol-log] .floor-grid { grid-template-columns: repeat(2, 1fr) !important; }
 
