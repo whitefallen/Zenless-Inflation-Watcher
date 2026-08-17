@@ -77,7 +77,6 @@ export async function getLatestDeadlyAssaultData(): Promise<DeadlyAssaultData | 
 export async function getAllDeadlyAssaultData(): Promise<DeadlyAssaultData[]> {
   try {
     const allFiles = await readdir(DATA_DIR);
-    
     // Filter out files with "unknown-id" (created when session expires)
     const files = allFiles.filter(f => !f.includes('unknown-id'));
     // Prefer sorting by end date if possible
@@ -103,7 +102,11 @@ export async function getAllDeadlyAssaultData(): Promise<DeadlyAssaultData[]> {
     const dataPromises = ordered.map(async (file) => {
       const filePath = path.join(DATA_DIR, file);
       const fileContent = await readFile(filePath, 'utf-8');
-      return JSON.parse(fileContent) as DeadlyAssaultData;
+      const data = JSON.parse(fileContent) as DeadlyAssaultData;
+      // Normalize: ensure hard_list/hard_rank_percent are always present
+      if (!data.data.hard_list) data.data.hard_list = [];
+      if (typeof data.data.hard_rank_percent !== 'number') data.data.hard_rank_percent = undefined;
+      return data;
     });
 
     return await Promise.all(dataPromises);

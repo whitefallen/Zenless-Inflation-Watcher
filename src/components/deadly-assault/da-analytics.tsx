@@ -11,12 +11,13 @@ import { percentile } from '@/lib/utils'
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 const ELEMENT_COLORS: Record<number, string> = {
-  200: '#f5c842', // Physical
-  201: '#60a5fa', // Ice
-  202: '#f97316', // Fire
-  203: '#a855f7', // Ether
-  204: '#22c55e', // Electric
-  205: '#ef4444', // Anomaly
+  200: '#e5e5e5', // Physical
+  201: '#f97316', // Fire
+  202: '#60a5fa', // Ice
+  203: '#f5c842', // Electric
+  204: '#22c55e', // Wind
+  205: '#a855f7', // Ether
+  300: '#2dd4bf', // Lumiflux
 }
 
 function scoreColor(pct: number) {

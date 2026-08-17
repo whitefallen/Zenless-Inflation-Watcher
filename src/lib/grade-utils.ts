@@ -42,8 +42,9 @@ export function getElementName(elementType?: number): string {
     201: "Fire",
     202: "Ice",
     203: "Electric",
-    204: "Growth",
-    205: "Ether"
+    204: "Wind",
+    205: "Ether",
+    300: "Lumiflux"
   };
   
   if (elementType === undefined) return "Unknown";

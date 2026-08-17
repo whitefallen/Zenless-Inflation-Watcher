@@ -132,6 +132,8 @@ export function VoidFrontChallengeDetails({ challenge, isCompact = false }: Void
                     elementType === '201' ? 'Fire' :
                     elementType === '202' ? 'Ice' :
                     elementType === '203' ? 'Electric' :
+                    elementType === '204' ? 'Wind' :
+                    elementType === '300' ? 'Lumiflux' :
                     elementType === '205' ? 'Ether' : 'Unknown';
                     
                   const elementColor = 
@@ -139,6 +141,8 @@ export function VoidFrontChallengeDetails({ challenge, isCompact = false }: Void
                     elementType === '201' ? '#ff6b5a' : // Fire
                     elementType === '202' ? '#7acbff' : // Ice
                     elementType === '203' ? '#ffde73' : // Electric
+                    elementType === '204' ? '#8ae86a' : // Wind
+                    elementType === '300' ? '#4fd8c4' : // Lumiflux
                     elementType === '205' ? '#d985ff' : // Ether
                     '#cccccc';
                   
@@ -236,6 +240,8 @@ export function VoidFrontChallengeDetails({ challenge, isCompact = false }: Void
                     agent.element_type === 201 ? '#ff6b5a' : // Fire
                     agent.element_type === 202 ? '#7acbff' : // Ice
                     agent.element_type === 203 ? '#ffde73' : // Electric
+                    agent.element_type === 204 ? '#8ae86a' : // Wind
+                    agent.element_type === 300 ? '#4fd8c4' : // Lumiflux
                     agent.element_type === 205 ? '#d985ff' : // Ether
                     '#cccccc';
                     
@@ -270,6 +276,8 @@ export function VoidFrontChallengeDetails({ challenge, isCompact = false }: Void
                                 agent.element_type === 201 ? 'Fire' :
                                 agent.element_type === 202 ? 'Ice' :
                                 agent.element_type === 203 ? 'Electric' :
+                                agent.element_type === 204 ? 'Wind' :
+                                agent.element_type === 300 ? 'Lumiflux' :
                                 agent.element_type === 205 ? 'Ether' : 'Unknown'
                               }
                             </span>
@@ -323,6 +331,8 @@ export function VoidFrontChallengeDetails({ challenge, isCompact = false }: Void
                           elementType === '201' ? 'Fire' :
                           elementType === '202' ? 'Ice' :
                           elementType === '203' ? 'Electric' :
+                          elementType === '204' ? 'Wind' :
+                          elementType === '300' ? 'Lumiflux' :
                           elementType === '205' ? 'Ether' : 'Unknown';
                           
                         const elementColor = 
@@ -330,6 +340,8 @@ export function VoidFrontChallengeDetails({ challenge, isCompact = false }: Void
                           elementType === '201' ? '#ff6b5a' : // Fire
                           elementType === '202' ? '#7acbff' : // Ice
                           elementType === '203' ? '#ffde73' : // Electric
+                          elementType === '204' ? '#8ae86a' : // Wind
+                          elementType === '300' ? '#4fd8c4' : // Lumiflux
                           elementType === '205' ? '#d985ff' : // Ether
                           '#cccccc';
                         
@@ -454,6 +466,8 @@ export function VoidFrontChallengeDetails({ challenge, isCompact = false }: Void
                                             agent.element_type === 201 ? '#ff6b5a' : // Fire
                                             agent.element_type === 202 ? '#7acbff' : // Ice
                                             agent.element_type === 203 ? '#ffde73' : // Electric
+                                            agent.element_type === 204 ? '#8ae86a' : // Wind
+                                            agent.element_type === 300 ? '#4fd8c4' : // Lumiflux
                                             agent.element_type === 205 ? '#d985ff' : // Ether
                                             '#cccccc'
                                         }}
@@ -462,6 +476,8 @@ export function VoidFrontChallengeDetails({ challenge, isCompact = false }: Void
                                         agent.element_type === 201 ? 'Fire' :
                                         agent.element_type === 202 ? 'Ice' :
                                         agent.element_type === 203 ? 'Electric' :
+                                        agent.element_type === 204 ? 'Wind' :
+                                        agent.element_type === 300 ? 'Lumiflux' :
                                         agent.element_type === 205 ? 'Ether' : 'Unknown'
                                       }
                                     </div>

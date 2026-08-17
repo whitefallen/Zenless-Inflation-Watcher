@@ -154,9 +154,10 @@ export function getElementAbbreviation(elementType?: number): string {
     201: "FIR", 
     202: "ICE",
     203: "ELE",
-    204: "GRS",
+    204: "WND",
     205: "ETH",
-    206: "IMG"
+    206: "IMG",
+    300: "LUM"
   };
   
   if (elementType === undefined) return "???";

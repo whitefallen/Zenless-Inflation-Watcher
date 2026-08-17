@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Sticker, Stat, SectionDiv, PeriodScrubber, Agent, Team, InflationIndexPanel, fmtNum, fmtDateRange, elementInfo, professionName, ratingClass } from './shared';
 import { AreaLineChart, useChartH } from './charts';
 import type { ZZZData, AvatarInfo } from './types';
@@ -367,11 +368,11 @@ export function DeadlyView({ data, onAgent, initialPeriodId, onPeriodChange }: {
               <div className="corner-tag">RUN {i + 1}</div>
               <div style={{ position: 'relative', height: 100, overflow: 'hidden', borderBottom: '1.5px solid var(--line)' }}>
                 {run.boss[0]?.bg_icon && (
-                  <img src={run.boss[0].bg_icon} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.5 }} alt="" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                  <Image src={run.boss[0].bg_icon} fill sizes="(max-width: 768px) 100vw, 33vw" unoptimized style={{ objectFit: 'cover', opacity: 0.5 }} alt="" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 )}
                 <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', gap: 12, padding: 12, background: 'linear-gradient(90deg, rgba(10,10,11,0.9), rgba(10,10,11,0.3))' }}>
                   {run.boss[0]?.icon && (
-                    <img src={run.boss[0].icon} style={{ width: 64, height: 64, border: '1.5px solid var(--tape)' }} alt="" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                    <Image src={run.boss[0].icon} width={64} height={64} unoptimized style={{ width: 64, height: 64, objectFit: 'cover', border: '1.5px solid var(--tape)' }} alt="" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                   )}
                   <div>
                     <div className="hairline">TARGET</div>

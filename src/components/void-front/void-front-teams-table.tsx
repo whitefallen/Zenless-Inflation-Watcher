@@ -21,7 +21,9 @@ const ELEM_COLOR: Record<number, string> = {
   201: '#ff6b35',
   202: '#7dd3fc',
   203: '#fbbf24',
+  204: '#8ae86a',
   205: '#c084fc',
+  300: '#4fd8c4',
 }
 
 export function VoidFrontTeamsTable({ data }: { data: VoidFrontData[] }) {

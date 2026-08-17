@@ -331,6 +331,8 @@ export function VoidFrontOverview({ data }: VoidFrontOverviewProps) {
                                           agent.element_type === 201 ? '#ff6b5a' : // Fire
                                           agent.element_type === 202 ? '#7acbff' : // Ice
                                           agent.element_type === 203 ? '#ffde73' : // Electric
+                                          agent.element_type === 204 ? '#8ae86a' : // Wind
+                                          agent.element_type === 300 ? '#4fd8c4' : // Lumiflux
                                           agent.element_type === 205 ? '#d985ff' : // Ether
                                           '#cccccc'
                                       }}
@@ -339,6 +341,8 @@ export function VoidFrontOverview({ data }: VoidFrontOverviewProps) {
                                       agent.element_type === 201 ? 'Fire' :
                                       agent.element_type === 202 ? 'Ice' :
                                       agent.element_type === 203 ? 'Electric' :
+                                      agent.element_type === 204 ? 'Wind' :
+                                      agent.element_type === 300 ? 'Lumiflux' :
                                       agent.element_type === 205 ? 'Ether' : 'Unknown'
                                     }
                                   </div>
@@ -417,6 +421,8 @@ export function VoidFrontOverview({ data }: VoidFrontOverviewProps) {
                                     agent.element_type === 201 ? '#ff6b5a' : // Fire
                                     agent.element_type === 202 ? '#7acbff' : // Ice
                                     agent.element_type === 203 ? '#ffde73' : // Electric
+                                    agent.element_type === 204 ? '#8ae86a' : // Wind
+                                    agent.element_type === 300 ? '#4fd8c4' : // Lumiflux
                                     agent.element_type === 205 ? '#d985ff' : // Ether
                                     '#cccccc';
                                     

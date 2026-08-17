@@ -14,6 +14,10 @@ export interface DeadlyAssaultData {
     zone_id: number;
     total_max_score: number;
     room_max_score: number;
+    // New fields for hard mode
+    has_hard?: boolean;
+    hard_list?: DeadlyAssaultRun[];
+    hard_rank_percent?: number;
   };
   metadata?: {
     exportDate: string;

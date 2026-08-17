@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image';
 import type { AvatarInfo, TimeStamp } from './types';
 
 export const ELEMENT: Record<number, { name: string; color: string; short: string }> = {
@@ -7,9 +8,11 @@ export const ELEMENT: Record<number, { name: string; color: string; short: strin
   201: { name: 'Fire',     color: '#FF6A2C', short: 'FIR' },
   202: { name: 'Ice',      color: '#98EFF0', short: 'ICE' },
   203: { name: 'Electric', color: '#FFE338', short: 'ELE' },
+  204: { name: 'Wind',     color: '#8FE3A0', short: 'WND' },
   205: { name: 'Ether',    color: '#FF7AC6', short: 'ETH' },
   206: { name: 'Frost',    color: '#BFE9FF', short: 'FRO' },
   207: { name: 'Auric Ink',color: '#FFB85C', short: 'AUR' },
+  300: { name: 'Lumiflux', color: '#7FE8DC', short: 'LUM' },
 };
 export const PROFESSION: Record<number, string> = {
   1: 'Attack', 2: 'Stun', 3: 'Anomaly', 4: 'Support', 5: 'Defense', 6: 'Rupture',
@@ -42,25 +45,34 @@ export function ratingClass(r?: string | null): string {
 export function elementInfo(id: number) { return ELEMENT[id] || { name: '—', color: '#888', short: '?' }; }
 export function professionName(id: number): string { return PROFESSION[id] || '—'; }
 
-export function Agent({ a, size = 'md', onClick }: { a: AvatarInfo; size?: 'sm'|'md'|'lg'|'xl'; onClick?: (a: AvatarInfo) => void }) {
+export type AgentSize = 'sm'|'md'|'lg'|'xl';
+
+/**
+ * Single source of truth for agent card dimensions. Fed to the `<Image>`
+ * intrinsic size and to the `.agent` box via the --agent-size custom property,
+ * so the two can never drift apart.
+ */
+const AGENT_PX: Record<AgentSize, number> = { sm: 44, md: 64, lg: 88, xl: 120 };
+
+export function Agent({ a, size = 'md', onClick }: { a: AvatarInfo; size?: AgentSize; onClick?: (a: AvatarInfo) => void }) {
   const el = elementInfo(a.element);
   const rarCls = a.rarity === 'S' ? 's' : a.rarity === 'A' ? 'a' : '';
-  const sizeCls = size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : size === 'xl' ? 'xl' : '';
+  const px = AGENT_PX[size];
   return (
     <div
-      className={`agent ${sizeCls} ${rarCls}`}
+      className={`agent ${rarCls}`}
       onClick={onClick ? () => onClick(a) : undefined}
-      style={{ cursor: onClick ? 'pointer' : 'default' }}
+      style={{ cursor: onClick ? 'pointer' : 'default', '--agent-size': `${px}px` } as React.CSSProperties}
       title={`Agent ${a.id} · ${el.name} · ${professionName(a.profession)}`}
     >
       <div className="badge-element" style={{ background: el.color }} />
-      {a.url && <img src={a.url} alt="" loading="lazy" decoding="async" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />}
+      {a.url && <Image src={a.url} alt="" width={px} height={px} loading="lazy" decoding="async" unoptimized onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />}
       {a.rank > 0 && <div className="badge-rank">M{a.rank}</div>}
     </div>
   );
 }
 
-export function Team({ avatars, size = 'md', onClick }: { avatars: AvatarInfo[]; size?: 'sm'|'md'|'lg'; onClick?: (a: AvatarInfo) => void }) {
+export function Team({ avatars, size = 'md', onClick }: { avatars: AvatarInfo[]; size?: AgentSize; onClick?: (a: AvatarInfo) => void }) {
   return (
     <div style={{ display: 'flex', gap: 4 }}>
       {(avatars || []).map((a, i) => <Agent key={i} a={a} size={size} onClick={onClick} />)}

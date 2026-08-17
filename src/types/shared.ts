@@ -50,9 +50,10 @@ export const ELEMENT_TYPES: Record<number, string> = {
   201: "Fire", 
   202: "Ice",
   203: "Electric",
-  204: "Grass",
+  204: "Wind",
   205: "Ether",
   206: "Imaginary",
+  300: "Lumiflux",
 };
 
 export const ELEMENT_COLORS: Record<number, string> = {
@@ -60,9 +61,10 @@ export const ELEMENT_COLORS: Record<number, string> = {
   201: "#FF4500", // Orange Red for Fire
   202: "#00BFFF", // Deep Sky Blue for Ice
   203: "#FFD700", // Gold for Electric
-  204: "#32CD32", // Lime Green for Grass
+  204: "#32CD32", // Lime Green for Wind
   205: "#9370DB", // Medium Slate Blue for Ether
   206: "#FF69B4", // Hot Pink for Imaginary
+  300: "#40E0D0", // Turquoise for Lumiflux
 };
 
 export const RARITY_COLORS: Record<string, string> = {

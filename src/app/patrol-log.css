@@ -264,8 +264,9 @@
 [data-patrol-log] .stat-sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-faint); margin-top: 6px; }
 
 /* ---- Agent card ---- */
+/* --agent-size is set inline by the Agent component (see AGENT_PX in shared.tsx). */
 [data-patrol-log] .agent {
-  width: 64px; height: 64px;
+  width: var(--agent-size, 64px); height: var(--agent-size, 64px);
   background: var(--asphalt-3);
   border: 1.5px solid var(--line);
   position: relative;
@@ -297,9 +298,6 @@
 [data-patrol-log] .agent.s::before { content: ''; position: absolute; inset: 1.5px; background: var(--asphalt-3); z-index: 0; }
 [data-patrol-log] .agent.s:hover { box-shadow: 0 0 0 1px var(--tape), 4px 4px 0 var(--tape), 0 0 18px rgba(255,212,0,0.5); }
 [data-patrol-log] .agent.a { border-color: var(--magenta); }
-[data-patrol-log] .agent.sm { width: 44px; height: 44px; }
-[data-patrol-log] .agent.lg { width: 88px; height: 88px; }
-[data-patrol-log] .agent.xl { width: 120px; height: 120px; }
 
 /* ---- Tape header ---- */
 [data-patrol-log] .tape-header { display: flex; align-items: center; background: var(--asphalt); border: 2px solid #000; position: relative; margin-bottom: 24px; }

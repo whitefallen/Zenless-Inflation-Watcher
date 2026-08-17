@@ -2,6 +2,23 @@ import { Avatar, CharacterUsage, TeamUsage } from "@/types/shared";
 import { createTeamKey } from "./agent-utils";
 import { calculateStats } from "./data-utils";
 
+/** Shape of the season payloads these aggregators walk over. */
+interface RunContainer<R> {
+  data?: {
+    list?: R[];
+    /** Deadly Assault splits its runs across a second, harder list. */
+    hard_list?: R[];
+  };
+}
+
+/**
+ * Collects a season's runs, merging the deadly assault hard_list when present.
+ */
+function getRuns<T, R>(data: T): R[] {
+  const container = (data as RunContainer<R>).data;
+  return [...(container?.list ?? []), ...(container?.hard_list ?? [])];
+}
+
 /**
  * Generic character usage aggregation
  */
@@ -18,7 +35,8 @@ export function aggregateCharacterUsage<T, R>(
   // First pass to find best score if scoring is enabled
   if (getScore) {
     for (const data of allData) {
-      for (const run of getItemsFromData<T, R>(data)) {
+      const runs = getRuns<T, R>(data);
+      for (const run of runs) {
         const score = getScore(run);
         if (score > bestScore) bestScore = score;
       }
@@ -28,8 +46,8 @@ export function aggregateCharacterUsage<T, R>(
   // Second pass to aggregate
   for (const data of allData) {
     const maxLayer = getMaxLayer?.(data);
-    
-    for (const run of getItemsFromData<T, R>(data)) {
+    const runs = getRuns<T, R>(data);
+    for (const run of runs) {
       const avatars = getAvatars(run);
       const score = getScore?.(run) || 0;
       const layer = getLayer?.(run) || 0;

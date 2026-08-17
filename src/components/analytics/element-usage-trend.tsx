@@ -4,20 +4,22 @@ import { useMemo } from 'react'
 
 const ELEMENT_NAMES: Record<number, string> = {
   200: 'Physical',
-  201: 'Ice',
-  202: 'Fire',
-  203: 'Ether',
-  204: 'Electric',
-  205: 'Anomaly',
+  201: 'Fire',
+  202: 'Ice',
+  203: 'Electric',
+  204: 'Wind',
+  205: 'Ether',
+  300: 'Lumiflux',
 }
 
 const ELEMENT_COLORS: Record<number, string> = {
-  200: '#f5c842',
-  201: '#60a5fa',
-  202: '#f97316',
-  203: '#a855f7',
-  204: '#22c55e',
-  205: '#ef4444',
+  200: '#e5e5e5', // Physical
+  201: '#f97316', // Fire
+  202: '#60a5fa', // Ice
+  203: '#f5c842', // Electric
+  204: '#22c55e', // Wind
+  205: '#a855f7', // Ether
+  300: '#2dd4bf', // Lumiflux
 }
 
 import type { ElementSeasonPoint } from './types'
