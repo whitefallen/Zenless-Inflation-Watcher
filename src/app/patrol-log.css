@@ -518,6 +518,32 @@
 [data-patrol-log] .panel-grid { display: grid; gap: 16px; }
 [data-patrol-log] .boss-row { display: grid; grid-template-columns: 24px 1fr 80px 80px; gap: 12px; align-items: center; }
 
+/* ---- Holo Boss: dashboard entry card ---- */
+[data-patrol-log] .holo-dash { transition: border-color 0.2s, box-shadow 0.25s, transform 0.25s; }
+[data-patrol-log] .holo-dash:hover { border-color: var(--cyan); box-shadow: 0 0 20px rgba(43, 224, 255, 0.20); }
+[data-patrol-log] .holo-dash-body { padding: 20px; display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+[data-patrol-log] .holo-dash-stars { font-family: 'Archivo Black', sans-serif; font-size: 40px; color: var(--cyan); line-height: 1.1; }
+[data-patrol-log] .holo-dash-sub { font-size: 10px; color: var(--ink-dim); margin-top: 4px; }
+[data-patrol-log] .holo-dash-cta { margin-top: 14px; font-family: 'Archivo Black', sans-serif; font-size: 11px; letter-spacing: 0.12em; color: var(--cyan); }
+[data-patrol-log] .holo-dash-list { display: flex; flex-direction: column; gap: 6px; }
+[data-patrol-log] .holo-dash-row {
+  display: grid;
+  grid-template-columns: 1fr 64px 96px 34px 14px;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  background: var(--asphalt-3);
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+[data-patrol-log] .holo-dash-boss { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+[data-patrol-log] .holo-dash-time { font-family: 'JetBrains Mono', monospace; color: var(--cyan); text-align: right; }
+[data-patrol-log] .holo-dash-rank { font-family: 'JetBrains Mono', monospace; color: var(--ink-dim); text-align: right; white-space: nowrap; }
+[data-patrol-log] .holo-dash-star { font-family: 'Archivo Black', sans-serif; font-size: 11px; text-align: right; }
+[data-patrol-log] .holo-dash-medal { color: var(--cyan); text-align: center; }
+/* Keeps the column width when a clear has no medal. */
+[data-patrol-log] .holo-dash-medal.is-empty { visibility: hidden; }
+
 /* ---- Holo Boss ---- */
 [data-patrol-log] .holo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 /* Column layout + stretch keeps the metrics and squad on a shared baseline
@@ -543,8 +569,16 @@
 }
 [data-patrol-log] .holo-medal { margin-left: auto; flex-shrink: 0; filter: drop-shadow(0 0 6px rgba(43, 224, 255, 0.55)); }
 [data-patrol-log] .holo-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px; }
-[data-patrol-log] .holo-time { font-family: 'Archivo Black', sans-serif; font-size: 22px; color: var(--cyan); }
-[data-patrol-log] .holo-rank { font-family: 'Archivo Black', sans-serif; font-size: 22px; color: var(--ink); }
+/* nowrap: "Top 10.06%" wraps at 22px in a half-card column, which breaks the
+   metrics baseline between cards. 18px keeps the widest value on one line. */
+[data-patrol-log] .holo-time,
+[data-patrol-log] .holo-rank {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 18px;
+  white-space: nowrap;
+}
+[data-patrol-log] .holo-time { color: var(--cyan); }
+[data-patrol-log] .holo-rank { color: var(--ink); }
 [data-patrol-log] .holo-flawless {
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
@@ -552,9 +586,14 @@
   color: var(--cyan);
   border: 1px solid var(--cyan);
   padding: 3px 6px;
-  display: inline-block;
+  /* Block, not inline-block: the badge reserves a full row whether or not it
+     is shown, so cards without the medal stay in line. */
+  display: block;
+  width: fit-content;
   margin-bottom: 10px;
 }
+/* Not `display: none` — the row must still take up space. */
+[data-patrol-log] .holo-flawless.is-empty { visibility: hidden; }
 
 /* ---- Hard mode: cordoned-off danger zone ---- */
 [data-patrol-log] .hard-zone {
@@ -640,6 +679,9 @@
   [data-patrol-log] .hard-run-grid { grid-template-columns: 1fr; }
   [data-patrol-log] .hard-rank { margin-left: 0; }
   [data-patrol-log] .holo-grid { grid-template-columns: 1fr !important; }
+  /* Stats above the boss list — side by side needs ~490px. */
+  [data-patrol-log] .holo-dash-body { grid-template-columns: 1fr; gap: 16px; }
+  [data-patrol-log] .holo-dash-row { grid-template-columns: 1fr 52px 78px 28px 12px; gap: 6px; font-size: 11px; }
   /* Floor ledger: 2 columns fit on mobile without being too dense */
   [data-patrol-log] .floor-grid { grid-template-columns: repeat(2, 1fr) !important; }
 

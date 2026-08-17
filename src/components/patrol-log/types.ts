@@ -102,7 +102,9 @@ export interface HoloClear {
   medal_id?: number;
   /** Cleared without taking damage — the medal condition. */
   no_injured: boolean;
-  rank: number;
+  /** Server percentile scaled by 100 — 1000 means top 10%. The API sends this
+   *  as a bare `rank`, which reads like a leaderboard position but is not. */
+  rank_percent: number;
   star: number;
   /** Clear duration in seconds. The API sends this as a TimeStamp-shaped
    *  duration (hour/minute/second), not a wall-clock time. */

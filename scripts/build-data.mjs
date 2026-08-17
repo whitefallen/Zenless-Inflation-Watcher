@@ -212,7 +212,9 @@ function buildHoloBoss() {
       medal_icon: r.boss?.medal?.medal_icon,
       medal_id: r.boss?.medal?.medal_id,
       no_injured: r.boss?.medal?.is_no_injured ?? false,
-      rank: r.rank,
+      // The API calls this `rank`, but it is a percentile scaled by 100 —
+      // 1000 means top 10%. Renamed to match rank_percent elsewhere.
+      rank_percent: r.rank,
       star: r.star,
       // challenge_time here is a DURATION (the clear time), not a timestamp.
       clear_seconds: (r.challenge_time?.hour ?? 0) * 3600

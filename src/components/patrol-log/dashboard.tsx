@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { Sticker, Stat, Marquee, SectionDiv, Agent, fmtNum, ratingClass, tsToDate, elementInfo } from './shared';
-import { AreaLineChart, useChartH } from './charts';
 import type { ZZZData, AvatarInfo } from './types';
 
 export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) => void }) {
@@ -9,14 +8,6 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
   const shiyuPrev = data.shiyu[data.shiyu.length - 2];
   const daLatest = data.deadlyAssault[data.deadlyAssault.length - 1];
   const vf = data.voidFront[data.voidFront.length - 1];
-
-  const chartH = useChartH(280, 180);
-
-  const shiyuTrend = data.shiyu.map(p => ({
-    label: '#' + String(p.zone_id).slice(-3),
-    score: p.brief?.score || 0,
-    rating: p.brief?.rating,
-  }));
 
   const charCount: Record<number, AvatarInfo & { count: number }> = {};
   data.shiyu.forEach(p => p.layers.forEach(L => L.avatars.forEach(a => {
@@ -97,17 +88,8 @@ export function Dashboard({ data, onNav }: { data: ZZZData; onNav: (v: string) =
             onClick={() => onNav('deadly')} />
         </div>
 
-        <SectionDiv num="02">Inflation Curve · Shiyu</SectionDiv>
-        <div className="panel">
-          <div className="panel-header">
-            <span className="dot" />
-            <span className="hairline">SCORE PROGRESSION · LATEST {shiyuTrend.length} PERIODS</span>
-            <span className="hairline" style={{ marginLeft: 'auto' }}>{shiyuTrend.length} DATA POINTS</span>
-          </div>
-          <div className="panel-body" style={{ padding: '24px 16px' }}>
-            <AreaLineChart data={shiyuTrend} height={chartH} color="#FFD400" yKey="score" formatY={v => (v / 1000).toFixed(0) + 'k'} />
-          </div>
-        </div>
+        <SectionDiv num="02">Holo Boss · Boss Rush</SectionDiv>
+        <HoloBossCard data={data} onNav={onNav} />
 
         <SectionDiv num="03">Inflation Index · All Trials</SectionDiv>
         <InflationSummary data={data} onNav={onNav} />
@@ -168,6 +150,74 @@ function ModuleCard({ num, tag, title, sub, stat, statLabel, rating, rank, delta
         )}
         {sticker && <div style={{ marginTop: 10 }}><span className="sticker dark">{sticker}</span></div>}
         <div style={{ marginTop: 14, fontFamily: 'Archivo Black', fontSize: 11, letterSpacing: '0.12em', color: 'var(--tape)' }}>OPEN DOSSIER →</div>
+      </div>
+    </div>
+  );
+}
+
+/** Clear times arrive as durations in seconds, so they format as m:ss. */
+function fmtClear(seconds?: number): string {
+  if (seconds == null) return '—';
+  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+}
+
+function HoloBossCard({ data, onNav }: { data: ZZZData; onNav: (v: string) => void }) {
+  const season = data.holoBoss?.[data.holoBoss.length - 1];
+  const clears = season?.clears ?? [];
+
+  if (!season || !clears.length) {
+    return (
+      <div className="panel holo-dash" style={{ cursor: 'pointer' }} onClick={() => onNav('holo')}>
+        <div className="panel-header">
+          <span className="dot" />
+          <span className="hairline">HOLO BOSS · NO SEASON DATA</span>
+        </div>
+        <div className="panel-body" style={{ padding: 20 }}>
+          <div style={{ color: 'var(--ink-dim)', fontSize: 13 }}>
+            No boss rush clears on record yet.
+          </div>
+          <div className="holo-dash-cta">OPEN DOSSIER →</div>
+        </div>
+      </div>
+    );
+  }
+
+  const fastest = clears.reduce((a, b) => (a.clear_seconds <= b.clear_seconds ? a : b));
+  const bestRank = Math.min(...clears.map(c => c.rank_percent));
+
+  return (
+    <div
+      className="panel relative holo-dash"
+      style={{ cursor: 'pointer' }}
+      onClick={() => onNav('holo')}
+    >
+      <div className="panel-header">
+        <span className="dot" />
+        <span className="hairline">HOLO BOSS · {clears.length} TARGETS DOWN</span>
+        <span className="hairline" style={{ marginLeft: 'auto' }}>
+          {season.unlock ? 'UNLOCKED' : 'LOCKED'}
+        </span>
+      </div>
+      <div className="panel-body holo-dash-body">
+        <div>
+          <div className="hairline" style={{ fontSize: 9 }}>TOTAL STARS</div>
+          <div className="tabular holo-dash-stars">{season.total_star}★</div>
+          <div className="hairline holo-dash-sub">{season.flawless}/{clears.length} FLAWLESS</div>
+          <div className="hairline holo-dash-sub">BEST {`Top ${(bestRank / 100).toFixed(2)}%`}</div>
+          <div className="hairline holo-dash-sub">FASTEST {fmtClear(fastest.clear_seconds)}</div>
+          <div className="holo-dash-cta">OPEN DOSSIER →</div>
+        </div>
+        <div className="holo-dash-list">
+          {clears.map((c, i) => (
+            <div key={i} className="holo-dash-row">
+              <span className="holo-dash-boss">{c.boss?.split(' - ').pop()}</span>
+              <span className="tabular holo-dash-time">{fmtClear(c.clear_seconds)}</span>
+              <span className="tabular holo-dash-rank">{`Top ${(c.rank_percent / 100).toFixed(2)}%`}</span>
+              <span className="holo-dash-star">{c.star}★</span>
+              <span className={`holo-dash-medal${c.no_injured ? '' : ' is-empty'}`} aria-hidden={c.no_injured ? undefined : true}>◆</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

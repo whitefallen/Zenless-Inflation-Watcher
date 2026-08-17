@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Sticker, Stat, SectionDiv, Team, fmtNum, fmtDateRange } from './shared';
+import { Sticker, Stat, SectionDiv, Team, fmtDateRange } from './shared';
 import type { ZZZData, AvatarInfo, HoloBossSeason, HoloClear } from './types';
 
 /** Clear time is a duration, so it formats as m:ss — never as a date. */
@@ -10,6 +10,12 @@ function fmtClear(seconds?: number): string {
   const m = Math.floor(seconds / 60);
   const s = seconds % 60;
   return `${m}:${String(s).padStart(2, '0')}`;
+}
+
+/** rank_percent is a percentile scaled by 100: 1000 -> Top 10.00%. */
+function fmtRank(rankPercent?: number): string {
+  if (rankPercent == null) return '—';
+  return `Top ${(rankPercent / 100).toFixed(2)}%`;
 }
 
 export function HoloView({ data, onAgent }: { data: ZZZData; onAgent: (a: AvatarInfo) => void }) {
@@ -21,7 +27,7 @@ export function HoloView({ data, onAgent }: { data: ZZZData; onAgent: (a: Avatar
   const fastest = clears.length
     ? clears.reduce((a, b) => (a.clear_seconds <= b.clear_seconds ? a : b))
     : null;
-  const bestRank = clears.length ? Math.min(...clears.map(c => c.rank)) : null;
+  const bestRank = clears.length ? Math.min(...clears.map(c => c.rank_percent)) : null;
 
   if (!season) {
     return (
@@ -52,7 +58,7 @@ export function HoloView({ data, onAgent }: { data: ZZZData; onAgent: (a: Avatar
           <div className="rg-4">
             <Stat large label="Total Stars" value={`${season.total_star}★`} sub={`${clears.length} bosses`} accent />
             <Stat label="Fastest Clear" value={fmtClear(fastest?.clear_seconds)} sub={fastest?.boss?.split(' - ').pop() || '—'} />
-            <Stat label="Best Rank" value={bestRank != null ? `#${fmtNum(bestRank)}` : '—'} sub="lower is better" />
+            <Stat label="Best Rank" value={fmtRank(bestRank ?? undefined)} sub="server percentile" />
             <Stat label="Flawless" value={`${season.flawless}/${clears.length}`} sub="no damage taken" />
           </div>
         </div>
@@ -106,11 +112,19 @@ export function HoloView({ data, onAgent }: { data: ZZZData; onAgent: (a: Avatar
                     <div className="tabular holo-time">{fmtClear(c.clear_seconds)}</div>
                   </div>
                   <div>
-                    <div className="hairline">RANK</div>
-                    <div className="tabular holo-rank">#{fmtNum(c.rank)}</div>
+                    <div className="hairline">SERVER RANK</div>
+                    <div className="tabular holo-rank">{fmtRank(c.rank_percent)}</div>
                   </div>
                 </div>
-                {c.no_injured && <div className="holo-flawless">◆ NO DAMAGE TAKEN</div>}
+                {/* Always rendered so the row keeps its height — a card without
+                    the medal must not pull the metrics and squad out of line
+                    with its neighbours. Hidden copies are inert for a11y. */}
+                <div
+                  className={`holo-flawless${c.no_injured ? '' : ' is-empty'}`}
+                  aria-hidden={c.no_injured ? undefined : true}
+                >
+                  ◆ NO DAMAGE TAKEN
+                </div>
                 <Team avatars={c.avatars} size="sm" onClick={onAgent} />
               </div>
             </div>

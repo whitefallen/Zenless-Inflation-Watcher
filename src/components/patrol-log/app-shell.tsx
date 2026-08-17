@@ -19,7 +19,7 @@ const VIEW_FILES: Record<string, { file: string; key: keyof ZZZData }> = {
   holo:      { file: `${BASE}/data/zzz-holo.json`,     key: 'holoBoss' },
 };
 
-const DASHBOARD_DEPS = ['shiyu', 'deadly', 'voidfront'] as const;
+const DASHBOARD_DEPS = ['shiyu', 'deadly', 'voidfront', 'holo'] as const;
 
 /**
  * Parse `#view` or `#view/periodId` from the URL hash.
@@ -122,7 +122,7 @@ export function PatrolLogApp() {
   };
 
   const viewReady =
-    view === 'dashboard' ? (!!shiyuData && !!daData && !!vfData)
+    view === 'dashboard' ? (!!shiyuData && !!daData && !!vfData && !!holoData)
     : view === 'shiyu'     ? !!shiyuData
     : view === 'deadly'    ? !!daData
     : view === 'voidfront' ? !!vfData
