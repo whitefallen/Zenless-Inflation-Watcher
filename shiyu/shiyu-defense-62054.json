@@ -24,8 +24,8 @@
       "pass_fifth_floor": true,
       "brief": {
         "cur_period_zone_layer_count": 5,
-        "score": 129858,
-        "rank_percent": 331,
+        "score": 134420,
+        "rank_percent": 220,
         "rating": "S+",
         "max_score": 150000
       },
@@ -51,13 +51,13 @@
                 "sub_element_type": 0
               },
               {
-                "id": 1401,
+                "id": 1261,
                 "level": 60,
                 "rarity": "S",
                 "element_type": 200,
                 "avatar_profession": 3,
-                "rank": 0,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1401.png",
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
                 "sub_element_type": 0
               },
               {
@@ -75,17 +75,17 @@
               "id": 54023,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/f0294f8211592f415e3c51e71a5184f0.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/7006ef3faf50cf9bdc64509bb3629474.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/0a6e2ac592ec5a1ef255c364f6397a25.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/a64566fc871706295c8d1016ec153612.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
               "month": 8,
-              "day": 7,
-              "hour": 17,
-              "minute": 14,
-              "second": 31
+              "day": 16,
+              "hour": 19,
+              "minute": 45,
+              "second": 17
             }
           },
           {
@@ -95,7 +95,7 @@
               "title": "Final Concerto",
               "text": "· Agent's <color=#FFFFFF>Ultimate</color> and <color=#FFFFFF>Chain Attack</color> DMG increase by 40%.\\n· When <color=#FFFFFF>Chain Attack</color> hits an enemy, the enemy's Stun DMG Multiplier increases by 20% and Daze recovery speed slows down by 15% for 15s. Repeated triggers reset the duration."
             },
-            "score": 37163,
+            "score": 38290,
             "avatar_list": [
               {
                 "id": 1371,
@@ -108,13 +108,13 @@
                 "sub_element_type": 2
               },
               {
-                "id": 1481,
+                "id": 1571,
                 "level": 60,
                 "rarity": "S",
-                "element_type": 200,
+                "element_type": 201,
                 "avatar_profession": 2,
                 "rank": 0,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1571.png",
                 "sub_element_type": 0
               },
               {
@@ -132,17 +132,17 @@
               "id": 54017,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/659755a693ebf7286a7fa23b82eb46cf.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/69e8e5b68aa19fdcf18e05f843b40ed1.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/12a68fd894039e8789b60287cb659d9e.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/3075f87c4fd18810e791b9be6e970193.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
               "month": 8,
-              "day": 9,
-              "hour": 13,
-              "minute": 12,
-              "second": 56
+              "day": 16,
+              "hour": 21,
+              "minute": 58,
+              "second": 12
             }
           },
           {
@@ -152,7 +152,7 @@
               "title": "Rime and Thunder Breach",
               "text": "· Agent <color=#98EFF0>Ice DMG</color> and <color=#2EB6FF>Electric DMG</color> increase by 30%. \\n· After an Agent with <color=#FFFFFF>Attack</color> specialty uses an <color=#FFFFFF>EX Special Attack</color>, their CRIT DMG increases by 30% for 20s. Repeated triggers reset the duration."
             },
-            "score": 42695,
+            "score": 46130,
             "avatar_list": [
               {
                 "id": 1431,
@@ -165,13 +165,13 @@
                 "sub_element_type": 4
               },
               {
-                "id": 1341,
+                "id": 1481,
                 "level": 60,
                 "rarity": "S",
-                "element_type": 202,
-                "avatar_profession": 5,
-                "rank": 0,
-                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
                 "sub_element_type": 0
               },
               {
@@ -186,20 +186,20 @@
               }
             ],
             "buddy": {
-              "id": 54010,
+              "id": 54021,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/5f98ec0911587b1a056051551d8ceec4.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2d6fe152d5d1fb5509b5f38024d0d72b.png"
             },
-            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/d28123c81f976c9116644f56a8492e36.png",
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/405484a0f45de770b4f6564d72352b07.png",
             "max_score": 50000,
             "challenge_time": {
               "year": 2026,
               "month": 8,
-              "day": 7,
-              "hour": 18,
-              "minute": 1,
-              "second": 45
+              "day": 19,
+              "hour": 21,
+              "minute": 9,
+              "second": 2
             }
           }
         ]
@@ -257,7 +257,7 @@
               "id": 54003,
               "rarity": "A",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/06c328ba7da743a8898a26508673172a.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/f1d43bb995138990d29013c05d8e5a8a.png"
             },
             "challenge_time": {
               "year": 2026,
@@ -306,7 +306,7 @@
               "id": 54015,
               "rarity": "S",
               "level": 60,
-              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/8a294b2e13d78694a941f7420e30dda9.png"
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/d27b13906290ce821f513b3735ec6e33.png"
             },
             "challenge_time": {
               "year": 2026,
@@ -323,10 +323,10 @@
       "end_time": "1787281199"
     },
     "nick_name": "Whitefallen",
-    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/b6d82706c261a0c11053f4063a994ad5.png"
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/329dd54ee36140d29d395e243a809073.png"
   },
   "metadata": {
-    "exportDate": "2026-08-13T20:53:06.115Z",
+    "exportDate": "2026-08-20T20:37:07.943Z",
     "uid": "1500598195",
     "type": "shiyu_defense",
     "automated": true

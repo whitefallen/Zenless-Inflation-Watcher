@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 221,
+    "rank_percent": 219,
     "list": [
       {
         "score": 65000,
@@ -34,15 +34,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/39e7466c4be8f130c62b6d699a57927a.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/597ad15a5bab9c9280723d7b68e5a498.png",
             "name": "Girtablullu - Stagnant Aberrant",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fda09e2f9c2994338ac12730121f7f0d.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/88722366f08ca7673d8c9614817c4e6b.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/4659b5ac6b112d35e85901ba64be0d55.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/6b174b393a0b9d56b2af7c08ff40a45d.png",
             "desc": "· If there are 2/3 Agents in the squad with <color=#FFFFFF>Anomaly</color> specialty, the whole squad's Anomaly Proficiency <color=#2BAD00>increases by 30/70</color> respectively, and Attribute Anomaly DMG dealt <color=#2BAD00>increases by 10%/25%</color> respectively.\\n· After inflicting an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, the enemy's All-Attribute RES is <color=#2BAD00>reduced by 15%</color> for 10s. Repeated triggers reset the duration.",
             "name": "United Strength"
           }
@@ -83,7 +83,7 @@
           "id": 54023,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/f0294f8211592f415e3c51e71a5184f0.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/7006ef3faf50cf9bdc64509bb3629474.png"
         }
       },
       {
@@ -100,15 +100,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/7c60dcf1bd26cd72f327caa1036c31a7.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/35aca20a1376cb1ac0cc0fac0d37222e.png",
             "name": "Ye Shiyuan the Thrall",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fd17c0fd50be543894889284c48bc987.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/9a84e220ef4c684aa034977848e18141.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/a9021cbb3cff5af647df0a54a5fbd921.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2eab215ddf69d8d4caaee40552a775e1.png",
             "desc": "· For Agents with Attack specialty, their ATK <color=#2BAD00>increases by 25%</color>. When their <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>EX Special Attack</color>, or <color=#FFFFFF>Chain Attack</color> hits an enemy, it ignores <color=#2BAD00>30%</color> of the target's <color=#98EFF0>Ice RES</color> and <color=#FE437E>Ether RES</color>.\\n· When an Agent hits a Stunned enemy, the target's Stun DMG Multiplier <color=#2BAD00>increases by 40%</color> for 5s. Repeated triggers reset the duration.",
             "name": "Frost Reins"
           }
@@ -149,7 +149,7 @@
           "id": 54021,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/b30496feb49ca204ae77fac7e1f54f10.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2d6fe152d5d1fb5509b5f38024d0d72b.png"
         }
       },
       {
@@ -166,15 +166,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/dd5d37f872d854b200eaaa132b418232.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/1c02382ba57b41244fd0ac9f01c80dec.png",
             "name": "Miasma Priest",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/fd17c0fd50be543894889284c48bc987.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/9a84e220ef4c684aa034977848e18141.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/cf70307a8fa98dd36931fec049e66181.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/e826b12f47deeb7488aec159fb86dfc0.png",
             "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 15%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent <color=#FE437E>Ether DMG</color> <color=#2BAD00>increases by 25%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 25%</color> for 10s. Repeated triggers reset the duration.",
             "name": "Breakthrough"
           }
@@ -215,13 +215,13 @@
           "id": 54017,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/659755a693ebf7286a7fa23b82eb46cf.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/69e8e5b68aa19fdcf18e05f843b40ed1.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/b6d82706c261a0c11053f4063a994ad5.png",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/329dd54ee36140d29d395e243a809073.png",
     "total_score": 155184,
     "total_star": 9,
     "zone_id": 690431,
@@ -243,15 +243,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/619253c14722cca9ea1b5b9b6d55d376.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/593e8e0d6aaa2ef5ceb5f7df3218c07d.png",
             "name": "Rewritten - Sanguine Sweeper",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/9353f6ee313f0f1a1ddfa22a22e8a866.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/e4bd8a703009ba147cec0589ae86714b.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/4659b5ac6b112d35e85901ba64be0d55.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/6b174b393a0b9d56b2af7c08ff40a45d.png",
             "desc": "· If there are 2/3 Agents in the squad with <color=#FFFFFF>Anomaly</color> specialty, the whole squad's Anomaly Proficiency <color=#2BAD00>increases by 30/70</color> respectively, and Attribute Anomaly DMG dealt <color=#2BAD00>increases by 10%/25%</color> respectively.\\n· After inflicting an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, the enemy's All-Attribute RES is <color=#2BAD00>reduced by 15%</color> for 10s. Repeated triggers reset the duration.",
             "name": "United Strength"
           }
@@ -292,16 +292,16 @@
           "id": 54023,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u0f27d/f0294f8211592f415e3c51e71a5184f0.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/7006ef3faf50cf9bdc64509bb3629474.png"
         }
       }
     ],
-    "hard_rank_percent": 425
+    "hard_rank_percent": 441
   },
   "metadata": {
-    "exportDate": "2026-08-17T10:09:19.299Z",
+    "exportDate": "2026-08-20T20:37:07.943Z",
     "uid": "1500598195",
     "type": "deadly_assault",
-    "automated": false
+    "automated": true
   }
 }
