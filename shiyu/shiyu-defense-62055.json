@@ -1,0 +1,334 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "hadal_ver": "v2",
+    "hadal_info_v2": {
+      "zone_id": 62055,
+      "hadal_begin_time": {
+        "year": 2026,
+        "month": 8,
+        "day": 21,
+        "hour": 4,
+        "minute": 0,
+        "second": 0
+      },
+      "hadal_end_time": {
+        "year": 2026,
+        "month": 9,
+        "day": 4,
+        "hour": 3,
+        "minute": 59,
+        "second": 59
+      },
+      "pass_fifth_floor": true,
+      "brief": {
+        "cur_period_zone_layer_count": 5,
+        "score": 143206,
+        "rank_percent": 178,
+        "rating": "S+",
+        "max_score": 150000
+      },
+      "fitfh_layer_detail": {
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62055051,
+            "rating": "S",
+            "buffer": {
+              "title": "Blazing Maelstrom",
+              "text": "· Attribute Anomaly DMG dealt by Agents increases by 15%. \\n· If there are 2/3 Agents in the squad with <color=#FFFFFF>Anomaly</color> specialty, Agent Anomaly Proficiency increases by 40/120 pts."
+            },
+            "score": 50000,
+            "avatar_list": [
+              {
+                "id": 1581,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 300,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1281,
+                "level": 60,
+                "rarity": "A",
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rank": 6,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1281.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1561,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 204,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54023,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/7006ef3faf50cf9bdc64509bb3629474.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/a64566fc871706295c8d1016ec153612.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 8,
+              "day": 21,
+              "hour": 17,
+              "minute": 25,
+              "second": 23
+            }
+          },
+          {
+            "layer_id": 62055052,
+            "rating": "S",
+            "buffer": {
+              "title": "Treacherous Domain",
+              "text": "· Agent <color=#FE437E>Ether DMG</color> increases by 20%.\\n· When Agents inflict an <color=#FFFFFF>Attribute Anomaly</color> on enemies, their DEF is reduced by 15%, and All-Attribute RES is reduced by 15% for 10s. Repeated triggers reset the duration."
+            },
+            "score": 46394,
+            "avatar_list": [
+              {
+                "id": 1431,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+                "sub_element_type": 4
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54021,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2d6fe152d5d1fb5509b5f38024d0d72b.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/82a403a40a8bf82f93d0a482c7357e8c.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 8,
+              "day": 21,
+              "hour": 17,
+              "minute": 56,
+              "second": 20
+            }
+          },
+          {
+            "layer_id": 62055053,
+            "rating": "S",
+            "buffer": {
+              "title": "Biting Cold",
+              "text": "· When an Agent with <color=#FFFFFF>Attack</color> specialty lands <color=#FFFFFF>Basic Attack</color>, it ignores 30% of enemy <color=#98EFF0>Ice RES</color>. \\n· After an Agent with <color=#FFFFFF>Attack</color> specialty uses a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>EX Special Attack</color>, their <color=#98EFF0>Ice DMG</color> increases by 20% and CRIT DMG increases by 40% for 15s. Repeated triggers reset the duration."
+            },
+            "score": 46812,
+            "avatar_list": [
+              {
+                "id": 1091,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+                "sub_element_type": 1
+              },
+              {
+                "id": 1511,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 2,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54001,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/5f2e58e92425a13e681e0dfd76a4a4b5.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/e9b55d1b769c313394b82c85ac0c21cd.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 8,
+              "day": 21,
+              "hour": 17,
+              "minute": 28,
+              "second": 46
+            }
+          }
+        ]
+      },
+      "fourth_layer_detail": {
+        "buffer": {
+          "title": "Blazing Maelstrom",
+          "text": "· Attribute Anomaly DMG dealt by Agents increases by 15%. \\n· If there are 2/3 Agents in the squad with <color=#FFFFFF>Anomaly</color> specialty, Agent Anomaly Proficiency increases by 40/120 pts."
+        },
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 21,
+          "hour": 16,
+          "minute": 27,
+          "second": 43
+        },
+        "rating": "S",
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62055041,
+            "avatar_list": [
+              {
+                "id": 1321,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 201,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54015,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/d27b13906290ce821f513b3735ec6e33.png"
+            },
+            "challenge_time": {
+              "year": 2026,
+              "month": 8,
+              "day": 21,
+              "hour": 16,
+              "minute": 27,
+              "second": 43
+            }
+          },
+          {
+            "layer_id": 62055042,
+            "avatar_list": [
+              {
+                "id": 1171,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 201,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1331,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1331_3113311.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1411,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54016,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/76f238a36e92366db4c95e98c4e58eec.png"
+            },
+            "challenge_time": {
+              "year": 2026,
+              "month": 8,
+              "day": 21,
+              "hour": 16,
+              "minute": 27,
+              "second": 43
+            }
+          }
+        ]
+      },
+      "begin_time": "1787281200",
+      "end_time": "1788490799"
+    },
+    "nick_name": "Whitefallen",
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/329dd54ee36140d29d395e243a809073.png"
+  },
+  "metadata": {
+    "exportDate": "2026-08-28T04:11:46.240Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense",
+    "automated": true
+  }
+}

@@ -11,8 +11,8 @@
         "has_ending_record": true,
         "ending_record_name": "Ending 2: Truth Buried in the Void",
         "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/ebd3d61fedf85b96465555f7e6af650c.png",
-        "total_score": 427868,
-        "rank_percent": 164,
+        "total_score": 449932,
+        "rank_percent": 101,
         "max_score": 481000,
         "left_ts": 0,
         "ending_record_id": 5,
@@ -293,16 +293,16 @@
           "battle_id": 2010201,
           "node_id": 20102,
           "name": "BATTLE 02",
-          "score": 141438,
+          "score": 149500,
           "star": "S",
           "score_ratio": "2.3",
           "challenge_time": {
             "year": 2026,
-            "month": 5,
-            "day": 12,
-            "hour": 10,
-            "minute": 44,
-            "second": 49
+            "month": 8,
+            "day": 24,
+            "hour": 6,
+            "minute": 32,
+            "second": 9
           },
           "buffer": {
             "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2eab215ddf69d8d4caaee40552a775e1.png",
@@ -327,7 +327,7 @@
               "element_type": 200,
               "avatar_profession": 2,
               "rarity": "S",
-              "rank": 0,
+              "rank": 1,
               "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
               "sub_element_type": 0
             },
@@ -499,60 +499,60 @@
           "battle_id": 2010101,
           "node_id": 20101,
           "name": "BATTLE 01",
-          "score": 129141,
+          "score": 143143,
           "star": "S",
           "score_ratio": "2.3",
           "challenge_time": {
             "year": 2026,
             "month": 8,
-            "day": 9,
+            "day": 24,
             "hour": 6,
-            "minute": 8,
-            "second": 28
+            "minute": 38,
+            "second": 1
           },
           "buffer": {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/e826b12f47deeb7488aec159fb86dfc0.png",
-            "desc": "· Rupture specialty Agent Sheer DMG <color=#2BAD00>increases by 10%</color>, and reduces Miasma Shield <color=#2BAD00>30% faster</color>.\\n· While in Ether Veil, Agent Sheer DMG additionally <color=#2BAD00>increases by 30%</color>, and hitting an enemy makes its Stun DMG Multiplier <color=#2BAD00>increase by 45%</color> for 10s. Repeated triggers reset the duration.",
-            "name": "Pinnacle"
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/6b4f70c4b9430e3580808e350899b599.png",
+            "desc": "· Increases the Agent's Anomaly Buildup Rate <color=#2BAD00>by 20%</color>.\\n· When inflicting <color=#FFFFFF>Attribute Anomaly</color> on enemies, all squad members <color=#2BAD00>gain 60 points of Anomaly Proficiency</color>, and DMG caused by <color=#FFFFFF>Disorder</color> <color=#2BAD00>increases by 40%</color> for 15 seconds.",
+            "name": "Aberration"
           },
           "max_score": 149500,
           "avatar_list": [
             {
-              "id": 1371,
+              "id": 1581,
               "level": 60,
-              "element_type": 205,
-              "avatar_profession": 6,
+              "element_type": 300,
+              "avatar_profession": 3,
               "rarity": "S",
-              "rank": 0,
-              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1371.png",
-              "sub_element_type": 2
-            },
-            {
-              "id": 1481,
-              "level": 60,
-              "element_type": 200,
-              "avatar_profession": 2,
-              "rarity": "S",
-              "rank": 0,
-              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+              "rank": 2,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
               "sub_element_type": 0
             },
             {
-              "id": 1451,
+              "id": 1171,
               "level": 60,
-              "element_type": 205,
-              "avatar_profession": 4,
+              "element_type": 201,
+              "avatar_profession": 3,
               "rarity": "S",
-              "rank": 1,
-              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+              "sub_element_type": 0
+            },
+            {
+              "id": 1561,
+              "level": 60,
+              "element_type": 204,
+              "avatar_profession": 3,
+              "rarity": "S",
+              "rank": 0,
+              "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
               "sub_element_type": 0
             }
           ],
           "buddy": {
-            "id": 54018,
+            "id": 54022,
             "rarity": "S",
             "level": 60,
-            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/4678e00396d2ea94280d29bb93096c2d.png"
+            "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/97365b761420558720d4c1ffd68f61b2.png"
           },
           "sub_challenge_record": [
             {
@@ -710,7 +710,7 @@
     }
   },
   "metadata": {
-    "exportDate": "2026-08-20T20:37:07.943Z",
+    "exportDate": "2026-08-28T04:11:46.240Z",
     "uid": "1500598195",
     "type": "void_front",
     "automated": true
