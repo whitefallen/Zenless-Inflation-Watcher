@@ -12,7 +12,7 @@
         "ending_record_name": "Ending 2: Truth Buried in the Void",
         "ending_record_bg_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/ebd3d61fedf85b96465555f7e6af650c.png",
         "total_score": 449932,
-        "rank_percent": 101,
+        "rank_percent": 103,
         "max_score": 481000,
         "left_ts": 0,
         "ending_record_id": 5,
@@ -710,7 +710,7 @@
     }
   },
   "metadata": {
-    "exportDate": "2026-08-28T04:11:46.240Z",
+    "exportDate": "2026-09-03T22:34:02.757Z",
     "uid": "1500598195",
     "type": "void_front",
     "automated": true

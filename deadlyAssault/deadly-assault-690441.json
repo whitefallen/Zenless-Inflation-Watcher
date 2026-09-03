@@ -1,0 +1,307 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 8,
+      "day": 28,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 9,
+      "day": 11,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 153,
+    "list": [
+      {
+        "score": 48234,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 28,
+          "hour": 18,
+          "minute": 31,
+          "second": 9
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/b04ba1cfbf42861689c94e35e4ff4d43.png",
+            "name": "Dead End Butcher",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/88722366f08ca7673d8c9614817c4e6b.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2eab215ddf69d8d4caaee40552a775e1.png",
+            "desc": "· DMG dealt by Agents' <color=#FFFFFF>Basic Attack</color> and <color=#FFFFFF>Ultimate</color> <color=#2BAD00>increases by 30%</color>. When an Agent with Attack specialty hits an enemy, their attacks ignore <color=#2BAD00>20%</color> of the target's <color=#98EFF0>Ice RES</color>.\\n· After an Agent uses an <color=#FFFFFF>EX Special Attack</color>, their own <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increases by 30%</color> for 15s. Repeated triggers reset the duration.",
+            "name": "Icy Raid"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1091,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1091.png",
+            "sub_element_type": 1
+          },
+          {
+            "id": 1511,
+            "level": 60,
+            "element_type": 205,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1511.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1411,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54010,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/84e91f76ef7521784b28dc7c9103c2d9.png"
+        }
+      },
+      {
+        "score": 65000,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 28,
+          "hour": 16,
+          "minute": 33,
+          "second": 27
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/a28ba4b547d3c65bb5ed5aa82d3c0733.png",
+            "name": "Girtablullu",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/88722366f08ca7673d8c9614817c4e6b.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/6b174b393a0b9d56b2af7c08ff40a45d.png",
+            "desc": "· If there are 2/3 Agents with <color=#FFFFFF>Anomaly</color> specialty in your squad, the whole squad's Attribute Anomaly DMG <color=#2BAD00>increases by 10%/30%</color>, and their ATK <color=#2BAD00>increases by 5%/15%</color> respectively.\\n· When dealing Attribute Anomaly DMG to an enemy, ignore <color=#2BAD00>10%</color> of their All-Attribute RES and <color=#2BAD00>10%</color> of their DEF.",
+            "name": "Mutation"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1171,
+            "level": 60,
+            "element_type": 201,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54022,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/97365b761420558720d4c1ffd68f61b2.png"
+        }
+      },
+      {
+        "score": 43634,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 8,
+          "day": 28,
+          "hour": 18,
+          "minute": 41,
+          "second": 23
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/e5624a763aba6571700bf79874c7acae.png",
+            "name": "Primordial Nightmare - \"The Creator\"",
+            "race_icon": "",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2eab215ddf69d8d4caaee40552a775e1.png",
+            "desc": "· Agent CRIT DMG <color=#2BAD00>increases by 30%</color>.\\n· ATK of Agents with Attack specialty <color=#2BAD00>increases by 10%</color>. Their Basic Attack DMG <color=#2BAD00>increases by 30%</color> and ignore <color=#2BAD00>15%</color> of enemy DEF.",
+            "name": "Heartcrusher"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54020,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/379e9a658a61d6819123d49eb10e5832.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/329dd54ee36140d29d395e243a809073.png",
+    "total_score": 156868,
+    "total_star": 9,
+    "zone_id": 690441,
+    "total_max_score": 195000,
+    "room_max_score": 65000,
+    "has_hard": true,
+    "hard_list": [
+      {
+        "score": 36580,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 9,
+          "day": 2,
+          "hour": 19,
+          "minute": 18,
+          "second": 9
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/593e8e0d6aaa2ef5ceb5f7df3218c07d.png",
+            "name": "Rewritten - Sanguine Sweeper",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/e4bd8a703009ba147cec0589ae86714b.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/6b174b393a0b9d56b2af7c08ff40a45d.png",
+            "desc": "· If there are 2/3 Agents with <color=#FFFFFF>Anomaly</color> specialty in your squad, the whole squad's Attribute Anomaly DMG <color=#2BAD00>increases by 10%/30%</color>, and their ATK <color=#2BAD00>increases by 5%/15%</color> respectively.\\n· When dealing Attribute Anomaly DMG to an enemy, ignore <color=#2BAD00>10%</color> of their All-Attribute RES and <color=#2BAD00>10%</color> of their DEF.",
+            "name": "Mutation"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1541,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1541.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54023,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/7006ef3faf50cf9bdc64509bb3629474.png"
+        }
+      }
+    ],
+    "hard_rank_percent": 616
+  },
+  "metadata": {
+    "exportDate": "2026-09-03T22:34:02.757Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
