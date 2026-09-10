@@ -18,7 +18,7 @@
       "minute": 59,
       "second": 59
     },
-    "rank_percent": 153,
+    "rank_percent": 139,
     "list": [
       {
         "score": 48234,
@@ -34,15 +34,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/b04ba1cfbf42861689c94e35e4ff4d43.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/9343336f50c005cdf18aee0d7e677e61.png",
             "name": "Dead End Butcher",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/88722366f08ca7673d8c9614817c4e6b.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/b6fbf0d64c4f6f1ba98d06be9c13aa30.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2eab215ddf69d8d4caaee40552a775e1.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/33b7047ba4b80d9a3e67b193d51909c4.png",
             "desc": "· DMG dealt by Agents' <color=#FFFFFF>Basic Attack</color> and <color=#FFFFFF>Ultimate</color> <color=#2BAD00>increases by 30%</color>. When an Agent with Attack specialty hits an enemy, their attacks ignore <color=#2BAD00>20%</color> of the target's <color=#98EFF0>Ice RES</color>.\\n· After an Agent uses an <color=#FFFFFF>EX Special Attack</color>, their own <color=#98EFF0>Ice DMG</color> <color=#2BAD00>increases by 30%</color> for 15s. Repeated triggers reset the duration.",
             "name": "Icy Raid"
           }
@@ -83,7 +83,7 @@
           "id": 54010,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/84e91f76ef7521784b28dc7c9103c2d9.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/80485947833e2a42769585624e8978a1.png"
         }
       },
       {
@@ -100,15 +100,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/a28ba4b547d3c65bb5ed5aa82d3c0733.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/c0418d50d42442e215cfcd150dd222c4.png",
             "name": "Girtablullu",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/88722366f08ca7673d8c9614817c4e6b.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/b6fbf0d64c4f6f1ba98d06be9c13aa30.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/6b174b393a0b9d56b2af7c08ff40a45d.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/90be35bea45112bdaba471a32f4500a8.png",
             "desc": "· If there are 2/3 Agents with <color=#FFFFFF>Anomaly</color> specialty in your squad, the whole squad's Attribute Anomaly DMG <color=#2BAD00>increases by 10%/30%</color>, and their ATK <color=#2BAD00>increases by 5%/15%</color> respectively.\\n· When dealing Attribute Anomaly DMG to an enemy, ignore <color=#2BAD00>10%</color> of their All-Attribute RES and <color=#2BAD00>10%</color> of their DEF.",
             "name": "Mutation"
           }
@@ -149,7 +149,7 @@
           "id": 54022,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/97365b761420558720d4c1ffd68f61b2.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/82e0c29bbea7c09f2bd15036b60ed0dd.png"
         }
       },
       {
@@ -166,7 +166,7 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/e5624a763aba6571700bf79874c7acae.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/ca9cd7d51d3a63c321ffae865fbb592f.png",
             "name": "Primordial Nightmare - \"The Creator\"",
             "race_icon": "",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
@@ -174,7 +174,7 @@
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/2eab215ddf69d8d4caaee40552a775e1.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/33b7047ba4b80d9a3e67b193d51909c4.png",
             "desc": "· Agent CRIT DMG <color=#2BAD00>increases by 30%</color>.\\n· ATK of Agents with Attack specialty <color=#2BAD00>increases by 10%</color>. Their Basic Attack DMG <color=#2BAD00>increases by 30%</color> and ignore <color=#2BAD00>15%</color> of enemy DEF.",
             "name": "Heartcrusher"
           }
@@ -215,13 +215,13 @@
           "id": 54020,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/379e9a658a61d6819123d49eb10e5832.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/adf74d0c64599408a1599c2afa2b935e.png"
         }
       }
     ],
     "has_data": true,
     "nick_name": "Whitefallen",
-    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/329dd54ee36140d29d395e243a809073.png",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/c0fec9ebbdd62c8dc3beb25c37e41af9.png",
     "total_score": 156868,
     "total_star": 9,
     "zone_id": 690441,
@@ -243,15 +243,15 @@
         },
         "boss": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/593e8e0d6aaa2ef5ceb5f7df3218c07d.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/8dd8d7a49e209c65340de91aab19bf44.png",
             "name": "Rewritten - Sanguine Sweeper",
-            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/e4bd8a703009ba147cec0589ae86714b.png",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/68fbbedc7abbd012ce9ab58fd82ed261.png",
             "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
           }
         ],
         "buffer": [
           {
-            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/6b174b393a0b9d56b2af7c08ff40a45d.png",
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/90be35bea45112bdaba471a32f4500a8.png",
             "desc": "· If there are 2/3 Agents with <color=#FFFFFF>Anomaly</color> specialty in your squad, the whole squad's Attribute Anomaly DMG <color=#2BAD00>increases by 10%/30%</color>, and their ATK <color=#2BAD00>increases by 5%/15%</color> respectively.\\n· When dealing Attribute Anomaly DMG to an enemy, ignore <color=#2BAD00>10%</color> of their All-Attribute RES and <color=#2BAD00>10%</color> of their DEF.",
             "name": "Mutation"
           }
@@ -292,14 +292,14 @@
           "id": 54023,
           "rarity": "S",
           "level": 60,
-          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u9039d/7006ef3faf50cf9bdc64509bb3629474.png"
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/7cf3972d9af60ea96694aa7b83819fe1.png"
         }
       }
     ],
-    "hard_rank_percent": 616
+    "hard_rank_percent": 595
   },
   "metadata": {
-    "exportDate": "2026-09-03T22:34:02.757Z",
+    "exportDate": "2026-09-10T22:26:28.002Z",
     "uid": "1500598195",
     "type": "deadly_assault",
     "automated": true
