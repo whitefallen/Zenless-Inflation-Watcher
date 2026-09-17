@@ -1,0 +1,307 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 9,
+      "day": 11,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 9,
+      "day": 25,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 134,
+    "list": [
+      {
+        "score": 46846,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 9,
+          "day": 15,
+          "hour": 20,
+          "minute": 32,
+          "second": 10
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/ed6a1b5876af624b77f7134312e6c55d.png",
+            "name": "Kusarikku",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/b6fbf0d64c4f6f1ba98d06be9c13aa30.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/a058e6c31384003f20ccfed1347cda13.png",
+            "desc": "· Agent PEN Ratio <color=#2BAD00>increases by 5%</color>. When an attack hits an enemy, it ignores <color=#2BAD00>15%</color> of the target's <color=#2EB6FF>Electric RES</color>.\\n· After an Agent uses an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Special Attack</color>, Sharp DMG <color=#2BAD00>increases by 20%</color> and DEF <color=#2BAD00>increases by 10%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Sharp Rupture"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1611,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 7,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1611.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1571,
+            "level": 60,
+            "element_type": 201,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1571.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1211,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54022,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/82e0c29bbea7c09f2bd15036b60ed0dd.png"
+        }
+      },
+      {
+        "score": 63042,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 9,
+          "day": 14,
+          "hour": 12,
+          "minute": 48,
+          "second": 18
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/34e4cfe40af7caa728876119a86fadf1.png",
+            "name": "Girtablullu - Stagnant Aberrant",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/b6fbf0d64c4f6f1ba98d06be9c13aa30.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/90be35bea45112bdaba471a32f4500a8.png",
+            "desc": "· If there are 2/3 Agents in the squad with the <color=#FFFFFF>Anomaly</color> specialty, the whole squad's Anomaly Proficiency <color=#2BAD00>increases by 20/60</color> respectively, and Anomaly Buildup Rate <color=#2BAD00>increases by 10%/20%</color> respectively.\\n· After an Agent inflicts an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, the enemy's DEF is <color=#2BAD00>reduced by 10%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "Cinders of Corrosion"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1261,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54023,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/7cf3972d9af60ea96694aa7b83819fe1.png"
+        }
+      },
+      {
+        "score": 45020,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 9,
+          "day": 15,
+          "hour": 20,
+          "minute": 37,
+          "second": 48
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/aa15d169e00a9c49c2f21a1d8283f66a.png",
+            "name": "Ye Shiyuan the Thrall",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/a9353f3569c9347235eef30895f461f9.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/33b7047ba4b80d9a3e67b193d51909c4.png",
+            "desc": "· Agents with the <color=#FFFFFF>Attack</color> specialty deal <color=#2BAD00>20%</color> more <color=#98EFF0>Ice DMG</color>.\\n· Agent CRIT DMG increases by <color=#2BAD00>30%</color>. When attacking a Stunned enemy, the enemy's Stun DMG Multiplier additionally increases by <color=#2BAD00>20%</color> for 20s. Repeated triggers reset the duration.",
+            "name": "Gleaming Frost"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54021,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/75676a611f030c97ff57a695f897698d.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/c0fec9ebbdd62c8dc3beb25c37e41af9.png",
+    "total_score": 154908,
+    "total_star": 9,
+    "zone_id": 690451,
+    "total_max_score": 195000,
+    "room_max_score": 65000,
+    "has_hard": true,
+    "hard_list": [
+      {
+        "score": 31982,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 9,
+          "day": 11,
+          "hour": 18,
+          "minute": 39,
+          "second": 39
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/081bc85822d0fd64b02808b3f504869c.png",
+            "name": "Integrated - Scorched Horizon",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/b6fbf0d64c4f6f1ba98d06be9c13aa30.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/90be35bea45112bdaba471a32f4500a8.png",
+            "desc": "· If there are 2/3 Agents in the squad with the <color=#FFFFFF>Anomaly</color> specialty, the whole squad's Anomaly Proficiency <color=#2BAD00>increases by 20/60</color> respectively, and Anomaly Buildup Rate <color=#2BAD00>increases by 10%/20%</color> respectively.\\n· After an Agent inflicts an <color=#FFFFFF>Attribute Anomaly</color> on an enemy, the enemy's DEF is <color=#2BAD00>reduced by 10%</color> for 10s. Repeated triggers reset the duration.",
+            "name": "Cinders of Corrosion"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1541,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1541.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54023,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2b2be/7cf3972d9af60ea96694aa7b83819fe1.png"
+        }
+      }
+    ],
+    "hard_rank_percent": 1612
+  },
+  "metadata": {
+    "exportDate": "2026-09-17T22:49:01.994Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
