@@ -1,0 +1,307 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "start_time": {
+      "year": 2026,
+      "month": 11,
+      "day": 20,
+      "hour": 4,
+      "minute": 0,
+      "second": 0
+    },
+    "end_time": {
+      "year": 2026,
+      "month": 12,
+      "day": 2,
+      "hour": 3,
+      "minute": 59,
+      "second": 59
+    },
+    "rank_percent": 664,
+    "list": [
+      {
+        "score": 32218,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 11,
+          "day": 24,
+          "hour": 13,
+          "minute": 34,
+          "second": 30
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/1f8e9834c1f1b5dcfb24a35b9befe91b.png",
+            "name": "Infernal Revenant",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/e40d64e286b13e60a28487d08cf6ed3f.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/b5116fe464b4a9ff631835c92bb947ec.png",
+            "desc": "· Agents' <color=#A6C5FD>Wind DMG</color> <color=#2BAD00>increases by 30%</color>. When attacks hit enemies, ignore <color=#2BAD00>30%</color> of their <color=#A6C5FD>Wind RES</color>.\\n· <color=#FFFFFF>Attack</color> specialty Agents' CRIT DMG <color=#2BAD00>increases by 40%</color> and <color=#FFFFFF>Basic Attack</color> DMG <color=#2BAD00>increases by 50%</color>.",
+            "name": "Sweeping Frost"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1431,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 1,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+            "sub_element_type": 4
+          },
+          {
+            "id": 1481,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 1,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1491,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54021,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/b890b313dd95c0b2b8dade2a5cd39501.png"
+        }
+      },
+      {
+        "score": 37517,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 11,
+          "day": 20,
+          "hour": 18,
+          "minute": 45,
+          "second": 44
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/58c4de88ffd1ee08389b5c2c936a1219.png",
+            "name": "Kusarikku",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/e40d64e286b13e60a28487d08cf6ed3f.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/a2122a069ef362b6a2c601c9ebf567da.png",
+            "desc": "· Agents' DEF <color=#2BAD00>increases by 10%</color>, and their Sharp DMG <color=#2BAD00>increases by 15%</color>.\\n· After an Agent uses an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>Ultimate</color>, <color=#2EB6FF>Electric DMG</color> and <color=#A6C5FD>Wind DMG</color> <color=#2BAD00>increases by 20%</color> for 15s; repeated triggers reset the duration.",
+            "name": "Surging Thunder"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1611,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 7,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1611.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1571,
+            "level": 60,
+            "element_type": 201,
+            "avatar_profession": 2,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1571.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1211,
+            "level": 60,
+            "element_type": 203,
+            "avatar_profession": 4,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1211.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54008,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/b451cc5a5973df9d13a8e8308ff2d07b.png"
+        }
+      },
+      {
+        "score": 46081,
+        "star": 3,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 11,
+          "day": 20,
+          "hour": 18,
+          "minute": 32,
+          "second": 33
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/825bac7e5e42f0a3b6e0f22967819e5d.png",
+            "name": "Phaethon of the Scorched Horizon",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/e40d64e286b13e60a28487d08cf6ed3f.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/cf146869ece384576e38c53203525996.png",
+            "desc": "· <color=#FFFFFF>Anomaly</color> specialty Agents' ATK <color=#2BAD00>increases by 10%</color>, and <color=#FF5521>Fire</color> and <color=#A6C5FD>Wind</color> Anomaly Buildup Rate <color=#2BAD00>increases by 10%</color>.\\n· When an Agent deals <color=#FFFFFF>Attribute Anomaly</color> DMG and triggers a critical hit, the whole squad <color=#2BAD00>gains 20</color> Energy, and Attribute Anomaly DMG <color=#2BAD00>increases by 20%</color> for 20s. This effect can trigger once every 20s.",
+            "name": "Spirit Zenith"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1541,
+            "level": 60,
+            "element_type": 202,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1541.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54023,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/df9dc166ffffc8301ac3429016319f1f.png"
+        }
+      }
+    ],
+    "has_data": true,
+    "nick_name": "Whitefallen",
+    "avatar_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/89b36694377faea18a8d047b3a898e0a.png",
+    "total_score": 115816,
+    "total_star": 9,
+    "zone_id": 690501,
+    "total_max_score": 195000,
+    "room_max_score": 65000,
+    "has_hard": true,
+    "hard_list": [
+      {
+        "score": 20975,
+        "star": 2,
+        "total_star": 3,
+        "challenge_time": {
+          "year": 2026,
+          "month": 11,
+          "day": 23,
+          "hour": 22,
+          "minute": 55,
+          "second": 50
+        },
+        "boss": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/d26fbb0e605b1619b3be1014d72b058a.png",
+            "name": "Integrated - Girtablullu",
+            "race_icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/e40d64e286b13e60a28487d08cf6ed3f.png",
+            "bg_icon": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/boss_bg/boss_bg_4.png"
+          }
+        ],
+        "buffer": [
+          {
+            "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/cf146869ece384576e38c53203525996.png",
+            "desc": "· <color=#FFFFFF>Anomaly</color> specialty Agents' ATK <color=#2BAD00>increases by 10%</color>, and <color=#FF5521>Fire</color> and <color=#A6C5FD>Wind</color> Anomaly Buildup Rate <color=#2BAD00>increases by 10%</color>.\\n· When an Agent deals <color=#FFFFFF>Attribute Anomaly</color> DMG and triggers a critical hit, the whole squad <color=#2BAD00>gains 20</color> Energy, and Attribute Anomaly DMG <color=#2BAD00>increases by 20%</color> for 20s. This effect can trigger once every 20s.",
+            "name": "Spirit Zenith"
+          }
+        ],
+        "avatar_list": [
+          {
+            "id": 1581,
+            "level": 60,
+            "element_type": 300,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1261,
+            "level": 60,
+            "element_type": 200,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 2,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
+            "sub_element_type": 0
+          },
+          {
+            "id": 1561,
+            "level": 60,
+            "element_type": 204,
+            "avatar_profession": 3,
+            "rarity": "S",
+            "rank": 0,
+            "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+            "sub_element_type": 0
+          }
+        ],
+        "buddy": {
+          "id": 54023,
+          "rarity": "S",
+          "level": 60,
+          "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/df9dc166ffffc8301ac3429016319f1f.png"
+        }
+      }
+    ],
+    "hard_rank_percent": 4184
+  },
+  "metadata": {
+    "exportDate": "2026-11-27T02:46:07.527Z",
+    "uid": "1500598195",
+    "type": "deadly_assault",
+    "automated": true
+  }
+}
