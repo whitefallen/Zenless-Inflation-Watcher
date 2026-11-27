@@ -1,0 +1,334 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "hadal_ver": "v2",
+    "hadal_info_v2": {
+      "zone_id": 62061,
+      "hadal_begin_time": {
+        "year": 2026,
+        "month": 11,
+        "day": 13,
+        "hour": 4,
+        "minute": 0,
+        "second": 0
+      },
+      "hadal_end_time": {
+        "year": 2026,
+        "month": 11,
+        "day": 27,
+        "hour": 3,
+        "minute": 59,
+        "second": 59
+      },
+      "pass_fifth_floor": true,
+      "brief": {
+        "cur_period_zone_layer_count": 5,
+        "score": 126470,
+        "rank_percent": 289,
+        "rating": "S+",
+        "max_score": 150000
+      },
+      "fitfh_layer_detail": {
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62061051,
+            "rating": "S",
+            "buffer": {
+              "title": "Tempest Flames",
+              "text": "· <color=#FFFFFF>Attack</color> specialty Agents' ATK increases by 35%, and <color=#A6C5FD>Wind DMG</color> increases by 20%.\\n· When an Agent's <color=#FFFFFF>Ultimate</color> hits an enemy, the enemy's <color=#A6C5FD>Wind RES</color> reduces by 15% for 30s; repeated triggers reset the duration."
+            },
+            "score": 39300,
+            "avatar_list": [
+              {
+                "id": 1431,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1431.png",
+                "sub_element_type": 4
+              },
+              {
+                "id": 1341,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 5,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1341.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1491,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1491.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54021,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/b890b313dd95c0b2b8dade2a5cd39501.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/5d9ee47b7ee9b397d25aab0372c41543.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 11,
+              "day": 16,
+              "hour": 21,
+              "minute": 19,
+              "second": 45
+            }
+          },
+          {
+            "layer_id": 62061052,
+            "rating": "S",
+            "buffer": {
+              "title": "Blazing Nightfire",
+              "text": "· Agents with the <color=#FFFFFF>Anomaly</color> specialty that deal <color=#FFFFFF>Attribute Anomaly</color> DMG and trigger a CRIT increase the whole squad's ATK by 10% and Attribute Anomaly DMG by 20% for 15s; repeated triggers reset the duration.\\n· When an Agent inflicts an enemy with <color=#FF5521>Fire Anomaly</color>, the target's <color=#FF5521>Fire RES</color> is reduced by 10% for 15s; repeated triggers reset the duration."
+            },
+            "score": 46510,
+            "avatar_list": [
+              {
+                "id": 1581,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 300,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1581.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1171,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 201,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1171.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1561,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 204,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54022,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/3c6fc8d5b1b5dfd9f9c714604dce3389.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/fd065542082070e00fdc749ccddd3c6a.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 11,
+              "day": 16,
+              "hour": 21,
+              "minute": 32,
+              "second": 40
+            }
+          },
+          {
+            "layer_id": 62061053,
+            "rating": "S",
+            "buffer": {
+              "title": "Glacial Realmshatter",
+              "text": "· Agents' Sheer DMG increases by 35%.\\n· After a <color=#FFFFFF>Rupture</color> specialty Agent uses their <color=#FFFFFF>Ultimate</color>, their <color=#FF5521>Fire DMG</color> and <color=#98EFF0>Ice DMG</color> increases by 50% for 15s; repeated triggers reset the duration."
+            },
+            "score": 40660,
+            "avatar_list": [
+              {
+                "id": 1051,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 202,
+                "avatar_profession": 6,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1051.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1451,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1451.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54020,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/7c63f10eefe75205e34bb640c802575d.png"
+            },
+            "monster_pic": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/6f6d90f89ddc196ead55212d328b4063.png",
+            "max_score": 50000,
+            "challenge_time": {
+              "year": 2026,
+              "month": 11,
+              "day": 24,
+              "hour": 13,
+              "minute": 13,
+              "second": 35
+            }
+          }
+        ]
+      },
+      "fourth_layer_detail": {
+        "buffer": {
+          "title": "Tempest Flames",
+          "text": "· <color=#FFFFFF>Attack</color> specialty Agents' ATK increases by 35%, and <color=#A6C5FD>Wind DMG</color> increases by 20%.\\n· When an Agent's <color=#FFFFFF>Ultimate</color> hits an enemy, the enemy's <color=#A6C5FD>Wind RES</color> reduces by 15% for 30s; repeated triggers reset the duration."
+        },
+        "challenge_time": {
+          "year": 2026,
+          "month": 11,
+          "day": 16,
+          "hour": 20,
+          "minute": 58,
+          "second": 32
+        },
+        "rating": "S",
+        "layer_challenge_info_list": [
+          {
+            "layer_id": 62061041,
+            "avatar_list": [
+              {
+                "id": 1321,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 201,
+                "avatar_profession": 1,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1321.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1481,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 2,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1481.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1311,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 205,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1311.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54015,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/7eafb28d0f66f68fc7f2ae0b9fb0cb7a.png"
+            },
+            "challenge_time": {
+              "year": 2026,
+              "month": 11,
+              "day": 16,
+              "hour": 20,
+              "minute": 58,
+              "second": 32
+            }
+          },
+          {
+            "layer_id": 62061042,
+            "avatar_list": [
+              {
+                "id": 1261,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 3,
+                "rank": 2,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1261_3112611.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1561,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 204,
+                "avatar_profession": 3,
+                "rank": 0,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1561.png",
+                "sub_element_type": 0
+              },
+              {
+                "id": 1411,
+                "level": 60,
+                "rarity": "S",
+                "element_type": 200,
+                "avatar_profession": 4,
+                "rank": 1,
+                "role_square_url": "https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_square_avatar/role_square_avatar_1411.png",
+                "sub_element_type": 0
+              }
+            ],
+            "buddy": {
+              "id": 54018,
+              "rarity": "S",
+              "level": 60,
+              "bangboo_rectangle_url": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/378b0850adb26bd6e74a37c2f067eb66.png"
+            },
+            "challenge_time": {
+              "year": 2026,
+              "month": 11,
+              "day": 16,
+              "hour": 20,
+              "minute": 58,
+              "second": 32
+            }
+          }
+        ]
+      },
+      "begin_time": "1794538800",
+      "end_time": "1795748399"
+    },
+    "nick_name": "Whitefallen",
+    "icon": "https://act-webstatic.hoyoverse.com/darkmatter/nap/prod_gf_cn/item_icon_u2a7le/89b36694377faea18a8d047b3a898e0a.png"
+  },
+  "metadata": {
+    "exportDate": "2026-11-27T02:46:07.527Z",
+    "uid": "1500598195",
+    "type": "shiyu_defense",
+    "automated": true
+  }
+}
